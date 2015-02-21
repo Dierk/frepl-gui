@@ -1,0 +1,3 @@
+With Java 8 start via
+
+    gradlew run

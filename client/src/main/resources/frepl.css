@@ -1,0 +1,9 @@
+.text-area {
+    -fx-focus-color: #690005;
+    -fx-background-color: #690005;
+    -fx-background-radius: 3px;
+}
+
+.list-view {
+    -fx-focus-color: #690005;
+}

@@ -1,0 +1,12 @@
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = 'org.frege.start'
+
+dependencies {
+    compile project(':client')
+    compile project(':server')
+    compile "org.open-dolphin:dolphin-combined:$dolphinVersion"
+    testCompile "junit:junit:4.11"
+}
+
