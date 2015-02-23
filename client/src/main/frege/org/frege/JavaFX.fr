@@ -1,0 +1,20 @@
+module org.frege.JavaFX where
+
+data Node   = mutable native javafx.scene.Node
+data Parent = mutable native javafx.scene.Parent
+
+data Button = mutable native javafx.scene.control.Button where
+    native new      :: String ->  IO Button
+
+data Scene = mutable native javafx.scene.Scene where
+    native new      :: Parent -> Double -> Double -> IO Scene
+    native lookup   :: Scene  -> String -> IO Node
+
+data Stage = mutable native javafx.stage.Stage where
+    native show     :: Stage -> IO ()
+    native setScene :: Stage -> Scene  -> IO ()
+    native setTitle :: Stage -> String -> IO ()
+
+data FregeFX = mutable native org.frege.FregeFX where
+    native launch  org.frege.FregeFX.launch :: ( Stage -> IO () ) -> IO ()
+    native load    org.frege.FregeFX.load   :: String -> String -> IO Parent

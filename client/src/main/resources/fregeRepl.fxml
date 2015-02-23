@@ -28,7 +28,7 @@
       </StackPane>
    </top>
    <left>
-      <ListView fx:id="history" BorderPane.alignment="CENTER">
+      <ListView fx:id="history" prefHeight="348.0" prefWidth="181.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="2.0" left="6.0" right="2.0" />
          </BorderPane.margin></ListView>

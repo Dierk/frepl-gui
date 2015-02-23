@@ -17,22 +17,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="shared" exported="" />
-    <orderEntry type="library" exported="" name="Gradle: org.open-dolphin:dolphin-client-javafx:0.11" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.codehaus.groovyfx:groovyfx:0.4.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.open-dolphin:dolphin-client:0.11" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.ow2.asm:asm:5.0.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.codehaus.groovy:groovy-all:2.3.4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.codehaus.jsr166-mirror:jsr166y:1.7.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.codehaus.gpars:gpars:1.0.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.open-dolphin:dolphin-shared:0.11" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.2.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpclient:4.2.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="module-library" exported="">
       <library name="Gradle: jfxrt">
         <CLASSES>
+          <root url="jar://$JAVA_HOME_tmpl$/lib/ext/jfxrt.jar!/" />
+          <root url="jar://$JAVA_HOME_tmpl$/lib/ext/jfxrt.jar!/" />
+          <root url="jar://$JAVA_HOME_tmpl$/lib/ext/jfxrt.jar!/" />
           <root url="jar://$JAVA_HOME_tmpl$/lib/ext/jfxrt.jar!/" />
           <root url="jar://$JAVA_HOME_tmpl$/lib/ext/jfxrt.jar!/" />
         </CLASSES>
@@ -41,5 +31,19 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="Gradle: org.codehaus.groovy:groovy:2.4.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.open-dolphin:dolphin-client-javafx:0.11" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.codehaus.groovyfx:groovyfx:0.4.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.open-dolphin:dolphin-client:0.11" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.ow2.asm:asm:5.0.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.open-dolphin:dolphin-shared:0.11" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpclient:4.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.codehaus.gpars:gpars:1.0.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.codehaus.jsr166-mirror:jsr166y:1.7.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.codehaus.groovy:groovy-all:2.3.4" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.theoryinpractise.frege:frege:3.22.324-g630677b" level="project" />
   </component>
 </module>
