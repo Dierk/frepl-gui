@@ -24,5 +24,12 @@
     <orderEntry type="library" exported="" name="Gradle: org.open-dolphin:dolphin-shared:0.11" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.codehaus.groovy:groovy:2.4.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: frege:frege-repl-core:1.1.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jline:jline:2.12" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: frege:frege-interpreter-core:1.0.3-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: frege:frege-repl-nativedeps:1.1.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.eclipse.jdt.core.compiler:ecj:4.2.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: frege:frege-interpreter-java-support:1.0.3-SNAPSHOT" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.theoryinpractise.frege:frege:3.22.367-g2737683" level="project" />
   </component>
 </module>

@@ -16,7 +16,7 @@ public class FregeFX extends Application {
     public void start(Stage primaryStage) throws Exception {
         try {
             Applicable inter = lambda.apply(primaryStage);
-            Delayed.forced(inter.apply(null).result().forced());
+            Delayed.forced(inter.apply(null).result().forced()); // the second argument is the IO context
         } catch(RuntimeException re) {
             re.printStackTrace();
             throw re;
@@ -31,7 +31,7 @@ public class FregeFX extends Application {
          Application.launch();
      }
 
-    public static Parent load(String className, String resourceName ) {
+    public static Parent fxml(String className, String resourceName ) {
         try {
             return FXMLLoader.load(Class.forName(className).getClass().getResource(resourceName));
         } catch (ClassNotFoundException e) {

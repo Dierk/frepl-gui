@@ -1,5 +1,10 @@
 module org.frege.JavaFX where
 
+import frege.java.Net (URL)
+
+native getResource :: ClassLoader -> String -> IO URL
+
+
 data Node   = mutable native javafx.scene.Node
 data Parent = mutable native javafx.scene.Parent
 
@@ -15,6 +20,12 @@ data Stage = mutable native javafx.stage.Stage where
     native setScene :: Stage -> Scene  -> IO ()
     native setTitle :: Stage -> String -> IO ()
 
+data FXMLLoader = mutable native javafx.fxml.FXMLLoader where
+    native load    javafx.fxml.FXMLLoader.load :: URL -> IO Parent throws IOException
+
 data FregeFX = mutable native org.frege.FregeFX where
     native launch  org.frege.FregeFX.launch :: ( Stage -> IO () ) -> IO ()
-    native load    org.frege.FregeFX.load   :: String -> String -> IO Parent
+    native fxml    org.frege.FregeFX.fxml   :: String -> String -> IO Parent
+
+
+

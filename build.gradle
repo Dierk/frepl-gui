@@ -1,17 +1,38 @@
-
+buildscript {        // make the frege plugin available in our build
+    repositories {
+		mavenLocal() // if you have the plugin installed locally, this is enough
+        maven {
+            url = "https://oss.sonatype.org/content/groups/public"
+        }
+    }
+    dependencies {
+        classpath 'org.frege-lang:frege-gradle-plugin:0.1-SNAPSHOT'
+    }
+}
 
 subprojects {
     apply plugin: 'java'
-    apply plugin: 'groovy'
+    apply plugin: 'frege'
 
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
+    ext {
+        sonatypeUrl = "https://oss.sonatype.org/content/groups/public"
+    }
+
+
     repositories {
+        mavenLocal()
         mavenCentral()
+        maven {
+            url = sonatypeUrl
+        }
     }
 
     dependencies {
         compile "org.codehaus.groovy:groovy:$groovyVersion"
+        compile "com.theoryinpractise.frege:frege:3.22.324-g630677b"
+        compile "frege:frege-repl-core:1.1.1-SNAPSHOT"
     }
 }

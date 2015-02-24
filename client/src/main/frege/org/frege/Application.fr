@@ -2,9 +2,11 @@ module org.frege.Application where
 
 import org.frege.JavaFX
 
+fxml = FregeFX.fxml "org.frege.Application"
+
 makeUI :: Stage -> IO ()
 makeUI stage = do
-    content <- FregeFX.load "org.frege.Application" "/fregeRepl.fxml"
+    content <- fxml "/fregeRepl.fxml"
     scene   <- Scene.new content 600.0 400.0
     stage.setTitle "Frege - purely functional programming for the JVM"
     stage.setScene scene
@@ -12,3 +14,5 @@ makeUI stage = do
 
 main args = do
     FregeFX.launch makeUI
+
+

@@ -55,20 +55,8 @@ String locateJfxLibDir() {
 // ---------------- Frege specifics -------------------
 
 
-buildscript {        // make the frege plugin available in our build
-    repositories {
-		mavenLocal() // if you have the plugin installed locally, this is enough
-    }
-    dependencies {
-        classpath 'com.github.mperry.frege:frege-gradle-plugin:0.2-SNAPSHOT'
-    }
-}
 
-dependencies {
-    compile "com.theoryinpractise.frege:frege:3.22.324-g630677b"
-}
 
-apply plugin: "frege"
 apply plugin: "application"
 
 mainClassName = 'org.frege.Application'
