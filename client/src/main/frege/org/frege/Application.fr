@@ -2,7 +2,8 @@ module org.frege.Application where
 
 import org.frege.JavaFX
 
-fxml = FregeFX.fxml "org.frege.Application"
+main args = do
+    FregeFX.launch makeUI
 
 makeUI :: Stage -> IO ()
 makeUI stage = do
@@ -12,7 +13,4 @@ makeUI stage = do
     stage.setScene scene
     Stage.show stage
 
-main args = do
-    FregeFX.launch makeUI
-
-
+fxml = FregeFX.fxml "org.frege.Application"
