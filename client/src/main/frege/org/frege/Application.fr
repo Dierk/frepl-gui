@@ -1,6 +1,7 @@
 module org.frege.Application where
 
 import org.frege.JavaFX
+import org.frege.AllNodes
 
 main args = do
     FregeFX.launch makeUI
@@ -12,5 +13,20 @@ makeUI stage = do
     stage.setTitle "Frege - purely functional programming for the JVM"
     stage.setScene scene
     Stage.show stage
+    attachListeners scene -- must come last or css selectors don't work
 
 fxml = FregeFX.fxml "org.frege.Application"
+
+attachListeners :: Scene -> IO ()
+attachListeners scene = do
+    outputArea <-  scene.lookup "#repl" >>= asTextArea   -- smaller but unsafe version
+    outputArea.setText "some output"
+    allNode <- scene.lookup "#editor" >>= fromNode
+    inputArea = textable allNode
+    inputArea.setText "some input"
+
+textable allNode = case allNode of
+    TextArea ta -> ta
+    NullNode nn -> error "Sorry, you didn't supply any node. Wrong lookup?"
+    _           -> error "Node is not known to accept text."
+

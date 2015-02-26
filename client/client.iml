@@ -50,5 +50,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.eclipse.jdt.core.compiler:ecj:4.2.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: frege:frege-interpreter-java-support:1.0.3-SNAPSHOT" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.theoryinpractise.frege:frege:3.22.367-g2737683" level="project" />
+    <orderEntry type="module" module-name="fregeFX" exported="" />
   </component>
 </module>

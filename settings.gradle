@@ -1,5 +1,6 @@
 rootProject.name = 'frepl'
 
+include 'fregeFX'
 include 'shared'
 include 'client'
 include 'server'
