@@ -13,7 +13,7 @@ makeUI stage = do
     stage.setTitle "Frege - purely functional programming for the JVM"
     stage.setScene scene
     Stage.show stage
-    attachListeners scene -- must come last or css selectors don't work
+    attachListeners scene -- must come last or css selectors don't work :-(
 
 fxml = FregeFX.fxml "org.frege.Application"
 
@@ -23,7 +23,7 @@ attachListeners scene = do
     inputArea.setText "some input"
     outputArea <- locate scene "#repl"
     outputArea.setText "some output"
-    keyHandler <- FregeEventHandler.new (\evt -> evt.getCharacter >>= outputArea.setText )
+    keyHandler <- KeyEventHandler.new (\evt -> evt.getCharacter >>= outputArea.setText )
     inputArea.setOnKeyTyped keyHandler
 
 

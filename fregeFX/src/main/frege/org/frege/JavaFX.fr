@@ -1,0 +1,26 @@
+module org.frege.JavaFX where
+
+import org.frege.AllNodes
+
+
+data Classifier = mutable native org.frege.Classifier where
+    native classify org.frege.Classifier.classify :: Node -> IO (IllegalArgumentException | AllNodes)
+
+textable allNode selector = case allNode of
+    TextArea ta -> ta
+    _           -> error "Node has a type that we cannot set text on."
+
+locate :: Scene -> String -> IO TextArea
+locate scene selector = do
+    maybeNode <- scene.lookup selector
+    case maybeNode of
+        Nothing      -> error $ "Sorry, could not find any node for '" ++ selector ++"'."
+        Just allNode -> do
+            classified <- Classifier.classify allNode
+            case classified of
+                Left ex -> error  $ "Unknown node type located for '" ++ selector ++ "'."
+                Right x -> return $ textable x selector
+
+
+
+
