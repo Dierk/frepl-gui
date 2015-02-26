@@ -1,8 +1,14 @@
 module org.frege.AllNodes where
 
+data KeyEvent = mutable native javafx.scene.input.KeyEvent where
+    native isMetaDown       :: KeyEvent -> IO Bool
+    native isShortcutDown   :: KeyEvent -> IO Bool
+    native getCharacter     :: KeyEvent -> IO String
 
 data Node   = mutable native javafx.scene.Node
 data Parent = mutable native javafx.scene.Parent
+data Event = mutable native javafx.event.Event -- well Events shouldn't be mutable, but in JavaFX, they are
+data EventHandler = mutable native javafx.event.EventHandler -- most likely not mutable, at least not in our wrapper impl
 
 data Button = mutable native javafx.scene.control.Button where
     native new      :: String ->  IO Button
@@ -11,6 +17,7 @@ data TextArea = mutable native javafx.scene.control.TextArea where
     native new      :: String ->  IO TextArea
     native getText  :: TextArea -> IO String
     native setText  :: TextArea -> String -> IO ()
+    native setOnKeyTyped :: TextArea -> EventHandler -> IO () -- this could be KeyEventHandler but that is only compiled later
 
 data Scene = mutable native javafx.scene.Scene where
     native new   :: Parent -> Double -> Double -> IO Scene

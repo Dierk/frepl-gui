@@ -14,7 +14,22 @@ data Caster = mutable native org.frege.Caster where
 
 fromNode = Caster.classifyNode
 
+textable allNode selector = case allNode of
+    TextArea ta -> ta
+    NullNode nn -> error ("Sorry, you didn't supply any node. Wrong lookup for '" ++ selector ++"'?") -- errors are ok at startup only. fail fast
+    _           -> error "Specific type of Node is not known."
+
+locate :: Scene -> String -> IO TextArea
+locate scene selector = do
+    allNode    <- scene.lookup selector >>= fromNode
+    return (textable allNode selector)
 -- ---
+
+data FregeEventHandler = mutable native org.frege.FregeEventHandler where
+    native new :: (KeyEvent -> IO () ) -> IO FregeEventHandler
+
+-- ---
+
 data FXMLLoader = mutable native javafx.fxml.FXMLLoader where
     native load    javafx.fxml.FXMLLoader.load :: URL -> IO Parent throws IOException
 
