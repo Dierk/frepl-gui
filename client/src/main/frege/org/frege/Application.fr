@@ -17,9 +17,9 @@ showUI mConsole stage = do
     stage.setTitle "Frege - purely functional programming for the JVM"
     stage.setScene scene
     Stage.show stage
-    inputArea  <- locate scene "#editor" -- todo better use IO types here
-    outputArea <- locate scene "#repl"
-    historyLV  <- locateListView scene "#history"
+    inputArea  <- locateTextField scene "#editor"
+    outputArea <- locateTextField scene "#repl"
+    historyLV  <- locateListView  scene "#history"
 
     items <- historyLV.getItems
     items.add ":help"
@@ -35,13 +35,12 @@ showUI mConsole stage = do
     inputQueue <- newEmptyMVar
     keyHandler <- onKeyTyped inputQueue inputArea items
     inputArea.setOnKeyTyped keyHandler
-    mIn  = newMVar inputArea -- wrapping in IO might not be needed
+    mIn  = newMVar inputArea
     mOut = newMVar outputArea
     console = GraphicRepl inputQueue mIn mOut
     mConsole.put console     -- allow the main thread to proceed
     console.writeln welcome
-    console.writeln  $ "Press Cmd+Enter to submit.\n" ++
-                       "Enter ':help' for more details."
+    console.writeln  $ "Press Cmd+Enter to submit.\n" ++ "Enter :help for more details."
     inputQueue.put "\"\"" -- evaluate an empty string to hide the initialization time
 
 fxml = FregeFX.fxml "org.frege.Application"
@@ -55,7 +54,7 @@ startRepl console = do
     repl console env.{state=newState} -- first step in endless loop
     return ()
 
-onKeyTyped :: MVar String -> TextArea -> ObservableList -> IO KeyEventHandler -- todo better use IO types here
+onKeyTyped :: MVar String -> TextArea -> ObservableList -> IO KeyEventHandler
 onKeyTyped inputQueue inputArea items = KeyEventHandler.new handleKeyEvent where
     handleKeyEvent keyEvent = do
         char <- keyEvent.getCharacter
@@ -65,7 +64,7 @@ onKeyTyped inputQueue inputArea items = KeyEventHandler.new handleKeyEvent where
         then doExecute inputQueue inputArea items
         else return ()
 
-doExecute :: MVar String ->TextArea -> ObservableList -> IO () -- todo better use IO types here
+doExecute :: MVar String ->TextArea -> ObservableList -> IO ()
 doExecute inputQueue inputArea items = do
     script <- trim <$> inputArea.getText
     when (not . null $ script) $ do

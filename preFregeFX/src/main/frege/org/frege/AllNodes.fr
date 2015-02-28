@@ -38,6 +38,7 @@ data TextArea = mutable native javafx.scene.control.TextArea where
     native setText          :: TextArea -> String -> IO ()
     native appendText       :: TextArea -> String -> IO()
     native setOnKeyTyped    :: TextArea -> KeyEventHandler -> IO ()
+    native requestFocus     :: TextArea -> IO ()
 
 data ListView = mutable native javafx.scene.control.ListView where
 --    native new               :: ObservableList -> IO ListView

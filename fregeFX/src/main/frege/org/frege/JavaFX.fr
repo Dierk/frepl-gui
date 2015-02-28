@@ -8,11 +8,22 @@ import org.frege.AllNodes
 data Classifier = mutable native org.frege.Classifier where
     native classify org.frege.Classifier.classify :: Node -> IO (IllegalArgumentException | AllNodes)
 
-textable allNode selector = case allNode of
-    TextArea ta -> ta
-    _           -> error "Node has a type that we cannot set text on."
+locateTextField :: Scene -> String -> IO TextArea
+locateTextField scene selector = do
+    allNode <- locate scene selector
+    case allNode of
+        TextArea ta -> return ta
+        _           -> error ("Node " ++ selector ++ " is not a TextField")
 
-locate :: Scene -> String -> IO TextArea
+locateListView :: Scene -> String -> IO ListView
+locateListView scene selector = do
+    allNode <- locate scene selector
+    case allNode of
+        ListView lv -> return lv
+        _           -> error ("Node " ++ selector ++ " is not a ListView")
+
+
+locate :: Scene -> String -> IO AllNodes
 locate scene selector = do
     maybeNode <- Scene.lookup scene selector
     case maybeNode of
@@ -21,23 +32,9 @@ locate scene selector = do
             classified <- Classifier.classify allNode
             case classified of
                 Left ex -> error  $ "Unknown node type located for '" ++ selector ++ "'."
-                Right x -> return $ textable x selector
+                Right x -> return x
 
 
-listViewable allNode selector = case allNode of
-    ListView lv -> lv
-    _           -> error "Node has a type that we cannot set text on."
-
-locateListView :: Scene -> String -> IO ListView
-locateListView scene selector = do
-    maybeNode <- Scene.lookup scene selector
-    case maybeNode of
-        Nothing      -> error $ "Sorry, could not find any node for '" ++ selector ++"'."
-        Just allNode -> do
-            classified <- Classifier.classify allNode
-            case classified of
-                Left ex -> error  $ "Unknown node type located for '" ++ selector ++ "'."
-                Right x -> return $ listViewable x selector
 
 
 
