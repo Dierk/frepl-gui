@@ -1,5 +1,7 @@
 module org.frege.JavaFX where
 
+import frege.Prelude hiding(ListView)
+
 import org.frege.AllNodes
 
 
@@ -12,7 +14,7 @@ textable allNode selector = case allNode of
 
 locate :: Scene -> String -> IO TextArea
 locate scene selector = do
-    maybeNode <- scene.lookup selector
+    maybeNode <- Scene.lookup scene selector
     case maybeNode of
         Nothing      -> error $ "Sorry, could not find any node for '" ++ selector ++"'."
         Just allNode -> do
@@ -20,6 +22,22 @@ locate scene selector = do
             case classified of
                 Left ex -> error  $ "Unknown node type located for '" ++ selector ++ "'."
                 Right x -> return $ textable x selector
+
+
+listViewable allNode selector = case allNode of
+    ListView lv -> lv
+    _           -> error "Node has a type that we cannot set text on."
+
+locateListView :: Scene -> String -> IO ListView
+locateListView scene selector = do
+    maybeNode <- Scene.lookup scene selector
+    case maybeNode of
+        Nothing      -> error $ "Sorry, could not find any node for '" ++ selector ++"'."
+        Just allNode -> do
+            classified <- Classifier.classify allNode
+            case classified of
+                Left ex -> error  $ "Unknown node type located for '" ++ selector ++ "'."
+                Right x -> return $ listViewable x selector
 
 
 

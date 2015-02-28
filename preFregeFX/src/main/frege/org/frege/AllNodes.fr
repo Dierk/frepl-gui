@@ -1,5 +1,7 @@
 module org.frege.AllNodes where
 
+import frege.Prelude hiding(ListView)
+
 import frege.java.Net (URL)
 
 data Node           = mutable native javafx.scene.Node
@@ -37,6 +39,23 @@ data TextArea = mutable native javafx.scene.control.TextArea where
     native appendText       :: TextArea -> String -> IO()
     native setOnKeyTyped    :: TextArea -> KeyEventHandler -> IO ()
 
+data ListView = mutable native javafx.scene.control.ListView where
+--    native new               :: ObservableList -> IO ListView
+    native getItems          :: ListView -> IO ObservableList
+    native getSelectionModel :: ListView -> IO SelectionModel
+
+data ObservableList = mutable native javafx.collections.ObservableList where
+    native add :: ObservableList -> String -> IO Bool
+
+data SelectionModel = mutable native javafx.scene.control.SelectionModel where
+    native selectedItemProperty :: SelectionModel -> IO ReadOnlyObjectProperty
+
+data ReadOnlyObjectProperty = mutable native javafx.beans.property.ReadOnlyObjectProperty where
+    native addListener :: ReadOnlyObjectProperty -> ChangeListener -> IO ()
+
+data ChangeListener = mutable native org.frege.FregeChangeListener where
+    native new :: (String -> String -> IO()) -> IO ChangeListener -- make later polymorphic
+
 data Scene = mutable native javafx.scene.Scene where
     native new      :: Parent -> Double -> Double -> IO Scene
     native lookup   :: Scene  -> String -> IO (Maybe Node)
@@ -45,14 +64,12 @@ data Stage = mutable native javafx.stage.Stage where
     native show     :: Stage -> IO ()
     native setScene :: Stage -> Scene  -> IO ()
     native setTitle :: Stage -> String -> IO ()
---
---data NullNode = mutable native javafx.scene.Group where -- we are using Group as the impl class for the sole purpose to have a Node class that is already on the CP
---    native new      :: NullNode -> IO NullNode
---data BottomNode = mutable native javafx.scene.Group where
---    native new      :: BottomNode -> IO BottomNode
+
+
 
 data AllNodes = TextArea    TextArea
               | Button      Button
+              | ListView    ListView
 
 
 

@@ -19,8 +19,21 @@ showUI mConsole stage = do
     Stage.show stage
     inputArea  <- locate scene "#editor" -- todo better use IO types here
     outputArea <- locate scene "#repl"
+    historyLV  <- locateListView scene "#history"
+
+    items <- historyLV.getItems
+    items.add ":help"
+    items.add ":type mapM"
+    items.add "mapM println [1..100]"
+    items.add "fib = 1n : 1n : zipWith (+) fib (tail fib)"
+
+    sm  <- historyLV.getSelectionModel
+    sip <- sm.selectedItemProperty
+    cl  <- ChangeListener.new (\old \new -> inputArea.setText new)
+    sip.addListener cl
+
     inputQueue <- newEmptyMVar
-    keyHandler <- onKeyTyped inputQueue inputArea
+    keyHandler <- onKeyTyped inputQueue inputArea items
     inputArea.setOnKeyTyped keyHandler
     mIn  = newMVar inputArea -- wrapping in IO might not be needed
     mOut = newMVar outputArea
@@ -42,21 +55,22 @@ startRepl console = do
     repl console env.{state=newState} -- first step in endless loop
     return ()
 
-onKeyTyped :: MVar String ->TextArea -> IO KeyEventHandler -- todo better use IO types here
-onKeyTyped inputQueue inputArea = KeyEventHandler.new handleKeyEvent where
+onKeyTyped :: MVar String -> TextArea -> ObservableList -> IO KeyEventHandler -- todo better use IO types here
+onKeyTyped inputQueue inputArea items = KeyEventHandler.new handleKeyEvent where
     handleKeyEvent keyEvent = do
         char <- keyEvent.getCharacter
         meta <- keyEvent.isMetaDown
         ctrl <- keyEvent.isShortcutDown
         if   ctrl && meta && char == "\r"    -- this is cmd-enter on mac, possibly ctrl-alt-enter on windows
-        then doExecute inputQueue inputArea
+        then doExecute inputQueue inputArea items
         else return ()
 
-doExecute :: MVar String ->TextArea -> IO () -- todo better use IO types here
-doExecute inputQueue inputArea = do
+doExecute :: MVar String ->TextArea -> ObservableList -> IO () -- todo better use IO types here
+doExecute inputQueue inputArea items = do
     script <- trim <$> inputArea.getText
     when (not . null $ script) $ do
         mapM (inputQueue.put) $ lines script                 -- the beef
+        items.add script
         inputArea.setText ""
     when (script == ":q") $ System.exit 0
 
