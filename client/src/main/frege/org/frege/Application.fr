@@ -28,7 +28,8 @@ showUI mConsole stage = do
     mConsole.put console     -- allow the main thread to proceed
     console.writeln welcome
     console.writeln  $ "Press Cmd+Enter to submit.\n" ++
-                       "Enter ':help' for more details.\n"
+                       "Enter ':help' for more details."
+    inputQueue.put "\"\"" -- evaluate an empty string to hide the initialization time
 
 fxml = FregeFX.fxml "org.frege.Application"
 
@@ -55,7 +56,7 @@ doExecute :: MVar String ->TextArea -> IO () -- todo better use IO types here
 doExecute inputQueue inputArea = do
     script <- trim <$> inputArea.getText
     when (not . null $ script) $ do
-        inputQueue.put script                 -- the beef
+        mapM (inputQueue.put) $ lines script                 -- the beef
         inputArea.setText ""
     when (script == ":q") $ System.exit 0
 
@@ -136,22 +137,14 @@ data ReplResult = ReplInfo [Message]
 
 repl :: ReplIO a => a -> ReplEnv -> IO ()
 repl console env = do
-  println "reading from the console"
   cmd <- read console env
-  println "got the command"
   let (res, newEnv) = Repl.run (eval cmd) env
-  println "running the command"
   print console cmd res newEnv
-  println "printing to console, start looping"
   loop console cmd res newEnv
 
 read :: ReplIO a => a -> ReplEnv -> IO Command
 read console state = do
-   println "in read, writing '' to console"
---   console.writeln ""
-   println "console.readline"
    lineMaybe <- console.readline
-   println "maybe got a line"
    maybe (return Quit) readMore lineMaybe
  where
    readAgain = read console state
@@ -164,9 +157,7 @@ read console state = do
      Right Reload -> maybe
        (console.writeln "No source to reload!" >> readAgain) readResource state.lastExternalScript
      Right (Load path) -> readResource path
-     Right cmd -> do
-        println "have read a command"
-        return cmd
+     Right cmd -> return cmd
 
 print :: ReplIO a => a -> Command -> ReplResult -> ReplEnv -> IO ()
 print _         Java                (JavaSource src)                _   = javaSourceGUI src
@@ -178,7 +169,7 @@ print _         _                   _                               _   = return
 
 handleEval console cmd line sourceRepr g msgs env = case sourceRepr of
   Expression sym | isVariable g sym = do
-    println "in handling Expression sym | isVariable g sym"
+    println ("in handling Expression sym | isVariable g sym : " ++ line)
     if isString g sym
       then do
         println "in isString g sym"
@@ -622,22 +613,17 @@ instance ReplIO GraphicRepl where
      line <- MVar.take console.input
      return $ Just line
 
+  writeln console s = write console (s ++ "\n" )
+
   write   console s = do
     foo <- console.outputArea
     out <- foo.poll
     case out of
-            Nothing = error "cannot happen"
-            Just x = do
-                r <- Runnable.new (x.setText (s))
-                Platform.runLater r
-  writeln console s = do
-    foo <- console.outputArea
-    out <- foo.poll
-    case out of
-        Nothing = error "cannot happen"
+        Nothing = error "there is no output area in the console"
         Just x = do
-            r <- Runnable.new (x.setText (s ++ "\n"))
+            r <- Runnable.new (x.appendText s)
             Platform.runLater r
+
   interpretSym console g sym env =
     do
       stdoutWriter <- StringWriter.new ()
@@ -645,7 +631,7 @@ instance ReplIO GraphicRepl where
       foo <- console.inputArea
       inArea <- foo.poll
       stdinText <- case inArea of
-          Nothing = error "cannot happen"
+          Nothing = error "there is no input area in the console"
           Just x  = x.getText
       valMaybe <- fieldValueWithRuntime (symbolClass sym g) (symbolVar sym g) stdinText stdoutWriter stderrWriter env.state.classLoader
       console.writeln $ maybe "undefined" id valMaybe

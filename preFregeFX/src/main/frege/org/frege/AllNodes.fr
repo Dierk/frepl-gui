@@ -31,10 +31,11 @@ data Button = mutable native javafx.scene.control.Button where
     native new      :: String ->  IO Button
 
 data TextArea = mutable native javafx.scene.control.TextArea where
-    native new      :: String ->  IO TextArea
-    native getText  :: TextArea -> IO String
-    native setText  :: TextArea -> String -> IO ()
-    native setOnKeyTyped :: TextArea -> KeyEventHandler -> IO ()
+    native new              :: String ->  IO TextArea
+    native getText          :: TextArea -> IO String
+    native setText          :: TextArea -> String -> IO ()
+    native appendText       :: TextArea -> String -> IO()
+    native setOnKeyTyped    :: TextArea -> KeyEventHandler -> IO ()
 
 data Scene = mutable native javafx.scene.Scene where
     native new      :: Parent -> Double -> Double -> IO Scene
