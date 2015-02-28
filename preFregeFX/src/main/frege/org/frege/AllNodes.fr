@@ -7,6 +7,8 @@ data Parent         = mutable native javafx.scene.Parent
 data Event          = mutable native javafx.event.Event         -- well Events shouldn't be mutable, but in JavaFX, they are
 data EventHandler   = mutable native javafx.event.EventHandler  -- most likely not mutable, at least not in our wrapper impl
 
+data Platform = mutable native javafx.application.Platform where
+    native runLater  javafx.application.Platform.runLater :: MutableIO Runnable -> IO ()
 
 data FregeFX = mutable native org.frege.FregeFX where
     native launch  org.frege.FregeFX.launch :: ( Stage -> IO () ) -> IO ()
