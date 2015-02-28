@@ -5,12 +5,10 @@ import org.frege.AllNodes
 
 main args = do
     mConsole <- MVar.newEmpty            -- for thread coordination, set in showUI thread, start repl when ready
-    forkOS do
+    async do                             -- why is this needed? JavaFX will should call back in the UI Thread
         FregeFX.launch (showUI mConsole) -- partially applied callback function for the JavaFX starting mechanism
-    forkOS do
-        console <- mConsole.take
-        startRepl console
-    return ()
+    console <- mConsole.take             -- proceeding in the main thread, wait until console is available
+    startRepl console                    -- going into the endless repl loop
 
 showUI :: (MVar GraphicRepl) -> Stage -> IO ()
 showUI mConsole stage = do
@@ -19,7 +17,7 @@ showUI mConsole stage = do
     stage.setTitle "Frege - purely functional programming for the JVM"
     stage.setScene scene
     Stage.show stage
-    inputArea  <- locate scene "#editor"
+    inputArea  <- locate scene "#editor" -- todo better use IO types here
     outputArea <- locate scene "#repl"
     inputQueue <- newEmptyMVar
     keyHandler <- onKeyTyped inputQueue inputArea
@@ -27,26 +25,23 @@ showUI mConsole stage = do
     mIn  = newMVar inputArea -- wrapping in IO might not be needed
     mOut = newMVar outputArea
     console = GraphicRepl inputQueue mIn mOut
-    x <- mConsole.offer console
-    println ("console has been assigned: " ++ show x)
+    mConsole.put console     -- allow the main thread to proceed
     console.writeln welcome
     console.writeln  $ "Press Cmd+Enter to submit.\n" ++
                        "Enter ':help' for more details.\n"
-    println "end of showUI"
 
 fxml = FregeFX.fxml "org.frege.Application"
 
 startRepl :: GraphicRepl -> IO ()
 startRepl console = do
-    println "in startRepl"
     let env = ReplEnv.default.{config <- InterpreterConfig.{transformDefs=transformDefs}}
     preludeScript <- readResourceAsString "PreludeRepl.fr"
     let newState = snd $ Interpreter.run (interpret preludeScript) env.config env.state
-    println "before main console loop"
-    repl console env.{state=newState} -- endless loop
+    println "going into main console loop"
+    repl console env.{state=newState} -- first step in endless loop
     return ()
 
-onKeyTyped :: MVar String ->TextArea -> IO KeyEventHandler
+onKeyTyped :: MVar String ->TextArea -> IO KeyEventHandler -- todo better use IO types here
 onKeyTyped inputQueue inputArea = KeyEventHandler.new handleKeyEvent where
     handleKeyEvent keyEvent = do
         char <- keyEvent.getCharacter
@@ -56,12 +51,11 @@ onKeyTyped inputQueue inputArea = KeyEventHandler.new handleKeyEvent where
         then doExecute inputQueue inputArea
         else return ()
 
-
-doExecute :: MVar String ->TextArea -> IO ()
+doExecute :: MVar String ->TextArea -> IO () -- todo better use IO types here
 doExecute inputQueue inputArea = do
     script <- trim <$> inputArea.getText
     when (not . null $ script) $ do
-        inputQueue.offer script                 -- the beef
+        inputQueue.put script                 -- the beef
         inputArea.setText ""
     when (script == ":q") $ System.exit 0
 
