@@ -32,7 +32,7 @@ subprojects {
 
     dependencies {
         compile "org.codehaus.groovy:groovy:$groovyVersion"
-        compile "com.theoryinpractise.frege:frege:3.22.324-g630677b"
-        compile "frege:frege-repl-core:1.1.1-SNAPSHOT"
+        compile "com.theoryinpractise.frege:frege:3.22.367-g630677b"
+        compile "org.frege-lang:frege-repl-core:1.1.1-SNAPSHOT"
     }
 }
