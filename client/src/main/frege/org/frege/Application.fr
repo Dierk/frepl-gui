@@ -33,6 +33,7 @@ showUI mConsole stage = do
     sip.addListener cl
 
     inputQueue <- newEmptyMVar
+    onClosing inputQueue >>= stage.setOnHidden
     keyHandler <- onKeyTyped inputQueue inputArea items
     scene.setOnKeyTyped keyHandler
     inputArea.setOnKeyTyped keyHandler
@@ -54,6 +55,12 @@ startRepl console = do
     println "going into main console loop"
     repl console env.{state=newState} -- first step in endless loop
     return ()
+
+onClosing :: MVar String -> IO KeyEventHandler
+onClosing mQueue = WindowEventHandler.new handle where
+    handle windowEvent = do
+        println "let the console close itself"
+        mQueue.put ":q"
 
 onKeyTyped :: MVar String -> TextArea -> ObservableList -> IO KeyEventHandler
 onKeyTyped inputQueue inputArea items = KeyEventHandler.new handleKeyEvent where
