@@ -35,6 +35,7 @@ showUI mConsole stage = do
     inputQueue <- newEmptyMVar
     keyHandler <- onKeyTyped inputQueue inputArea items
     scene.setOnKeyTyped keyHandler
+    inputArea.setOnKeyTyped keyHandler
     mIn  = newMVar inputArea
     mOut = newMVar outputArea
     console = GraphicRepl inputQueue mIn mOut
@@ -310,21 +311,21 @@ eval Version = return $ ReplInfo [Message.info version]
 eval Help = return $ ReplInfo [Message.info (help cmdHelp)]
 eval _ = return $ ReplInfo []
 
-parseAndSetCompilerFlag flag = undefined -- do
---  env <- Repl.get
---  case flagtree.lookup flag of
---    Just f -> do
---      Repl.modify ReplEnv.{config <- InterpreterConfig.{compilerFlags <- f}}
---      return $ ReplInfo []
---    Nothing -> return $ ReplInfo [Message.error ("invalid flag " ++ flag)]
+parseAndSetCompilerFlag flag =  do
+  env <- Repl.get
+  case flagtree.lookup flag of
+    Just f -> do
+      Repl.modify ReplEnv.{config <- InterpreterConfig.{compilerFlags <- f}}
+      return $ ReplInfo []
+    Nothing -> return $ ReplInfo [Message.error ("invalid flag " ++ flag)]
 
-clearCompilerFlag flag = undefined -- do
---  Repl.modify ReplEnv.{config <- InterpreterConfig.{compilerFlags <- (\flags -> Flags.clrFlag flags flag)}}
---  return $ ReplInfo []
+clearCompilerFlag flag = do
+  Repl.modify ReplEnv.{config <- InterpreterConfig.{compilerFlags <- (\flags -> Flags.clrFlag flags flag)}}
+  return $ ReplInfo []
 
-setCompilerFlag flag = undefined -- do
---  Repl.modify ReplEnv.{config <- InterpreterConfig.{compilerFlags <- (\flags -> Flags.setFlag flags flag)}}
---  return $ ReplInfo []
+setCompilerFlag flag = do
+  Repl.modify ReplEnv.{config <- InterpreterConfig.{compilerFlags <- (\flags -> Flags.setFlag flags flag)}}
+  return $ ReplInfo []
 
 symbolsToReplInfo syms g = ReplInfo $ map (Message.info . showSymbol g) wantedSyms where
   wantedSyms = filter wanted syms

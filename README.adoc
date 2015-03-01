@@ -3,10 +3,12 @@ With Java 8 start via
     gradlew clean :client:run
 
 
-NOTE: There is no need to install gradle or anything else beside Java 8.
+NOTE: There is no need to install gradle or anything else beside a Java 8 JDK.
       It is all self-installing.
 
 
 CAUTION: For the latest state of development, there is an issue with the dependency to
-the frege-repl project that needs local installation since it is not available
+the `frege-repl` project that needs local `maven install` since it is not available
 in any public repository, yet.
+This in turn depends on `frege-interpreter`, that also needs be built locally with `maven install`.
+Once we get to a release candidate, this will all be resolved through final versions in a public repo.
