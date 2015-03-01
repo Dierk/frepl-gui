@@ -1,13 +1,15 @@
-==For users
+For users
+=========
 
-Download the [distribution zip](https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.1.0-SNAPSHOT.zip).
+Download the distribution zip from https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.1.0-SNAPSHOT.zip.
 Unpack to an `<install-dir>` of your choice.
 
 With a Java 8, run
 
     <install-dir>/bin/client
 
-==For developers
+For developers
+==============
 
 With Java 8 start via
 
