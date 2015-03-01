@@ -34,7 +34,7 @@ showUI mConsole stage = do
 
     mQueue <- newEmptyMVar
     onClosing mQueue >>= stage.setOnHidden
-    keyHandler <- onKeyTyped mQueue stage inputArea items sm
+    keyHandler <- onKeyTyped mQueue stage inputArea outputArea items sm
     scene.setOnKeyTyped keyHandler
     inputArea.setOnKeyTyped keyHandler
     mIn  = newMVar inputArea
@@ -63,22 +63,23 @@ onClosing mQueue = WindowEventHandler.new handle where
         println "let the console close itself"
         mQueue.put ":q"
 
-onKeyTyped :: MVar String -> Stage -> TextArea -> ObservableList -> SelectionModel -> IO KeyEventHandler
-onKeyTyped mQueue stage inputArea items historySelection = KeyEventHandler.new handleKeyEvent where
+onKeyTyped :: MVar String -> Stage -> TextArea -> TextArea -> ObservableList -> SelectionModel -> IO KeyEventHandler
+onKeyTyped mQueue stage inputArea outputArea items historySelection = KeyEventHandler.new handleKeyEvent where
     handleKeyEvent keyEvent = do
         char <- keyEvent.getCharacter
         meta <- keyEvent.isMetaDown
         scut <- keyEvent.isShortcutDown
         alt  <- keyEvent.isAltDown
         ctrl <- keyEvent.isControlDown
---        keyEvent.toString >>= println . show
         if   (scut || ctrl || alt || meta)
         then case char of
             "\r" -> doExecute mQueue inputArea items
             "l"  -> loadFile stage inputArea
             "p"  -> selectPrevious items historySelection
-            "n"  -> selectNext items historySelection
-            _    -> keyEvent.toString >>= println . show
+            "n"  -> selectNext     items historySelection
+            "b"  -> biggerFont  inputArea outputArea
+            "s"  -> smallerFont inputArea outputArea
+            _    -> return () -- keyEvent.toString >>= println . show
         else return ()
 
 doExecute :: MVar String ->TextArea -> ObservableList -> IO ()
@@ -116,6 +117,22 @@ selectNext items historySelection = do
     temp     = oldIndex + 1
     newIndex = if temp >= listSize then 0 else temp
     historySelection.clearAndSelect newIndex
+
+biggerFont :: TextArea -> TextArea -> IO ()
+biggerFont inputArea outputArea = do
+    oldFont <- inputArea.getFont
+    oldSize <- oldFont.getSize
+    newFont <- Font.new (oldSize + 2)
+    inputArea.setFont newFont
+    outputArea.setFont newFont
+
+smallerFont :: TextArea -> TextArea -> IO ()
+smallerFont inputArea outputArea = do
+    oldFont <- inputArea.getFont
+    oldSize <- oldFont.getSize
+    newFont <- Font.new $ if oldSize < 3 then 2 else (oldSize - 2)
+    inputArea.setFont newFont
+    outputArea.setFont newFont
 
 -- -----------------------------------------------------------------------------
 
@@ -226,13 +243,10 @@ print _         _                   _                               _   = return
 
 handleEval console cmd line sourceRepr g msgs env = case sourceRepr of
   Expression sym | isVariable g sym = do
-    println ("in handling Expression sym | isVariable g sym : " ++ line)
     if isString g sym
       then do
-        println "in isString g sym"
         console.interpretSym g sym env
       else do
-        println "not isString g sym"
         let evalShow = do
                         let varDecl = variableDeclScript sym.name.base line
                         when (line /= sym.name.base) $
@@ -243,10 +257,8 @@ handleEval console cmd line sourceRepr g msgs env = case sourceRepr of
           CodeInfo{} -> print console cmd res newEnv
           _ -> printSymbolType console g sym
   Expression sym   = do
-    println "in handling Expression sym"
     printSymbolType console g sym
   Definitions syms = do
-    println "in handling Definitions syms"
     let symLabels = map (showSymbol g) $ filter (not . Symbol.{alias?}) newSyms
         newSyms = filter (\sym -> sym.pos.line > lineStart) syms
         lineStart = case env.config.predefs of
@@ -255,7 +267,6 @@ handleEval console cmd line sourceRepr g msgs env = case sourceRepr of
     when (not $ null symLabels) $ console.writeln $ intercalate newLine symLabels
     printMessages console $ filter (\msg -> msg.pos.line > lineStart) msgs
   Module moduleName = do
-    println "in handling module"
     console.writeln $ "Module " ++ moduleName
     printMessages console msgs
 
@@ -415,6 +426,8 @@ cmdHelp = [
             ("Ctrl-L", "Load Frege code via file chooser dialog."),
             ("Ctrl-P", "Show previous in history."),
             ("Ctrl-N", "Show next in history."),
+            ("Ctrl-B", "Bigger Font."),
+            ("Ctrl-S", "Smaller Font."),
             (":t or :type <expression>", "Display the type of an expression."),
             (":browse <module name>", "Display the names in a module if " ++
                 "a module name is provided otherwise display the names in the default REPL module."),
