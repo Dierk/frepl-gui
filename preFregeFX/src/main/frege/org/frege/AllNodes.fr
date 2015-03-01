@@ -74,6 +74,11 @@ data Stage = mutable native javafx.stage.Stage where
     native setTitle     :: Stage -> String -> IO ()
     native setOnHidden  :: Stage -> WindowEventHandler -> IO ()
 
+data FileChooser = mutable native javafx.stage.FileChooser where
+    native new            :: () -> IO FileChooser
+    native setTitle       :: FileChooser -> String -> IO ()
+    native showOpenDialog :: FileChooser -> Stage -> IO (Maybe (MutableIO File))
+
 
 
 data AllNodes = TextArea    TextArea

@@ -32,18 +32,18 @@ showUI mConsole stage = do
     cl  <- ChangeListener.new (\old \new -> inputArea.setText new)
     sip.addListener cl
 
-    inputQueue <- newEmptyMVar
-    onClosing inputQueue >>= stage.setOnHidden
-    keyHandler <- onKeyTyped inputQueue inputArea items
+    mQueue <- newEmptyMVar
+    onClosing mQueue >>= stage.setOnHidden
+    keyHandler <- onKeyTyped mQueue stage inputArea items
     scene.setOnKeyTyped keyHandler
     inputArea.setOnKeyTyped keyHandler
     mIn  = newMVar inputArea
     mOut = newMVar outputArea
-    console = GraphicRepl inputQueue mIn mOut
+    console = GraphicRepl mQueue mIn mOut
     mConsole.put console     -- allow the main thread to proceed
     console.writeln welcome
-    console.writeln  $ "Press Control (or any other meta key) plus Enter to submit.\n" ++ "Enter :help for more details."
-    inputQueue.put "\"\"" -- evaluate an empty string to hide the initialization time
+    console.writeln  $ "Press Control (or any other meta key) + Enter to submit.\n" ++ "Enter :help for more details."
+    mQueue.put "\"\"" -- evaluate an empty string to hide the initialization time
 
 fxml = FregeFX.fxml "org.frege.Application"
 
@@ -63,26 +63,39 @@ onClosing mQueue = WindowEventHandler.new handle where
         println "let the console close itself"
         mQueue.put ":q"
 
-onKeyTyped :: MVar String -> TextArea -> ObservableList -> IO KeyEventHandler
-onKeyTyped inputQueue inputArea items = KeyEventHandler.new handleKeyEvent where
+onKeyTyped :: MVar String -> Stage -> TextArea -> ObservableList -> IO KeyEventHandler
+onKeyTyped mQueue stage inputArea items = KeyEventHandler.new handleKeyEvent where
     handleKeyEvent keyEvent = do
         char <- keyEvent.getCharacter
         meta <- keyEvent.isMetaDown
         scut <- keyEvent.isShortcutDown
         alt  <- keyEvent.isAltDown
         ctrl <- keyEvent.isControlDown
-        if   (scut || ctrl || alt || meta) && char == "\r"    -- this is cmd-enter on mac, possibly ctrl-alt-enter on windows
-        then doExecute inputQueue inputArea items
-        else return ()
+        if   (scut || ctrl || alt || meta) && char == "\r"
+        then doExecute mQueue inputArea items
+        else if (scut || ctrl || alt || meta) && char == "l"    -- this is getting ugly...
+             then loadFile stage inputArea
+             else return ()
 
 doExecute :: MVar String ->TextArea -> ObservableList -> IO ()
-doExecute inputQueue inputArea items = do
+doExecute mQueue inputArea items = do
     script <- trim <$> inputArea.getText
     when (not . null $ script) $ do
-        mapM (inputQueue.put) $ lines script                 -- the beef
+        mapM (mQueue.put) $ lines script                 -- the beef
         items.add script
         inputArea.setText ""
     when (script == ":q") $ System.exit 0
+
+loadFile :: Stage -> TextArea -> IO ()
+loadFile stage inputArea = do
+    chooser <- FileChooser.new ()
+    chooser.setTitle "Load Frege File"
+    maybeFile <- chooser.showOpenDialog stage
+    case maybeFile of
+        Nothing      = return ()
+        Just mIoFile = do
+            path <- mIoFile.getPath
+            inputArea.setText (":l " ++ path)
 
 -- -----------------------------------------------------------------------------
 
@@ -382,6 +395,7 @@ cmdHelp = [(":t or :type <expression>", "Display the type of an expression."),
             (":browse <module name>", "Display the names in a module if " ++
                 "a module name is provided otherwise display the names in the default REPL module."),
             (":load <url or file>", "Load Frege code snippets from an URL or file."),
+            ("Ctrl-L", "Load Frege code via file chooser dialog."),
             (":java", "View Java translation of last compiled Frege source."),
             (":r", "Reload the last url or file source."),
             (":history", "Display the source history for definitions in the default REPL module."),
