@@ -34,13 +34,13 @@ showUI mConsole stage = do
 
     inputQueue <- newEmptyMVar
     keyHandler <- onKeyTyped inputQueue inputArea items
-    inputArea.setOnKeyTyped keyHandler
+    scene.setOnKeyTyped keyHandler
     mIn  = newMVar inputArea
     mOut = newMVar outputArea
     console = GraphicRepl inputQueue mIn mOut
     mConsole.put console     -- allow the main thread to proceed
     console.writeln welcome
-    console.writeln  $ "Press Cmd+Enter to submit.\n" ++ "Enter :help for more details."
+    console.writeln  $ "Press Control (or any other meta key) plus Enter to submit.\n" ++ "Enter :help for more details."
     inputQueue.put "\"\"" -- evaluate an empty string to hide the initialization time
 
 fxml = FregeFX.fxml "org.frege.Application"
@@ -59,8 +59,10 @@ onKeyTyped inputQueue inputArea items = KeyEventHandler.new handleKeyEvent where
     handleKeyEvent keyEvent = do
         char <- keyEvent.getCharacter
         meta <- keyEvent.isMetaDown
-        ctrl <- keyEvent.isShortcutDown
-        if   ctrl && meta && char == "\r"    -- this is cmd-enter on mac, possibly ctrl-alt-enter on windows
+        scut <- keyEvent.isShortcutDown
+        alt  <- keyEvent.isAltDown
+        ctrl <- keyEvent.isControlDown
+        if   (scut || ctrl || alt || meta) && char == "\r"    -- this is cmd-enter on mac, possibly ctrl-alt-enter on windows
         then doExecute inputQueue inputArea items
         else return ()
 

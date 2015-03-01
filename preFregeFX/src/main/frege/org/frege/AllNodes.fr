@@ -24,6 +24,8 @@ native getResource :: ClassLoader -> String -> IO URL
 data KeyEvent = mutable native javafx.scene.input.KeyEvent where
     native isMetaDown       :: KeyEvent -> IO Bool
     native isShortcutDown   :: KeyEvent -> IO Bool
+    native isAltDown        :: KeyEvent -> IO Bool
+    native isControlDown    :: KeyEvent -> IO Bool
     native getCharacter     :: KeyEvent -> IO String
 
 data KeyEventHandler = mutable native org.frege.FregeEventHandler where
@@ -58,8 +60,9 @@ data ChangeListener = mutable native org.frege.FregeChangeListener where
     native new :: (String -> String -> IO()) -> IO ChangeListener -- make later polymorphic
 
 data Scene = mutable native javafx.scene.Scene where
-    native new      :: Parent -> Double -> Double -> IO Scene
-    native lookup   :: Scene  -> String -> IO (Maybe Node)
+    native new              :: Parent -> Double -> Double -> IO Scene
+    native lookup           :: Scene  -> String -> IO (Maybe Node)
+    native setOnKeyTyped    :: Scene -> KeyEventHandler -> IO ()
 
 data Stage = mutable native javafx.stage.Stage where
     native show     :: Stage -> IO ()
