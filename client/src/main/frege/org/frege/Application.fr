@@ -59,6 +59,7 @@ startRepl console = do
 onClosing :: MVar String -> IO KeyEventHandler
 onClosing mQueue = WindowEventHandler.new handle where
     handle windowEvent = do
+        shutdown -- closing the executor service - just to be clean
         println "let the console close itself"
         mQueue.put ":q"
 
