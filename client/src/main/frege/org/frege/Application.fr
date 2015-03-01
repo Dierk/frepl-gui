@@ -19,7 +19,7 @@ showUI mConsole stage = do
     Stage.show stage
     inputArea  <- locateTextField scene "#editor"
     outputArea <- locateTextField scene "#repl"
-    historyLV  <- locateListView  scene "#history"
+    historyLV  <- locateListView  scene "#historyList"
 
     items <- historyLV.getItems
     items.add ":help"

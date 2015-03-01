@@ -27,38 +27,43 @@
          </children>
       </StackPane>
    </top>
-   <left>
-      <ListView fx:id="history" prefHeight="348.0" prefWidth="181.0" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="2.0" left="6.0" right="2.0" />
-         </BorderPane.margin></ListView>
-   </left>
    <center>
-      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0">
+      <SplitPane dividerPositions="0.7" BorderPane.alignment="CENTER">
+         <items>
+            <SplitPane dividerPositions="0.6" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <TextArea fx:id="repl" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0">
+                     <children>
+                        <TextArea id="editor" fx:id="editor" layoutX="27.0" layoutY="-16.0" promptText="Your code here&#10;&#13;Lines will be fed one-by-one to the console" stylesheets="@frepl.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Font Regular" size="16.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <AnchorPane>
                <children>
-                  <TextArea id="editor" fx:id="editor" layoutX="27.0" layoutY="-16.0" promptText="Your code here&#10;&#13;Lines will be fed one-by-one to the console" stylesheets="@frepl.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <padding>
-                        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                     </padding>
-                     <font>
-                        <Font name="System Font Regular" size="16.0" />
-                     </font>
-                  </TextArea>
+                  <ListView fx:id="historyList" prefHeight="400.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+            </ListView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0">
-               <children>
-                  <TextArea fx:id="repl" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <font>
-                        <Font size="16.0" />
-                     </font></TextArea>
-               </children>
-            </AnchorPane>
-        </items>
+         </items>
          <BorderPane.margin>
-            <Insets bottom="2.0" right="2.0" top="-2.0" />
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </BorderPane.margin>
       </SplitPane>
    </center>
