@@ -27,6 +27,7 @@ data KeyEvent = mutable native javafx.scene.input.KeyEvent where
     native isAltDown        :: KeyEvent -> IO Bool
     native isControlDown    :: KeyEvent -> IO Bool
     native getCharacter     :: KeyEvent -> IO String
+    native toString         :: KeyEvent -> IO String
 
 data WindowEvent = mutable native javafx.stage.WindowEvent
 
@@ -52,10 +53,13 @@ data ListView = mutable native javafx.scene.control.ListView where
     native getSelectionModel :: ListView -> IO SelectionModel
 
 data ObservableList = mutable native javafx.collections.ObservableList where
-    native add :: ObservableList -> String -> IO Bool
+    native add  :: ObservableList -> String -> IO Bool
+    native size :: ObservableList -> IO Int
 
 data SelectionModel = mutable native javafx.scene.control.SelectionModel where
     native selectedItemProperty :: SelectionModel -> IO ReadOnlyObjectProperty
+    native getSelectedIndex     :: SelectionModel -> IO Int             -- -1 if there is no selection
+    native clearAndSelect       :: SelectionModel -> Int -> IO ()
 
 data ReadOnlyObjectProperty = mutable native javafx.beans.property.ReadOnlyObjectProperty where
     native addListener :: ReadOnlyObjectProperty -> ChangeListener -> IO ()

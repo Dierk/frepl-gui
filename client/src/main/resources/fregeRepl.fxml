@@ -34,7 +34,7 @@
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <TextArea fx:id="repl" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TextArea fx:id="repl" focusTraversable="false" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <font>
                               <Font size="16.0" />
                            </font>

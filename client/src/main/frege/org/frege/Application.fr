@@ -13,7 +13,7 @@ main args = do
 showUI :: (MVar GraphicRepl) -> Stage -> IO ()
 showUI mConsole stage = do
     content <- fxml "/fregeRepl.fxml"
-    scene   <- Scene.new content 600.0 400.0
+    scene   <- Scene.new content 800.0 540.0
     stage.setTitle "Frege - purely functional programming for the JVM"
     stage.setScene scene
     Stage.show stage
@@ -34,7 +34,7 @@ showUI mConsole stage = do
 
     mQueue <- newEmptyMVar
     onClosing mQueue >>= stage.setOnHidden
-    keyHandler <- onKeyTyped mQueue stage inputArea items
+    keyHandler <- onKeyTyped mQueue stage inputArea items sm
     scene.setOnKeyTyped keyHandler
     inputArea.setOnKeyTyped keyHandler
     mIn  = newMVar inputArea
@@ -63,19 +63,23 @@ onClosing mQueue = WindowEventHandler.new handle where
         println "let the console close itself"
         mQueue.put ":q"
 
-onKeyTyped :: MVar String -> Stage -> TextArea -> ObservableList -> IO KeyEventHandler
-onKeyTyped mQueue stage inputArea items = KeyEventHandler.new handleKeyEvent where
+onKeyTyped :: MVar String -> Stage -> TextArea -> ObservableList -> SelectionModel -> IO KeyEventHandler
+onKeyTyped mQueue stage inputArea items historySelection = KeyEventHandler.new handleKeyEvent where
     handleKeyEvent keyEvent = do
         char <- keyEvent.getCharacter
         meta <- keyEvent.isMetaDown
         scut <- keyEvent.isShortcutDown
         alt  <- keyEvent.isAltDown
         ctrl <- keyEvent.isControlDown
-        if   (scut || ctrl || alt || meta) && char == "\r"
-        then doExecute mQueue inputArea items
-        else if (scut || ctrl || alt || meta) && char == "l"    -- this is getting ugly...
-             then loadFile stage inputArea
-             else return ()
+--        keyEvent.toString >>= println . show
+        if   (scut || ctrl || alt || meta)
+        then case char of
+            "\r" -> doExecute mQueue inputArea items
+            "l"  -> loadFile stage inputArea
+            "p"  -> selectPrevious items historySelection
+            "n"  -> selectNext items historySelection
+            _    -> keyEvent.toString >>= println . show
+        else return ()
 
 doExecute :: MVar String ->TextArea -> ObservableList -> IO ()
 doExecute mQueue inputArea items = do
@@ -96,6 +100,22 @@ loadFile stage inputArea = do
         Just mIoFile = do
             path <- mIoFile.getPath
             inputArea.setText (":l " ++ path)
+
+selectPrevious :: ObservableList -> SelectionModel -> IO ()
+selectPrevious items historySelection = do
+    oldIndex <- historySelection.getSelectedIndex
+    listSize <- items.size
+    temp     = oldIndex - 1
+    newIndex = if temp < 0 then listSize - 1 else temp
+    historySelection.clearAndSelect newIndex
+
+selectNext :: ObservableList -> SelectionModel -> IO ()
+selectNext items historySelection = do
+    oldIndex <- historySelection.getSelectedIndex
+    listSize <- items.size
+    temp     = oldIndex + 1
+    newIndex = if temp >= listSize then 0 else temp
+    historySelection.clearAndSelect newIndex
 
 -- -----------------------------------------------------------------------------
 
@@ -391,11 +411,14 @@ readMultiline console = intercalate newLine . reverse <$> f [] where
       else f (line : acc)
 
 
-cmdHelp = [(":t or :type <expression>", "Display the type of an expression."),
+cmdHelp = [
+            ("Ctrl-L", "Load Frege code via file chooser dialog."),
+            ("Ctrl-P", "Show previous in history."),
+            ("Ctrl-N", "Show next in history."),
+            (":t or :type <expression>", "Display the type of an expression."),
             (":browse <module name>", "Display the names in a module if " ++
                 "a module name is provided otherwise display the names in the default REPL module."),
             (":load <url or file>", "Load Frege code snippets from an URL or file."),
-            ("Ctrl-L", "Load Frege code via file chooser dialog."),
             (":java", "View Java translation of last compiled Frege source."),
             (":r", "Reload the last url or file source."),
             (":history", "Display the source history for definitions in the default REPL module."),
