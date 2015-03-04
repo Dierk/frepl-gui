@@ -49,3 +49,8 @@ String locateJfxLibDir() {
     logger.error " or set JAVAFX_HOME to a dir that contains the rt/lib/jfxrt.jar"
     throw new GradleScriptException("location of jfxrt.jar could not be determined", null)
 }
+
+fregeNativeGen {
+    filename = "$projectDir/src/main/resources/types.properties"
+    clazz = "javafx.scene.contol.Button"
+}

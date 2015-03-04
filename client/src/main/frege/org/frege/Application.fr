@@ -5,7 +5,7 @@ import org.frege.AllNodes
 
 main args = do
     mConsole <- MVar.newEmpty            -- for thread coordination, set in showUI thread, start repl when ready
-    async do                             -- why is this needed? JavaFX will should call back in the UI Thread
+    async do                             -- JavaFX would block the main thread otherwise after launching the UI thread
         FregeFX.launch (showUI mConsole) -- partially applied callback function for the JavaFX starting mechanism
     console <- mConsole.take             -- proceeding in the main thread, wait until console is available
     startRepl console                    -- going into the endless repl loop
@@ -75,6 +75,7 @@ onKeyTyped mQueue stage inputArea outputArea items historySelection = KeyEventHa
         then case char of
             "\r" -> doExecute mQueue inputArea items
             "l"  -> loadFile stage inputArea
+            "j"  -> selectHistory  items historySelection
             "p"  -> selectPrevious items historySelection
             "n"  -> selectNext     items historySelection
             "b"  -> biggerFont  inputArea outputArea
@@ -101,6 +102,12 @@ loadFile stage inputArea = do
         Just mIoFile = do
             path <- mIoFile.getPath
             inputArea.setText (":l " ++ path)
+
+selectHistory :: ObservableList -> SelectionModel -> IO ()
+selectHistory items historySelection = do
+    listSize <- items.size
+    newIndex = listSize - 1
+    historySelection.clearAndSelect newIndex
 
 selectPrevious :: ObservableList -> SelectionModel -> IO ()
 selectPrevious items historySelection = do
@@ -424,6 +431,7 @@ readMultiline console = intercalate newLine . reverse <$> f [] where
 
 cmdHelp = [
             ("Ctrl-L", "Load Frege code via file chooser dialog."),
+            ("Ctrl-J", "Show last in history."),
             ("Ctrl-P", "Show previous in history."),
             ("Ctrl-N", "Show next in history."),
             ("Ctrl-B", "Bigger Font."),
