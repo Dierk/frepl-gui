@@ -89,7 +89,7 @@ doExecute mQueue inputArea items = do
     when (not . null $ script) $ do
         scriptLines = if (1 == length (lines script))
            then [script]
-           else [":{"] ++ (lines script) ++ [":}"]
+           else [":{"] ++ lines script ++ [":}"]
         mapM mQueue.put scriptLines                 -- the beef
         items.add script
         inputArea.setText ""
