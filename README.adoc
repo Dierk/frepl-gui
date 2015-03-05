@@ -37,10 +37,13 @@ However, that still doesn't allow to submit multi-line definitions together with
 What works is to do the same in two steps.
 
 Step 1
-        foo a b =
-                  a * b
+
+    foo a b =
+              a * b
+
 Step 2
-        foo 1 2
+
+    foo 1 2
 
 That is something to keep in mind when copy-pasting code in the editor.
 
