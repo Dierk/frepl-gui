@@ -87,7 +87,10 @@ doExecute :: MVar String ->TextArea -> ObservableList -> IO ()
 doExecute mQueue inputArea items = do
     script <- trim <$> inputArea.getText
     when (not . null $ script) $ do
-        mapM (mQueue.put) $ lines script                 -- the beef
+        scriptLines = if (1 == length (lines script))
+           then [script]
+           else [":{"] ++ (lines script) ++ [":}"]
+        mapM mQueue.put scriptLines                 -- the beef
         items.add script
         inputArea.setText ""
     when (script == ":q") $ System.exit 0
@@ -106,8 +109,7 @@ loadFile stage inputArea = do
 selectHistory :: ObservableList -> SelectionModel -> IO ()
 selectHistory items historySelection = do
     listSize <- items.size
-    newIndex = listSize - 1
-    historySelection.clearAndSelect newIndex
+    historySelection.clearAndSelect (listSize - 1)
 
 selectPrevious :: ObservableList -> SelectionModel -> IO ()
 selectPrevious items historySelection = do
