@@ -1,12 +1,50 @@
 For users
 =========
 
-Download the distribution zip (40 MB) from https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.1.0-SNAPSHOT.zip.
+Download the distribution zip (20 MB) from https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.2.0.zip .
 Unpack to an `<install-dir>` of your choice.
 
 With a Java 8, run
 
     <install-dir>/bin/client
+
+Additions to the use of the command-line repl
+=============================================
+In addition to the commands in the command-line repl like `:help`, the following keyboard shortcuts are supported:
+
+    Ctrl-Enter Submit the current editor content for execution
+    Ctrl-L     Load Frege code via file chooser dialog.
+    Ctrl-J     Show last in history. (under your index finger for convenience)
+    Ctrl-P     Show previous in history.
+    Ctrl-N     Show next in history.
+    Ctrl-B     Bigger Font.
+    Ctrl-S     Smaller Font.
+
+Beside Ctrl, you can use any other meta-key or combinations thereof.
+This feature can conflict with local keyboard settings for entering special characters.
+
+Please note that _this GUI is not an IDE_. The content of the editor is fed line-by-line to the
+command-line repl and this limits the amount of work that one can do in "one go".
+
+Multi-line content is automatically wrapped in `:{` and `:}` as expected by the repl.
+
+However, that still doesn't allow to submit multi-line definitions together with their usage:
+
+    foo a b =
+              a * b
+    foo 1 2          -- will fail with "a where clause cannot start with '=' "
+
+What works is to do the same in two steps.
+
+Step 1
+        foo a b =
+                  a * b
+Step 2
+        foo 1 2
+
+That is something to keep in mind when copy-pasting code in the editor.
+
+
 
 For developers
 ==============
