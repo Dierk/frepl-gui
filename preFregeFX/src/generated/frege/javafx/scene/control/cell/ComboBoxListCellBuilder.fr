@@ -1,0 +1,16 @@
+data ComboBoxListCellBuilder t b = mutable native javafx.scene.control.cell.ComboBoxListCellBuilder where
+
+  native applyTo :: ComboBoxListCellBuilder t b -> ComboBoxListCell t -> IO void
+
+  native build :: ComboBoxListCellBuilder t b -> IO (ComboBoxListCell t)
+
+  native comboBoxEditable :: ComboBoxListCellBuilder t b -> boolean -> IO b
+
+  native converter :: ComboBoxListCellBuilder t b -> StringConverter t -> IO b
+
+  native create "javafx.scene.control.cell.ComboBoxListCellBuilder.create" :: () -> IO (ComboBoxListCellBuilder t Object)
+
+  native items :: ComboBoxListCellBuilder t b -> Collection t -> IO b
+                | ComboBoxListCellBuilder t b -> MutableIO (JArray t) -> IO b
+
+

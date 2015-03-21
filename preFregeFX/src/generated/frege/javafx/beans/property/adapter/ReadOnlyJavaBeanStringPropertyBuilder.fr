@@ -1,0 +1,18 @@
+data ReadOnlyJavaBeanStringPropertyBuilder = mutable native javafx.beans.property.adapter.ReadOnlyJavaBeanStringPropertyBuilder where
+
+  native new :: () -> IO ReadOnlyJavaBeanStringPropertyBuilder
+
+  native bean :: ReadOnlyJavaBeanStringPropertyBuilder -> Object -> IO ReadOnlyJavaBeanStringPropertyBuilder
+
+  native beanClass :: ReadOnlyJavaBeanStringPropertyBuilder -> Class Object -> IO ReadOnlyJavaBeanStringPropertyBuilder
+
+  native build :: ReadOnlyJavaBeanStringPropertyBuilder -> IO ReadOnlyJavaBeanStringProperty throws NoSuchMethodException
+
+  native create "javafx.beans.property.adapter.ReadOnlyJavaBeanStringPropertyBuilder.create" :: () -> IO ReadOnlyJavaBeanStringPropertyBuilder
+
+  native getter :: ReadOnlyJavaBeanStringPropertyBuilder -> Method -> IO ReadOnlyJavaBeanStringPropertyBuilder
+                 | ReadOnlyJavaBeanStringPropertyBuilder -> String -> IO ReadOnlyJavaBeanStringPropertyBuilder
+
+  native name :: ReadOnlyJavaBeanStringPropertyBuilder -> String -> IO ReadOnlyJavaBeanStringPropertyBuilder
+
+

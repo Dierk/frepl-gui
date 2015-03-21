@@ -1,0 +1,64 @@
+data PerspectiveTransform = mutable native javafx.scene.effect.PerspectiveTransform where
+
+  native new :: () -> IO PerspectiveTransform
+              | double -> double -> double -> double -> double -> double -> double -> double -> IO PerspectiveTransform
+
+  native getInput :: PerspectiveTransform -> IO Effect
+
+  native getLlx :: PerspectiveTransform -> IO double
+
+  native getLly :: PerspectiveTransform -> IO double
+
+  native getLrx :: PerspectiveTransform -> IO double
+
+  native getLry :: PerspectiveTransform -> IO double
+
+  native getUlx :: PerspectiveTransform -> IO double
+
+  native getUly :: PerspectiveTransform -> IO double
+
+  native getUrx :: PerspectiveTransform -> IO double
+
+  native getUry :: PerspectiveTransform -> IO double
+
+  native impl_copy :: PerspectiveTransform -> IO Effect
+
+  native impl_getBounds :: PerspectiveTransform -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: PerspectiveTransform -> IO (ObjectProperty Effect)
+
+  native llxProperty :: PerspectiveTransform -> IO DoubleProperty
+
+  native llyProperty :: PerspectiveTransform -> IO DoubleProperty
+
+  native lrxProperty :: PerspectiveTransform -> IO DoubleProperty
+
+  native lryProperty :: PerspectiveTransform -> IO DoubleProperty
+
+  native setInput :: PerspectiveTransform -> Effect -> IO void
+
+  native setLlx :: PerspectiveTransform -> double -> IO void
+
+  native setLly :: PerspectiveTransform -> double -> IO void
+
+  native setLrx :: PerspectiveTransform -> double -> IO void
+
+  native setLry :: PerspectiveTransform -> double -> IO void
+
+  native setUlx :: PerspectiveTransform -> double -> IO void
+
+  native setUly :: PerspectiveTransform -> double -> IO void
+
+  native setUrx :: PerspectiveTransform -> double -> IO void
+
+  native setUry :: PerspectiveTransform -> double -> IO void
+
+  native ulxProperty :: PerspectiveTransform -> IO DoubleProperty
+
+  native ulyProperty :: PerspectiveTransform -> IO DoubleProperty
+
+  native urxProperty :: PerspectiveTransform -> IO DoubleProperty
+
+  native uryProperty :: PerspectiveTransform -> IO DoubleProperty
+
+

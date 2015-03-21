@@ -1,0 +1,35 @@
+data PixelUtils = pure native com.sun.javafx.image.PixelUtils where
+
+  pure native getB2BConverter "com.sun.javafx.image.PixelUtils.getB2BConverter" :: PixelGetter ByteBuffer -> PixelSetter ByteBuffer -> ByteToBytePixelConverter
+
+  pure native getB2IConverter "com.sun.javafx.image.PixelUtils.getB2IConverter" :: PixelGetter ByteBuffer -> PixelSetter IntBuffer -> ByteToIntPixelConverter
+
+  native getByteGetter "com.sun.javafx.image.PixelUtils.getByteGetter" :: PixelFormat ByteBuffer -> IO BytePixelGetter
+
+  native getByteSetter "com.sun.javafx.image.PixelUtils.getByteSetter" :: WritablePixelFormat ByteBuffer -> IO BytePixelSetter
+
+  pure native getConverter "com.sun.javafx.image.PixelUtils.getConverter" :: PixelGetter t -> PixelSetter u -> PixelConverter t u
+
+  native getGetter "com.sun.javafx.image.PixelUtils.getGetter" :: PixelFormat t -> IO (PixelGetter t)
+
+  pure native getI2BConverter "com.sun.javafx.image.PixelUtils.getI2BConverter" :: PixelGetter IntBuffer -> PixelSetter ByteBuffer -> IntToBytePixelConverter
+
+  pure native getI2IConverter "com.sun.javafx.image.PixelUtils.getI2IConverter" :: PixelGetter IntBuffer -> PixelSetter IntBuffer -> IntToIntPixelConverter
+
+  native getIntGetter "com.sun.javafx.image.PixelUtils.getIntGetter" :: PixelFormat IntBuffer -> IO IntPixelGetter
+
+  native getIntSetter "com.sun.javafx.image.PixelUtils.getIntSetter" :: WritablePixelFormat IntBuffer -> IO IntPixelSetter
+
+  native getSetter "com.sun.javafx.image.PixelUtils.getSetter" :: WritablePixelFormat t -> IO (PixelSetter t)
+
+  pure native nonPretoPre "com.sun.javafx.image.PixelUtils.NonPretoPre" :: int -> int
+                                                                         | int -> int -> int
+
+  pure native preToNonPre "com.sun.javafx.image.PixelUtils.PreToNonPre" :: int -> int -> int
+
+  pure native pretoNonPre "com.sun.javafx.image.PixelUtils.PretoNonPre" :: int -> int
+
+  pure native rgbToGray "com.sun.javafx.image.PixelUtils.RgbToGray" :: int -> int
+                                                                     | int -> int -> int -> int
+
+

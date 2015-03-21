@@ -1,0 +1,9 @@
+data UnmodifiableListSet e = pure native com.sun.javafx.collections.UnmodifiableListSet where
+
+  pure native new :: List e -> UnmodifiableListSet e
+
+  pure native iterator :: UnmodifiableListSet e -> Iterator e
+
+  pure native size :: UnmodifiableListSet e -> int
+
+

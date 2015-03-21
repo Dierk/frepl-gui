@@ -1,0 +1,11 @@
+data VLineToBuilder b = mutable native javafx.scene.shape.VLineToBuilder where
+
+  native applyTo :: VLineToBuilder b -> VLineTo -> IO void
+
+  native build :: VLineToBuilder b -> IO VLineTo
+
+  native create "javafx.scene.shape.VLineToBuilder.create" :: () -> IO (VLineToBuilder Object)
+
+  native y :: VLineToBuilder b -> double -> IO b
+
+

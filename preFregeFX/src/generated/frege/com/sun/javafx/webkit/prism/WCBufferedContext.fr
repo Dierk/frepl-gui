@@ -1,0 +1,7 @@
+data WCBufferedContext = pure native com.sun.javafx.webkit.prism.WCBufferedContext where
+
+  pure native getImage :: WCBufferedContext -> WCImage
+
+  pure native saveState :: WCBufferedContext -> void
+
+

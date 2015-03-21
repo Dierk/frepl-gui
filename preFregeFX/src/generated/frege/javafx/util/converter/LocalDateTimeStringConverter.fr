@@ -1,0 +1,12 @@
+data LocalDateTimeStringConverter = mutable native javafx.util.converter.LocalDateTimeStringConverter where
+
+  native new :: FormatStyle -> FormatStyle -> Locale -> Chronology -> IO LocalDateTimeStringConverter
+              | DateTimeFormatter -> DateTimeFormatter -> IO LocalDateTimeStringConverter
+              | FormatStyle -> FormatStyle -> IO LocalDateTimeStringConverter
+              | () -> IO LocalDateTimeStringConverter
+
+  native fromString :: LocalDateTimeStringConverter -> String -> IO LocalDateTime
+
+  native toString :: LocalDateTimeStringConverter -> LocalDateTime -> IO String
+
+

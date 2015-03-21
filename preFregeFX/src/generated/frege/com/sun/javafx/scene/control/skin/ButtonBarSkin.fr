@@ -1,0 +1,8 @@
+data ButtonBarSkin = pure native com.sun.javafx.scene.control.skin.ButtonBarSkin where
+
+  pure native button_data_property "com.sun.javafx.scene.control.skin.ButtonBarSkin.BUTTON_DATA_PROPERTY" :: String
+  pure native button_size_independence "com.sun.javafx.scene.control.skin.ButtonBarSkin.BUTTON_SIZE_INDEPENDENCE" :: String
+
+  native new :: ButtonBar -> IO ButtonBarSkin
+
+

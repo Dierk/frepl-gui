@@ -1,0 +1,16 @@
+data ReadOnlyIntegerWrapper = mutable native javafx.beans.property.ReadOnlyIntegerWrapper where
+
+  native new :: Object -> String -> int -> IO ReadOnlyIntegerWrapper
+              | Object -> String -> IO ReadOnlyIntegerWrapper
+              | int -> IO ReadOnlyIntegerWrapper
+              | () -> IO ReadOnlyIntegerWrapper
+
+  native addListener :: ReadOnlyIntegerWrapper -> InvalidationListener -> IO void
+                      | ReadOnlyIntegerWrapper -> ChangeListener Number -> IO void
+
+  native getReadOnlyProperty :: ReadOnlyIntegerWrapper -> IO ReadOnlyIntegerProperty
+
+  native removeListener :: ReadOnlyIntegerWrapper -> InvalidationListener -> IO void
+                         | ReadOnlyIntegerWrapper -> ChangeListener Number -> IO void
+
+

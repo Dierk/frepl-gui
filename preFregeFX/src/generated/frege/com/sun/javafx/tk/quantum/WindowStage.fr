@@ -1,0 +1,62 @@
+data WindowStage = pure native com.sun.javafx.tk.quantum.WindowStage where
+
+  native new :: Window -> boolean -> StageStyle -> Modality -> TKStage -> IO WindowStage
+
+  pure native close :: WindowStage -> void
+
+  pure native createTKScene :: WindowStage -> boolean -> boolean -> AccessControlContext -> TKScene
+
+  native getSavedFullScreenExitKey :: WindowStage -> IO KeyCombination
+
+  pure native grabFocus :: WindowStage -> boolean
+
+  pure native init :: WindowStage -> GlassSystemMenu -> WindowStage
+
+  pure native isInEventHandler :: WindowStage -> boolean
+
+  pure native needsUpdateWindow :: WindowStage -> boolean
+
+  pure native releaseInput :: WindowStage -> void
+
+  pure native requestFocus :: WindowStage -> void
+                            | WindowStage -> FocusCause -> void
+
+  pure native requestInput :: WindowStage -> String -> int -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> void
+
+  pure native setAlwaysOnTop :: WindowStage -> boolean -> void
+
+  pure native setBounds :: WindowStage -> float -> float -> boolean -> boolean -> float -> float -> float -> float -> float -> float -> void
+
+  pure native setFullScreen :: WindowStage -> boolean -> void
+
+  pure native setIconified :: WindowStage -> boolean -> void
+
+  pure native setIcons :: WindowStage -> List -> void
+
+  pure native setInEventHandler :: WindowStage -> boolean -> void
+
+  pure native setMaximized :: WindowStage -> boolean -> void
+
+  pure native setMaximumSize :: WindowStage -> int -> int -> void
+
+  pure native setMinimumSize :: WindowStage -> int -> int -> void
+
+  pure native setOpacity :: WindowStage -> float -> void
+
+  pure native setRTL :: WindowStage -> boolean -> void
+
+  pure native setResizable :: WindowStage -> boolean -> void
+
+  pure native setScene :: WindowStage -> TKScene -> void
+
+  pure native setTitle :: WindowStage -> String -> void
+
+  pure native setVisible :: WindowStage -> boolean -> void
+
+  pure native toBack :: WindowStage -> void
+
+  pure native toFront :: WindowStage -> void
+
+  pure native ungrabFocus :: WindowStage -> void
+
+

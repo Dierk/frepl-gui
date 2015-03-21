@@ -1,0 +1,11 @@
+data WebColorFieldSkin = pure native com.sun.javafx.scene.control.skin.WebColorFieldSkin where
+
+  pure native new :: WebColorField -> WebColorFieldSkin
+
+  pure native dispose :: WebColorFieldSkin -> void
+
+  native getNode :: WebColorFieldSkin -> IO Node
+
+  pure native getSkinnable :: WebColorFieldSkin -> WebColorField
+
+

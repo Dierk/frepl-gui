@@ -1,0 +1,9 @@
+data Dimension2D = pure native com.sun.javafx.geom.Dimension2D where
+
+  pure native width "".width"" :: Dimension2D -> float
+  pure native height "".height"" :: Dimension2D -> float
+
+  pure native new :: () -> Dimension2D
+                   | float -> float -> Dimension2D
+
+

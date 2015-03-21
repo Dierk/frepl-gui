@@ -1,0 +1,1 @@
+data PrismFontUtils = pure native com.sun.javafx.font.PrismFontUtils

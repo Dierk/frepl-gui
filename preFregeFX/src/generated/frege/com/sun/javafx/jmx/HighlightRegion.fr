@@ -1,0 +1,13 @@
+data HighlightRegion = pure native com.sun.javafx.jmx.HighlightRegion where
+
+  pure native new :: TKScene -> double -> double -> double -> double -> HighlightRegion
+
+  pure native equals :: HighlightRegion -> Object -> boolean
+
+  pure native getTKScene :: HighlightRegion -> TKScene
+
+  pure native hashCode :: HighlightRegion -> int
+
+  pure native toString :: HighlightRegion -> String
+
+

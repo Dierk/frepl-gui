@@ -1,0 +1,12 @@
+data HPos = mutable native javafx.geometry.HPos where
+
+  native left "javafx.geometry.HPos.LEFT" :: IO HPos
+  native center "javafx.geometry.HPos.CENTER" :: IO HPos
+  native right "javafx.geometry.HPos.RIGHT" :: IO HPos
+
+  native valueOf "javafx.geometry.HPos.valueOf" :: String -> IO HPos
+
+  native values "javafx.geometry.HPos.values" :: () -> STMutable s (JArray HPos)
+
+derive Serializable HPos
+

@@ -1,0 +1,19 @@
+data NGMediaView = mutable native javafx.scene.media.NGMediaView where
+
+  native isSmooth :: NGMediaView -> IO boolean
+
+  native renderNextFrame :: NGMediaView -> IO void
+
+  native setFrameTracker :: NGMediaView -> MediaFrameTracker -> IO void
+
+  native setMediaProvider :: NGMediaView -> Object -> IO void
+
+  native setSmooth :: NGMediaView -> boolean -> IO void
+
+  native setViewport :: NGMediaView -> float -> float -> float -> float -> float -> float -> boolean -> IO void
+
+  native setX :: NGMediaView -> float -> IO void
+
+  native setY :: NGMediaView -> float -> IO void
+
+

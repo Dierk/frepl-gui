@@ -1,0 +1,27 @@
+data InnerShadowBuilder b = mutable native javafx.scene.effect.InnerShadowBuilder where
+
+  native applyTo :: InnerShadowBuilder b -> InnerShadow -> IO void
+
+  native blurType :: InnerShadowBuilder b -> BlurType -> IO b
+
+  native build :: InnerShadowBuilder b -> IO InnerShadow
+
+  native choke :: InnerShadowBuilder b -> double -> IO b
+
+  native color :: InnerShadowBuilder b -> Color -> IO b
+
+  native create "javafx.scene.effect.InnerShadowBuilder.create" :: () -> IO (InnerShadowBuilder Object)
+
+  native height :: InnerShadowBuilder b -> double -> IO b
+
+  native input :: InnerShadowBuilder b -> Effect -> IO b
+
+  native offsetX :: InnerShadowBuilder b -> double -> IO b
+
+  native offsetY :: InnerShadowBuilder b -> double -> IO b
+
+  native radius :: InnerShadowBuilder b -> double -> IO b
+
+  native width :: InnerShadowBuilder b -> double -> IO b
+
+

@@ -1,0 +1,7 @@
+data ProgressBarBuilder b = mutable native javafx.scene.control.ProgressBarBuilder where
+
+  native build :: ProgressBarBuilder b -> IO ProgressBar
+
+  native create "javafx.scene.control.ProgressBarBuilder.create" :: () -> IO (ProgressBarBuilder Object)
+
+

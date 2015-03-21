@@ -1,0 +1,71 @@
+data TableColumn s t = mutable native javafx.scene.control.TableColumn where
+
+  native default_cell_factory "javafx.scene.control.TableColumn.DEFAULT_CELL_FACTORY" :: IO (Callback (TableColumn Object Object) (TableCell Object Object))
+
+  native new :: () -> IO (TableColumn s t)
+              | String -> IO (TableColumn s t)
+
+  native cellFactoryProperty :: TableColumn s t -> IO (ObjectProperty (Callback (TableColumn s t) (TableCell s t)))
+
+  native cellValueFactoryProperty :: TableColumn s t -> IO (ObjectProperty (Callback (TableColumn_CellDataFeatures s t) (ObservableValue t)))
+
+  native editAnyEvent "javafx.scene.control.TableColumn.editAnyEvent" :: () -> IO (EventType (TableColumn_CellEditEvent s t))
+
+  native editCancelEvent "javafx.scene.control.TableColumn.editCancelEvent" :: () -> IO (EventType (TableColumn_CellEditEvent s t))
+
+  native editCommitEvent "javafx.scene.control.TableColumn.editCommitEvent" :: () -> IO (EventType (TableColumn_CellEditEvent s t))
+
+  native editStartEvent "javafx.scene.control.TableColumn.editStartEvent" :: () -> IO (EventType (TableColumn_CellEditEvent s t))
+
+  native getCellFactory :: TableColumn s t -> IO (Callback (TableColumn s t) (TableCell s t))
+
+  native getCellObservableValue :: TableColumn s t -> int -> IO (ObservableValue t)
+                                 | TableColumn s t -> s -> IO (ObservableValue t)
+
+  native getCellValueFactory :: TableColumn s t -> IO (Callback (TableColumn_CellDataFeatures s t) (ObservableValue t))
+
+  pure native getClassCssMetaData "javafx.scene.control.TableColumn.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getColumns :: TableColumn s t -> IO (ObservableList (TableColumn s Object))
+
+  native getCssMetaData :: TableColumn s t -> IO (List (CssMetaData Styleable Object))
+
+  native getOnEditCancel :: TableColumn s t -> IO (EventHandler (TableColumn_CellEditEvent s t))
+
+  native getOnEditCommit :: TableColumn s t -> IO (EventHandler (TableColumn_CellEditEvent s t))
+
+  native getOnEditStart :: TableColumn s t -> IO (EventHandler (TableColumn_CellEditEvent s t))
+
+  native getSortType :: TableColumn s t -> IO TableColumn_SortType
+
+  native getStyleableParent :: TableColumn s t -> IO Styleable
+
+  native getTableView :: TableColumn s t -> IO (TableView s)
+
+  native getTypeSelector :: TableColumn s t -> IO String
+
+  native impl_styleableGetNode :: TableColumn s t -> IO Node
+
+  native onEditCancelProperty :: TableColumn s t -> IO (ObjectProperty (EventHandler (TableColumn_CellEditEvent s t)))
+
+  native onEditCommitProperty :: TableColumn s t -> IO (ObjectProperty (EventHandler (TableColumn_CellEditEvent s t)))
+
+  native onEditStartProperty :: TableColumn s t -> IO (ObjectProperty (EventHandler (TableColumn_CellEditEvent s t)))
+
+  native setCellFactory :: TableColumn s t -> Callback (TableColumn s t) (TableCell s t) -> IO void
+
+  native setCellValueFactory :: TableColumn s t -> Callback (TableColumn_CellDataFeatures s t) (ObservableValue t) -> IO void
+
+  native setOnEditCancel :: TableColumn s t -> EventHandler (TableColumn_CellEditEvent s t) -> IO void
+
+  native setOnEditCommit :: TableColumn s t -> EventHandler (TableColumn_CellEditEvent s t) -> IO void
+
+  native setOnEditStart :: TableColumn s t -> EventHandler (TableColumn_CellEditEvent s t) -> IO void
+
+  native setSortType :: TableColumn s t -> TableColumn_SortType -> IO void
+
+  native sortTypeProperty :: TableColumn s t -> IO (ObjectProperty TableColumn_SortType)
+
+  native tableViewProperty :: TableColumn s t -> IO (ReadOnlyObjectProperty (TableView s))
+
+

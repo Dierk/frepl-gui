@@ -1,0 +1,18 @@
+data SortedList e = mutable native javafx.collections.transformation.SortedList where
+
+  native new :: ObservableList e -> Comparator e -> IO (SortedList e)
+              | ObservableList e -> IO (SortedList e)
+
+  native comparatorProperty :: SortedList e -> IO (ObjectProperty (Comparator e))
+
+  native get :: SortedList e -> int -> IO e
+
+  native getComparator :: SortedList e -> IO (Comparator e)
+
+  native getSourceIndex :: SortedList e -> int -> IO int
+
+  native setComparator :: SortedList e -> Comparator e -> IO void
+
+  native size :: SortedList e -> IO int
+
+

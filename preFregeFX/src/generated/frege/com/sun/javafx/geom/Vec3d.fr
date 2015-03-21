@@ -1,0 +1,39 @@
+data Vec3d = pure native com.sun.javafx.geom.Vec3d where
+
+  pure native x "".x"" :: Vec3d -> double
+  pure native y "".y"" :: Vec3d -> double
+  pure native z "".z"" :: Vec3d -> double
+
+  pure native new :: Vec3f -> Vec3d
+                   | Vec3d -> Vec3d
+                   | double -> double -> double -> Vec3d
+                   | () -> Vec3d
+
+  pure native add :: Vec3d -> Vec3d -> void
+                   | Vec3d -> Vec3d -> Vec3d -> void
+
+  pure native cross :: Vec3d -> Vec3d -> Vec3d -> void
+
+  pure native dot :: Vec3d -> Vec3d -> double
+
+  pure native equals :: Vec3d -> Object -> boolean
+
+  pure native hashCode :: Vec3d -> int
+
+  pure native length :: Vec3d -> double
+
+  pure native mul :: Vec3d -> double -> void
+
+  pure native normalize :: Vec3d -> void
+
+  pure native set :: Vec3d -> double -> double -> double -> void
+                   | Vec3d -> Vec3d -> void
+                   | Vec3d -> Vec3f -> void
+
+  pure native sub :: Vec3d -> Vec3d -> void
+                   | Vec3d -> Vec3d -> Vec3d -> void
+                   | Vec3d -> Vec3f -> Vec3f -> void
+
+  pure native toString :: Vec3d -> String
+
+

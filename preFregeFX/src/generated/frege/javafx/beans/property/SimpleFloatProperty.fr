@@ -1,0 +1,12 @@
+data SimpleFloatProperty = mutable native javafx.beans.property.SimpleFloatProperty where
+
+  native new :: Object -> String -> IO SimpleFloatProperty
+              | () -> IO SimpleFloatProperty
+              | Object -> String -> float -> IO SimpleFloatProperty
+              | float -> IO SimpleFloatProperty
+
+  native getBean :: SimpleFloatProperty -> IO Object
+
+  native getName :: SimpleFloatProperty -> IO String
+
+

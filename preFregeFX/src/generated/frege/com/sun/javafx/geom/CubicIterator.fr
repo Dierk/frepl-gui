@@ -1,0 +1,11 @@
+data CubicIterator = pure native com.sun.javafx.geom.CubicIterator where
+
+  native currentSegment :: CubicIterator -> Mutable s (JArray float) -> ST s int
+
+  pure native getWindingRule :: CubicIterator -> int
+
+  pure native isDone :: CubicIterator -> boolean
+
+  pure native next :: CubicIterator -> void
+
+

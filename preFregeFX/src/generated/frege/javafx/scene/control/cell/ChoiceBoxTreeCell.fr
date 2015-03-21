@@ -1,0 +1,28 @@
+data ChoiceBoxTreeCell t = mutable native javafx.scene.control.cell.ChoiceBoxTreeCell where
+
+  native new :: () -> IO (ChoiceBoxTreeCell t)
+              | StringConverter t -> MutableIO (JArray t) -> IO (ChoiceBoxTreeCell t)
+              | ObservableList t -> IO (ChoiceBoxTreeCell t)
+              | StringConverter t -> ObservableList t -> IO (ChoiceBoxTreeCell t)
+              | MutableIO (JArray t) -> IO (ChoiceBoxTreeCell t)
+
+  native cancelEdit :: ChoiceBoxTreeCell t -> IO void
+
+  native converterProperty :: ChoiceBoxTreeCell t -> IO (ObjectProperty (StringConverter t))
+
+  native forTreeView "javafx.scene.control.cell.ChoiceBoxTreeCell.forTreeView" :: ObservableList t -> IO (Callback (TreeView t) (TreeCell t))
+                                                                                | StringConverter t -> ObservableList t -> IO (Callback (TreeView t) (TreeCell t))
+                                                                                | MutableIO (JArray t) -> IO (Callback (TreeView t) (TreeCell t))
+                                                                                | StringConverter t -> MutableIO (JArray t) -> IO (Callback (TreeView t) (TreeCell t))
+
+  native getConverter :: ChoiceBoxTreeCell t -> IO (StringConverter t)
+
+  native getItems :: ChoiceBoxTreeCell t -> IO (ObservableList t)
+
+  native setConverter :: ChoiceBoxTreeCell t -> StringConverter t -> IO void
+
+  native startEdit :: ChoiceBoxTreeCell t -> IO void
+
+  native updateItem :: ChoiceBoxTreeCell t -> t -> boolean -> IO void
+
+

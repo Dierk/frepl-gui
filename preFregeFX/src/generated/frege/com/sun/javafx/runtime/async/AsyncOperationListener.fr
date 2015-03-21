@@ -1,0 +1,11 @@
+data AsyncOperationListener v = pure native com.sun.javafx.runtime.async.AsyncOperationListener where
+
+  pure native onCancel :: AsyncOperationListener v -> void
+
+  pure native onCompletion :: AsyncOperationListener v -> v -> void
+
+  pure native onException :: AsyncOperationListener v -> Exception -> void
+
+  pure native onProgress :: AsyncOperationListener v -> int -> int -> void
+
+

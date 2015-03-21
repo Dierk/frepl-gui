@@ -1,0 +1,7 @@
+data DragboardHelper = pure native com.sun.javafx.scene.input.DragboardHelper where
+
+  native setDataAccessRestriction "com.sun.javafx.scene.input.DragboardHelper.setDataAccessRestriction" :: Dragboard -> boolean -> IO void
+
+  pure native setDragboardAccessor "com.sun.javafx.scene.input.DragboardHelper.setDragboardAccessor" :: DragboardHelper_DragboardAccessor -> void
+
+

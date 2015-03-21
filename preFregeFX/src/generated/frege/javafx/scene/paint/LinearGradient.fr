@@ -1,0 +1,30 @@
+data LinearGradient = mutable native javafx.scene.paint.LinearGradient where
+
+  native new :: double -> double -> double -> double -> boolean -> CycleMethod -> MutableIO (JArray Stop) -> IO LinearGradient
+              | double -> double -> double -> double -> boolean -> CycleMethod -> List Stop -> IO LinearGradient
+
+  native equals :: LinearGradient -> Object -> IO boolean
+
+  native getCycleMethod :: LinearGradient -> IO CycleMethod
+
+  native getEndX :: LinearGradient -> IO double
+
+  native getEndY :: LinearGradient -> IO double
+
+  native getStartX :: LinearGradient -> IO double
+
+  native getStartY :: LinearGradient -> IO double
+
+  native getStops :: LinearGradient -> IO (List Stop)
+
+  native hashCode :: LinearGradient -> IO int
+
+  native isOpaque :: LinearGradient -> IO boolean
+
+  native isProportional :: LinearGradient -> IO boolean
+
+  native toString :: LinearGradient -> IO String
+
+  native valueOf "javafx.scene.paint.LinearGradient.valueOf" :: String -> IO LinearGradient
+
+

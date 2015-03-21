@@ -1,0 +1,11 @@
+data CompositeEventTargetImpl = pure native com.sun.javafx.event.CompositeEventTargetImpl where
+
+  native new :: Mutable s (JArray EventTarget) -> ST s CompositeEventTargetImpl
+
+  native buildEventDispatchChain :: CompositeEventTargetImpl -> EventDispatchChain -> IO EventDispatchChain
+
+  native containsTarget :: CompositeEventTargetImpl -> EventTarget -> IO boolean
+
+  pure native getTargets :: CompositeEventTargetImpl -> Set EventTarget
+
+

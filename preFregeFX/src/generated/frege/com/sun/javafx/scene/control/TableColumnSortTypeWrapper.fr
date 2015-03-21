@@ -1,0 +1,15 @@
+data TableColumnSortTypeWrapper = pure native com.sun.javafx.scene.control.TableColumnSortTypeWrapper where
+
+  pure native new :: () -> TableColumnSortTypeWrapper
+
+  native getSortTypeName "com.sun.javafx.scene.control.TableColumnSortTypeWrapper.getSortTypeName" :: TableColumnBase Object Object -> IO String
+
+  native getSortTypeProperty "com.sun.javafx.scene.control.TableColumnSortTypeWrapper.getSortTypeProperty" :: TableColumnBase Object Object -> IO ObservableValue
+
+  native isAscending "com.sun.javafx.scene.control.TableColumnSortTypeWrapper.isAscending" :: TableColumnBase Object Object -> IO boolean
+
+  native isDescending "com.sun.javafx.scene.control.TableColumnSortTypeWrapper.isDescending" :: TableColumnBase Object Object -> IO boolean
+
+  native setSortType "com.sun.javafx.scene.control.TableColumnSortTypeWrapper.setSortType" :: TableColumnBase Object Object -> TableColumn_SortType -> IO void
+
+

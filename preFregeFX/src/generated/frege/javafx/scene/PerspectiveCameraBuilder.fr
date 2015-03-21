@@ -1,0 +1,11 @@
+data PerspectiveCameraBuilder b = mutable native javafx.scene.PerspectiveCameraBuilder where
+
+  native applyTo :: PerspectiveCameraBuilder b -> PerspectiveCamera -> IO void
+
+  native build :: PerspectiveCameraBuilder b -> IO PerspectiveCamera
+
+  native create "javafx.scene.PerspectiveCameraBuilder.create" :: () -> IO (PerspectiveCameraBuilder Object)
+
+  native fieldOfView :: PerspectiveCameraBuilder b -> double -> IO b
+
+

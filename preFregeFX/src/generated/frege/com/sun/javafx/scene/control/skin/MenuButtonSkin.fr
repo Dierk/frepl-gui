@@ -1,0 +1,5 @@
+data MenuButtonSkin = pure native com.sun.javafx.scene.control.skin.MenuButtonSkin where
+
+  native new :: MenuButton -> IO MenuButtonSkin
+
+

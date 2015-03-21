@@ -1,0 +1,11 @@
+data VerticalDirection = mutable native javafx.geometry.VerticalDirection where
+
+  native up "javafx.geometry.VerticalDirection.UP" :: IO VerticalDirection
+  native down "javafx.geometry.VerticalDirection.DOWN" :: IO VerticalDirection
+
+  native valueOf "javafx.geometry.VerticalDirection.valueOf" :: String -> IO VerticalDirection
+
+  native values "javafx.geometry.VerticalDirection.values" :: () -> STMutable s (JArray VerticalDirection)
+
+derive Serializable VerticalDirection
+

@@ -1,0 +1,21 @@
+data FloatBinding = mutable native javafx.beans.binding.FloatBinding where
+
+  native addListener :: FloatBinding -> InvalidationListener -> IO void
+                      | FloatBinding -> ChangeListener Number -> IO void
+
+  native dispose :: FloatBinding -> IO void
+
+  native get :: FloatBinding -> IO float
+
+  native getDependencies :: FloatBinding -> IO (ObservableList Object)
+
+  native invalidate :: FloatBinding -> IO void
+
+  native isValid :: FloatBinding -> IO boolean
+
+  native removeListener :: FloatBinding -> ChangeListener Number -> IO void
+                         | FloatBinding -> InvalidationListener -> IO void
+
+  native toString :: FloatBinding -> IO String
+
+

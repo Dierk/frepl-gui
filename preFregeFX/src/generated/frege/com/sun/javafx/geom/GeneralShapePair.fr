@@ -1,0 +1,23 @@
+data GeneralShapePair = pure native com.sun.javafx.geom.GeneralShapePair where
+
+  pure native new :: Shape -> Shape -> int -> GeneralShapePair
+
+  pure native contains :: GeneralShapePair -> float -> float -> float -> float -> boolean
+                        | GeneralShapePair -> float -> float -> boolean
+
+  pure native copy :: GeneralShapePair -> Shape
+
+  pure native getBounds :: GeneralShapePair -> RectBounds
+
+  pure native getCombinationType :: GeneralShapePair -> int
+
+  pure native getInnerShape :: GeneralShapePair -> Shape
+
+  pure native getOuterShape :: GeneralShapePair -> Shape
+
+  pure native getPathIterator :: GeneralShapePair -> BaseTransform -> PathIterator
+                               | GeneralShapePair -> BaseTransform -> float -> PathIterator
+
+  pure native intersects :: GeneralShapePair -> float -> float -> float -> float -> boolean
+
+

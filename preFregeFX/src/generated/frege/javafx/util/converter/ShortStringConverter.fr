@@ -1,0 +1,9 @@
+data ShortStringConverter = mutable native javafx.util.converter.ShortStringConverter where
+
+  native new :: () -> IO ShortStringConverter
+
+  native fromString :: ShortStringConverter -> String -> IO Short
+
+  native toString :: ShortStringConverter -> Short -> IO String
+
+

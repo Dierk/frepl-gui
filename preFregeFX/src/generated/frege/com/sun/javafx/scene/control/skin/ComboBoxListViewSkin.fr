@@ -1,0 +1,17 @@
+data ComboBoxListViewSkin t = pure native com.sun.javafx.scene.control.skin.ComboBoxListViewSkin where
+
+  native new :: ComboBox t -> IO (ComboBoxListViewSkin t)
+
+  native getDisplayNode :: ComboBoxListViewSkin t -> IO Node
+
+  native getListView :: ComboBoxListViewSkin t -> IO (ListView t)
+
+  native getPopupContent :: ComboBoxListViewSkin t -> IO Node
+
+  native queryAccessibleAttribute :: ComboBoxListViewSkin t -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  pure native updateComboBoxItems :: ComboBoxListViewSkin t -> void
+
+  pure native updateListViewItems :: ComboBoxListViewSkin t -> void
+
+

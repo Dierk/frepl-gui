@@ -1,0 +1,7 @@
+data CornerRadiiConverter = mutable native javafx.scene.layout.CornerRadiiConverter where
+
+  native convert :: CornerRadiiConverter -> ParsedValue (JArray (ParsedValue (JArray (JArray (ParsedValue Object Size))) CornerRadii)) (JArray CornerRadii) -> Font -> IO (JArray CornerRadii)
+
+  native getInstance "javafx.scene.layout.CornerRadiiConverter.getInstance" :: () -> IO CornerRadiiConverter
+
+

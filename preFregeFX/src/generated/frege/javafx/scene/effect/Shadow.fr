@@ -1,0 +1,47 @@
+data Shadow = mutable native javafx.scene.effect.Shadow where
+
+  native new :: BlurType -> Color -> double -> IO Shadow
+              | double -> Color -> IO Shadow
+              | () -> IO Shadow
+
+  native blurTypeProperty :: Shadow -> IO (ObjectProperty BlurType)
+
+  native colorProperty :: Shadow -> IO (ObjectProperty Color)
+
+  native getBlurType :: Shadow -> IO BlurType
+
+  native getColor :: Shadow -> IO Color
+
+  native getHeight :: Shadow -> IO double
+
+  native getInput :: Shadow -> IO Effect
+
+  native getRadius :: Shadow -> IO double
+
+  native getWidth :: Shadow -> IO double
+
+  native heightProperty :: Shadow -> IO DoubleProperty
+
+  native impl_copy :: Shadow -> IO Effect
+
+  native impl_getBounds :: Shadow -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: Shadow -> IO (ObjectProperty Effect)
+
+  native radiusProperty :: Shadow -> IO DoubleProperty
+
+  native setBlurType :: Shadow -> BlurType -> IO void
+
+  native setColor :: Shadow -> Color -> IO void
+
+  native setHeight :: Shadow -> double -> IO void
+
+  native setInput :: Shadow -> Effect -> IO void
+
+  native setRadius :: Shadow -> double -> IO void
+
+  native setWidth :: Shadow -> double -> IO void
+
+  native widthProperty :: Shadow -> IO DoubleProperty
+
+

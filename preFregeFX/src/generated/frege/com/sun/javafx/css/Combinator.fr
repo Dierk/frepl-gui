@@ -1,0 +1,11 @@
+data Combinator = pure native com.sun.javafx.css.Combinator where
+
+  pure native child "com.sun.javafx.css.Combinator.CHILD" :: Combinator
+  pure native descendant "com.sun.javafx.css.Combinator.DESCENDANT" :: Combinator
+
+  pure native valueOf "com.sun.javafx.css.Combinator.valueOf" :: String -> Combinator
+
+  native values "com.sun.javafx.css.Combinator.values" :: () -> STMutable s (JArray Combinator)
+
+derive Serializable Combinator
+

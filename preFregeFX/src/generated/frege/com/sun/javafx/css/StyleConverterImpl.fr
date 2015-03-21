@@ -1,0 +1,9 @@
+data StyleConverterImpl f t = pure native com.sun.javafx.css.StyleConverterImpl where
+
+  pure native convert :: StyleConverterImpl f t -> Map (CssMetaData Styleable Object) Object -> t
+
+  native readBinary "com.sun.javafx.css.StyleConverterImpl.readBinary" :: DataInputStream -> MutableIO (JArray String) -> IO (StyleConverter Object Object) throws IOException
+
+  native writeBinary :: StyleConverterImpl f t -> DataOutputStream -> StringStore -> ST s void throws IOException
+
+

@@ -1,0 +1,17 @@
+data BlendBuilder b = mutable native javafx.scene.effect.BlendBuilder where
+
+  native applyTo :: BlendBuilder b -> Blend -> IO void
+
+  native bottomInput :: BlendBuilder b -> Effect -> IO b
+
+  native build :: BlendBuilder b -> IO Blend
+
+  native create "javafx.scene.effect.BlendBuilder.create" :: () -> IO (BlendBuilder Object)
+
+  native mode :: BlendBuilder b -> BlendMode -> IO b
+
+  native opacity :: BlendBuilder b -> double -> IO b
+
+  native topInput :: BlendBuilder b -> Effect -> IO b
+
+

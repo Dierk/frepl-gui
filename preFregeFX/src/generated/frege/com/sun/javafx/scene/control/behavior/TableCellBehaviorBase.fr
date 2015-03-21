@@ -1,0 +1,1 @@
+data TableCellBehaviorBase s t tc c = pure native com.sun.javafx.scene.control.behavior.TableCellBehaviorBase

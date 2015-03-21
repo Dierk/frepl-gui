@@ -1,0 +1,6 @@
+data PNGIDATChunkInputStream = pure native com.sun.javafx.iio.png.PNGIDATChunkInputStream where
+
+  native read :: PNGIDATChunkInputStream -> ST s int throws IOException
+               | PNGIDATChunkInputStream -> Mutable s (JArray byte) -> int -> int -> ST s int throws IOException
+
+

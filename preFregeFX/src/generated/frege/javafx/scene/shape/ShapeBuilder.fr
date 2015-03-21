@@ -1,0 +1,26 @@
+data ShapeBuilder b = mutable native javafx.scene.shape.ShapeBuilder where
+
+  native applyTo :: ShapeBuilder b -> Shape -> IO void
+
+  native fill :: ShapeBuilder b -> Paint -> IO b
+
+  native smooth :: ShapeBuilder b -> boolean -> IO b
+
+  native stroke :: ShapeBuilder b -> Paint -> IO b
+
+  native strokeDashArray :: ShapeBuilder b -> Collection Double -> IO b
+                          | ShapeBuilder b -> MutableIO (JArray Double) -> IO b
+
+  native strokeDashOffset :: ShapeBuilder b -> double -> IO b
+
+  native strokeLineCap :: ShapeBuilder b -> StrokeLineCap -> IO b
+
+  native strokeLineJoin :: ShapeBuilder b -> StrokeLineJoin -> IO b
+
+  native strokeMiterLimit :: ShapeBuilder b -> double -> IO b
+
+  native strokeType :: ShapeBuilder b -> StrokeType -> IO b
+
+  native strokeWidth :: ShapeBuilder b -> double -> IO b
+
+

@@ -1,0 +1,1 @@
+data CssStyleHelper = mutable native javafx.scene.CssStyleHelper

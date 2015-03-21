@@ -1,0 +1,15 @@
+data CheckBoxBuilder b = mutable native javafx.scene.control.CheckBoxBuilder where
+
+  native allowIndeterminate :: CheckBoxBuilder b -> boolean -> IO b
+
+  native applyTo :: CheckBoxBuilder b -> CheckBox -> IO void
+
+  native build :: CheckBoxBuilder b -> IO CheckBox
+
+  native create "javafx.scene.control.CheckBoxBuilder.create" :: () -> IO (CheckBoxBuilder Object)
+
+  native indeterminate :: CheckBoxBuilder b -> boolean -> IO b
+
+  native selected :: CheckBoxBuilder b -> boolean -> IO b
+
+

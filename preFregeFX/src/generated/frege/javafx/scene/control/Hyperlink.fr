@@ -1,0 +1,17 @@
+data Hyperlink = mutable native javafx.scene.control.Hyperlink where
+
+  native new :: String -> Node -> IO Hyperlink
+              | String -> IO Hyperlink
+              | () -> IO Hyperlink
+
+  native fire :: Hyperlink -> IO void
+
+  native isVisited :: Hyperlink -> IO boolean
+
+  native queryAccessibleAttribute :: Hyperlink -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setVisited :: Hyperlink -> boolean -> IO void
+
+  native visitedProperty :: Hyperlink -> IO BooleanProperty
+
+

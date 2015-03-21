@@ -1,0 +1,25 @@
+data SpinnerValueFactory t = mutable native javafx.scene.control.SpinnerValueFactory where
+
+  native converterProperty :: SpinnerValueFactory t -> IO (ObjectProperty (StringConverter t))
+
+  native decrement :: SpinnerValueFactory t -> int -> IO void
+
+  native getConverter :: SpinnerValueFactory t -> IO (StringConverter t)
+
+  native getValue :: SpinnerValueFactory t -> IO t
+
+  native increment :: SpinnerValueFactory t -> int -> IO void
+
+  native isWrapAround :: SpinnerValueFactory t -> IO boolean
+
+  native setConverter :: SpinnerValueFactory t -> StringConverter t -> IO void
+
+  native setValue :: SpinnerValueFactory t -> t -> IO void
+
+  native setWrapAround :: SpinnerValueFactory t -> boolean -> IO void
+
+  native valueProperty :: SpinnerValueFactory t -> IO (ObjectProperty t)
+
+  native wrapAroundProperty :: SpinnerValueFactory t -> IO BooleanProperty
+
+

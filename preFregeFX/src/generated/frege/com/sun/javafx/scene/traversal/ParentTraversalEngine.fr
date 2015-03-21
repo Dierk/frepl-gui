@@ -1,0 +1,10 @@
+data ParentTraversalEngine = pure native com.sun.javafx.scene.traversal.ParentTraversalEngine where
+
+  native new :: Parent -> Algorithm -> IO ParentTraversalEngine
+              | Parent -> IO ParentTraversalEngine
+
+  pure native isParentTraversable :: ParentTraversalEngine -> boolean
+
+  pure native setOverriddenFocusTraversability :: ParentTraversalEngine -> Boolean -> void
+
+

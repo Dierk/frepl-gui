@@ -1,0 +1,50 @@
+data CornerRadii = mutable native javafx.scene.layout.CornerRadii where
+
+  native empty "javafx.scene.layout.CornerRadii.EMPTY" :: IO CornerRadii
+
+  native new :: double -> double -> double -> double -> boolean -> IO CornerRadii
+              | double -> boolean -> IO CornerRadii
+              | double -> IO CornerRadii
+              | double -> double -> double -> double -> double -> double -> double -> double -> boolean -> boolean -> boolean -> boolean -> boolean -> boolean -> boolean -> boolean -> IO CornerRadii
+
+  native equals :: CornerRadii -> Object -> IO boolean
+
+  native getBottomLeftHorizontalRadius :: CornerRadii -> IO double
+
+  native getBottomLeftVerticalRadius :: CornerRadii -> IO double
+
+  native getBottomRightHorizontalRadius :: CornerRadii -> IO double
+
+  native getBottomRightVerticalRadius :: CornerRadii -> IO double
+
+  native getTopLeftHorizontalRadius :: CornerRadii -> IO double
+
+  native getTopLeftVerticalRadius :: CornerRadii -> IO double
+
+  native getTopRightHorizontalRadius :: CornerRadii -> IO double
+
+  native getTopRightVerticalRadius :: CornerRadii -> IO double
+
+  native hashCode :: CornerRadii -> IO int
+
+  native isBottomLeftHorizontalRadiusAsPercentage :: CornerRadii -> IO boolean
+
+  native isBottomLeftVerticalRadiusAsPercentage :: CornerRadii -> IO boolean
+
+  native isBottomRightHorizontalRadiusAsPercentage :: CornerRadii -> IO boolean
+
+  native isBottomRightVerticalRadiusAsPercentage :: CornerRadii -> IO boolean
+
+  native isTopLeftHorizontalRadiusAsPercentage :: CornerRadii -> IO boolean
+
+  native isTopLeftVerticalRadiusAsPercentage :: CornerRadii -> IO boolean
+
+  native isTopRightHorizontalRadiusAsPercentage :: CornerRadii -> IO boolean
+
+  native isTopRightVerticalRadiusAsPercentage :: CornerRadii -> IO boolean
+
+  native isUniform :: CornerRadii -> IO boolean
+
+  native toString :: CornerRadii -> IO String
+
+

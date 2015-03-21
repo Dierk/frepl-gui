@@ -1,0 +1,22 @@
+data NGShape = pure native com.sun.javafx.sg.prism.NGShape where
+
+  pure native getFillPaint :: NGShape -> Paint
+
+  pure native getMode :: NGShape -> NGShape_Mode
+
+  pure native getShape :: NGShape -> Shape
+
+  pure native isSmooth :: NGShape -> boolean
+
+  pure native setDrawPaint :: NGShape -> Object -> void
+
+  native setDrawStroke :: NGShape -> float -> StrokeType -> StrokeLineCap -> StrokeLineJoin -> float -> MutableIO (JArray float) -> float -> IO void
+                        | NGShape -> BasicStroke -> ST s void
+
+  pure native setFillPaint :: NGShape -> Object -> void
+
+  pure native setMode :: NGShape -> NGShape_Mode -> void
+
+  pure native setSmooth :: NGShape -> boolean -> void
+
+

@@ -1,0 +1,13 @@
+data FloatMapBuilder b = mutable native javafx.scene.effect.FloatMapBuilder where
+
+  native applyTo :: FloatMapBuilder b -> FloatMap -> IO void
+
+  native build :: FloatMapBuilder b -> IO FloatMap
+
+  native create "javafx.scene.effect.FloatMapBuilder.create" :: () -> IO (FloatMapBuilder Object)
+
+  native height :: FloatMapBuilder b -> int -> IO b
+
+  native width :: FloatMapBuilder b -> int -> IO b
+
+

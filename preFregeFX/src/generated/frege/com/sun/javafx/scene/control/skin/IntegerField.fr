@@ -1,0 +1,18 @@
+data IntegerField = pure native com.sun.javafx.scene.control.skin.IntegerField where
+
+  pure native new :: () -> IntegerField
+                   | int -> IntegerField
+
+  pure native getMaxValue :: IntegerField -> int
+
+  pure native getValue :: IntegerField -> int
+
+  native maxValueProperty :: IntegerField -> IO IntegerProperty
+
+  pure native setMaxValue :: IntegerField -> int -> void
+
+  pure native setValue :: IntegerField -> int -> void
+
+  native valueProperty :: IntegerField -> IO IntegerProperty
+
+

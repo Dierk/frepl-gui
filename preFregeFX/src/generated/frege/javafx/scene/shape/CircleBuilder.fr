@@ -1,0 +1,15 @@
+data CircleBuilder b = mutable native javafx.scene.shape.CircleBuilder where
+
+  native applyTo :: CircleBuilder b -> Circle -> IO void
+
+  native build :: CircleBuilder b -> IO Circle
+
+  native centerX :: CircleBuilder b -> double -> IO b
+
+  native centerY :: CircleBuilder b -> double -> IO b
+
+  native create "javafx.scene.shape.CircleBuilder.create" :: () -> IO (CircleBuilder Object)
+
+  native radius :: CircleBuilder b -> double -> IO b
+
+

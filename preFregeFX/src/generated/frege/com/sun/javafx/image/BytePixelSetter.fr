@@ -1,0 +1,7 @@
+data BytePixelSetter = pure native com.sun.javafx.image.BytePixelSetter where
+
+  native setArgb :: BytePixelSetter -> Mutable s (JArray byte) -> int -> int -> ST s void
+
+  native setArgbPre :: BytePixelSetter -> Mutable s (JArray byte) -> int -> int -> ST s void
+
+

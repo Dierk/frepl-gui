@@ -1,0 +1,33 @@
+data FillTransition = mutable native javafx.animation.FillTransition where
+
+  native new :: Duration -> Color -> Color -> IO FillTransition
+              | Duration -> IO FillTransition
+              | () -> IO FillTransition
+              | Duration -> Shape -> Color -> Color -> IO FillTransition
+              | Duration -> Shape -> IO FillTransition
+
+  native durationProperty :: FillTransition -> IO (ObjectProperty Duration)
+
+  native fromValueProperty :: FillTransition -> IO (ObjectProperty Color)
+
+  native getDuration :: FillTransition -> IO Duration
+
+  native getFromValue :: FillTransition -> IO Color
+
+  native getShape :: FillTransition -> IO Shape
+
+  native getToValue :: FillTransition -> IO Color
+
+  native setDuration :: FillTransition -> Duration -> IO void
+
+  native setFromValue :: FillTransition -> Color -> IO void
+
+  native setShape :: FillTransition -> Shape -> IO void
+
+  native setToValue :: FillTransition -> Color -> IO void
+
+  native shapeProperty :: FillTransition -> IO (ObjectProperty Shape)
+
+  native toValueProperty :: FillTransition -> IO (ObjectProperty Color)
+
+

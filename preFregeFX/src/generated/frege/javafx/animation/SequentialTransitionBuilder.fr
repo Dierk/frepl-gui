@@ -1,0 +1,14 @@
+data SequentialTransitionBuilder = mutable native javafx.animation.SequentialTransitionBuilder where
+
+  native applyTo :: SequentialTransitionBuilder -> SequentialTransition -> IO void
+
+  native build :: SequentialTransitionBuilder -> IO SequentialTransition
+
+  native children :: SequentialTransitionBuilder -> Collection Animation -> IO SequentialTransitionBuilder
+                   | SequentialTransitionBuilder -> MutableIO (JArray Animation) -> IO SequentialTransitionBuilder
+
+  native create "javafx.animation.SequentialTransitionBuilder.create" :: () -> IO SequentialTransitionBuilder
+
+  native node :: SequentialTransitionBuilder -> Node -> IO SequentialTransitionBuilder
+
+

@@ -1,0 +1,46 @@
+data TextArea = mutable native javafx.scene.control.TextArea where
+
+  pure native default_pref_column_count "javafx.scene.control.TextArea.DEFAULT_PREF_COLUMN_COUNT" :: int
+  pure native default_pref_row_count "javafx.scene.control.TextArea.DEFAULT_PREF_ROW_COUNT" :: int
+  pure native default_paragraph_capacity "javafx.scene.control.TextArea.DEFAULT_PARAGRAPH_CAPACITY" :: int
+
+  native new :: () -> IO TextArea
+              | String -> IO TextArea
+
+  pure native getClassCssMetaData "javafx.scene.control.TextArea.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getControlCssMetaData :: TextArea -> IO (List (CssMetaData Styleable Object))
+
+  native getParagraphs :: TextArea -> IO (ObservableList CharSequence)
+
+  native getPrefColumnCount :: TextArea -> IO int
+
+  native getPrefRowCount :: TextArea -> IO int
+
+  native getScrollLeft :: TextArea -> IO double
+
+  native getScrollTop :: TextArea -> IO double
+
+  native isWrapText :: TextArea -> IO boolean
+
+  native prefColumnCountProperty :: TextArea -> IO IntegerProperty
+
+  native prefRowCountProperty :: TextArea -> IO IntegerProperty
+
+  native scrollLeftProperty :: TextArea -> IO DoubleProperty
+
+  native scrollTopProperty :: TextArea -> IO DoubleProperty
+
+  native setPrefColumnCount :: TextArea -> int -> IO void
+
+  native setPrefRowCount :: TextArea -> int -> IO void
+
+  native setScrollLeft :: TextArea -> double -> IO void
+
+  native setScrollTop :: TextArea -> double -> IO void
+
+  native setWrapText :: TextArea -> boolean -> IO void
+
+  native wrapTextProperty :: TextArea -> IO BooleanProperty
+
+

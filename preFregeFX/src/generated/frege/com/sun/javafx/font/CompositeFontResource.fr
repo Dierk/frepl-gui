@@ -1,0 +1,9 @@
+data CompositeFontResource = pure native com.sun.javafx.font.CompositeFontResource where
+
+  pure native getNumSlots :: CompositeFontResource -> int
+
+  pure native getSlotForFont :: CompositeFontResource -> String -> int
+
+  pure native getSlotResource :: CompositeFontResource -> int -> FontResource
+
+

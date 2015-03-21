@@ -1,0 +1,84 @@
+data Task v = mutable native javafx.concurrent.Task where
+
+  native addEventFilter :: Task v -> EventType t -> EventHandler t -> IO void
+
+  native addEventHandler :: Task v -> EventType t -> EventHandler t -> IO void
+
+  native buildEventDispatchChain :: Task v -> EventDispatchChain -> IO EventDispatchChain
+
+  native cancel :: Task v -> boolean -> IO boolean
+                 | Task v -> IO boolean
+
+  native exceptionProperty :: Task v -> IO (ReadOnlyObjectProperty Throwable)
+
+  native fireEvent :: Task v -> Event -> IO void
+
+  native getException :: Task v -> IO Throwable
+
+  native getMessage :: Task v -> IO String
+
+  native getOnCancelled :: Task v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnFailed :: Task v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnRunning :: Task v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnScheduled :: Task v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnSucceeded :: Task v -> IO (EventHandler WorkerStateEvent)
+
+  native getProgress :: Task v -> IO double
+
+  native getState :: Task v -> IO Worker_State
+
+  native getTitle :: Task v -> IO String
+
+  native getTotalWork :: Task v -> IO double
+
+  native getValue :: Task v -> IO v
+
+  native getWorkDone :: Task v -> IO double
+
+  native isRunning :: Task v -> IO boolean
+
+  native messageProperty :: Task v -> IO ReadOnlyStringProperty
+
+  native onCancelledProperty :: Task v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onFailedProperty :: Task v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onRunningProperty :: Task v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onScheduledProperty :: Task v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onSucceededProperty :: Task v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native progressProperty :: Task v -> IO ReadOnlyDoubleProperty
+
+  native removeEventFilter :: Task v -> EventType t -> EventHandler t -> IO void
+
+  native removeEventHandler :: Task v -> EventType t -> EventHandler t -> IO void
+
+  native runningProperty :: Task v -> IO ReadOnlyBooleanProperty
+
+  native setOnCancelled :: Task v -> EventHandler WorkerStateEvent -> IO void
+
+  native setOnFailed :: Task v -> EventHandler WorkerStateEvent -> IO void
+
+  native setOnRunning :: Task v -> EventHandler WorkerStateEvent -> IO void
+
+  native setOnScheduled :: Task v -> EventHandler WorkerStateEvent -> IO void
+
+  native setOnSucceeded :: Task v -> EventHandler WorkerStateEvent -> IO void
+
+  native stateProperty :: Task v -> IO (ReadOnlyObjectProperty Worker_State)
+
+  native titleProperty :: Task v -> IO ReadOnlyStringProperty
+
+  native totalWorkProperty :: Task v -> IO ReadOnlyDoubleProperty
+
+  native valueProperty :: Task v -> IO (ReadOnlyObjectProperty v)
+
+  native workDoneProperty :: Task v -> IO ReadOnlyDoubleProperty
+
+

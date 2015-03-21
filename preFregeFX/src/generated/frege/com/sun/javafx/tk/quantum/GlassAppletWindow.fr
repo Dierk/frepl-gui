@@ -1,0 +1,27 @@
+data GlassAppletWindow = pure native com.sun.javafx.tk.quantum.GlassAppletWindow where
+
+  pure native dispatchEvent :: GlassAppletWindow -> Map -> void
+
+  pure native getHeight :: GlassAppletWindow -> int
+
+  pure native getPositionX :: GlassAppletWindow -> int
+
+  pure native getPositionY :: GlassAppletWindow -> int
+
+  pure native getRemoteLayerId :: GlassAppletWindow -> int
+
+  pure native getWidth :: GlassAppletWindow -> int
+
+  pure native setBackgroundColor :: GlassAppletWindow -> int -> void
+
+  pure native setForegroundColor :: GlassAppletWindow -> int -> void
+
+  pure native setPosition :: GlassAppletWindow -> int -> int -> void
+
+  pure native setSize :: GlassAppletWindow -> int -> int -> void
+
+  native setStageOnTop :: GlassAppletWindow -> Stage -> IO void
+
+  pure native setVisible :: GlassAppletWindow -> boolean -> void
+
+

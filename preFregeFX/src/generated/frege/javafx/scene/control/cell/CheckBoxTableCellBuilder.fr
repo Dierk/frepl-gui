@@ -1,0 +1,13 @@
+data CheckBoxTableCellBuilder s t b = mutable native javafx.scene.control.cell.CheckBoxTableCellBuilder where
+
+  native applyTo :: CheckBoxTableCellBuilder s t b -> CheckBoxTableCell s t -> IO void
+
+  native build :: CheckBoxTableCellBuilder s t b -> IO (CheckBoxTableCell s t)
+
+  native converter :: CheckBoxTableCellBuilder s t b -> StringConverter t -> IO b
+
+  native create "javafx.scene.control.cell.CheckBoxTableCellBuilder.create" :: () -> IO (CheckBoxTableCellBuilder s t Object)
+
+  native selectedStateCallback :: CheckBoxTableCellBuilder s t b -> Callback Integer (ObservableValue Boolean) -> IO b
+
+

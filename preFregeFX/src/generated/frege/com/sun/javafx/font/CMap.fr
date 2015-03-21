@@ -1,0 +1,5 @@
+data CMap = pure native com.sun.javafx.font.CMap where
+
+  pure native thenullcmap "com.sun.javafx.font.CMap.theNullCmap" :: CMap_NullCMapClass
+
+

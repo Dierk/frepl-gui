@@ -1,0 +1,106 @@
+data TreeView t = mutable native javafx.scene.control.TreeView where
+
+  native new :: () -> IO (TreeView t)
+              | TreeItem t -> IO (TreeView t)
+
+  native cellFactoryProperty :: TreeView t -> IO (ObjectProperty (Callback (TreeView t) (TreeCell t)))
+
+  native edit :: TreeView t -> TreeItem t -> IO void
+
+  native editAnyEvent "javafx.scene.control.TreeView.editAnyEvent" :: () -> IO (EventType (TreeView_EditEvent t))
+
+  native editCancelEvent "javafx.scene.control.TreeView.editCancelEvent" :: () -> IO (EventType (TreeView_EditEvent t))
+
+  native editCommitEvent "javafx.scene.control.TreeView.editCommitEvent" :: () -> IO (EventType (TreeView_EditEvent t))
+
+  native editStartEvent "javafx.scene.control.TreeView.editStartEvent" :: () -> IO (EventType (TreeView_EditEvent t))
+
+  native editableProperty :: TreeView t -> IO BooleanProperty
+
+  native editingItemProperty :: TreeView t -> IO (ReadOnlyObjectProperty (TreeItem t))
+
+  native expandedItemCountProperty :: TreeView t -> IO ReadOnlyIntegerProperty
+
+  native fixedCellSizeProperty :: TreeView t -> IO DoubleProperty
+
+  native focusModelProperty :: TreeView t -> IO (ObjectProperty (FocusModel (TreeItem t)))
+
+  native getCellFactory :: TreeView t -> IO (Callback (TreeView t) (TreeCell t))
+
+  pure native getClassCssMetaData "javafx.scene.control.TreeView.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getControlCssMetaData :: TreeView t -> IO (List (CssMetaData Styleable Object))
+
+  native getEditingItem :: TreeView t -> IO (TreeItem t)
+
+  native getExpandedItemCount :: TreeView t -> IO int
+
+  native getFixedCellSize :: TreeView t -> IO double
+
+  native getFocusModel :: TreeView t -> IO (FocusModel (TreeItem t))
+
+  native getNodeLevel "javafx.scene.control.TreeView.getNodeLevel" :: TreeItem Object -> IO int
+
+  native getOnEditCancel :: TreeView t -> IO (EventHandler (TreeView_EditEvent t))
+
+  native getOnEditCommit :: TreeView t -> IO (EventHandler (TreeView_EditEvent t))
+
+  native getOnEditStart :: TreeView t -> IO (EventHandler (TreeView_EditEvent t))
+
+  native getOnScrollTo :: TreeView t -> IO (EventHandler (ScrollToEvent Integer))
+
+  native getRoot :: TreeView t -> IO (TreeItem t)
+
+  native getRow :: TreeView t -> TreeItem t -> IO int
+
+  native getSelectionModel :: TreeView t -> IO (MultipleSelectionModel (TreeItem t))
+
+  native getTreeItem :: TreeView t -> int -> IO (TreeItem t)
+
+  native getTreeItemLevel :: TreeView t -> TreeItem Object -> IO int
+
+  native isEditable :: TreeView t -> IO boolean
+
+  native isShowRoot :: TreeView t -> IO boolean
+
+  native onEditCancelProperty :: TreeView t -> IO (ObjectProperty (EventHandler (TreeView_EditEvent t)))
+
+  native onEditCommitProperty :: TreeView t -> IO (ObjectProperty (EventHandler (TreeView_EditEvent t)))
+
+  native onEditStartProperty :: TreeView t -> IO (ObjectProperty (EventHandler (TreeView_EditEvent t)))
+
+  native onScrollToProperty :: TreeView t -> IO (ObjectProperty (EventHandler (ScrollToEvent Integer)))
+
+  native queryAccessibleAttribute :: TreeView t -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native rootProperty :: TreeView t -> IO (ObjectProperty (TreeItem t))
+
+  native scrollTo :: TreeView t -> int -> IO void
+
+  native selectionModelProperty :: TreeView t -> IO (ObjectProperty (MultipleSelectionModel (TreeItem t)))
+
+  native setCellFactory :: TreeView t -> Callback (TreeView t) (TreeCell t) -> IO void
+
+  native setEditable :: TreeView t -> boolean -> IO void
+
+  native setFixedCellSize :: TreeView t -> double -> IO void
+
+  native setFocusModel :: TreeView t -> FocusModel (TreeItem t) -> IO void
+
+  native setOnEditCancel :: TreeView t -> EventHandler (TreeView_EditEvent t) -> IO void
+
+  native setOnEditCommit :: TreeView t -> EventHandler (TreeView_EditEvent t) -> IO void
+
+  native setOnEditStart :: TreeView t -> EventHandler (TreeView_EditEvent t) -> IO void
+
+  native setOnScrollTo :: TreeView t -> EventHandler (ScrollToEvent Integer) -> IO void
+
+  native setRoot :: TreeView t -> TreeItem t -> IO void
+
+  native setSelectionModel :: TreeView t -> MultipleSelectionModel (TreeItem t) -> IO void
+
+  native setShowRoot :: TreeView t -> boolean -> IO void
+
+  native showRootProperty :: TreeView t -> IO BooleanProperty
+
+

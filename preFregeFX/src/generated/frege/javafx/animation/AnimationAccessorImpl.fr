@@ -1,0 +1,13 @@
+data AnimationAccessorImpl = mutable native javafx.animation.AnimationAccessorImpl where
+
+  native finished :: AnimationAccessorImpl -> Animation -> IO void
+
+  native jumpTo :: AnimationAccessorImpl -> Animation -> long -> long -> boolean -> IO void
+
+  native playTo :: AnimationAccessorImpl -> Animation -> long -> long -> IO void
+
+  native setCurrentRate :: AnimationAccessorImpl -> Animation -> double -> IO void
+
+  native setCurrentTicks :: AnimationAccessorImpl -> Animation -> long -> IO void
+
+

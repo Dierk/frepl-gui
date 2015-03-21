@@ -1,0 +1,16 @@
+data ShapePair = pure native com.sun.javafx.geom.ShapePair where
+
+  pure native includes_o_not_i "com.sun.javafx.geom.ShapePair.INCLUDES_O_NOT_I" :: int
+  pure native includes_i_not_o "com.sun.javafx.geom.ShapePair.INCLUDES_I_NOT_O" :: int
+  pure native includes_o_and_i "com.sun.javafx.geom.ShapePair.INCLUDES_O_AND_I" :: int
+  pure native includes_neither "com.sun.javafx.geom.ShapePair.INCLUDES_NEITHER" :: int
+  pure native type_subtract "com.sun.javafx.geom.ShapePair.TYPE_SUBTRACT" :: int
+  pure native type_intersect "com.sun.javafx.geom.ShapePair.TYPE_INTERSECT" :: int
+
+  pure native getCombinationType :: ShapePair -> int
+
+  pure native getInnerShape :: ShapePair -> Shape
+
+  pure native getOuterShape :: ShapePair -> Shape
+
+

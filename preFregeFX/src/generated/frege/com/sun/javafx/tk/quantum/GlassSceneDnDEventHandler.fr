@@ -1,0 +1,17 @@
+data GlassSceneDnDEventHandler = pure native com.sun.javafx.tk.quantum.GlassSceneDnDEventHandler where
+
+  pure native new :: GlassScene -> GlassSceneDnDEventHandler
+
+  native handleDragDrop :: GlassSceneDnDEventHandler -> int -> int -> int -> int -> TransferMode -> ClipboardAssistance -> IO TransferMode
+
+  native handleDragEnd :: GlassSceneDnDEventHandler -> TransferMode -> ClipboardAssistance -> IO void
+
+  native handleDragEnter :: GlassSceneDnDEventHandler -> int -> int -> int -> int -> TransferMode -> ClipboardAssistance -> IO TransferMode
+
+  pure native handleDragLeave :: GlassSceneDnDEventHandler -> ClipboardAssistance -> void
+
+  native handleDragOver :: GlassSceneDnDEventHandler -> int -> int -> int -> int -> TransferMode -> ClipboardAssistance -> IO TransferMode
+
+  pure native handleDragStart :: GlassSceneDnDEventHandler -> int -> int -> int -> int -> int -> ClipboardAssistance -> void
+
+

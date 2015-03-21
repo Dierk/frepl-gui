@@ -1,0 +1,6 @@
+data BubbleChart x y = mutable native javafx.scene.chart.BubbleChart where
+
+  native new :: Axis x -> Axis y -> IO (BubbleChart x y)
+              | Axis x -> Axis y -> ObservableList (XYChart_Series x y) -> IO (BubbleChart x y)
+
+

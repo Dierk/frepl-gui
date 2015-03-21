@@ -1,0 +1,9 @@
+data ResizeFeaturesBase s = mutable native javafx.scene.control.ResizeFeaturesBase where
+
+  native new :: TableColumnBase s Object -> Double -> IO (ResizeFeaturesBase s)
+
+  native getColumn :: ResizeFeaturesBase s -> IO (TableColumnBase s Object)
+
+  native getDelta :: ResizeFeaturesBase s -> IO Double
+
+

@@ -1,0 +1,15 @@
+data CachingTransferable = mutable native javafx.embed.swing.CachingTransferable where
+
+  native getData :: CachingTransferable -> String -> IO Object
+
+  native getMimeTypes :: CachingTransferable -> IO (JArray String)
+
+  native getTransferData :: CachingTransferable -> DataFlavor -> IO Object throws UnsupportedEncodingException
+
+  native getTransferDataFlavors :: CachingTransferable -> IO (JArray DataFlavor)
+
+  native isDataFlavorSupported :: CachingTransferable -> DataFlavor -> IO boolean
+
+  native isMimeTypeAvailable :: CachingTransferable -> String -> IO boolean
+
+

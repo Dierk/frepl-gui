@@ -1,0 +1,21 @@
+data Toggle = mutable native javafx.scene.control.Toggle where
+
+  native getProperties :: Toggle -> IO (ObservableMap Object Object)
+
+  native getToggleGroup :: Toggle -> IO ToggleGroup
+
+  native getUserData :: Toggle -> IO Object
+
+  native isSelected :: Toggle -> IO boolean
+
+  native selectedProperty :: Toggle -> IO BooleanProperty
+
+  native setSelected :: Toggle -> boolean -> IO void
+
+  native setToggleGroup :: Toggle -> ToggleGroup -> IO void
+
+  native setUserData :: Toggle -> Object -> IO void
+
+  native toggleGroupProperty :: Toggle -> IO (ObjectProperty ToggleGroup)
+
+

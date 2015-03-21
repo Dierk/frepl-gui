@@ -1,0 +1,9 @@
+data CSSLexer = pure native com.sun.javafx.css.parser.CSSLexer where
+
+  pure native getInstance "com.sun.javafx.css.parser.CSSLexer.getInstance" :: () -> CSSLexer
+
+  pure native nextToken :: CSSLexer -> Token
+
+  pure native setReader :: CSSLexer -> Reader -> void
+
+

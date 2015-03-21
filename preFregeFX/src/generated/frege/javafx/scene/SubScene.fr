@@ -1,0 +1,52 @@
+data SubScene = mutable native javafx.scene.SubScene where
+
+  native new :: Parent -> double -> double -> IO SubScene
+              | Parent -> double -> double -> boolean -> SceneAntialiasing -> IO SubScene
+
+  native cameraProperty :: SubScene -> IO (ObjectProperty Camera)
+
+  native fillProperty :: SubScene -> IO (ObjectProperty Paint)
+
+  native getAntiAliasing :: SubScene -> IO SceneAntialiasing
+
+  native getCamera :: SubScene -> IO Camera
+
+  native getFill :: SubScene -> IO Paint
+
+  native getHeight :: SubScene -> IO double
+
+  native getRoot :: SubScene -> IO Parent
+
+  native getUserAgentStylesheet :: SubScene -> IO String
+
+  native getWidth :: SubScene -> IO double
+
+  native heightProperty :: SubScene -> IO DoubleProperty
+
+  native impl_computeGeomBounds :: SubScene -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_processMXNode :: SubScene -> MXNodeAlgorithm -> MXNodeAlgorithmContext -> IO Object
+
+  native impl_updatePeer :: SubScene -> IO void
+
+  native isDepthBuffer :: SubScene -> IO boolean
+
+  native rootProperty :: SubScene -> IO (ObjectProperty Parent)
+
+  native setCamera :: SubScene -> Camera -> IO void
+
+  native setFill :: SubScene -> Paint -> IO void
+
+  native setHeight :: SubScene -> double -> IO void
+
+  native setRoot :: SubScene -> Parent -> IO void
+
+  native setUserAgentStylesheet :: SubScene -> String -> IO void
+
+  native setWidth :: SubScene -> double -> IO void
+
+  native userAgentStylesheetProperty :: SubScene -> IO (ObjectProperty String)
+
+  native widthProperty :: SubScene -> IO DoubleProperty
+
+

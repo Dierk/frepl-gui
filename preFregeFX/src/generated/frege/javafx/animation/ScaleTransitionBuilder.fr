@@ -1,0 +1,31 @@
+data ScaleTransitionBuilder = mutable native javafx.animation.ScaleTransitionBuilder where
+
+  native applyTo :: ScaleTransitionBuilder -> ScaleTransition -> IO void
+
+  native build :: ScaleTransitionBuilder -> IO ScaleTransition
+
+  native byX :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+  native byY :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+  native byZ :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+  native create "javafx.animation.ScaleTransitionBuilder.create" :: () -> IO ScaleTransitionBuilder
+
+  native duration :: ScaleTransitionBuilder -> Duration -> IO ScaleTransitionBuilder
+
+  native fromX :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+  native fromY :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+  native fromZ :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+  native node :: ScaleTransitionBuilder -> Node -> IO ScaleTransitionBuilder
+
+  native toX :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+  native toY :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+  native toZ :: ScaleTransitionBuilder -> double -> IO ScaleTransitionBuilder
+
+

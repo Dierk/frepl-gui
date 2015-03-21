@@ -1,0 +1,21 @@
+data Button = mutable native javafx.scene.control.Button where
+
+  native new :: String -> Node -> IO Button
+              | String -> IO Button
+              | () -> IO Button
+
+  native cancelButtonProperty :: Button -> IO BooleanProperty
+
+  native defaultButtonProperty :: Button -> IO BooleanProperty
+
+  native fire :: Button -> IO void
+
+  native isCancelButton :: Button -> IO boolean
+
+  native isDefaultButton :: Button -> IO boolean
+
+  native setCancelButton :: Button -> boolean -> IO void
+
+  native setDefaultButton :: Button -> boolean -> IO void
+
+

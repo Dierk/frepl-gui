@@ -1,0 +1,61 @@
+data ScrollBar = mutable native javafx.scene.control.ScrollBar where
+
+  native new :: () -> IO ScrollBar
+
+  native adjustValue :: ScrollBar -> double -> IO void
+
+  native blockIncrementProperty :: ScrollBar -> IO DoubleProperty
+
+  native decrement :: ScrollBar -> IO void
+
+  native executeAccessibleAction :: ScrollBar -> AccessibleAction -> MutableIO (JArray Object) -> IO void
+
+  native getBlockIncrement :: ScrollBar -> IO double
+
+  pure native getClassCssMetaData "javafx.scene.control.ScrollBar.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getControlCssMetaData :: ScrollBar -> IO (List (CssMetaData Styleable Object))
+
+  native getMax :: ScrollBar -> IO double
+
+  native getMin :: ScrollBar -> IO double
+
+  native getOrientation :: ScrollBar -> IO Orientation
+
+  native getUnitIncrement :: ScrollBar -> IO double
+
+  native getValue :: ScrollBar -> IO double
+
+  native getVisibleAmount :: ScrollBar -> IO double
+
+  native increment :: ScrollBar -> IO void
+
+  native maxProperty :: ScrollBar -> IO DoubleProperty
+
+  native minProperty :: ScrollBar -> IO DoubleProperty
+
+  native orientationProperty :: ScrollBar -> IO (ObjectProperty Orientation)
+
+  native queryAccessibleAttribute :: ScrollBar -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setBlockIncrement :: ScrollBar -> double -> IO void
+
+  native setMax :: ScrollBar -> double -> IO void
+
+  native setMin :: ScrollBar -> double -> IO void
+
+  native setOrientation :: ScrollBar -> Orientation -> IO void
+
+  native setUnitIncrement :: ScrollBar -> double -> IO void
+
+  native setValue :: ScrollBar -> double -> IO void
+
+  native setVisibleAmount :: ScrollBar -> double -> IO void
+
+  native unitIncrementProperty :: ScrollBar -> IO DoubleProperty
+
+  native valueProperty :: ScrollBar -> IO DoubleProperty
+
+  native visibleAmountProperty :: ScrollBar -> IO DoubleProperty
+
+

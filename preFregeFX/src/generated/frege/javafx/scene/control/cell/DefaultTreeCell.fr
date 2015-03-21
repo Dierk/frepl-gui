@@ -1,0 +1,7 @@
+data DefaultTreeCell t = mutable native javafx.scene.control.cell.DefaultTreeCell where
+
+  native new :: () -> IO (DefaultTreeCell t)
+
+  native updateItem :: DefaultTreeCell t -> t -> boolean -> IO void
+
+

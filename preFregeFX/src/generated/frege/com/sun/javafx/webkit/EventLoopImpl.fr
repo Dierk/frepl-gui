@@ -1,0 +1,5 @@
+data EventLoopImpl = pure native com.sun.javafx.webkit.EventLoopImpl where
+
+  pure native new :: () -> EventLoopImpl
+
+

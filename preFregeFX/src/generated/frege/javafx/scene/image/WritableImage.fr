@@ -1,0 +1,9 @@
+data WritableImage = mutable native javafx.scene.image.WritableImage where
+
+  native new :: PixelReader -> int -> int -> int -> int -> IO WritableImage
+              | PixelReader -> int -> int -> IO WritableImage
+              | int -> int -> IO WritableImage
+
+  native getPixelWriter :: WritableImage -> IO PixelWriter
+
+

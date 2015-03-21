@@ -1,0 +1,7 @@
+data ButtonBaseBuilder b = mutable native javafx.scene.control.ButtonBaseBuilder where
+
+  native applyTo :: ButtonBaseBuilder b -> ButtonBase -> IO void
+
+  native onAction :: ButtonBaseBuilder b -> EventHandler ActionEvent -> IO b
+
+

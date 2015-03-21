@@ -1,0 +1,12 @@
+data SimpleMapProperty k v = mutable native javafx.beans.property.SimpleMapProperty where
+
+  native new :: Object -> String -> IO (SimpleMapProperty k v)
+              | () -> IO (SimpleMapProperty k v)
+              | Object -> String -> ObservableMap k v -> IO (SimpleMapProperty k v)
+              | ObservableMap k v -> IO (SimpleMapProperty k v)
+
+  native getBean :: SimpleMapProperty k v -> IO Object
+
+  native getName :: SimpleMapProperty k v -> IO String
+
+

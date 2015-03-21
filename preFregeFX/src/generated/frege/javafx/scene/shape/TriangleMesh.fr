@@ -1,0 +1,30 @@
+data TriangleMesh = mutable native javafx.scene.shape.TriangleMesh where
+
+  native new :: VertexFormat -> IO TriangleMesh
+              | () -> IO TriangleMesh
+
+  native getFaceElementSize :: TriangleMesh -> IO int
+
+  native getFaceSmoothingGroups :: TriangleMesh -> IO ObservableIntegerArray
+
+  native getFaces :: TriangleMesh -> IO ObservableFaceArray
+
+  native getNormalElementSize :: TriangleMesh -> IO int
+
+  native getNormals :: TriangleMesh -> IO ObservableFloatArray
+
+  native getPointElementSize :: TriangleMesh -> IO int
+
+  native getPoints :: TriangleMesh -> IO ObservableFloatArray
+
+  native getTexCoordElementSize :: TriangleMesh -> IO int
+
+  native getTexCoords :: TriangleMesh -> IO ObservableFloatArray
+
+  native getVertexFormat :: TriangleMesh -> IO VertexFormat
+
+  native setVertexFormat :: TriangleMesh -> VertexFormat -> IO void
+
+  native vertexFormatProperty :: TriangleMesh -> IO (ObjectProperty VertexFormat)
+
+

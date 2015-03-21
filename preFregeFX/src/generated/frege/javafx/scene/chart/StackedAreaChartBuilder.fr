@@ -1,0 +1,11 @@
+data StackedAreaChartBuilder x y b = mutable native javafx.scene.chart.StackedAreaChartBuilder where
+
+  native build :: StackedAreaChartBuilder x y b -> IO (StackedAreaChart x y)
+
+  native create "javafx.scene.chart.StackedAreaChartBuilder.create" :: () -> IO (StackedAreaChartBuilder x y Object)
+
+  native xAxis "XAxis" :: StackedAreaChartBuilder x y b -> Axis x -> IO b
+
+  native yAxis "YAxis" :: StackedAreaChartBuilder x y b -> Axis y -> IO b
+
+

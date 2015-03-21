@@ -1,0 +1,25 @@
+data WCMediaPlayerImpl = pure native com.sun.javafx.webkit.prism.WCMediaPlayerImpl where
+
+  pure native onBufferProgress :: WCMediaPlayerImpl -> BufferProgressEvent -> void
+
+  pure native onDurationChanged :: WCMediaPlayerImpl -> double -> void
+
+  pure native onError :: WCMediaPlayerImpl -> Object -> int -> String -> void
+
+  pure native onFinish :: WCMediaPlayerImpl -> PlayerStateEvent -> void
+
+  pure native onHalt :: WCMediaPlayerImpl -> PlayerStateEvent -> void
+
+  pure native onPause :: WCMediaPlayerImpl -> PlayerStateEvent -> void
+
+  pure native onPlaying :: WCMediaPlayerImpl -> PlayerStateEvent -> void
+
+  pure native onReady :: WCMediaPlayerImpl -> PlayerStateEvent -> void
+
+  pure native onSizeChanged :: WCMediaPlayerImpl -> int -> int -> void
+
+  pure native onStall :: WCMediaPlayerImpl -> PlayerStateEvent -> void
+
+  pure native onStop :: WCMediaPlayerImpl -> PlayerStateEvent -> void
+
+

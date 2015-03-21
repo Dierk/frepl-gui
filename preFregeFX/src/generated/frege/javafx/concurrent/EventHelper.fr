@@ -1,0 +1,1 @@
+data EventHelper = mutable native javafx.concurrent.EventHelper

@@ -1,0 +1,9 @@
+data GlassEventUtils = pure native com.sun.javafx.tk.quantum.GlassEventUtils where
+
+  pure native getMouseEventString "com.sun.javafx.tk.quantum.GlassEventUtils.getMouseEventString" :: int -> String
+
+  pure native getViewEventString "com.sun.javafx.tk.quantum.GlassEventUtils.getViewEventString" :: int -> String
+
+  pure native getWindowEventString "com.sun.javafx.tk.quantum.GlassEventUtils.getWindowEventString" :: int -> String
+
+

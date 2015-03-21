@@ -1,0 +1,9 @@
+data GlassMenuEventHandler = pure native com.sun.javafx.tk.quantum.GlassMenuEventHandler where
+
+  pure native new :: MenuBase -> GlassMenuEventHandler
+
+  pure native handleMenuClosed :: GlassMenuEventHandler -> Menu -> long -> void
+
+  pure native handleMenuOpening :: GlassMenuEventHandler -> Menu -> long -> void
+
+

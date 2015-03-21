@@ -1,0 +1,11 @@
+data ContentBinding = pure native com.sun.javafx.binding.ContentBinding where
+
+  pure native new :: () -> ContentBinding
+
+  native bind "com.sun.javafx.binding.ContentBinding.bind" :: Map k v -> ObservableMap k v -> IO Object
+                                                            | Set e -> ObservableSet e -> IO Object
+                                                            | List e -> ObservableList e -> IO Object
+
+  pure native unbind "com.sun.javafx.binding.ContentBinding.unbind" :: Object -> Object -> void
+
+

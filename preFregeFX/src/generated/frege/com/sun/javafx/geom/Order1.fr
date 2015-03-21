@@ -1,0 +1,53 @@
+data Order1 = pure native com.sun.javafx.geom.Order1 where
+
+  pure native new :: double -> double -> double -> double -> int -> Order1
+
+  pure native accumulateCrossings :: Order1 -> Crossings -> boolean
+
+  native compareTo :: Order1 -> Curve -> Mutable s (JArray double) -> ST s int
+
+  pure native dXforT :: Order1 -> double -> int -> double
+
+  pure native dYforT :: Order1 -> double -> int -> double
+
+  pure native enlarge :: Order1 -> RectBounds -> void
+
+  pure native getOrder :: Order1 -> int
+
+  pure native getReversedCurve :: Order1 -> Curve
+
+  native getSegment :: Order1 -> Mutable s (JArray float) -> ST s int
+
+  pure native getSubCurve :: Order1 -> double -> double -> int -> Curve
+
+  pure native getX0 :: Order1 -> double
+
+  pure native getX1 :: Order1 -> double
+
+  pure native getXBot :: Order1 -> double
+
+  pure native getXMax :: Order1 -> double
+
+  pure native getXMin :: Order1 -> double
+
+  pure native getXTop :: Order1 -> double
+
+  pure native getY0 :: Order1 -> double
+
+  pure native getY1 :: Order1 -> double
+
+  pure native getYBot :: Order1 -> double
+
+  pure native getYTop :: Order1 -> double
+
+  pure native nextVertical :: Order1 -> double -> double -> double
+
+  pure native tforY "TforY" :: Order1 -> double -> double
+
+  pure native xforT "XforT" :: Order1 -> double -> double
+
+  pure native xforY "XforY" :: Order1 -> double -> double
+
+  pure native yforT "YforT" :: Order1 -> double -> double
+
+

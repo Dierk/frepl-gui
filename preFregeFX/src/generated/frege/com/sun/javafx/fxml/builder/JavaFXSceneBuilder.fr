@@ -1,0 +1,25 @@
+data JavaFXSceneBuilder = pure native com.sun.javafx.fxml.builder.JavaFXSceneBuilder where
+
+  pure native new :: () -> JavaFXSceneBuilder
+
+  native build :: JavaFXSceneBuilder -> IO Scene
+
+  native getFill :: JavaFXSceneBuilder -> IO Paint
+
+  pure native getHeight :: JavaFXSceneBuilder -> double
+
+  native getRoot :: JavaFXSceneBuilder -> IO Parent
+
+  pure native getStylesheets :: JavaFXSceneBuilder -> List String
+
+  pure native getWidth :: JavaFXSceneBuilder -> double
+
+  native setFill :: JavaFXSceneBuilder -> Paint -> IO void
+
+  pure native setHeight :: JavaFXSceneBuilder -> double -> void
+
+  native setRoot :: JavaFXSceneBuilder -> Parent -> IO void
+
+  pure native setWidth :: JavaFXSceneBuilder -> double -> void
+
+

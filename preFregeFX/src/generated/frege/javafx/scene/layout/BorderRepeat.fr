@@ -1,0 +1,13 @@
+data BorderRepeat = mutable native javafx.scene.layout.BorderRepeat where
+
+  native stretch "javafx.scene.layout.BorderRepeat.STRETCH" :: IO BorderRepeat
+  native repeat "javafx.scene.layout.BorderRepeat.REPEAT" :: IO BorderRepeat
+  native round "javafx.scene.layout.BorderRepeat.ROUND" :: IO BorderRepeat
+  native space "javafx.scene.layout.BorderRepeat.SPACE" :: IO BorderRepeat
+
+  native valueOf "javafx.scene.layout.BorderRepeat.valueOf" :: String -> IO BorderRepeat
+
+  native values "javafx.scene.layout.BorderRepeat.values" :: () -> STMutable s (JArray BorderRepeat)
+
+derive Serializable BorderRepeat
+

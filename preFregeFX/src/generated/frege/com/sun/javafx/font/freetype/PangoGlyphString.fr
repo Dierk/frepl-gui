@@ -1,0 +1,1 @@
+data PangoGlyphString = pure native com.sun.javafx.font.freetype.PangoGlyphString

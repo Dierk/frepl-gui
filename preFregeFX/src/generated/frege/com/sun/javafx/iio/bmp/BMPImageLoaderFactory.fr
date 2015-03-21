@@ -1,0 +1,11 @@
+data BMPImageLoaderFactory = pure native com.sun.javafx.iio.bmp.BMPImageLoaderFactory where
+
+  pure native new :: () -> BMPImageLoaderFactory
+
+  native createImageLoader :: BMPImageLoaderFactory -> InputStream -> ST s ImageLoader throws IOException
+
+  pure native getFormatDescription :: BMPImageLoaderFactory -> ImageFormatDescription
+
+  pure native getInstance "com.sun.javafx.iio.bmp.BMPImageLoaderFactory.getInstance" :: () -> ImageLoaderFactory
+
+

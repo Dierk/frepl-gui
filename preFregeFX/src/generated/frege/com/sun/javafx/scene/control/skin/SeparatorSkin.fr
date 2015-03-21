@@ -1,0 +1,5 @@
+data SeparatorSkin = pure native com.sun.javafx.scene.control.skin.SeparatorSkin where
+
+  native new :: Separator -> IO SeparatorSkin
+
+

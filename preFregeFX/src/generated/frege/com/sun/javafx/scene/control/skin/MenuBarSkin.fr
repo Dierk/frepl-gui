@@ -1,0 +1,27 @@
+data MenuBarSkin = pure native com.sun.javafx.scene.control.skin.MenuBarSkin where
+
+  native new :: MenuBar -> IO MenuBarSkin
+
+  native containerAlignmentProperty :: MenuBarSkin -> IO (ObjectProperty Pos)
+
+  pure native dispose :: MenuBarSkin -> void
+
+  pure native getClassCssMetaData "com.sun.javafx.scene.control.skin.MenuBarSkin.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getContainerAlignment :: MenuBarSkin -> IO Pos
+
+  pure native getCssMetaData :: MenuBarSkin -> List (CssMetaData Styleable Object)
+
+  pure native getSpacing :: MenuBarSkin -> double
+
+  native onTraverse :: MenuBarSkin -> Node -> Bounds -> IO void
+
+  native setContainerAlignment :: MenuBarSkin -> Pos -> IO void
+
+  native setDefaultSystemMenuBar "com.sun.javafx.scene.control.skin.MenuBarSkin.setDefaultSystemMenuBar" :: MenuBar -> IO void
+
+  pure native setSpacing :: MenuBarSkin -> double -> void
+
+  native spacingProperty :: MenuBarSkin -> IO DoubleProperty
+
+

@@ -1,0 +1,12 @@
+data TextBoundsType = mutable native javafx.scene.text.TextBoundsType where
+
+  native logical "javafx.scene.text.TextBoundsType.LOGICAL" :: IO TextBoundsType
+  native visual "javafx.scene.text.TextBoundsType.VISUAL" :: IO TextBoundsType
+  native logical_vertical_center "javafx.scene.text.TextBoundsType.LOGICAL_VERTICAL_CENTER" :: IO TextBoundsType
+
+  native valueOf "javafx.scene.text.TextBoundsType.valueOf" :: String -> IO TextBoundsType
+
+  native values "javafx.scene.text.TextBoundsType.values" :: () -> STMutable s (JArray TextBoundsType)
+
+derive Serializable TextBoundsType
+

@@ -1,0 +1,1 @@
+data SwingCursors = mutable native javafx.embed.swing.SwingCursors

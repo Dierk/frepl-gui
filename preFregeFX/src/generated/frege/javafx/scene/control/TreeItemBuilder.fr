@@ -1,0 +1,18 @@
+data TreeItemBuilder t b = mutable native javafx.scene.control.TreeItemBuilder where
+
+  native applyTo :: TreeItemBuilder t b -> TreeItem t -> IO void
+
+  native build :: TreeItemBuilder t b -> IO (TreeItem t)
+
+  native children :: TreeItemBuilder t b -> MutableIO (JArray (TreeItem t)) -> IO b
+                   | TreeItemBuilder t b -> Collection (TreeItem t) -> IO b
+
+  native create "javafx.scene.control.TreeItemBuilder.create" :: () -> IO (TreeItemBuilder t Object)
+
+  native expanded :: TreeItemBuilder t b -> boolean -> IO b
+
+  native graphic :: TreeItemBuilder t b -> Node -> IO b
+
+  native value :: TreeItemBuilder t b -> t -> IO b
+
+

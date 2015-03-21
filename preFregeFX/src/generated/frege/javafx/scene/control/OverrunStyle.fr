@@ -1,0 +1,16 @@
+data OverrunStyle = mutable native javafx.scene.control.OverrunStyle where
+
+  native clip "javafx.scene.control.OverrunStyle.CLIP" :: IO OverrunStyle
+  native ellipsis "javafx.scene.control.OverrunStyle.ELLIPSIS" :: IO OverrunStyle
+  native word_ellipsis "javafx.scene.control.OverrunStyle.WORD_ELLIPSIS" :: IO OverrunStyle
+  native center_ellipsis "javafx.scene.control.OverrunStyle.CENTER_ELLIPSIS" :: IO OverrunStyle
+  native center_word_ellipsis "javafx.scene.control.OverrunStyle.CENTER_WORD_ELLIPSIS" :: IO OverrunStyle
+  native leading_ellipsis "javafx.scene.control.OverrunStyle.LEADING_ELLIPSIS" :: IO OverrunStyle
+  native leading_word_ellipsis "javafx.scene.control.OverrunStyle.LEADING_WORD_ELLIPSIS" :: IO OverrunStyle
+
+  native valueOf "javafx.scene.control.OverrunStyle.valueOf" :: String -> IO OverrunStyle
+
+  native values "javafx.scene.control.OverrunStyle.values" :: () -> STMutable s (JArray OverrunStyle)
+
+derive Serializable OverrunStyle
+

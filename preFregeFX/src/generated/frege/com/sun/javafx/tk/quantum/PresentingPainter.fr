@@ -1,0 +1,5 @@
+data PresentingPainter = pure native com.sun.javafx.tk.quantum.PresentingPainter where
+
+  pure native run :: PresentingPainter -> void
+
+

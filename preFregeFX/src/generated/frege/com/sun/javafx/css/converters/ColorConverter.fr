@@ -1,0 +1,9 @@
+data ColorConverter = pure native com.sun.javafx.css.converters.ColorConverter where
+
+  native convert :: ColorConverter -> ParsedValue String Color -> Font -> IO Color
+
+  native getInstance "com.sun.javafx.css.converters.ColorConverter.getInstance" :: () -> IO (StyleConverter String Color)
+
+  pure native toString :: ColorConverter -> String
+
+

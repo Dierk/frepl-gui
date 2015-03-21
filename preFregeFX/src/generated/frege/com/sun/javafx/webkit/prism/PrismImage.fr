@@ -1,0 +1,7 @@
+data PrismImage = pure native com.sun.javafx.webkit.prism.PrismImage where
+
+  pure native deref :: PrismImage -> void
+
+  pure native getPlatformImage :: PrismImage -> Object
+
+

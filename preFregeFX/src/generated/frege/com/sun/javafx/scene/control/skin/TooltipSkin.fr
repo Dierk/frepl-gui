@@ -1,0 +1,11 @@
+data TooltipSkin = pure native com.sun.javafx.scene.control.skin.TooltipSkin where
+
+  native new :: Tooltip -> IO TooltipSkin
+
+  pure native dispose :: TooltipSkin -> void
+
+  native getNode :: TooltipSkin -> IO Node
+
+  native getSkinnable :: TooltipSkin -> IO Tooltip
+
+

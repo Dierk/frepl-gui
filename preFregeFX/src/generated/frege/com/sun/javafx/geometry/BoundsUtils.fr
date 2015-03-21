@@ -1,0 +1,7 @@
+data BoundsUtils = pure native com.sun.javafx.geometry.BoundsUtils where
+
+  native createBoundingBox "com.sun.javafx.geometry.BoundsUtils.createBoundingBox" :: Point2D -> Point2D -> Point2D -> Point2D -> IO Bounds
+                                                                                    | Point2D -> Point2D -> Point2D -> Point2D -> Point2D -> Point2D -> Point2D -> Point2D -> IO Bounds
+                                                                                    | Point3D -> Point3D -> Point3D -> Point3D -> Point3D -> Point3D -> Point3D -> Point3D -> IO Bounds
+
+

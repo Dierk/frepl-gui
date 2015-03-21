@@ -1,0 +1,15 @@
+data VirtualScrollBar = pure native com.sun.javafx.scene.control.skin.VirtualScrollBar where
+
+  pure native new :: VirtualFlow -> VirtualScrollBar
+
+  pure native adjustValue :: VirtualScrollBar -> double -> void
+
+  pure native decrement :: VirtualScrollBar -> void
+
+  pure native increment :: VirtualScrollBar -> void
+
+  pure native isVirtual :: VirtualScrollBar -> boolean
+
+  pure native setVirtual :: VirtualScrollBar -> boolean -> void
+
+

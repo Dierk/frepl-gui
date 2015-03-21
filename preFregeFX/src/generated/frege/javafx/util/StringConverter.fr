@@ -1,0 +1,7 @@
+data StringConverter t = mutable native javafx.util.StringConverter where
+
+  native fromString :: StringConverter t -> String -> IO t
+
+  native toString :: StringConverter t -> t -> IO String
+
+

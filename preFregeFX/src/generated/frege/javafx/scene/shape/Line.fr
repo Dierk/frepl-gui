@@ -1,0 +1,38 @@
+data Line = mutable native javafx.scene.shape.Line where
+
+  native new :: () -> IO Line
+              | double -> double -> double -> double -> IO Line
+
+  native endXProperty :: Line -> IO DoubleProperty
+
+  native endYProperty :: Line -> IO DoubleProperty
+
+  native getEndX :: Line -> IO double
+
+  native getEndY :: Line -> IO double
+
+  native getStartX :: Line -> IO double
+
+  native getStartY :: Line -> IO double
+
+  native impl_computeGeomBounds :: Line -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_configShape :: Line -> IO Line2D
+
+  native impl_updatePeer :: Line -> IO void
+
+  native setEndX :: Line -> double -> IO void
+
+  native setEndY :: Line -> double -> IO void
+
+  native setStartX :: Line -> double -> IO void
+
+  native setStartY :: Line -> double -> IO void
+
+  native startXProperty :: Line -> IO DoubleProperty
+
+  native startYProperty :: Line -> IO DoubleProperty
+
+  native toString :: Line -> IO String
+
+

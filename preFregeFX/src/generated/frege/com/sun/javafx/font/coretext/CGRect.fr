@@ -1,0 +1,1 @@
+data CGRect = pure native com.sun.javafx.font.coretext.CGRect

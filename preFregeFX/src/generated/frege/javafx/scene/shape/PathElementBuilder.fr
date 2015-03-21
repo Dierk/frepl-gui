@@ -1,0 +1,7 @@
+data PathElementBuilder b = mutable native javafx.scene.shape.PathElementBuilder where
+
+  native absolute :: PathElementBuilder b -> boolean -> IO b
+
+  native applyTo :: PathElementBuilder b -> PathElement -> IO void
+
+

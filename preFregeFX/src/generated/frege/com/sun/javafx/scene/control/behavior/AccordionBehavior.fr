@@ -1,0 +1,9 @@
+data AccordionBehavior = pure native com.sun.javafx.scene.control.behavior.AccordionBehavior where
+
+  native new :: Accordion -> IO AccordionBehavior
+
+  pure native dispose :: AccordionBehavior -> void
+
+  native mousePressed :: AccordionBehavior -> MouseEvent -> IO void
+
+

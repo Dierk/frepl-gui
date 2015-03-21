@@ -1,0 +1,9 @@
+data InputFieldSkin = pure native com.sun.javafx.scene.control.skin.InputFieldSkin where
+
+  pure native dispose :: InputFieldSkin -> void
+
+  native getNode :: InputFieldSkin -> IO Node
+
+  pure native getSkinnable :: InputFieldSkin -> InputField
+
+

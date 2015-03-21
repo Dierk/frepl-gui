@@ -1,0 +1,1 @@
+data SelectorPartitioning = pure native com.sun.javafx.css.SelectorPartitioning

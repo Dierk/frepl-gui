@@ -1,0 +1,19 @@
+data RadioMenuItem = mutable native javafx.scene.control.RadioMenuItem where
+
+  native new :: String -> Node -> IO RadioMenuItem
+              | String -> IO RadioMenuItem
+              | () -> IO RadioMenuItem
+
+  native getToggleGroup :: RadioMenuItem -> IO ToggleGroup
+
+  native isSelected :: RadioMenuItem -> IO boolean
+
+  native selectedProperty :: RadioMenuItem -> IO BooleanProperty
+
+  native setSelected :: RadioMenuItem -> boolean -> IO void
+
+  native setToggleGroup :: RadioMenuItem -> ToggleGroup -> IO void
+
+  native toggleGroupProperty :: RadioMenuItem -> IO (ObjectProperty ToggleGroup)
+
+

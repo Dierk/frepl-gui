@@ -1,0 +1,93 @@
+data Rotate = mutable native javafx.scene.transform.Rotate where
+
+  native x_axis "javafx.scene.transform.Rotate.X_AXIS" :: IO Point3D
+  native y_axis "javafx.scene.transform.Rotate.Y_AXIS" :: IO Point3D
+  native z_axis "javafx.scene.transform.Rotate.Z_AXIS" :: IO Point3D
+
+  native new :: double -> double -> double -> double -> Point3D -> IO Rotate
+              | double -> double -> double -> double -> IO Rotate
+              | double -> double -> double -> IO Rotate
+              | () -> IO Rotate
+              | double -> IO Rotate
+              | double -> Point3D -> IO Rotate
+
+  native angleProperty :: Rotate -> IO DoubleProperty
+
+  native axisProperty :: Rotate -> IO (ObjectProperty Point3D)
+
+  native clone :: Rotate -> IO Rotate
+
+  native createConcatenation :: Rotate -> Transform -> IO Transform
+
+  native createInverse :: Rotate -> IO Transform throws NonInvertibleTransformException
+
+  native deltaTransform :: Rotate -> double -> double -> IO Point2D
+                         | Rotate -> double -> double -> double -> IO Point3D
+
+  native getAngle :: Rotate -> IO double
+
+  native getAxis :: Rotate -> IO Point3D
+
+  native getMxx :: Rotate -> IO double
+
+  native getMxy :: Rotate -> IO double
+
+  native getMxz :: Rotate -> IO double
+
+  native getMyx :: Rotate -> IO double
+
+  native getMyy :: Rotate -> IO double
+
+  native getMyz :: Rotate -> IO double
+
+  native getMzx :: Rotate -> IO double
+
+  native getMzy :: Rotate -> IO double
+
+  native getMzz :: Rotate -> IO double
+
+  native getPivotX :: Rotate -> IO double
+
+  native getPivotY :: Rotate -> IO double
+
+  native getPivotZ :: Rotate -> IO double
+
+  native getTx :: Rotate -> IO double
+
+  native getTy :: Rotate -> IO double
+
+  native getTz :: Rotate -> IO double
+
+  native impl_apply :: Rotate -> Affine3D -> IO void
+
+  native impl_derive :: Rotate -> BaseTransform -> IO BaseTransform
+
+  native inverseDeltaTransform :: Rotate -> double -> double -> IO Point2D
+                                | Rotate -> double -> double -> double -> IO Point3D
+
+  native inverseTransform :: Rotate -> double -> double -> IO Point2D
+                           | Rotate -> double -> double -> double -> IO Point3D
+
+  native pivotXProperty :: Rotate -> IO DoubleProperty
+
+  native pivotYProperty :: Rotate -> IO DoubleProperty
+
+  native pivotZProperty :: Rotate -> IO DoubleProperty
+
+  native setAngle :: Rotate -> double -> IO void
+
+  native setAxis :: Rotate -> Point3D -> IO void
+
+  native setPivotX :: Rotate -> double -> IO void
+
+  native setPivotY :: Rotate -> double -> IO void
+
+  native setPivotZ :: Rotate -> double -> IO void
+
+  native toString :: Rotate -> IO String
+
+  native transform :: Rotate -> double -> double -> double -> IO Point3D
+                    | Rotate -> double -> double -> IO Point2D
+
+derive Cloneable Rotate
+

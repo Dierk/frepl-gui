@@ -1,0 +1,7 @@
+data NGSphere = pure native com.sun.javafx.sg.prism.NGSphere where
+
+  pure native new :: () -> NGSphere
+
+  pure native updateMesh :: NGSphere -> NGTriangleMesh -> void
+
+

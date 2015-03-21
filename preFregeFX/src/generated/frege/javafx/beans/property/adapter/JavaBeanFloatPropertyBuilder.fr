@@ -1,0 +1,21 @@
+data JavaBeanFloatPropertyBuilder = mutable native javafx.beans.property.adapter.JavaBeanFloatPropertyBuilder where
+
+  native new :: () -> IO JavaBeanFloatPropertyBuilder
+
+  native bean :: JavaBeanFloatPropertyBuilder -> Object -> IO JavaBeanFloatPropertyBuilder
+
+  native beanClass :: JavaBeanFloatPropertyBuilder -> Class Object -> IO JavaBeanFloatPropertyBuilder
+
+  native build :: JavaBeanFloatPropertyBuilder -> IO JavaBeanFloatProperty throws NoSuchMethodException
+
+  native create "javafx.beans.property.adapter.JavaBeanFloatPropertyBuilder.create" :: () -> IO JavaBeanFloatPropertyBuilder
+
+  native getter :: JavaBeanFloatPropertyBuilder -> String -> IO JavaBeanFloatPropertyBuilder
+                 | JavaBeanFloatPropertyBuilder -> Method -> IO JavaBeanFloatPropertyBuilder
+
+  native name :: JavaBeanFloatPropertyBuilder -> String -> IO JavaBeanFloatPropertyBuilder
+
+  native setter :: JavaBeanFloatPropertyBuilder -> String -> IO JavaBeanFloatPropertyBuilder
+                 | JavaBeanFloatPropertyBuilder -> Method -> IO JavaBeanFloatPropertyBuilder
+
+

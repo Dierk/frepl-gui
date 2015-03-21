@@ -1,0 +1,7 @@
+data NGParallelCamera = pure native com.sun.javafx.sg.prism.NGParallelCamera where
+
+  pure native new :: () -> NGParallelCamera
+
+  pure native computePickRay :: NGParallelCamera -> float -> float -> PickRay -> PickRay
+
+

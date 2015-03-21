@@ -1,0 +1,17 @@
+data CompositeGlyphMapper = pure native com.sun.javafx.font.CompositeGlyphMapper where
+
+  pure native slotmask "com.sun.javafx.font.CompositeGlyphMapper.SLOTMASK" :: int
+  pure native glyphmask "com.sun.javafx.font.CompositeGlyphMapper.GLYPHMASK" :: int
+  pure native nblocks "com.sun.javafx.font.CompositeGlyphMapper.NBLOCKS" :: int
+  pure native blocksz "com.sun.javafx.font.CompositeGlyphMapper.BLOCKSZ" :: int
+  pure native maxunicode "com.sun.javafx.font.CompositeGlyphMapper.MAXUNICODE" :: int
+
+  pure native new :: CompositeFontResource -> CompositeGlyphMapper
+
+  pure native compositeGlyphCode :: CompositeGlyphMapper -> int -> int -> int
+
+  pure native getGlyphCode :: CompositeGlyphMapper -> int -> int
+
+  pure native getMissingGlyphCode :: CompositeGlyphMapper -> int
+
+

@@ -1,0 +1,27 @@
+data UnmodifiableObservableMap k v = pure native com.sun.javafx.collections.UnmodifiableObservableMap where
+
+  native new :: ObservableMap k v -> IO (UnmodifiableObservableMap k v)
+
+  native addListener :: UnmodifiableObservableMap k v -> InvalidationListener -> IO void
+                      | UnmodifiableObservableMap k v -> MapChangeListener k v -> IO void
+
+  pure native containsKey :: UnmodifiableObservableMap k v -> Object -> boolean
+
+  pure native containsValue :: UnmodifiableObservableMap k v -> Object -> boolean
+
+  pure native entrySet :: UnmodifiableObservableMap k v -> Set (Map_Entry k v)
+
+  pure native get :: UnmodifiableObservableMap k v -> Object -> v
+
+  pure native isEmpty :: UnmodifiableObservableMap k v -> boolean
+
+  pure native keySet :: UnmodifiableObservableMap k v -> Set k
+
+  native removeListener :: UnmodifiableObservableMap k v -> InvalidationListener -> IO void
+                         | UnmodifiableObservableMap k v -> MapChangeListener k v -> IO void
+
+  pure native size :: UnmodifiableObservableMap k v -> int
+
+  pure native values :: UnmodifiableObservableMap k v -> Collection v
+
+

@@ -1,0 +1,28 @@
+data Stylesheet = pure native com.sun.javafx.css.Stylesheet where
+
+  pure native new :: () -> Stylesheet
+                   | String -> Stylesheet
+
+  native convertToBinary "com.sun.javafx.css.Stylesheet.convertToBinary" :: File -> File -> ST s void throws IOException
+
+  pure native equals :: Stylesheet -> Object -> boolean
+
+  pure native getFontFaces :: Stylesheet -> List FontFace
+
+  native getOrigin :: Stylesheet -> IO StyleOrigin
+
+  pure native getRules :: Stylesheet -> List Rule
+
+  pure native getUrl :: Stylesheet -> String
+
+  pure native hashCode :: Stylesheet -> int
+
+  pure native importStylesheet :: Stylesheet -> Stylesheet -> void
+
+  native loadBinary "com.sun.javafx.css.Stylesheet.loadBinary" :: URL -> ST s Stylesheet throws IOException
+
+  native setOrigin :: Stylesheet -> StyleOrigin -> IO void
+
+  pure native toString :: Stylesheet -> String
+
+

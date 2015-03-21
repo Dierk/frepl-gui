@@ -1,0 +1,35 @@
+data NGPath = pure native com.sun.javafx.sg.prism.NGPath where
+
+  pure native new :: () -> NGPath
+
+  pure native acceptsPath2dOnUpdate :: NGPath -> boolean
+
+  pure native addArcTo :: NGPath -> float -> float -> float -> float -> float -> float -> float -> void
+
+  pure native addClosePath :: NGPath -> void
+
+  pure native addCubicTo :: NGPath -> float -> float -> float -> float -> float -> float -> void
+
+  pure native addLineTo :: NGPath -> float -> float -> void
+
+  pure native addMoveTo :: NGPath -> float -> float -> void
+
+  pure native addQuadTo :: NGPath -> float -> float -> float -> float -> void
+
+  pure native getCurrentX :: NGPath -> float
+
+  pure native getCurrentY :: NGPath -> float
+
+  pure native getGeometry :: NGPath -> Path2D
+
+  pure native getShape :: NGPath -> Shape
+
+  pure native reset :: NGPath -> void
+
+  native setFillRule :: NGPath -> FillRule -> IO void
+
+  pure native update :: NGPath -> void
+
+  pure native updateWithPath2d :: NGPath -> Path2D -> void
+
+

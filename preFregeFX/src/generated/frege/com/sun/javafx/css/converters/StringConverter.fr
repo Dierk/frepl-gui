@@ -1,0 +1,9 @@
+data StringConverter = pure native com.sun.javafx.css.converters.StringConverter where
+
+  native convert :: StringConverter -> ParsedValue String String -> Font -> IO String
+
+  native getInstance "com.sun.javafx.css.converters.StringConverter.getInstance" :: () -> IO (StyleConverter String String)
+
+  pure native toString :: StringConverter -> String
+
+

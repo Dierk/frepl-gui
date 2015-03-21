@@ -1,0 +1,8 @@
+data RenderThemeImpl = pure native com.sun.javafx.webkit.theme.RenderThemeImpl where
+
+  pure native new :: Accessor -> RenderThemeImpl
+                   | () -> RenderThemeImpl
+
+  pure native drawWidget :: RenderThemeImpl -> WCGraphicsContext -> Ref -> int -> int -> void
+
+

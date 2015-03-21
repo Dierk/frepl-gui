@@ -1,0 +1,9 @@
+data LadderConverter = pure native com.sun.javafx.css.parser.LadderConverter where
+
+  native convert :: LadderConverter -> ParsedValue (JArray ParsedValue) Color -> Font -> IO Color
+
+  pure native getInstance "com.sun.javafx.css.parser.LadderConverter.getInstance" :: () -> LadderConverter
+
+  pure native toString :: LadderConverter -> String
+
+

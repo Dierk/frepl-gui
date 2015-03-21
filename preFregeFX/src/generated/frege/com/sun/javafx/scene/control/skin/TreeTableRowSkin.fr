@@ -1,0 +1,15 @@
+data TreeTableRowSkin t = pure native com.sun.javafx.scene.control.skin.TreeTableRowSkin where
+
+  native new :: TreeTableRow t -> IO (TreeTableRowSkin t)
+
+  pure native getClassCssMetaData "com.sun.javafx.scene.control.skin.TreeTableRowSkin.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  pure native getCssMetaData :: TreeTableRowSkin t -> List (CssMetaData Styleable Object)
+
+  pure native getIndent :: TreeTableRowSkin t -> double
+
+  native indentProperty :: TreeTableRowSkin t -> IO DoubleProperty
+
+  pure native setIndent :: TreeTableRowSkin t -> double -> void
+
+

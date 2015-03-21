@@ -1,0 +1,15 @@
+data TransferMode = mutable native javafx.scene.input.TransferMode where
+
+  native copy "javafx.scene.input.TransferMode.COPY" :: IO TransferMode
+  native move "javafx.scene.input.TransferMode.MOVE" :: IO TransferMode
+  native link "javafx.scene.input.TransferMode.LINK" :: IO TransferMode
+  native any "javafx.scene.input.TransferMode.ANY" :: STMutable s (JArray TransferMode)
+  native copy_or_move "javafx.scene.input.TransferMode.COPY_OR_MOVE" :: STMutable s (JArray TransferMode)
+  native none "javafx.scene.input.TransferMode.NONE" :: STMutable s (JArray TransferMode)
+
+  native valueOf "javafx.scene.input.TransferMode.valueOf" :: String -> IO TransferMode
+
+  native values "javafx.scene.input.TransferMode.values" :: () -> STMutable s (JArray TransferMode)
+
+derive Serializable TransferMode
+

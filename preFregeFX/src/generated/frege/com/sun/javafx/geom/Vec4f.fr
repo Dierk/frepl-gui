@@ -1,0 +1,16 @@
+data Vec4f = pure native com.sun.javafx.geom.Vec4f where
+
+  pure native x "".x"" :: Vec4f -> float
+  pure native y "".y"" :: Vec4f -> float
+  pure native z "".z"" :: Vec4f -> float
+  pure native w "".w"" :: Vec4f -> float
+
+  pure native new :: float -> float -> float -> float -> Vec4f
+                   | Vec4f -> Vec4f
+                   | () -> Vec4f
+
+  pure native set :: Vec4f -> Vec4f -> void
+
+  pure native toString :: Vec4f -> String
+
+

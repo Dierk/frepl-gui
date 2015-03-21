@@ -1,0 +1,17 @@
+data ReadOnlySetProperty e = mutable native javafx.beans.property.ReadOnlySetProperty where
+
+  native bindContent :: ReadOnlySetProperty e -> ObservableSet e -> IO void
+
+  native bindContentBidirectional :: ReadOnlySetProperty e -> ObservableSet e -> IO void
+
+  native equals :: ReadOnlySetProperty e -> Object -> IO boolean
+
+  native hashCode :: ReadOnlySetProperty e -> IO int
+
+  native toString :: ReadOnlySetProperty e -> IO String
+
+  native unbindContent :: ReadOnlySetProperty e -> Object -> IO void
+
+  native unbindContentBidirectional :: ReadOnlySetProperty e -> Object -> IO void
+
+

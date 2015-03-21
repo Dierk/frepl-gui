@@ -1,0 +1,11 @@
+data StyleMap = pure native com.sun.javafx.css.StyleMap where
+
+  pure native empty_map "com.sun.javafx.css.StyleMap.EMPTY_MAP" :: StyleMap
+
+  pure native getCascadingStyles :: StyleMap -> Map String (List CascadingStyle)
+
+  pure native getId :: StyleMap -> int
+
+  pure native isEmpty :: StyleMap -> boolean
+
+

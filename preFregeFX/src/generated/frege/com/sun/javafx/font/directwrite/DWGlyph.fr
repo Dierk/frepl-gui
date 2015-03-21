@@ -1,0 +1,28 @@
+data DWGlyph = pure native com.sun.javafx.font.directwrite.DWGlyph where
+
+  pure native getAdvance :: DWGlyph -> float
+
+  pure native getBBox :: DWGlyph -> RectBounds
+
+  pure native getGlyphCode :: DWGlyph -> int
+
+  pure native getHeight :: DWGlyph -> int
+
+  pure native getOriginX :: DWGlyph -> int
+
+  pure native getOriginY :: DWGlyph -> int
+
+  native getPixelData :: DWGlyph -> STMutable s (JArray byte)
+                       | DWGlyph -> int -> STMutable s (JArray byte)
+
+  pure native getPixelXAdvance :: DWGlyph -> float
+
+  pure native getPixelYAdvance :: DWGlyph -> float
+
+  pure native getShape :: DWGlyph -> Shape
+
+  pure native getWidth :: DWGlyph -> int
+
+  pure native isLCDGlyph :: DWGlyph -> boolean
+
+

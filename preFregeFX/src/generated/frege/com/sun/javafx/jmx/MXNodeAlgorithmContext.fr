@@ -1,0 +1,8 @@
+data MXNodeAlgorithmContext = pure native com.sun.javafx.jmx.MXNodeAlgorithmContext where
+
+  pure native new :: () -> MXNodeAlgorithmContext
+                   | int -> MXNodeAlgorithmContext
+
+  pure native getNextInt :: MXNodeAlgorithmContext -> int
+
+

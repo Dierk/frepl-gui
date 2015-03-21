@@ -1,0 +1,5 @@
+data BuilderFactory = mutable native javafx.util.BuilderFactory where
+
+  native getBuilder :: BuilderFactory -> Class Object -> IO (Builder Object)
+
+

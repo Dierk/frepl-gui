@@ -1,0 +1,1 @@
+data SelectBinding = pure native com.sun.javafx.binding.SelectBinding

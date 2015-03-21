@@ -1,0 +1,9 @@
+data RadioMenuItemBase = pure native com.sun.javafx.menu.RadioMenuItemBase where
+
+  pure native isSelected :: RadioMenuItemBase -> boolean
+
+  native selectedProperty :: RadioMenuItemBase -> IO BooleanProperty
+
+  pure native setSelected :: RadioMenuItemBase -> boolean -> void
+
+

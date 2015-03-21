@@ -51,6 +51,7 @@ String locateJfxLibDir() {
 }
 
 fregeNativeGen {
-    filename = "$projectDir/src/main/resources/types.properties"
-    clazz = "javafx.scene.contol.Button"
+//    typesFile = "$projectDir/src/main/resources/types.properties"
+    className = System.properties.nativeClassName //"javafx.scene.control.Button"
+    outputFile = file(System.properties.outputFile) // outputFile
 }

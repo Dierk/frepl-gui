@@ -1,0 +1,27 @@
+data SetPropertyBase e = mutable native javafx.beans.property.SetPropertyBase where
+
+  native addListener :: SetPropertyBase e -> SetChangeListener e -> IO void
+                      | SetPropertyBase e -> InvalidationListener -> IO void
+                      | SetPropertyBase e -> ChangeListener (ObservableSet e) -> IO void
+
+  native bind :: SetPropertyBase e -> ObservableValue (ObservableSet e) -> IO void
+
+  native emptyProperty :: SetPropertyBase e -> IO ReadOnlyBooleanProperty
+
+  native get :: SetPropertyBase e -> IO (ObservableSet e)
+
+  native isBound :: SetPropertyBase e -> IO boolean
+
+  native removeListener :: SetPropertyBase e -> SetChangeListener e -> IO void
+                         | SetPropertyBase e -> InvalidationListener -> IO void
+                         | SetPropertyBase e -> ChangeListener (ObservableSet e) -> IO void
+
+  native set :: SetPropertyBase e -> ObservableSet e -> IO void
+
+  native sizeProperty :: SetPropertyBase e -> IO ReadOnlyIntegerProperty
+
+  native toString :: SetPropertyBase e -> IO String
+
+  native unbind :: SetPropertyBase e -> IO void
+
+

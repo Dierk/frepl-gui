@@ -1,0 +1,8 @@
+data IllegalPathStateException = pure native com.sun.javafx.geom.IllegalPathStateException where
+
+  pure native new :: () -> IllegalPathStateException
+                   | String -> IllegalPathStateException
+
+derive Exceptional IllegalPathStateException
+derive Serializable IllegalPathStateException
+

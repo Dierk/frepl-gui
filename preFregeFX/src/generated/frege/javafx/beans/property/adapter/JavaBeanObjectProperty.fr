@@ -1,0 +1,29 @@
+data JavaBeanObjectProperty t = mutable native javafx.beans.property.adapter.JavaBeanObjectProperty where
+
+  native addListener :: JavaBeanObjectProperty t -> InvalidationListener -> IO void
+                      | JavaBeanObjectProperty t -> ChangeListener t -> IO void
+
+  native bind :: JavaBeanObjectProperty t -> ObservableValue t -> IO void
+
+  native dispose :: JavaBeanObjectProperty t -> IO void
+
+  native fireValueChangedEvent :: JavaBeanObjectProperty t -> IO void
+
+  native get :: JavaBeanObjectProperty t -> IO t
+
+  native getBean :: JavaBeanObjectProperty t -> IO Object
+
+  native getName :: JavaBeanObjectProperty t -> IO String
+
+  native isBound :: JavaBeanObjectProperty t -> IO boolean
+
+  native removeListener :: JavaBeanObjectProperty t -> ChangeListener t -> IO void
+                         | JavaBeanObjectProperty t -> InvalidationListener -> IO void
+
+  native set :: JavaBeanObjectProperty t -> t -> IO void
+
+  native toString :: JavaBeanObjectProperty t -> IO String
+
+  native unbind :: JavaBeanObjectProperty t -> IO void
+
+

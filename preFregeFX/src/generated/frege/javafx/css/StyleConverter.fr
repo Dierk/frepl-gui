@@ -1,0 +1,29 @@
+data StyleConverter f t = mutable native javafx.css.StyleConverter where
+
+  native new :: () -> IO (StyleConverter f t)
+
+  native convert :: StyleConverter f t -> ParsedValue f t -> Font -> IO t
+
+  native getBooleanConverter "javafx.css.StyleConverter.getBooleanConverter" :: () -> IO (StyleConverter String Boolean)
+
+  native getColorConverter "javafx.css.StyleConverter.getColorConverter" :: () -> IO (StyleConverter String Color)
+
+  native getDurationConverter "javafx.css.StyleConverter.getDurationConverter" :: () -> IO (StyleConverter Object Duration)
+
+  native getEffectConverter "javafx.css.StyleConverter.getEffectConverter" :: () -> IO (StyleConverter (JArray ParsedValue) Effect)
+
+  native getEnumConverter "javafx.css.StyleConverter.getEnumConverter" :: Class e -> IO (StyleConverter String (Enum Object))
+
+  native getFontConverter "javafx.css.StyleConverter.getFontConverter" :: () -> IO (StyleConverter (JArray ParsedValue) Font)
+
+  native getInsetsConverter "javafx.css.StyleConverter.getInsetsConverter" :: () -> IO (StyleConverter (JArray ParsedValue) Insets)
+
+  native getPaintConverter "javafx.css.StyleConverter.getPaintConverter" :: () -> IO (StyleConverter (ParsedValue Object Paint) Paint)
+
+  native getSizeConverter "javafx.css.StyleConverter.getSizeConverter" :: () -> IO (StyleConverter Object Number)
+
+  native getStringConverter "javafx.css.StyleConverter.getStringConverter" :: () -> IO (StyleConverter String String)
+
+  native getUrlConverter "javafx.css.StyleConverter.getUrlConverter" :: () -> IO (StyleConverter (JArray ParsedValue) String)
+
+

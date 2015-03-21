@@ -1,0 +1,41 @@
+data ObservableIntegerArrayImpl = pure native com.sun.javafx.collections.ObservableIntegerArrayImpl where
+
+  native new :: ObservableIntegerArray -> IO ObservableIntegerArrayImpl
+              | Mutable s (JArray int) -> ST s ObservableIntegerArrayImpl
+              | () -> ST s ObservableIntegerArrayImpl
+
+  native addAll :: ObservableIntegerArrayImpl -> ObservableIntegerArray -> int -> int -> IO void
+                 | ObservableIntegerArrayImpl -> Mutable s (JArray int) -> ST s void
+                 | ObservableIntegerArrayImpl -> ObservableIntegerArray -> IO void
+                 | ObservableIntegerArrayImpl -> Mutable s (JArray int) -> int -> int -> ST s void
+
+  pure native clear :: ObservableIntegerArrayImpl -> void
+
+  native copyTo :: ObservableIntegerArrayImpl -> int -> ObservableIntegerArray -> int -> int -> IO void
+                 | ObservableIntegerArrayImpl -> int -> Mutable s (JArray int) -> int -> int -> ST s void
+
+  pure native ensureCapacity :: ObservableIntegerArrayImpl -> int -> void
+
+  pure native get :: ObservableIntegerArrayImpl -> int -> int
+
+  pure native resize :: ObservableIntegerArrayImpl -> int -> void
+
+  native set :: ObservableIntegerArrayImpl -> int -> int -> ST s void
+              | ObservableIntegerArrayImpl -> int -> ObservableIntegerArray -> int -> int -> IO void
+              | ObservableIntegerArrayImpl -> int -> Mutable s (JArray int) -> int -> int -> ST s void
+
+  native setAll :: ObservableIntegerArrayImpl -> Mutable s (JArray int) -> ST s void
+                 | ObservableIntegerArrayImpl -> Mutable s (JArray int) -> int -> int -> ST s void
+                 | ObservableIntegerArrayImpl -> ObservableIntegerArray -> IO void
+                 | ObservableIntegerArrayImpl -> ObservableIntegerArray -> int -> int -> IO void
+
+  pure native size :: ObservableIntegerArrayImpl -> int
+
+  native toArray :: ObservableIntegerArrayImpl -> Mutable s (JArray int) -> STMutable s (JArray int)
+                  | ObservableIntegerArrayImpl -> int -> Mutable s (JArray int) -> int -> STMutable s (JArray int)
+
+  pure native toString :: ObservableIntegerArrayImpl -> String
+
+  pure native trimToSize :: ObservableIntegerArrayImpl -> void
+
+

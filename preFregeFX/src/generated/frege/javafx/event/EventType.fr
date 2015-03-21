@@ -1,0 +1,17 @@
+data EventType t = mutable native javafx.event.EventType where
+
+  native root "javafx.event.EventType.ROOT" :: IO (EventType Event)
+
+  native new :: EventType t -> String -> IO (EventType t)
+              | EventType t -> IO (EventType t)
+              | String -> IO (EventType t)
+              | () -> IO (EventType t)
+
+  native getName :: EventType t -> IO String
+
+  native getSuperType :: EventType t -> IO (EventType t)
+
+  native toString :: EventType t -> IO String
+
+derive Serializable (EventType t)
+

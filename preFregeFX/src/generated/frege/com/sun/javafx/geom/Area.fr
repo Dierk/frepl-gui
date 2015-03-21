@@ -1,0 +1,44 @@
+data Area = pure native com.sun.javafx.geom.Area where
+
+  pure native new :: PathIterator -> Area
+                   | Shape -> Area
+                   | () -> Area
+
+  pure native add :: Area -> Area -> void
+
+  pure native contains :: Area -> Point2D -> boolean
+                        | Area -> float -> float -> boolean
+                        | Area -> float -> float -> float -> float -> boolean
+
+  pure native copy :: Area -> Area
+
+  pure native createTransformedArea :: Area -> BaseTransform -> Area
+
+  pure native exclusiveOr :: Area -> Area -> void
+
+  pure native getBounds :: Area -> RectBounds
+
+  pure native getPathIterator :: Area -> BaseTransform -> PathIterator
+                               | Area -> BaseTransform -> float -> PathIterator
+
+  pure native intersect :: Area -> Area -> void
+
+  pure native intersects :: Area -> float -> float -> float -> float -> boolean
+
+  pure native isEmpty :: Area -> boolean
+
+  pure native isEquivalent :: Area -> Area -> boolean
+
+  pure native isPolygonal :: Area -> boolean
+
+  pure native isRectangular :: Area -> boolean
+
+  pure native isSingular :: Area -> boolean
+
+  pure native reset :: Area -> void
+
+  pure native subtract :: Area -> Area -> void
+
+  pure native transform :: Area -> BaseTransform -> void
+
+

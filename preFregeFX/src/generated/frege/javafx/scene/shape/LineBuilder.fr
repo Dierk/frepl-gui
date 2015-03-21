@@ -1,0 +1,17 @@
+data LineBuilder b = mutable native javafx.scene.shape.LineBuilder where
+
+  native applyTo :: LineBuilder b -> Line -> IO void
+
+  native build :: LineBuilder b -> IO Line
+
+  native create "javafx.scene.shape.LineBuilder.create" :: () -> IO (LineBuilder Object)
+
+  native endX :: LineBuilder b -> double -> IO b
+
+  native endY :: LineBuilder b -> double -> IO b
+
+  native startX :: LineBuilder b -> double -> IO b
+
+  native startY :: LineBuilder b -> double -> IO b
+
+

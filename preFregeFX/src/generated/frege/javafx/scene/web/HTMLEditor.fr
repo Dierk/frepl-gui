@@ -1,0 +1,11 @@
+data HTMLEditor = mutable native javafx.scene.web.HTMLEditor where
+
+  native new :: () -> IO HTMLEditor
+
+  native getHtmlText :: HTMLEditor -> IO String
+
+  native print :: HTMLEditor -> PrinterJob -> IO void
+
+  native setHtmlText :: HTMLEditor -> String -> IO void
+
+

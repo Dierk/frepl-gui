@@ -1,0 +1,8 @@
+data TwoLevelFocusPopupBehavior = pure native com.sun.javafx.scene.control.behavior.TwoLevelFocusPopupBehavior where
+
+  native new :: PopupControl -> IO TwoLevelFocusPopupBehavior
+              | Node -> IO TwoLevelFocusPopupBehavior
+
+  pure native dispose :: TwoLevelFocusPopupBehavior -> void
+
+

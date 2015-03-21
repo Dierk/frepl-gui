@@ -1,0 +1,17 @@
+data WebErrorEvent = mutable native javafx.scene.web.WebErrorEvent where
+
+  native any "javafx.scene.web.WebErrorEvent.ANY" :: IO (EventType WebErrorEvent)
+  native user_data_directory_already_in_use "javafx.scene.web.WebErrorEvent.USER_DATA_DIRECTORY_ALREADY_IN_USE" :: IO (EventType WebErrorEvent)
+  native user_data_directory_io_error "javafx.scene.web.WebErrorEvent.USER_DATA_DIRECTORY_IO_ERROR" :: IO (EventType WebErrorEvent)
+  native user_data_directory_security_error "javafx.scene.web.WebErrorEvent.USER_DATA_DIRECTORY_SECURITY_ERROR" :: IO (EventType WebErrorEvent)
+
+  native new :: Object -> EventType WebErrorEvent -> String -> Throwable -> IO WebErrorEvent
+
+  native getException :: WebErrorEvent -> IO Throwable
+
+  native getMessage :: WebErrorEvent -> IO String
+
+  native toString :: WebErrorEvent -> IO String
+
+derive Serializable WebErrorEvent
+

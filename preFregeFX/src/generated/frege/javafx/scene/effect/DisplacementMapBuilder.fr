@@ -1,0 +1,23 @@
+data DisplacementMapBuilder b = mutable native javafx.scene.effect.DisplacementMapBuilder where
+
+  native applyTo :: DisplacementMapBuilder b -> DisplacementMap -> IO void
+
+  native build :: DisplacementMapBuilder b -> IO DisplacementMap
+
+  native create "javafx.scene.effect.DisplacementMapBuilder.create" :: () -> IO (DisplacementMapBuilder Object)
+
+  native input :: DisplacementMapBuilder b -> Effect -> IO b
+
+  native mapData :: DisplacementMapBuilder b -> FloatMap -> IO b
+
+  native offsetX :: DisplacementMapBuilder b -> double -> IO b
+
+  native offsetY :: DisplacementMapBuilder b -> double -> IO b
+
+  native scaleX :: DisplacementMapBuilder b -> double -> IO b
+
+  native scaleY :: DisplacementMapBuilder b -> double -> IO b
+
+  native wrap :: DisplacementMapBuilder b -> boolean -> IO b
+
+

@@ -1,0 +1,11 @@
+data HorizontalDirection = mutable native javafx.geometry.HorizontalDirection where
+
+  native left "javafx.geometry.HorizontalDirection.LEFT" :: IO HorizontalDirection
+  native right "javafx.geometry.HorizontalDirection.RIGHT" :: IO HorizontalDirection
+
+  native valueOf "javafx.geometry.HorizontalDirection.valueOf" :: String -> IO HorizontalDirection
+
+  native values "javafx.geometry.HorizontalDirection.values" :: () -> STMutable s (JArray HorizontalDirection)
+
+derive Serializable HorizontalDirection
+

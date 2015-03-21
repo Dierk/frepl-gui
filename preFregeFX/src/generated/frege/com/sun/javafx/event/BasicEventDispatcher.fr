@@ -1,0 +1,15 @@
+data BasicEventDispatcher = pure native com.sun.javafx.event.BasicEventDispatcher where
+
+  native dispatchBubblingEvent :: BasicEventDispatcher -> Event -> IO Event
+
+  native dispatchCapturingEvent :: BasicEventDispatcher -> Event -> IO Event
+
+  native dispatchEvent :: BasicEventDispatcher -> Event -> EventDispatchChain -> IO Event
+
+  pure native getNextDispatcher :: BasicEventDispatcher -> BasicEventDispatcher
+
+  pure native getPreviousDispatcher :: BasicEventDispatcher -> BasicEventDispatcher
+
+  pure native insertNextDispatcher :: BasicEventDispatcher -> BasicEventDispatcher -> void
+
+

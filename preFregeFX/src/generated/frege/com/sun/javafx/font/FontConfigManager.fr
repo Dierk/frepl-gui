@@ -1,0 +1,13 @@
+data FontConfigManager = pure native com.sun.javafx.font.FontConfigManager where
+
+  pure native getDefaultFontPath "com.sun.javafx.font.FontConfigManager.getDefaultFontPath" :: () -> String
+
+  pure native getFileNames "com.sun.javafx.font.FontConfigManager.getFileNames" :: FontConfigManager_FcCompFont -> boolean -> ArrayList String
+
+  pure native getFontConfigFont "com.sun.javafx.font.FontConfigManager.getFontConfigFont" :: String -> boolean -> boolean -> FontConfigManager_FcCompFont
+
+  pure native getFontNames "com.sun.javafx.font.FontConfigManager.getFontNames" :: FontConfigManager_FcCompFont -> boolean -> ArrayList String
+
+  pure native populateMaps "com.sun.javafx.font.FontConfigManager.populateMaps" :: HashMap String String -> HashMap String String -> HashMap String (ArrayList String) -> Locale -> void
+
+

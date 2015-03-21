@@ -1,0 +1,13 @@
+data HostServicesDelegate = pure native com.sun.javafx.application.HostServicesDelegate where
+
+  pure native getCodeBase :: HostServicesDelegate -> String
+
+  pure native getDocumentBase :: HostServicesDelegate -> String
+
+  native getInstance "com.sun.javafx.application.HostServicesDelegate.getInstance" :: Application -> IO HostServicesDelegate
+
+  pure native getWebContext :: HostServicesDelegate -> JSObject
+
+  pure native showDocument :: HostServicesDelegate -> String -> void
+
+

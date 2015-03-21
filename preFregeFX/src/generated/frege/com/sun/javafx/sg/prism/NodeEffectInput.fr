@@ -1,0 +1,28 @@
+data NodeEffectInput = pure native com.sun.javafx.sg.prism.NodeEffectInput where
+
+  pure native new :: NGNode -> NodeEffectInput
+                   | NGNode -> NodeEffectInput_RenderType -> NodeEffectInput
+
+  pure native filter :: NodeEffectInput -> FilterContext -> BaseTransform -> Rectangle -> Object -> Effect -> ImageData
+
+  pure native flush :: NodeEffectInput -> void
+
+  pure native flushIdentityImage :: NodeEffectInput -> void
+
+  pure native flushTransformedImage :: NodeEffectInput -> void
+
+  pure native getAccelType :: NodeEffectInput -> FilterContext -> Effect_AccelType
+
+  pure native getBounds :: NodeEffectInput -> BaseTransform -> Effect -> BaseBounds
+
+  pure native getDirtyRegions :: NodeEffectInput -> Effect -> DirtyRegionPool -> DirtyRegionContainer
+
+  pure native getNode :: NodeEffectInput -> NGNode
+
+  pure native reducesOpaquePixels :: NodeEffectInput -> boolean
+
+  pure native render :: NodeEffectInput -> Graphics -> BaseTransform -> void
+
+  pure native setNode :: NodeEffectInput -> NGNode -> void
+
+

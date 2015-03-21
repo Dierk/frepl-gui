@@ -1,0 +1,9 @@
+data DateCellBehavior = pure native com.sun.javafx.scene.control.behavior.DateCellBehavior where
+
+  native new :: DateCell -> IO DateCellBehavior
+
+  pure native callAction :: DateCellBehavior -> String -> void
+
+  native traverse :: DateCellBehavior -> Node -> Direction -> IO void
+
+

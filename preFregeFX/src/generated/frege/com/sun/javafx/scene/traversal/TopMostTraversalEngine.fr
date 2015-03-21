@@ -1,0 +1,9 @@
+data TopMostTraversalEngine = pure native com.sun.javafx.scene.traversal.TopMostTraversalEngine where
+
+  native trav :: TopMostTraversalEngine -> Node -> Direction -> IO Node
+
+  native traverseToFirst :: TopMostTraversalEngine -> IO Node
+
+  native traverseToLast :: TopMostTraversalEngine -> IO Node
+
+

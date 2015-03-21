@@ -1,0 +1,36 @@
+data KeyEvent = mutable native javafx.scene.input.KeyEvent where
+
+  native any "javafx.scene.input.KeyEvent.ANY" :: IO (EventType KeyEvent)
+  native key_pressed "javafx.scene.input.KeyEvent.KEY_PRESSED" :: IO (EventType KeyEvent)
+  native key_released "javafx.scene.input.KeyEvent.KEY_RELEASED" :: IO (EventType KeyEvent)
+  native key_typed "javafx.scene.input.KeyEvent.KEY_TYPED" :: IO (EventType KeyEvent)
+  pure native char_undefined "javafx.scene.input.KeyEvent.CHAR_UNDEFINED" :: String
+
+  native new :: Object -> EventTarget -> EventType KeyEvent -> String -> String -> KeyCode -> boolean -> boolean -> boolean -> boolean -> IO KeyEvent
+              | EventType KeyEvent -> String -> String -> KeyCode -> boolean -> boolean -> boolean -> boolean -> IO KeyEvent
+
+  native copyFor :: KeyEvent -> Object -> EventTarget -> IO KeyEvent
+                  | KeyEvent -> Object -> EventTarget -> EventType KeyEvent -> IO KeyEvent
+
+  native getCharacter :: KeyEvent -> IO String
+
+  native getCode :: KeyEvent -> IO KeyCode
+
+  native getEventType :: KeyEvent -> IO (EventType KeyEvent)
+
+  native getText :: KeyEvent -> IO String
+
+  native isAltDown :: KeyEvent -> IO boolean
+
+  native isControlDown :: KeyEvent -> IO boolean
+
+  native isMetaDown :: KeyEvent -> IO boolean
+
+  native isShiftDown :: KeyEvent -> IO boolean
+
+  native isShortcutDown :: KeyEvent -> IO boolean
+
+  native toString :: KeyEvent -> IO String
+
+derive Serializable KeyEvent
+

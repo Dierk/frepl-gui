@@ -1,0 +1,7 @@
+data PaintRenderJob = pure native com.sun.javafx.tk.quantum.PaintRenderJob where
+
+  pure native new :: GlassScene -> CompletionListener -> Runnable -> PaintRenderJob
+
+  pure native getScene :: PaintRenderJob -> GlassScene
+
+

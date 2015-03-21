@@ -1,0 +1,21 @@
+data SourceAdapterChange e = pure native com.sun.javafx.collections.SourceAdapterChange where
+
+  native new :: ObservableList e -> ListChangeListener_Change e -> IO (SourceAdapterChange e)
+
+  pure native getFrom :: SourceAdapterChange e -> int
+
+  pure native getPermutation :: SourceAdapterChange e -> int -> int
+
+  pure native getRemoved :: SourceAdapterChange e -> List e
+
+  pure native getTo :: SourceAdapterChange e -> int
+
+  pure native next :: SourceAdapterChange e -> boolean
+
+  pure native reset :: SourceAdapterChange e -> void
+
+  pure native toString :: SourceAdapterChange e -> String
+
+  pure native wasPermutated :: SourceAdapterChange e -> boolean
+
+

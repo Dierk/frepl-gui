@@ -1,0 +1,11 @@
+data ListProperty e = mutable native javafx.beans.property.ListProperty where
+
+  native bindBidirectional :: ListProperty e -> Property (ObservableList e) -> IO void
+
+  native setValue :: ListProperty e -> ObservableList e -> IO void
+
+  native toString :: ListProperty e -> IO String
+
+  native unbindBidirectional :: ListProperty e -> Property (ObservableList e) -> IO void
+
+

@@ -1,0 +1,13 @@
+data HTMLEditorSkin = pure native com.sun.javafx.scene.web.skin.HTMLEditorSkin where
+
+  native new :: HTMLEditor -> IO HTMLEditorSkin
+
+  pure native getHTMLText :: HTMLEditorSkin -> String
+
+  pure native keyboardShortcuts :: HTMLEditorSkin -> String -> void
+
+  native print :: HTMLEditorSkin -> PrinterJob -> IO void
+
+  pure native setHTMLText :: HTMLEditorSkin -> String -> void
+
+

@@ -1,0 +1,17 @@
+data ScrollPaneBehavior = pure native com.sun.javafx.scene.control.behavior.ScrollPaneBehavior where
+
+  native new :: ScrollPane -> IO ScrollPaneBehavior
+
+  pure native contentDragged :: ScrollPaneBehavior -> double -> double -> void
+
+  pure native horizontalUnitDecrement :: ScrollPaneBehavior -> void
+
+  pure native horizontalUnitIncrement :: ScrollPaneBehavior -> void
+
+  pure native mouseClicked :: ScrollPaneBehavior -> void
+
+  native mousePressed :: ScrollPaneBehavior -> MouseEvent -> IO void
+
+  pure native verticalUnitIncrement :: ScrollPaneBehavior -> void
+
+

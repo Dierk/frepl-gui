@@ -1,0 +1,15 @@
+data HBoxBuilder b = mutable native javafx.scene.layout.HBoxBuilder where
+
+  native alignment :: HBoxBuilder b -> Pos -> IO b
+
+  native applyTo :: HBoxBuilder b -> HBox -> IO void
+
+  native build :: HBoxBuilder b -> IO HBox
+
+  native create "javafx.scene.layout.HBoxBuilder.create" :: () -> IO (HBoxBuilder Object)
+
+  native fillHeight :: HBoxBuilder b -> boolean -> IO b
+
+  native spacing :: HBoxBuilder b -> double -> IO b
+
+

@@ -1,0 +1,1 @@
+data WindowsFontMap = pure native com.sun.javafx.font.WindowsFontMap

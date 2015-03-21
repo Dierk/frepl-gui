@@ -1,0 +1,7 @@
+data OpenTypeGlyphMapper = pure native com.sun.javafx.font.OpenTypeGlyphMapper where
+
+  pure native new :: PrismFontFile -> OpenTypeGlyphMapper
+
+  pure native getGlyphCode :: OpenTypeGlyphMapper -> int -> int
+
+

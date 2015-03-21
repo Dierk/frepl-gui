@@ -1,0 +1,1 @@
+data CustomMenuItemBase = pure native com.sun.javafx.menu.CustomMenuItemBase

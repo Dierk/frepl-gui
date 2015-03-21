@@ -1,0 +1,13 @@
+data ChartLayoutAnimator = pure native com.sun.javafx.charts.ChartLayoutAnimator where
+
+  native new :: Parent -> IO ChartLayoutAnimator
+
+  native animate :: ChartLayoutAnimator -> Animation -> IO Object
+                  | ChartLayoutAnimator -> Mutable s (JArray KeyFrame) -> ST s Object
+
+  native handle :: ChartLayoutAnimator -> long -> ST s void
+                 | ChartLayoutAnimator -> ActionEvent -> IO void
+
+  pure native stop :: ChartLayoutAnimator -> Object -> void
+
+

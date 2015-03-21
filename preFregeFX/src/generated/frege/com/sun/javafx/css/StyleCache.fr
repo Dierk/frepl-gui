@@ -1,0 +1,11 @@
+data StyleCache = pure native com.sun.javafx.css.StyleCache where
+
+  pure native new :: () -> StyleCache
+
+  pure native addStyleCacheEntry :: StyleCache -> StyleCacheEntry_Key -> StyleCacheEntry -> void
+
+  pure native clear :: StyleCache -> void
+
+  pure native getStyleCacheEntry :: StyleCache -> StyleCacheEntry_Key -> StyleCacheEntry
+
+

@@ -1,0 +1,7 @@
+data NGDefaultCamera = pure native com.sun.javafx.sg.prism.NGDefaultCamera where
+
+  pure native new :: () -> NGDefaultCamera
+
+  pure native validate :: NGDefaultCamera -> int -> int -> void
+
+

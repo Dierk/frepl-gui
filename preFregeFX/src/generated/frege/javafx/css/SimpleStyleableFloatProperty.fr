@@ -1,0 +1,14 @@
+data SimpleStyleableFloatProperty = mutable native javafx.css.SimpleStyleableFloatProperty where
+
+  native new :: CssMetaData Styleable Number -> Object -> String -> Float -> IO SimpleStyleableFloatProperty
+              | CssMetaData Styleable Number -> Object -> String -> IO SimpleStyleableFloatProperty
+              | CssMetaData Styleable Number -> Float -> IO SimpleStyleableFloatProperty
+              | CssMetaData Styleable Number -> IO SimpleStyleableFloatProperty
+
+  native getBean :: SimpleStyleableFloatProperty -> IO Object
+
+  native getCssMetaData :: SimpleStyleableFloatProperty -> IO (CssMetaData Styleable Number)
+
+  native getName :: SimpleStyleableFloatProperty -> IO String
+
+

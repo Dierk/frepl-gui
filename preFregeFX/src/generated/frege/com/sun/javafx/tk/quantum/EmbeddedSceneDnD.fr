@@ -1,0 +1,17 @@
+data EmbeddedSceneDnD = pure native com.sun.javafx.tk.quantum.EmbeddedSceneDnD where
+
+  pure native new :: GlassScene -> EmbeddedSceneDnD
+
+  pure native createDragboard :: EmbeddedSceneDnD -> boolean -> TKClipboard
+
+  pure native createDropTarget :: EmbeddedSceneDnD -> EmbeddedSceneDTInterface
+
+  pure native isHostThread :: EmbeddedSceneDnD -> boolean
+
+  pure native onDragSourceReleased :: EmbeddedSceneDnD -> EmbeddedSceneDSInterface -> void
+
+  pure native onDropTargetReleased :: EmbeddedSceneDnD -> EmbeddedSceneDTInterface -> void
+
+  pure native setDragStartListener :: EmbeddedSceneDnD -> HostDragStartListener -> void
+
+

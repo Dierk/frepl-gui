@@ -1,0 +1,1 @@
+data IDWriteTextFormat = pure native com.sun.javafx.font.directwrite.IDWriteTextFormat

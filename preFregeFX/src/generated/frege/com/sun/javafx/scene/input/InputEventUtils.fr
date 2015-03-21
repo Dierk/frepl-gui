@@ -1,0 +1,9 @@
+data InputEventUtils = pure native com.sun.javafx.scene.input.InputEventUtils where
+
+  pure native new :: () -> InputEventUtils
+
+  native recomputeCoordinates "com.sun.javafx.scene.input.InputEventUtils.recomputeCoordinates" :: PickResult -> Object -> IO Point3D
+
+  native safeTransferModes "com.sun.javafx.scene.input.InputEventUtils.safeTransferModes" :: Mutable s (JArray TransferMode) -> ST s (List TransferMode)
+
+

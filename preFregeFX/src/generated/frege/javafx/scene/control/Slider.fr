@@ -1,0 +1,90 @@
+data Slider = mutable native javafx.scene.control.Slider where
+
+  native new :: () -> IO Slider
+              | double -> double -> double -> IO Slider
+
+  native adjustValue :: Slider -> double -> IO void
+
+  native blockIncrementProperty :: Slider -> IO DoubleProperty
+
+  native decrement :: Slider -> IO void
+
+  native executeAccessibleAction :: Slider -> AccessibleAction -> MutableIO (JArray Object) -> IO void
+
+  native getBlockIncrement :: Slider -> IO double
+
+  pure native getClassCssMetaData "javafx.scene.control.Slider.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getLabelFormatter :: Slider -> IO (StringConverter Double)
+
+  native getMajorTickUnit :: Slider -> IO double
+
+  native getMax :: Slider -> IO double
+
+  native getMin :: Slider -> IO double
+
+  native getMinorTickCount :: Slider -> IO int
+
+  native getOrientation :: Slider -> IO Orientation
+
+  native getValue :: Slider -> IO double
+
+  native increment :: Slider -> IO void
+
+  native isShowTickLabels :: Slider -> IO boolean
+
+  native isShowTickMarks :: Slider -> IO boolean
+
+  native isSnapToTicks :: Slider -> IO boolean
+
+  native isValueChanging :: Slider -> IO boolean
+
+  native labelFormatterProperty :: Slider -> IO (ObjectProperty (StringConverter Double))
+
+  native majorTickUnitProperty :: Slider -> IO DoubleProperty
+
+  native maxProperty :: Slider -> IO DoubleProperty
+
+  native minProperty :: Slider -> IO DoubleProperty
+
+  native minorTickCountProperty :: Slider -> IO IntegerProperty
+
+  native orientationProperty :: Slider -> IO (ObjectProperty Orientation)
+
+  native queryAccessibleAttribute :: Slider -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setBlockIncrement :: Slider -> double -> IO void
+
+  native setLabelFormatter :: Slider -> StringConverter Double -> IO void
+
+  native setMajorTickUnit :: Slider -> double -> IO void
+
+  native setMax :: Slider -> double -> IO void
+
+  native setMin :: Slider -> double -> IO void
+
+  native setMinorTickCount :: Slider -> int -> IO void
+
+  native setOrientation :: Slider -> Orientation -> IO void
+
+  native setShowTickLabels :: Slider -> boolean -> IO void
+
+  native setShowTickMarks :: Slider -> boolean -> IO void
+
+  native setSnapToTicks :: Slider -> boolean -> IO void
+
+  native setValue :: Slider -> double -> IO void
+
+  native setValueChanging :: Slider -> boolean -> IO void
+
+  native showTickLabelsProperty :: Slider -> IO BooleanProperty
+
+  native showTickMarksProperty :: Slider -> IO BooleanProperty
+
+  native snapToTicksProperty :: Slider -> IO BooleanProperty
+
+  native valueChangingProperty :: Slider -> IO BooleanProperty
+
+  native valueProperty :: Slider -> IO DoubleProperty
+
+

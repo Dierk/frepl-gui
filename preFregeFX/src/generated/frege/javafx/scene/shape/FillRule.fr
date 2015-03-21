@@ -1,0 +1,11 @@
+data FillRule = mutable native javafx.scene.shape.FillRule where
+
+  native even_odd "javafx.scene.shape.FillRule.EVEN_ODD" :: IO FillRule
+  native non_zero "javafx.scene.shape.FillRule.NON_ZERO" :: IO FillRule
+
+  native valueOf "javafx.scene.shape.FillRule.valueOf" :: String -> IO FillRule
+
+  native values "javafx.scene.shape.FillRule.values" :: () -> STMutable s (JArray FillRule)
+
+derive Serializable FillRule
+

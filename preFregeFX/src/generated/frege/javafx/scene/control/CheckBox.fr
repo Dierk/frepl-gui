@@ -1,0 +1,28 @@
+data CheckBox = mutable native javafx.scene.control.CheckBox where
+
+  native new :: () -> IO CheckBox
+              | String -> IO CheckBox
+
+  native allowIndeterminateProperty :: CheckBox -> IO BooleanProperty
+
+  native fire :: CheckBox -> IO void
+
+  native indeterminateProperty :: CheckBox -> IO BooleanProperty
+
+  native isAllowIndeterminate :: CheckBox -> IO boolean
+
+  native isIndeterminate :: CheckBox -> IO boolean
+
+  native isSelected :: CheckBox -> IO boolean
+
+  native queryAccessibleAttribute :: CheckBox -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native selectedProperty :: CheckBox -> IO BooleanProperty
+
+  native setAllowIndeterminate :: CheckBox -> boolean -> IO void
+
+  native setIndeterminate :: CheckBox -> boolean -> IO void
+
+  native setSelected :: CheckBox -> boolean -> IO void
+
+

@@ -1,0 +1,13 @@
+data CellSkinBase c b = pure native com.sun.javafx.scene.control.skin.CellSkinBase where
+
+  pure native new :: c -> b -> CellSkinBase c b
+
+  native cellSizeProperty :: CellSkinBase c b -> IO ReadOnlyDoubleProperty
+
+  pure native getCellSize :: CellSkinBase c b -> double
+
+  pure native getClassCssMetaData "com.sun.javafx.scene.control.skin.CellSkinBase.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  pure native getCssMetaData :: CellSkinBase c b -> List (CssMetaData Styleable Object)
+
+

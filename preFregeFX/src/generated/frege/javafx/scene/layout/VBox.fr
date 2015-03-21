@@ -1,0 +1,44 @@
+data VBox = mutable native javafx.scene.layout.VBox where
+
+  native new :: double -> IO VBox
+              | MutableIO (JArray Node) -> IO VBox
+              | double -> MutableIO (JArray Node) -> IO VBox
+              | () -> IO VBox
+
+  native alignmentProperty :: VBox -> IO (ObjectProperty Pos)
+
+  native clearConstraints "javafx.scene.layout.VBox.clearConstraints" :: Node -> IO void
+
+  native fillWidthProperty :: VBox -> IO BooleanProperty
+
+  native getAlignment :: VBox -> IO Pos
+
+  pure native getClassCssMetaData "javafx.scene.layout.VBox.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getContentBias :: VBox -> IO Orientation
+
+  native getCssMetaData :: VBox -> IO (List (CssMetaData Styleable Object))
+
+  native getMargin "javafx.scene.layout.VBox.getMargin" :: Node -> IO Insets
+
+  native getSpacing :: VBox -> IO double
+
+  native getVgrow "javafx.scene.layout.VBox.getVgrow" :: Node -> IO Priority
+
+  native isFillWidth :: VBox -> IO boolean
+
+  native requestLayout :: VBox -> IO void
+
+  native setAlignment :: VBox -> Pos -> IO void
+
+  native setFillWidth :: VBox -> boolean -> IO void
+
+  native setMargin "javafx.scene.layout.VBox.setMargin" :: Node -> Insets -> IO void
+
+  native setSpacing :: VBox -> double -> IO void
+
+  native setVgrow "javafx.scene.layout.VBox.setVgrow" :: Node -> Priority -> IO void
+
+  native spacingProperty :: VBox -> IO DoubleProperty
+
+

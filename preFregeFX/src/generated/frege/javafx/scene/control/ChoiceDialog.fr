@@ -1,0 +1,17 @@
+data ChoiceDialog t = mutable native javafx.scene.control.ChoiceDialog where
+
+  native new :: t -> Collection t -> IO (ChoiceDialog t)
+              | t -> MutableIO (JArray t) -> IO (ChoiceDialog t)
+              | () -> IO (ChoiceDialog t)
+
+  native getDefaultChoice :: ChoiceDialog t -> IO t
+
+  native getItems :: ChoiceDialog t -> IO (ObservableList t)
+
+  native getSelectedItem :: ChoiceDialog t -> IO t
+
+  native selectedItemProperty :: ChoiceDialog t -> IO (ReadOnlyObjectProperty t)
+
+  native setSelectedItem :: ChoiceDialog t -> t -> IO void
+
+

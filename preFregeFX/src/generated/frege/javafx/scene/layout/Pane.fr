@@ -1,0 +1,8 @@
+data Pane = mutable native javafx.scene.layout.Pane where
+
+  native new :: () -> IO Pane
+              | MutableIO (JArray Node) -> IO Pane
+
+  native getChildren :: Pane -> IO (ObservableList Node)
+
+

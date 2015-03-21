@@ -1,0 +1,9 @@
+data ImageLoadListener = pure native com.sun.javafx.iio.ImageLoadListener where
+
+  pure native imageLoadMetaData :: ImageLoadListener -> ImageLoader -> ImageMetadata -> void
+
+  pure native imageLoadProgress :: ImageLoadListener -> ImageLoader -> float -> void
+
+  pure native imageLoadWarning :: ImageLoadListener -> ImageLoader -> String -> void
+
+

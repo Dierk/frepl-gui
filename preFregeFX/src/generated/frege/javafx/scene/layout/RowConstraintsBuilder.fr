@@ -1,0 +1,23 @@
+data RowConstraintsBuilder b = mutable native javafx.scene.layout.RowConstraintsBuilder where
+
+  native applyTo :: RowConstraintsBuilder b -> RowConstraints -> IO void
+
+  native build :: RowConstraintsBuilder b -> IO RowConstraints
+
+  native create "javafx.scene.layout.RowConstraintsBuilder.create" :: () -> IO (RowConstraintsBuilder Object)
+
+  native fillHeight :: RowConstraintsBuilder b -> boolean -> IO b
+
+  native maxHeight :: RowConstraintsBuilder b -> double -> IO b
+
+  native minHeight :: RowConstraintsBuilder b -> double -> IO b
+
+  native percentHeight :: RowConstraintsBuilder b -> double -> IO b
+
+  native prefHeight :: RowConstraintsBuilder b -> double -> IO b
+
+  native valignment :: RowConstraintsBuilder b -> VPos -> IO b
+
+  native vgrow :: RowConstraintsBuilder b -> Priority -> IO b
+
+

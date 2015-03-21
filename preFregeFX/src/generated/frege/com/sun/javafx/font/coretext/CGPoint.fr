@@ -1,0 +1,1 @@
+data CGPoint = pure native com.sun.javafx.font.coretext.CGPoint

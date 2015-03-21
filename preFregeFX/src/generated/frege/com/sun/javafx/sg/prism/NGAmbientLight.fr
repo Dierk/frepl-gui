@@ -1,0 +1,5 @@
+data NGAmbientLight = pure native com.sun.javafx.sg.prism.NGAmbientLight where
+
+  pure native new :: () -> NGAmbientLight
+
+

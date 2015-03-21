@@ -1,0 +1,5 @@
+data TableCellBehavior s t = pure native com.sun.javafx.scene.control.behavior.TableCellBehavior where
+
+  native new :: TableCell s t -> IO (TableCellBehavior s t)
+
+

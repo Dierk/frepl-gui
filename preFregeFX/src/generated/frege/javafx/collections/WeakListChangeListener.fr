@@ -1,0 +1,9 @@
+data WeakListChangeListener e = mutable native javafx.collections.WeakListChangeListener where
+
+  native new :: ListChangeListener e -> IO (WeakListChangeListener e)
+
+  native onChanged :: WeakListChangeListener e -> ListChangeListener_Change e -> IO void
+
+  native wasGarbageCollected :: WeakListChangeListener e -> IO boolean
+
+

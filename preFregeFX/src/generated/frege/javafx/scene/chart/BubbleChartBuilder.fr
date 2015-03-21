@@ -1,0 +1,11 @@
+data BubbleChartBuilder x y b = mutable native javafx.scene.chart.BubbleChartBuilder where
+
+  native build :: BubbleChartBuilder x y b -> IO (BubbleChart x y)
+
+  native create "javafx.scene.chart.BubbleChartBuilder.create" :: () -> IO (BubbleChartBuilder x y Object)
+
+  native xAxis "XAxis" :: BubbleChartBuilder x y b -> Axis x -> IO b
+
+  native yAxis "YAxis" :: BubbleChartBuilder x y b -> Axis y -> IO b
+
+

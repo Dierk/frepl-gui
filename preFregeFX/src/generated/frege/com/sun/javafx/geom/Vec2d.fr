@@ -1,0 +1,31 @@
+data Vec2d = pure native com.sun.javafx.geom.Vec2d where
+
+  pure native x "".x"" :: Vec2d -> double
+  pure native y "".y"" :: Vec2d -> double
+
+  pure native new :: Vec2f -> Vec2d
+                   | Vec2d -> Vec2d
+                   | double -> double -> Vec2d
+                   | () -> Vec2d
+
+  pure native distance "com.sun.javafx.geom.Vec2d.distance" :: double -> double -> double -> double -> double
+
+  pure native distance :: Vec2d -> Vec2d -> double
+                        | Vec2d -> double -> double -> double
+
+  pure native distanceSq "com.sun.javafx.geom.Vec2d.distanceSq" :: double -> double -> double -> double -> double
+
+  pure native distanceSq :: Vec2d -> double -> double -> double
+                          | Vec2d -> Vec2d -> double
+
+  pure native equals :: Vec2d -> Object -> boolean
+
+  pure native hashCode :: Vec2d -> int
+
+  pure native set :: Vec2d -> Vec2d -> void
+                   | Vec2d -> Vec2f -> void
+                   | Vec2d -> double -> double -> void
+
+  pure native toString :: Vec2d -> String
+
+

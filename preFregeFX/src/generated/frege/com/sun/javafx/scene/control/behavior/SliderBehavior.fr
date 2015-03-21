@@ -1,0 +1,15 @@
+data SliderBehavior = pure native com.sun.javafx.scene.control.behavior.SliderBehavior where
+
+  native new :: Slider -> IO SliderBehavior
+
+  pure native dispose :: SliderBehavior -> void
+
+  native thumbDragged :: SliderBehavior -> MouseEvent -> double -> IO void
+
+  native thumbPressed :: SliderBehavior -> MouseEvent -> double -> IO void
+
+  native thumbReleased :: SliderBehavior -> MouseEvent -> IO void
+
+  native trackPress :: SliderBehavior -> MouseEvent -> double -> IO void
+
+

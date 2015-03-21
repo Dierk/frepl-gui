@@ -1,0 +1,5 @@
+data ButtonSkin = pure native com.sun.javafx.scene.control.skin.ButtonSkin where
+
+  native new :: Button -> IO ButtonSkin
+
+

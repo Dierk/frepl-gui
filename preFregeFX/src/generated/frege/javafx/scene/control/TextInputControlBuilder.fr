@@ -1,0 +1,11 @@
+data TextInputControlBuilder b = mutable native javafx.scene.control.TextInputControlBuilder where
+
+  native applyTo :: TextInputControlBuilder b -> TextInputControl -> IO void
+
+  native editable :: TextInputControlBuilder b -> boolean -> IO b
+
+  native promptText :: TextInputControlBuilder b -> String -> IO b
+
+  native text :: TextInputControlBuilder b -> String -> IO b
+
+

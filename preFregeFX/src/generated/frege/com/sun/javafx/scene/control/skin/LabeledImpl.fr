@@ -1,0 +1,5 @@
+data LabeledImpl = pure native com.sun.javafx.scene.control.skin.LabeledImpl where
+
+  native new :: Labeled -> IO LabeledImpl
+
+

@@ -1,0 +1,28 @@
+data ImageTools = pure native com.sun.javafx.iio.common.ImageTools where
+
+  pure native progress_interval "com.sun.javafx.iio.common.ImageTools.PROGRESS_INTERVAL" :: int
+
+  pure native new :: () -> ImageTools
+
+  native computeDimensions "com.sun.javafx.iio.common.ImageTools.computeDimensions" :: int -> int -> int -> int -> boolean -> STMutable s (JArray int)
+
+  native computeUpdatedPixels "com.sun.javafx.iio.common.ImageTools.computeUpdatedPixels" :: Rectangle -> Point2D -> int -> int -> int -> int -> int -> int -> int -> int -> int -> int -> int -> int -> STMutable s (JArray int)
+
+  native convert "com.sun.javafx.iio.common.ImageTools.convert" :: int -> int -> ImageStorage_ImageType -> Mutable s (JArray byte) -> int -> int -> Mutable s (JArray byte) -> int -> int -> Mutable s (JArray (JArray byte)) -> int -> boolean -> STMutable s (JArray byte)
+
+  pure native convertImageFrame "com.sun.javafx.iio.common.ImageTools.convertImageFrame" :: ImageFrame -> ImageFrame
+
+  native createImageArray "com.sun.javafx.iio.common.ImageTools.createImageArray" :: ImageStorage_ImageType -> int -> int -> STMutable s (JArray byte)
+
+  native createInputStream "com.sun.javafx.iio.common.ImageTools.createInputStream" :: String -> ST s InputStream throws IOException
+
+  pure native getConvertedType "com.sun.javafx.iio.common.ImageTools.getConvertedType" :: ImageStorage_ImageType -> ImageStorage_ImageType
+
+  pure native getScaledImageName "com.sun.javafx.iio.common.ImageTools.getScaledImageName" :: String -> String
+
+  native readFully "com.sun.javafx.iio.common.ImageTools.readFully" :: InputStream -> Mutable s (JArray byte) -> ST s int throws IOException
+                                                                     | InputStream -> Mutable s (JArray byte) -> int -> int -> ST s int throws IOException
+
+  native skipFully "com.sun.javafx.iio.common.ImageTools.skipFully" :: InputStream -> long -> ST s void throws IOException
+
+

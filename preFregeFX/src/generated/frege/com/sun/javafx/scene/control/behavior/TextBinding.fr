@@ -1,0 +1,15 @@
+data TextBinding = pure native com.sun.javafx.scene.control.behavior.TextBinding where
+
+  pure native new :: String -> TextBinding
+
+  pure native getExtendedMnemonicText :: TextBinding -> String
+
+  pure native getMnemonic :: TextBinding -> String
+
+  pure native getMnemonicIndex :: TextBinding -> int
+
+  native getMnemonicKeyCombination :: TextBinding -> IO KeyCombination
+
+  pure native getText :: TextBinding -> String
+
+

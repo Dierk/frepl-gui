@@ -1,0 +1,11 @@
+data SliceSequenceConverter = pure native com.sun.javafx.scene.layout.region.SliceSequenceConverter where
+
+  pure native new :: () -> SliceSequenceConverter
+
+  native convert :: SliceSequenceConverter -> ParsedValue (JArray (ParsedValue (JArray ParsedValue) BorderImageSlices)) (JArray BorderImageSlices) -> Font -> IO (JArray BorderImageSlices)
+
+  pure native getInstance "com.sun.javafx.scene.layout.region.SliceSequenceConverter.getInstance" :: () -> SliceSequenceConverter
+
+  pure native toString :: SliceSequenceConverter -> String
+
+

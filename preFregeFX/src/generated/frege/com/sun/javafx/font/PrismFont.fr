@@ -1,0 +1,24 @@
+data PrismFont = pure native com.sun.javafx.font.PrismFont where
+
+  pure native equals :: PrismFont -> Object -> boolean
+
+  pure native getFamilyName :: PrismFont -> String
+
+  pure native getFeatures :: PrismFont -> int
+
+  pure native getFontResource :: PrismFont -> FontResource
+
+  pure native getFullName :: PrismFont -> String
+
+  pure native getName :: PrismFont -> String
+
+  pure native getSize :: PrismFont -> float
+
+  pure native getStrike :: PrismFont -> BaseTransform -> FontStrike
+                         | PrismFont -> BaseTransform -> int -> FontStrike
+
+  pure native getStyleName :: PrismFont -> String
+
+  pure native hashCode :: PrismFont -> int
+
+

@@ -1,0 +1,16 @@
+data MeshView = mutable native javafx.scene.shape.MeshView where
+
+  native new :: () -> IO MeshView
+              | Mesh -> IO MeshView
+
+  native getMesh :: MeshView -> IO Mesh
+
+  native impl_computeGeomBounds :: MeshView -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_updatePeer :: MeshView -> IO void
+
+  native meshProperty :: MeshView -> IO (ObjectProperty Mesh)
+
+  native setMesh :: MeshView -> Mesh -> IO void
+
+

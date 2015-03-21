@@ -1,0 +1,8 @@
+data SceneAntialiasing = mutable native javafx.scene.SceneAntialiasing where
+
+  native disabled "javafx.scene.SceneAntialiasing.DISABLED" :: IO SceneAntialiasing
+  native balanced "javafx.scene.SceneAntialiasing.BALANCED" :: IO SceneAntialiasing
+
+  native toString :: SceneAntialiasing -> IO String
+
+

@@ -1,0 +1,29 @@
+data WindowPeerListener = pure native com.sun.javafx.stage.WindowPeerListener where
+
+  native new :: Window -> IO WindowPeerListener
+
+  pure native changedAlwaysOnTop :: WindowPeerListener -> boolean -> void
+
+  pure native changedFocused :: WindowPeerListener -> boolean -> FocusCause -> void
+
+  pure native changedFullscreen :: WindowPeerListener -> boolean -> void
+
+  pure native changedIconified :: WindowPeerListener -> boolean -> void
+
+  pure native changedLocation :: WindowPeerListener -> float -> float -> void
+
+  pure native changedMaximized :: WindowPeerListener -> boolean -> void
+
+  pure native changedResizable :: WindowPeerListener -> boolean -> void
+
+  pure native changedScreen :: WindowPeerListener -> Object -> Object -> void
+
+  pure native changedSize :: WindowPeerListener -> float -> float -> void
+
+  pure native closed :: WindowPeerListener -> void
+
+  pure native closing :: WindowPeerListener -> void
+
+  pure native focusUngrab :: WindowPeerListener -> void
+
+

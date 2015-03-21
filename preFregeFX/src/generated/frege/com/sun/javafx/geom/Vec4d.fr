@@ -1,0 +1,14 @@
+data Vec4d = pure native com.sun.javafx.geom.Vec4d where
+
+  pure native x "".x"" :: Vec4d -> double
+  pure native y "".y"" :: Vec4d -> double
+  pure native z "".z"" :: Vec4d -> double
+  pure native w "".w"" :: Vec4d -> double
+
+  pure native new :: double -> double -> double -> double -> Vec4d
+                   | Vec4d -> Vec4d
+                   | () -> Vec4d
+
+  pure native set :: Vec4d -> Vec4d -> void
+
+

@@ -1,0 +1,27 @@
+data Operator = pure native com.sun.javafx.fxml.expression.Operator where
+
+  pure native negate "com.sun.javafx.fxml.expression.Operator.NEGATE" :: Operator
+  pure native not "com.sun.javafx.fxml.expression.Operator.NOT" :: Operator
+  pure native multiply "com.sun.javafx.fxml.expression.Operator.MULTIPLY" :: Operator
+  pure native divide "com.sun.javafx.fxml.expression.Operator.DIVIDE" :: Operator
+  pure native modulo "com.sun.javafx.fxml.expression.Operator.MODULO" :: Operator
+  pure native add "com.sun.javafx.fxml.expression.Operator.ADD" :: Operator
+  pure native subtract "com.sun.javafx.fxml.expression.Operator.SUBTRACT" :: Operator
+  pure native greater_than "com.sun.javafx.fxml.expression.Operator.GREATER_THAN" :: Operator
+  pure native greater_than_or_equal_to "com.sun.javafx.fxml.expression.Operator.GREATER_THAN_OR_EQUAL_TO" :: Operator
+  pure native less_than "com.sun.javafx.fxml.expression.Operator.LESS_THAN" :: Operator
+  pure native less_than_or_equal_to "com.sun.javafx.fxml.expression.Operator.LESS_THAN_OR_EQUAL_TO" :: Operator
+  pure native equal_to "com.sun.javafx.fxml.expression.Operator.EQUAL_TO" :: Operator
+  pure native not_equal_to "com.sun.javafx.fxml.expression.Operator.NOT_EQUAL_TO" :: Operator
+  pure native and "com.sun.javafx.fxml.expression.Operator.AND" :: Operator
+  pure native or "com.sun.javafx.fxml.expression.Operator.OR" :: Operator
+  pure native max_priority "com.sun.javafx.fxml.expression.Operator.MAX_PRIORITY" :: int
+
+  pure native getPriority :: Operator -> int
+
+  pure native valueOf "com.sun.javafx.fxml.expression.Operator.valueOf" :: String -> Operator
+
+  native values "com.sun.javafx.fxml.expression.Operator.values" :: () -> STMutable s (JArray Operator)
+
+derive Serializable Operator
+

@@ -1,0 +1,20 @@
+data ImagePattern = mutable native javafx.scene.paint.ImagePattern where
+
+  native new :: Image -> IO ImagePattern
+              | Image -> double -> double -> double -> double -> boolean -> IO ImagePattern
+
+  native getHeight :: ImagePattern -> IO double
+
+  native getImage :: ImagePattern -> IO Image
+
+  native getWidth :: ImagePattern -> IO double
+
+  native getX :: ImagePattern -> IO double
+
+  native getY :: ImagePattern -> IO double
+
+  native isOpaque :: ImagePattern -> IO boolean
+
+  native isProportional :: ImagePattern -> IO boolean
+
+

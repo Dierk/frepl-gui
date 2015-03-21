@@ -1,0 +1,56 @@
+data Rectangle = mutable native javafx.scene.shape.Rectangle where
+
+  native new :: double -> double -> double -> double -> IO Rectangle
+              | double -> double -> Paint -> IO Rectangle
+              | double -> double -> IO Rectangle
+              | () -> IO Rectangle
+
+  native arcHeightProperty :: Rectangle -> IO DoubleProperty
+
+  native arcWidthProperty :: Rectangle -> IO DoubleProperty
+
+  native getArcHeight :: Rectangle -> IO double
+
+  native getArcWidth :: Rectangle -> IO double
+
+  pure native getClassCssMetaData "javafx.scene.shape.Rectangle.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getCssMetaData :: Rectangle -> IO (List (CssMetaData Styleable Object))
+
+  native getHeight :: Rectangle -> IO double
+
+  native getWidth :: Rectangle -> IO double
+
+  native getX :: Rectangle -> IO double
+
+  native getY :: Rectangle -> IO double
+
+  native heightProperty :: Rectangle -> IO DoubleProperty
+
+  native impl_computeGeomBounds :: Rectangle -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_configShape :: Rectangle -> IO RoundRectangle2D
+
+  native impl_updatePeer :: Rectangle -> IO void
+
+  native setArcHeight :: Rectangle -> double -> IO void
+
+  native setArcWidth :: Rectangle -> double -> IO void
+
+  native setHeight :: Rectangle -> double -> IO void
+
+  native setWidth :: Rectangle -> double -> IO void
+
+  native setX :: Rectangle -> double -> IO void
+
+  native setY :: Rectangle -> double -> IO void
+
+  native toString :: Rectangle -> IO String
+
+  native widthProperty :: Rectangle -> IO DoubleProperty
+
+  native xProperty :: Rectangle -> IO DoubleProperty
+
+  native yProperty :: Rectangle -> IO DoubleProperty
+
+

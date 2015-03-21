@@ -1,0 +1,5 @@
+data TreeTableCellSkin s t = pure native com.sun.javafx.scene.control.skin.TreeTableCellSkin where
+
+  native new :: TreeTableCell s t -> IO (TreeTableCellSkin s t)
+
+

@@ -1,0 +1,19 @@
+data ColorAdjustBuilder b = mutable native javafx.scene.effect.ColorAdjustBuilder where
+
+  native applyTo :: ColorAdjustBuilder b -> ColorAdjust -> IO void
+
+  native brightness :: ColorAdjustBuilder b -> double -> IO b
+
+  native build :: ColorAdjustBuilder b -> IO ColorAdjust
+
+  native contrast :: ColorAdjustBuilder b -> double -> IO b
+
+  native create "javafx.scene.effect.ColorAdjustBuilder.create" :: () -> IO (ColorAdjustBuilder Object)
+
+  native hue :: ColorAdjustBuilder b -> double -> IO b
+
+  native input :: ColorAdjustBuilder b -> Effect -> IO b
+
+  native saturation :: ColorAdjustBuilder b -> double -> IO b
+
+

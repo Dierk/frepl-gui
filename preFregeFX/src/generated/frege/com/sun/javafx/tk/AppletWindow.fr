@@ -1,0 +1,27 @@
+data AppletWindow = pure native com.sun.javafx.tk.AppletWindow where
+
+  pure native dispatchEvent :: AppletWindow -> Map -> void
+
+  pure native getHeight :: AppletWindow -> int
+
+  pure native getPositionX :: AppletWindow -> int
+
+  pure native getPositionY :: AppletWindow -> int
+
+  pure native getRemoteLayerId :: AppletWindow -> int
+
+  pure native getWidth :: AppletWindow -> int
+
+  pure native setBackgroundColor :: AppletWindow -> int -> void
+
+  pure native setForegroundColor :: AppletWindow -> int -> void
+
+  pure native setPosition :: AppletWindow -> int -> int -> void
+
+  pure native setSize :: AppletWindow -> int -> int -> void
+
+  native setStageOnTop :: AppletWindow -> Stage -> IO void
+
+  pure native setVisible :: AppletWindow -> boolean -> void
+
+

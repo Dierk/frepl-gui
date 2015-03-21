@@ -1,0 +1,17 @@
+data TitledPaneBuilder b = mutable native javafx.scene.control.TitledPaneBuilder where
+
+  native animated :: TitledPaneBuilder b -> boolean -> IO b
+
+  native applyTo :: TitledPaneBuilder b -> TitledPane -> IO void
+
+  native build :: TitledPaneBuilder b -> IO TitledPane
+
+  native collapsible :: TitledPaneBuilder b -> boolean -> IO b
+
+  native content :: TitledPaneBuilder b -> Node -> IO b
+
+  native create "javafx.scene.control.TitledPaneBuilder.create" :: () -> IO (TitledPaneBuilder Object)
+
+  native expanded :: TitledPaneBuilder b -> boolean -> IO b
+
+

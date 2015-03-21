@@ -1,0 +1,17 @@
+data BoxBlurBuilder b = mutable native javafx.scene.effect.BoxBlurBuilder where
+
+  native applyTo :: BoxBlurBuilder b -> BoxBlur -> IO void
+
+  native build :: BoxBlurBuilder b -> IO BoxBlur
+
+  native create "javafx.scene.effect.BoxBlurBuilder.create" :: () -> IO (BoxBlurBuilder Object)
+
+  native height :: BoxBlurBuilder b -> double -> IO b
+
+  native input :: BoxBlurBuilder b -> Effect -> IO b
+
+  native iterations :: BoxBlurBuilder b -> int -> IO b
+
+  native width :: BoxBlurBuilder b -> double -> IO b
+
+

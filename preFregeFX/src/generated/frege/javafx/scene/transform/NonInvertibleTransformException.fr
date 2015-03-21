@@ -1,0 +1,7 @@
+data NonInvertibleTransformException = mutable native javafx.scene.transform.NonInvertibleTransformException where
+
+  native new :: String -> IO NonInvertibleTransformException
+
+derive Exceptional NonInvertibleTransformException
+derive Serializable NonInvertibleTransformException
+

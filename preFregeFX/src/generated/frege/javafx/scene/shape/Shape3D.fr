@@ -1,0 +1,27 @@
+data Shape3D = mutable native javafx.scene.shape.Shape3D where
+
+  native cullFaceProperty :: Shape3D -> IO (ObjectProperty CullFace)
+
+  native drawModeProperty :: Shape3D -> IO (ObjectProperty DrawMode)
+
+  native getCullFace :: Shape3D -> IO CullFace
+
+  native getDrawMode :: Shape3D -> IO DrawMode
+
+  native getMaterial :: Shape3D -> IO Material
+
+  native impl_computeGeomBounds :: Shape3D -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_processMXNode :: Shape3D -> MXNodeAlgorithm -> MXNodeAlgorithmContext -> IO Object
+
+  native impl_updatePeer :: Shape3D -> IO void
+
+  native materialProperty :: Shape3D -> IO (ObjectProperty Material)
+
+  native setCullFace :: Shape3D -> CullFace -> IO void
+
+  native setDrawMode :: Shape3D -> DrawMode -> IO void
+
+  native setMaterial :: Shape3D -> Material -> IO void
+
+

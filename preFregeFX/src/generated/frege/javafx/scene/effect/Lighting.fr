@@ -1,0 +1,52 @@
+data Lighting = mutable native javafx.scene.effect.Lighting where
+
+  native new :: () -> IO Lighting
+              | Light -> IO Lighting
+
+  native bumpInputProperty :: Lighting -> IO (ObjectProperty Effect)
+
+  native contentInputProperty :: Lighting -> IO (ObjectProperty Effect)
+
+  native diffuseConstantProperty :: Lighting -> IO DoubleProperty
+
+  native getBumpInput :: Lighting -> IO Effect
+
+  native getContentInput :: Lighting -> IO Effect
+
+  native getDiffuseConstant :: Lighting -> IO double
+
+  native getLight :: Lighting -> IO Light
+
+  native getSpecularConstant :: Lighting -> IO double
+
+  native getSpecularExponent :: Lighting -> IO double
+
+  native getSurfaceScale :: Lighting -> IO double
+
+  native impl_copy :: Lighting -> IO Effect
+
+  native impl_getBounds :: Lighting -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native lightProperty :: Lighting -> IO (ObjectProperty Light)
+
+  native setBumpInput :: Lighting -> Effect -> IO void
+
+  native setContentInput :: Lighting -> Effect -> IO void
+
+  native setDiffuseConstant :: Lighting -> double -> IO void
+
+  native setLight :: Lighting -> Light -> IO void
+
+  native setSpecularConstant :: Lighting -> double -> IO void
+
+  native setSpecularExponent :: Lighting -> double -> IO void
+
+  native setSurfaceScale :: Lighting -> double -> IO void
+
+  native specularConstantProperty :: Lighting -> IO DoubleProperty
+
+  native specularExponentProperty :: Lighting -> IO DoubleProperty
+
+  native surfaceScaleProperty :: Lighting -> IO DoubleProperty
+
+

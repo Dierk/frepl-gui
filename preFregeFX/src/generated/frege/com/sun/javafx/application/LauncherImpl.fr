@@ -1,0 +1,14 @@
+data LauncherImpl = pure native com.sun.javafx.application.LauncherImpl where
+
+  pure native launch_mode_class "com.sun.javafx.application.LauncherImpl.LAUNCH_MODE_CLASS" :: String
+  pure native launch_mode_jar "com.sun.javafx.application.LauncherImpl.LAUNCH_MODE_JAR" :: String
+
+  native launchApplication "com.sun.javafx.application.LauncherImpl.launchApplication" :: Class Application -> Mutable s (JArray String) -> ST s void
+                                                                                        | Class Application -> Class Preloader -> Mutable s (JArray String) -> ST s void
+                                                                                        | String -> String -> Mutable s (JArray String) -> ST s void
+
+  native launchApplicationWithArgs "com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs" :: String -> String -> Mutable s (JArray String) -> ST s void
+
+  native notifyPreloader "com.sun.javafx.application.LauncherImpl.notifyPreloader" :: Application -> Preloader_PreloaderNotification -> IO void
+
+

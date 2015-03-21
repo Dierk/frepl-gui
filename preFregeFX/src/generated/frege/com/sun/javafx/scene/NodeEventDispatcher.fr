@@ -1,0 +1,14 @@
+data NodeEventDispatcher = pure native com.sun.javafx.scene.NodeEventDispatcher where
+
+  pure native new :: Object -> NodeEventDispatcher
+                   | EnteredExitedHandler -> EventHandlerManager -> NodeEventDispatcher
+
+  pure native getEnteredExitedHandler :: NodeEventDispatcher -> EnteredExitedHandler
+
+  pure native getEventHandlerManager :: NodeEventDispatcher -> EventHandlerManager
+
+  pure native getFirstDispatcher :: NodeEventDispatcher -> BasicEventDispatcher
+
+  pure native getLastDispatcher :: NodeEventDispatcher -> BasicEventDispatcher
+
+

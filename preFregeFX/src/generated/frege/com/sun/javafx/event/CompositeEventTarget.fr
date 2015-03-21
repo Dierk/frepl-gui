@@ -1,0 +1,7 @@
+data CompositeEventTarget = pure native com.sun.javafx.event.CompositeEventTarget where
+
+  native containsTarget :: CompositeEventTarget -> EventTarget -> IO boolean
+
+  pure native getTargets :: CompositeEventTarget -> Set EventTarget
+
+

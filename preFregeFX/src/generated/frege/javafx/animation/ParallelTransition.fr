@@ -1,0 +1,20 @@
+data ParallelTransition = mutable native javafx.animation.ParallelTransition where
+
+  native new :: Node -> MutableIO (JArray Animation) -> IO ParallelTransition
+              | MutableIO (JArray Animation) -> IO ParallelTransition
+              | Node -> IO ParallelTransition
+              | () -> IO ParallelTransition
+
+  native getChildren :: ParallelTransition -> IO (ObservableList Animation)
+
+  native getNode :: ParallelTransition -> IO Node
+
+  native impl_jumpTo :: ParallelTransition -> long -> long -> boolean -> IO void
+
+  native impl_playTo :: ParallelTransition -> long -> long -> IO void
+
+  native nodeProperty :: ParallelTransition -> IO (ObjectProperty Node)
+
+  native setNode :: ParallelTransition -> Node -> IO void
+
+

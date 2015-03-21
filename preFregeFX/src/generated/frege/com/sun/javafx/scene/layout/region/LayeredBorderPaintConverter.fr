@@ -1,0 +1,9 @@
+data LayeredBorderPaintConverter = pure native com.sun.javafx.scene.layout.region.LayeredBorderPaintConverter where
+
+  native convert :: LayeredBorderPaintConverter -> ParsedValue (JArray (ParsedValue (JArray (ParsedValue Object Paint)) (JArray Paint))) (JArray (JArray Paint)) -> Font -> IO (JArray (JArray Paint))
+
+  pure native getInstance "com.sun.javafx.scene.layout.region.LayeredBorderPaintConverter.getInstance" :: () -> LayeredBorderPaintConverter
+
+  pure native toString :: LayeredBorderPaintConverter -> String
+
+

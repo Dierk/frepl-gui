@@ -1,0 +1,23 @@
+data SVGPath = mutable native javafx.scene.shape.SVGPath where
+
+  native new :: () -> IO SVGPath
+
+  native contentProperty :: SVGPath -> IO StringProperty
+
+  native fillRuleProperty :: SVGPath -> IO (ObjectProperty FillRule)
+
+  native getContent :: SVGPath -> IO String
+
+  native getFillRule :: SVGPath -> IO FillRule
+
+  native impl_configShape :: SVGPath -> IO Path2D
+
+  native impl_updatePeer :: SVGPath -> IO void
+
+  native setContent :: SVGPath -> String -> IO void
+
+  native setFillRule :: SVGPath -> FillRule -> IO void
+
+  native toString :: SVGPath -> IO String
+
+

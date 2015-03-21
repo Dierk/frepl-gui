@@ -1,0 +1,19 @@
+data Platform = mutable native javafx.application.Platform where
+
+  native accessibilityActiveProperty "javafx.application.Platform.accessibilityActiveProperty" :: () -> IO ReadOnlyBooleanProperty
+
+  pure native exit "javafx.application.Platform.exit" :: () -> void
+
+  pure native isAccessibilityActive "javafx.application.Platform.isAccessibilityActive" :: () -> boolean
+
+  pure native isFxApplicationThread "javafx.application.Platform.isFxApplicationThread" :: () -> boolean
+
+  pure native isImplicitExit "javafx.application.Platform.isImplicitExit" :: () -> boolean
+
+  native isSupported "javafx.application.Platform.isSupported" :: ConditionalFeature -> IO boolean
+
+  pure native runLater "javafx.application.Platform.runLater" :: Runnable -> void
+
+  pure native setImplicitExit "javafx.application.Platform.setImplicitExit" :: boolean -> void
+
+

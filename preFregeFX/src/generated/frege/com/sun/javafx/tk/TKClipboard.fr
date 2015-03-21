@@ -1,0 +1,27 @@
+data TKClipboard = pure native com.sun.javafx.tk.TKClipboard where
+
+  native getContent :: TKClipboard -> DataFormat -> IO Object
+
+  pure native getContentTypes :: TKClipboard -> Set DataFormat
+
+  native getDragView :: TKClipboard -> IO Image
+
+  pure native getDragViewOffsetX :: TKClipboard -> double
+
+  pure native getDragViewOffsetY :: TKClipboard -> double
+
+  pure native getTransferModes :: TKClipboard -> Set TransferMode
+
+  native hasContent :: TKClipboard -> DataFormat -> IO boolean
+
+  native putContent :: TKClipboard -> Mutable s (JArray (Pair DataFormat Object)) -> ST s boolean
+
+  native setDragView :: TKClipboard -> Image -> IO void
+
+  pure native setDragViewOffsetX :: TKClipboard -> double -> void
+
+  pure native setDragViewOffsetY :: TKClipboard -> double -> void
+
+  pure native setSecurityContext :: TKClipboard -> AccessControlContext -> void
+
+

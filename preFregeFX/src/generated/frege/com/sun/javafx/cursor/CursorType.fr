@@ -1,0 +1,30 @@
+data CursorType = pure native com.sun.javafx.cursor.CursorType where
+
+  pure native default "com.sun.javafx.cursor.CursorType.DEFAULT" :: CursorType
+  pure native crosshair "com.sun.javafx.cursor.CursorType.CROSSHAIR" :: CursorType
+  pure native text "com.sun.javafx.cursor.CursorType.TEXT" :: CursorType
+  pure native wait "com.sun.javafx.cursor.CursorType.WAIT" :: CursorType
+  pure native sw_resize "com.sun.javafx.cursor.CursorType.SW_RESIZE" :: CursorType
+  pure native se_resize "com.sun.javafx.cursor.CursorType.SE_RESIZE" :: CursorType
+  pure native nw_resize "com.sun.javafx.cursor.CursorType.NW_RESIZE" :: CursorType
+  pure native ne_resize "com.sun.javafx.cursor.CursorType.NE_RESIZE" :: CursorType
+  pure native n_resize "com.sun.javafx.cursor.CursorType.N_RESIZE" :: CursorType
+  pure native s_resize "com.sun.javafx.cursor.CursorType.S_RESIZE" :: CursorType
+  pure native w_resize "com.sun.javafx.cursor.CursorType.W_RESIZE" :: CursorType
+  pure native e_resize "com.sun.javafx.cursor.CursorType.E_RESIZE" :: CursorType
+  pure native open_hand "com.sun.javafx.cursor.CursorType.OPEN_HAND" :: CursorType
+  pure native closed_hand "com.sun.javafx.cursor.CursorType.CLOSED_HAND" :: CursorType
+  pure native hand "com.sun.javafx.cursor.CursorType.HAND" :: CursorType
+  pure native move "com.sun.javafx.cursor.CursorType.MOVE" :: CursorType
+  pure native disappear "com.sun.javafx.cursor.CursorType.DISAPPEAR" :: CursorType
+  pure native h_resize "com.sun.javafx.cursor.CursorType.H_RESIZE" :: CursorType
+  pure native v_resize "com.sun.javafx.cursor.CursorType.V_RESIZE" :: CursorType
+  pure native none "com.sun.javafx.cursor.CursorType.NONE" :: CursorType
+  pure native image "com.sun.javafx.cursor.CursorType.IMAGE" :: CursorType
+
+  pure native valueOf "com.sun.javafx.cursor.CursorType.valueOf" :: String -> CursorType
+
+  native values "com.sun.javafx.cursor.CursorType.values" :: () -> STMutable s (JArray CursorType)
+
+derive Serializable CursorType
+

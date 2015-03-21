@@ -1,0 +1,27 @@
+data MapBinding k v = mutable native javafx.beans.binding.MapBinding where
+
+  native addListener :: MapBinding k v -> ChangeListener (ObservableMap k v) -> IO void
+                      | MapBinding k v -> InvalidationListener -> IO void
+                      | MapBinding k v -> MapChangeListener k v -> IO void
+
+  native dispose :: MapBinding k v -> IO void
+
+  native emptyProperty :: MapBinding k v -> IO ReadOnlyBooleanProperty
+
+  native get :: MapBinding k v -> IO (ObservableMap k v)
+
+  native getDependencies :: MapBinding k v -> IO (ObservableList Object)
+
+  native invalidate :: MapBinding k v -> IO void
+
+  native isValid :: MapBinding k v -> IO boolean
+
+  native removeListener :: MapBinding k v -> InvalidationListener -> IO void
+                         | MapBinding k v -> MapChangeListener k v -> IO void
+                         | MapBinding k v -> ChangeListener (ObservableMap k v) -> IO void
+
+  native sizeProperty :: MapBinding k v -> IO ReadOnlyIntegerProperty
+
+  native toString :: MapBinding k v -> IO String
+
+

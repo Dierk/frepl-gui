@@ -1,0 +1,11 @@
+data LabelBuilder b = mutable native javafx.scene.control.LabelBuilder where
+
+  native applyTo :: LabelBuilder b -> Label -> IO void
+
+  native build :: LabelBuilder b -> IO Label
+
+  native create "javafx.scene.control.LabelBuilder.create" :: () -> IO (LabelBuilder Object)
+
+  native labelFor :: LabelBuilder b -> Node -> IO b
+
+

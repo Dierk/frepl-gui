@@ -1,0 +1,11 @@
+data HyperlinkBuilder b = mutable native javafx.scene.control.HyperlinkBuilder where
+
+  native applyTo :: HyperlinkBuilder b -> Hyperlink -> IO void
+
+  native build :: HyperlinkBuilder b -> IO Hyperlink
+
+  native create "javafx.scene.control.HyperlinkBuilder.create" :: () -> IO (HyperlinkBuilder Object)
+
+  native visited :: HyperlinkBuilder b -> boolean -> IO b
+
+

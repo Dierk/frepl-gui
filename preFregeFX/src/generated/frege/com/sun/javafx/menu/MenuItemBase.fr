@@ -1,0 +1,55 @@
+data MenuItemBase = pure native com.sun.javafx.menu.MenuItemBase where
+
+  native acceleratorProperty :: MenuItemBase -> IO (ObjectProperty KeyCombination)
+
+  native disableProperty :: MenuItemBase -> IO BooleanProperty
+
+  pure native fire :: MenuItemBase -> void
+
+  pure native fireValidation :: MenuItemBase -> void
+
+  native getAccelerator :: MenuItemBase -> IO KeyCombination
+
+  native getGraphic :: MenuItemBase -> IO Node
+
+  pure native getId :: MenuItemBase -> String
+
+  native getOnAction :: MenuItemBase -> IO (EventHandler ActionEvent)
+
+  pure native getText :: MenuItemBase -> String
+
+  native graphicProperty :: MenuItemBase -> IO (ObjectProperty Node)
+
+  native idProperty :: MenuItemBase -> IO StringProperty
+
+  pure native isDisable :: MenuItemBase -> boolean
+
+  pure native isMnemonicParsing :: MenuItemBase -> boolean
+
+  pure native isVisible :: MenuItemBase -> boolean
+
+  native mnemonicParsingProperty :: MenuItemBase -> IO BooleanProperty
+
+  native onActionProperty :: MenuItemBase -> IO (ObjectProperty (EventHandler ActionEvent))
+
+  native setAccelerator :: MenuItemBase -> KeyCombination -> IO void
+
+  pure native setDisable :: MenuItemBase -> boolean -> void
+
+  native setGraphic :: MenuItemBase -> Node -> IO void
+
+  pure native setId :: MenuItemBase -> String -> void
+
+  pure native setMnemonicParsing :: MenuItemBase -> boolean -> void
+
+  native setOnAction :: MenuItemBase -> EventHandler ActionEvent -> IO void
+
+  pure native setText :: MenuItemBase -> String -> void
+
+  pure native setVisible :: MenuItemBase -> boolean -> void
+
+  native textProperty :: MenuItemBase -> IO StringProperty
+
+  native visibleProperty :: MenuItemBase -> IO BooleanProperty
+
+

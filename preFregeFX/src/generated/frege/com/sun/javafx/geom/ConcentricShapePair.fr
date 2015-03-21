@@ -1,0 +1,23 @@
+data ConcentricShapePair = pure native com.sun.javafx.geom.ConcentricShapePair where
+
+  pure native new :: Shape -> Shape -> ConcentricShapePair
+
+  pure native contains :: ConcentricShapePair -> float -> float -> float -> float -> boolean
+                        | ConcentricShapePair -> float -> float -> boolean
+
+  pure native copy :: ConcentricShapePair -> Shape
+
+  pure native getBounds :: ConcentricShapePair -> RectBounds
+
+  pure native getCombinationType :: ConcentricShapePair -> int
+
+  pure native getInnerShape :: ConcentricShapePair -> Shape
+
+  pure native getOuterShape :: ConcentricShapePair -> Shape
+
+  pure native getPathIterator :: ConcentricShapePair -> BaseTransform -> PathIterator
+                               | ConcentricShapePair -> BaseTransform -> float -> PathIterator
+
+  pure native intersects :: ConcentricShapePair -> float -> float -> float -> float -> boolean
+
+

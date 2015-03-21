@@ -1,0 +1,9 @@
+data StyleClass = pure native com.sun.javafx.css.StyleClass where
+
+  pure native getIndex :: StyleClass -> int
+
+  pure native getStyleClassName :: StyleClass -> String
+
+  pure native toString :: StyleClass -> String
+
+

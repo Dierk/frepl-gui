@@ -1,0 +1,1 @@
+data IDWriteFontList = pure native com.sun.javafx.font.directwrite.IDWriteFontList

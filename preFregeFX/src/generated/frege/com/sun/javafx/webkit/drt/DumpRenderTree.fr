@@ -1,0 +1,5 @@
+data DumpRenderTree = pure native com.sun.javafx.webkit.drt.DumpRenderTree where
+
+  native main "com.sun.javafx.webkit.drt.DumpRenderTree.main" :: Mutable s (JArray String) -> ST s void throws Exception
+
+

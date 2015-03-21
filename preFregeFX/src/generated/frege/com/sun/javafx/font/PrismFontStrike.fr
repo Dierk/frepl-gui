@@ -1,0 +1,32 @@
+data PrismFontStrike t = pure native com.sun.javafx.font.PrismFontStrike where
+
+  pure native clearDesc :: PrismFontStrike t -> void
+
+  pure native drawAsShapes :: PrismFontStrike t -> boolean
+
+  pure native equals :: PrismFontStrike t -> Object -> boolean
+
+  pure native getAAMode :: PrismFontStrike t -> int
+
+  pure native getCharAdvance :: PrismFontStrike t -> char -> float
+
+  pure native getFontResource :: PrismFontStrike t -> t
+
+  pure native getGlyph :: PrismFontStrike t -> int -> Glyph
+                        | PrismFontStrike t -> char -> Glyph
+
+  pure native getMetrics :: PrismFontStrike t -> Metrics
+
+  pure native getOutline :: PrismFontStrike t -> GlyphList -> BaseTransform -> Shape
+
+  pure native getQuantizedPosition :: PrismFontStrike t -> Point2D -> int
+
+  pure native getSize :: PrismFontStrike t -> float
+
+  pure native getTransform :: PrismFontStrike t -> BaseTransform
+
+  pure native hashCode :: PrismFontStrike t -> int
+
+  pure native toString :: PrismFontStrike t -> String
+
+

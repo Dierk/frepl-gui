@@ -1,0 +1,14 @@
+data ControlAcceleratorSupport = pure native com.sun.javafx.scene.control.ControlAcceleratorSupport where
+
+  pure native new :: () -> ControlAcceleratorSupport
+
+  native addAcceleratorsIntoScene "com.sun.javafx.scene.control.ControlAcceleratorSupport.addAcceleratorsIntoScene" :: ObservableList MenuItem -> Tab -> IO void
+                                                                                                                     | ObservableList MenuItem -> Node -> IO void
+                                                                                                                     | ObservableList MenuItem -> TableColumnBase Object Object -> IO void
+
+  native removeAcceleratorsFromScene "com.sun.javafx.scene.control.ControlAcceleratorSupport.removeAcceleratorsFromScene" :: List MenuItem -> TableColumnBase Object Object -> IO void
+                                                                                                                           | List MenuItem -> Scene -> IO void
+                                                                                                                           | List MenuItem -> Tab -> IO void
+                                                                                                                           | List MenuItem -> Node -> IO void
+
+

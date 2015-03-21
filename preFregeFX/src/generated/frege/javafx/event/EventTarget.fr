@@ -1,0 +1,5 @@
+data EventTarget = mutable native javafx.event.EventTarget where
+
+  native buildEventDispatchChain :: EventTarget -> EventDispatchChain -> IO EventDispatchChain
+
+

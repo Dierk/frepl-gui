@@ -1,0 +1,1 @@
+data DirectoryLock = mutable native javafx.scene.web.DirectoryLock

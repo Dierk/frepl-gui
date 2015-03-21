@@ -1,0 +1,5 @@
+data ThemeClientImpl = pure native com.sun.javafx.webkit.ThemeClientImpl where
+
+  pure native new :: Accessor -> ThemeClientImpl
+
+

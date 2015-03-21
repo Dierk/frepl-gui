@@ -1,0 +1,5 @@
+data CTGlyphLayout = pure native com.sun.javafx.font.coretext.CTGlyphLayout where
+
+  native layout :: CTGlyphLayout -> TextRun -> PGFont -> FontStrike -> Mutable s (JArray char) -> ST s void
+
+

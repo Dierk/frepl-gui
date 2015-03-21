@@ -1,0 +1,39 @@
+data TKScene = pure native com.sun.javafx.tk.TKScene where
+
+  pure native createDragboard :: TKScene -> boolean -> TKClipboard
+
+  pure native dispose :: TKScene -> void
+
+  pure native enableInputMethodEvents :: TKScene -> boolean -> void
+
+  pure native entireSceneNeedsRepaint :: TKScene -> void
+
+  pure native finishInputMethodComposition :: TKScene -> void
+
+  pure native getAccessControlContext :: TKScene -> AccessControlContext
+
+  native getLights :: TKScene -> STMutable s (JArray NGLightBase)
+
+  pure native markDirty :: TKScene -> void
+
+  pure native releaseSynchronization :: TKScene -> boolean -> void
+
+  pure native setCamera :: TKScene -> NGCamera -> void
+
+  pure native setCursor :: TKScene -> Object -> void
+
+  pure native setFillPaint :: TKScene -> Object -> void
+
+  native setLights :: TKScene -> Mutable s (JArray NGLightBase) -> ST s void
+
+  pure native setRoot :: TKScene -> NGNode -> void
+
+  pure native setTKSceneListener :: TKScene -> TKSceneListener -> void
+
+  pure native setTKScenePaintListener :: TKScene -> TKScenePaintListener -> void
+
+  pure native waitForRenderingToComplete :: TKScene -> void
+
+  pure native waitForSynchronization :: TKScene -> void
+
+

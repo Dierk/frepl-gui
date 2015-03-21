@@ -1,0 +1,29 @@
+data PropertyReference t = pure native com.sun.javafx.property.PropertyReference where
+
+  pure native new :: Class Object -> String -> PropertyReference t
+
+  pure native equals :: PropertyReference t -> Object -> boolean
+
+  pure native get :: PropertyReference t -> Object -> t
+
+  pure native getContainingClass :: PropertyReference t -> Class Object
+
+  pure native getName :: PropertyReference t -> String
+
+  native getProperty :: PropertyReference t -> Object -> IO (ReadOnlyProperty t)
+
+  pure native getType :: PropertyReference t -> Class Object
+
+  pure native hasProperty :: PropertyReference t -> boolean
+
+  pure native hashCode :: PropertyReference t -> int
+
+  pure native isReadable :: PropertyReference t -> boolean
+
+  pure native isWritable :: PropertyReference t -> boolean
+
+  pure native set :: PropertyReference t -> Object -> t -> void
+
+  pure native toString :: PropertyReference t -> String
+
+

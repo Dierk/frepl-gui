@@ -1,0 +1,7 @@
+data KeyCodeMap = pure native com.sun.javafx.webkit.KeyCodeMap where
+
+  pure native new :: () -> KeyCodeMap
+
+  native lookup "com.sun.javafx.webkit.KeyCodeMap.lookup" :: KeyCode -> IO KeyCodeMap_Entry
+
+

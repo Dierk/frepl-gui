@@ -1,0 +1,5 @@
+data SceneTraversalEngine = pure native com.sun.javafx.scene.traversal.SceneTraversalEngine where
+
+  native new :: Scene -> IO SceneTraversalEngine
+
+

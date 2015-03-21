@@ -1,0 +1,7 @@
+data Renderer = pure native com.sun.javafx.webkit.theme.Renderer where
+
+  pure native getRenderer "com.sun.javafx.webkit.theme.Renderer.getRenderer" :: () -> Renderer
+
+  pure native setRenderer "com.sun.javafx.webkit.theme.Renderer.setRenderer" :: Renderer -> void
+
+

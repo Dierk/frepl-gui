@@ -1,0 +1,17 @@
+data Logging = pure native com.sun.javafx.Logging where
+
+  pure native new :: () -> Logging
+
+  pure native getAccessibilityLogger "com.sun.javafx.Logging.getAccessibilityLogger" :: () -> PlatformLogger
+
+  pure native getCSSLogger "com.sun.javafx.Logging.getCSSLogger" :: () -> PlatformLogger
+
+  pure native getFocusLogger "com.sun.javafx.Logging.getFocusLogger" :: () -> PlatformLogger
+
+  pure native getInputLogger "com.sun.javafx.Logging.getInputLogger" :: () -> PlatformLogger
+
+  pure native getJavaFXLogger "com.sun.javafx.Logging.getJavaFXLogger" :: () -> PlatformLogger
+
+  pure native getLayoutLogger "com.sun.javafx.Logging.getLayoutLogger" :: () -> PlatformLogger
+
+

@@ -1,0 +1,15 @@
+data PasteboardImpl = pure native com.sun.javafx.webkit.PasteboardImpl where
+
+  pure native getHtml :: PasteboardImpl -> String
+
+  pure native getPlainText :: PasteboardImpl -> String
+
+  pure native writeImage :: PasteboardImpl -> WCImageFrame -> void
+
+  pure native writePlainText :: PasteboardImpl -> String -> void
+
+  pure native writeSelection :: PasteboardImpl -> boolean -> String -> String -> void
+
+  pure native writeUrl :: PasteboardImpl -> String -> String -> void
+
+

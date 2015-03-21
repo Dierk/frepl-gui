@@ -1,0 +1,9 @@
+data JPEGImageLoaderFactory = pure native com.sun.javafx.iio.jpeg.JPEGImageLoaderFactory where
+
+  native createImageLoader :: JPEGImageLoaderFactory -> InputStream -> ST s ImageLoader throws IOException
+
+  pure native getFormatDescription :: JPEGImageLoaderFactory -> ImageFormatDescription
+
+  pure native getInstance "com.sun.javafx.iio.jpeg.JPEGImageLoaderFactory.getInstance" :: () -> ImageLoaderFactory
+
+

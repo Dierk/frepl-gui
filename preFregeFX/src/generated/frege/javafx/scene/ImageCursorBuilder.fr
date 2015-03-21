@@ -1,0 +1,13 @@
+data ImageCursorBuilder b = mutable native javafx.scene.ImageCursorBuilder where
+
+  native build :: ImageCursorBuilder b -> IO ImageCursor
+
+  native create "javafx.scene.ImageCursorBuilder.create" :: () -> IO (ImageCursorBuilder Object)
+
+  native hotspotX :: ImageCursorBuilder b -> double -> IO b
+
+  native hotspotY :: ImageCursorBuilder b -> double -> IO b
+
+  native image :: ImageCursorBuilder b -> Image -> IO b
+
+

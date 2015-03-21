@@ -1,0 +1,21 @@
+data MatrixType = mutable native javafx.scene.transform.MatrixType where
+
+  native mt_2d_2x3 "javafx.scene.transform.MatrixType.MT_2D_2x3" :: IO MatrixType
+  native mt_2d_3x3 "javafx.scene.transform.MatrixType.MT_2D_3x3" :: IO MatrixType
+  native mt_3d_3x4 "javafx.scene.transform.MatrixType.MT_3D_3x4" :: IO MatrixType
+  native mt_3d_4x4 "javafx.scene.transform.MatrixType.MT_3D_4x4" :: IO MatrixType
+
+  native columns :: MatrixType -> IO int
+
+  native elements :: MatrixType -> IO int
+
+  native is2D :: MatrixType -> IO boolean
+
+  native rows :: MatrixType -> IO int
+
+  native valueOf "javafx.scene.transform.MatrixType.valueOf" :: String -> IO MatrixType
+
+  native values "javafx.scene.transform.MatrixType.values" :: () -> STMutable s (JArray MatrixType)
+
+derive Serializable MatrixType
+

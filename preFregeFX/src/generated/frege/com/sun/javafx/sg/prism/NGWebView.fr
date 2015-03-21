@@ -1,0 +1,15 @@
+data NGWebView = pure native com.sun.javafx.sg.prism.NGWebView where
+
+  pure native new :: () -> NGWebView
+
+  pure native hasOverlappingContents :: NGWebView -> boolean
+
+  pure native requestRender :: NGWebView -> void
+
+  pure native resize :: NGWebView -> float -> float -> void
+
+  pure native setPage :: NGWebView -> WebPage -> void
+
+  pure native update :: NGWebView -> void
+
+

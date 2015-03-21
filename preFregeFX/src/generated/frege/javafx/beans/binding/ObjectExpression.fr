@@ -1,0 +1,21 @@
+data ObjectExpression t = mutable native javafx.beans.binding.ObjectExpression where
+
+  native asString :: ObjectExpression t -> Locale -> String -> IO StringBinding
+                   | ObjectExpression t -> String -> IO StringBinding
+                   | ObjectExpression t -> IO StringBinding
+
+  native getValue :: ObjectExpression t -> IO t
+
+  native isEqualTo :: ObjectExpression t -> Object -> IO BooleanBinding
+                    | ObjectExpression t -> ObservableObjectValue Object -> IO BooleanBinding
+
+  native isNotEqualTo :: ObjectExpression t -> Object -> IO BooleanBinding
+                       | ObjectExpression t -> ObservableObjectValue Object -> IO BooleanBinding
+
+  native isNotNull :: ObjectExpression t -> IO BooleanBinding
+
+  native isNull :: ObjectExpression t -> IO BooleanBinding
+
+  native objectExpression "javafx.beans.binding.ObjectExpression.objectExpression" :: ObservableObjectValue t -> IO (ObjectExpression t)
+
+

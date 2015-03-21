@@ -1,0 +1,21 @@
+data IosImageLoader = pure native com.sun.javafx.iio.ios.IosImageLoader where
+
+  pure native gray "com.sun.javafx.iio.ios.IosImageLoader.GRAY" :: int
+  pure native gray_alpha "com.sun.javafx.iio.ios.IosImageLoader.GRAY_ALPHA" :: int
+  pure native gray_alpha_pre "com.sun.javafx.iio.ios.IosImageLoader.GRAY_ALPHA_PRE" :: int
+  pure native palette "com.sun.javafx.iio.ios.IosImageLoader.PALETTE" :: int
+  pure native palette_alpha "com.sun.javafx.iio.ios.IosImageLoader.PALETTE_ALPHA" :: int
+  pure native palette_alpha_pre "com.sun.javafx.iio.ios.IosImageLoader.PALETTE_ALPHA_PRE" :: int
+  pure native palette_trans "com.sun.javafx.iio.ios.IosImageLoader.PALETTE_TRANS" :: int
+  pure native rgb "com.sun.javafx.iio.ios.IosImageLoader.RGB" :: int
+  pure native rgba "com.sun.javafx.iio.ios.IosImageLoader.RGBA" :: int
+  pure native rgba_pre "com.sun.javafx.iio.ios.IosImageLoader.RGBA_PRE" :: int
+
+  native new :: InputStream -> ImageDescriptor -> ST s IosImageLoader throws IOException
+              | String -> ImageDescriptor -> ST s IosImageLoader throws IOException
+
+  pure native dispose :: IosImageLoader -> void
+
+  native load :: IosImageLoader -> int -> int -> int -> boolean -> boolean -> ST s ImageFrame throws IOException
+
+

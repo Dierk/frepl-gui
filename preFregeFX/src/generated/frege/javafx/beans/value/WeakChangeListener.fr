@@ -1,0 +1,9 @@
+data WeakChangeListener t = mutable native javafx.beans.value.WeakChangeListener where
+
+  native new :: ChangeListener t -> IO (WeakChangeListener t)
+
+  native changed :: WeakChangeListener t -> ObservableValue t -> t -> t -> IO void
+
+  native wasGarbageCollected :: WeakChangeListener t -> IO boolean
+
+

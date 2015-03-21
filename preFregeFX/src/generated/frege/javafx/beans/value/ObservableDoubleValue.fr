@@ -1,0 +1,5 @@
+data ObservableDoubleValue = mutable native javafx.beans.value.ObservableDoubleValue where
+
+  native get :: ObservableDoubleValue -> IO double
+
+

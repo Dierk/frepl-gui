@@ -1,0 +1,11 @@
+data PrintPipeline = pure native com.sun.javafx.tk.PrintPipeline where
+
+  native createPrinterJob :: PrintPipeline -> PrinterJob -> IO PrinterJobImpl
+
+  native getAllPrinters :: PrintPipeline -> IO (ObservableSet Printer)
+
+  native getDefaultPrinter :: PrintPipeline -> IO Printer
+
+  pure native getPrintPipeline "com.sun.javafx.tk.PrintPipeline.getPrintPipeline" :: () -> PrintPipeline
+
+

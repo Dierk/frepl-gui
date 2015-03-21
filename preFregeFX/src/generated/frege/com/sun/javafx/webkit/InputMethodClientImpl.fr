@@ -1,0 +1,25 @@
+data InputMethodClientImpl = pure native com.sun.javafx.webkit.InputMethodClientImpl where
+
+  native new :: WebView -> WebPage -> IO InputMethodClientImpl
+
+  pure native activateInputMethods :: InputMethodClientImpl -> boolean -> void
+
+  pure native cancelLatestCommittedText :: InputMethodClientImpl -> void
+
+  native convertToWCInputMethodEvent "com.sun.javafx.webkit.InputMethodClientImpl.convertToWCInputMethodEvent" :: InputMethodEvent -> IO WCInputMethodEvent
+
+  pure native getCommittedText :: InputMethodClientImpl -> int -> int -> String
+
+  pure native getCommittedTextLength :: InputMethodClientImpl -> int
+
+  pure native getInputMethodState :: InputMethodClientImpl -> boolean
+
+  pure native getInsertPositionOffset :: InputMethodClientImpl -> int
+
+  pure native getLocationOffset :: InputMethodClientImpl -> int -> int -> int
+
+  pure native getSelectedText :: InputMethodClientImpl -> String
+
+  native getTextLocation :: InputMethodClientImpl -> int -> IO Point2D
+
+

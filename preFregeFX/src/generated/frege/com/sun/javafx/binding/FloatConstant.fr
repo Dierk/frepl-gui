@@ -1,0 +1,23 @@
+data FloatConstant = pure native com.sun.javafx.binding.FloatConstant where
+
+  native addListener :: FloatConstant -> InvalidationListener -> IO void
+                      | FloatConstant -> ChangeListener Number -> IO void
+
+  pure native doubleValue :: FloatConstant -> double
+
+  pure native floatValue :: FloatConstant -> float
+
+  pure native get :: FloatConstant -> float
+
+  pure native getValue :: FloatConstant -> Float
+
+  pure native intValue :: FloatConstant -> int
+
+  pure native longValue :: FloatConstant -> long
+
+  native removeListener :: FloatConstant -> InvalidationListener -> IO void
+                         | FloatConstant -> ChangeListener Number -> IO void
+
+  pure native valueOf "com.sun.javafx.binding.FloatConstant.valueOf" :: float -> FloatConstant
+
+

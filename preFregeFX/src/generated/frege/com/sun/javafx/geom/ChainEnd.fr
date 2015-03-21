@@ -1,0 +1,17 @@
+data ChainEnd = pure native com.sun.javafx.geom.ChainEnd where
+
+  pure native new :: CurveLink -> ChainEnd -> ChainEnd
+
+  pure native addLink :: ChainEnd -> CurveLink -> void
+
+  pure native getChain :: ChainEnd -> CurveLink
+
+  pure native getPartner :: ChainEnd -> ChainEnd
+
+  pure native getX :: ChainEnd -> double
+
+  pure native linkTo :: ChainEnd -> ChainEnd -> CurveLink
+
+  pure native setOtherEnd :: ChainEnd -> ChainEnd -> void
+
+

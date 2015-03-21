@@ -1,0 +1,7 @@
+data Popup = mutable native javafx.stage.Popup where
+
+  native new :: () -> IO Popup
+
+  native getContent :: Popup -> IO (ObservableList Node)
+
+

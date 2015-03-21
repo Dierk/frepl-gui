@@ -1,0 +1,13 @@
+data ImageLoader = pure native com.sun.javafx.iio.ImageLoader where
+
+  pure native addListener :: ImageLoader -> ImageLoadListener -> void
+
+  pure native dispose :: ImageLoader -> void
+
+  pure native getFormatDescription :: ImageLoader -> ImageFormatDescription
+
+  native load :: ImageLoader -> int -> int -> int -> boolean -> boolean -> ST s ImageFrame throws IOException
+
+  pure native removeListener :: ImageLoader -> ImageLoadListener -> void
+
+

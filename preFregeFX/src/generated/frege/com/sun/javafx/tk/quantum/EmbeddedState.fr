@@ -1,0 +1,11 @@
+data EmbeddedState = pure native com.sun.javafx.tk.quantum.EmbeddedState where
+
+  pure native new :: GlassScene -> EmbeddedState
+
+  pure native isValid :: EmbeddedState -> boolean
+
+  pure native update :: EmbeddedState -> void
+
+  pure native uploadPixels :: EmbeddedState -> PixelSource -> void
+
+

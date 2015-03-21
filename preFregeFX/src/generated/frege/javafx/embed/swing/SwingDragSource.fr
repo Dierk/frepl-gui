@@ -1,0 +1,7 @@
+data SwingDragSource = mutable native javafx.embed.swing.SwingDragSource where
+
+  native dragDropEnd :: SwingDragSource -> TransferMode -> IO void
+
+  native getSupportedActions :: SwingDragSource -> IO (Set TransferMode)
+
+

@@ -1,0 +1,7 @@
+data QuantumRenderer = pure native com.sun.javafx.tk.quantum.QuantumRenderer where
+
+  pure native afterExecute :: QuantumRenderer -> Runnable -> Throwable -> void
+
+  pure native getInstance "com.sun.javafx.tk.quantum.QuantumRenderer.getInstance" :: () -> QuantumRenderer
+
+

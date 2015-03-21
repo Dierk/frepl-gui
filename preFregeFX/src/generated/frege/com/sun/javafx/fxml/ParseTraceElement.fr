@@ -1,0 +1,11 @@
+data ParseTraceElement = pure native com.sun.javafx.fxml.ParseTraceElement where
+
+  pure native new :: URL -> int -> ParseTraceElement
+
+  pure native getLineNumber :: ParseTraceElement -> int
+
+  pure native getLocation :: ParseTraceElement -> URL
+
+  pure native toString :: ParseTraceElement -> String
+
+

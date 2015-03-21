@@ -1,0 +1,31 @@
+data WebPageClientImpl = pure native com.sun.javafx.webkit.WebPageClientImpl where
+
+  pure native new :: Accessor -> WebPageClientImpl
+
+  pure native addMessageToConsole :: WebPageClientImpl -> String -> int -> String -> void
+
+  pure native createBackBuffer :: WebPageClientImpl -> WCPageBackBuffer
+
+  pure native didClearWindowObject :: WebPageClientImpl -> long -> long -> void
+
+  native getContainer :: WebPageClientImpl -> IO WebView
+
+  pure native getScreenBounds :: WebPageClientImpl -> boolean -> WCRectangle
+
+  pure native getScreenDepth :: WebPageClientImpl -> int
+
+  pure native isBackBufferSupported :: WebPageClientImpl -> boolean
+
+  pure native screenToWindow :: WebPageClientImpl -> WCPoint -> WCPoint
+
+  pure native setCursor :: WebPageClientImpl -> long -> void
+
+  pure native setFocus :: WebPageClientImpl -> boolean -> void
+
+  pure native setTooltip :: WebPageClientImpl -> String -> void
+
+  pure native transferFocus :: WebPageClientImpl -> boolean -> void
+
+  pure native windowToScreen :: WebPageClientImpl -> WCPoint -> WCPoint
+
+

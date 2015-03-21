@@ -1,0 +1,13 @@
+data ExpressionValue = pure native com.sun.javafx.fxml.expression.ExpressionValue where
+
+  pure native new :: Object -> Expression -> Class Object -> ExpressionValue
+
+  native addListener :: ExpressionValue -> InvalidationListener -> IO void
+                      | ExpressionValue -> ChangeListener Object -> IO void
+
+  pure native getValue :: ExpressionValue -> Object
+
+  native removeListener :: ExpressionValue -> ChangeListener Object -> IO void
+                         | ExpressionValue -> InvalidationListener -> IO void
+
+

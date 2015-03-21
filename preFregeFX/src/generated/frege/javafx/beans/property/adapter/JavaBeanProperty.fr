@@ -1,0 +1,1 @@
+data JavaBeanProperty t = mutable native javafx.beans.property.adapter.JavaBeanProperty

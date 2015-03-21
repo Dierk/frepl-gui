@@ -1,0 +1,7 @@
+data CTFactory = pure native com.sun.javafx.font.coretext.CTFactory where
+
+  pure native createGlyphLayout :: CTFactory -> GlyphLayout
+
+  pure native getFactory "com.sun.javafx.font.coretext.CTFactory.getFactory" :: () -> PrismFontFactory
+
+

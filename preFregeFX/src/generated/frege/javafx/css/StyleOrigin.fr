@@ -1,0 +1,13 @@
+data StyleOrigin = mutable native javafx.css.StyleOrigin where
+
+  native user_agent "javafx.css.StyleOrigin.USER_AGENT" :: IO StyleOrigin
+  native user "javafx.css.StyleOrigin.USER" :: IO StyleOrigin
+  native author "javafx.css.StyleOrigin.AUTHOR" :: IO StyleOrigin
+  native inline "javafx.css.StyleOrigin.INLINE" :: IO StyleOrigin
+
+  native valueOf "javafx.css.StyleOrigin.valueOf" :: String -> IO StyleOrigin
+
+  native values "javafx.css.StyleOrigin.values" :: () -> STMutable s (JArray StyleOrigin)
+
+derive Serializable StyleOrigin
+

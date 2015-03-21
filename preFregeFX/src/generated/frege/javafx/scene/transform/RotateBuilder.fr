@@ -1,0 +1,19 @@
+data RotateBuilder b = mutable native javafx.scene.transform.RotateBuilder where
+
+  native angle :: RotateBuilder b -> double -> IO b
+
+  native applyTo :: RotateBuilder b -> Rotate -> IO void
+
+  native axis :: RotateBuilder b -> Point3D -> IO b
+
+  native build :: RotateBuilder b -> IO Rotate
+
+  native create "javafx.scene.transform.RotateBuilder.create" :: () -> IO (RotateBuilder Object)
+
+  native pivotX :: RotateBuilder b -> double -> IO b
+
+  native pivotY :: RotateBuilder b -> double -> IO b
+
+  native pivotZ :: RotateBuilder b -> double -> IO b
+
+

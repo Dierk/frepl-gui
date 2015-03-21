@@ -1,0 +1,11 @@
+data FontFace = pure native com.sun.javafx.css.FontFace where
+
+  pure native new :: Map String String -> List FontFace_FontFaceSrc -> FontFace
+
+  pure native getDescriptors :: FontFace -> Map String String
+
+  pure native getSources :: FontFace -> List FontFace_FontFaceSrc
+
+  pure native toString :: FontFace -> String
+
+

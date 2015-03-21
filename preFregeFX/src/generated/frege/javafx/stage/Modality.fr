@@ -1,0 +1,12 @@
+data Modality = mutable native javafx.stage.Modality where
+
+  native none "javafx.stage.Modality.NONE" :: IO Modality
+  native window_modal "javafx.stage.Modality.WINDOW_MODAL" :: IO Modality
+  native application_modal "javafx.stage.Modality.APPLICATION_MODAL" :: IO Modality
+
+  native valueOf "javafx.stage.Modality.valueOf" :: String -> IO Modality
+
+  native values "javafx.stage.Modality.values" :: () -> STMutable s (JArray Modality)
+
+derive Serializable Modality
+

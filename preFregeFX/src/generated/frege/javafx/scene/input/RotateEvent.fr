@@ -1,0 +1,23 @@
+data RotateEvent = mutable native javafx.scene.input.RotateEvent where
+
+  native any "javafx.scene.input.RotateEvent.ANY" :: IO (EventType RotateEvent)
+  native rotate "javafx.scene.input.RotateEvent.ROTATE" :: IO (EventType RotateEvent)
+  native rotation_started "javafx.scene.input.RotateEvent.ROTATION_STARTED" :: IO (EventType RotateEvent)
+  native rotation_finished "javafx.scene.input.RotateEvent.ROTATION_FINISHED" :: IO (EventType RotateEvent)
+
+  native new :: Object -> EventTarget -> EventType RotateEvent -> double -> double -> double -> double -> boolean -> boolean -> boolean -> boolean -> boolean -> boolean -> double -> double -> PickResult -> IO RotateEvent
+              | EventType RotateEvent -> double -> double -> double -> double -> boolean -> boolean -> boolean -> boolean -> boolean -> boolean -> double -> double -> PickResult -> IO RotateEvent
+
+  native copyFor :: RotateEvent -> Object -> EventTarget -> EventType RotateEvent -> IO RotateEvent
+                  | RotateEvent -> Object -> EventTarget -> IO RotateEvent
+
+  native getAngle :: RotateEvent -> IO double
+
+  native getEventType :: RotateEvent -> IO (EventType RotateEvent)
+
+  native getTotalAngle :: RotateEvent -> IO double
+
+  native toString :: RotateEvent -> IO String
+
+derive Serializable RotateEvent
+

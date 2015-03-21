@@ -1,0 +1,307 @@
+data Bindings = mutable native javafx.beans.binding.Bindings where
+
+  native add "javafx.beans.binding.Bindings.add" :: ObservableNumberValue -> long -> IO NumberBinding
+                                                  | long -> ObservableNumberValue -> IO NumberBinding
+                                                  | ObservableNumberValue -> int -> IO NumberBinding
+                                                  | ObservableNumberValue -> ObservableNumberValue -> IO NumberBinding
+                                                  | ObservableNumberValue -> double -> IO DoubleBinding
+                                                  | double -> ObservableNumberValue -> IO DoubleBinding
+                                                  | ObservableNumberValue -> float -> IO NumberBinding
+                                                  | int -> ObservableNumberValue -> IO NumberBinding
+                                                  | float -> ObservableNumberValue -> IO NumberBinding
+
+  native and "javafx.beans.binding.Bindings.and" :: ObservableBooleanValue -> ObservableBooleanValue -> IO BooleanBinding
+
+  native bindBidirectional "javafx.beans.binding.Bindings.bindBidirectional" :: Property String -> Property t -> StringConverter t -> IO void
+                                                                              | Property String -> Property Object -> Format -> IO void
+                                                                              | Property t -> Property t -> IO void
+
+  native bindContent "javafx.beans.binding.Bindings.bindContent" :: Map k v -> ObservableMap k v -> IO void
+                                                                  | List e -> ObservableList e -> IO void
+                                                                  | Set e -> ObservableSet e -> IO void
+
+  native bindContentBidirectional "javafx.beans.binding.Bindings.bindContentBidirectional" :: ObservableList e -> ObservableList e -> IO void
+                                                                                            | ObservableMap k v -> ObservableMap k v -> IO void
+                                                                                            | ObservableSet e -> ObservableSet e -> IO void
+
+  native booleanValueAt "javafx.beans.binding.Bindings.booleanValueAt" :: ObservableList Boolean -> ObservableNumberValue -> IO BooleanBinding
+                                                                        | ObservableList Boolean -> int -> IO BooleanBinding
+                                                                        | ObservableList Boolean -> ObservableIntegerValue -> IO BooleanBinding
+                                                                        | ObservableMap k Boolean -> ObservableValue k -> IO BooleanBinding
+                                                                        | ObservableMap k Boolean -> k -> IO BooleanBinding
+
+  native concat "javafx.beans.binding.Bindings.concat" :: MutableIO (JArray Object) -> IO StringExpression
+
+  native convert "javafx.beans.binding.Bindings.convert" :: ObservableValue Object -> IO StringExpression
+
+  native createBooleanBinding "javafx.beans.binding.Bindings.createBooleanBinding" :: Callable Boolean -> MutableIO (JArray Observable) -> IO BooleanBinding
+
+  native createDoubleBinding "javafx.beans.binding.Bindings.createDoubleBinding" :: Callable Double -> MutableIO (JArray Observable) -> IO DoubleBinding
+
+  native createFloatBinding "javafx.beans.binding.Bindings.createFloatBinding" :: Callable Float -> MutableIO (JArray Observable) -> IO FloatBinding
+
+  native createIntegerBinding "javafx.beans.binding.Bindings.createIntegerBinding" :: Callable Integer -> MutableIO (JArray Observable) -> IO IntegerBinding
+
+  native createLongBinding "javafx.beans.binding.Bindings.createLongBinding" :: Callable Long -> MutableIO (JArray Observable) -> IO LongBinding
+
+  native createObjectBinding "javafx.beans.binding.Bindings.createObjectBinding" :: Callable t -> MutableIO (JArray Observable) -> IO (ObjectBinding t)
+
+  native createStringBinding "javafx.beans.binding.Bindings.createStringBinding" :: Callable String -> MutableIO (JArray Observable) -> IO StringBinding
+
+  native divide "javafx.beans.binding.Bindings.divide" :: long -> ObservableNumberValue -> IO NumberBinding
+                                                        | ObservableNumberValue -> float -> IO NumberBinding
+                                                        | ObservableNumberValue -> int -> IO NumberBinding
+                                                        | ObservableNumberValue -> long -> IO NumberBinding
+                                                        | float -> ObservableNumberValue -> IO NumberBinding
+                                                        | int -> ObservableNumberValue -> IO NumberBinding
+                                                        | ObservableNumberValue -> ObservableNumberValue -> IO NumberBinding
+                                                        | ObservableNumberValue -> double -> IO DoubleBinding
+                                                        | double -> ObservableNumberValue -> IO DoubleBinding
+
+  native doubleValueAt "javafx.beans.binding.Bindings.doubleValueAt" :: ObservableList Number -> ObservableIntegerValue -> IO DoubleBinding
+                                                                      | ObservableList Number -> ObservableNumberValue -> IO DoubleBinding
+                                                                      | ObservableList Number -> int -> IO DoubleBinding
+                                                                      | ObservableMap k Number -> k -> IO DoubleBinding
+                                                                      | ObservableMap k Number -> ObservableValue k -> IO DoubleBinding
+
+  native equal "javafx.beans.binding.Bindings.equal" :: Object -> ObservableObjectValue Object -> IO BooleanBinding
+                                                      | ObservableObjectValue Object -> Object -> IO BooleanBinding
+                                                      | ObservableObjectValue Object -> ObservableObjectValue Object -> IO BooleanBinding
+                                                      | ObservableBooleanValue -> ObservableBooleanValue -> IO BooleanBinding
+                                                      | ObservableNumberValue -> double -> double -> IO BooleanBinding
+                                                      | ObservableStringValue -> ObservableStringValue -> IO BooleanBinding
+                                                      | ObservableStringValue -> String -> IO BooleanBinding
+                                                      | String -> ObservableStringValue -> IO BooleanBinding
+                                                      | int -> ObservableNumberValue -> IO BooleanBinding
+                                                      | ObservableNumberValue -> long -> IO BooleanBinding
+                                                      | long -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                      | ObservableNumberValue -> long -> double -> IO BooleanBinding
+                                                      | int -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                      | ObservableNumberValue -> int -> double -> IO BooleanBinding
+                                                      | long -> ObservableNumberValue -> IO BooleanBinding
+                                                      | ObservableNumberValue -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                      | ObservableNumberValue -> ObservableNumberValue -> IO BooleanBinding
+                                                      | float -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                      | ObservableNumberValue -> float -> double -> IO BooleanBinding
+                                                      | ObservableNumberValue -> int -> IO BooleanBinding
+                                                      | double -> ObservableNumberValue -> double -> IO BooleanBinding
+
+  native equalIgnoreCase "javafx.beans.binding.Bindings.equalIgnoreCase" :: ObservableStringValue -> String -> IO BooleanBinding
+                                                                          | String -> ObservableStringValue -> IO BooleanBinding
+                                                                          | ObservableStringValue -> ObservableStringValue -> IO BooleanBinding
+
+  native floatValueAt "javafx.beans.binding.Bindings.floatValueAt" :: ObservableList Number -> int -> IO FloatBinding
+                                                                    | ObservableMap k Number -> k -> IO FloatBinding
+                                                                    | ObservableMap k Number -> ObservableValue k -> IO FloatBinding
+                                                                    | ObservableList Number -> ObservableIntegerValue -> IO FloatBinding
+                                                                    | ObservableList Number -> ObservableNumberValue -> IO FloatBinding
+                                                                    | ObservableFloatArray -> ObservableNumberValue -> IO FloatBinding
+                                                                    | ObservableFloatArray -> ObservableIntegerValue -> IO FloatBinding
+                                                                    | ObservableFloatArray -> int -> IO FloatBinding
+
+  native format "javafx.beans.binding.Bindings.format" :: String -> MutableIO (JArray Object) -> IO StringExpression
+                                                        | Locale -> String -> MutableIO (JArray Object) -> IO StringExpression
+
+  native greaterThan "javafx.beans.binding.Bindings.greaterThan" :: String -> ObservableStringValue -> IO BooleanBinding
+                                                                  | ObservableStringValue -> String -> IO BooleanBinding
+                                                                  | ObservableNumberValue -> ObservableNumberValue -> IO BooleanBinding
+                                                                  | float -> ObservableNumberValue -> IO BooleanBinding
+                                                                  | ObservableNumberValue -> float -> IO BooleanBinding
+                                                                  | double -> ObservableNumberValue -> IO BooleanBinding
+                                                                  | ObservableNumberValue -> double -> IO BooleanBinding
+                                                                  | ObservableNumberValue -> long -> IO BooleanBinding
+                                                                  | long -> ObservableNumberValue -> IO BooleanBinding
+                                                                  | ObservableNumberValue -> int -> IO BooleanBinding
+                                                                  | int -> ObservableNumberValue -> IO BooleanBinding
+                                                                  | ObservableStringValue -> ObservableStringValue -> IO BooleanBinding
+
+  native greaterThanOrEqual "javafx.beans.binding.Bindings.greaterThanOrEqual" :: ObservableNumberValue -> double -> IO BooleanBinding
+                                                                                | double -> ObservableNumberValue -> IO BooleanBinding
+                                                                                | ObservableStringValue -> ObservableStringValue -> IO BooleanBinding
+                                                                                | ObservableStringValue -> String -> IO BooleanBinding
+                                                                                | String -> ObservableStringValue -> IO BooleanBinding
+                                                                                | long -> ObservableNumberValue -> IO BooleanBinding
+                                                                                | ObservableNumberValue -> int -> IO BooleanBinding
+                                                                                | int -> ObservableNumberValue -> IO BooleanBinding
+                                                                                | ObservableNumberValue -> ObservableNumberValue -> IO BooleanBinding
+                                                                                | ObservableNumberValue -> float -> IO BooleanBinding
+                                                                                | float -> ObservableNumberValue -> IO BooleanBinding
+                                                                                | ObservableNumberValue -> long -> IO BooleanBinding
+
+  native integerValueAt "javafx.beans.binding.Bindings.integerValueAt" :: ObservableList Number -> ObservableIntegerValue -> IO IntegerBinding
+                                                                        | ObservableIntegerArray -> ObservableIntegerValue -> IO IntegerBinding
+                                                                        | ObservableList Number -> ObservableNumberValue -> IO IntegerBinding
+                                                                        | ObservableList Number -> int -> IO IntegerBinding
+                                                                        | ObservableMap k Number -> ObservableValue k -> IO IntegerBinding
+                                                                        | ObservableMap k Number -> k -> IO IntegerBinding
+                                                                        | ObservableIntegerArray -> ObservableNumberValue -> IO IntegerBinding
+                                                                        | ObservableIntegerArray -> int -> IO IntegerBinding
+
+  native isEmpty "javafx.beans.binding.Bindings.isEmpty" :: ObservableMap k v -> IO BooleanBinding
+                                                          | ObservableSet e -> IO BooleanBinding
+                                                          | ObservableStringValue -> IO BooleanBinding
+                                                          | ObservableList e -> IO BooleanBinding
+
+  native isNotEmpty "javafx.beans.binding.Bindings.isNotEmpty" :: ObservableMap k v -> IO BooleanBinding
+                                                                | ObservableStringValue -> IO BooleanBinding
+                                                                | ObservableSet e -> IO BooleanBinding
+                                                                | ObservableList e -> IO BooleanBinding
+
+  native isNotNull "javafx.beans.binding.Bindings.isNotNull" :: ObservableObjectValue Object -> IO BooleanBinding
+
+  native isNull "javafx.beans.binding.Bindings.isNull" :: ObservableObjectValue Object -> IO BooleanBinding
+
+  native length "javafx.beans.binding.Bindings.length" :: ObservableStringValue -> IO IntegerBinding
+
+  native lessThan "javafx.beans.binding.Bindings.lessThan" :: float -> ObservableNumberValue -> IO BooleanBinding
+                                                            | ObservableNumberValue -> long -> IO BooleanBinding
+                                                            | ObservableNumberValue -> ObservableNumberValue -> IO BooleanBinding
+                                                            | ObservableNumberValue -> double -> IO BooleanBinding
+                                                            | double -> ObservableNumberValue -> IO BooleanBinding
+                                                            | ObservableNumberValue -> float -> IO BooleanBinding
+                                                            | long -> ObservableNumberValue -> IO BooleanBinding
+                                                            | int -> ObservableNumberValue -> IO BooleanBinding
+                                                            | ObservableNumberValue -> int -> IO BooleanBinding
+                                                            | ObservableStringValue -> ObservableStringValue -> IO BooleanBinding
+                                                            | ObservableStringValue -> String -> IO BooleanBinding
+                                                            | String -> ObservableStringValue -> IO BooleanBinding
+
+  native lessThanOrEqual "javafx.beans.binding.Bindings.lessThanOrEqual" :: ObservableStringValue -> ObservableStringValue -> IO BooleanBinding
+                                                                          | String -> ObservableStringValue -> IO BooleanBinding
+                                                                          | ObservableStringValue -> String -> IO BooleanBinding
+                                                                          | float -> ObservableNumberValue -> IO BooleanBinding
+                                                                          | ObservableNumberValue -> float -> IO BooleanBinding
+                                                                          | double -> ObservableNumberValue -> IO BooleanBinding
+                                                                          | ObservableNumberValue -> double -> IO BooleanBinding
+                                                                          | ObservableNumberValue -> ObservableNumberValue -> IO BooleanBinding
+                                                                          | int -> ObservableNumberValue -> IO BooleanBinding
+                                                                          | ObservableNumberValue -> int -> IO BooleanBinding
+                                                                          | long -> ObservableNumberValue -> IO BooleanBinding
+                                                                          | ObservableNumberValue -> long -> IO BooleanBinding
+
+  native longValueAt "javafx.beans.binding.Bindings.longValueAt" :: ObservableList Number -> int -> IO LongBinding
+                                                                  | ObservableMap k Number -> k -> IO LongBinding
+                                                                  | ObservableMap k Number -> ObservableValue k -> IO LongBinding
+                                                                  | ObservableList Number -> ObservableNumberValue -> IO LongBinding
+                                                                  | ObservableList Number -> ObservableIntegerValue -> IO LongBinding
+
+  native max "javafx.beans.binding.Bindings.max" :: ObservableNumberValue -> ObservableNumberValue -> IO NumberBinding
+                                                  | float -> ObservableNumberValue -> IO NumberBinding
+                                                  | ObservableNumberValue -> long -> IO NumberBinding
+                                                  | long -> ObservableNumberValue -> IO NumberBinding
+                                                  | ObservableNumberValue -> int -> IO NumberBinding
+                                                  | int -> ObservableNumberValue -> IO NumberBinding
+                                                  | double -> ObservableNumberValue -> IO DoubleBinding
+                                                  | ObservableNumberValue -> double -> IO DoubleBinding
+                                                  | ObservableNumberValue -> float -> IO NumberBinding
+
+  native min "javafx.beans.binding.Bindings.min" :: ObservableNumberValue -> int -> IO NumberBinding
+                                                  | long -> ObservableNumberValue -> IO NumberBinding
+                                                  | int -> ObservableNumberValue -> IO NumberBinding
+                                                  | ObservableNumberValue -> ObservableNumberValue -> IO NumberBinding
+                                                  | ObservableNumberValue -> float -> IO NumberBinding
+                                                  | ObservableNumberValue -> double -> IO DoubleBinding
+                                                  | double -> ObservableNumberValue -> IO DoubleBinding
+                                                  | float -> ObservableNumberValue -> IO NumberBinding
+                                                  | ObservableNumberValue -> long -> IO NumberBinding
+
+  native multiply "javafx.beans.binding.Bindings.multiply" :: float -> ObservableNumberValue -> IO NumberBinding
+                                                            | ObservableNumberValue -> long -> IO NumberBinding
+                                                            | long -> ObservableNumberValue -> IO NumberBinding
+                                                            | ObservableNumberValue -> int -> IO NumberBinding
+                                                            | int -> ObservableNumberValue -> IO NumberBinding
+                                                            | ObservableNumberValue -> ObservableNumberValue -> IO NumberBinding
+                                                            | ObservableNumberValue -> double -> IO DoubleBinding
+                                                            | double -> ObservableNumberValue -> IO DoubleBinding
+                                                            | ObservableNumberValue -> float -> IO NumberBinding
+
+  native negate "javafx.beans.binding.Bindings.negate" :: ObservableNumberValue -> IO NumberBinding
+
+  native not "javafx.beans.binding.Bindings.not" :: ObservableBooleanValue -> IO BooleanBinding
+
+  native notEqual "javafx.beans.binding.Bindings.notEqual" :: ObservableNumberValue -> long -> double -> IO BooleanBinding
+                                                            | float -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                            | ObservableNumberValue -> double -> double -> IO BooleanBinding
+                                                            | ObservableNumberValue -> ObservableNumberValue -> IO BooleanBinding
+                                                            | ObservableNumberValue -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                            | double -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                            | ObservableNumberValue -> float -> double -> IO BooleanBinding
+                                                            | String -> ObservableStringValue -> IO BooleanBinding
+                                                            | int -> ObservableNumberValue -> IO BooleanBinding
+                                                            | int -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                            | ObservableNumberValue -> int -> IO BooleanBinding
+                                                            | ObservableBooleanValue -> ObservableBooleanValue -> IO BooleanBinding
+                                                            | ObservableStringValue -> ObservableStringValue -> IO BooleanBinding
+                                                            | ObservableStringValue -> String -> IO BooleanBinding
+                                                            | ObservableNumberValue -> int -> double -> IO BooleanBinding
+                                                            | long -> ObservableNumberValue -> IO BooleanBinding
+                                                            | long -> ObservableNumberValue -> double -> IO BooleanBinding
+                                                            | ObservableNumberValue -> long -> IO BooleanBinding
+                                                            | Object -> ObservableObjectValue Object -> IO BooleanBinding
+                                                            | ObservableObjectValue Object -> Object -> IO BooleanBinding
+                                                            | ObservableObjectValue Object -> ObservableObjectValue Object -> IO BooleanBinding
+
+  native notEqualIgnoreCase "javafx.beans.binding.Bindings.notEqualIgnoreCase" :: String -> ObservableStringValue -> IO BooleanBinding
+                                                                                | ObservableStringValue -> String -> IO BooleanBinding
+                                                                                | ObservableStringValue -> ObservableStringValue -> IO BooleanBinding
+
+  native or "javafx.beans.binding.Bindings.or" :: ObservableBooleanValue -> ObservableBooleanValue -> IO BooleanBinding
+
+  native select "javafx.beans.binding.Bindings.select" :: Object -> MutableIO (JArray String) -> IO (ObjectBinding t)
+                                                        | ObservableValue Object -> MutableIO (JArray String) -> IO (ObjectBinding t)
+
+  native selectBoolean "javafx.beans.binding.Bindings.selectBoolean" :: ObservableValue Object -> MutableIO (JArray String) -> IO BooleanBinding
+                                                                      | Object -> MutableIO (JArray String) -> IO BooleanBinding
+
+  native selectDouble "javafx.beans.binding.Bindings.selectDouble" :: ObservableValue Object -> MutableIO (JArray String) -> IO DoubleBinding
+                                                                    | Object -> MutableIO (JArray String) -> IO DoubleBinding
+
+  native selectFloat "javafx.beans.binding.Bindings.selectFloat" :: Object -> MutableIO (JArray String) -> IO FloatBinding
+                                                                  | ObservableValue Object -> MutableIO (JArray String) -> IO FloatBinding
+
+  native selectInteger "javafx.beans.binding.Bindings.selectInteger" :: ObservableValue Object -> MutableIO (JArray String) -> IO IntegerBinding
+                                                                      | Object -> MutableIO (JArray String) -> IO IntegerBinding
+
+  native selectLong "javafx.beans.binding.Bindings.selectLong" :: ObservableValue Object -> MutableIO (JArray String) -> IO LongBinding
+                                                                | Object -> MutableIO (JArray String) -> IO LongBinding
+
+  native selectString "javafx.beans.binding.Bindings.selectString" :: ObservableValue Object -> MutableIO (JArray String) -> IO StringBinding
+                                                                    | Object -> MutableIO (JArray String) -> IO StringBinding
+
+  native size "javafx.beans.binding.Bindings.size" :: ObservableMap k v -> IO IntegerBinding
+                                                    | ObservableSet e -> IO IntegerBinding
+                                                    | ObservableList e -> IO IntegerBinding
+                                                    | ObservableArray -> IO IntegerBinding
+
+  native stringValueAt "javafx.beans.binding.Bindings.stringValueAt" :: ObservableList String -> ObservableNumberValue -> IO StringBinding
+                                                                      | ObservableList String -> ObservableIntegerValue -> IO StringBinding
+                                                                      | ObservableList String -> int -> IO StringBinding
+                                                                      | ObservableMap k String -> k -> IO StringBinding
+                                                                      | ObservableMap k String -> ObservableValue k -> IO StringBinding
+
+  native subtract "javafx.beans.binding.Bindings.subtract" :: ObservableNumberValue -> ObservableNumberValue -> IO NumberBinding
+                                                            | ObservableNumberValue -> long -> IO NumberBinding
+                                                            | long -> ObservableNumberValue -> IO NumberBinding
+                                                            | ObservableNumberValue -> int -> IO NumberBinding
+                                                            | int -> ObservableNumberValue -> IO NumberBinding
+                                                            | ObservableNumberValue -> float -> IO NumberBinding
+                                                            | ObservableNumberValue -> double -> IO DoubleBinding
+                                                            | float -> ObservableNumberValue -> IO NumberBinding
+                                                            | double -> ObservableNumberValue -> IO DoubleBinding
+
+  native unbindBidirectional "javafx.beans.binding.Bindings.unbindBidirectional" :: Property t -> Property t -> IO void
+                                                                                  | Object -> Object -> ST s void
+
+  pure native unbindContent "javafx.beans.binding.Bindings.unbindContent" :: Object -> Object -> void
+
+  pure native unbindContentBidirectional "javafx.beans.binding.Bindings.unbindContentBidirectional" :: Object -> Object -> void
+
+  native valueAt "javafx.beans.binding.Bindings.valueAt" :: ObservableList e -> ObservableNumberValue -> IO (ObjectBinding e)
+                                                          | ObservableList e -> ObservableIntegerValue -> IO (ObjectBinding e)
+                                                          | ObservableList e -> int -> IO (ObjectBinding e)
+                                                          | ObservableMap k v -> k -> IO (ObjectBinding v)
+                                                          | ObservableMap k v -> ObservableValue k -> IO (ObjectBinding v)
+
+  native when "javafx.beans.binding.Bindings.when" :: ObservableBooleanValue -> IO When
+
+

@@ -1,0 +1,1 @@
+data WritableMapValue k v = mutable native javafx.beans.value.WritableMapValue

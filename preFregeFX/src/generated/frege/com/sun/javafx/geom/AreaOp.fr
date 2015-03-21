@@ -1,0 +1,25 @@
+data AreaOp = pure native com.sun.javafx.geom.AreaOp where
+
+  pure native ctag_left "com.sun.javafx.geom.AreaOp.CTAG_LEFT" :: int
+  pure native ctag_right "com.sun.javafx.geom.AreaOp.CTAG_RIGHT" :: int
+  pure native etag_ignore "com.sun.javafx.geom.AreaOp.ETAG_IGNORE" :: int
+  pure native etag_enter "com.sun.javafx.geom.AreaOp.ETAG_ENTER" :: int
+  pure native etag_exit "com.sun.javafx.geom.AreaOp.ETAG_EXIT" :: int
+  pure native rstag_inside "com.sun.javafx.geom.AreaOp.RSTAG_INSIDE" :: int
+  pure native rstag_outside "com.sun.javafx.geom.AreaOp.RSTAG_OUTSIDE" :: int
+
+  pure native calculate :: AreaOp -> Vector -> Vector -> Vector
+
+  pure native classify :: AreaOp -> Edge -> int
+
+  pure native finalizeSubCurves "com.sun.javafx.geom.AreaOp.finalizeSubCurves" :: Vector -> Vector -> void
+
+  pure native getState :: AreaOp -> int
+
+  pure native newRow :: AreaOp -> void
+
+  pure native obstructs "com.sun.javafx.geom.AreaOp.obstructs" :: double -> double -> int -> boolean
+
+  pure native resolveLinks "com.sun.javafx.geom.AreaOp.resolveLinks" :: Vector -> Vector -> Vector -> void
+
+

@@ -1,0 +1,66 @@
+data InnerShadow = mutable native javafx.scene.effect.InnerShadow where
+
+  native new :: BlurType -> Color -> double -> double -> double -> double -> IO InnerShadow
+              | double -> double -> double -> Color -> IO InnerShadow
+              | double -> Color -> IO InnerShadow
+              | () -> IO InnerShadow
+
+  native blurTypeProperty :: InnerShadow -> IO (ObjectProperty BlurType)
+
+  native chokeProperty :: InnerShadow -> IO DoubleProperty
+
+  native colorProperty :: InnerShadow -> IO (ObjectProperty Color)
+
+  native getBlurType :: InnerShadow -> IO BlurType
+
+  native getChoke :: InnerShadow -> IO double
+
+  native getColor :: InnerShadow -> IO Color
+
+  native getHeight :: InnerShadow -> IO double
+
+  native getInput :: InnerShadow -> IO Effect
+
+  native getOffsetX :: InnerShadow -> IO double
+
+  native getOffsetY :: InnerShadow -> IO double
+
+  native getRadius :: InnerShadow -> IO double
+
+  native getWidth :: InnerShadow -> IO double
+
+  native heightProperty :: InnerShadow -> IO DoubleProperty
+
+  native impl_copy :: InnerShadow -> IO Effect
+
+  native impl_getBounds :: InnerShadow -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: InnerShadow -> IO (ObjectProperty Effect)
+
+  native offsetXProperty :: InnerShadow -> IO DoubleProperty
+
+  native offsetYProperty :: InnerShadow -> IO DoubleProperty
+
+  native radiusProperty :: InnerShadow -> IO DoubleProperty
+
+  native setBlurType :: InnerShadow -> BlurType -> IO void
+
+  native setChoke :: InnerShadow -> double -> IO void
+
+  native setColor :: InnerShadow -> Color -> IO void
+
+  native setHeight :: InnerShadow -> double -> IO void
+
+  native setInput :: InnerShadow -> Effect -> IO void
+
+  native setOffsetX :: InnerShadow -> double -> IO void
+
+  native setOffsetY :: InnerShadow -> double -> IO void
+
+  native setRadius :: InnerShadow -> double -> IO void
+
+  native setWidth :: InnerShadow -> double -> IO void
+
+  native widthProperty :: InnerShadow -> IO DoubleProperty
+
+

@@ -1,0 +1,23 @@
+data PulseLogger = pure native com.sun.javafx.logging.PulseLogger where
+
+  pure native pulse_logging_enabled "com.sun.javafx.logging.PulseLogger.PULSE_LOGGING_ENABLED" :: boolean
+
+  pure native new :: () -> PulseLogger
+
+  pure native addMessage "com.sun.javafx.logging.PulseLogger.addMessage" :: String -> void
+
+  pure native incrementCounter "com.sun.javafx.logging.PulseLogger.incrementCounter" :: String -> void
+
+  pure native newInput "com.sun.javafx.logging.PulseLogger.newInput" :: String -> void
+
+  pure native newPhase "com.sun.javafx.logging.PulseLogger.newPhase" :: String -> void
+
+  pure native pulseEnd "com.sun.javafx.logging.PulseLogger.pulseEnd" :: () -> void
+
+  pure native pulseStart "com.sun.javafx.logging.PulseLogger.pulseStart" :: () -> void
+
+  pure native renderEnd "com.sun.javafx.logging.PulseLogger.renderEnd" :: () -> void
+
+  pure native renderStart "com.sun.javafx.logging.PulseLogger.renderStart" :: () -> void
+
+

@@ -1,0 +1,27 @@
+data TreeViewBuilder t b = mutable native javafx.scene.control.TreeViewBuilder where
+
+  native applyTo :: TreeViewBuilder t b -> TreeView t -> IO void
+
+  native build :: TreeViewBuilder t b -> IO (TreeView t)
+
+  native cellFactory :: TreeViewBuilder t b -> Callback (TreeView t) (TreeCell t) -> IO b
+
+  native create "javafx.scene.control.TreeViewBuilder.create" :: () -> IO (TreeViewBuilder t Object)
+
+  native editable :: TreeViewBuilder t b -> boolean -> IO b
+
+  native focusModel :: TreeViewBuilder t b -> FocusModel (TreeItem t) -> IO b
+
+  native onEditCancel :: TreeViewBuilder t b -> EventHandler (TreeView_EditEvent t) -> IO b
+
+  native onEditCommit :: TreeViewBuilder t b -> EventHandler (TreeView_EditEvent t) -> IO b
+
+  native onEditStart :: TreeViewBuilder t b -> EventHandler (TreeView_EditEvent t) -> IO b
+
+  native root :: TreeViewBuilder t b -> TreeItem t -> IO b
+
+  native selectionModel :: TreeViewBuilder t b -> MultipleSelectionModel (TreeItem t) -> IO b
+
+  native showRoot :: TreeViewBuilder t b -> boolean -> IO b
+
+

@@ -1,0 +1,25 @@
+data TableViewBehaviorBase c t tc = pure native com.sun.javafx.scene.control.behavior.TableViewBehaviorBase where
+
+  native mousePressed :: TableViewBehaviorBase c t tc -> MouseEvent -> IO void
+
+  pure native setOnFocusNextRow :: TableViewBehaviorBase c t tc -> Runnable -> void
+
+  pure native setOnFocusPreviousRow :: TableViewBehaviorBase c t tc -> Runnable -> void
+
+  pure native setOnMoveToFirstCell :: TableViewBehaviorBase c t tc -> Runnable -> void
+
+  pure native setOnMoveToLastCell :: TableViewBehaviorBase c t tc -> Runnable -> void
+
+  native setOnScrollPageDown :: TableViewBehaviorBase c t tc -> Callback Boolean Integer -> IO void
+
+  native setOnScrollPageUp :: TableViewBehaviorBase c t tc -> Callback Boolean Integer -> IO void
+
+  pure native setOnSelectLeftCell :: TableViewBehaviorBase c t tc -> Runnable -> void
+
+  pure native setOnSelectNextRow :: TableViewBehaviorBase c t tc -> Runnable -> void
+
+  pure native setOnSelectPreviousRow :: TableViewBehaviorBase c t tc -> Runnable -> void
+
+  pure native setOnSelectRightCell :: TableViewBehaviorBase c t tc -> Runnable -> void
+
+

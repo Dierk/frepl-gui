@@ -1,0 +1,7 @@
+data NGBox = pure native com.sun.javafx.sg.prism.NGBox where
+
+  pure native new :: () -> NGBox
+
+  pure native updateMesh :: NGBox -> NGTriangleMesh -> void
+
+

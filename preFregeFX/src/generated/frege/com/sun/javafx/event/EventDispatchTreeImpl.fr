@@ -1,0 +1,19 @@
+data EventDispatchTreeImpl = pure native com.sun.javafx.event.EventDispatchTreeImpl where
+
+  pure native new :: () -> EventDispatchTreeImpl
+
+  native append :: EventDispatchTreeImpl -> EventDispatcher -> IO EventDispatchTree
+
+  pure native createTree :: EventDispatchTreeImpl -> EventDispatchTree
+
+  native dispatchEvent :: EventDispatchTreeImpl -> Event -> IO Event
+
+  pure native mergeTree :: EventDispatchTreeImpl -> EventDispatchTree -> EventDispatchTree
+
+  native prepend :: EventDispatchTreeImpl -> EventDispatcher -> IO EventDispatchTree
+
+  pure native reset :: EventDispatchTreeImpl -> void
+
+  pure native toString :: EventDispatchTreeImpl -> String
+
+

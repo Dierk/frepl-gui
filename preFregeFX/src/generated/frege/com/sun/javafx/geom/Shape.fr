@@ -1,0 +1,47 @@
+data Shape = pure native com.sun.javafx.geom.Shape where
+
+  pure native rect_intersects "com.sun.javafx.geom.Shape.RECT_INTERSECTS" :: int
+  pure native out_left "com.sun.javafx.geom.Shape.OUT_LEFT" :: int
+  pure native out_top "com.sun.javafx.geom.Shape.OUT_TOP" :: int
+  pure native out_right "com.sun.javafx.geom.Shape.OUT_RIGHT" :: int
+  pure native out_bottom "com.sun.javafx.geom.Shape.OUT_BOTTOM" :: int
+
+  native accumulate "com.sun.javafx.geom.Shape.accumulate" :: Mutable s (JArray float) -> Shape -> BaseTransform -> ST s void
+
+  native accumulateCubic "com.sun.javafx.geom.Shape.accumulateCubic" :: Mutable s (JArray float) -> int -> float -> float -> float -> float -> ST s void
+                                                                      | Mutable s (JArray float) -> int -> float -> float -> float -> float -> float -> ST s void
+
+  native accumulateQuad "com.sun.javafx.geom.Shape.accumulateQuad" :: Mutable s (JArray float) -> int -> float -> float -> float -> ST s void
+
+  pure native contains :: Shape -> Point2D -> boolean
+                        | Shape -> float -> float -> float -> float -> boolean
+                        | Shape -> RectBounds -> boolean
+                        | Shape -> float -> float -> boolean
+
+  pure native copy :: Shape -> Shape
+
+  pure native getBounds :: Shape -> RectBounds
+
+  pure native getPathIterator :: Shape -> BaseTransform -> float -> PathIterator
+                               | Shape -> BaseTransform -> PathIterator
+
+  pure native intersects :: Shape -> float -> float -> float -> float -> boolean
+                          | Shape -> RectBounds -> boolean
+
+  pure native pointCrossingsForCubic "com.sun.javafx.geom.Shape.pointCrossingsForCubic" :: float -> float -> float -> float -> float -> float -> float -> float -> float -> float -> int -> int
+
+  pure native pointCrossingsForLine "com.sun.javafx.geom.Shape.pointCrossingsForLine" :: float -> float -> float -> float -> float -> float -> int
+
+  pure native pointCrossingsForPath "com.sun.javafx.geom.Shape.pointCrossingsForPath" :: PathIterator -> float -> float -> int
+
+  pure native pointCrossingsForQuad "com.sun.javafx.geom.Shape.pointCrossingsForQuad" :: float -> float -> float -> float -> float -> float -> float -> float -> int -> int
+
+  pure native rectCrossingsForCubic "com.sun.javafx.geom.Shape.rectCrossingsForCubic" :: int -> float -> float -> float -> float -> float -> float -> float -> float -> float -> float -> float -> float -> int -> int
+
+  pure native rectCrossingsForLine "com.sun.javafx.geom.Shape.rectCrossingsForLine" :: int -> float -> float -> float -> float -> float -> float -> float -> float -> int
+
+  pure native rectCrossingsForPath "com.sun.javafx.geom.Shape.rectCrossingsForPath" :: PathIterator -> float -> float -> float -> float -> int
+
+  pure native rectCrossingsForQuad "com.sun.javafx.geom.Shape.rectCrossingsForQuad" :: int -> float -> float -> float -> float -> float -> float -> float -> float -> float -> float -> int -> int
+
+

@@ -1,0 +1,37 @@
+data PaginationSkin = pure native com.sun.javafx.scene.control.skin.PaginationSkin where
+
+  native new :: Pagination -> IO PaginationSkin
+
+  native arrowsVisibleProperty :: PaginationSkin -> IO BooleanProperty
+
+  pure native getClassCssMetaData "com.sun.javafx.scene.control.skin.PaginationSkin.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  pure native getCssMetaData :: PaginationSkin -> List (CssMetaData Styleable Object)
+
+  native getPageInformationAlignment :: PaginationSkin -> IO Side
+
+  pure native isArrowsVisible :: PaginationSkin -> boolean
+
+  pure native isPageInformationVisible :: PaginationSkin -> boolean
+
+  pure native isTooltipVisible :: PaginationSkin -> boolean
+
+  native pageInformationAlignmentProperty :: PaginationSkin -> IO (ObjectProperty Side)
+
+  native pageInformationVisibleProperty :: PaginationSkin -> IO BooleanProperty
+
+  pure native selectNext :: PaginationSkin -> void
+
+  pure native selectPrevious :: PaginationSkin -> void
+
+  pure native setArrowsVisible :: PaginationSkin -> boolean -> void
+
+  native setPageInformationAlignment :: PaginationSkin -> Side -> IO void
+
+  pure native setPageInformationVisible :: PaginationSkin -> boolean -> void
+
+  pure native setTooltipVisible :: PaginationSkin -> boolean -> void
+
+  native tooltipVisibleProperty :: PaginationSkin -> IO BooleanProperty
+
+

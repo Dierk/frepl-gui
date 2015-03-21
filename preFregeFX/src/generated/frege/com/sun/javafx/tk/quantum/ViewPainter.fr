@@ -1,0 +1,1 @@
+data ViewPainter = pure native com.sun.javafx.tk.quantum.ViewPainter

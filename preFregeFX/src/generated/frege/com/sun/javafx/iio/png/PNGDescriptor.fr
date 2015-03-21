@@ -1,0 +1,5 @@
+data PNGDescriptor = pure native com.sun.javafx.iio.png.PNGDescriptor where
+
+  pure native getInstance "com.sun.javafx.iio.png.PNGDescriptor.getInstance" :: () -> ImageDescriptor
+
+

@@ -1,0 +1,11 @@
+data StopBuilder = mutable native javafx.scene.paint.StopBuilder where
+
+  native build :: StopBuilder -> IO Stop
+
+  native color :: StopBuilder -> Color -> IO StopBuilder
+
+  native create "javafx.scene.paint.StopBuilder.create" :: () -> IO StopBuilder
+
+  native offset :: StopBuilder -> double -> IO StopBuilder
+
+

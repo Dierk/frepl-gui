@@ -1,0 +1,67 @@
+data Arc2D = pure native com.sun.javafx.geom.Arc2D where
+
+  pure native open "com.sun.javafx.geom.Arc2D.OPEN" :: int
+  pure native chord "com.sun.javafx.geom.Arc2D.CHORD" :: int
+  pure native pie "com.sun.javafx.geom.Arc2D.PIE" :: int
+  pure native x "".x"" :: Arc2D -> float
+  pure native y "".y"" :: Arc2D -> float
+  pure native width "".width"" :: Arc2D -> float
+  pure native height "".height"" :: Arc2D -> float
+  pure native start "".start"" :: Arc2D -> float
+  pure native extent "".extent"" :: Arc2D -> float
+
+  pure native new :: float -> float -> float -> float -> float -> float -> int -> Arc2D
+                   | int -> Arc2D
+                   | () -> Arc2D
+
+  pure native contains :: Arc2D -> float -> float -> boolean
+                        | Arc2D -> float -> float -> float -> float -> boolean
+
+  pure native containsAngle :: Arc2D -> float -> boolean
+
+  pure native copy :: Arc2D -> Arc2D
+
+  pure native equals :: Arc2D -> Object -> boolean
+
+  pure native getArcType :: Arc2D -> int
+
+  pure native getBounds :: Arc2D -> RectBounds
+
+  pure native getEndPoint :: Arc2D -> Point2D
+
+  pure native getHeight :: Arc2D -> float
+
+  pure native getPathIterator :: Arc2D -> BaseTransform -> PathIterator
+
+  pure native getStartPoint :: Arc2D -> Point2D
+
+  pure native getWidth :: Arc2D -> float
+
+  pure native getX :: Arc2D -> float
+
+  pure native getY :: Arc2D -> float
+
+  pure native hashCode :: Arc2D -> int
+
+  pure native intersects :: Arc2D -> float -> float -> float -> float -> boolean
+
+  pure native isEmpty :: Arc2D -> boolean
+
+  pure native setAngleStart :: Arc2D -> Point2D -> void
+
+  pure native setAngles :: Arc2D -> float -> float -> float -> float -> void
+                         | Arc2D -> Point2D -> Point2D -> void
+
+  pure native setArc :: Arc2D -> float -> float -> float -> float -> float -> float -> int -> void
+                      | Arc2D -> Point2D -> Dimension2D -> float -> float -> int -> void
+                      | Arc2D -> Arc2D -> void
+
+  pure native setArcByCenter :: Arc2D -> float -> float -> float -> float -> float -> int -> void
+
+  pure native setArcByTangent :: Arc2D -> Point2D -> Point2D -> Point2D -> float -> void
+
+  pure native setArcType :: Arc2D -> int -> void
+
+  pure native setFrame :: Arc2D -> float -> float -> float -> float -> void
+
+

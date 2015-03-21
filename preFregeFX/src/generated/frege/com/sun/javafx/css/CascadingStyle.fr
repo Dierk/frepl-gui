@@ -1,0 +1,25 @@
+data CascadingStyle = pure native com.sun.javafx.css.CascadingStyle where
+
+  pure native new :: Style -> Set PseudoClass -> int -> int -> CascadingStyle
+
+  pure native compareTo :: CascadingStyle -> CascadingStyle -> int
+
+  pure native equals :: CascadingStyle -> Object -> boolean
+
+  native getOrigin :: CascadingStyle -> IO StyleOrigin
+
+  pure native getParsedValueImpl :: CascadingStyle -> ParsedValueImpl
+
+  pure native getProperty :: CascadingStyle -> String
+
+  pure native getRule :: CascadingStyle -> Rule
+
+  pure native getSelector :: CascadingStyle -> Selector
+
+  pure native getStyle :: CascadingStyle -> Style
+
+  pure native hashCode :: CascadingStyle -> int
+
+  pure native toString :: CascadingStyle -> String
+
+

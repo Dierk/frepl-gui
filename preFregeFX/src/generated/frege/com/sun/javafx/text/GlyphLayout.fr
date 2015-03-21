@@ -1,0 +1,18 @@
+data GlyphLayout = pure native com.sun.javafx.text.GlyphLayout where
+
+  pure native canonical_substitution "com.sun.javafx.text.GlyphLayout.CANONICAL_SUBSTITUTION" :: int
+  pure native layout_left_to_right "com.sun.javafx.text.GlyphLayout.LAYOUT_LEFT_TO_RIGHT" :: int
+  pure native layout_right_to_left "com.sun.javafx.text.GlyphLayout.LAYOUT_RIGHT_TO_LEFT" :: int
+  pure native layout_no_start_context "com.sun.javafx.text.GlyphLayout.LAYOUT_NO_START_CONTEXT" :: int
+  pure native layout_no_limit_context "com.sun.javafx.text.GlyphLayout.LAYOUT_NO_LIMIT_CONTEXT" :: int
+  pure native hinting "com.sun.javafx.text.GlyphLayout.HINTING" :: int
+
+  native breakRuns :: GlyphLayout -> PrismTextLayout -> Mutable s (JArray char) -> int -> ST s int
+
+  pure native dispose :: GlyphLayout -> void
+
+  pure native getInstance "com.sun.javafx.text.GlyphLayout.getInstance" :: () -> GlyphLayout
+
+  native layout :: GlyphLayout -> TextRun -> PGFont -> FontStrike -> Mutable s (JArray char) -> ST s void
+
+

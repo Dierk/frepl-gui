@@ -1,0 +1,9 @@
+data AnimationTimer = mutable native javafx.animation.AnimationTimer where
+
+  native handle :: AnimationTimer -> long -> IO void
+
+  native start :: AnimationTimer -> IO void
+
+  native stop :: AnimationTimer -> IO void
+
+

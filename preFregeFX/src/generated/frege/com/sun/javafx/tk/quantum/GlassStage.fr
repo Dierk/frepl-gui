@@ -1,0 +1,18 @@
+data GlassStage = pure native com.sun.javafx.tk.quantum.GlassStage where
+
+  pure native close :: GlassStage -> void
+
+  pure native requestFocus :: GlassStage -> void
+                            | GlassStage -> FocusCause -> void
+
+  pure native setImportant :: GlassStage -> boolean -> void
+
+  pure native setScene :: GlassStage -> TKScene -> void
+
+  pure native setSecurityContext :: GlassStage -> AccessControlContext -> void
+
+  pure native setTKStageListener :: GlassStage -> TKStageListener -> void
+
+  pure native setVisible :: GlassStage -> boolean -> void
+
+

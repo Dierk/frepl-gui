@@ -1,0 +1,59 @@
+data ScheduledService v = mutable native javafx.concurrent.ScheduledService where
+
+  native exponential_backoff_strategy "javafx.concurrent.ScheduledService.EXPONENTIAL_BACKOFF_STRATEGY" :: IO (Callback (ScheduledService Object) Duration)
+  native logarithmic_backoff_strategy "javafx.concurrent.ScheduledService.LOGARITHMIC_BACKOFF_STRATEGY" :: IO (Callback (ScheduledService Object) Duration)
+  native linear_backoff_strategy "javafx.concurrent.ScheduledService.LINEAR_BACKOFF_STRATEGY" :: IO (Callback (ScheduledService Object) Duration)
+
+  native backoffStrategyProperty :: ScheduledService v -> IO (ObjectProperty (Callback (ScheduledService Object) Duration))
+
+  native cancel :: ScheduledService v -> IO boolean
+
+  native cumulativePeriodProperty :: ScheduledService v -> IO (ReadOnlyObjectProperty Duration)
+
+  native currentFailureCountProperty :: ScheduledService v -> IO ReadOnlyIntegerProperty
+
+  native delayProperty :: ScheduledService v -> IO (ObjectProperty Duration)
+
+  native getBackoffStrategy :: ScheduledService v -> IO (Callback (ScheduledService Object) Duration)
+
+  native getCumulativePeriod :: ScheduledService v -> IO Duration
+
+  native getCurrentFailureCount :: ScheduledService v -> IO int
+
+  native getDelay :: ScheduledService v -> IO Duration
+
+  native getLastValue :: ScheduledService v -> IO v
+
+  native getMaximumCumulativePeriod :: ScheduledService v -> IO Duration
+
+  native getMaximumFailureCount :: ScheduledService v -> IO int
+
+  native getPeriod :: ScheduledService v -> IO Duration
+
+  native getRestartOnFailure :: ScheduledService v -> IO boolean
+
+  native lastValueProperty :: ScheduledService v -> IO (ReadOnlyObjectProperty v)
+
+  native maximumCumulativePeriodProperty :: ScheduledService v -> IO (ObjectProperty Duration)
+
+  native maximumFailureCountProperty :: ScheduledService v -> IO IntegerProperty
+
+  native periodProperty :: ScheduledService v -> IO (ObjectProperty Duration)
+
+  native reset :: ScheduledService v -> IO void
+
+  native restartOnFailureProperty :: ScheduledService v -> IO BooleanProperty
+
+  native setBackoffStrategy :: ScheduledService v -> Callback (ScheduledService Object) Duration -> IO void
+
+  native setDelay :: ScheduledService v -> Duration -> IO void
+
+  native setMaximumCumulativePeriod :: ScheduledService v -> Duration -> IO void
+
+  native setMaximumFailureCount :: ScheduledService v -> int -> IO void
+
+  native setPeriod :: ScheduledService v -> Duration -> IO void
+
+  native setRestartOnFailure :: ScheduledService v -> boolean -> IO void
+
+

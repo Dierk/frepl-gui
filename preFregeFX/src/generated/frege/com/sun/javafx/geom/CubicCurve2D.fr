@@ -1,0 +1,65 @@
+data CubicCurve2D = pure native com.sun.javafx.geom.CubicCurve2D where
+
+  pure native x1 "".x1"" :: CubicCurve2D -> float
+  pure native y1 "".y1"" :: CubicCurve2D -> float
+  pure native ctrlx1 "".ctrlx1"" :: CubicCurve2D -> float
+  pure native ctrly1 "".ctrly1"" :: CubicCurve2D -> float
+  pure native ctrlx2 "".ctrlx2"" :: CubicCurve2D -> float
+  pure native ctrly2 "".ctrly2"" :: CubicCurve2D -> float
+  pure native x2 "".x2"" :: CubicCurve2D -> float
+  pure native y2 "".y2"" :: CubicCurve2D -> float
+
+  pure native new :: () -> CubicCurve2D
+                   | float -> float -> float -> float -> float -> float -> float -> float -> CubicCurve2D
+
+  pure native contains :: CubicCurve2D -> Point2D -> boolean
+                        | CubicCurve2D -> float -> float -> float -> float -> boolean
+                        | CubicCurve2D -> float -> float -> boolean
+
+  pure native copy :: CubicCurve2D -> CubicCurve2D
+
+  pure native equals :: CubicCurve2D -> Object -> boolean
+
+  pure native eval :: CubicCurve2D -> float -> Point2D
+                    | CubicCurve2D -> float -> Point2D -> void
+
+  pure native evalDt :: CubicCurve2D -> float -> Point2D
+                      | CubicCurve2D -> float -> Point2D -> void
+
+  pure native getBounds :: CubicCurve2D -> RectBounds
+
+  pure native getFlatness :: CubicCurve2D -> float
+
+  native getFlatness "com.sun.javafx.geom.CubicCurve2D.getFlatness" :: float -> float -> float -> float -> float -> float -> float -> float -> ST s float
+                                                                     | Mutable s (JArray float) -> int -> ST s float
+
+  native getFlatnessSq "com.sun.javafx.geom.CubicCurve2D.getFlatnessSq" :: Mutable s (JArray float) -> int -> ST s float
+
+  pure native getFlatnessSq :: CubicCurve2D -> float
+
+  pure native getFlatnessSq "com.sun.javafx.geom.CubicCurve2D.getFlatnessSq" :: float -> float -> float -> float -> float -> float -> float -> float -> float
+
+  pure native getPathIterator :: CubicCurve2D -> BaseTransform -> PathIterator
+                               | CubicCurve2D -> BaseTransform -> float -> PathIterator
+
+  pure native hashCode :: CubicCurve2D -> int
+
+  pure native intersects :: CubicCurve2D -> float -> float -> float -> float -> boolean
+
+  native setCurve :: CubicCurve2D -> float -> float -> float -> float -> float -> float -> float -> float -> ST s void
+                   | CubicCurve2D -> Mutable s (JArray float) -> int -> ST s void
+                   | CubicCurve2D -> Mutable s (JArray Point2D) -> int -> ST s void
+                   | CubicCurve2D -> CubicCurve2D -> ST s void
+                   | CubicCurve2D -> Point2D -> Point2D -> Point2D -> Point2D -> ST s void
+
+  native solveCubic "com.sun.javafx.geom.CubicCurve2D.solveCubic" :: Mutable s (JArray float) -> Mutable s (JArray float) -> ST s int
+                                                                   | Mutable s (JArray float) -> ST s int
+
+  pure native subdivide "com.sun.javafx.geom.CubicCurve2D.subdivide" :: CubicCurve2D -> CubicCurve2D -> CubicCurve2D -> void
+
+  pure native subdivide :: CubicCurve2D -> CubicCurve2D -> CubicCurve2D -> void
+                         | CubicCurve2D -> float -> CubicCurve2D -> CubicCurve2D -> void
+
+  native subdivide "com.sun.javafx.geom.CubicCurve2D.subdivide" :: Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> ST s void
+
+

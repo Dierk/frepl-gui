@@ -21,6 +21,9 @@ showUI mConsole stage = do
     outputArea <- locateTextField scene "#repl"
     historyLV  <- locateListView  scene "#historyList"
 
+    foo <- inputArea.isResizable -- just as an example how to use Java subtyping
+    println $ show foo
+
     items <- historyLV.getItems
     items.add ":help"
     items.add ":type mapM"
@@ -85,10 +88,10 @@ onKeyTyped mQueue stage inputArea outputArea items historySelection = KeyEventHa
 
 doExecute :: MVar String ->TextArea -> ObservableList -> IO ()
 doExecute mQueue inputArea items = do
-    script <- trim <$> inputArea.getText
-    when (not . null $ script) $ do
+    script <- inputArea.getText
+    when (not . null $ trim script) $ do
         scriptLines = if (1 == length (lines script))
-           then [script]
+           then [trim script]
            else [":{"] ++ lines script ++ [":}"]
         mapM mQueue.put scriptLines                 -- the beef
         items.add script

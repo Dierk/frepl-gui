@@ -1,0 +1,16 @@
+data WebEvent t = mutable native javafx.scene.web.WebEvent where
+
+  native any "javafx.scene.web.WebEvent.ANY" :: IO (EventType WebEvent)
+  native resized "javafx.scene.web.WebEvent.RESIZED" :: IO (EventType WebEvent)
+  native status_changed "javafx.scene.web.WebEvent.STATUS_CHANGED" :: IO (EventType WebEvent)
+  native visibility_changed "javafx.scene.web.WebEvent.VISIBILITY_CHANGED" :: IO (EventType WebEvent)
+  native alert "javafx.scene.web.WebEvent.ALERT" :: IO (EventType WebEvent)
+
+  native new :: Object -> EventType WebEvent -> t -> IO (WebEvent t)
+
+  native getData :: WebEvent t -> IO t
+
+  native toString :: WebEvent t -> IO String
+
+derive Serializable (WebEvent t)
+

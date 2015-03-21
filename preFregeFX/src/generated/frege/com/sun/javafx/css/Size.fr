@@ -1,0 +1,25 @@
+data Size = pure native com.sun.javafx.css.Size where
+
+  pure native new :: double -> SizeUnits -> Size
+
+  pure native equals :: Size -> Object -> boolean
+
+  pure native getUnits :: Size -> SizeUnits
+
+  pure native getValue :: Size -> double
+
+  pure native hashCode :: Size -> int
+
+  pure native isAbsolute :: Size -> boolean
+
+  native pixels :: Size -> double -> Font -> IO double
+                 | Size -> ST s double
+                 | Size -> double -> ST s double
+                 | Size -> Font -> IO double
+
+  native points :: Size -> Font -> IO double
+                 | Size -> double -> Font -> IO double
+
+  pure native toString :: Size -> String
+
+

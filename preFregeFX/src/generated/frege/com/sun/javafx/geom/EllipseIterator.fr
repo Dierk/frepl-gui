@@ -1,0 +1,13 @@
+data EllipseIterator = pure native com.sun.javafx.geom.EllipseIterator where
+
+  pure native ctrlval "com.sun.javafx.geom.EllipseIterator.CtrlVal" :: double
+
+  native currentSegment :: EllipseIterator -> Mutable s (JArray float) -> ST s int
+
+  pure native getWindingRule :: EllipseIterator -> int
+
+  pure native isDone :: EllipseIterator -> boolean
+
+  pure native next :: EllipseIterator -> void
+
+

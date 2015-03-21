@@ -1,0 +1,15 @@
+data JavaFXFontBuilder = pure native com.sun.javafx.fxml.builder.JavaFXFontBuilder where
+
+  pure native new :: () -> JavaFXFontBuilder
+
+  native build :: JavaFXFontBuilder -> IO Font
+
+  pure native containsKey :: JavaFXFontBuilder -> Object -> boolean
+
+  pure native entrySet :: JavaFXFontBuilder -> Set (Map_Entry String Object)
+
+  pure native get :: JavaFXFontBuilder -> Object -> Object
+
+  pure native put :: JavaFXFontBuilder -> String -> Object -> Object
+
+

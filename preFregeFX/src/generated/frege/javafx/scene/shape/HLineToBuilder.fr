@@ -1,0 +1,11 @@
+data HLineToBuilder b = mutable native javafx.scene.shape.HLineToBuilder where
+
+  native applyTo :: HLineToBuilder b -> HLineTo -> IO void
+
+  native build :: HLineToBuilder b -> IO HLineTo
+
+  native create "javafx.scene.shape.HLineToBuilder.create" :: () -> IO (HLineToBuilder Object)
+
+  native x :: HLineToBuilder b -> double -> IO b
+
+

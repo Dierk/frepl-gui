@@ -1,0 +1,1 @@
+data WritableNumberValue = mutable native javafx.beans.value.WritableNumberValue

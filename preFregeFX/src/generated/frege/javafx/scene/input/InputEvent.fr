@@ -1,0 +1,11 @@
+data InputEvent = mutable native javafx.scene.input.InputEvent where
+
+  native any "javafx.scene.input.InputEvent.ANY" :: IO (EventType InputEvent)
+
+  native new :: EventType InputEvent -> IO InputEvent
+              | Object -> EventTarget -> EventType InputEvent -> IO InputEvent
+
+  native getEventType :: InputEvent -> IO (EventType InputEvent)
+
+derive Serializable InputEvent
+

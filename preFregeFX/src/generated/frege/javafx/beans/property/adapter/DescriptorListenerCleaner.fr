@@ -1,0 +1,5 @@
+data DescriptorListenerCleaner = mutable native javafx.beans.property.adapter.DescriptorListenerCleaner where
+
+  native run :: DescriptorListenerCleaner -> IO void
+
+

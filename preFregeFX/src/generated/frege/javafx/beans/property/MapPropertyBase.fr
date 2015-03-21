@@ -1,0 +1,27 @@
+data MapPropertyBase k v = mutable native javafx.beans.property.MapPropertyBase where
+
+  native addListener :: MapPropertyBase k v -> ChangeListener (ObservableMap k v) -> IO void
+                      | MapPropertyBase k v -> MapChangeListener k v -> IO void
+                      | MapPropertyBase k v -> InvalidationListener -> IO void
+
+  native bind :: MapPropertyBase k v -> ObservableValue (ObservableMap k v) -> IO void
+
+  native emptyProperty :: MapPropertyBase k v -> IO ReadOnlyBooleanProperty
+
+  native get :: MapPropertyBase k v -> IO (ObservableMap k v)
+
+  native isBound :: MapPropertyBase k v -> IO boolean
+
+  native removeListener :: MapPropertyBase k v -> ChangeListener (ObservableMap k v) -> IO void
+                         | MapPropertyBase k v -> InvalidationListener -> IO void
+                         | MapPropertyBase k v -> MapChangeListener k v -> IO void
+
+  native set :: MapPropertyBase k v -> ObservableMap k v -> IO void
+
+  native sizeProperty :: MapPropertyBase k v -> IO ReadOnlyIntegerProperty
+
+  native toString :: MapPropertyBase k v -> IO String
+
+  native unbind :: MapPropertyBase k v -> IO void
+
+

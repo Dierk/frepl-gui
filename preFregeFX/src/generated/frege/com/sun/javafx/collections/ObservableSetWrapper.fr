@@ -1,0 +1,42 @@
+data ObservableSetWrapper e = pure native com.sun.javafx.collections.ObservableSetWrapper where
+
+  pure native new :: Set e -> ObservableSetWrapper e
+
+  pure native add :: ObservableSetWrapper e -> e -> boolean
+
+  pure native addAll :: ObservableSetWrapper e -> Collection e -> boolean
+
+  native addListener :: ObservableSetWrapper e -> SetChangeListener e -> IO void
+                      | ObservableSetWrapper e -> InvalidationListener -> IO void
+
+  pure native clear :: ObservableSetWrapper e -> void
+
+  pure native contains :: ObservableSetWrapper e -> Object -> boolean
+
+  pure native containsAll :: ObservableSetWrapper e -> Collection Object -> boolean
+
+  pure native equals :: ObservableSetWrapper e -> Object -> boolean
+
+  pure native hashCode :: ObservableSetWrapper e -> int
+
+  pure native isEmpty :: ObservableSetWrapper e -> boolean
+
+  pure native iterator :: ObservableSetWrapper e -> Iterator
+
+  pure native remove :: ObservableSetWrapper e -> Object -> boolean
+
+  pure native removeAll :: ObservableSetWrapper e -> Collection Object -> boolean
+
+  native removeListener :: ObservableSetWrapper e -> InvalidationListener -> IO void
+                         | ObservableSetWrapper e -> SetChangeListener e -> IO void
+
+  pure native retainAll :: ObservableSetWrapper e -> Collection Object -> boolean
+
+  pure native size :: ObservableSetWrapper e -> int
+
+  native toArray :: ObservableSetWrapper e -> STMutable s (JArray Object)
+                  | ObservableSetWrapper e -> Mutable s (JArray t) -> STMutable s (JArray t)
+
+  pure native toString :: ObservableSetWrapper e -> String
+
+

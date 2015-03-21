@@ -1,0 +1,7 @@
+data ListCellBuilder t b = mutable native javafx.scene.control.ListCellBuilder where
+
+  native build :: ListCellBuilder t b -> IO (ListCell t)
+
+  native create "javafx.scene.control.ListCellBuilder.create" :: () -> IO (ListCellBuilder t Object)
+
+

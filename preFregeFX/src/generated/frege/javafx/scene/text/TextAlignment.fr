@@ -1,0 +1,13 @@
+data TextAlignment = mutable native javafx.scene.text.TextAlignment where
+
+  native left "javafx.scene.text.TextAlignment.LEFT" :: IO TextAlignment
+  native center "javafx.scene.text.TextAlignment.CENTER" :: IO TextAlignment
+  native right "javafx.scene.text.TextAlignment.RIGHT" :: IO TextAlignment
+  native justify "javafx.scene.text.TextAlignment.JUSTIFY" :: IO TextAlignment
+
+  native valueOf "javafx.scene.text.TextAlignment.valueOf" :: String -> IO TextAlignment
+
+  native values "javafx.scene.text.TextAlignment.values" :: () -> STMutable s (JArray TextAlignment)
+
+derive Serializable TextAlignment
+

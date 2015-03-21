@@ -1,0 +1,21 @@
+data LongBinding = mutable native javafx.beans.binding.LongBinding where
+
+  native addListener :: LongBinding -> InvalidationListener -> IO void
+                      | LongBinding -> ChangeListener Number -> IO void
+
+  native dispose :: LongBinding -> IO void
+
+  native get :: LongBinding -> IO long
+
+  native getDependencies :: LongBinding -> IO (ObservableList Object)
+
+  native invalidate :: LongBinding -> IO void
+
+  native isValid :: LongBinding -> IO boolean
+
+  native removeListener :: LongBinding -> ChangeListener Number -> IO void
+                         | LongBinding -> InvalidationListener -> IO void
+
+  native toString :: LongBinding -> IO String
+
+

@@ -1,0 +1,44 @@
+data GeneralTransform3D = pure native com.sun.javafx.geom.transform.GeneralTransform3D where
+
+  pure native new :: () -> GeneralTransform3D
+
+  pure native computeClipZCoord :: GeneralTransform3D -> double
+
+  pure native copy :: GeneralTransform3D -> GeneralTransform3D
+
+  pure native determinant :: GeneralTransform3D -> double
+
+  native get :: GeneralTransform3D -> Mutable s (JArray double) -> STMutable s (JArray double)
+              | GeneralTransform3D -> int -> ST s double
+
+  pure native invert :: GeneralTransform3D -> GeneralTransform3D
+
+  pure native isAffine :: GeneralTransform3D -> boolean
+
+  pure native isIdentity :: GeneralTransform3D -> boolean
+
+  pure native mul :: GeneralTransform3D -> BaseTransform -> GeneralTransform3D
+                   | GeneralTransform3D -> GeneralTransform3D -> GeneralTransform3D
+
+  pure native ortho :: GeneralTransform3D -> double -> double -> double -> double -> double -> double -> GeneralTransform3D
+
+  pure native perspective :: GeneralTransform3D -> boolean -> double -> double -> double -> double -> GeneralTransform3D
+
+  pure native scale :: GeneralTransform3D -> double -> double -> double -> GeneralTransform3D
+
+  native set :: GeneralTransform3D -> GeneralTransform3D -> ST s GeneralTransform3D
+              | GeneralTransform3D -> Mutable s (JArray double) -> ST s GeneralTransform3D
+
+  pure native setIdentity :: GeneralTransform3D -> GeneralTransform3D
+
+  pure native toString :: GeneralTransform3D -> String
+
+  pure native transform :: GeneralTransform3D -> Vec3d -> Vec3d -> Vec3d
+                         | GeneralTransform3D -> Point2D -> Point2D -> Point2D
+                         | GeneralTransform3D -> BaseBounds -> BaseBounds -> BaseBounds
+                         | GeneralTransform3D -> Vec3d -> Vec3d
+
+  pure native transformNormal :: GeneralTransform3D -> Vec3f -> Vec3f
+                               | GeneralTransform3D -> Vec3f -> Vec3f -> Vec3f
+
+

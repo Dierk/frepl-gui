@@ -1,0 +1,13 @@
+data InputMethodHighlight = mutable native javafx.scene.input.InputMethodHighlight where
+
+  native unselected_raw "javafx.scene.input.InputMethodHighlight.UNSELECTED_RAW" :: IO InputMethodHighlight
+  native selected_raw "javafx.scene.input.InputMethodHighlight.SELECTED_RAW" :: IO InputMethodHighlight
+  native unselected_converted "javafx.scene.input.InputMethodHighlight.UNSELECTED_CONVERTED" :: IO InputMethodHighlight
+  native selected_converted "javafx.scene.input.InputMethodHighlight.SELECTED_CONVERTED" :: IO InputMethodHighlight
+
+  native valueOf "javafx.scene.input.InputMethodHighlight.valueOf" :: String -> IO InputMethodHighlight
+
+  native values "javafx.scene.input.InputMethodHighlight.values" :: () -> STMutable s (JArray InputMethodHighlight)
+
+derive Serializable InputMethodHighlight
+

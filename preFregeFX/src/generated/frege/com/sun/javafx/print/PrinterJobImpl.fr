@@ -1,0 +1,19 @@
+data PrinterJobImpl = pure native com.sun.javafx.print.PrinterJobImpl where
+
+  pure native cancelJob :: PrinterJobImpl -> void
+
+  pure native endJob :: PrinterJobImpl -> boolean
+
+  pure native getPrinterImpl :: PrinterJobImpl -> PrinterImpl
+
+  native print :: PrinterJobImpl -> PageLayout -> Node -> IO boolean
+
+  pure native setPrinterImpl :: PrinterJobImpl -> PrinterImpl -> void
+
+  native showPageDialog :: PrinterJobImpl -> Window -> IO boolean
+
+  native showPrintDialog :: PrinterJobImpl -> Window -> IO boolean
+
+  native validatePageLayout :: PrinterJobImpl -> PageLayout -> IO PageLayout
+
+

@@ -1,0 +1,39 @@
+data ScrollPaneBuilder b = mutable native javafx.scene.control.ScrollPaneBuilder where
+
+  native applyTo :: ScrollPaneBuilder b -> ScrollPane -> IO void
+
+  native build :: ScrollPaneBuilder b -> IO ScrollPane
+
+  native content :: ScrollPaneBuilder b -> Node -> IO b
+
+  native create "javafx.scene.control.ScrollPaneBuilder.create" :: () -> IO (ScrollPaneBuilder Object)
+
+  native fitToHeight :: ScrollPaneBuilder b -> boolean -> IO b
+
+  native fitToWidth :: ScrollPaneBuilder b -> boolean -> IO b
+
+  native hbarPolicy :: ScrollPaneBuilder b -> ScrollPane_ScrollBarPolicy -> IO b
+
+  native hmax :: ScrollPaneBuilder b -> double -> IO b
+
+  native hmin :: ScrollPaneBuilder b -> double -> IO b
+
+  native hvalue :: ScrollPaneBuilder b -> double -> IO b
+
+  native pannable :: ScrollPaneBuilder b -> boolean -> IO b
+
+  native prefViewportHeight :: ScrollPaneBuilder b -> double -> IO b
+
+  native prefViewportWidth :: ScrollPaneBuilder b -> double -> IO b
+
+  native vbarPolicy :: ScrollPaneBuilder b -> ScrollPane_ScrollBarPolicy -> IO b
+
+  native viewportBounds :: ScrollPaneBuilder b -> Bounds -> IO b
+
+  native vmax :: ScrollPaneBuilder b -> double -> IO b
+
+  native vmin :: ScrollPaneBuilder b -> double -> IO b
+
+  native vvalue :: ScrollPaneBuilder b -> double -> IO b
+
+

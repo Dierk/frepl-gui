@@ -1,0 +1,12 @@
+data ImageStorage = pure native com.sun.javafx.iio.ImageStorage where
+
+  pure native addImageLoaderFactory "com.sun.javafx.iio.ImageStorage.addImageLoaderFactory" :: ImageLoaderFactory -> void
+
+  pure native getNumBands "com.sun.javafx.iio.ImageStorage.getNumBands" :: ImageStorage_ImageType -> int
+
+  native getSupportedDescriptions "com.sun.javafx.iio.ImageStorage.getSupportedDescriptions" :: () -> STMutable s (JArray ImageFormatDescription)
+
+  native loadAll "com.sun.javafx.iio.ImageStorage.loadAll" :: String -> ImageLoadListener -> int -> int -> boolean -> float -> boolean -> STMutable s (JArray ImageFrame) throws ImageStorageException
+                                                            | InputStream -> ImageLoadListener -> int -> int -> boolean -> float -> boolean -> STMutable s (JArray ImageFrame) throws ImageStorageException
+
+

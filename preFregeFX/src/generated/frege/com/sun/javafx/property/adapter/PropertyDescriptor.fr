@@ -1,0 +1,11 @@
+data PropertyDescriptor = pure native com.sun.javafx.property.adapter.PropertyDescriptor where
+
+  pure native new :: String -> Class Object -> Method -> Method -> PropertyDescriptor
+
+  pure native addListener :: PropertyDescriptor -> ReadOnlyPropertyDescriptor_ReadOnlyListener -> void
+
+  pure native getSetter :: PropertyDescriptor -> Method
+
+  pure native removeListener :: PropertyDescriptor -> ReadOnlyPropertyDescriptor_ReadOnlyListener -> void
+
+

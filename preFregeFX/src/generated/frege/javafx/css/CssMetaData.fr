@@ -1,0 +1,25 @@
+data CssMetaData s v = mutable native javafx.css.CssMetaData where
+
+  native equals :: CssMetaData s v -> Object -> IO boolean
+
+  native getConverter :: CssMetaData s v -> IO (StyleConverter Object v)
+
+  native getInitialValue :: CssMetaData s v -> s -> IO v
+
+  native getProperty :: CssMetaData s v -> IO String
+
+  native getStyleableProperty :: CssMetaData s v -> s -> IO (StyleableProperty v)
+
+  native getSubProperties :: CssMetaData s v -> IO (List (CssMetaData Styleable Object))
+
+  native hashCode :: CssMetaData s v -> IO int
+
+  native isInherits :: CssMetaData s v -> IO boolean
+
+  native isSettable :: CssMetaData s v -> s -> IO boolean
+
+  native set :: CssMetaData s v -> s -> v -> StyleOrigin -> IO void
+
+  native toString :: CssMetaData s v -> IO String
+
+

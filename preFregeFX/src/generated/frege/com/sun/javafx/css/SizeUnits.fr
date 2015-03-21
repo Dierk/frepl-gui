@@ -1,0 +1,26 @@
+data SizeUnits = pure native com.sun.javafx.css.SizeUnits where
+
+  pure native percent "com.sun.javafx.css.SizeUnits.PERCENT" :: SizeUnits
+  pure native jin' "com.sun.javafx.css.SizeUnits.IN" :: SizeUnits
+  pure native cm "com.sun.javafx.css.SizeUnits.CM" :: SizeUnits
+  pure native mm "com.sun.javafx.css.SizeUnits.MM" :: SizeUnits
+  pure native em "com.sun.javafx.css.SizeUnits.EM" :: SizeUnits
+  pure native ex "com.sun.javafx.css.SizeUnits.EX" :: SizeUnits
+  pure native pt "com.sun.javafx.css.SizeUnits.PT" :: SizeUnits
+  pure native pc "com.sun.javafx.css.SizeUnits.PC" :: SizeUnits
+  pure native px "com.sun.javafx.css.SizeUnits.PX" :: SizeUnits
+  pure native deg "com.sun.javafx.css.SizeUnits.DEG" :: SizeUnits
+  pure native grad "com.sun.javafx.css.SizeUnits.GRAD" :: SizeUnits
+  pure native rad "com.sun.javafx.css.SizeUnits.RAD" :: SizeUnits
+  pure native turn "com.sun.javafx.css.SizeUnits.TURN" :: SizeUnits
+  pure native s "com.sun.javafx.css.SizeUnits.S" :: SizeUnits
+  pure native ms "com.sun.javafx.css.SizeUnits.MS" :: SizeUnits
+
+  pure native isAbsolute :: SizeUnits -> boolean
+
+  pure native valueOf "com.sun.javafx.css.SizeUnits.valueOf" :: String -> SizeUnits
+
+  native values "com.sun.javafx.css.SizeUnits.values" :: () -> STMutable s (JArray SizeUnits)
+
+derive Serializable SizeUnits
+

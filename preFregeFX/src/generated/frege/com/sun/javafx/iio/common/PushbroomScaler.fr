@@ -1,0 +1,7 @@
+data PushbroomScaler = pure native com.sun.javafx.iio.common.PushbroomScaler where
+
+  pure native getDestination :: PushbroomScaler -> ByteBuffer
+
+  native putSourceScanline :: PushbroomScaler -> Mutable s (JArray byte) -> int -> ST s boolean
+
+

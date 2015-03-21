@@ -1,0 +1,13 @@
+data MouseButton = mutable native javafx.scene.input.MouseButton where
+
+  native none "javafx.scene.input.MouseButton.NONE" :: IO MouseButton
+  native primary "javafx.scene.input.MouseButton.PRIMARY" :: IO MouseButton
+  native middle "javafx.scene.input.MouseButton.MIDDLE" :: IO MouseButton
+  native secondary "javafx.scene.input.MouseButton.SECONDARY" :: IO MouseButton
+
+  native valueOf "javafx.scene.input.MouseButton.valueOf" :: String -> IO MouseButton
+
+  native values "javafx.scene.input.MouseButton.values" :: () -> STMutable s (JArray MouseButton)
+
+derive Serializable MouseButton
+

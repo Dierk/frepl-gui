@@ -1,0 +1,7 @@
+data OverlayWarning = pure native com.sun.javafx.tk.quantum.OverlayWarning where
+
+  pure native new :: ViewScene -> OverlayWarning
+
+  pure native impl_updatePeer :: OverlayWarning -> void
+
+

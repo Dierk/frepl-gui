@@ -1,0 +1,9 @@
+data BorderImageSliceConverter = pure native com.sun.javafx.scene.layout.region.BorderImageSliceConverter where
+
+  native convert :: BorderImageSliceConverter -> ParsedValue (JArray ParsedValue) BorderImageSlices -> Font -> IO BorderImageSlices
+
+  pure native getInstance "com.sun.javafx.scene.layout.region.BorderImageSliceConverter.getInstance" :: () -> BorderImageSliceConverter
+
+  pure native toString :: BorderImageSliceConverter -> String
+
+

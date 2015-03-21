@@ -1,0 +1,5 @@
+data ComboBoxListViewBehavior t = pure native com.sun.javafx.scene.control.behavior.ComboBoxListViewBehavior where
+
+  native new :: ComboBox t -> IO (ComboBoxListViewBehavior t)
+
+

@@ -1,0 +1,34 @@
+data MenuItemBuilder b = mutable native javafx.scene.control.MenuItemBuilder where
+
+  native accelerator :: MenuItemBuilder b -> KeyCombination -> IO b
+
+  native applyTo :: MenuItemBuilder b -> MenuItem -> IO void
+
+  native build :: MenuItemBuilder b -> IO MenuItem
+
+  native create "javafx.scene.control.MenuItemBuilder.create" :: () -> IO (MenuItemBuilder Object)
+
+  native disable :: MenuItemBuilder b -> boolean -> IO b
+
+  native graphic :: MenuItemBuilder b -> Node -> IO b
+
+  native id :: MenuItemBuilder b -> String -> IO b
+
+  native mnemonicParsing :: MenuItemBuilder b -> boolean -> IO b
+
+  native onAction :: MenuItemBuilder b -> EventHandler ActionEvent -> IO b
+
+  native onMenuValidation :: MenuItemBuilder b -> EventHandler Event -> IO b
+
+  native style :: MenuItemBuilder b -> String -> IO b
+
+  native styleClass :: MenuItemBuilder b -> Collection String -> IO b
+                     | MenuItemBuilder b -> MutableIO (JArray String) -> IO b
+
+  native text :: MenuItemBuilder b -> String -> IO b
+
+  native userData :: MenuItemBuilder b -> Object -> IO b
+
+  native visible :: MenuItemBuilder b -> boolean -> IO b
+
+

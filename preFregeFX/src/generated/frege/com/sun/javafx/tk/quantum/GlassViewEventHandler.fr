@@ -1,0 +1,47 @@
+data GlassViewEventHandler = pure native com.sun.javafx.tk.quantum.GlassViewEventHandler where
+
+  pure native new :: ViewScene -> GlassViewEventHandler
+
+  native getInputMethodCandidatePos :: GlassViewEventHandler -> int -> STMutable s (JArray double)
+
+  pure native getSceneAccessible :: GlassViewEventHandler -> Accessible
+
+  pure native handleBeginTouchEvent :: GlassViewEventHandler -> View -> long -> int -> boolean -> int -> void
+
+  pure native handleDragDrop :: GlassViewEventHandler -> View -> int -> int -> int -> int -> int -> ClipboardAssistance -> int
+
+  pure native handleDragEnd :: GlassViewEventHandler -> View -> int -> void
+
+  pure native handleDragEnter :: GlassViewEventHandler -> View -> int -> int -> int -> int -> int -> ClipboardAssistance -> int
+
+  pure native handleDragLeave :: GlassViewEventHandler -> View -> ClipboardAssistance -> void
+
+  pure native handleDragOver :: GlassViewEventHandler -> View -> int -> int -> int -> int -> int -> ClipboardAssistance -> int
+
+  pure native handleDragStart :: GlassViewEventHandler -> View -> int -> int -> int -> int -> int -> ClipboardAssistance -> void
+
+  pure native handleEndTouchEvent :: GlassViewEventHandler -> View -> long -> void
+
+  native handleInputMethodEvent :: GlassViewEventHandler -> long -> String -> Mutable s (JArray int) -> Mutable s (JArray int) -> Mutable s (JArray byte) -> int -> int -> ST s void
+
+  native handleKeyEvent :: GlassViewEventHandler -> View -> long -> int -> int -> Mutable s (JArray char) -> int -> ST s void
+
+  pure native handleMenuEvent :: GlassViewEventHandler -> View -> int -> int -> int -> int -> boolean -> void
+
+  pure native handleMouseEvent :: GlassViewEventHandler -> View -> long -> int -> int -> int -> int -> int -> int -> int -> boolean -> boolean -> void
+
+  pure native handleNextTouchEvent :: GlassViewEventHandler -> View -> long -> int -> long -> int -> int -> int -> int -> void
+
+  pure native handleRotateGestureEvent :: GlassViewEventHandler -> View -> long -> int -> int -> boolean -> boolean -> int -> int -> int -> int -> double -> double -> void
+
+  pure native handleScrollEvent :: GlassViewEventHandler -> View -> long -> int -> int -> int -> int -> double -> double -> int -> int -> int -> int -> int -> double -> double -> void
+
+  pure native handleScrollGestureEvent :: GlassViewEventHandler -> View -> long -> int -> int -> boolean -> boolean -> int -> int -> int -> int -> int -> double -> double -> double -> double -> double -> double -> void
+
+  pure native handleSwipeGestureEvent :: GlassViewEventHandler -> View -> long -> int -> int -> boolean -> boolean -> int -> int -> int -> int -> int -> int -> void
+
+  pure native handleViewEvent :: GlassViewEventHandler -> View -> long -> int -> void
+
+  pure native handleZoomGestureEvent :: GlassViewEventHandler -> View -> long -> int -> int -> boolean -> boolean -> int -> int -> int -> int -> double -> double -> double -> double -> void
+
+

@@ -1,0 +1,15 @@
+data LineChartBuilder x y b = mutable native javafx.scene.chart.LineChartBuilder where
+
+  native applyTo :: LineChartBuilder x y b -> LineChart x y -> IO void
+
+  native build :: LineChartBuilder x y b -> IO (LineChart x y)
+
+  native create "javafx.scene.chart.LineChartBuilder.create" :: () -> IO (LineChartBuilder x y Object)
+
+  native createSymbols :: LineChartBuilder x y b -> boolean -> IO b
+
+  native xAxis "XAxis" :: LineChartBuilder x y b -> Axis x -> IO b
+
+  native yAxis "YAxis" :: LineChartBuilder x y b -> Axis y -> IO b
+
+

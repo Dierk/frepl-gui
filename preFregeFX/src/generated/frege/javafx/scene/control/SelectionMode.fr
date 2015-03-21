@@ -1,0 +1,11 @@
+data SelectionMode = mutable native javafx.scene.control.SelectionMode where
+
+  native single "javafx.scene.control.SelectionMode.SINGLE" :: IO SelectionMode
+  native multiple "javafx.scene.control.SelectionMode.MULTIPLE" :: IO SelectionMode
+
+  native valueOf "javafx.scene.control.SelectionMode.valueOf" :: String -> IO SelectionMode
+
+  native values "javafx.scene.control.SelectionMode.values" :: () -> STMutable s (JArray SelectionMode)
+
+derive Serializable SelectionMode
+

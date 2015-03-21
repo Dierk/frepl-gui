@@ -1,0 +1,17 @@
+data ContextMenuContent = pure native com.sun.javafx.scene.control.skin.ContextMenuContent where
+
+  native new :: ContextMenu -> IO ContextMenuContent
+
+  pure native dispose :: ContextMenuContent -> void
+
+  native disposeContextMenu :: ContextMenuContent -> ContextMenu -> IO void
+
+  pure native getClassCssMetaData "com.sun.javafx.scene.control.skin.ContextMenuContent.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  pure native getCssMetaData :: ContextMenuContent -> List (CssMetaData Styleable Object)
+
+  native getItemsContainer :: ContextMenuContent -> IO VBox
+
+  native getStyleableParent :: ContextMenuContent -> IO Styleable
+
+

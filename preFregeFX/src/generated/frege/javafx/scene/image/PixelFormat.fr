@@ -1,0 +1,25 @@
+data PixelFormat t = mutable native javafx.scene.image.PixelFormat where
+
+  native createByteIndexedInstance "javafx.scene.image.PixelFormat.createByteIndexedInstance" :: MutableIO (JArray int) -> IO (PixelFormat ByteBuffer)
+
+  native createByteIndexedPremultipliedInstance "javafx.scene.image.PixelFormat.createByteIndexedPremultipliedInstance" :: MutableIO (JArray int) -> IO (PixelFormat ByteBuffer)
+
+  native getArgb :: PixelFormat t -> t -> int -> int -> int -> IO int
+
+  native getByteBgraInstance "javafx.scene.image.PixelFormat.getByteBgraInstance" :: () -> IO (WritablePixelFormat ByteBuffer)
+
+  native getByteBgraPreInstance "javafx.scene.image.PixelFormat.getByteBgraPreInstance" :: () -> IO (WritablePixelFormat ByteBuffer)
+
+  native getByteRgbInstance "javafx.scene.image.PixelFormat.getByteRgbInstance" :: () -> IO (PixelFormat ByteBuffer)
+
+  native getIntArgbInstance "javafx.scene.image.PixelFormat.getIntArgbInstance" :: () -> IO (WritablePixelFormat IntBuffer)
+
+  native getIntArgbPreInstance "javafx.scene.image.PixelFormat.getIntArgbPreInstance" :: () -> IO (WritablePixelFormat IntBuffer)
+
+  native getType :: PixelFormat t -> IO PixelFormat_Type
+
+  native isPremultiplied :: PixelFormat t -> IO boolean
+
+  native isWritable :: PixelFormat t -> IO boolean
+
+

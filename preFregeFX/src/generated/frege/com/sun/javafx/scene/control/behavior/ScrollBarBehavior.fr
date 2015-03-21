@@ -1,0 +1,19 @@
+data ScrollBarBehavior = pure native com.sun.javafx.scene.control.behavior.ScrollBarBehavior where
+
+  native new :: ScrollBar -> IO ScrollBarBehavior
+
+  pure native decButtonPressed :: ScrollBarBehavior -> void
+
+  pure native decButtonReleased :: ScrollBarBehavior -> void
+
+  pure native incButtonPressed :: ScrollBarBehavior -> void
+
+  pure native incButtonReleased :: ScrollBarBehavior -> void
+
+  pure native thumbDragged :: ScrollBarBehavior -> double -> void
+
+  pure native trackPress :: ScrollBarBehavior -> double -> void
+
+  pure native trackRelease :: ScrollBarBehavior -> void
+
+

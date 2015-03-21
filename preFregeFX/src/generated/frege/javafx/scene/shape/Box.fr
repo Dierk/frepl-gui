@@ -1,0 +1,30 @@
+data Box = mutable native javafx.scene.shape.Box where
+
+  pure native default_size "javafx.scene.shape.Box.DEFAULT_SIZE" :: double
+
+  native new :: () -> IO Box
+              | double -> double -> double -> IO Box
+
+  native depthProperty :: Box -> IO DoubleProperty
+
+  native getDepth :: Box -> IO double
+
+  native getHeight :: Box -> IO double
+
+  native getWidth :: Box -> IO double
+
+  native heightProperty :: Box -> IO DoubleProperty
+
+  native impl_computeGeomBounds :: Box -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_updatePeer :: Box -> IO void
+
+  native setDepth :: Box -> double -> IO void
+
+  native setHeight :: Box -> double -> IO void
+
+  native setWidth :: Box -> double -> IO void
+
+  native widthProperty :: Box -> IO DoubleProperty
+
+

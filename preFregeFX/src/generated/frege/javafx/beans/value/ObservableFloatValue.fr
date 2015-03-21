@@ -1,0 +1,5 @@
+data ObservableFloatValue = mutable native javafx.beans.value.ObservableFloatValue where
+
+  native get :: ObservableFloatValue -> IO float
+
+

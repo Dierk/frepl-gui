@@ -1,0 +1,61 @@
+data ReadOnlyUnbackedObservableList e = pure native com.sun.javafx.scene.control.ReadOnlyUnbackedObservableList where
+
+  pure native add :: ReadOnlyUnbackedObservableList e -> e -> boolean
+                   | ReadOnlyUnbackedObservableList e -> int -> e -> void
+
+  native addAll :: ReadOnlyUnbackedObservableList e -> Collection e -> ST s boolean
+                 | ReadOnlyUnbackedObservableList e -> int -> Collection e -> ST s boolean
+                 | ReadOnlyUnbackedObservableList e -> Mutable s (JArray e) -> ST s boolean
+
+  native addListener :: ReadOnlyUnbackedObservableList e -> InvalidationListener -> IO void
+                      | ReadOnlyUnbackedObservableList e -> ListChangeListener e -> IO void
+
+  pure native callObservers :: ReadOnlyUnbackedObservableList e -> ListChangeListener_Change e -> void
+
+  pure native clear :: ReadOnlyUnbackedObservableList e -> void
+
+  pure native contains :: ReadOnlyUnbackedObservableList e -> Object -> boolean
+
+  pure native containsAll :: ReadOnlyUnbackedObservableList e -> Collection Object -> boolean
+
+  pure native get :: ReadOnlyUnbackedObservableList e -> int -> e
+
+  pure native indexOf :: ReadOnlyUnbackedObservableList e -> Object -> int
+
+  pure native isEmpty :: ReadOnlyUnbackedObservableList e -> boolean
+
+  pure native iterator :: ReadOnlyUnbackedObservableList e -> Iterator e
+
+  pure native lastIndexOf :: ReadOnlyUnbackedObservableList e -> Object -> int
+
+  pure native listIterator :: ReadOnlyUnbackedObservableList e -> int -> ListIterator e
+                            | ReadOnlyUnbackedObservableList e -> ListIterator e
+
+  pure native remove :: ReadOnlyUnbackedObservableList e -> int -> e
+                      | ReadOnlyUnbackedObservableList e -> Object -> boolean
+                      | ReadOnlyUnbackedObservableList e -> int -> int -> void
+
+  native removeAll :: ReadOnlyUnbackedObservableList e -> Mutable s (JArray e) -> ST s boolean
+                    | ReadOnlyUnbackedObservableList e -> Collection Object -> ST s boolean
+
+  native removeListener :: ReadOnlyUnbackedObservableList e -> InvalidationListener -> IO void
+                         | ReadOnlyUnbackedObservableList e -> ListChangeListener e -> IO void
+
+  native retainAll :: ReadOnlyUnbackedObservableList e -> Collection Object -> ST s boolean
+                    | ReadOnlyUnbackedObservableList e -> Mutable s (JArray e) -> ST s boolean
+
+  pure native set :: ReadOnlyUnbackedObservableList e -> int -> e -> e
+
+  native setAll :: ReadOnlyUnbackedObservableList e -> Collection e -> ST s boolean
+                 | ReadOnlyUnbackedObservableList e -> Mutable s (JArray e) -> ST s boolean
+
+  pure native size :: ReadOnlyUnbackedObservableList e -> int
+
+  pure native subList :: ReadOnlyUnbackedObservableList e -> int -> int -> List e
+
+  native toArray :: ReadOnlyUnbackedObservableList e -> STMutable s (JArray Object)
+                  | ReadOnlyUnbackedObservableList e -> Mutable s (JArray t) -> STMutable s (JArray t)
+
+  pure native toString :: ReadOnlyUnbackedObservableList e -> String
+
+

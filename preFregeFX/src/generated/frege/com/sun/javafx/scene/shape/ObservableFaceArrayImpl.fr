@@ -1,0 +1,7 @@
+data ObservableFaceArrayImpl = pure native com.sun.javafx.scene.shape.ObservableFaceArrayImpl where
+
+  native new :: () -> ST s ObservableFaceArrayImpl
+              | Mutable s (JArray int) -> ST s ObservableFaceArrayImpl
+              | ObservableFaceArray -> IO ObservableFaceArrayImpl
+
+

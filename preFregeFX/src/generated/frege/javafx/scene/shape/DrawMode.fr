@@ -1,0 +1,11 @@
+data DrawMode = mutable native javafx.scene.shape.DrawMode where
+
+  native line "javafx.scene.shape.DrawMode.LINE" :: IO DrawMode
+  native fill "javafx.scene.shape.DrawMode.FILL" :: IO DrawMode
+
+  native valueOf "javafx.scene.shape.DrawMode.valueOf" :: String -> IO DrawMode
+
+  native values "javafx.scene.shape.DrawMode.values" :: () -> STMutable s (JArray DrawMode)
+
+derive Serializable DrawMode
+

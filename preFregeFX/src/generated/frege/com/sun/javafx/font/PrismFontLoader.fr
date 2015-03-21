@@ -1,0 +1,24 @@
+data PrismFontLoader = pure native com.sun.javafx.font.PrismFontLoader where
+
+  pure native new :: () -> PrismFontLoader
+
+  native computeStringWidth :: PrismFontLoader -> String -> Font -> IO float
+
+  native font :: PrismFontLoader -> String -> FontWeight -> FontPosture -> float -> IO Font
+
+  pure native getFamilies :: PrismFontLoader -> List String
+
+  native getFontMetrics :: PrismFontLoader -> Font -> IO FontMetrics
+
+  pure native getFontNames :: PrismFontLoader -> List String
+                            | PrismFontLoader -> String -> List String
+
+  pure native getInstance "com.sun.javafx.font.PrismFontLoader.getInstance" :: () -> PrismFontLoader
+
+  pure native getSystemFontSize :: PrismFontLoader -> float
+
+  native loadFont :: PrismFontLoader -> String -> double -> IO Font
+                   | PrismFontLoader -> InputStream -> double -> IO Font
+                   | PrismFontLoader -> Font -> IO void
+
+

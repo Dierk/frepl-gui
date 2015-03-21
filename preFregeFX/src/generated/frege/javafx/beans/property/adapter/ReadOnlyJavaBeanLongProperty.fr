@@ -1,0 +1,13 @@
+data ReadOnlyJavaBeanLongProperty = mutable native javafx.beans.property.adapter.ReadOnlyJavaBeanLongProperty where
+
+  native dispose :: ReadOnlyJavaBeanLongProperty -> IO void
+
+  native fireValueChangedEvent :: ReadOnlyJavaBeanLongProperty -> IO void
+
+  native get :: ReadOnlyJavaBeanLongProperty -> IO long
+
+  native getBean :: ReadOnlyJavaBeanLongProperty -> IO Object
+
+  native getName :: ReadOnlyJavaBeanLongProperty -> IO String
+
+

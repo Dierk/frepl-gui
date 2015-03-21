@@ -1,0 +1,99 @@
+data Labeled = mutable native javafx.scene.control.Labeled where
+
+  native alignmentProperty :: Labeled -> IO (ObjectProperty Pos)
+
+  native contentDisplayProperty :: Labeled -> IO (ObjectProperty ContentDisplay)
+
+  native ellipsisStringProperty :: Labeled -> IO StringProperty
+
+  native fontProperty :: Labeled -> IO (ObjectProperty Font)
+
+  native getAlignment :: Labeled -> IO Pos
+
+  pure native getClassCssMetaData "javafx.scene.control.Labeled.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getContentBias :: Labeled -> IO Orientation
+
+  native getContentDisplay :: Labeled -> IO ContentDisplay
+
+  native getControlCssMetaData :: Labeled -> IO (List (CssMetaData Styleable Object))
+
+  native getEllipsisString :: Labeled -> IO String
+
+  native getFont :: Labeled -> IO Font
+
+  native getGraphic :: Labeled -> IO Node
+
+  native getGraphicTextGap :: Labeled -> IO double
+
+  native getLabelPadding :: Labeled -> IO Insets
+
+  native getLineSpacing :: Labeled -> IO double
+
+  native getText :: Labeled -> IO String
+
+  native getTextAlignment :: Labeled -> IO TextAlignment
+
+  native getTextFill :: Labeled -> IO Paint
+
+  native getTextOverrun :: Labeled -> IO OverrunStyle
+
+  native graphicProperty :: Labeled -> IO (ObjectProperty Node)
+
+  native graphicTextGapProperty :: Labeled -> IO DoubleProperty
+
+  native isMnemonicParsing :: Labeled -> IO boolean
+
+  native isUnderline :: Labeled -> IO boolean
+
+  native isWrapText :: Labeled -> IO boolean
+
+  native labelPaddingProperty :: Labeled -> IO (ReadOnlyObjectProperty Insets)
+
+  native lineSpacingProperty :: Labeled -> IO DoubleProperty
+
+  native mnemonicParsingProperty :: Labeled -> IO BooleanProperty
+
+  native setAlignment :: Labeled -> Pos -> IO void
+
+  native setContentDisplay :: Labeled -> ContentDisplay -> IO void
+
+  native setEllipsisString :: Labeled -> String -> IO void
+
+  native setFont :: Labeled -> Font -> IO void
+
+  native setGraphic :: Labeled -> Node -> IO void
+
+  native setGraphicTextGap :: Labeled -> double -> IO void
+
+  native setLineSpacing :: Labeled -> double -> IO void
+
+  native setMnemonicParsing :: Labeled -> boolean -> IO void
+
+  native setText :: Labeled -> String -> IO void
+
+  native setTextAlignment :: Labeled -> TextAlignment -> IO void
+
+  native setTextFill :: Labeled -> Paint -> IO void
+
+  native setTextOverrun :: Labeled -> OverrunStyle -> IO void
+
+  native setUnderline :: Labeled -> boolean -> IO void
+
+  native setWrapText :: Labeled -> boolean -> IO void
+
+  native textAlignmentProperty :: Labeled -> IO (ObjectProperty TextAlignment)
+
+  native textFillProperty :: Labeled -> IO (ObjectProperty Paint)
+
+  native textOverrunProperty :: Labeled -> IO (ObjectProperty OverrunStyle)
+
+  native textProperty :: Labeled -> IO StringProperty
+
+  native toString :: Labeled -> IO String
+
+  native underlineProperty :: Labeled -> IO BooleanProperty
+
+  native wrapTextProperty :: Labeled -> IO BooleanProperty
+
+

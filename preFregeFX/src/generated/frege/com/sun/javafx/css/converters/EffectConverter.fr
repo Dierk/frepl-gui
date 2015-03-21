@@ -1,0 +1,11 @@
+data EffectConverter = pure native com.sun.javafx.css.converters.EffectConverter where
+
+  pure native clearCache "com.sun.javafx.css.converters.EffectConverter.clearCache" :: () -> void
+
+  native convert :: EffectConverter -> ParsedValue (JArray ParsedValue) Effect -> Font -> IO Effect
+
+  native getInstance "com.sun.javafx.css.converters.EffectConverter.getInstance" :: () -> IO (StyleConverter (JArray ParsedValue) Effect)
+
+  pure native toString :: EffectConverter -> String
+
+

@@ -1,0 +1,23 @@
+data DoubleConstant = pure native com.sun.javafx.binding.DoubleConstant where
+
+  native addListener :: DoubleConstant -> InvalidationListener -> IO void
+                      | DoubleConstant -> ChangeListener Number -> IO void
+
+  pure native doubleValue :: DoubleConstant -> double
+
+  pure native floatValue :: DoubleConstant -> float
+
+  pure native get :: DoubleConstant -> double
+
+  pure native getValue :: DoubleConstant -> Double
+
+  pure native intValue :: DoubleConstant -> int
+
+  pure native longValue :: DoubleConstant -> long
+
+  native removeListener :: DoubleConstant -> InvalidationListener -> IO void
+                         | DoubleConstant -> ChangeListener Number -> IO void
+
+  pure native valueOf "com.sun.javafx.binding.DoubleConstant.valueOf" :: double -> DoubleConstant
+
+

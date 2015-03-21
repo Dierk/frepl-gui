@@ -1,0 +1,29 @@
+data ObservableListWrapper e = pure native com.sun.javafx.collections.ObservableListWrapper where
+
+  native new :: List e -> ST s (ObservableListWrapper e)
+              | List e -> Callback e (JArray Observable) -> IO (ObservableListWrapper e)
+
+  pure native clear :: ObservableListWrapper e -> void
+
+  pure native contains :: ObservableListWrapper e -> Object -> boolean
+
+  pure native containsAll :: ObservableListWrapper e -> Collection Object -> boolean
+
+  pure native get :: ObservableListWrapper e -> int -> e
+
+  pure native indexOf :: ObservableListWrapper e -> Object -> int
+
+  pure native lastIndexOf :: ObservableListWrapper e -> Object -> int
+
+  pure native remove :: ObservableListWrapper e -> int -> int -> void
+
+  pure native removeAll :: ObservableListWrapper e -> Collection Object -> boolean
+
+  pure native retainAll :: ObservableListWrapper e -> Collection Object -> boolean
+
+  pure native size :: ObservableListWrapper e -> int
+
+  pure native sort :: ObservableListWrapper e -> Comparator e -> void
+                    | ObservableListWrapper e -> void
+
+

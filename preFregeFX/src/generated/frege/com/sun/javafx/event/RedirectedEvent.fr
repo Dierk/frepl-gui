@@ -1,0 +1,11 @@
+data RedirectedEvent = pure native com.sun.javafx.event.RedirectedEvent where
+
+  native redirected "com.sun.javafx.event.RedirectedEvent.REDIRECTED" :: IO (EventType RedirectedEvent)
+
+  native new :: Event -> IO RedirectedEvent
+              | Event -> Object -> EventTarget -> IO RedirectedEvent
+
+  native getOriginalEvent :: RedirectedEvent -> IO Event
+
+derive Serializable RedirectedEvent
+

@@ -1,0 +1,9 @@
+data ReadOnlyLongPropertyBase = mutable native javafx.beans.property.ReadOnlyLongPropertyBase where
+
+  native addListener :: ReadOnlyLongPropertyBase -> ChangeListener Number -> IO void
+                      | ReadOnlyLongPropertyBase -> InvalidationListener -> IO void
+
+  native removeListener :: ReadOnlyLongPropertyBase -> InvalidationListener -> IO void
+                         | ReadOnlyLongPropertyBase -> ChangeListener Number -> IO void
+
+

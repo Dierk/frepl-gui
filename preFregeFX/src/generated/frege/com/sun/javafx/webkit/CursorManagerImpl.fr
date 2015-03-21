@@ -1,0 +1,5 @@
+data CursorManagerImpl = pure native com.sun.javafx.webkit.CursorManagerImpl where
+
+  pure native new :: () -> CursorManagerImpl
+
+

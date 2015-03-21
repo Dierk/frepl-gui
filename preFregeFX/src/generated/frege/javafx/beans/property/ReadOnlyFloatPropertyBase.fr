@@ -1,0 +1,9 @@
+data ReadOnlyFloatPropertyBase = mutable native javafx.beans.property.ReadOnlyFloatPropertyBase where
+
+  native addListener :: ReadOnlyFloatPropertyBase -> ChangeListener Number -> IO void
+                      | ReadOnlyFloatPropertyBase -> InvalidationListener -> IO void
+
+  native removeListener :: ReadOnlyFloatPropertyBase -> InvalidationListener -> IO void
+                         | ReadOnlyFloatPropertyBase -> ChangeListener Number -> IO void
+
+

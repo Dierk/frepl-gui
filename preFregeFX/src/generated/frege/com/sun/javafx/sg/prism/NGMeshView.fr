@@ -1,0 +1,7 @@
+data NGMeshView = pure native com.sun.javafx.sg.prism.NGMeshView where
+
+  pure native new :: () -> NGMeshView
+
+  pure native setMesh :: NGMeshView -> NGTriangleMesh -> void
+
+

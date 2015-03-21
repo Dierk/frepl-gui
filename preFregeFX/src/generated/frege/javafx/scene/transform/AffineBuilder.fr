@@ -1,0 +1,33 @@
+data AffineBuilder b = mutable native javafx.scene.transform.AffineBuilder where
+
+  native applyTo :: AffineBuilder b -> Affine -> IO void
+
+  native build :: AffineBuilder b -> IO Affine
+
+  native create "javafx.scene.transform.AffineBuilder.create" :: () -> IO (AffineBuilder Object)
+
+  native mxx :: AffineBuilder b -> double -> IO b
+
+  native mxy :: AffineBuilder b -> double -> IO b
+
+  native mxz :: AffineBuilder b -> double -> IO b
+
+  native myx :: AffineBuilder b -> double -> IO b
+
+  native myy :: AffineBuilder b -> double -> IO b
+
+  native myz :: AffineBuilder b -> double -> IO b
+
+  native mzx :: AffineBuilder b -> double -> IO b
+
+  native mzy :: AffineBuilder b -> double -> IO b
+
+  native mzz :: AffineBuilder b -> double -> IO b
+
+  native tx :: AffineBuilder b -> double -> IO b
+
+  native ty :: AffineBuilder b -> double -> IO b
+
+  native tz :: AffineBuilder b -> double -> IO b
+
+

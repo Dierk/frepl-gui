@@ -1,0 +1,13 @@
+data SpinnerBehavior t = pure native com.sun.javafx.scene.control.behavior.SpinnerBehavior where
+
+  native new :: Spinner t -> IO (SpinnerBehavior t)
+
+  pure native decrement :: SpinnerBehavior t -> int -> void
+
+  pure native increment :: SpinnerBehavior t -> int -> void
+
+  pure native startSpinning :: SpinnerBehavior t -> boolean -> void
+
+  pure native stopSpinning :: SpinnerBehavior t -> void
+
+

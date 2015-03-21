@@ -1,0 +1,1 @@
+data DWFontFile = pure native com.sun.javafx.font.directwrite.DWFontFile

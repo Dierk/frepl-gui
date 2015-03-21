@@ -1,0 +1,37 @@
+data Chart = mutable native javafx.scene.chart.Chart where
+
+  native animatedProperty :: Chart -> IO BooleanProperty
+
+  native getAnimated :: Chart -> IO boolean
+
+  pure native getClassCssMetaData "javafx.scene.chart.Chart.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getCssMetaData :: Chart -> IO (List (CssMetaData Styleable Object))
+
+  native getLegendSide :: Chart -> IO Side
+
+  native getTitle :: Chart -> IO String
+
+  native getTitleSide :: Chart -> IO Side
+
+  native isLegendVisible :: Chart -> IO boolean
+
+  native legendSideProperty :: Chart -> IO (ObjectProperty Side)
+
+  native legendVisibleProperty :: Chart -> IO BooleanProperty
+
+  native setAnimated :: Chart -> boolean -> IO void
+
+  native setLegendSide :: Chart -> Side -> IO void
+
+  native setLegendVisible :: Chart -> boolean -> IO void
+
+  native setTitle :: Chart -> String -> IO void
+
+  native setTitleSide :: Chart -> Side -> IO void
+
+  native titleProperty :: Chart -> IO StringProperty
+
+  native titleSideProperty :: Chart -> IO (ObjectProperty Side)
+
+

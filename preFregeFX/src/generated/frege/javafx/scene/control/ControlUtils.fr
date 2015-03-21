@@ -1,0 +1,7 @@
+data ControlUtils = mutable native javafx.scene.control.ControlUtils where
+
+  native scrollToColumn "javafx.scene.control.ControlUtils.scrollToColumn" :: Control -> TableColumnBase Object Object -> IO void
+
+  native scrollToIndex "javafx.scene.control.ControlUtils.scrollToIndex" :: Control -> int -> IO void
+
+

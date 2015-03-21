@@ -1,0 +1,5 @@
+data ListChangeListener e = mutable native javafx.collections.ListChangeListener where
+
+  native onChanged :: ListChangeListener e -> ListChangeListener_Change e -> IO void
+
+

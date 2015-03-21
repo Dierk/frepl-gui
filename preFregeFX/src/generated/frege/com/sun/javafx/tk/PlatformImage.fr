@@ -1,0 +1,24 @@
+data PlatformImage = pure native com.sun.javafx.tk.PlatformImage where
+
+  pure native getArgb :: PlatformImage -> int -> int -> int
+
+  pure native getPixelScale :: PlatformImage -> float
+
+  native getPixels :: PlatformImage -> int -> int -> int -> int -> WritablePixelFormat IntBuffer -> MutableIO (JArray int) -> int -> int -> IO void
+                    | PlatformImage -> int -> int -> int -> int -> WritablePixelFormat ByteBuffer -> MutableIO (JArray byte) -> int -> int -> IO void
+                    | PlatformImage -> int -> int -> int -> int -> WritablePixelFormat t -> t -> int -> IO void
+
+  native getPlatformPixelFormat :: PlatformImage -> IO PixelFormat
+
+  pure native isWritable :: PlatformImage -> boolean
+
+  pure native promoteToWritableImage :: PlatformImage -> PlatformImage
+
+  pure native setArgb :: PlatformImage -> int -> int -> int -> void
+
+  native setPixels :: PlatformImage -> int -> int -> int -> int -> PixelReader -> int -> int -> IO void
+                    | PlatformImage -> int -> int -> int -> int -> PixelFormat t -> t -> int -> IO void
+                    | PlatformImage -> int -> int -> int -> int -> PixelFormat ByteBuffer -> MutableIO (JArray byte) -> int -> int -> IO void
+                    | PlatformImage -> int -> int -> int -> int -> PixelFormat IntBuffer -> MutableIO (JArray int) -> int -> int -> IO void
+
+

@@ -1,0 +1,5 @@
+data PrismRenderer = pure native com.sun.javafx.webkit.prism.theme.PrismRenderer where
+
+  pure native new :: () -> PrismRenderer
+
+

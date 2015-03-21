@@ -1,0 +1,40 @@
+data PieChart = mutable native javafx.scene.chart.PieChart where
+
+  native new :: ObservableList PieChart_Data -> IO PieChart
+              | () -> IO PieChart
+
+  native clockwiseProperty :: PieChart -> IO BooleanProperty
+
+  native dataProperty :: PieChart -> IO (ObjectProperty (ObservableList PieChart_Data))
+
+  pure native getClassCssMetaData "javafx.scene.chart.PieChart.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getCssMetaData :: PieChart -> IO (List (CssMetaData Styleable Object))
+
+  native getData :: PieChart -> IO (ObservableList PieChart_Data)
+
+  native getLabelLineLength :: PieChart -> IO double
+
+  native getLabelsVisible :: PieChart -> IO boolean
+
+  native getStartAngle :: PieChart -> IO double
+
+  native isClockwise :: PieChart -> IO boolean
+
+  native labelLineLengthProperty :: PieChart -> IO DoubleProperty
+
+  native labelsVisibleProperty :: PieChart -> IO BooleanProperty
+
+  native setClockwise :: PieChart -> boolean -> IO void
+
+  native setData :: PieChart -> ObservableList PieChart_Data -> IO void
+
+  native setLabelLineLength :: PieChart -> double -> IO void
+
+  native setLabelsVisible :: PieChart -> boolean -> IO void
+
+  native setStartAngle :: PieChart -> double -> IO void
+
+  native startAngleProperty :: PieChart -> IO DoubleProperty
+
+

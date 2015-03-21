@@ -1,0 +1,20 @@
+data TickCalculation = pure native com.sun.javafx.animation.TickCalculation where
+
+  pure native ticks_per_second "com.sun.javafx.animation.TickCalculation.TICKS_PER_SECOND" :: int
+
+  pure native add "com.sun.javafx.animation.TickCalculation.add" :: long -> long -> long
+
+  native fromDuration "com.sun.javafx.animation.TickCalculation.fromDuration" :: Duration -> IO long
+                                                                               | Duration -> double -> IO long
+
+  pure native fromMillis "com.sun.javafx.animation.TickCalculation.fromMillis" :: double -> long
+
+  pure native fromNano "com.sun.javafx.animation.TickCalculation.fromNano" :: long -> long
+
+  pure native sub "com.sun.javafx.animation.TickCalculation.sub" :: long -> long -> long
+
+  native toDuration "com.sun.javafx.animation.TickCalculation.toDuration" :: long -> IO Duration
+
+  pure native toMillis "com.sun.javafx.animation.TickCalculation.toMillis" :: long -> double
+
+

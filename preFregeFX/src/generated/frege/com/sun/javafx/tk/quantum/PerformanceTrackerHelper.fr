@@ -1,0 +1,13 @@
+data PerformanceTrackerHelper = pure native com.sun.javafx.tk.quantum.PerformanceTrackerHelper where
+
+  pure native getInstance "com.sun.javafx.tk.quantum.PerformanceTrackerHelper.getInstance" :: () -> PerformanceTrackerHelper
+
+  pure native isPerfLoggingEnabled :: PerformanceTrackerHelper -> boolean
+
+  pure native logEvent :: PerformanceTrackerHelper -> String -> void
+
+  pure native nanoTime :: PerformanceTrackerHelper -> long
+
+  pure native outputLog :: PerformanceTrackerHelper -> void
+
+

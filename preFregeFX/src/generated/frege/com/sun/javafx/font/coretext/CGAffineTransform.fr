@@ -1,0 +1,1 @@
+data CGAffineTransform = pure native com.sun.javafx.font.coretext.CGAffineTransform

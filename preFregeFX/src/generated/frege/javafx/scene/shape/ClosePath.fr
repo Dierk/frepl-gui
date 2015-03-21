@@ -1,0 +1,9 @@
+data ClosePath = mutable native javafx.scene.shape.ClosePath where
+
+  native new :: () -> IO ClosePath
+
+  native impl_addTo :: ClosePath -> Path2D -> IO void
+
+  native toString :: ClosePath -> IO String
+
+

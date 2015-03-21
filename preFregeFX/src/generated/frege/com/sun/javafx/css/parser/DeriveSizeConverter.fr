@@ -1,0 +1,9 @@
+data DeriveSizeConverter = pure native com.sun.javafx.css.parser.DeriveSizeConverter where
+
+  native convert :: DeriveSizeConverter -> ParsedValue (JArray (ParsedValue Size Size)) Size -> Font -> IO Size
+
+  pure native getInstance "com.sun.javafx.css.parser.DeriveSizeConverter.getInstance" :: () -> DeriveSizeConverter
+
+  pure native toString :: DeriveSizeConverter -> String
+
+

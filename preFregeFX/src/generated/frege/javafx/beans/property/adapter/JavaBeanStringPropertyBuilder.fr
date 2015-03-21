@@ -1,0 +1,21 @@
+data JavaBeanStringPropertyBuilder = mutable native javafx.beans.property.adapter.JavaBeanStringPropertyBuilder where
+
+  native new :: () -> IO JavaBeanStringPropertyBuilder
+
+  native bean :: JavaBeanStringPropertyBuilder -> Object -> IO JavaBeanStringPropertyBuilder
+
+  native beanClass :: JavaBeanStringPropertyBuilder -> Class Object -> IO JavaBeanStringPropertyBuilder
+
+  native build :: JavaBeanStringPropertyBuilder -> IO JavaBeanStringProperty throws NoSuchMethodException
+
+  native create "javafx.beans.property.adapter.JavaBeanStringPropertyBuilder.create" :: () -> IO JavaBeanStringPropertyBuilder
+
+  native getter :: JavaBeanStringPropertyBuilder -> String -> IO JavaBeanStringPropertyBuilder
+                 | JavaBeanStringPropertyBuilder -> Method -> IO JavaBeanStringPropertyBuilder
+
+  native name :: JavaBeanStringPropertyBuilder -> String -> IO JavaBeanStringPropertyBuilder
+
+  native setter :: JavaBeanStringPropertyBuilder -> Method -> IO JavaBeanStringPropertyBuilder
+                 | JavaBeanStringPropertyBuilder -> String -> IO JavaBeanStringPropertyBuilder
+
+

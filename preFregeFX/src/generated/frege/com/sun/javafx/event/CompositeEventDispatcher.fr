@@ -1,0 +1,11 @@
+data CompositeEventDispatcher = pure native com.sun.javafx.event.CompositeEventDispatcher where
+
+  native dispatchBubblingEvent :: CompositeEventDispatcher -> Event -> IO Event
+
+  native dispatchCapturingEvent :: CompositeEventDispatcher -> Event -> IO Event
+
+  pure native getFirstDispatcher :: CompositeEventDispatcher -> BasicEventDispatcher
+
+  pure native getLastDispatcher :: CompositeEventDispatcher -> BasicEventDispatcher
+
+

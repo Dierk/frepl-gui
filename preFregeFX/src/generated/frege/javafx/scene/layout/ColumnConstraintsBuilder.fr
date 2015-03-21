@@ -1,0 +1,23 @@
+data ColumnConstraintsBuilder b = mutable native javafx.scene.layout.ColumnConstraintsBuilder where
+
+  native applyTo :: ColumnConstraintsBuilder b -> ColumnConstraints -> IO void
+
+  native build :: ColumnConstraintsBuilder b -> IO ColumnConstraints
+
+  native create "javafx.scene.layout.ColumnConstraintsBuilder.create" :: () -> IO (ColumnConstraintsBuilder Object)
+
+  native fillWidth :: ColumnConstraintsBuilder b -> boolean -> IO b
+
+  native halignment :: ColumnConstraintsBuilder b -> HPos -> IO b
+
+  native hgrow :: ColumnConstraintsBuilder b -> Priority -> IO b
+
+  native maxWidth :: ColumnConstraintsBuilder b -> double -> IO b
+
+  native minWidth :: ColumnConstraintsBuilder b -> double -> IO b
+
+  native percentWidth :: ColumnConstraintsBuilder b -> double -> IO b
+
+  native prefWidth :: ColumnConstraintsBuilder b -> double -> IO b
+
+

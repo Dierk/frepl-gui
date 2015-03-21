@@ -1,0 +1,14 @@
+data ScriptMapper = pure native com.sun.javafx.text.ScriptMapper where
+
+  pure native invalid "com.sun.javafx.text.ScriptMapper.INVALID" :: int
+  pure native common "com.sun.javafx.text.ScriptMapper.COMMON" :: int
+  pure native inherited "com.sun.javafx.text.ScriptMapper.INHERITED" :: int
+  pure native latn "com.sun.javafx.text.ScriptMapper.LATN" :: int
+
+  pure native new :: () -> ScriptMapper
+
+  pure native getScript "com.sun.javafx.text.ScriptMapper.getScript" :: int -> int
+
+  pure native isComplexCharCode "com.sun.javafx.text.ScriptMapper.isComplexCharCode" :: int -> boolean
+
+

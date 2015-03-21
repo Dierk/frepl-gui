@@ -1,0 +1,5 @@
+data TKDragGestureListener = pure native com.sun.javafx.tk.TKDragGestureListener where
+
+  pure native dragGestureRecognized :: TKDragGestureListener -> double -> double -> double -> double -> int -> TKClipboard -> void
+
+

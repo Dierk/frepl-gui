@@ -1,0 +1,21 @@
+data TextFieldListCell t = mutable native javafx.scene.control.cell.TextFieldListCell where
+
+  native new :: () -> IO (TextFieldListCell t)
+              | StringConverter t -> IO (TextFieldListCell t)
+
+  native cancelEdit :: TextFieldListCell t -> IO void
+
+  native converterProperty :: TextFieldListCell t -> IO (ObjectProperty (StringConverter t))
+
+  native forListView "javafx.scene.control.cell.TextFieldListCell.forListView" :: StringConverter t -> IO (Callback (ListView t) (ListCell t))
+                                                                                | () -> IO (Callback (ListView String) (ListCell String))
+
+  native getConverter :: TextFieldListCell t -> IO (StringConverter t)
+
+  native setConverter :: TextFieldListCell t -> StringConverter t -> IO void
+
+  native startEdit :: TextFieldListCell t -> IO void
+
+  native updateItem :: TextFieldListCell t -> t -> boolean -> IO void
+
+

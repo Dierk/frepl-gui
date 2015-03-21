@@ -1,0 +1,9 @@
+data CursorFrame = pure native com.sun.javafx.cursor.CursorFrame where
+
+  pure native getCursorType :: CursorFrame -> CursorType
+
+  pure native getPlatformCursor :: CursorFrame -> Class t -> t
+
+  pure native setPlatforCursor :: CursorFrame -> Class t -> t -> void
+
+

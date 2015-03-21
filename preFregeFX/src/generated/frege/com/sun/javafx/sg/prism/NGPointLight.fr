@@ -1,0 +1,5 @@
+data NGPointLight = pure native com.sun.javafx.sg.prism.NGPointLight where
+
+  pure native new :: () -> NGPointLight
+
+

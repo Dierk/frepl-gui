@@ -1,0 +1,5 @@
+data TKDragSourceListener = pure native com.sun.javafx.tk.TKDragSourceListener where
+
+  native dragDropEnd :: TKDragSourceListener -> double -> double -> double -> double -> TransferMode -> IO void
+
+

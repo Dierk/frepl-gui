@@ -1,0 +1,14 @@
+data StageStyle = mutable native javafx.stage.StageStyle where
+
+  native decorated "javafx.stage.StageStyle.DECORATED" :: IO StageStyle
+  native undecorated "javafx.stage.StageStyle.UNDECORATED" :: IO StageStyle
+  native transparent "javafx.stage.StageStyle.TRANSPARENT" :: IO StageStyle
+  native utility "javafx.stage.StageStyle.UTILITY" :: IO StageStyle
+  native unified "javafx.stage.StageStyle.UNIFIED" :: IO StageStyle
+
+  native valueOf "javafx.stage.StageStyle.valueOf" :: String -> IO StageStyle
+
+  native values "javafx.stage.StageStyle.values" :: () -> STMutable s (JArray StageStyle)
+
+derive Serializable StageStyle
+

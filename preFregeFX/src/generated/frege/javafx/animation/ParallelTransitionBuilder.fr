@@ -1,0 +1,14 @@
+data ParallelTransitionBuilder = mutable native javafx.animation.ParallelTransitionBuilder where
+
+  native applyTo :: ParallelTransitionBuilder -> ParallelTransition -> IO void
+
+  native build :: ParallelTransitionBuilder -> IO ParallelTransition
+
+  native children :: ParallelTransitionBuilder -> MutableIO (JArray Animation) -> IO ParallelTransitionBuilder
+                   | ParallelTransitionBuilder -> Collection Animation -> IO ParallelTransitionBuilder
+
+  native create "javafx.animation.ParallelTransitionBuilder.create" :: () -> IO ParallelTransitionBuilder
+
+  native node :: ParallelTransitionBuilder -> Node -> IO ParallelTransitionBuilder
+
+

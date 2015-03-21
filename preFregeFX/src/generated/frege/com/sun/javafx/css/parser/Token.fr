@@ -1,0 +1,9 @@
+data Token = pure native com.sun.javafx.css.parser.Token where
+
+  pure native equals :: Token -> Object -> boolean
+
+  pure native hashCode :: Token -> int
+
+  pure native toString :: Token -> String
+
+

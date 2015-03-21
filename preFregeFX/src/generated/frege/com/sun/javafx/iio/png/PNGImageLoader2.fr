@@ -1,0 +1,9 @@
+data PNGImageLoader2 = pure native com.sun.javafx.iio.png.PNGImageLoader2 where
+
+  native new :: InputStream -> ST s PNGImageLoader2 throws IOException
+
+  pure native dispose :: PNGImageLoader2 -> void
+
+  native load :: PNGImageLoader2 -> int -> int -> int -> boolean -> boolean -> ST s ImageFrame throws IOException
+
+

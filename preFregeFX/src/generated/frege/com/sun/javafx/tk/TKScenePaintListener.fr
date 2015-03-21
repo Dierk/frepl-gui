@@ -1,0 +1,5 @@
+data TKScenePaintListener = pure native com.sun.javafx.tk.TKScenePaintListener where
+
+  pure native frameRendered :: TKScenePaintListener -> void
+
+

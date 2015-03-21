@@ -1,0 +1,7 @@
+data DWFactory = pure native com.sun.javafx.font.directwrite.DWFactory where
+
+  pure native createGlyphLayout :: DWFactory -> GlyphLayout
+
+  pure native getFactory "com.sun.javafx.font.directwrite.DWFactory.getFactory" :: () -> PrismFontFactory
+
+

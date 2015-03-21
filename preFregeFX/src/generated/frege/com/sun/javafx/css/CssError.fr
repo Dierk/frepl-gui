@@ -1,0 +1,13 @@
+data CssError = pure native com.sun.javafx.css.CssError where
+
+  pure native new :: String -> CssError
+
+  pure native getMessage :: CssError -> String
+
+  native getScene :: CssError -> IO Scene
+
+  native setCurrentScene "com.sun.javafx.css.CssError.setCurrentScene" :: Scene -> IO void
+
+  pure native toString :: CssError -> String
+
+

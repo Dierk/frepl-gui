@@ -1,0 +1,68 @@
+data FlowPane = mutable native javafx.scene.layout.FlowPane where
+
+  native new :: Orientation -> IO FlowPane
+              | double -> double -> IO FlowPane
+              | Orientation -> double -> double -> IO FlowPane
+              | MutableIO (JArray Node) -> IO FlowPane
+              | Orientation -> MutableIO (JArray Node) -> IO FlowPane
+              | double -> double -> MutableIO (JArray Node) -> IO FlowPane
+              | Orientation -> double -> double -> MutableIO (JArray Node) -> IO FlowPane
+              | () -> IO FlowPane
+
+  native alignmentProperty :: FlowPane -> IO (ObjectProperty Pos)
+
+  native clearConstraints "javafx.scene.layout.FlowPane.clearConstraints" :: Node -> IO void
+
+  native columnHalignmentProperty :: FlowPane -> IO (ObjectProperty HPos)
+
+  native getAlignment :: FlowPane -> IO Pos
+
+  pure native getClassCssMetaData "javafx.scene.layout.FlowPane.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getColumnHalignment :: FlowPane -> IO HPos
+
+  native getContentBias :: FlowPane -> IO Orientation
+
+  native getCssMetaData :: FlowPane -> IO (List (CssMetaData Styleable Object))
+
+  native getHgap :: FlowPane -> IO double
+
+  native getMargin "javafx.scene.layout.FlowPane.getMargin" :: Node -> IO Insets
+
+  native getOrientation :: FlowPane -> IO Orientation
+
+  native getPrefWrapLength :: FlowPane -> IO double
+
+  native getRowValignment :: FlowPane -> IO VPos
+
+  native getVgap :: FlowPane -> IO double
+
+  native hgapProperty :: FlowPane -> IO DoubleProperty
+
+  native orientationProperty :: FlowPane -> IO (ObjectProperty Orientation)
+
+  native prefWrapLengthProperty :: FlowPane -> IO DoubleProperty
+
+  native requestLayout :: FlowPane -> IO void
+
+  native rowValignmentProperty :: FlowPane -> IO (ObjectProperty VPos)
+
+  native setAlignment :: FlowPane -> Pos -> IO void
+
+  native setColumnHalignment :: FlowPane -> HPos -> IO void
+
+  native setHgap :: FlowPane -> double -> IO void
+
+  native setMargin "javafx.scene.layout.FlowPane.setMargin" :: Node -> Insets -> IO void
+
+  native setOrientation :: FlowPane -> Orientation -> IO void
+
+  native setPrefWrapLength :: FlowPane -> double -> IO void
+
+  native setRowValignment :: FlowPane -> VPos -> IO void
+
+  native setVgap :: FlowPane -> double -> IO void
+
+  native vgapProperty :: FlowPane -> IO DoubleProperty
+
+

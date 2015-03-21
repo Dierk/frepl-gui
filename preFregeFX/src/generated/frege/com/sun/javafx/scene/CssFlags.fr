@@ -1,0 +1,13 @@
+data CssFlags = pure native com.sun.javafx.scene.CssFlags where
+
+  pure native clean "com.sun.javafx.scene.CssFlags.CLEAN" :: CssFlags
+  pure native dirty_branch "com.sun.javafx.scene.CssFlags.DIRTY_BRANCH" :: CssFlags
+  pure native update "com.sun.javafx.scene.CssFlags.UPDATE" :: CssFlags
+  pure native reapply "com.sun.javafx.scene.CssFlags.REAPPLY" :: CssFlags
+
+  pure native valueOf "com.sun.javafx.scene.CssFlags.valueOf" :: String -> CssFlags
+
+  native values "com.sun.javafx.scene.CssFlags.values" :: () -> STMutable s (JArray CssFlags)
+
+derive Serializable CssFlags
+

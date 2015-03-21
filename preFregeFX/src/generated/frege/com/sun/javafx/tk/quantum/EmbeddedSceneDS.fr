@@ -1,0 +1,15 @@
+data EmbeddedSceneDS = pure native com.sun.javafx.tk.quantum.EmbeddedSceneDS where
+
+  pure native new :: EmbeddedSceneDnD -> ClipboardAssistance -> GlassSceneDnDEventHandler -> EmbeddedSceneDS
+
+  native dragDropEnd :: EmbeddedSceneDS -> TransferMode -> IO void
+
+  pure native getData :: EmbeddedSceneDS -> String -> Object
+
+  native getMimeTypes :: EmbeddedSceneDS -> STMutable s (JArray String)
+
+  pure native getSupportedActions :: EmbeddedSceneDS -> Set TransferMode
+
+  pure native isMimeTypeAvailable :: EmbeddedSceneDS -> String -> boolean
+
+

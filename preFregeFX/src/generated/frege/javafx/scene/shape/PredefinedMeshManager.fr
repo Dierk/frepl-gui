@@ -1,0 +1,1 @@
+data PredefinedMeshManager = mutable native javafx.scene.shape.PredefinedMeshManager

@@ -1,0 +1,9 @@
+data ByteStringConverter = mutable native javafx.util.converter.ByteStringConverter where
+
+  native new :: () -> IO ByteStringConverter
+
+  native fromString :: ByteStringConverter -> String -> IO Byte
+
+  native toString :: ByteStringConverter -> Byte -> IO String
+
+

@@ -1,0 +1,22 @@
+data LineChart x y = mutable native javafx.scene.chart.LineChart where
+
+  native new :: Axis x -> Axis y -> IO (LineChart x y)
+              | Axis x -> Axis y -> ObservableList (XYChart_Series x y) -> IO (LineChart x y)
+
+  native axisSortingPolicyProperty :: LineChart x y -> IO (ObjectProperty LineChart_SortingPolicy)
+
+  native createSymbolsProperty :: LineChart x y -> IO BooleanProperty
+
+  native getAxisSortingPolicy :: LineChart x y -> IO LineChart_SortingPolicy
+
+  pure native getClassCssMetaData "javafx.scene.chart.LineChart.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getCreateSymbols :: LineChart x y -> IO boolean
+
+  native getCssMetaData :: LineChart x y -> IO (List (CssMetaData Styleable Object))
+
+  native setAxisSortingPolicy :: LineChart x y -> LineChart_SortingPolicy -> IO void
+
+  native setCreateSymbols :: LineChart x y -> boolean -> IO void
+
+

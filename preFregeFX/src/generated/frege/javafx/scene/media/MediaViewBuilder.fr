@@ -1,0 +1,27 @@
+data MediaViewBuilder b = mutable native javafx.scene.media.MediaViewBuilder where
+
+  native applyTo :: MediaViewBuilder b -> MediaView -> IO void
+
+  native build :: MediaViewBuilder b -> IO MediaView
+
+  native create "javafx.scene.media.MediaViewBuilder.create" :: () -> IO (MediaViewBuilder Object)
+
+  native fitHeight :: MediaViewBuilder b -> double -> IO b
+
+  native fitWidth :: MediaViewBuilder b -> double -> IO b
+
+  native mediaPlayer :: MediaViewBuilder b -> MediaPlayer -> IO b
+
+  native onError :: MediaViewBuilder b -> EventHandler MediaErrorEvent -> IO b
+
+  native preserveRatio :: MediaViewBuilder b -> boolean -> IO b
+
+  native smooth :: MediaViewBuilder b -> boolean -> IO b
+
+  native viewport :: MediaViewBuilder b -> Rectangle2D -> IO b
+
+  native x :: MediaViewBuilder b -> double -> IO b
+
+  native y :: MediaViewBuilder b -> double -> IO b
+
+

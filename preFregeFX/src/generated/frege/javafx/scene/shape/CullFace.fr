@@ -1,0 +1,12 @@
+data CullFace = mutable native javafx.scene.shape.CullFace where
+
+  native none "javafx.scene.shape.CullFace.NONE" :: IO CullFace
+  native back "javafx.scene.shape.CullFace.BACK" :: IO CullFace
+  native front "javafx.scene.shape.CullFace.FRONT" :: IO CullFace
+
+  native valueOf "javafx.scene.shape.CullFace.valueOf" :: String -> IO CullFace
+
+  native values "javafx.scene.shape.CullFace.values" :: () -> STMutable s (JArray CullFace)
+
+derive Serializable CullFace
+

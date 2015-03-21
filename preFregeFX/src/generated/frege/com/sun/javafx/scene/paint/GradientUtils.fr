@@ -1,0 +1,7 @@
+data GradientUtils = pure native com.sun.javafx.scene.paint.GradientUtils where
+
+  pure native new :: () -> GradientUtils
+
+  pure native lengthToString "com.sun.javafx.scene.paint.GradientUtils.lengthToString" :: double -> boolean -> String
+
+

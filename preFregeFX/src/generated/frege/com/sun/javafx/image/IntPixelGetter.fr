@@ -1,0 +1,7 @@
+data IntPixelGetter = pure native com.sun.javafx.image.IntPixelGetter where
+
+  native getArgb :: IntPixelGetter -> Mutable s (JArray int) -> int -> ST s int
+
+  native getArgbPre :: IntPixelGetter -> Mutable s (JArray int) -> int -> ST s int
+
+

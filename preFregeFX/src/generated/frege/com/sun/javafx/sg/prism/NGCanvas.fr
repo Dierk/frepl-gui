@@ -1,0 +1,89 @@
+data NGCanvas = pure native com.sun.javafx.sg.prism.NGCanvas where
+
+  pure native attr_base "com.sun.javafx.sg.prism.NGCanvas.ATTR_BASE" :: byte
+  pure native global_alpha "com.sun.javafx.sg.prism.NGCanvas.GLOBAL_ALPHA" :: byte
+  pure native comp_mode "com.sun.javafx.sg.prism.NGCanvas.COMP_MODE" :: byte
+  pure native fill_paint "com.sun.javafx.sg.prism.NGCanvas.FILL_PAINT" :: byte
+  pure native stroke_paint "com.sun.javafx.sg.prism.NGCanvas.STROKE_PAINT" :: byte
+  pure native line_width "com.sun.javafx.sg.prism.NGCanvas.LINE_WIDTH" :: byte
+  pure native line_cap "com.sun.javafx.sg.prism.NGCanvas.LINE_CAP" :: byte
+  pure native line_join "com.sun.javafx.sg.prism.NGCanvas.LINE_JOIN" :: byte
+  pure native miter_limit "com.sun.javafx.sg.prism.NGCanvas.MITER_LIMIT" :: byte
+  pure native font "com.sun.javafx.sg.prism.NGCanvas.FONT" :: byte
+  pure native text_align "com.sun.javafx.sg.prism.NGCanvas.TEXT_ALIGN" :: byte
+  pure native text_baseline "com.sun.javafx.sg.prism.NGCanvas.TEXT_BASELINE" :: byte
+  pure native transform "com.sun.javafx.sg.prism.NGCanvas.TRANSFORM" :: byte
+  pure native effect "com.sun.javafx.sg.prism.NGCanvas.EFFECT" :: byte
+  pure native push_clip "com.sun.javafx.sg.prism.NGCanvas.PUSH_CLIP" :: byte
+  pure native pop_clip "com.sun.javafx.sg.prism.NGCanvas.POP_CLIP" :: byte
+  pure native arc_type "com.sun.javafx.sg.prism.NGCanvas.ARC_TYPE" :: byte
+  pure native fill_rule "com.sun.javafx.sg.prism.NGCanvas.FILL_RULE" :: byte
+  pure native dash_array "com.sun.javafx.sg.prism.NGCanvas.DASH_ARRAY" :: byte
+  pure native dash_offset "com.sun.javafx.sg.prism.NGCanvas.DASH_OFFSET" :: byte
+  pure native font_smooth "com.sun.javafx.sg.prism.NGCanvas.FONT_SMOOTH" :: byte
+  pure native op_base "com.sun.javafx.sg.prism.NGCanvas.OP_BASE" :: byte
+  pure native fill_rect "com.sun.javafx.sg.prism.NGCanvas.FILL_RECT" :: byte
+  pure native stroke_rect "com.sun.javafx.sg.prism.NGCanvas.STROKE_RECT" :: byte
+  pure native clear_rect "com.sun.javafx.sg.prism.NGCanvas.CLEAR_RECT" :: byte
+  pure native stroke_line "com.sun.javafx.sg.prism.NGCanvas.STROKE_LINE" :: byte
+  pure native fill_oval "com.sun.javafx.sg.prism.NGCanvas.FILL_OVAL" :: byte
+  pure native stroke_oval "com.sun.javafx.sg.prism.NGCanvas.STROKE_OVAL" :: byte
+  pure native fill_round_rect "com.sun.javafx.sg.prism.NGCanvas.FILL_ROUND_RECT" :: byte
+  pure native stroke_round_rect "com.sun.javafx.sg.prism.NGCanvas.STROKE_ROUND_RECT" :: byte
+  pure native fill_arc "com.sun.javafx.sg.prism.NGCanvas.FILL_ARC" :: byte
+  pure native stroke_arc "com.sun.javafx.sg.prism.NGCanvas.STROKE_ARC" :: byte
+  pure native fill_text "com.sun.javafx.sg.prism.NGCanvas.FILL_TEXT" :: byte
+  pure native stroke_text "com.sun.javafx.sg.prism.NGCanvas.STROKE_TEXT" :: byte
+  pure native path_base "com.sun.javafx.sg.prism.NGCanvas.PATH_BASE" :: byte
+  pure native pathstart "com.sun.javafx.sg.prism.NGCanvas.PATHSTART" :: byte
+  pure native moveto "com.sun.javafx.sg.prism.NGCanvas.MOVETO" :: byte
+  pure native lineto "com.sun.javafx.sg.prism.NGCanvas.LINETO" :: byte
+  pure native quadto "com.sun.javafx.sg.prism.NGCanvas.QUADTO" :: byte
+  pure native cubicto "com.sun.javafx.sg.prism.NGCanvas.CUBICTO" :: byte
+  pure native closepath "com.sun.javafx.sg.prism.NGCanvas.CLOSEPATH" :: byte
+  pure native pathend "com.sun.javafx.sg.prism.NGCanvas.PATHEND" :: byte
+  pure native fill_path "com.sun.javafx.sg.prism.NGCanvas.FILL_PATH" :: byte
+  pure native stroke_path "com.sun.javafx.sg.prism.NGCanvas.STROKE_PATH" :: byte
+  pure native img_base "com.sun.javafx.sg.prism.NGCanvas.IMG_BASE" :: byte
+  pure native draw_image "com.sun.javafx.sg.prism.NGCanvas.DRAW_IMAGE" :: byte
+  pure native draw_subimage "com.sun.javafx.sg.prism.NGCanvas.DRAW_SUBIMAGE" :: byte
+  pure native put_argb "com.sun.javafx.sg.prism.NGCanvas.PUT_ARGB" :: byte
+  pure native put_argbpre_buf "com.sun.javafx.sg.prism.NGCanvas.PUT_ARGBPRE_BUF" :: byte
+  pure native fx_base "com.sun.javafx.sg.prism.NGCanvas.FX_BASE" :: byte
+  pure native fx_apply_effect "com.sun.javafx.sg.prism.NGCanvas.FX_APPLY_EFFECT" :: byte
+  pure native util_base "com.sun.javafx.sg.prism.NGCanvas.UTIL_BASE" :: byte
+  pure native reset "com.sun.javafx.sg.prism.NGCanvas.RESET" :: byte
+  pure native set_dims "com.sun.javafx.sg.prism.NGCanvas.SET_DIMS" :: byte
+  pure native cap_butt "com.sun.javafx.sg.prism.NGCanvas.CAP_BUTT" :: byte
+  pure native cap_round "com.sun.javafx.sg.prism.NGCanvas.CAP_ROUND" :: byte
+  pure native cap_square "com.sun.javafx.sg.prism.NGCanvas.CAP_SQUARE" :: byte
+  pure native join_miter "com.sun.javafx.sg.prism.NGCanvas.JOIN_MITER" :: byte
+  pure native join_round "com.sun.javafx.sg.prism.NGCanvas.JOIN_ROUND" :: byte
+  pure native join_bevel "com.sun.javafx.sg.prism.NGCanvas.JOIN_BEVEL" :: byte
+  pure native arc_open "com.sun.javafx.sg.prism.NGCanvas.ARC_OPEN" :: byte
+  pure native arc_chord "com.sun.javafx.sg.prism.NGCanvas.ARC_CHORD" :: byte
+  pure native arc_pie "com.sun.javafx.sg.prism.NGCanvas.ARC_PIE" :: byte
+  pure native smooth_gray "com.sun.javafx.sg.prism.NGCanvas.SMOOTH_GRAY" :: byte
+  pure native smooth_lcd "com.sun.javafx.sg.prism.NGCanvas.SMOOTH_LCD" :: byte
+  pure native align_left "com.sun.javafx.sg.prism.NGCanvas.ALIGN_LEFT" :: byte
+  pure native align_center "com.sun.javafx.sg.prism.NGCanvas.ALIGN_CENTER" :: byte
+  pure native align_right "com.sun.javafx.sg.prism.NGCanvas.ALIGN_RIGHT" :: byte
+  pure native align_justify "com.sun.javafx.sg.prism.NGCanvas.ALIGN_JUSTIFY" :: byte
+  pure native base_top "com.sun.javafx.sg.prism.NGCanvas.BASE_TOP" :: byte
+  pure native base_middle "com.sun.javafx.sg.prism.NGCanvas.BASE_MIDDLE" :: byte
+  pure native base_alphabetic "com.sun.javafx.sg.prism.NGCanvas.BASE_ALPHABETIC" :: byte
+  pure native base_bottom "com.sun.javafx.sg.prism.NGCanvas.BASE_BOTTOM" :: byte
+  pure native fill_rule_non_zero "com.sun.javafx.sg.prism.NGCanvas.FILL_RULE_NON_ZERO" :: byte
+  pure native fill_rule_even_odd "com.sun.javafx.sg.prism.NGCanvas.FILL_RULE_EVEN_ODD" :: byte
+
+  pure native new :: () -> NGCanvas
+
+  pure native handleRenderOp :: NGCanvas -> int -> GrowableDataBuffer -> Graphics -> RectBounds -> void
+
+  pure native renderForcedContent :: NGCanvas -> Graphics -> void
+
+  pure native updateBounds :: NGCanvas -> float -> float -> void
+
+  pure native updateRendering :: NGCanvas -> GrowableDataBuffer -> boolean
+
+

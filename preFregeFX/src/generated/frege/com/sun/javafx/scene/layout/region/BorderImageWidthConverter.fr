@@ -1,0 +1,9 @@
+data BorderImageWidthConverter = pure native com.sun.javafx.scene.layout.region.BorderImageWidthConverter where
+
+  native convert :: BorderImageWidthConverter -> ParsedValue (JArray ParsedValue) BorderWidths -> Font -> IO BorderWidths
+
+  pure native getInstance "com.sun.javafx.scene.layout.region.BorderImageWidthConverter.getInstance" :: () -> BorderImageWidthConverter
+
+  pure native toString :: BorderImageWidthConverter -> String
+
+

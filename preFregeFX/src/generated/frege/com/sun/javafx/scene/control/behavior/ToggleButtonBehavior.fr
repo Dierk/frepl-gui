@@ -1,0 +1,5 @@
+data ToggleButtonBehavior c = pure native com.sun.javafx.scene.control.behavior.ToggleButtonBehavior where
+
+  pure native new :: c -> ToggleButtonBehavior c
+
+

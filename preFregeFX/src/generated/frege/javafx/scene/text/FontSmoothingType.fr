@@ -1,0 +1,11 @@
+data FontSmoothingType = mutable native javafx.scene.text.FontSmoothingType where
+
+  native gray "javafx.scene.text.FontSmoothingType.GRAY" :: IO FontSmoothingType
+  native lcd "javafx.scene.text.FontSmoothingType.LCD" :: IO FontSmoothingType
+
+  native valueOf "javafx.scene.text.FontSmoothingType.valueOf" :: String -> IO FontSmoothingType
+
+  native values "javafx.scene.text.FontSmoothingType.values" :: () -> STMutable s (JArray FontSmoothingType)
+
+derive Serializable FontSmoothingType
+

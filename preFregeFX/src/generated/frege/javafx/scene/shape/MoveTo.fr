@@ -1,0 +1,22 @@
+data MoveTo = mutable native javafx.scene.shape.MoveTo where
+
+  native new :: () -> IO MoveTo
+              | double -> double -> IO MoveTo
+
+  native getX :: MoveTo -> IO double
+
+  native getY :: MoveTo -> IO double
+
+  native impl_addTo :: MoveTo -> Path2D -> IO void
+
+  native setX :: MoveTo -> double -> IO void
+
+  native setY :: MoveTo -> double -> IO void
+
+  native toString :: MoveTo -> IO String
+
+  native xProperty :: MoveTo -> IO DoubleProperty
+
+  native yProperty :: MoveTo -> IO DoubleProperty
+
+

@@ -1,0 +1,7 @@
+data Observable = mutable native javafx.beans.Observable where
+
+  native addListener :: Observable -> InvalidationListener -> IO void
+
+  native removeListener :: Observable -> InvalidationListener -> IO void
+
+

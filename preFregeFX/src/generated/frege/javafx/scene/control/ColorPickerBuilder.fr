@@ -1,0 +1,12 @@
+data ColorPickerBuilder b = mutable native javafx.scene.control.ColorPickerBuilder where
+
+  native applyTo :: ColorPickerBuilder b -> ColorPicker -> IO void
+
+  native build :: ColorPickerBuilder b -> IO ColorPicker
+
+  native create "javafx.scene.control.ColorPickerBuilder.create" :: () -> IO (ColorPickerBuilder Object)
+
+  native customColors :: ColorPickerBuilder b -> MutableIO (JArray Color) -> IO b
+                       | ColorPickerBuilder b -> Collection Color -> IO b
+
+

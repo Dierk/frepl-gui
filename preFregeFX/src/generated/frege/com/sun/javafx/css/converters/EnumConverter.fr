@@ -1,0 +1,19 @@
+data EnumConverter e = pure native com.sun.javafx.css.converters.EnumConverter where
+
+  pure native new :: Class e -> EnumConverter e
+
+  native convert :: EnumConverter e -> ParsedValue String e -> Font -> IO e
+
+  pure native equals :: EnumConverter e -> Object -> boolean
+
+  native getInstance "com.sun.javafx.css.converters.EnumConverter.getInstance" :: String -> IO (StyleConverter Object Object)
+
+  pure native hashCode :: EnumConverter e -> int
+
+  native readBinary "com.sun.javafx.css.converters.EnumConverter.readBinary" :: DataInputStream -> MutableIO (JArray String) -> IO (StyleConverter Object Object) throws IOException
+
+  pure native toString :: EnumConverter e -> String
+
+  native writeBinary :: EnumConverter e -> DataOutputStream -> StringStore -> ST s void throws IOException
+
+

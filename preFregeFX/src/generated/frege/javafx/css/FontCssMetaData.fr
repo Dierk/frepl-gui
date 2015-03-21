@@ -1,0 +1,1 @@
+data FontCssMetaData s = mutable native javafx.css.FontCssMetaData

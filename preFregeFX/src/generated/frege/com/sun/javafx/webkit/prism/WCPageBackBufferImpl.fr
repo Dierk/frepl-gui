@@ -1,0 +1,15 @@
+data WCPageBackBufferImpl = pure native com.sun.javafx.webkit.prism.WCPageBackBufferImpl where
+
+  pure native createGraphics :: WCPageBackBufferImpl -> WCGraphicsContext
+
+  pure native disposeGraphics :: WCPageBackBufferImpl -> WCGraphicsContext -> void
+
+  pure native factoryReleased :: WCPageBackBufferImpl -> void
+
+  pure native factoryReset :: WCPageBackBufferImpl -> void
+
+  pure native flush :: WCPageBackBufferImpl -> WCGraphicsContext -> int -> int -> int -> int -> void
+
+  pure native validate :: WCPageBackBufferImpl -> int -> int -> boolean
+
+

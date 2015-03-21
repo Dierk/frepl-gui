@@ -1,0 +1,17 @@
+data Side = mutable native javafx.geometry.Side where
+
+  native top "javafx.geometry.Side.TOP" :: IO Side
+  native bottom "javafx.geometry.Side.BOTTOM" :: IO Side
+  native left "javafx.geometry.Side.LEFT" :: IO Side
+  native right "javafx.geometry.Side.RIGHT" :: IO Side
+
+  native isHorizontal :: Side -> IO boolean
+
+  native isVertical :: Side -> IO boolean
+
+  native valueOf "javafx.geometry.Side.valueOf" :: String -> IO Side
+
+  native values "javafx.geometry.Side.values" :: () -> STMutable s (JArray Side)
+
+derive Serializable Side
+

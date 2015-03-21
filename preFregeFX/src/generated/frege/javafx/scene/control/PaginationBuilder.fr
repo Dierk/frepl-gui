@@ -1,0 +1,17 @@
+data PaginationBuilder b = mutable native javafx.scene.control.PaginationBuilder where
+
+  native applyTo :: PaginationBuilder b -> Pagination -> IO void
+
+  native build :: PaginationBuilder b -> IO Pagination
+
+  native create "javafx.scene.control.PaginationBuilder.create" :: () -> IO (PaginationBuilder Object)
+
+  native currentPageIndex :: PaginationBuilder b -> int -> IO b
+
+  native maxPageIndicatorCount :: PaginationBuilder b -> int -> IO b
+
+  native pageCount :: PaginationBuilder b -> int -> IO b
+
+  native pageFactory :: PaginationBuilder b -> Callback Integer Node -> IO b
+
+

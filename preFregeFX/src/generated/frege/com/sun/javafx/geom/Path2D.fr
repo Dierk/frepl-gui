@@ -1,0 +1,105 @@
+data Path2D = pure native com.sun.javafx.geom.Path2D where
+
+  pure native wind_even_odd "com.sun.javafx.geom.Path2D.WIND_EVEN_ODD" :: int
+  pure native wind_non_zero "com.sun.javafx.geom.Path2D.WIND_NON_ZERO" :: int
+
+  native new :: int -> Mutable s (JArray byte) -> int -> Mutable s (JArray float) -> int -> ST s Path2D
+              | Shape -> BaseTransform -> ST s Path2D
+              | Shape -> ST s Path2D
+              | () -> ST s Path2D
+              | int -> ST s Path2D
+              | int -> int -> ST s Path2D
+
+  pure native append :: Path2D -> Shape -> boolean -> void
+                      | Path2D -> PathIterator -> boolean -> void
+
+  pure native appendOvalQuadrant :: Path2D -> float -> float -> float -> float -> float -> float -> float -> float -> Path2D_CornerPrefix -> void
+
+  pure native appendSVGPath :: Path2D -> String -> void
+
+  pure native arcTo :: Path2D -> float -> float -> float -> boolean -> boolean -> float -> float -> void
+
+  pure native arcToRel :: Path2D -> float -> float -> float -> boolean -> boolean -> float -> float -> void
+
+  pure native checkAndGetIntRect :: Path2D -> Rectangle -> float -> boolean
+
+  pure native closePath :: Path2D -> void
+
+  pure native contains :: Path2D -> float -> float -> float -> float -> boolean
+
+  pure native contains "com.sun.javafx.geom.Path2D.contains" :: PathIterator -> float -> float -> float -> float -> boolean
+
+  pure native contains :: Path2D -> Point2D -> boolean
+                        | Path2D -> float -> float -> boolean
+
+  pure native contains "com.sun.javafx.geom.Path2D.contains" :: PathIterator -> float -> float -> boolean
+                                                              | PathIterator -> Point2D -> boolean
+
+  pure native copy :: Path2D -> Path2D
+
+  pure native createTransformedShape :: Path2D -> BaseTransform -> Shape
+
+  pure native curveTo :: Path2D -> float -> float -> float -> float -> float -> float -> void
+
+  pure native curveToRel :: Path2D -> float -> float -> float -> float -> float -> float -> void
+
+  pure native curveToSmooth :: Path2D -> float -> float -> float -> float -> void
+
+  pure native curveToSmoothRel :: Path2D -> float -> float -> float -> float -> void
+
+  pure native equals :: Path2D -> Object -> boolean
+
+  pure native getBounds :: Path2D -> RectBounds
+
+  native getCommandsNoClone :: Path2D -> STMutable s (JArray byte)
+
+  pure native getCurrentPoint :: Path2D -> Point2D
+
+  pure native getCurrentX :: Path2D -> float
+
+  pure native getCurrentY :: Path2D -> float
+
+  native getFloatCoordsNoClone :: Path2D -> STMutable s (JArray float)
+
+  pure native getNumCommands :: Path2D -> int
+
+  pure native getPathIterator :: Path2D -> BaseTransform -> float -> PathIterator
+                               | Path2D -> BaseTransform -> PathIterator
+
+  pure native getWindingRule :: Path2D -> int
+
+  pure native hashCode :: Path2D -> int
+
+  pure native intersects "com.sun.javafx.geom.Path2D.intersects" :: PathIterator -> float -> float -> float -> float -> boolean
+
+  pure native intersects :: Path2D -> float -> float -> float -> float -> boolean
+
+  pure native lineTo :: Path2D -> float -> float -> void
+
+  pure native lineToRel :: Path2D -> float -> float -> void
+
+  pure native moveTo :: Path2D -> float -> float -> void
+
+  pure native moveToRel :: Path2D -> float -> float -> void
+
+  pure native ovalQuadrantTo :: Path2D -> float -> float -> float -> float -> float -> float -> void
+
+  pure native pathDone :: Path2D -> void
+
+  pure native quadTo :: Path2D -> float -> float -> float -> float -> void
+
+  pure native quadToRel :: Path2D -> float -> float -> float -> float -> void
+
+  pure native quadToSmooth :: Path2D -> float -> float -> void
+
+  pure native quadToSmoothRel :: Path2D -> float -> float -> void
+
+  pure native reset :: Path2D -> void
+
+  pure native setTo :: Path2D -> Path2D -> void
+
+  pure native setWindingRule :: Path2D -> int -> void
+
+  pure native transform :: Path2D -> BaseTransform -> void
+
+

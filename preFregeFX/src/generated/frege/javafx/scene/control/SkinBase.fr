@@ -1,0 +1,17 @@
+data SkinBase c = mutable native javafx.scene.control.SkinBase where
+
+  native dispose :: SkinBase c -> IO void
+
+  native getChildren :: SkinBase c -> IO (ObservableList Node)
+
+  pure native getClassCssMetaData "javafx.scene.control.SkinBase.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getCssMetaData :: SkinBase c -> IO (List (CssMetaData Styleable Object))
+
+  native getNode :: SkinBase c -> IO Node
+
+  native getSkinnable :: SkinBase c -> IO c
+
+  native pseudoClassStateChanged :: SkinBase c -> PseudoClass -> boolean -> IO void
+
+

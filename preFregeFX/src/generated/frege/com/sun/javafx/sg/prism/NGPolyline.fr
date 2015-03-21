@@ -1,0 +1,9 @@
+data NGPolyline = pure native com.sun.javafx.sg.prism.NGPolyline where
+
+  pure native new :: () -> NGPolyline
+
+  pure native getShape :: NGPolyline -> Shape
+
+  native updatePolyline :: NGPolyline -> Mutable s (JArray float) -> ST s void
+
+

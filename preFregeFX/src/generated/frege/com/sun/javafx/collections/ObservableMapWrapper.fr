@@ -1,0 +1,41 @@
+data ObservableMapWrapper k v = pure native com.sun.javafx.collections.ObservableMapWrapper where
+
+  pure native new :: Map k v -> ObservableMapWrapper k v
+
+  native addListener :: ObservableMapWrapper k v -> MapChangeListener k v -> IO void
+                      | ObservableMapWrapper k v -> InvalidationListener -> IO void
+
+  pure native clear :: ObservableMapWrapper k v -> void
+
+  pure native containsKey :: ObservableMapWrapper k v -> Object -> boolean
+
+  pure native containsValue :: ObservableMapWrapper k v -> Object -> boolean
+
+  pure native entrySet :: ObservableMapWrapper k v -> Set (Map_Entry k v)
+
+  pure native equals :: ObservableMapWrapper k v -> Object -> boolean
+
+  pure native get :: ObservableMapWrapper k v -> Object -> v
+
+  pure native hashCode :: ObservableMapWrapper k v -> int
+
+  pure native isEmpty :: ObservableMapWrapper k v -> boolean
+
+  pure native keySet :: ObservableMapWrapper k v -> Set k
+
+  pure native put :: ObservableMapWrapper k v -> k -> v -> v
+
+  pure native putAll :: ObservableMapWrapper k v -> Map k v -> void
+
+  pure native remove :: ObservableMapWrapper k v -> Object -> v
+
+  native removeListener :: ObservableMapWrapper k v -> MapChangeListener k v -> IO void
+                         | ObservableMapWrapper k v -> InvalidationListener -> IO void
+
+  pure native size :: ObservableMapWrapper k v -> int
+
+  pure native toString :: ObservableMapWrapper k v -> String
+
+  pure native values :: ObservableMapWrapper k v -> Collection v
+
+

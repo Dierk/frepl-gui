@@ -1,0 +1,15 @@
+data NGImageView = pure native com.sun.javafx.sg.prism.NGImageView where
+
+  pure native new :: () -> NGImageView
+
+  pure native setImage :: NGImageView -> Object -> void
+
+  pure native setSmooth :: NGImageView -> boolean -> void
+
+  pure native setViewport :: NGImageView -> float -> float -> float -> float -> float -> float -> void
+
+  pure native setX :: NGImageView -> float -> void
+
+  pure native setY :: NGImageView -> float -> void
+
+

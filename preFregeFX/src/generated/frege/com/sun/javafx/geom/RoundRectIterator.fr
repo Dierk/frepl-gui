@@ -1,0 +1,11 @@
+data RoundRectIterator = pure native com.sun.javafx.geom.RoundRectIterator where
+
+  native currentSegment :: RoundRectIterator -> Mutable s (JArray float) -> ST s int
+
+  pure native getWindingRule :: RoundRectIterator -> int
+
+  pure native isDone :: RoundRectIterator -> boolean
+
+  pure native next :: RoundRectIterator -> void
+
+

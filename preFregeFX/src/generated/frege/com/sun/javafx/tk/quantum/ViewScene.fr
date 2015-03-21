@@ -1,0 +1,19 @@
+data ViewScene = pure native com.sun.javafx.tk.quantum.ViewScene where
+
+  pure native new :: boolean -> boolean -> ViewScene
+
+  pure native dispose :: ViewScene -> void
+
+  pure native enableInputMethodEvents :: ViewScene -> boolean -> void
+
+  pure native finishInputMethodComposition :: ViewScene -> void
+
+  pure native setCursor :: ViewScene -> Object -> void
+
+  pure native setRoot :: ViewScene -> NGNode -> void
+
+  pure native setStage :: ViewScene -> GlassStage -> void
+
+  pure native toString :: ViewScene -> String
+
+

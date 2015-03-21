@@ -1,0 +1,71 @@
+data TreeTableColumn s t = mutable native javafx.scene.control.TreeTableColumn where
+
+  native default_cell_factory "javafx.scene.control.TreeTableColumn.DEFAULT_CELL_FACTORY" :: IO (Callback (TreeTableColumn Object Object) (TreeTableCell Object Object))
+
+  native new :: String -> IO (TreeTableColumn s t)
+              | () -> IO (TreeTableColumn s t)
+
+  native cellFactoryProperty :: TreeTableColumn s t -> IO (ObjectProperty (Callback (TreeTableColumn s t) (TreeTableCell s t)))
+
+  native cellValueFactoryProperty :: TreeTableColumn s t -> IO (ObjectProperty (Callback (TreeTableColumn_CellDataFeatures s t) (ObservableValue t)))
+
+  native editAnyEvent "javafx.scene.control.TreeTableColumn.editAnyEvent" :: () -> IO (EventType (TreeTableColumn_CellEditEvent s t))
+
+  native editCancelEvent "javafx.scene.control.TreeTableColumn.editCancelEvent" :: () -> IO (EventType (TreeTableColumn_CellEditEvent s t))
+
+  native editCommitEvent "javafx.scene.control.TreeTableColumn.editCommitEvent" :: () -> IO (EventType (TreeTableColumn_CellEditEvent s t))
+
+  native editStartEvent "javafx.scene.control.TreeTableColumn.editStartEvent" :: () -> IO (EventType (TreeTableColumn_CellEditEvent s t))
+
+  native getCellFactory :: TreeTableColumn s t -> IO (Callback (TreeTableColumn s t) (TreeTableCell s t))
+
+  native getCellObservableValue :: TreeTableColumn s t -> TreeItem s -> IO (ObservableValue t)
+                                 | TreeTableColumn s t -> int -> IO (ObservableValue t)
+
+  native getCellValueFactory :: TreeTableColumn s t -> IO (Callback (TreeTableColumn_CellDataFeatures s t) (ObservableValue t))
+
+  pure native getClassCssMetaData "javafx.scene.control.TreeTableColumn.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getColumns :: TreeTableColumn s t -> IO (ObservableList (TreeTableColumn s Object))
+
+  native getCssMetaData :: TreeTableColumn s t -> IO (List (CssMetaData Styleable Object))
+
+  native getOnEditCancel :: TreeTableColumn s t -> IO (EventHandler (TreeTableColumn_CellEditEvent s t))
+
+  native getOnEditCommit :: TreeTableColumn s t -> IO (EventHandler (TreeTableColumn_CellEditEvent s t))
+
+  native getOnEditStart :: TreeTableColumn s t -> IO (EventHandler (TreeTableColumn_CellEditEvent s t))
+
+  native getSortType :: TreeTableColumn s t -> IO TreeTableColumn_SortType
+
+  native getStyleableParent :: TreeTableColumn s t -> IO Styleable
+
+  native getTreeTableView :: TreeTableColumn s t -> IO (TreeTableView s)
+
+  native getTypeSelector :: TreeTableColumn s t -> IO String
+
+  native impl_styleableGetNode :: TreeTableColumn s t -> IO Node
+
+  native onEditCancelProperty :: TreeTableColumn s t -> IO (ObjectProperty (EventHandler (TreeTableColumn_CellEditEvent s t)))
+
+  native onEditCommitProperty :: TreeTableColumn s t -> IO (ObjectProperty (EventHandler (TreeTableColumn_CellEditEvent s t)))
+
+  native onEditStartProperty :: TreeTableColumn s t -> IO (ObjectProperty (EventHandler (TreeTableColumn_CellEditEvent s t)))
+
+  native setCellFactory :: TreeTableColumn s t -> Callback (TreeTableColumn s t) (TreeTableCell s t) -> IO void
+
+  native setCellValueFactory :: TreeTableColumn s t -> Callback (TreeTableColumn_CellDataFeatures s t) (ObservableValue t) -> IO void
+
+  native setOnEditCancel :: TreeTableColumn s t -> EventHandler (TreeTableColumn_CellEditEvent s t) -> IO void
+
+  native setOnEditCommit :: TreeTableColumn s t -> EventHandler (TreeTableColumn_CellEditEvent s t) -> IO void
+
+  native setOnEditStart :: TreeTableColumn s t -> EventHandler (TreeTableColumn_CellEditEvent s t) -> IO void
+
+  native setSortType :: TreeTableColumn s t -> TreeTableColumn_SortType -> IO void
+
+  native sortTypeProperty :: TreeTableColumn s t -> IO (ObjectProperty TreeTableColumn_SortType)
+
+  native treeTableViewProperty :: TreeTableColumn s t -> IO (ReadOnlyObjectProperty (TreeTableView s))
+
+

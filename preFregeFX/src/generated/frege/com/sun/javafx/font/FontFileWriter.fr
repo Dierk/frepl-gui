@@ -1,0 +1,24 @@
+data FontFileWriter = pure native com.sun.javafx.font.FontFileWriter where
+
+  pure native new :: () -> FontFileWriter
+
+  native closeFile :: FontFileWriter -> ST s void throws IOException
+
+  pure native deleteFile :: FontFileWriter -> void
+
+  pure native getFile :: FontFileWriter -> File
+
+  pure native isTracking :: FontFileWriter -> boolean
+
+  native openFile :: FontFileWriter -> ST s File throws PrivilegedActionException
+
+  native seek :: FontFileWriter -> int -> ST s void throws IOException
+
+  native writeBytes :: FontFileWriter -> Mutable s (JArray byte) -> int -> int -> ST s void throws IOException
+                     | FontFileWriter -> Mutable s (JArray byte) -> ST s void throws IOException
+
+  native writeDirectoryEntry :: FontFileWriter -> int -> int -> int -> int -> int -> ST s void throws IOException
+
+  native writeHeader :: FontFileWriter -> int -> short -> ST s void throws IOException
+
+

@@ -1,0 +1,50 @@
+data FallbackResource = pure native com.sun.javafx.font.FallbackResource where
+
+  pure native getAdvance :: FallbackResource -> int -> float -> float
+
+  pure native getDefaultAAMode :: FallbackResource -> int
+
+  pure native getFamilyName :: FallbackResource -> String
+
+  pure native getFeatures :: FallbackResource -> int
+
+  pure native getFileName :: FallbackResource -> String
+
+  pure native getFullName :: FallbackResource -> String
+
+  native getGlyphBoundingBox :: FallbackResource -> int -> float -> Mutable s (JArray float) -> STMutable s (JArray float)
+
+  pure native getGlyphMapper :: FallbackResource -> CharToGlyphMapper
+
+  pure native getLocaleFamilyName :: FallbackResource -> String
+
+  pure native getLocaleFullName :: FallbackResource -> String
+
+  pure native getLocaleStyleName :: FallbackResource -> String
+
+  pure native getNumSlots :: FallbackResource -> int
+
+  pure native getPSName :: FallbackResource -> String
+
+  pure native getPeer :: FallbackResource -> Object
+
+  pure native getSlotForFont :: FallbackResource -> String -> int
+
+  pure native getSlotResource :: FallbackResource -> int -> FontResource
+
+  pure native getStrike :: FallbackResource -> float -> BaseTransform -> int -> FontStrike
+                         | FallbackResource -> float -> BaseTransform -> FontStrike
+
+  pure native getStrikeMap :: FallbackResource -> Map FontStrikeDesc (WeakReference FontStrike)
+
+  pure native getStyleName :: FallbackResource -> String
+
+  pure native isBold :: FallbackResource -> boolean
+
+  pure native isEmbeddedFont :: FallbackResource -> boolean
+
+  pure native isItalic :: FallbackResource -> boolean
+
+  pure native setPeer :: FallbackResource -> Object -> void
+
+

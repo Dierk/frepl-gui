@@ -1,0 +1,5 @@
+data InvalidationListener = mutable native javafx.beans.InvalidationListener where
+
+  native invalidated :: InvalidationListener -> Observable -> IO void
+
+

@@ -1,0 +1,5 @@
+data Builder t = mutable native javafx.util.Builder where
+
+  native build :: Builder t -> IO t
+
+

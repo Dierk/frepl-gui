@@ -1,0 +1,7 @@
+data CTStrikeDisposer = pure native com.sun.javafx.font.coretext.CTStrikeDisposer where
+
+  pure native new :: FontResource -> FontStrikeDesc -> long -> CTStrikeDisposer
+
+  pure native dispose :: CTStrikeDisposer -> void
+
+

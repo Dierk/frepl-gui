@@ -1,0 +1,19 @@
+data ImagePatternBuilder = mutable native javafx.scene.paint.ImagePatternBuilder where
+
+  native build :: ImagePatternBuilder -> IO ImagePattern
+
+  native create "javafx.scene.paint.ImagePatternBuilder.create" :: () -> IO ImagePatternBuilder
+
+  native height :: ImagePatternBuilder -> double -> IO ImagePatternBuilder
+
+  native image :: ImagePatternBuilder -> Image -> IO ImagePatternBuilder
+
+  native proportional :: ImagePatternBuilder -> boolean -> IO ImagePatternBuilder
+
+  native width :: ImagePatternBuilder -> double -> IO ImagePatternBuilder
+
+  native x :: ImagePatternBuilder -> double -> IO ImagePatternBuilder
+
+  native y :: ImagePatternBuilder -> double -> IO ImagePatternBuilder
+
+

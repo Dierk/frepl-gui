@@ -1,0 +1,9 @@
+data BackgroundSizeConverter = pure native com.sun.javafx.scene.layout.region.BackgroundSizeConverter where
+
+  native convert :: BackgroundSizeConverter -> ParsedValue (JArray ParsedValue) BackgroundSize -> Font -> IO BackgroundSize
+
+  pure native getInstance "com.sun.javafx.scene.layout.region.BackgroundSizeConverter.getInstance" :: () -> BackgroundSizeConverter
+
+  pure native toString :: BackgroundSizeConverter -> String
+
+

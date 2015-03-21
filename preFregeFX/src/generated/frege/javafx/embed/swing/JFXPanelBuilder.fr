@@ -1,0 +1,13 @@
+data JFXPanelBuilder b = mutable native javafx.embed.swing.JFXPanelBuilder where
+
+  native applyTo :: JFXPanelBuilder b -> JFXPanel -> IO void
+
+  native build :: JFXPanelBuilder b -> IO JFXPanel
+
+  native create "javafx.embed.swing.JFXPanelBuilder.create" :: () -> IO (JFXPanelBuilder Object)
+
+  native opaque :: JFXPanelBuilder b -> boolean -> IO b
+
+  native scene :: JFXPanelBuilder b -> Scene -> IO b
+
+

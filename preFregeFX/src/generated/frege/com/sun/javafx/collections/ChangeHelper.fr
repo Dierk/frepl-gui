@@ -1,0 +1,11 @@
+data ChangeHelper = pure native com.sun.javafx.collections.ChangeHelper where
+
+  pure native new :: () -> ChangeHelper
+
+  pure native addRemoveChangeToString "com.sun.javafx.collections.ChangeHelper.addRemoveChangeToString" :: int -> int -> List Object -> List Object -> String
+
+  native permChangeToString "com.sun.javafx.collections.ChangeHelper.permChangeToString" :: Mutable s (JArray int) -> ST s String
+
+  pure native updateChangeToString "com.sun.javafx.collections.ChangeHelper.updateChangeToString" :: int -> int -> String
+
+

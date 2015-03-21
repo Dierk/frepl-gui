@@ -1,0 +1,43 @@
+data RoundRectangle2D = pure native com.sun.javafx.geom.RoundRectangle2D where
+
+  pure native x "".x"" :: RoundRectangle2D -> float
+  pure native y "".y"" :: RoundRectangle2D -> float
+  pure native width "".width"" :: RoundRectangle2D -> float
+  pure native height "".height"" :: RoundRectangle2D -> float
+  pure native arcwidth "".arcWidth"" :: RoundRectangle2D -> float
+  pure native archeight "".arcHeight"" :: RoundRectangle2D -> float
+
+  pure native new :: () -> RoundRectangle2D
+                   | float -> float -> float -> float -> float -> float -> RoundRectangle2D
+
+  pure native contains :: RoundRectangle2D -> float -> float -> float -> float -> boolean
+                        | RoundRectangle2D -> float -> float -> boolean
+
+  pure native copy :: RoundRectangle2D -> RoundRectangle2D
+
+  pure native equals :: RoundRectangle2D -> Object -> boolean
+
+  pure native getBounds :: RoundRectangle2D -> RectBounds
+
+  pure native getHeight :: RoundRectangle2D -> float
+
+  pure native getPathIterator :: RoundRectangle2D -> BaseTransform -> PathIterator
+
+  pure native getWidth :: RoundRectangle2D -> float
+
+  pure native getX :: RoundRectangle2D -> float
+
+  pure native getY :: RoundRectangle2D -> float
+
+  pure native hashCode :: RoundRectangle2D -> int
+
+  pure native intersects :: RoundRectangle2D -> float -> float -> float -> float -> boolean
+
+  pure native isEmpty :: RoundRectangle2D -> boolean
+
+  pure native setFrame :: RoundRectangle2D -> float -> float -> float -> float -> void
+
+  pure native setRoundRect :: RoundRectangle2D -> RoundRectangle2D -> void
+                            | RoundRectangle2D -> float -> float -> float -> float -> float -> float -> void
+
+

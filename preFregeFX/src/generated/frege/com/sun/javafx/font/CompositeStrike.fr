@@ -1,0 +1,30 @@
+data CompositeStrike = pure native com.sun.javafx.font.CompositeStrike where
+
+  pure native clearDesc :: CompositeStrike -> void
+
+  pure native drawAsShapes :: CompositeStrike -> boolean
+
+  pure native getAAMode :: CompositeStrike -> int
+
+  pure native getCharAdvance :: CompositeStrike -> char -> float
+
+  pure native getFontResource :: CompositeStrike -> FontResource
+
+  pure native getGlyph :: CompositeStrike -> char -> Glyph
+                        | CompositeStrike -> int -> Glyph
+
+  pure native getMetrics :: CompositeStrike -> Metrics
+
+  pure native getOutline :: CompositeStrike -> GlyphList -> BaseTransform -> Shape
+
+  pure native getQuantizedPosition :: CompositeStrike -> Point2D -> int
+
+  pure native getSize :: CompositeStrike -> float
+
+  pure native getStrikeSlot :: CompositeStrike -> int -> FontStrike
+
+  pure native getStrikeSlotForGlyph :: CompositeStrike -> int -> int
+
+  pure native getTransform :: CompositeStrike -> BaseTransform
+
+

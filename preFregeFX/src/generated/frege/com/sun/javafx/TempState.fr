@@ -1,0 +1,13 @@
+data TempState = pure native com.sun.javafx.TempState where
+
+  pure native bounds "".bounds"" :: TempState -> BaseBounds
+  pure native picktx "".pickTx"" :: TempState -> BaseTransform
+  pure native leaftx "".leafTx"" :: TempState -> Affine3D
+  pure native point "".point"" :: TempState -> Point2D
+  pure native vec3d "".vec3d"" :: TempState -> Vec3d
+  pure native projviewtx "".projViewTx"" :: TempState -> GeneralTransform3D
+  pure native temptx "".tempTx"" :: TempState -> Affine3D
+
+  pure native getInstance "com.sun.javafx.TempState.getInstance" :: () -> TempState
+
+

@@ -1,0 +1,14 @@
+data OptionalBoolean = pure native com.sun.javafx.scene.control.behavior.OptionalBoolean where
+
+  pure native jtrue' "com.sun.javafx.scene.control.behavior.OptionalBoolean.TRUE" :: OptionalBoolean
+  pure native jfalse' "com.sun.javafx.scene.control.behavior.OptionalBoolean.FALSE" :: OptionalBoolean
+  pure native any "com.sun.javafx.scene.control.behavior.OptionalBoolean.ANY" :: OptionalBoolean
+
+  pure native equals :: OptionalBoolean -> boolean -> boolean
+
+  pure native valueOf "com.sun.javafx.scene.control.behavior.OptionalBoolean.valueOf" :: String -> OptionalBoolean
+
+  native values "com.sun.javafx.scene.control.behavior.OptionalBoolean.values" :: () -> STMutable s (JArray OptionalBoolean)
+
+derive Serializable OptionalBoolean
+

@@ -1,0 +1,12 @@
+data SplitMenuButton = mutable native javafx.scene.control.SplitMenuButton where
+
+  native new :: () -> IO SplitMenuButton
+              | MutableIO (JArray MenuItem) -> IO SplitMenuButton
+
+  native executeAccessibleAction :: SplitMenuButton -> AccessibleAction -> MutableIO (JArray Object) -> IO void
+
+  native fire :: SplitMenuButton -> IO void
+
+  native queryAccessibleAttribute :: SplitMenuButton -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+

@@ -1,0 +1,76 @@
+data ComboBoxBase t = mutable native javafx.scene.control.ComboBoxBase where
+
+  native on_showing "javafx.scene.control.ComboBoxBase.ON_SHOWING" :: IO (EventType Event)
+  native on_shown "javafx.scene.control.ComboBoxBase.ON_SHOWN" :: IO (EventType Event)
+  native on_hiding "javafx.scene.control.ComboBoxBase.ON_HIDING" :: IO (EventType Event)
+  native on_hidden "javafx.scene.control.ComboBoxBase.ON_HIDDEN" :: IO (EventType Event)
+
+  native arm :: ComboBoxBase t -> IO void
+
+  native armedProperty :: ComboBoxBase t -> IO BooleanProperty
+
+  native disarm :: ComboBoxBase t -> IO void
+
+  native editableProperty :: ComboBoxBase t -> IO BooleanProperty
+
+  native executeAccessibleAction :: ComboBoxBase t -> AccessibleAction -> MutableIO (JArray Object) -> IO void
+
+  native getOnAction :: ComboBoxBase t -> IO (EventHandler ActionEvent)
+
+  native getOnHidden :: ComboBoxBase t -> IO (EventHandler Event)
+
+  native getOnHiding :: ComboBoxBase t -> IO (EventHandler Event)
+
+  native getOnShowing :: ComboBoxBase t -> IO (EventHandler Event)
+
+  native getOnShown :: ComboBoxBase t -> IO (EventHandler Event)
+
+  native getPromptText :: ComboBoxBase t -> IO String
+
+  native getValue :: ComboBoxBase t -> IO t
+
+  native hide :: ComboBoxBase t -> IO void
+
+  native isArmed :: ComboBoxBase t -> IO boolean
+
+  native isEditable :: ComboBoxBase t -> IO boolean
+
+  native isShowing :: ComboBoxBase t -> IO boolean
+
+  native onActionProperty :: ComboBoxBase t -> IO (ObjectProperty (EventHandler ActionEvent))
+
+  native onHiddenProperty :: ComboBoxBase t -> IO (ObjectProperty (EventHandler Event))
+
+  native onHidingProperty :: ComboBoxBase t -> IO (ObjectProperty (EventHandler Event))
+
+  native onShowingProperty :: ComboBoxBase t -> IO (ObjectProperty (EventHandler Event))
+
+  native onShownProperty :: ComboBoxBase t -> IO (ObjectProperty (EventHandler Event))
+
+  native promptTextProperty :: ComboBoxBase t -> IO StringProperty
+
+  native queryAccessibleAttribute :: ComboBoxBase t -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setEditable :: ComboBoxBase t -> boolean -> IO void
+
+  native setOnAction :: ComboBoxBase t -> EventHandler ActionEvent -> IO void
+
+  native setOnHidden :: ComboBoxBase t -> EventHandler Event -> IO void
+
+  native setOnHiding :: ComboBoxBase t -> EventHandler Event -> IO void
+
+  native setOnShowing :: ComboBoxBase t -> EventHandler Event -> IO void
+
+  native setOnShown :: ComboBoxBase t -> EventHandler Event -> IO void
+
+  native setPromptText :: ComboBoxBase t -> String -> IO void
+
+  native setValue :: ComboBoxBase t -> t -> IO void
+
+  native show :: ComboBoxBase t -> IO void
+
+  native showingProperty :: ComboBoxBase t -> IO ReadOnlyBooleanProperty
+
+  native valueProperty :: ComboBoxBase t -> IO (ObjectProperty t)
+
+

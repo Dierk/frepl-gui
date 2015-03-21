@@ -1,0 +1,42 @@
+data RectangularShape = pure native com.sun.javafx.geom.RectangularShape where
+
+  pure native contains :: RectangularShape -> Point2D -> boolean
+
+  pure native getBounds :: RectangularShape -> RectBounds
+
+  pure native getCenterX :: RectangularShape -> float
+
+  pure native getCenterY :: RectangularShape -> float
+
+  pure native getHeight :: RectangularShape -> float
+
+  pure native getMaxX :: RectangularShape -> float
+
+  pure native getMaxY :: RectangularShape -> float
+
+  pure native getMinX :: RectangularShape -> float
+
+  pure native getMinY :: RectangularShape -> float
+
+  pure native getPathIterator :: RectangularShape -> BaseTransform -> float -> PathIterator
+
+  pure native getWidth :: RectangularShape -> float
+
+  pure native getX :: RectangularShape -> float
+
+  pure native getY :: RectangularShape -> float
+
+  pure native isEmpty :: RectangularShape -> boolean
+
+  pure native setFrame :: RectangularShape -> Point2D -> Dimension2D -> void
+                        | RectangularShape -> float -> float -> float -> float -> void
+
+  pure native setFrameFromCenter :: RectangularShape -> Point2D -> Point2D -> void
+                                  | RectangularShape -> float -> float -> float -> float -> void
+
+  pure native setFrameFromDiagonal :: RectangularShape -> float -> float -> float -> float -> void
+                                    | RectangularShape -> Point2D -> Point2D -> void
+
+  pure native toString :: RectangularShape -> String
+
+

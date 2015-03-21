@@ -1,0 +1,73 @@
+data BaseBounds = pure native com.sun.javafx.geom.BaseBounds where
+
+  pure native add :: BaseBounds -> Point2D -> void
+                   | BaseBounds -> float -> float -> float -> void
+
+  pure native contains :: BaseBounds -> Point2D -> boolean
+                        | BaseBounds -> float -> float -> boolean
+
+  pure native copy :: BaseBounds -> BaseBounds
+
+  pure native deriveWithNewBounds :: BaseBounds -> float -> float -> float -> float -> float -> float -> BaseBounds
+                                   | BaseBounds -> Rectangle -> BaseBounds
+                                   | BaseBounds -> BaseBounds -> BaseBounds
+
+  pure native deriveWithNewBoundsAndSort :: BaseBounds -> float -> float -> float -> float -> float -> float -> BaseBounds
+
+  pure native deriveWithPadding :: BaseBounds -> float -> float -> float -> BaseBounds
+
+  pure native deriveWithUnion :: BaseBounds -> BaseBounds -> BaseBounds
+
+  pure native disjoint :: BaseBounds -> float -> float -> float -> float -> boolean
+
+  pure native flattenInto :: BaseBounds -> RectBounds -> RectBounds
+
+  pure native getBoundsType :: BaseBounds -> BaseBounds_BoundsType
+
+  pure native getDepth :: BaseBounds -> float
+
+  pure native getHeight :: BaseBounds -> float
+
+  pure native getInstance "com.sun.javafx.geom.BaseBounds.getInstance" :: float -> float -> float -> float -> float -> float -> BaseBounds
+                                                                        | float -> float -> float -> float -> BaseBounds
+
+  pure native getMax :: BaseBounds -> Vec2f -> Vec2f
+                      | BaseBounds -> Vec3f -> Vec3f
+
+  pure native getMaxX :: BaseBounds -> float
+
+  pure native getMaxY :: BaseBounds -> float
+
+  pure native getMaxZ :: BaseBounds -> float
+
+  pure native getMin :: BaseBounds -> Vec2f -> Vec2f
+                      | BaseBounds -> Vec3f -> Vec3f
+
+  pure native getMinX :: BaseBounds -> float
+
+  pure native getMinY :: BaseBounds -> float
+
+  pure native getMinZ :: BaseBounds -> float
+
+  pure native getWidth :: BaseBounds -> float
+
+  pure native intersectWith :: BaseBounds -> BaseBounds -> void
+                             | BaseBounds -> Rectangle -> void
+                             | BaseBounds -> float -> float -> float -> float -> float -> float -> void
+
+  pure native intersects :: BaseBounds -> float -> float -> float -> float -> boolean
+
+  pure native is2D :: BaseBounds -> boolean
+
+  pure native isEmpty :: BaseBounds -> boolean
+
+  pure native makeEmpty :: BaseBounds -> BaseBounds
+
+  pure native roundOut :: BaseBounds -> void
+
+  pure native setBoundsAndSort :: BaseBounds -> float -> float -> float -> float -> float -> float -> void
+                                | BaseBounds -> Point2D -> Point2D -> void
+
+  pure native translate :: BaseBounds -> float -> float -> float -> void
+
+

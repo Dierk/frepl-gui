@@ -1,0 +1,69 @@
+data Affine2D = pure native com.sun.javafx.geom.transform.Affine2D where
+
+  pure native new :: double -> double -> double -> double -> double -> double -> Affine2D
+                   | float -> float -> float -> float -> float -> float -> Affine2D
+                   | BaseTransform -> Affine2D
+                   | () -> Affine2D
+
+  pure native copy :: Affine2D -> BaseTransform
+
+  native createInverse :: Affine2D -> ST s Affine2D throws NoninvertibleTransformException
+
+  pure native deltaTransform :: Affine2D -> Point2D -> Point2D -> Point2D
+
+  pure native deriveWithConcatenation :: Affine2D -> double -> double -> double -> double -> double -> double -> BaseTransform
+                                       | Affine2D -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> BaseTransform
+                                       | Affine2D -> BaseTransform -> BaseTransform
+
+  pure native deriveWithNewTransform :: Affine2D -> BaseTransform -> BaseTransform
+
+  pure native deriveWithPreConcatenation :: Affine2D -> BaseTransform -> BaseTransform
+
+  pure native deriveWithPreTranslation :: Affine2D -> double -> double -> BaseTransform
+
+  pure native deriveWithRotation :: Affine2D -> double -> double -> double -> double -> BaseTransform
+
+  pure native deriveWithScale :: Affine2D -> double -> double -> double -> BaseTransform
+
+  pure native deriveWithTranslation :: Affine2D -> double -> double -> double -> BaseTransform
+                                     | Affine2D -> double -> double -> BaseTransform
+
+  pure native equals :: Affine2D -> Object -> boolean
+
+  pure native getDegree :: Affine2D -> BaseTransform_Degree
+
+  pure native hashCode :: Affine2D -> int
+
+  pure native is2D :: Affine2D -> boolean
+
+  pure native preConcatenate :: Affine2D -> BaseTransform -> void
+
+  pure native quadrantRotate :: Affine2D -> int -> double -> double -> void
+                              | Affine2D -> int -> void
+
+  pure native restoreTransform :: Affine2D -> double -> double -> double -> double -> double -> double -> void
+                                | Affine2D -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> void
+
+  pure native rotate :: Affine2D -> double -> double -> double -> void
+                      | Affine2D -> double -> double -> double -> double -> void
+                      | Affine2D -> double -> double -> void
+
+  pure native setToQuadrantRotation :: Affine2D -> int -> double -> double -> void
+                                     | Affine2D -> int -> void
+
+  pure native setToRotation :: Affine2D -> double -> void
+                             | Affine2D -> double -> double -> void
+                             | Affine2D -> double -> double -> double -> void
+                             | Affine2D -> double -> double -> double -> double -> void
+
+  pure native setToScale :: Affine2D -> double -> double -> void
+
+  pure native setToTranslation :: Affine2D -> double -> double -> void
+
+  pure native setTransform :: Affine2D -> BaseTransform -> void
+
+  pure native toString :: Affine2D -> String
+
+  native transform :: Affine2D -> Mutable s (JArray Point2D) -> int -> Mutable s (JArray Point2D) -> int -> int -> ST s void
+
+

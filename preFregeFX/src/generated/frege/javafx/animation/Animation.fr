@@ -1,0 +1,73 @@
+data Animation = mutable native javafx.animation.Animation where
+
+  pure native indefinite "javafx.animation.Animation.INDEFINITE" :: int
+
+  native autoReverseProperty :: Animation -> IO BooleanProperty
+
+  native currentRateProperty :: Animation -> IO ReadOnlyDoubleProperty
+
+  native currentTimeProperty :: Animation -> IO (ReadOnlyObjectProperty Duration)
+
+  native cycleCountProperty :: Animation -> IO IntegerProperty
+
+  native cycleDurationProperty :: Animation -> IO (ReadOnlyObjectProperty Duration)
+
+  native delayProperty :: Animation -> IO (ObjectProperty Duration)
+
+  native getCuePoints :: Animation -> IO (ObservableMap String Duration)
+
+  native getCurrentRate :: Animation -> IO double
+
+  native getCurrentTime :: Animation -> IO Duration
+
+  native getCycleCount :: Animation -> IO int
+
+  native getCycleDuration :: Animation -> IO Duration
+
+  native getDelay :: Animation -> IO Duration
+
+  native getOnFinished :: Animation -> IO (EventHandler ActionEvent)
+
+  native getRate :: Animation -> IO double
+
+  native getStatus :: Animation -> IO Animation_Status
+
+  native getTargetFramerate :: Animation -> IO double
+
+  native getTotalDuration :: Animation -> IO Duration
+
+  native isAutoReverse :: Animation -> IO boolean
+
+  native jumpTo :: Animation -> String -> IO void
+                 | Animation -> Duration -> IO void
+
+  native onFinishedProperty :: Animation -> IO (ObjectProperty (EventHandler ActionEvent))
+
+  native pause :: Animation -> IO void
+
+  native play :: Animation -> IO void
+
+  native playFrom :: Animation -> String -> IO void
+                   | Animation -> Duration -> IO void
+
+  native playFromStart :: Animation -> IO void
+
+  native rateProperty :: Animation -> IO DoubleProperty
+
+  native setAutoReverse :: Animation -> boolean -> IO void
+
+  native setCycleCount :: Animation -> int -> IO void
+
+  native setDelay :: Animation -> Duration -> IO void
+
+  native setOnFinished :: Animation -> EventHandler ActionEvent -> IO void
+
+  native setRate :: Animation -> double -> IO void
+
+  native statusProperty :: Animation -> IO (ReadOnlyObjectProperty Animation_Status)
+
+  native stop :: Animation -> IO void
+
+  native totalDurationProperty :: Animation -> IO (ReadOnlyObjectProperty Duration)
+
+

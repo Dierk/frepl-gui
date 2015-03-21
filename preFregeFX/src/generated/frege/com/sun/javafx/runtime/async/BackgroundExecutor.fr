@@ -1,0 +1,7 @@
+data BackgroundExecutor = pure native com.sun.javafx.runtime.async.BackgroundExecutor where
+
+  pure native getExecutor "com.sun.javafx.runtime.async.BackgroundExecutor.getExecutor" :: () -> ExecutorService
+
+  pure native getTimer "com.sun.javafx.runtime.async.BackgroundExecutor.getTimer" :: () -> ScheduledExecutorService
+
+

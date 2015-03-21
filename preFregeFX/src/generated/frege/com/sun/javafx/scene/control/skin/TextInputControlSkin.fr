@@ -1,0 +1,31 @@
+data TextInputControlSkin t b = pure native com.sun.javafx.scene.control.skin.TextInputControlSkin where
+
+  native forwardBiasProperty :: TextInputControlSkin t b -> IO BooleanProperty
+
+  pure native getCharacter :: TextInputControlSkin t b -> int -> char
+
+  native getCharacterBounds :: TextInputControlSkin t b -> int -> IO Rectangle2D
+
+  pure native getClassCssMetaData "com.sun.javafx.scene.control.skin.TextInputControlSkin.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  pure native getCssMetaData :: TextInputControlSkin t b -> List (CssMetaData Styleable Object)
+
+  pure native getInsertionPoint :: TextInputControlSkin t b -> double -> double -> int
+
+  native getMenuPosition :: TextInputControlSkin t b -> IO Point2D
+
+  pure native isForwardBias :: TextInputControlSkin t b -> boolean
+
+  pure native nextCharacterVisually :: TextInputControlSkin t b -> boolean -> void
+
+  native populateContextMenu :: TextInputControlSkin t b -> ContextMenu -> IO void
+
+  pure native scrollCharacterToVisible :: TextInputControlSkin t b -> int -> void
+
+  pure native setCaretAnimating :: TextInputControlSkin t b -> boolean -> void
+
+  pure native setForwardBias :: TextInputControlSkin t b -> boolean -> void
+
+  pure native toggleUseVK :: TextInputControlSkin t b -> void
+
+

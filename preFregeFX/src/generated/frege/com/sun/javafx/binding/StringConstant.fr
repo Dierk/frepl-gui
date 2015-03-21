@@ -1,0 +1,15 @@
+data StringConstant = pure native com.sun.javafx.binding.StringConstant where
+
+  native addListener :: StringConstant -> ChangeListener String -> IO void
+                      | StringConstant -> InvalidationListener -> IO void
+
+  pure native get :: StringConstant -> String
+
+  pure native getValue :: StringConstant -> String
+
+  native removeListener :: StringConstant -> InvalidationListener -> IO void
+                         | StringConstant -> ChangeListener String -> IO void
+
+  pure native valueOf "com.sun.javafx.binding.StringConstant.valueOf" :: String -> StringConstant
+
+

@@ -1,0 +1,17 @@
+data FillTransitionBuilder = mutable native javafx.animation.FillTransitionBuilder where
+
+  native applyTo :: FillTransitionBuilder -> FillTransition -> IO void
+
+  native build :: FillTransitionBuilder -> IO FillTransition
+
+  native create "javafx.animation.FillTransitionBuilder.create" :: () -> IO FillTransitionBuilder
+
+  native duration :: FillTransitionBuilder -> Duration -> IO FillTransitionBuilder
+
+  native fromValue :: FillTransitionBuilder -> Color -> IO FillTransitionBuilder
+
+  native shape :: FillTransitionBuilder -> Shape -> IO FillTransitionBuilder
+
+  native toValue :: FillTransitionBuilder -> Color -> IO FillTransitionBuilder
+
+

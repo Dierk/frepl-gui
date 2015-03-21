@@ -1,0 +1,13 @@
+data GlowBuilder b = mutable native javafx.scene.effect.GlowBuilder where
+
+  native applyTo :: GlowBuilder b -> Glow -> IO void
+
+  native build :: GlowBuilder b -> IO Glow
+
+  native create "javafx.scene.effect.GlowBuilder.create" :: () -> IO (GlowBuilder Object)
+
+  native input :: GlowBuilder b -> Effect -> IO b
+
+  native level :: GlowBuilder b -> double -> IO b
+
+

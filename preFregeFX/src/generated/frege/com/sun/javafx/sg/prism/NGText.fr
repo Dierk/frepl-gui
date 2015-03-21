@@ -1,0 +1,21 @@
+data NGText = pure native com.sun.javafx.sg.prism.NGText where
+
+  pure native new :: () -> NGText
+
+  pure native getShape :: NGText -> Shape
+
+  pure native setFont :: NGText -> Object -> void
+
+  pure native setFontSmoothingType :: NGText -> int -> void
+
+  native setGlyphs :: NGText -> Mutable s (JArray Object) -> ST s void
+
+  pure native setLayoutLocation :: NGText -> float -> float -> void
+
+  pure native setSelection :: NGText -> int -> int -> Object -> void
+
+  pure native setStrikethrough :: NGText -> boolean -> void
+
+  pure native setUnderline :: NGText -> boolean -> void
+
+

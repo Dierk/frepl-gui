@@ -1,0 +1,14 @@
+data MapExpressionHelper k v = pure native com.sun.javafx.binding.MapExpressionHelper where
+
+  native addListener "com.sun.javafx.binding.MapExpressionHelper.addListener" :: MapExpressionHelper k v -> ObservableMapValue k v -> ChangeListener (ObservableMap k v) -> IO (MapExpressionHelper k v)
+                                                                               | MapExpressionHelper k v -> ObservableMapValue k v -> InvalidationListener -> IO (MapExpressionHelper k v)
+                                                                               | MapExpressionHelper k v -> ObservableMapValue k v -> MapChangeListener k v -> IO (MapExpressionHelper k v)
+
+  pure native fireValueChangedEvent "com.sun.javafx.binding.MapExpressionHelper.fireValueChangedEvent" :: MapExpressionHelper k v -> void
+                                                                                                        | MapExpressionHelper k v -> MapChangeListener_Change k v -> void
+
+  native removeListener "com.sun.javafx.binding.MapExpressionHelper.removeListener" :: MapExpressionHelper k v -> InvalidationListener -> IO (MapExpressionHelper k v)
+                                                                                     | MapExpressionHelper k v -> MapChangeListener k v -> IO (MapExpressionHelper k v)
+                                                                                     | MapExpressionHelper k v -> ChangeListener (ObservableMap k v) -> IO (MapExpressionHelper k v)
+
+

@@ -1,0 +1,13 @@
+data EmbeddedSceneDT = pure native com.sun.javafx.tk.quantum.EmbeddedSceneDT where
+
+  pure native new :: EmbeddedSceneDnD -> GlassSceneDnDEventHandler -> EmbeddedSceneDT
+
+  native handleDragDrop :: EmbeddedSceneDT -> int -> int -> int -> int -> TransferMode -> IO TransferMode
+
+  native handleDragEnter :: EmbeddedSceneDT -> int -> int -> int -> int -> TransferMode -> EmbeddedSceneDSInterface -> IO TransferMode
+
+  pure native handleDragLeave :: EmbeddedSceneDT -> void
+
+  native handleDragOver :: EmbeddedSceneDT -> int -> int -> int -> int -> TransferMode -> IO TransferMode
+
+

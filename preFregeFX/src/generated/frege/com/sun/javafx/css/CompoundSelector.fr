@@ -1,0 +1,23 @@
+data CompoundSelector = pure native com.sun.javafx.css.CompoundSelector where
+
+  pure native new :: List SimpleSelector -> List Combinator -> CompoundSelector
+
+  native applies :: CompoundSelector -> Styleable -> IO boolean
+
+  pure native equals :: CompoundSelector -> Object -> boolean
+
+  pure native getRelationships :: CompoundSelector -> List Combinator
+
+  pure native getSelectors :: CompoundSelector -> List SimpleSelector
+
+  pure native hashCode :: CompoundSelector -> int
+
+  native readBinary "com.sun.javafx.css.CompoundSelector.readBinary" :: int -> DataInputStream -> Mutable s (JArray String) -> ST s CompoundSelector throws IOException
+
+  native stateMatches :: CompoundSelector -> Styleable -> Set PseudoClass -> IO boolean
+
+  pure native toString :: CompoundSelector -> String
+
+  native writeBinary :: CompoundSelector -> DataOutputStream -> StringStore -> ST s void throws IOException
+
+

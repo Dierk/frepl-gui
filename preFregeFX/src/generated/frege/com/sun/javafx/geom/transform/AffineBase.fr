@@ -1,0 +1,70 @@
+data AffineBase = pure native com.sun.javafx.geom.transform.AffineBase where
+
+  pure native concatenate :: AffineBase -> BaseTransform -> void
+                           | AffineBase -> double -> double -> double -> double -> double -> double -> void
+
+  pure native createTransformedShape :: AffineBase -> Shape -> Shape
+
+  native deltaTransform :: AffineBase -> Vec3d -> Vec3d -> ST s Vec3d
+                         | AffineBase -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> int -> ST s void
+                         | AffineBase -> Mutable s (JArray double) -> int -> Mutable s (JArray double) -> int -> int -> ST s void
+
+  pure native getDeterminant :: AffineBase -> double
+
+  pure native getMxt :: AffineBase -> double
+
+  pure native getMxx :: AffineBase -> double
+
+  pure native getMxy :: AffineBase -> double
+
+  pure native getMyt :: AffineBase -> double
+
+  pure native getMyx :: AffineBase -> double
+
+  pure native getMyy :: AffineBase -> double
+
+  pure native getType :: AffineBase -> int
+
+  native inverseDeltaTransform :: AffineBase -> Vec3d -> Vec3d -> ST s Vec3d throws NoninvertibleTransformException
+                                | AffineBase -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> int -> ST s void throws NoninvertibleTransformException
+
+  native inverseTransform :: AffineBase -> BaseBounds -> BaseBounds -> ST s BaseBounds throws NoninvertibleTransformException
+                           | AffineBase -> Vec3d -> Vec3d -> ST s Vec3d throws NoninvertibleTransformException
+                           | AffineBase -> Point2D -> Point2D -> ST s Point2D throws NoninvertibleTransformException
+                           | AffineBase -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> int -> ST s void throws NoninvertibleTransformException
+                           | AffineBase -> Rectangle -> Rectangle -> ST s void throws NoninvertibleTransformException
+                           | AffineBase -> Mutable s (JArray double) -> int -> Mutable s (JArray double) -> int -> int -> ST s void throws NoninvertibleTransformException
+
+  native invert :: AffineBase -> ST s void throws NoninvertibleTransformException
+
+  pure native is2D :: AffineBase -> boolean
+
+  pure native isIdentity :: AffineBase -> boolean
+
+  pure native isTranslateOrIdentity :: AffineBase -> boolean
+
+  pure native rotate :: AffineBase -> double -> void
+
+  pure native scale :: AffineBase -> double -> double -> void
+
+  pure native setToIdentity :: AffineBase -> void
+
+  pure native setToShear :: AffineBase -> double -> double -> void
+
+  pure native setTransform :: AffineBase -> double -> double -> double -> double -> double -> double -> void
+
+  pure native shear :: AffineBase -> double -> double -> void
+
+  native transform :: AffineBase -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> int -> ST s void
+                    | AffineBase -> Mutable s (JArray double) -> int -> Mutable s (JArray double) -> int -> int -> ST s void
+                    | AffineBase -> Mutable s (JArray double) -> int -> Mutable s (JArray float) -> int -> int -> ST s void
+                    | AffineBase -> Mutable s (JArray float) -> int -> Mutable s (JArray double) -> int -> int -> ST s void
+                    | AffineBase -> Vec3d -> Vec3d -> ST s Vec3d
+                    | AffineBase -> Point2D -> Point2D -> ST s Point2D
+                    | AffineBase -> Rectangle -> Rectangle -> ST s void
+                    | AffineBase -> Point2D -> ST s Point2D
+                    | AffineBase -> BaseBounds -> BaseBounds -> ST s BaseBounds
+
+  pure native translate :: AffineBase -> double -> double -> void
+
+

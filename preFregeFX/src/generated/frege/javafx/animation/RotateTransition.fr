@@ -1,0 +1,43 @@
+data RotateTransition = mutable native javafx.animation.RotateTransition where
+
+  native new :: () -> IO RotateTransition
+              | Duration -> Node -> IO RotateTransition
+              | Duration -> IO RotateTransition
+
+  native axisProperty :: RotateTransition -> IO (ObjectProperty Point3D)
+
+  native byAngleProperty :: RotateTransition -> IO DoubleProperty
+
+  native durationProperty :: RotateTransition -> IO (ObjectProperty Duration)
+
+  native fromAngleProperty :: RotateTransition -> IO DoubleProperty
+
+  native getAxis :: RotateTransition -> IO Point3D
+
+  native getByAngle :: RotateTransition -> IO double
+
+  native getDuration :: RotateTransition -> IO Duration
+
+  native getFromAngle :: RotateTransition -> IO double
+
+  native getNode :: RotateTransition -> IO Node
+
+  native getToAngle :: RotateTransition -> IO double
+
+  native nodeProperty :: RotateTransition -> IO (ObjectProperty Node)
+
+  native setAxis :: RotateTransition -> Point3D -> IO void
+
+  native setByAngle :: RotateTransition -> double -> IO void
+
+  native setDuration :: RotateTransition -> Duration -> IO void
+
+  native setFromAngle :: RotateTransition -> double -> IO void
+
+  native setNode :: RotateTransition -> Node -> IO void
+
+  native setToAngle :: RotateTransition -> double -> IO void
+
+  native toAngleProperty :: RotateTransition -> IO DoubleProperty
+
+

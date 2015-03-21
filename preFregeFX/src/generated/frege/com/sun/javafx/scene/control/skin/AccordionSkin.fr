@@ -1,0 +1,5 @@
+data AccordionSkin = pure native com.sun.javafx.scene.control.skin.AccordionSkin where
+
+  native new :: Accordion -> IO AccordionSkin
+
+

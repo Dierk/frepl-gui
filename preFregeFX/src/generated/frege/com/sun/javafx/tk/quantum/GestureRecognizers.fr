@@ -1,0 +1,9 @@
+data GestureRecognizers = pure native com.sun.javafx.tk.quantum.GestureRecognizers where
+
+  pure native notifyBeginTouchEvent :: GestureRecognizers -> long -> int -> boolean -> int -> void
+
+  pure native notifyEndTouchEvent :: GestureRecognizers -> long -> void
+
+  pure native notifyNextTouchEvent :: GestureRecognizers -> long -> int -> long -> int -> int -> int -> int -> void
+
+

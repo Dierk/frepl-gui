@@ -1,0 +1,13 @@
+data PageRange = mutable native javafx.print.PageRange where
+
+  native new :: int -> int -> IO PageRange
+
+  native endPageProperty :: PageRange -> IO ReadOnlyIntegerProperty
+
+  native getEndPage :: PageRange -> IO int
+
+  native getStartPage :: PageRange -> IO int
+
+  native startPageProperty :: PageRange -> IO ReadOnlyIntegerProperty
+
+

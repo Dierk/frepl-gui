@@ -1,0 +1,25 @@
+data CharToGlyphMapper = pure native com.sun.javafx.font.CharToGlyphMapper where
+
+  pure native hi_surrogate_shift "com.sun.javafx.font.CharToGlyphMapper.HI_SURROGATE_SHIFT" :: int
+  pure native hi_surrogate_start "com.sun.javafx.font.CharToGlyphMapper.HI_SURROGATE_START" :: int
+  pure native hi_surrogate_end "com.sun.javafx.font.CharToGlyphMapper.HI_SURROGATE_END" :: int
+  pure native lo_surrogate_start "com.sun.javafx.font.CharToGlyphMapper.LO_SURROGATE_START" :: int
+  pure native lo_surrogate_end "com.sun.javafx.font.CharToGlyphMapper.LO_SURROGATE_END" :: int
+  pure native surrogates_start "com.sun.javafx.font.CharToGlyphMapper.SURROGATES_START" :: int
+  pure native missing_glyph "com.sun.javafx.font.CharToGlyphMapper.MISSING_GLYPH" :: int
+  pure native invisible_glyph_id "com.sun.javafx.font.CharToGlyphMapper.INVISIBLE_GLYPH_ID" :: int
+
+  pure native canDisplay :: CharToGlyphMapper -> char -> boolean
+
+  pure native charToGlyph :: CharToGlyphMapper -> int -> int
+                           | CharToGlyphMapper -> char -> int
+
+  native charsToGlyphs :: CharToGlyphMapper -> int -> Mutable s (JArray char) -> Mutable s (JArray int) -> ST s void
+                        | CharToGlyphMapper -> int -> int -> Mutable s (JArray char) -> Mutable s (JArray int) -> ST s void
+                        | CharToGlyphMapper -> int -> int -> Mutable s (JArray char) -> Mutable s (JArray int) -> int -> ST s void
+
+  pure native getGlyphCode :: CharToGlyphMapper -> int -> int
+
+  pure native getMissingGlyphCode :: CharToGlyphMapper -> int
+
+

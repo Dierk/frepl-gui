@@ -1,0 +1,15 @@
+data NodeHelper = pure native com.sun.javafx.scene.NodeHelper where
+
+  native getAccessible "com.sun.javafx.scene.NodeHelper.getAccessible" :: Node -> IO Accessible
+
+  pure native getNodeAccessor "com.sun.javafx.scene.NodeHelper.getNodeAccessor" :: () -> NodeHelper_NodeAccessor
+
+  native getSubScene "com.sun.javafx.scene.NodeHelper.getSubScene" :: Node -> IO SubScene
+
+  native isDerivedDepthTest "com.sun.javafx.scene.NodeHelper.isDerivedDepthTest" :: Node -> IO boolean
+
+  native layoutNodeForPrinting "com.sun.javafx.scene.NodeHelper.layoutNodeForPrinting" :: Node -> IO void
+
+  pure native setNodeAccessor "com.sun.javafx.scene.NodeHelper.setNodeAccessor" :: NodeHelper_NodeAccessor -> void
+
+

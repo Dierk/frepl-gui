@@ -1,0 +1,162 @@
+data TreeTableView s = mutable native javafx.scene.control.TreeTableView where
+
+  native unconstrained_resize_policy "javafx.scene.control.TreeTableView.UNCONSTRAINED_RESIZE_POLICY" :: IO (Callback TreeTableView_ResizeFeatures Boolean)
+  native constrained_resize_policy "javafx.scene.control.TreeTableView.CONSTRAINED_RESIZE_POLICY" :: IO (Callback TreeTableView_ResizeFeatures Boolean)
+  native default_sort_policy "javafx.scene.control.TreeTableView.DEFAULT_SORT_POLICY" :: IO (Callback TreeTableView Boolean)
+
+  native new :: () -> IO (TreeTableView s)
+              | TreeItem s -> IO (TreeTableView s)
+
+  native columnResizePolicyProperty :: TreeTableView s -> IO (ObjectProperty (Callback TreeTableView_ResizeFeatures Boolean))
+
+  native comparatorProperty :: TreeTableView s -> IO (ReadOnlyObjectProperty (Comparator (TreeItem s)))
+
+  native edit :: TreeTableView s -> int -> TreeTableColumn s Object -> IO void
+
+  native editAnyEvent "javafx.scene.control.TreeTableView.editAnyEvent" :: () -> IO (EventType (TreeTableView_EditEvent s))
+
+  native editCancelEvent "javafx.scene.control.TreeTableView.editCancelEvent" :: () -> IO (EventType (TreeTableView_EditEvent s))
+
+  native editCommitEvent "javafx.scene.control.TreeTableView.editCommitEvent" :: () -> IO (EventType (TreeTableView_EditEvent s))
+
+  native editStartEvent "javafx.scene.control.TreeTableView.editStartEvent" :: () -> IO (EventType (TreeTableView_EditEvent s))
+
+  native editableProperty :: TreeTableView s -> IO BooleanProperty
+
+  native editingCellProperty :: TreeTableView s -> IO (ReadOnlyObjectProperty (TreeTablePosition s Object))
+
+  native expandedItemCountProperty :: TreeTableView s -> IO ReadOnlyIntegerProperty
+
+  native fixedCellSizeProperty :: TreeTableView s -> IO DoubleProperty
+
+  native focusModelProperty :: TreeTableView s -> IO (ObjectProperty (TreeTableView_TreeTableViewFocusModel s))
+
+  pure native getClassCssMetaData "javafx.scene.control.TreeTableView.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getColumnResizePolicy :: TreeTableView s -> IO (Callback TreeTableView_ResizeFeatures Boolean)
+
+  native getColumns :: TreeTableView s -> IO (ObservableList (TreeTableColumn s Object))
+
+  native getComparator :: TreeTableView s -> IO (Comparator (TreeItem s))
+
+  native getControlCssMetaData :: TreeTableView s -> IO (List (CssMetaData Styleable Object))
+
+  native getEditingCell :: TreeTableView s -> IO (TreeTablePosition s Object)
+
+  native getExpandedItemCount :: TreeTableView s -> IO int
+
+  native getFixedCellSize :: TreeTableView s -> IO double
+
+  native getFocusModel :: TreeTableView s -> IO (TreeTableView_TreeTableViewFocusModel s)
+
+  native getNodeLevel "javafx.scene.control.TreeTableView.getNodeLevel" :: TreeItem Object -> IO int
+
+  native getOnScrollTo :: TreeTableView s -> IO (EventHandler (ScrollToEvent Integer))
+
+  native getOnScrollToColumn :: TreeTableView s -> IO (EventHandler (ScrollToEvent (TreeTableColumn s Object)))
+
+  native getOnSort :: TreeTableView s -> IO (EventHandler (SortEvent (TreeTableView s)))
+
+  native getPlaceholder :: TreeTableView s -> IO Node
+
+  native getRoot :: TreeTableView s -> IO (TreeItem s)
+
+  native getRow :: TreeTableView s -> TreeItem s -> IO int
+
+  native getRowFactory :: TreeTableView s -> IO (Callback (TreeTableView s) (TreeTableRow s))
+
+  native getSelectionModel :: TreeTableView s -> IO (TreeTableView_TreeTableViewSelectionModel s)
+
+  native getSortMode :: TreeTableView s -> IO TreeSortMode
+
+  native getSortOrder :: TreeTableView s -> IO (ObservableList (TreeTableColumn s Object))
+
+  native getSortPolicy :: TreeTableView s -> IO (Callback (TreeTableView s) Boolean)
+
+  native getTreeColumn :: TreeTableView s -> IO (TreeTableColumn s Object)
+
+  native getTreeItem :: TreeTableView s -> int -> IO (TreeItem s)
+
+  native getTreeItemLevel :: TreeTableView s -> TreeItem Object -> IO int
+
+  native getVisibleLeafColumn :: TreeTableView s -> int -> IO (TreeTableColumn s Object)
+
+  native getVisibleLeafColumns :: TreeTableView s -> IO (ObservableList (TreeTableColumn s Object))
+
+  native getVisibleLeafIndex :: TreeTableView s -> TreeTableColumn s Object -> IO int
+
+  native isEditable :: TreeTableView s -> IO boolean
+
+  native isShowRoot :: TreeTableView s -> IO boolean
+
+  native isTableMenuButtonVisible :: TreeTableView s -> IO boolean
+
+  native onScrollToColumnProperty :: TreeTableView s -> IO (ObjectProperty (EventHandler (ScrollToEvent (TreeTableColumn s Object))))
+
+  native onScrollToProperty :: TreeTableView s -> IO (ObjectProperty (EventHandler (ScrollToEvent Integer)))
+
+  native onSortProperty :: TreeTableView s -> IO (ObjectProperty (EventHandler (SortEvent (TreeTableView s))))
+
+  native placeholderProperty :: TreeTableView s -> IO (ObjectProperty Node)
+
+  native queryAccessibleAttribute :: TreeTableView s -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native resizeColumn :: TreeTableView s -> TreeTableColumn s Object -> double -> IO boolean
+
+  native rootProperty :: TreeTableView s -> IO (ObjectProperty (TreeItem s))
+
+  native rowFactoryProperty :: TreeTableView s -> IO (ObjectProperty (Callback (TreeTableView s) (TreeTableRow s)))
+
+  native scrollTo :: TreeTableView s -> int -> IO void
+
+  native scrollToColumn :: TreeTableView s -> TreeTableColumn s Object -> IO void
+
+  native scrollToColumnIndex :: TreeTableView s -> int -> IO void
+
+  native selectionModelProperty :: TreeTableView s -> IO (ObjectProperty (TreeTableView_TreeTableViewSelectionModel s))
+
+  native setColumnResizePolicy :: TreeTableView s -> Callback TreeTableView_ResizeFeatures Boolean -> IO void
+
+  native setEditable :: TreeTableView s -> boolean -> IO void
+
+  native setFixedCellSize :: TreeTableView s -> double -> IO void
+
+  native setFocusModel :: TreeTableView s -> TreeTableView_TreeTableViewFocusModel s -> IO void
+
+  native setOnScrollTo :: TreeTableView s -> EventHandler (ScrollToEvent Integer) -> IO void
+
+  native setOnScrollToColumn :: TreeTableView s -> EventHandler (ScrollToEvent (TreeTableColumn s Object)) -> IO void
+
+  native setOnSort :: TreeTableView s -> EventHandler (SortEvent (TreeTableView s)) -> IO void
+
+  native setPlaceholder :: TreeTableView s -> Node -> IO void
+
+  native setRoot :: TreeTableView s -> TreeItem s -> IO void
+
+  native setRowFactory :: TreeTableView s -> Callback (TreeTableView s) (TreeTableRow s) -> IO void
+
+  native setSelectionModel :: TreeTableView s -> TreeTableView_TreeTableViewSelectionModel s -> IO void
+
+  native setShowRoot :: TreeTableView s -> boolean -> IO void
+
+  native setSortMode :: TreeTableView s -> TreeSortMode -> IO void
+
+  native setSortPolicy :: TreeTableView s -> Callback (TreeTableView s) Boolean -> IO void
+
+  native setTableMenuButtonVisible :: TreeTableView s -> boolean -> IO void
+
+  native setTreeColumn :: TreeTableView s -> TreeTableColumn s Object -> IO void
+
+  native showRootProperty :: TreeTableView s -> IO BooleanProperty
+
+  native sort :: TreeTableView s -> IO void
+
+  native sortModeProperty :: TreeTableView s -> IO (ObjectProperty TreeSortMode)
+
+  native sortPolicyProperty :: TreeTableView s -> IO (ObjectProperty (Callback (TreeTableView s) Boolean))
+
+  native tableMenuButtonVisibleProperty :: TreeTableView s -> IO BooleanProperty
+
+  native treeColumnProperty :: TreeTableView s -> IO (ObjectProperty (TreeTableColumn s Object))
+
+

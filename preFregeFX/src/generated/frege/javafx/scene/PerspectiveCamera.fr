@@ -1,0 +1,22 @@
+data PerspectiveCamera = mutable native javafx.scene.PerspectiveCamera where
+
+  native new :: boolean -> IO PerspectiveCamera
+              | () -> IO PerspectiveCamera
+
+  native fieldOfViewProperty :: PerspectiveCamera -> IO DoubleProperty
+
+  native getFieldOfView :: PerspectiveCamera -> IO double
+
+  native impl_updatePeer :: PerspectiveCamera -> IO void
+
+  native isFixedEyeAtCameraZero :: PerspectiveCamera -> IO boolean
+
+  native isVerticalFieldOfView :: PerspectiveCamera -> IO boolean
+
+  native setFieldOfView :: PerspectiveCamera -> double -> IO void
+
+  native setVerticalFieldOfView :: PerspectiveCamera -> boolean -> IO void
+
+  native verticalFieldOfViewProperty :: PerspectiveCamera -> IO BooleanProperty
+
+

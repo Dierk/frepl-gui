@@ -1,0 +1,5 @@
+data ToolBarBehavior = pure native com.sun.javafx.scene.control.behavior.ToolBarBehavior where
+
+  native new :: ToolBar -> IO ToolBarBehavior
+
+

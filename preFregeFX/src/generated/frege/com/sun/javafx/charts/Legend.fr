@@ -1,0 +1,17 @@
+data Legend = pure native com.sun.javafx.charts.Legend where
+
+  pure native new :: () -> Legend
+
+  native getItems :: Legend -> IO (ObservableList Legend_LegendItem)
+
+  pure native isVertical :: Legend -> boolean
+
+  native itemsProperty :: Legend -> IO (ObjectProperty (ObservableList Legend_LegendItem))
+
+  native setItems :: Legend -> ObservableList Legend_LegendItem -> IO void
+
+  pure native setVertical :: Legend -> boolean -> void
+
+  native verticalProperty :: Legend -> IO BooleanProperty
+
+

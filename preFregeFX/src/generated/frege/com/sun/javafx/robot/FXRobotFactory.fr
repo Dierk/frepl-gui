@@ -1,0 +1,7 @@
+data FXRobotFactory = pure native com.sun.javafx.robot.FXRobotFactory where
+
+  pure native new :: () -> FXRobotFactory
+
+  native createRobot "com.sun.javafx.robot.FXRobotFactory.createRobot" :: Scene -> IO FXRobot
+
+

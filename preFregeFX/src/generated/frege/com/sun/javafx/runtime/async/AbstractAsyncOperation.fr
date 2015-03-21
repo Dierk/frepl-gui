@@ -1,0 +1,11 @@
+data AbstractAsyncOperation v = pure native com.sun.javafx.runtime.async.AbstractAsyncOperation where
+
+  pure native cancel :: AbstractAsyncOperation v -> void
+
+  pure native isCancelled :: AbstractAsyncOperation v -> boolean
+
+  pure native isDone :: AbstractAsyncOperation v -> boolean
+
+  pure native start :: AbstractAsyncOperation v -> void
+
+

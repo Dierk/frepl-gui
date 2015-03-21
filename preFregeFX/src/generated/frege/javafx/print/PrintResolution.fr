@@ -1,0 +1,13 @@
+data PrintResolution = mutable native javafx.print.PrintResolution where
+
+  native equals :: PrintResolution -> Object -> IO boolean
+
+  native getCrossFeedResolution :: PrintResolution -> IO int
+
+  native getFeedResolution :: PrintResolution -> IO int
+
+  native hashCode :: PrintResolution -> IO int
+
+  native toString :: PrintResolution -> IO String
+
+

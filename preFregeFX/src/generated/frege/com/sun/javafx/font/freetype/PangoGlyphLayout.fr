@@ -1,0 +1,7 @@
+data PangoGlyphLayout = pure native com.sun.javafx.font.freetype.PangoGlyphLayout where
+
+  pure native dispose :: PangoGlyphLayout -> void
+
+  native layout :: PangoGlyphLayout -> TextRun -> PGFont -> FontStrike -> Mutable s (JArray char) -> ST s void
+
+

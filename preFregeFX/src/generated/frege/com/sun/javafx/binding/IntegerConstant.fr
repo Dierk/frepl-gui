@@ -1,0 +1,23 @@
+data IntegerConstant = pure native com.sun.javafx.binding.IntegerConstant where
+
+  native addListener :: IntegerConstant -> InvalidationListener -> IO void
+                      | IntegerConstant -> ChangeListener Number -> IO void
+
+  pure native doubleValue :: IntegerConstant -> double
+
+  pure native floatValue :: IntegerConstant -> float
+
+  pure native get :: IntegerConstant -> int
+
+  pure native getValue :: IntegerConstant -> Integer
+
+  pure native intValue :: IntegerConstant -> int
+
+  pure native longValue :: IntegerConstant -> long
+
+  native removeListener :: IntegerConstant -> InvalidationListener -> IO void
+                         | IntegerConstant -> ChangeListener Number -> IO void
+
+  pure native valueOf "com.sun.javafx.binding.IntegerConstant.valueOf" :: int -> IntegerConstant
+
+

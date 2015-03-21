@@ -1,0 +1,1 @@
+data SwingEvents = mutable native javafx.embed.swing.SwingEvents

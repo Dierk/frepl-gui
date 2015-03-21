@@ -1,0 +1,22 @@
+data Insets = mutable native javafx.geometry.Insets where
+
+  native empty "javafx.geometry.Insets.EMPTY" :: IO Insets
+
+  native new :: double -> IO Insets
+              | double -> double -> double -> double -> IO Insets
+
+  native equals :: Insets -> Object -> IO boolean
+
+  native getBottom :: Insets -> IO double
+
+  native getLeft :: Insets -> IO double
+
+  native getRight :: Insets -> IO double
+
+  native getTop :: Insets -> IO double
+
+  native hashCode :: Insets -> IO int
+
+  native toString :: Insets -> IO String
+
+

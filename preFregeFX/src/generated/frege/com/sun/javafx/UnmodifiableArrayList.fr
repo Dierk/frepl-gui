@@ -1,0 +1,9 @@
+data UnmodifiableArrayList t = pure native com.sun.javafx.UnmodifiableArrayList where
+
+  native new :: Mutable s (JArray t) -> int -> ST s (UnmodifiableArrayList t)
+
+  pure native get :: UnmodifiableArrayList t -> int -> t
+
+  pure native size :: UnmodifiableArrayList t -> int
+
+

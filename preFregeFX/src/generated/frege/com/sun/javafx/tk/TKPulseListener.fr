@@ -1,0 +1,5 @@
+data TKPulseListener = pure native com.sun.javafx.tk.TKPulseListener where
+
+  pure native pulse :: TKPulseListener -> void
+
+

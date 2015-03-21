@@ -1,0 +1,8 @@
+data SingularMatrixException = pure native com.sun.javafx.geom.transform.SingularMatrixException where
+
+  pure native new :: () -> SingularMatrixException
+                   | String -> SingularMatrixException
+
+derive Exceptional SingularMatrixException
+derive Serializable SingularMatrixException
+

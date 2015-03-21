@@ -1,0 +1,9 @@
+data TextLayoutFactory = pure native com.sun.javafx.scene.text.TextLayoutFactory where
+
+  pure native createLayout :: TextLayoutFactory -> TextLayout
+
+  pure native disposeLayout :: TextLayoutFactory -> TextLayout -> void
+
+  pure native getLayout :: TextLayoutFactory -> TextLayout
+
+

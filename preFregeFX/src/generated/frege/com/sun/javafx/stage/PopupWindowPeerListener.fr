@@ -1,0 +1,21 @@
+data PopupWindowPeerListener = pure native com.sun.javafx.stage.PopupWindowPeerListener where
+
+  native new :: PopupWindow -> IO PopupWindowPeerListener
+
+  pure native changedFocused :: PopupWindowPeerListener -> boolean -> FocusCause -> void
+
+  pure native changedFullscreen :: PopupWindowPeerListener -> boolean -> void
+
+  pure native changedIconified :: PopupWindowPeerListener -> boolean -> void
+
+  pure native changedLocation :: PopupWindowPeerListener -> float -> float -> void
+
+  pure native changedMaximized :: PopupWindowPeerListener -> boolean -> void
+
+  pure native changedResizable :: PopupWindowPeerListener -> boolean -> void
+
+  pure native closing :: PopupWindowPeerListener -> void
+
+  pure native focusUngrab :: PopupWindowPeerListener -> void
+
+

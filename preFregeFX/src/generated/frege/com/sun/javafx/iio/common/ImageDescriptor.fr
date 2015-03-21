@@ -1,0 +1,11 @@
+data ImageDescriptor = pure native com.sun.javafx.iio.common.ImageDescriptor where
+
+  native new :: String -> Mutable s (JArray String) -> Mutable s (JArray ImageFormatDescription_Signature) -> ST s ImageDescriptor
+
+  pure native getExtensions :: ImageDescriptor -> List String
+
+  pure native getFormatName :: ImageDescriptor -> String
+
+  pure native getSignatures :: ImageDescriptor -> List ImageFormatDescription_Signature
+
+

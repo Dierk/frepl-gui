@@ -1,0 +1,9 @@
+data ComboBoxBaseSkin t = pure native com.sun.javafx.scene.control.skin.ComboBoxBaseSkin where
+
+  native getDisplayNode :: ComboBoxBaseSkin t -> IO Node
+
+  pure native hide :: ComboBoxBaseSkin t -> void
+
+  pure native show :: ComboBoxBaseSkin t -> void
+
+

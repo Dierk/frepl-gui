@@ -1,0 +1,9 @@
+data NGArc = pure native com.sun.javafx.sg.prism.NGArc where
+
+  pure native new :: () -> NGArc
+
+  pure native getShape :: NGArc -> Shape
+
+  native updateArc :: NGArc -> float -> float -> float -> float -> float -> float -> ArcType -> IO void
+
+

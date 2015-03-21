@@ -1,0 +1,25 @@
+data ListViewBehavior t = pure native com.sun.javafx.scene.control.behavior.ListViewBehavior where
+
+  native new :: ListView t -> IO (ListViewBehavior t)
+
+  pure native dispose :: ListViewBehavior t -> void
+
+  native mousePressed :: ListViewBehavior t -> MouseEvent -> IO void
+
+  pure native setOnFocusNextRow :: ListViewBehavior t -> Runnable -> void
+
+  pure native setOnFocusPreviousRow :: ListViewBehavior t -> Runnable -> void
+
+  pure native setOnMoveToFirstCell :: ListViewBehavior t -> Runnable -> void
+
+  pure native setOnMoveToLastCell :: ListViewBehavior t -> Runnable -> void
+
+  native setOnScrollPageDown :: ListViewBehavior t -> Callback Boolean Integer -> IO void
+
+  native setOnScrollPageUp :: ListViewBehavior t -> Callback Boolean Integer -> IO void
+
+  pure native setOnSelectNextRow :: ListViewBehavior t -> Runnable -> void
+
+  pure native setOnSelectPreviousRow :: ListViewBehavior t -> Runnable -> void
+
+

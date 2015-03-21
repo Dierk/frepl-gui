@@ -1,0 +1,28 @@
+data FTGlyph = pure native com.sun.javafx.font.freetype.FTGlyph where
+
+  pure native getAdvance :: FTGlyph -> float
+
+  pure native getBBox :: FTGlyph -> RectBounds
+
+  pure native getGlyphCode :: FTGlyph -> int
+
+  pure native getHeight :: FTGlyph -> int
+
+  pure native getOriginX :: FTGlyph -> int
+
+  pure native getOriginY :: FTGlyph -> int
+
+  native getPixelData :: FTGlyph -> STMutable s (JArray byte)
+                       | FTGlyph -> int -> STMutable s (JArray byte)
+
+  pure native getPixelXAdvance :: FTGlyph -> float
+
+  pure native getPixelYAdvance :: FTGlyph -> float
+
+  pure native getShape :: FTGlyph -> Shape
+
+  pure native getWidth :: FTGlyph -> int
+
+  pure native isLCDGlyph :: FTGlyph -> boolean
+
+

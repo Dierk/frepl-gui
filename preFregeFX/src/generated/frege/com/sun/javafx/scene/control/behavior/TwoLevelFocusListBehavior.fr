@@ -1,0 +1,7 @@
+data TwoLevelFocusListBehavior = pure native com.sun.javafx.scene.control.behavior.TwoLevelFocusListBehavior where
+
+  native new :: Node -> IO TwoLevelFocusListBehavior
+
+  pure native dispose :: TwoLevelFocusListBehavior -> void
+
+

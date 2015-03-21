@@ -1,0 +1,17 @@
+data SceneHelper = pure native com.sun.javafx.scene.SceneHelper where
+
+  native createPopupScene "com.sun.javafx.scene.SceneHelper.createPopupScene" :: Parent -> IO Scene
+
+  native getAccessible "com.sun.javafx.scene.SceneHelper.getAccessible" :: Scene -> IO Accessible
+
+  native getEffectiveCamera "com.sun.javafx.scene.SceneHelper.getEffectiveCamera" :: Scene -> IO Camera
+
+  pure native getSceneAccessor "com.sun.javafx.scene.SceneHelper.getSceneAccessor" :: () -> SceneHelper_SceneAccessor
+
+  native parentEffectiveOrientationInvalidated "com.sun.javafx.scene.SceneHelper.parentEffectiveOrientationInvalidated" :: Scene -> IO void
+
+  pure native setPaused "com.sun.javafx.scene.SceneHelper.setPaused" :: boolean -> void
+
+  pure native setSceneAccessor "com.sun.javafx.scene.SceneHelper.setSceneAccessor" :: SceneHelper_SceneAccessor -> void
+
+

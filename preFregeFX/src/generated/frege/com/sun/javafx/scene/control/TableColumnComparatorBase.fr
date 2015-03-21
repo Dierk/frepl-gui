@@ -1,0 +1,17 @@
+data TableColumnComparatorBase s t = pure native com.sun.javafx.scene.control.TableColumnComparatorBase where
+
+  pure native compare :: TableColumnComparatorBase s t -> s -> s -> int
+
+  native doCompare :: TableColumnComparatorBase s t -> TableColumnBase s t -> t -> t -> IO int
+
+  pure native equals :: TableColumnComparatorBase s t -> Object -> boolean
+
+  pure native getColumns :: TableColumnComparatorBase s t -> List TableColumnBase
+
+  pure native hashCode :: TableColumnComparatorBase s t -> int
+
+  native isSortable :: TableColumnComparatorBase s t -> TableColumnBase s t -> IO boolean
+
+  pure native toString :: TableColumnComparatorBase s t -> String
+
+

@@ -1,0 +1,9 @@
+data ByteArgb = pure native com.sun.javafx.image.impl.ByteArgb where
+
+  pure native getter "com.sun.javafx.image.impl.ByteArgb.getter" :: BytePixelGetter
+  pure native setter "com.sun.javafx.image.impl.ByteArgb.setter" :: BytePixelSetter
+  pure native accessor "com.sun.javafx.image.impl.ByteArgb.accessor" :: BytePixelAccessor
+
+  pure native new :: () -> ByteArgb
+
+

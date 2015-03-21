@@ -1,0 +1,29 @@
+data Point2D = pure native com.sun.javafx.geom.Point2D where
+
+  pure native x "".x"" :: Point2D -> float
+  pure native y "".y"" :: Point2D -> float
+
+  pure native new :: () -> Point2D
+                   | float -> float -> Point2D
+
+  pure native distance :: Point2D -> Point2D -> float
+                        | Point2D -> float -> float -> float
+
+  pure native distance "com.sun.javafx.geom.Point2D.distance" :: float -> float -> float -> float -> float
+
+  pure native distanceSq :: Point2D -> float -> float -> float
+
+  pure native distanceSq "com.sun.javafx.geom.Point2D.distanceSq" :: float -> float -> float -> float -> float
+
+  pure native distanceSq :: Point2D -> Point2D -> float
+
+  pure native equals :: Point2D -> Object -> boolean
+
+  pure native hashCode :: Point2D -> int
+
+  pure native setLocation :: Point2D -> float -> float -> void
+                           | Point2D -> Point2D -> void
+
+  pure native toString :: Point2D -> String
+
+

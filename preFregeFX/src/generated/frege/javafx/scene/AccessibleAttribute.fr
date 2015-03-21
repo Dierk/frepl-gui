@@ -1,0 +1,71 @@
+data AccessibleAttribute = mutable native javafx.scene.AccessibleAttribute where
+
+  native accelerator "javafx.scene.AccessibleAttribute.ACCELERATOR" :: IO AccessibleAttribute
+  native bounds "javafx.scene.AccessibleAttribute.BOUNDS" :: IO AccessibleAttribute
+  native bounds_for_range "javafx.scene.AccessibleAttribute.BOUNDS_FOR_RANGE" :: IO AccessibleAttribute
+  native caret_offset "javafx.scene.AccessibleAttribute.CARET_OFFSET" :: IO AccessibleAttribute
+  native children "javafx.scene.AccessibleAttribute.CHILDREN" :: IO AccessibleAttribute
+  native column_at_index "javafx.scene.AccessibleAttribute.COLUMN_AT_INDEX" :: IO AccessibleAttribute
+  native cell_at_row_column "javafx.scene.AccessibleAttribute.CELL_AT_ROW_COLUMN" :: IO AccessibleAttribute
+  native column_count "javafx.scene.AccessibleAttribute.COLUMN_COUNT" :: IO AccessibleAttribute
+  native column_index "javafx.scene.AccessibleAttribute.COLUMN_INDEX" :: IO AccessibleAttribute
+  native contents "javafx.scene.AccessibleAttribute.CONTENTS" :: IO AccessibleAttribute
+  native disabled "javafx.scene.AccessibleAttribute.DISABLED" :: IO AccessibleAttribute
+  native disclosure_level "javafx.scene.AccessibleAttribute.DISCLOSURE_LEVEL" :: IO AccessibleAttribute
+  native date "javafx.scene.AccessibleAttribute.DATE" :: IO AccessibleAttribute
+  native editable "javafx.scene.AccessibleAttribute.EDITABLE" :: IO AccessibleAttribute
+  native expanded "javafx.scene.AccessibleAttribute.EXPANDED" :: IO AccessibleAttribute
+  native focus_item "javafx.scene.AccessibleAttribute.FOCUS_ITEM" :: IO AccessibleAttribute
+  native focus_node "javafx.scene.AccessibleAttribute.FOCUS_NODE" :: IO AccessibleAttribute
+  native focused "javafx.scene.AccessibleAttribute.FOCUSED" :: IO AccessibleAttribute
+  native font "javafx.scene.AccessibleAttribute.FONT" :: IO AccessibleAttribute
+  native header "javafx.scene.AccessibleAttribute.HEADER" :: IO AccessibleAttribute
+  native help "javafx.scene.AccessibleAttribute.HELP" :: IO AccessibleAttribute
+  native horizontal_scrollbar "javafx.scene.AccessibleAttribute.HORIZONTAL_SCROLLBAR" :: IO AccessibleAttribute
+  native indeterminate "javafx.scene.AccessibleAttribute.INDETERMINATE" :: IO AccessibleAttribute
+  native item_at_index "javafx.scene.AccessibleAttribute.ITEM_AT_INDEX" :: IO AccessibleAttribute
+  native item_count "javafx.scene.AccessibleAttribute.ITEM_COUNT" :: IO AccessibleAttribute
+  native index "javafx.scene.AccessibleAttribute.INDEX" :: IO AccessibleAttribute
+  native labeled_by "javafx.scene.AccessibleAttribute.LABELED_BY" :: IO AccessibleAttribute
+  native leaf "javafx.scene.AccessibleAttribute.LEAF" :: IO AccessibleAttribute
+  native line_end "javafx.scene.AccessibleAttribute.LINE_END" :: IO AccessibleAttribute
+  native line_for_offset "javafx.scene.AccessibleAttribute.LINE_FOR_OFFSET" :: IO AccessibleAttribute
+  native line_start "javafx.scene.AccessibleAttribute.LINE_START" :: IO AccessibleAttribute
+  native min_value "javafx.scene.AccessibleAttribute.MIN_VALUE" :: IO AccessibleAttribute
+  native max_value "javafx.scene.AccessibleAttribute.MAX_VALUE" :: IO AccessibleAttribute
+  native mnemonic "javafx.scene.AccessibleAttribute.MNEMONIC" :: IO AccessibleAttribute
+  native multiple_selection "javafx.scene.AccessibleAttribute.MULTIPLE_SELECTION" :: IO AccessibleAttribute
+  native node_at_point "javafx.scene.AccessibleAttribute.NODE_AT_POINT" :: IO AccessibleAttribute
+  native offset_at_point "javafx.scene.AccessibleAttribute.OFFSET_AT_POINT" :: IO AccessibleAttribute
+  native orientation "javafx.scene.AccessibleAttribute.ORIENTATION" :: IO AccessibleAttribute
+  native overflow_button "javafx.scene.AccessibleAttribute.OVERFLOW_BUTTON" :: IO AccessibleAttribute
+  native parent "javafx.scene.AccessibleAttribute.PARENT" :: IO AccessibleAttribute
+  native parent_menu "javafx.scene.AccessibleAttribute.PARENT_MENU" :: IO AccessibleAttribute
+  native role "javafx.scene.AccessibleAttribute.ROLE" :: IO AccessibleAttribute
+  native role_description "javafx.scene.AccessibleAttribute.ROLE_DESCRIPTION" :: IO AccessibleAttribute
+  native row_at_index "javafx.scene.AccessibleAttribute.ROW_AT_INDEX" :: IO AccessibleAttribute
+  native row_count "javafx.scene.AccessibleAttribute.ROW_COUNT" :: IO AccessibleAttribute
+  native row_index "javafx.scene.AccessibleAttribute.ROW_INDEX" :: IO AccessibleAttribute
+  native scene "javafx.scene.AccessibleAttribute.SCENE" :: IO AccessibleAttribute
+  native selected "javafx.scene.AccessibleAttribute.SELECTED" :: IO AccessibleAttribute
+  native selected_items "javafx.scene.AccessibleAttribute.SELECTED_ITEMS" :: IO AccessibleAttribute
+  native selection_end "javafx.scene.AccessibleAttribute.SELECTION_END" :: IO AccessibleAttribute
+  native selection_start "javafx.scene.AccessibleAttribute.SELECTION_START" :: IO AccessibleAttribute
+  native submenu "javafx.scene.AccessibleAttribute.SUBMENU" :: IO AccessibleAttribute
+  native text "javafx.scene.AccessibleAttribute.TEXT" :: IO AccessibleAttribute
+  native tree_item_at_index "javafx.scene.AccessibleAttribute.TREE_ITEM_AT_INDEX" :: IO AccessibleAttribute
+  native tree_item_count "javafx.scene.AccessibleAttribute.TREE_ITEM_COUNT" :: IO AccessibleAttribute
+  native tree_item_parent "javafx.scene.AccessibleAttribute.TREE_ITEM_PARENT" :: IO AccessibleAttribute
+  native value "javafx.scene.AccessibleAttribute.VALUE" :: IO AccessibleAttribute
+  native vertical_scrollbar "javafx.scene.AccessibleAttribute.VERTICAL_SCROLLBAR" :: IO AccessibleAttribute
+  native visible "javafx.scene.AccessibleAttribute.VISIBLE" :: IO AccessibleAttribute
+  native visited "javafx.scene.AccessibleAttribute.VISITED" :: IO AccessibleAttribute
+
+  native getReturnType :: AccessibleAttribute -> IO (Class Object)
+
+  native valueOf "javafx.scene.AccessibleAttribute.valueOf" :: String -> IO AccessibleAttribute
+
+  native values "javafx.scene.AccessibleAttribute.values" :: () -> STMutable s (JArray AccessibleAttribute)
+
+derive Serializable AccessibleAttribute
+

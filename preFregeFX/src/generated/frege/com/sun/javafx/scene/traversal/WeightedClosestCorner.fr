@@ -1,0 +1,11 @@
+data WeightedClosestCorner = pure native com.sun.javafx.scene.traversal.WeightedClosestCorner where
+
+  native select :: WeightedClosestCorner -> Node -> Direction -> TraversalContext -> IO Node
+
+  native selectFirst :: WeightedClosestCorner -> TraversalContext -> IO Node
+
+  native selectLast :: WeightedClosestCorner -> TraversalContext -> IO Node
+
+  native traverse :: WeightedClosestCorner -> Bounds -> Direction -> List Node -> TraversalContext -> IO int
+
+

@@ -1,0 +1,12 @@
+data ArcType = mutable native javafx.scene.shape.ArcType where
+
+  native open "javafx.scene.shape.ArcType.OPEN" :: IO ArcType
+  native chord "javafx.scene.shape.ArcType.CHORD" :: IO ArcType
+  native round "javafx.scene.shape.ArcType.ROUND" :: IO ArcType
+
+  native valueOf "javafx.scene.shape.ArcType.valueOf" :: String -> IO ArcType
+
+  native values "javafx.scene.shape.ArcType.values" :: () -> STMutable s (JArray ArcType)
+
+derive Serializable ArcType
+

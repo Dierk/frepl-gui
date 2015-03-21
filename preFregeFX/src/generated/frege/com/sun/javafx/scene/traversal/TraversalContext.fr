@@ -1,0 +1,15 @@
+data TraversalContext = pure native com.sun.javafx.scene.traversal.TraversalContext where
+
+  pure native getAllTargetNodes :: TraversalContext -> List Node
+
+  native getRoot :: TraversalContext -> IO Parent
+
+  native getSceneLayoutBounds :: TraversalContext -> Node -> IO Bounds
+
+  native selectFirstInParent :: TraversalContext -> Parent -> IO Node
+
+  native selectInSubtree :: TraversalContext -> Parent -> Node -> Direction -> IO Node
+
+  native selectLastInParent :: TraversalContext -> Parent -> IO Node
+
+

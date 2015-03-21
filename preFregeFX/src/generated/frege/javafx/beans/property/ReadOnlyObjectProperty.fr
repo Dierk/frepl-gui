@@ -1,0 +1,5 @@
+data ReadOnlyObjectProperty t = mutable native javafx.beans.property.ReadOnlyObjectProperty where
+
+  native toString :: ReadOnlyObjectProperty t -> IO String
+
+

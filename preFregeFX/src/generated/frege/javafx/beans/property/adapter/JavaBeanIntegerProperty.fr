@@ -1,0 +1,29 @@
+data JavaBeanIntegerProperty = mutable native javafx.beans.property.adapter.JavaBeanIntegerProperty where
+
+  native addListener :: JavaBeanIntegerProperty -> ChangeListener Number -> IO void
+                      | JavaBeanIntegerProperty -> InvalidationListener -> IO void
+
+  native bind :: JavaBeanIntegerProperty -> ObservableValue Number -> IO void
+
+  native dispose :: JavaBeanIntegerProperty -> IO void
+
+  native fireValueChangedEvent :: JavaBeanIntegerProperty -> IO void
+
+  native get :: JavaBeanIntegerProperty -> IO int
+
+  native getBean :: JavaBeanIntegerProperty -> IO Object
+
+  native getName :: JavaBeanIntegerProperty -> IO String
+
+  native isBound :: JavaBeanIntegerProperty -> IO boolean
+
+  native removeListener :: JavaBeanIntegerProperty -> InvalidationListener -> IO void
+                         | JavaBeanIntegerProperty -> ChangeListener Number -> IO void
+
+  native set :: JavaBeanIntegerProperty -> int -> IO void
+
+  native toString :: JavaBeanIntegerProperty -> IO String
+
+  native unbind :: JavaBeanIntegerProperty -> IO void
+
+

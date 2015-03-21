@@ -1,0 +1,9 @@
+data EventDispatchChain = mutable native javafx.event.EventDispatchChain where
+
+  native append :: EventDispatchChain -> EventDispatcher -> IO EventDispatchChain
+
+  native dispatchEvent :: EventDispatchChain -> Event -> IO Event
+
+  native prepend :: EventDispatchChain -> EventDispatcher -> IO EventDispatchChain
+
+

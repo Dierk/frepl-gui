@@ -1,0 +1,23 @@
+data NumberAxis = mutable native javafx.scene.chart.NumberAxis where
+
+  native new :: String -> double -> double -> double -> IO NumberAxis
+              | () -> IO NumberAxis
+              | double -> double -> double -> IO NumberAxis
+
+  native forceZeroInRangeProperty :: NumberAxis -> IO BooleanProperty
+
+  pure native getClassCssMetaData "javafx.scene.chart.NumberAxis.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getCssMetaData :: NumberAxis -> IO (List (CssMetaData Styleable Object))
+
+  native getTickUnit :: NumberAxis -> IO double
+
+  native isForceZeroInRange :: NumberAxis -> IO boolean
+
+  native setForceZeroInRange :: NumberAxis -> boolean -> IO void
+
+  native setTickUnit :: NumberAxis -> double -> IO void
+
+  native tickUnitProperty :: NumberAxis -> IO DoubleProperty
+
+

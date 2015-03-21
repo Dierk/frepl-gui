@@ -1,0 +1,10 @@
+data LoadException = mutable native javafx.fxml.LoadException where
+
+  native new :: String -> Throwable -> IO LoadException
+              | Throwable -> IO LoadException
+              | String -> IO LoadException
+              | () -> IO LoadException
+
+derive Exceptional LoadException
+derive Serializable LoadException
+

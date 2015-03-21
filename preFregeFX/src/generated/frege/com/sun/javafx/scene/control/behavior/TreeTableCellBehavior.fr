@@ -1,0 +1,5 @@
+data TreeTableCellBehavior s t = pure native com.sun.javafx.scene.control.behavior.TreeTableCellBehavior where
+
+  native new :: TreeTableCell s t -> IO (TreeTableCellBehavior s t)
+
+

@@ -1,0 +1,1 @@
+data EventSender = pure native com.sun.javafx.webkit.drt.EventSender

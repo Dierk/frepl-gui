@@ -1,0 +1,41 @@
+data TouchPoint = mutable native javafx.scene.input.TouchPoint where
+
+  native new :: int -> TouchPoint_State -> double -> double -> double -> double -> EventTarget -> PickResult -> IO TouchPoint
+
+  native belongsTo :: TouchPoint -> EventTarget -> IO boolean
+
+  native getGrabbed :: TouchPoint -> IO EventTarget
+
+  native getId :: TouchPoint -> IO int
+
+  native getPickResult :: TouchPoint -> IO PickResult
+
+  native getSceneX :: TouchPoint -> IO double
+
+  native getSceneY :: TouchPoint -> IO double
+
+  native getScreenX :: TouchPoint -> IO double
+
+  native getScreenY :: TouchPoint -> IO double
+
+  native getState :: TouchPoint -> IO TouchPoint_State
+
+  native getTarget :: TouchPoint -> IO EventTarget
+
+  native getX :: TouchPoint -> IO double
+
+  native getY :: TouchPoint -> IO double
+
+  native getZ :: TouchPoint -> IO double
+
+  native grab :: TouchPoint -> IO void
+               | TouchPoint -> EventTarget -> IO void
+
+  native impl_reset :: TouchPoint -> IO void
+
+  native toString :: TouchPoint -> IO String
+
+  native ungrab :: TouchPoint -> IO void
+
+derive Serializable TouchPoint
+

@@ -1,0 +1,57 @@
+data AccessibleRole = mutable native javafx.scene.AccessibleRole where
+
+  native button "javafx.scene.AccessibleRole.BUTTON" :: IO AccessibleRole
+  native check_box "javafx.scene.AccessibleRole.CHECK_BOX" :: IO AccessibleRole
+  native check_menu_item "javafx.scene.AccessibleRole.CHECK_MENU_ITEM" :: IO AccessibleRole
+  native combo_box "javafx.scene.AccessibleRole.COMBO_BOX" :: IO AccessibleRole
+  native context_menu "javafx.scene.AccessibleRole.CONTEXT_MENU" :: IO AccessibleRole
+  native date_picker "javafx.scene.AccessibleRole.DATE_PICKER" :: IO AccessibleRole
+  native decrement_button "javafx.scene.AccessibleRole.DECREMENT_BUTTON" :: IO AccessibleRole
+  native hyperlink "javafx.scene.AccessibleRole.HYPERLINK" :: IO AccessibleRole
+  native increment_button "javafx.scene.AccessibleRole.INCREMENT_BUTTON" :: IO AccessibleRole
+  native image_view "javafx.scene.AccessibleRole.IMAGE_VIEW" :: IO AccessibleRole
+  native list_view "javafx.scene.AccessibleRole.LIST_VIEW" :: IO AccessibleRole
+  native list_item "javafx.scene.AccessibleRole.LIST_ITEM" :: IO AccessibleRole
+  native menu "javafx.scene.AccessibleRole.MENU" :: IO AccessibleRole
+  native menu_bar "javafx.scene.AccessibleRole.MENU_BAR" :: IO AccessibleRole
+  native menu_button "javafx.scene.AccessibleRole.MENU_BUTTON" :: IO AccessibleRole
+  native menu_item "javafx.scene.AccessibleRole.MENU_ITEM" :: IO AccessibleRole
+  native node "javafx.scene.AccessibleRole.NODE" :: IO AccessibleRole
+  native page_item "javafx.scene.AccessibleRole.PAGE_ITEM" :: IO AccessibleRole
+  native pagination "javafx.scene.AccessibleRole.PAGINATION" :: IO AccessibleRole
+  native parent "javafx.scene.AccessibleRole.PARENT" :: IO AccessibleRole
+  native password_field "javafx.scene.AccessibleRole.PASSWORD_FIELD" :: IO AccessibleRole
+  native progress_indicator "javafx.scene.AccessibleRole.PROGRESS_INDICATOR" :: IO AccessibleRole
+  native radio_button "javafx.scene.AccessibleRole.RADIO_BUTTON" :: IO AccessibleRole
+  native radio_menu_item "javafx.scene.AccessibleRole.RADIO_MENU_ITEM" :: IO AccessibleRole
+  native slider "javafx.scene.AccessibleRole.SLIDER" :: IO AccessibleRole
+  native spinner "javafx.scene.AccessibleRole.SPINNER" :: IO AccessibleRole
+  native text "javafx.scene.AccessibleRole.TEXT" :: IO AccessibleRole
+  native text_area "javafx.scene.AccessibleRole.TEXT_AREA" :: IO AccessibleRole
+  native text_field "javafx.scene.AccessibleRole.TEXT_FIELD" :: IO AccessibleRole
+  native toggle_button "javafx.scene.AccessibleRole.TOGGLE_BUTTON" :: IO AccessibleRole
+  native tooltip "javafx.scene.AccessibleRole.TOOLTIP" :: IO AccessibleRole
+  native scroll_bar "javafx.scene.AccessibleRole.SCROLL_BAR" :: IO AccessibleRole
+  native scroll_pane "javafx.scene.AccessibleRole.SCROLL_PANE" :: IO AccessibleRole
+  native split_menu_button "javafx.scene.AccessibleRole.SPLIT_MENU_BUTTON" :: IO AccessibleRole
+  native tab_item "javafx.scene.AccessibleRole.TAB_ITEM" :: IO AccessibleRole
+  native tab_pane "javafx.scene.AccessibleRole.TAB_PANE" :: IO AccessibleRole
+  native table_cell "javafx.scene.AccessibleRole.TABLE_CELL" :: IO AccessibleRole
+  native table_column "javafx.scene.AccessibleRole.TABLE_COLUMN" :: IO AccessibleRole
+  native table_row "javafx.scene.AccessibleRole.TABLE_ROW" :: IO AccessibleRole
+  native table_view "javafx.scene.AccessibleRole.TABLE_VIEW" :: IO AccessibleRole
+  native thumb "javafx.scene.AccessibleRole.THUMB" :: IO AccessibleRole
+  native titled_pane "javafx.scene.AccessibleRole.TITLED_PANE" :: IO AccessibleRole
+  native tool_bar "javafx.scene.AccessibleRole.TOOL_BAR" :: IO AccessibleRole
+  native tree_item "javafx.scene.AccessibleRole.TREE_ITEM" :: IO AccessibleRole
+  native tree_table_cell "javafx.scene.AccessibleRole.TREE_TABLE_CELL" :: IO AccessibleRole
+  native tree_table_row "javafx.scene.AccessibleRole.TREE_TABLE_ROW" :: IO AccessibleRole
+  native tree_table_view "javafx.scene.AccessibleRole.TREE_TABLE_VIEW" :: IO AccessibleRole
+  native tree_view "javafx.scene.AccessibleRole.TREE_VIEW" :: IO AccessibleRole
+
+  native valueOf "javafx.scene.AccessibleRole.valueOf" :: String -> IO AccessibleRole
+
+  native values "javafx.scene.AccessibleRole.values" :: () -> STMutable s (JArray AccessibleRole)
+
+derive Serializable AccessibleRole
+

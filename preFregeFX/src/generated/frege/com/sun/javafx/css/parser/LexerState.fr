@@ -1,0 +1,16 @@
+data LexerState = pure native com.sun.javafx.css.parser.LexerState where
+
+  native new :: String -> Recognizer -> Mutable s (JArray Recognizer) -> ST s LexerState
+              | int -> String -> Recognizer -> Mutable s (JArray Recognizer) -> ST s LexerState
+
+  pure native accepts :: LexerState -> int -> boolean
+
+  pure native equals :: LexerState -> Object -> boolean
+
+  pure native getType :: LexerState -> int
+
+  pure native hashCode :: LexerState -> int
+
+  pure native toString :: LexerState -> String
+
+

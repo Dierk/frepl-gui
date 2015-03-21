@@ -1,0 +1,19 @@
+data PathIterator = pure native com.sun.javafx.geom.PathIterator where
+
+  pure native wind_even_odd "com.sun.javafx.geom.PathIterator.WIND_EVEN_ODD" :: int
+  pure native wind_non_zero "com.sun.javafx.geom.PathIterator.WIND_NON_ZERO" :: int
+  pure native seg_moveto "com.sun.javafx.geom.PathIterator.SEG_MOVETO" :: int
+  pure native seg_lineto "com.sun.javafx.geom.PathIterator.SEG_LINETO" :: int
+  pure native seg_quadto "com.sun.javafx.geom.PathIterator.SEG_QUADTO" :: int
+  pure native seg_cubicto "com.sun.javafx.geom.PathIterator.SEG_CUBICTO" :: int
+  pure native seg_close "com.sun.javafx.geom.PathIterator.SEG_CLOSE" :: int
+
+  native currentSegment :: PathIterator -> Mutable s (JArray float) -> ST s int
+
+  pure native getWindingRule :: PathIterator -> int
+
+  pure native isDone :: PathIterator -> boolean
+
+  pure native next :: PathIterator -> void
+
+

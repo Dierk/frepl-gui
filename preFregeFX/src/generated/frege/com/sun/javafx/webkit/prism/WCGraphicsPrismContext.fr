@@ -1,0 +1,114 @@
+data WCGraphicsPrismContext = pure native com.sun.javafx.webkit.prism.WCGraphicsPrismContext where
+
+  pure native beginTransparencyLayer :: WCGraphicsPrismContext -> float -> void
+
+  pure native clearRect :: WCGraphicsPrismContext -> float -> float -> float -> float -> void
+
+  pure native concatTransform :: WCGraphicsPrismContext -> WCTransform -> void
+
+  pure native createLinearGradient :: WCGraphicsPrismContext -> WCPoint -> WCPoint -> WCGradient
+
+  pure native createRadialGradient :: WCGraphicsPrismContext -> WCPoint -> float -> WCPoint -> float -> WCGradient
+
+  pure native dispose :: WCGraphicsPrismContext -> void
+
+  pure native drawBitmapImage :: WCGraphicsPrismContext -> ByteBuffer -> int -> int -> int -> int -> void
+
+  pure native drawEllipse :: WCGraphicsPrismContext -> int -> int -> int -> int -> void
+
+  pure native drawFocusRing :: WCGraphicsPrismContext -> int -> int -> int -> int -> int -> void
+
+  pure native drawIcon :: WCGraphicsPrismContext -> WCIcon -> int -> int -> void
+
+  pure native drawImage :: WCGraphicsPrismContext -> WCImage -> float -> float -> float -> float -> float -> float -> float -> float -> void
+
+  pure native drawLine :: WCGraphicsPrismContext -> int -> int -> int -> int -> void
+
+  pure native drawPattern :: WCGraphicsPrismContext -> WCImage -> WCRectangle -> WCTransform -> WCPoint -> WCRectangle -> void
+
+  native drawPolygon :: WCGraphicsPrismContext -> Mutable s (JArray float) -> boolean -> ST s void
+
+  pure native drawRect :: WCGraphicsPrismContext -> int -> int -> int -> int -> void
+
+  pure native drawScrollbar :: WCGraphicsPrismContext -> ScrollBarTheme -> Ref -> int -> int -> int -> int -> void
+
+  native drawString :: WCGraphicsPrismContext -> WCFont -> Mutable s (JArray int) -> Mutable s (JArray float) -> float -> float -> ST s void
+                     | WCGraphicsPrismContext -> WCFont -> String -> boolean -> int -> int -> float -> float -> ST s void
+
+  pure native drawWidget :: WCGraphicsPrismContext -> RenderTheme -> Ref -> int -> int -> void
+
+  pure native endTransparencyLayer :: WCGraphicsPrismContext -> void
+
+  pure native fillPath :: WCGraphicsPrismContext -> WCPath -> void
+
+  pure native fillRect :: WCGraphicsPrismContext -> float -> float -> float -> float -> Integer -> void
+
+  pure native fillRoundedRect :: WCGraphicsPrismContext -> float -> float -> float -> float -> float -> float -> float -> float -> float -> float -> float -> float -> int -> void
+
+  pure native flush :: WCGraphicsPrismContext -> void
+
+  pure native getAlpha :: WCGraphicsPrismContext -> float
+
+  pure native getClip :: WCGraphicsPrismContext -> WCRectangle
+
+  pure native getFontSmoothingType :: WCGraphicsPrismContext -> int
+
+  pure native getImage :: WCGraphicsPrismContext -> WCImage
+
+  pure native getPlatformGraphics :: WCGraphicsPrismContext -> Object
+
+  pure native getTransform :: WCGraphicsPrismContext -> WCTransform
+
+  pure native restoreState :: WCGraphicsPrismContext -> void
+
+  pure native rotate :: WCGraphicsPrismContext -> float -> void
+
+  pure native saveState :: WCGraphicsPrismContext -> void
+
+  pure native scale :: WCGraphicsPrismContext -> float -> float -> void
+
+  pure native setAlpha :: WCGraphicsPrismContext -> float -> void
+
+  pure native setClip :: WCGraphicsPrismContext -> int -> int -> int -> int -> void
+                       | WCGraphicsPrismContext -> WCRectangle -> void
+                       | WCGraphicsPrismContext -> WCPath -> boolean -> void
+
+  pure native setComposite :: WCGraphicsPrismContext -> int -> void
+
+  pure native setFillColor :: WCGraphicsPrismContext -> int -> void
+
+  pure native setFillGradient :: WCGraphicsPrismContext -> WCGradient -> void
+
+  pure native setFontSmoothingType :: WCGraphicsPrismContext -> int -> void
+
+  pure native setLineCap :: WCGraphicsPrismContext -> int -> void
+
+  native setLineDash :: WCGraphicsPrismContext -> float -> Mutable s (JArray float) -> ST s void
+
+  pure native setLineJoin :: WCGraphicsPrismContext -> int -> void
+
+  pure native setMiterLimit :: WCGraphicsPrismContext -> float -> void
+
+  pure native setShadow :: WCGraphicsPrismContext -> float -> float -> float -> int -> void
+
+  pure native setStrokeColor :: WCGraphicsPrismContext -> int -> void
+
+  pure native setStrokeGradient :: WCGraphicsPrismContext -> WCGradient -> void
+
+  pure native setStrokeStyle :: WCGraphicsPrismContext -> int -> void
+
+  pure native setStrokeWidth :: WCGraphicsPrismContext -> float -> void
+
+  pure native setTextMode :: WCGraphicsPrismContext -> boolean -> boolean -> boolean -> void
+
+  pure native setTransform :: WCGraphicsPrismContext -> WCTransform -> void
+
+  pure native strokeArc :: WCGraphicsPrismContext -> int -> int -> int -> int -> int -> int -> void
+
+  pure native strokePath :: WCGraphicsPrismContext -> WCPath -> void
+
+  pure native strokeRect :: WCGraphicsPrismContext -> float -> float -> float -> float -> float -> void
+
+  pure native translate :: WCGraphicsPrismContext -> float -> float -> void
+
+

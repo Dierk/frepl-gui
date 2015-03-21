@@ -1,0 +1,7 @@
+data DatePickerBehavior = pure native com.sun.javafx.scene.control.behavior.DatePickerBehavior where
+
+  native new :: DatePicker -> IO DatePickerBehavior
+
+  pure native onAutoHide :: DatePickerBehavior -> void
+
+

@@ -1,0 +1,12 @@
+data SimpleSetProperty e = mutable native javafx.beans.property.SimpleSetProperty where
+
+  native new :: Object -> String -> IO (SimpleSetProperty e)
+              | () -> IO (SimpleSetProperty e)
+              | Object -> String -> ObservableSet e -> IO (SimpleSetProperty e)
+              | ObservableSet e -> IO (SimpleSetProperty e)
+
+  native getBean :: SimpleSetProperty e -> IO Object
+
+  native getName :: SimpleSetProperty e -> IO String
+
+

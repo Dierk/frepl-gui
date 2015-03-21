@@ -1,0 +1,17 @@
+data HitInfo = pure native com.sun.javafx.scene.text.HitInfo where
+
+  pure native new :: () -> HitInfo
+
+  pure native getCharIndex :: HitInfo -> int
+
+  pure native getInsertionIndex :: HitInfo -> int
+
+  pure native isLeading :: HitInfo -> boolean
+
+  pure native setCharIndex :: HitInfo -> int -> void
+
+  pure native setLeading :: HitInfo -> boolean -> void
+
+  pure native toString :: HitInfo -> String
+
+

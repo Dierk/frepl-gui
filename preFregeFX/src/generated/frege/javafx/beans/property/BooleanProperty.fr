@@ -1,0 +1,15 @@
+data BooleanProperty = mutable native javafx.beans.property.BooleanProperty where
+
+  native asObject :: BooleanProperty -> IO (ObjectProperty Boolean)
+
+  native bindBidirectional :: BooleanProperty -> Property Boolean -> IO void
+
+  native booleanProperty "javafx.beans.property.BooleanProperty.booleanProperty" :: Property Boolean -> IO BooleanProperty
+
+  native setValue :: BooleanProperty -> Boolean -> IO void
+
+  native toString :: BooleanProperty -> IO String
+
+  native unbindBidirectional :: BooleanProperty -> Property Boolean -> IO void
+
+

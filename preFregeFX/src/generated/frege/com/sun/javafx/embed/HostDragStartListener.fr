@@ -1,0 +1,5 @@
+data HostDragStartListener = pure native com.sun.javafx.embed.HostDragStartListener where
+
+  native dragStarted :: HostDragStartListener -> EmbeddedSceneDSInterface -> TransferMode -> IO void
+
+

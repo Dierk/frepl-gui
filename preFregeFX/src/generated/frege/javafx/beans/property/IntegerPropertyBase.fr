@@ -1,0 +1,21 @@
+data IntegerPropertyBase = mutable native javafx.beans.property.IntegerPropertyBase where
+
+  native addListener :: IntegerPropertyBase -> InvalidationListener -> IO void
+                      | IntegerPropertyBase -> ChangeListener Number -> IO void
+
+  native bind :: IntegerPropertyBase -> ObservableValue Number -> IO void
+
+  native get :: IntegerPropertyBase -> IO int
+
+  native isBound :: IntegerPropertyBase -> IO boolean
+
+  native removeListener :: IntegerPropertyBase -> ChangeListener Number -> IO void
+                         | IntegerPropertyBase -> InvalidationListener -> IO void
+
+  native set :: IntegerPropertyBase -> int -> IO void
+
+  native toString :: IntegerPropertyBase -> IO String
+
+  native unbind :: IntegerPropertyBase -> IO void
+
+

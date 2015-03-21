@@ -1,0 +1,23 @@
+data Crossings = pure native com.sun.javafx.geom.Crossings where
+
+  pure native debug "com.sun.javafx.geom.Crossings.debug" :: boolean
+
+  pure native covers :: Crossings -> double -> double -> boolean
+
+  pure native findCrossings "com.sun.javafx.geom.Crossings.findCrossings" :: Vector -> double -> double -> double -> double -> Crossings
+
+  pure native getXHi :: Crossings -> double
+
+  pure native getXLo :: Crossings -> double
+
+  pure native getYHi :: Crossings -> double
+
+  pure native getYLo :: Crossings -> double
+
+  pure native isEmpty :: Crossings -> boolean
+
+  pure native print :: Crossings -> void
+
+  pure native record :: Crossings -> double -> double -> int -> void
+
+

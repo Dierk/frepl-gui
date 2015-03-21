@@ -1,0 +1,7 @@
+data ByteToBytePixelConverter = pure native com.sun.javafx.image.ByteToBytePixelConverter where
+
+  native convert :: ByteToBytePixelConverter -> Mutable s (JArray byte) -> int -> int -> Mutable s (JArray byte) -> int -> int -> int -> int -> ST s void
+                  | ByteToBytePixelConverter -> ByteBuffer -> int -> int -> Mutable s (JArray byte) -> int -> int -> int -> int -> ST s void
+                  | ByteToBytePixelConverter -> Mutable s (JArray byte) -> int -> int -> ByteBuffer -> int -> int -> int -> int -> ST s void
+
+

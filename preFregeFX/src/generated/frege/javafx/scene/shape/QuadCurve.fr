@@ -1,0 +1,48 @@
+data QuadCurve = mutable native javafx.scene.shape.QuadCurve where
+
+  native new :: () -> IO QuadCurve
+              | double -> double -> double -> double -> double -> double -> IO QuadCurve
+
+  native controlXProperty :: QuadCurve -> IO DoubleProperty
+
+  native controlYProperty :: QuadCurve -> IO DoubleProperty
+
+  native endXProperty :: QuadCurve -> IO DoubleProperty
+
+  native endYProperty :: QuadCurve -> IO DoubleProperty
+
+  native getControlX :: QuadCurve -> IO double
+
+  native getControlY :: QuadCurve -> IO double
+
+  native getEndX :: QuadCurve -> IO double
+
+  native getEndY :: QuadCurve -> IO double
+
+  native getStartX :: QuadCurve -> IO double
+
+  native getStartY :: QuadCurve -> IO double
+
+  native impl_configShape :: QuadCurve -> IO QuadCurve2D
+
+  native impl_updatePeer :: QuadCurve -> IO void
+
+  native setControlX :: QuadCurve -> double -> IO void
+
+  native setControlY :: QuadCurve -> double -> IO void
+
+  native setEndX :: QuadCurve -> double -> IO void
+
+  native setEndY :: QuadCurve -> double -> IO void
+
+  native setStartX :: QuadCurve -> double -> IO void
+
+  native setStartY :: QuadCurve -> double -> IO void
+
+  native startXProperty :: QuadCurve -> IO DoubleProperty
+
+  native startYProperty :: QuadCurve -> IO DoubleProperty
+
+  native toString :: QuadCurve -> IO String
+
+

@@ -1,0 +1,9 @@
+data DurationConverter = pure native com.sun.javafx.css.converters.DurationConverter where
+
+  native convert :: DurationConverter -> ParsedValue (ParsedValue Object Size) Duration -> Font -> IO Duration
+
+  native getInstance "com.sun.javafx.css.converters.DurationConverter.getInstance" :: () -> IO (StyleConverter (ParsedValue Object Size) Duration)
+
+  pure native toString :: DurationConverter -> String
+
+

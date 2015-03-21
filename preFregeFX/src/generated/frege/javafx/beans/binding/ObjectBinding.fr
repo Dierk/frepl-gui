@@ -1,0 +1,21 @@
+data ObjectBinding t = mutable native javafx.beans.binding.ObjectBinding where
+
+  native addListener :: ObjectBinding t -> InvalidationListener -> IO void
+                      | ObjectBinding t -> ChangeListener t -> IO void
+
+  native dispose :: ObjectBinding t -> IO void
+
+  native get :: ObjectBinding t -> IO t
+
+  native getDependencies :: ObjectBinding t -> IO (ObservableList Object)
+
+  native invalidate :: ObjectBinding t -> IO void
+
+  native isValid :: ObjectBinding t -> IO boolean
+
+  native removeListener :: ObjectBinding t -> InvalidationListener -> IO void
+                         | ObjectBinding t -> ChangeListener t -> IO void
+
+  native toString :: ObjectBinding t -> IO String
+
+

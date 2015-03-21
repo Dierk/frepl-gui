@@ -1,0 +1,13 @@
+data FontPosture = mutable native javafx.scene.text.FontPosture where
+
+  native regular "javafx.scene.text.FontPosture.REGULAR" :: IO FontPosture
+  native italic "javafx.scene.text.FontPosture.ITALIC" :: IO FontPosture
+
+  native findByName "javafx.scene.text.FontPosture.findByName" :: String -> IO FontPosture
+
+  native valueOf "javafx.scene.text.FontPosture.valueOf" :: String -> IO FontPosture
+
+  native values "javafx.scene.text.FontPosture.values" :: () -> STMutable s (JArray FontPosture)
+
+derive Serializable FontPosture
+

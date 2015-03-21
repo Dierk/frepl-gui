@@ -1,0 +1,20 @@
+data Direction = pure native com.sun.javafx.scene.traversal.Direction where
+
+  pure native up "com.sun.javafx.scene.traversal.Direction.UP" :: Direction
+  pure native down "com.sun.javafx.scene.traversal.Direction.DOWN" :: Direction
+  pure native left "com.sun.javafx.scene.traversal.Direction.LEFT" :: Direction
+  pure native right "com.sun.javafx.scene.traversal.Direction.RIGHT" :: Direction
+  pure native next "com.sun.javafx.scene.traversal.Direction.NEXT" :: Direction
+  pure native next_in_line "com.sun.javafx.scene.traversal.Direction.NEXT_IN_LINE" :: Direction
+  pure native previous "com.sun.javafx.scene.traversal.Direction.PREVIOUS" :: Direction
+
+  native getDirectionForNodeOrientation :: Direction -> NodeOrientation -> IO Direction
+
+  pure native isForward :: Direction -> boolean
+
+  pure native valueOf "com.sun.javafx.scene.traversal.Direction.valueOf" :: String -> Direction
+
+  native values "com.sun.javafx.scene.traversal.Direction.values" :: () -> STMutable s (JArray Direction)
+
+derive Serializable Direction
+

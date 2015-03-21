@@ -1,0 +1,11 @@
+data TimeStringConverter = mutable native javafx.util.converter.TimeStringConverter where
+
+  native new :: String -> IO TimeStringConverter
+              | Locale -> String -> IO TimeStringConverter
+              | DateFormat -> IO TimeStringConverter
+              | () -> IO TimeStringConverter
+              | int -> IO TimeStringConverter
+              | Locale -> IO TimeStringConverter
+              | Locale -> int -> IO TimeStringConverter
+
+

@@ -1,0 +1,17 @@
+data ByteBgraPre = pure native com.sun.javafx.image.impl.ByteBgraPre where
+
+  pure native getter "com.sun.javafx.image.impl.ByteBgraPre.getter" :: BytePixelGetter
+  pure native setter "com.sun.javafx.image.impl.ByteBgraPre.setter" :: BytePixelSetter
+  pure native accessor "com.sun.javafx.image.impl.ByteBgraPre.accessor" :: BytePixelAccessor
+
+  pure native new :: () -> ByteBgraPre
+
+  pure native toByteBgraConverter "com.sun.javafx.image.impl.ByteBgraPre.ToByteBgraConverter" :: () -> ByteToBytePixelConverter
+
+  pure native toByteBgraPreConverter "com.sun.javafx.image.impl.ByteBgraPre.ToByteBgraPreConverter" :: () -> ByteToBytePixelConverter
+
+  pure native toIntArgbConverter "com.sun.javafx.image.impl.ByteBgraPre.ToIntArgbConverter" :: () -> ByteToIntPixelConverter
+
+  pure native toIntArgbPreConverter "com.sun.javafx.image.impl.ByteBgraPre.ToIntArgbPreConverter" :: () -> ByteToIntPixelConverter
+
+

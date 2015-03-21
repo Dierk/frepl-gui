@@ -1,0 +1,15 @@
+data PathConsumer2D = pure native com.sun.javafx.geom.PathConsumer2D where
+
+  pure native closePath :: PathConsumer2D -> void
+
+  pure native curveTo :: PathConsumer2D -> float -> float -> float -> float -> float -> float -> void
+
+  pure native lineTo :: PathConsumer2D -> float -> float -> void
+
+  pure native moveTo :: PathConsumer2D -> float -> float -> void
+
+  pure native pathDone :: PathConsumer2D -> void
+
+  pure native quadTo :: PathConsumer2D -> float -> float -> float -> float -> void
+
+

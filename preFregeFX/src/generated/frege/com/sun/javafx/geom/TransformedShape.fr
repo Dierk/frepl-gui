@@ -1,0 +1,25 @@
+data TransformedShape = pure native com.sun.javafx.geom.TransformedShape where
+
+  pure native adjust :: TransformedShape -> BaseTransform -> BaseTransform
+
+  pure native contains :: TransformedShape -> float -> float -> float -> float -> boolean
+                        | TransformedShape -> float -> float -> boolean
+
+  pure native copy :: TransformedShape -> Shape
+
+  pure native getBounds :: TransformedShape -> RectBounds
+
+  pure native getDelegateNoClone :: TransformedShape -> Shape
+
+  pure native getPathIterator :: TransformedShape -> BaseTransform -> float -> PathIterator
+                               | TransformedShape -> BaseTransform -> PathIterator
+
+  pure native getTransformNoClone :: TransformedShape -> BaseTransform
+
+  pure native intersects :: TransformedShape -> float -> float -> float -> float -> boolean
+
+  pure native transformedShape "com.sun.javafx.geom.TransformedShape.transformedShape" :: Shape -> BaseTransform -> TransformedShape
+
+  pure native translatedShape "com.sun.javafx.geom.TransformedShape.translatedShape" :: Shape -> double -> double -> TransformedShape
+
+

@@ -1,0 +1,23 @@
+data LightingBuilder b = mutable native javafx.scene.effect.LightingBuilder where
+
+  native applyTo :: LightingBuilder b -> Lighting -> IO void
+
+  native build :: LightingBuilder b -> IO Lighting
+
+  native bumpInput :: LightingBuilder b -> Effect -> IO b
+
+  native contentInput :: LightingBuilder b -> Effect -> IO b
+
+  native create "javafx.scene.effect.LightingBuilder.create" :: () -> IO (LightingBuilder Object)
+
+  native diffuseConstant :: LightingBuilder b -> double -> IO b
+
+  native light :: LightingBuilder b -> Light -> IO b
+
+  native specularConstant :: LightingBuilder b -> double -> IO b
+
+  native specularExponent :: LightingBuilder b -> double -> IO b
+
+  native surfaceScale :: LightingBuilder b -> double -> IO b
+
+

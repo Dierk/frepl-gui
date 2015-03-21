@@ -1,0 +1,19 @@
+data ReflectionBuilder b = mutable native javafx.scene.effect.ReflectionBuilder where
+
+  native applyTo :: ReflectionBuilder b -> Reflection -> IO void
+
+  native bottomOpacity :: ReflectionBuilder b -> double -> IO b
+
+  native build :: ReflectionBuilder b -> IO Reflection
+
+  native create "javafx.scene.effect.ReflectionBuilder.create" :: () -> IO (ReflectionBuilder Object)
+
+  native fraction :: ReflectionBuilder b -> double -> IO b
+
+  native input :: ReflectionBuilder b -> Effect -> IO b
+
+  native topOffset :: ReflectionBuilder b -> double -> IO b
+
+  native topOpacity :: ReflectionBuilder b -> double -> IO b
+
+

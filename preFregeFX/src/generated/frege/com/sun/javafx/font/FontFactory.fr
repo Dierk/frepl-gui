@@ -1,0 +1,22 @@
+data FontFactory = pure native com.sun.javafx.font.FontFactory where
+
+  pure native default_fullname "com.sun.javafx.font.FontFactory.DEFAULT_FULLNAME" :: String
+
+  pure native createFont :: FontFactory -> String -> float -> PGFont
+                          | FontFactory -> String -> boolean -> boolean -> float -> PGFont
+
+  pure native deriveFont :: FontFactory -> PGFont -> boolean -> boolean -> float -> PGFont
+
+  native getFontFamilyNames :: FontFactory -> STMutable s (JArray String)
+
+  native getFontFullNames :: FontFactory -> String -> STMutable s (JArray String)
+                           | FontFactory -> STMutable s (JArray String)
+
+  pure native hasPermission :: FontFactory -> boolean
+
+  pure native isPlatformFont :: FontFactory -> String -> boolean
+
+  pure native loadEmbeddedFont :: FontFactory -> String -> String -> float -> boolean -> PGFont
+                                | FontFactory -> String -> InputStream -> float -> boolean -> PGFont
+
+

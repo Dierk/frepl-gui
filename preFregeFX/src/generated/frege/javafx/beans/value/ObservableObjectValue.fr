@@ -1,0 +1,5 @@
+data ObservableObjectValue t = mutable native javafx.beans.value.ObservableObjectValue where
+
+  native get :: ObservableObjectValue t -> IO t
+
+

@@ -1,0 +1,59 @@
+data NumberExpressionBase = mutable native javafx.beans.binding.NumberExpressionBase where
+
+  native add :: NumberExpressionBase -> ObservableNumberValue -> IO NumberBinding
+
+  native asString :: NumberExpressionBase -> IO StringBinding
+                   | NumberExpressionBase -> Locale -> String -> IO StringBinding
+                   | NumberExpressionBase -> String -> IO StringBinding
+
+  native divide :: NumberExpressionBase -> ObservableNumberValue -> IO NumberBinding
+
+  native greaterThan :: NumberExpressionBase -> double -> IO BooleanBinding
+                      | NumberExpressionBase -> float -> IO BooleanBinding
+                      | NumberExpressionBase -> ObservableNumberValue -> IO BooleanBinding
+                      | NumberExpressionBase -> long -> IO BooleanBinding
+                      | NumberExpressionBase -> int -> IO BooleanBinding
+
+  native greaterThanOrEqualTo :: NumberExpressionBase -> float -> IO BooleanBinding
+                               | NumberExpressionBase -> int -> IO BooleanBinding
+                               | NumberExpressionBase -> long -> IO BooleanBinding
+                               | NumberExpressionBase -> ObservableNumberValue -> IO BooleanBinding
+                               | NumberExpressionBase -> double -> IO BooleanBinding
+
+  native isEqualTo :: NumberExpressionBase -> double -> double -> IO BooleanBinding
+                    | NumberExpressionBase -> long -> IO BooleanBinding
+                    | NumberExpressionBase -> float -> double -> IO BooleanBinding
+                    | NumberExpressionBase -> long -> double -> IO BooleanBinding
+                    | NumberExpressionBase -> int -> IO BooleanBinding
+                    | NumberExpressionBase -> int -> double -> IO BooleanBinding
+                    | NumberExpressionBase -> ObservableNumberValue -> double -> IO BooleanBinding
+                    | NumberExpressionBase -> ObservableNumberValue -> IO BooleanBinding
+
+  native isNotEqualTo :: NumberExpressionBase -> float -> double -> IO BooleanBinding
+                       | NumberExpressionBase -> long -> IO BooleanBinding
+                       | NumberExpressionBase -> double -> double -> IO BooleanBinding
+                       | NumberExpressionBase -> long -> double -> IO BooleanBinding
+                       | NumberExpressionBase -> int -> IO BooleanBinding
+                       | NumberExpressionBase -> int -> double -> IO BooleanBinding
+                       | NumberExpressionBase -> ObservableNumberValue -> double -> IO BooleanBinding
+                       | NumberExpressionBase -> ObservableNumberValue -> IO BooleanBinding
+
+  native lessThan :: NumberExpressionBase -> float -> IO BooleanBinding
+                   | NumberExpressionBase -> double -> IO BooleanBinding
+                   | NumberExpressionBase -> ObservableNumberValue -> IO BooleanBinding
+                   | NumberExpressionBase -> long -> IO BooleanBinding
+                   | NumberExpressionBase -> int -> IO BooleanBinding
+
+  native lessThanOrEqualTo :: NumberExpressionBase -> double -> IO BooleanBinding
+                            | NumberExpressionBase -> ObservableNumberValue -> IO BooleanBinding
+                            | NumberExpressionBase -> int -> IO BooleanBinding
+                            | NumberExpressionBase -> float -> IO BooleanBinding
+                            | NumberExpressionBase -> long -> IO BooleanBinding
+
+  native multiply :: NumberExpressionBase -> ObservableNumberValue -> IO NumberBinding
+
+  native numberExpression "javafx.beans.binding.NumberExpressionBase.numberExpression" :: ObservableNumberValue -> IO NumberExpressionBase
+
+  native subtract :: NumberExpressionBase -> ObservableNumberValue -> IO NumberBinding
+
+

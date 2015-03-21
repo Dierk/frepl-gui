@@ -1,0 +1,18 @@
+data FlatteningPathIterator = pure native com.sun.javafx.geom.FlatteningPathIterator where
+
+  pure native new :: PathIterator -> float -> FlatteningPathIterator
+                   | PathIterator -> float -> int -> FlatteningPathIterator
+
+  native currentSegment :: FlatteningPathIterator -> Mutable s (JArray float) -> ST s int
+
+  pure native getFlatness :: FlatteningPathIterator -> float
+
+  pure native getRecursionLimit :: FlatteningPathIterator -> int
+
+  pure native getWindingRule :: FlatteningPathIterator -> int
+
+  pure native isDone :: FlatteningPathIterator -> boolean
+
+  pure native next :: FlatteningPathIterator -> void
+
+

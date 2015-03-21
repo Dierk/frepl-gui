@@ -1,0 +1,19 @@
+data Rule = pure native com.sun.javafx.css.Rule where
+
+  pure native new :: List Selector -> List Declaration -> Rule
+
+  native getDeclarations :: Rule -> IO (ObservableList Declaration)
+
+  native getOrigin :: Rule -> IO StyleOrigin
+
+  native getSelectors :: Rule -> IO (ObservableList Selector)
+
+  pure native getStylesheet :: Rule -> Stylesheet
+
+  pure native getUnobservedDeclarationList :: Rule -> List Declaration
+
+  pure native getUnobservedSelectorList :: Rule -> List Selector
+
+  pure native toString :: Rule -> String
+
+

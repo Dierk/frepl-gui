@@ -1,0 +1,12 @@
+data CycleMethod = mutable native javafx.scene.paint.CycleMethod where
+
+  native no_cycle "javafx.scene.paint.CycleMethod.NO_CYCLE" :: IO CycleMethod
+  native reflect "javafx.scene.paint.CycleMethod.REFLECT" :: IO CycleMethod
+  native repeat "javafx.scene.paint.CycleMethod.REPEAT" :: IO CycleMethod
+
+  native valueOf "javafx.scene.paint.CycleMethod.valueOf" :: String -> IO CycleMethod
+
+  native values "javafx.scene.paint.CycleMethod.values" :: () -> STMutable s (JArray CycleMethod)
+
+derive Serializable CycleMethod
+

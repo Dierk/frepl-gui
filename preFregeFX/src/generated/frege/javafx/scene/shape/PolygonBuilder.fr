@@ -1,0 +1,12 @@
+data PolygonBuilder b = mutable native javafx.scene.shape.PolygonBuilder where
+
+  native applyTo :: PolygonBuilder b -> Polygon -> IO void
+
+  native build :: PolygonBuilder b -> IO Polygon
+
+  native create "javafx.scene.shape.PolygonBuilder.create" :: () -> IO (PolygonBuilder Object)
+
+  native points :: PolygonBuilder b -> MutableIO (JArray Double) -> IO b
+                 | PolygonBuilder b -> Collection Double -> IO b
+
+

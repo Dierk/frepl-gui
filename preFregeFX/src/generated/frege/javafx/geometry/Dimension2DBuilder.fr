@@ -1,0 +1,11 @@
+data Dimension2DBuilder b = mutable native javafx.geometry.Dimension2DBuilder where
+
+  native build :: Dimension2DBuilder b -> IO Dimension2D
+
+  native create "javafx.geometry.Dimension2DBuilder.create" :: () -> IO (Dimension2DBuilder Object)
+
+  native height :: Dimension2DBuilder b -> double -> IO b
+
+  native width :: Dimension2DBuilder b -> double -> IO b
+
+

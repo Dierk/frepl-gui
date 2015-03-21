@@ -1,0 +1,27 @@
+data ListPropertyBase e = mutable native javafx.beans.property.ListPropertyBase where
+
+  native addListener :: ListPropertyBase e -> ChangeListener (ObservableList e) -> IO void
+                      | ListPropertyBase e -> InvalidationListener -> IO void
+                      | ListPropertyBase e -> ListChangeListener e -> IO void
+
+  native bind :: ListPropertyBase e -> ObservableValue (ObservableList e) -> IO void
+
+  native emptyProperty :: ListPropertyBase e -> IO ReadOnlyBooleanProperty
+
+  native get :: ListPropertyBase e -> IO (ObservableList e)
+
+  native isBound :: ListPropertyBase e -> IO boolean
+
+  native removeListener :: ListPropertyBase e -> ChangeListener (ObservableList e) -> IO void
+                         | ListPropertyBase e -> InvalidationListener -> IO void
+                         | ListPropertyBase e -> ListChangeListener e -> IO void
+
+  native set :: ListPropertyBase e -> ObservableList e -> IO void
+
+  native sizeProperty :: ListPropertyBase e -> IO ReadOnlyIntegerProperty
+
+  native toString :: ListPropertyBase e -> IO String
+
+  native unbind :: ListPropertyBase e -> IO void
+
+

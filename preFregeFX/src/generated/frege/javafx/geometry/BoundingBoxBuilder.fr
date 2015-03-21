@@ -1,0 +1,19 @@
+data BoundingBoxBuilder b = mutable native javafx.geometry.BoundingBoxBuilder where
+
+  native build :: BoundingBoxBuilder b -> IO BoundingBox
+
+  native create "javafx.geometry.BoundingBoxBuilder.create" :: () -> IO (BoundingBoxBuilder Object)
+
+  native depth :: BoundingBoxBuilder b -> double -> IO b
+
+  native height :: BoundingBoxBuilder b -> double -> IO b
+
+  native minX :: BoundingBoxBuilder b -> double -> IO b
+
+  native minY :: BoundingBoxBuilder b -> double -> IO b
+
+  native minZ :: BoundingBoxBuilder b -> double -> IO b
+
+  native width :: BoundingBoxBuilder b -> double -> IO b
+
+

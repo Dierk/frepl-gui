@@ -1,0 +1,9 @@
+data Algorithm = pure native com.sun.javafx.scene.traversal.Algorithm where
+
+  native select :: Algorithm -> Node -> Direction -> TraversalContext -> IO Node
+
+  native selectFirst :: Algorithm -> TraversalContext -> IO Node
+
+  native selectLast :: Algorithm -> TraversalContext -> IO Node
+
+

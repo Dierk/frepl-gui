@@ -1,0 +1,5 @@
+data CTFontStrike = pure native com.sun.javafx.font.coretext.CTFontStrike where
+
+  pure native getQuantizedPosition :: CTFontStrike -> Point2D -> int
+
+

@@ -1,0 +1,9 @@
+data ExtendedInputMethodRequests = pure native com.sun.javafx.scene.input.ExtendedInputMethodRequests where
+
+  pure native getCommittedText :: ExtendedInputMethodRequests -> int -> int -> String
+
+  pure native getCommittedTextLength :: ExtendedInputMethodRequests -> int
+
+  pure native getInsertPositionOffset :: ExtendedInputMethodRequests -> int
+
+

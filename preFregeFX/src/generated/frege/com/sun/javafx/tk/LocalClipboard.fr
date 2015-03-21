@@ -1,0 +1,29 @@
+data LocalClipboard = pure native com.sun.javafx.tk.LocalClipboard where
+
+  pure native new :: () -> LocalClipboard
+
+  native getContent :: LocalClipboard -> DataFormat -> IO Object
+
+  pure native getContentTypes :: LocalClipboard -> Set DataFormat
+
+  native getDragView :: LocalClipboard -> IO Image
+
+  pure native getDragViewOffsetX :: LocalClipboard -> double
+
+  pure native getDragViewOffsetY :: LocalClipboard -> double
+
+  pure native getTransferModes :: LocalClipboard -> Set TransferMode
+
+  native hasContent :: LocalClipboard -> DataFormat -> IO boolean
+
+  native putContent :: LocalClipboard -> Mutable s (JArray (Pair DataFormat Object)) -> ST s boolean
+
+  native setDragView :: LocalClipboard -> Image -> IO void
+
+  pure native setDragViewOffsetX :: LocalClipboard -> double -> void
+
+  pure native setDragViewOffsetY :: LocalClipboard -> double -> void
+
+  pure native setSecurityContext :: LocalClipboard -> AccessControlContext -> void
+
+

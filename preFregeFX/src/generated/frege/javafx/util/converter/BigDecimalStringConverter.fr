@@ -1,0 +1,9 @@
+data BigDecimalStringConverter = mutable native javafx.util.converter.BigDecimalStringConverter where
+
+  native new :: () -> IO BigDecimalStringConverter
+
+  native fromString :: BigDecimalStringConverter -> String -> IO BigDecimal
+
+  native toString :: BigDecimalStringConverter -> BigDecimal -> IO String
+
+

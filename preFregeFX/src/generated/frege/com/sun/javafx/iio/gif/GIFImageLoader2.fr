@@ -1,0 +1,9 @@
+data GIFImageLoader2 = pure native com.sun.javafx.iio.gif.GIFImageLoader2 where
+
+  native new :: InputStream -> ST s GIFImageLoader2 throws IOException
+
+  pure native dispose :: GIFImageLoader2 -> void
+
+  native load :: GIFImageLoader2 -> int -> int -> int -> boolean -> boolean -> ST s ImageFrame throws IOException
+
+

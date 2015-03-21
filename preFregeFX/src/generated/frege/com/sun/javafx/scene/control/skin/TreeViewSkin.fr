@@ -1,0 +1,13 @@
+data TreeViewSkin t = pure native com.sun.javafx.scene.control.skin.TreeViewSkin where
+
+  native new :: TreeView -> IO (TreeViewSkin t)
+
+  native createCell :: TreeViewSkin t -> IO (TreeCell t)
+
+  pure native getItemCount :: TreeViewSkin t -> int
+
+  pure native onScrollPageDown :: TreeViewSkin t -> boolean -> int
+
+  pure native onScrollPageUp :: TreeViewSkin t -> boolean -> int
+
+

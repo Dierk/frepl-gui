@@ -1,0 +1,9 @@
+data EventQueue = pure native com.sun.javafx.event.EventQueue where
+
+  pure native new :: () -> EventQueue
+
+  pure native fire :: EventQueue -> void
+
+  native postEvent :: EventQueue -> Event -> IO void
+
+

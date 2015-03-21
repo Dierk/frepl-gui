@@ -1,0 +1,9 @@
+data FTFactory = pure native com.sun.javafx.font.freetype.FTFactory where
+
+  pure native createGlyphLayout :: FTFactory -> GlyphLayout
+
+  pure native getFactory "com.sun.javafx.font.freetype.FTFactory.getFactory" :: () -> PrismFontFactory
+
+  pure native isLCDTextSupported :: FTFactory -> boolean
+
+

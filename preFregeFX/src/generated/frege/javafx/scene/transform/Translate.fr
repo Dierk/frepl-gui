@@ -1,0 +1,60 @@
+data Translate = mutable native javafx.scene.transform.Translate where
+
+  native new :: double -> double -> double -> IO Translate
+              | double -> double -> IO Translate
+              | () -> IO Translate
+
+  native clone :: Translate -> IO Translate
+
+  native createConcatenation :: Translate -> Transform -> IO Transform
+
+  native createInverse :: Translate -> IO Translate
+
+  native deltaTransform :: Translate -> Point2D -> IO Point2D
+                         | Translate -> double -> double -> IO Point2D
+                         | Translate -> double -> double -> double -> IO Point3D
+                         | Translate -> Point3D -> IO Point3D
+
+  native getTx :: Translate -> IO double
+
+  native getTy :: Translate -> IO double
+
+  native getTz :: Translate -> IO double
+
+  native getX :: Translate -> IO double
+
+  native getY :: Translate -> IO double
+
+  native getZ :: Translate -> IO double
+
+  native impl_apply :: Translate -> Affine3D -> IO void
+
+  native impl_derive :: Translate -> BaseTransform -> IO BaseTransform
+
+  native inverseDeltaTransform :: Translate -> double -> double -> IO Point2D
+                                | Translate -> Point2D -> IO Point2D
+                                | Translate -> double -> double -> double -> IO Point3D
+                                | Translate -> Point3D -> IO Point3D
+
+  native inverseTransform :: Translate -> double -> double -> double -> IO Point3D
+                           | Translate -> double -> double -> IO Point2D
+
+  native setX :: Translate -> double -> IO void
+
+  native setY :: Translate -> double -> IO void
+
+  native setZ :: Translate -> double -> IO void
+
+  native toString :: Translate -> IO String
+
+  native transform :: Translate -> double -> double -> double -> IO Point3D
+                    | Translate -> double -> double -> IO Point2D
+
+  native xProperty :: Translate -> IO DoubleProperty
+
+  native yProperty :: Translate -> IO DoubleProperty
+
+  native zProperty :: Translate -> IO DoubleProperty
+
+derive Cloneable Translate
+

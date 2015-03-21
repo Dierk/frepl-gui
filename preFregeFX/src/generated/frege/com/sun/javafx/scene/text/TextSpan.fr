@@ -1,0 +1,9 @@
+data TextSpan = pure native com.sun.javafx.scene.text.TextSpan where
+
+  pure native getBounds :: TextSpan -> RectBounds
+
+  pure native getFont :: TextSpan -> Object
+
+  pure native getText :: TextSpan -> String
+
+

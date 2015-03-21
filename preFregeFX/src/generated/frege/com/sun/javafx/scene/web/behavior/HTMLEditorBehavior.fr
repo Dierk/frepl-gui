@@ -1,0 +1,5 @@
+data HTMLEditorBehavior = pure native com.sun.javafx.scene.web.behavior.HTMLEditorBehavior where
+
+  native new :: HTMLEditor -> IO HTMLEditorBehavior
+
+

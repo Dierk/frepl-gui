@@ -1,0 +1,13 @@
+data URLBuilder = pure native com.sun.javafx.fxml.builder.URLBuilder where
+
+  pure native value_key "com.sun.javafx.fxml.builder.URLBuilder.VALUE_KEY" :: String
+
+  pure native new :: ClassLoader -> URLBuilder
+
+  pure native build :: URLBuilder -> URL
+
+  pure native entrySet :: URLBuilder -> Set (Map_Entry String Object)
+
+  pure native put :: URLBuilder -> String -> Object -> Object
+
+

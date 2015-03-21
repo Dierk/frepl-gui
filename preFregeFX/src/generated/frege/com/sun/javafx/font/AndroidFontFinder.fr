@@ -1,0 +1,11 @@
+data AndroidFontFinder = pure native com.sun.javafx.font.AndroidFontFinder where
+
+  pure native getSystemFont "com.sun.javafx.font.AndroidFontFinder.getSystemFont" :: () -> String
+
+  pure native getSystemFontSize "com.sun.javafx.font.AndroidFontFinder.getSystemFontSize" :: () -> float
+
+  pure native getSystemFontsDir "com.sun.javafx.font.AndroidFontFinder.getSystemFontsDir" :: () -> String
+
+  pure native populateFontFileNameMap "com.sun.javafx.font.AndroidFontFinder.populateFontFileNameMap" :: HashMap String String -> HashMap String String -> HashMap String (ArrayList String) -> Locale -> void
+
+

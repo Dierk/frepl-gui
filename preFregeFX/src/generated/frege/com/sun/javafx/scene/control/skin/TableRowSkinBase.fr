@@ -1,0 +1,1 @@
+data TableRowSkinBase t c b r = pure native com.sun.javafx.scene.control.skin.TableRowSkinBase

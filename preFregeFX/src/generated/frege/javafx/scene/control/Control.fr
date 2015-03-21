@@ -1,0 +1,33 @@
+data Control = mutable native javafx.scene.control.Control where
+
+  native contextMenuProperty :: Control -> IO (ObjectProperty ContextMenu)
+
+  native executeAccessibleAction :: Control -> AccessibleAction -> MutableIO (JArray Object) -> IO void
+
+  native getBaselineOffset :: Control -> IO double
+
+  pure native getClassCssMetaData "javafx.scene.control.Control.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getContextMenu :: Control -> IO ContextMenu
+
+  native getCssMetaData :: Control -> IO (List (CssMetaData Styleable Object))
+
+  native getSkin :: Control -> IO (Skin Object)
+
+  native getTooltip :: Control -> IO Tooltip
+
+  native isResizable :: Control -> IO boolean
+
+  native queryAccessibleAttribute :: Control -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setContextMenu :: Control -> ContextMenu -> IO void
+
+  native setSkin :: Control -> Skin Object -> IO void
+
+  native setTooltip :: Control -> Tooltip -> IO void
+
+  native skinProperty :: Control -> IO (ObjectProperty (Skin Object))
+
+  native tooltipProperty :: Control -> IO (ObjectProperty Tooltip)
+
+

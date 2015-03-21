@@ -1,0 +1,7 @@
+data TKSystemMenu = pure native com.sun.javafx.tk.TKSystemMenu where
+
+  pure native isSupported :: TKSystemMenu -> boolean
+
+  pure native setMenus :: TKSystemMenu -> List MenuBase -> void
+
+

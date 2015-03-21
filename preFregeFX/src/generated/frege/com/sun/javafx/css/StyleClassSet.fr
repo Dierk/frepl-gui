@@ -1,0 +1,10 @@
+data StyleClassSet = pure native com.sun.javafx.css.StyleClassSet where
+
+  pure native new :: () -> StyleClassSet
+
+  native toArray :: StyleClassSet -> STMutable s (JArray Object)
+                  | StyleClassSet -> Mutable s (JArray t) -> STMutable s (JArray t)
+
+  pure native toString :: StyleClassSet -> String
+
+

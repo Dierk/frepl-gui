@@ -1,0 +1,19 @@
+data Declaration = pure native com.sun.javafx.css.Declaration where
+
+  pure native new :: String -> ParsedValueImpl -> boolean -> Declaration
+
+  pure native equals :: Declaration -> Object -> boolean
+
+  native getParsedValue :: Declaration -> IO ParsedValue
+
+  pure native getProperty :: Declaration -> String
+
+  pure native getRule :: Declaration -> Rule
+
+  pure native hashCode :: Declaration -> int
+
+  pure native isImportant :: Declaration -> boolean
+
+  pure native toString :: Declaration -> String
+
+

@@ -1,0 +1,5 @@
+data JavaBeanAccessHelper = pure native com.sun.javafx.property.JavaBeanAccessHelper where
+
+  native createReadOnlyJavaBeanProperty "com.sun.javafx.property.JavaBeanAccessHelper.createReadOnlyJavaBeanProperty" :: Object -> String -> IO (ReadOnlyObjectProperty t) throws NoSuchMethodException
+
+

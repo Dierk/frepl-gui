@@ -1,0 +1,7 @@
+data ColorPickerBehavior = pure native com.sun.javafx.scene.control.behavior.ColorPickerBehavior where
+
+  native new :: ColorPicker -> IO ColorPickerBehavior
+
+  pure native onAutoHide :: ColorPickerBehavior -> void
+
+

@@ -1,0 +1,26 @@
+data Edge = pure native com.sun.javafx.geom.Edge where
+
+  pure native new :: Curve -> int -> Edge
+                   | Curve -> int -> int -> Edge
+
+  native compareTo :: Edge -> Edge -> Mutable s (JArray double) -> ST s int
+
+  pure native getCurve :: Edge -> Curve
+
+  pure native getCurveTag :: Edge -> int
+
+  pure native getEdgeTag :: Edge -> int
+
+  pure native getEquivalence :: Edge -> int
+
+  pure native isActiveFor :: Edge -> double -> int -> boolean
+
+  pure native record :: Edge -> double -> int -> void
+
+  pure native setEdgeTag :: Edge -> int -> void
+
+  pure native setEquivalence :: Edge -> int -> void
+
+  pure native toString :: Edge -> String
+
+

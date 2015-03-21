@@ -1,0 +1,9 @@
+data BooleanConverter = pure native com.sun.javafx.css.converters.BooleanConverter where
+
+  native convert :: BooleanConverter -> ParsedValue String Boolean -> Font -> IO Boolean
+
+  native getInstance "com.sun.javafx.css.converters.BooleanConverter.getInstance" :: () -> IO (StyleConverter String Boolean)
+
+  pure native toString :: BooleanConverter -> String
+
+

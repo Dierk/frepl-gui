@@ -1,0 +1,13 @@
+data BloomBuilder b = mutable native javafx.scene.effect.BloomBuilder where
+
+  native applyTo :: BloomBuilder b -> Bloom -> IO void
+
+  native build :: BloomBuilder b -> IO Bloom
+
+  native create "javafx.scene.effect.BloomBuilder.create" :: () -> IO (BloomBuilder Object)
+
+  native input :: BloomBuilder b -> Effect -> IO b
+
+  native threshold :: BloomBuilder b -> double -> IO b
+
+

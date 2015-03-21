@@ -1,0 +1,105 @@
+data BoxBounds = pure native com.sun.javafx.geom.BoxBounds where
+
+  pure native new :: BoxBounds -> BoxBounds
+                   | float -> float -> float -> float -> float -> float -> BoxBounds
+                   | () -> BoxBounds
+
+  pure native add :: BoxBounds -> Point2D -> void
+                   | BoxBounds -> float -> float -> float -> void
+
+  pure native contains :: BoxBounds -> Point2D -> boolean
+                        | BoxBounds -> float -> float -> float -> boolean
+                        | BoxBounds -> float -> float -> float -> float -> float -> float -> boolean
+                        | BoxBounds -> float -> float -> boolean
+
+  pure native copy :: BoxBounds -> BaseBounds
+
+  pure native deriveWithNewBounds :: BoxBounds -> Rectangle -> BaseBounds
+                                   | BoxBounds -> BaseBounds -> BaseBounds
+                                   | BoxBounds -> float -> float -> float -> float -> float -> float -> BaseBounds
+
+  pure native deriveWithNewBoundsAndSort :: BoxBounds -> float -> float -> float -> float -> float -> float -> BaseBounds
+
+  pure native deriveWithPadding :: BoxBounds -> float -> float -> float -> BaseBounds
+
+  pure native deriveWithUnion :: BoxBounds -> BaseBounds -> BaseBounds
+
+  pure native disjoint :: BoxBounds -> float -> float -> float -> float -> boolean
+                        | BoxBounds -> float -> float -> float -> float -> float -> float -> boolean
+
+  pure native equals :: BoxBounds -> Object -> boolean
+
+  pure native flattenInto :: BoxBounds -> RectBounds -> RectBounds
+
+  pure native getBoundsType :: BoxBounds -> BaseBounds_BoundsType
+
+  pure native getDepth :: BoxBounds -> float
+
+  pure native getHeight :: BoxBounds -> float
+
+  pure native getMax :: BoxBounds -> Vec3f -> Vec3f
+                      | BoxBounds -> Vec2f -> Vec2f
+
+  pure native getMaxX :: BoxBounds -> float
+
+  pure native getMaxY :: BoxBounds -> float
+
+  pure native getMaxZ :: BoxBounds -> float
+
+  pure native getMin :: BoxBounds -> Vec3f -> Vec3f
+                      | BoxBounds -> Vec2f -> Vec2f
+
+  pure native getMinX :: BoxBounds -> float
+
+  pure native getMinY :: BoxBounds -> float
+
+  pure native getMinZ :: BoxBounds -> float
+
+  pure native getWidth :: BoxBounds -> float
+
+  pure native grow :: BoxBounds -> float -> float -> float -> void
+
+  pure native hashCode :: BoxBounds -> int
+
+  pure native intersectWith :: BoxBounds -> Rectangle -> void
+                             | BoxBounds -> BaseBounds -> void
+                             | BoxBounds -> float -> float -> float -> float -> float -> float -> void
+
+  pure native intersects :: BoxBounds -> float -> float -> float -> float -> float -> float -> boolean
+                          | BoxBounds -> BaseBounds -> boolean
+                          | BoxBounds -> float -> float -> float -> float -> boolean
+
+  pure native is2D :: BoxBounds -> boolean
+
+  pure native isEmpty :: BoxBounds -> boolean
+
+  pure native makeEmpty :: BoxBounds -> BoxBounds
+
+  pure native roundOut :: BoxBounds -> void
+
+  pure native setBounds :: BoxBounds -> float -> float -> float -> float -> float -> float -> void
+                         | BoxBounds -> BaseBounds -> void
+
+  pure native setBoundsAndSort :: BoxBounds -> float -> float -> float -> float -> float -> float -> void
+                                | BoxBounds -> Point2D -> Point2D -> void
+
+  pure native setMaxX :: BoxBounds -> float -> void
+
+  pure native setMaxY :: BoxBounds -> float -> void
+
+  pure native setMaxZ :: BoxBounds -> float -> void
+
+  pure native setMinX :: BoxBounds -> float -> void
+
+  pure native setMinY :: BoxBounds -> float -> void
+
+  pure native setMinZ :: BoxBounds -> float -> void
+
+  pure native toString :: BoxBounds -> String
+
+  pure native translate :: BoxBounds -> float -> float -> float -> void
+
+  pure native unionWith :: BoxBounds -> float -> float -> float -> float -> float -> float -> void
+                         | BoxBounds -> BaseBounds -> void
+
+

@@ -1,0 +1,7 @@
+data BehaviorSkinBase c bb = pure native com.sun.javafx.scene.control.skin.BehaviorSkinBase where
+
+  pure native dispose :: BehaviorSkinBase c bb -> void
+
+  pure native getBehavior :: BehaviorSkinBase c bb -> bb
+
+

@@ -1,0 +1,28 @@
+data NGGroup = pure native com.sun.javafx.sg.prism.NGGroup where
+
+  pure native new :: () -> NGGroup
+
+  pure native add :: NGGroup -> int -> NGNode -> void
+
+  pure native addToRemoved :: NGGroup -> NGNode -> void
+
+  pure native clear :: NGGroup -> void
+
+  pure native clearFrom :: NGGroup -> int -> void
+
+  native drawDirtyOpts :: NGGroup -> BaseTransform -> GeneralTransform3D -> Rectangle -> Mutable s (JArray int) -> int -> ST s void
+
+  pure native getChildren :: NGGroup -> List NGNode
+
+  pure native getRemovedChildren :: NGGroup -> List NGNode
+
+  pure native isEmpty :: NGGroup -> boolean
+
+  pure native remove :: NGGroup -> NGNode -> void
+                      | NGGroup -> int -> void
+
+  pure native renderForcedContent :: NGGroup -> Graphics -> void
+
+  pure native setBlendMode :: NGGroup -> Object -> void
+
+

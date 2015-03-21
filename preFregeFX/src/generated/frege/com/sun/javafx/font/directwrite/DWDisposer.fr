@@ -1,0 +1,5 @@
+data DWDisposer = pure native com.sun.javafx.font.directwrite.DWDisposer where
+
+  pure native dispose :: DWDisposer -> void
+
+

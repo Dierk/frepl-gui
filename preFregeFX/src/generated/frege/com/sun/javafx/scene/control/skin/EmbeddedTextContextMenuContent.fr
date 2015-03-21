@@ -1,0 +1,5 @@
+data EmbeddedTextContextMenuContent = pure native com.sun.javafx.scene.control.skin.EmbeddedTextContextMenuContent where
+
+  native new :: ContextMenu -> IO EmbeddedTextContextMenuContent
+
+

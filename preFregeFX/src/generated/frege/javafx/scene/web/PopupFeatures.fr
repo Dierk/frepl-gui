@@ -1,0 +1,13 @@
+data PopupFeatures = mutable native javafx.scene.web.PopupFeatures where
+
+  native new :: boolean -> boolean -> boolean -> boolean -> IO PopupFeatures
+
+  native hasMenu :: PopupFeatures -> IO boolean
+
+  native hasStatus :: PopupFeatures -> IO boolean
+
+  native hasToolbar :: PopupFeatures -> IO boolean
+
+  native isResizable :: PopupFeatures -> IO boolean
+
+

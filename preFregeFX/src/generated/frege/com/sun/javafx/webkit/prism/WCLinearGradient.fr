@@ -1,0 +1,7 @@
+data WCLinearGradient = pure native com.sun.javafx.webkit.prism.WCLinearGradient where
+
+  pure native getPlatformGradient :: WCLinearGradient -> LinearGradient
+
+  pure native toString :: WCLinearGradient -> String
+
+

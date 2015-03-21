@@ -1,0 +1,11 @@
+data DoubleField = pure native com.sun.javafx.scene.control.skin.DoubleField where
+
+  pure native new :: () -> DoubleField
+
+  pure native getValue :: DoubleField -> double
+
+  pure native setValue :: DoubleField -> double -> void
+
+  native valueProperty :: DoubleField -> IO DoubleProperty
+
+

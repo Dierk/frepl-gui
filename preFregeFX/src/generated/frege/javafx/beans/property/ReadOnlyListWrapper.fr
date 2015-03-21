@@ -1,0 +1,18 @@
+data ReadOnlyListWrapper e = mutable native javafx.beans.property.ReadOnlyListWrapper where
+
+  native new :: Object -> String -> ObservableList e -> IO (ReadOnlyListWrapper e)
+              | Object -> String -> IO (ReadOnlyListWrapper e)
+              | ObservableList e -> IO (ReadOnlyListWrapper e)
+              | () -> IO (ReadOnlyListWrapper e)
+
+  native addListener :: ReadOnlyListWrapper e -> ListChangeListener e -> IO void
+                      | ReadOnlyListWrapper e -> ChangeListener (ObservableList e) -> IO void
+                      | ReadOnlyListWrapper e -> InvalidationListener -> IO void
+
+  native getReadOnlyProperty :: ReadOnlyListWrapper e -> IO (ReadOnlyListProperty e)
+
+  native removeListener :: ReadOnlyListWrapper e -> InvalidationListener -> IO void
+                         | ReadOnlyListWrapper e -> ListChangeListener e -> IO void
+                         | ReadOnlyListWrapper e -> ChangeListener (ObservableList e) -> IO void
+
+

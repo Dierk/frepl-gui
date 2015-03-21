@@ -1,0 +1,11 @@
+data BorderImageWidthsSequenceConverter = pure native com.sun.javafx.scene.layout.region.BorderImageWidthsSequenceConverter where
+
+  pure native new :: () -> BorderImageWidthsSequenceConverter
+
+  native convert :: BorderImageWidthsSequenceConverter -> ParsedValue (JArray (ParsedValue (JArray ParsedValue) BorderWidths)) (JArray BorderWidths) -> Font -> IO (JArray BorderWidths)
+
+  pure native getInstance "com.sun.javafx.scene.layout.region.BorderImageWidthsSequenceConverter.getInstance" :: () -> BorderImageWidthsSequenceConverter
+
+  pure native toString :: BorderImageWidthsSequenceConverter -> String
+
+

@@ -1,0 +1,5 @@
+data SplitPaneSkin = pure native com.sun.javafx.scene.control.skin.SplitPaneSkin where
+
+  native new :: SplitPane -> IO SplitPaneSkin
+
+

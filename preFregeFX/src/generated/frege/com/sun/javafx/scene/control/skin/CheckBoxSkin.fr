@@ -1,0 +1,5 @@
+data CheckBoxSkin = pure native com.sun.javafx.scene.control.skin.CheckBoxSkin where
+
+  native new :: CheckBox -> IO CheckBoxSkin
+
+

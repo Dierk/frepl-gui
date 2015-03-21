@@ -1,0 +1,7 @@
+data LightBuilder b = mutable native javafx.scene.effect.LightBuilder where
+
+  native applyTo :: LightBuilder b -> Light -> IO void
+
+  native color :: LightBuilder b -> Color -> IO b
+
+

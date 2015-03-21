@@ -1,0 +1,9 @@
+data FontStrikeDesc = pure native com.sun.javafx.font.FontStrikeDesc where
+
+  pure native new :: float -> BaseTransform -> int -> FontStrikeDesc
+
+  pure native equals :: FontStrikeDesc -> Object -> boolean
+
+  pure native hashCode :: FontStrikeDesc -> int
+
+

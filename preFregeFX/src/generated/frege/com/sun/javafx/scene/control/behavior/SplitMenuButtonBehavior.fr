@@ -1,0 +1,5 @@
+data SplitMenuButtonBehavior = pure native com.sun.javafx.scene.control.behavior.SplitMenuButtonBehavior where
+
+  native new :: SplitMenuButton -> IO SplitMenuButtonBehavior
+
+

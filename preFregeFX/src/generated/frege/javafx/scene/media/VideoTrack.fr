@@ -1,0 +1,7 @@
+data VideoTrack = mutable native javafx.scene.media.VideoTrack where
+
+  native getHeight :: VideoTrack -> IO int
+
+  native getWidth :: VideoTrack -> IO int
+
+

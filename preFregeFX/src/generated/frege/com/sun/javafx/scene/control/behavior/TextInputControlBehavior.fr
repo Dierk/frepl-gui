@@ -1,0 +1,9 @@
+data TextInputControlBehavior t = pure native com.sun.javafx.scene.control.behavior.TextInputControlBehavior where
+
+  pure native callAction :: TextInputControlBehavior t -> String -> void
+
+  pure native dispose :: TextInputControlBehavior t -> void
+
+  pure native isEditing :: TextInputControlBehavior t -> boolean
+
+

@@ -1,0 +1,19 @@
+data SnapshotParametersBuilder b = mutable native javafx.scene.SnapshotParametersBuilder where
+
+  native applyTo :: SnapshotParametersBuilder b -> SnapshotParameters -> IO void
+
+  native build :: SnapshotParametersBuilder b -> IO SnapshotParameters
+
+  native camera :: SnapshotParametersBuilder b -> Camera -> IO b
+
+  native create "javafx.scene.SnapshotParametersBuilder.create" :: () -> IO (SnapshotParametersBuilder Object)
+
+  native depthBuffer :: SnapshotParametersBuilder b -> boolean -> IO b
+
+  native fill :: SnapshotParametersBuilder b -> Paint -> IO b
+
+  native transform :: SnapshotParametersBuilder b -> Transform -> IO b
+
+  native viewport :: SnapshotParametersBuilder b -> Rectangle2D -> IO b
+
+

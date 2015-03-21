@@ -1,0 +1,13 @@
+data CellBuilder t b = mutable native javafx.scene.control.CellBuilder where
+
+  native applyTo :: CellBuilder t b -> Cell t -> IO void
+
+  native build :: CellBuilder t b -> IO (Cell t)
+
+  native create "javafx.scene.control.CellBuilder.create" :: () -> IO (CellBuilder t Object)
+
+  native editable :: CellBuilder t b -> boolean -> IO b
+
+  native item :: CellBuilder t b -> t -> IO b
+
+

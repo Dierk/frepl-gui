@@ -1,0 +1,27 @@
+data CharArrayIterator = pure native com.sun.javafx.text.CharArrayIterator where
+
+  native new :: Mutable s (JArray char) -> ST s CharArrayIterator
+              | Mutable s (JArray char) -> int -> ST s CharArrayIterator
+
+  pure native clone :: CharArrayIterator -> Object
+
+  pure native current :: CharArrayIterator -> char
+
+  pure native first :: CharArrayIterator -> char
+
+  pure native getBeginIndex :: CharArrayIterator -> int
+
+  pure native getEndIndex :: CharArrayIterator -> int
+
+  pure native getIndex :: CharArrayIterator -> int
+
+  pure native last :: CharArrayIterator -> char
+
+  pure native next :: CharArrayIterator -> char
+
+  pure native previous :: CharArrayIterator -> char
+
+  pure native setIndex :: CharArrayIterator -> int -> char
+
+derive Cloneable CharArrayIterator
+

@@ -1,0 +1,9 @@
+data ComboBoxPopupControl t = pure native com.sun.javafx.scene.control.skin.ComboBoxPopupControl where
+
+  pure native combo_box_style_class "com.sun.javafx.scene.control.skin.ComboBoxPopupControl.COMBO_BOX_STYLE_CLASS" :: String
+
+  pure native hide :: ComboBoxPopupControl t -> void
+
+  pure native show :: ComboBoxPopupControl t -> void
+
+

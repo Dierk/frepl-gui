@@ -1,0 +1,14 @@
+data SimpleStyleableStringProperty = mutable native javafx.css.SimpleStyleableStringProperty where
+
+  native new :: CssMetaData Styleable String -> Object -> String -> String -> IO SimpleStyleableStringProperty
+              | CssMetaData Styleable String -> Object -> String -> IO SimpleStyleableStringProperty
+              | CssMetaData Styleable String -> String -> IO SimpleStyleableStringProperty
+              | CssMetaData Styleable String -> IO SimpleStyleableStringProperty
+
+  native getBean :: SimpleStyleableStringProperty -> IO Object
+
+  native getCssMetaData :: SimpleStyleableStringProperty -> IO (CssMetaData Styleable String)
+
+  native getName :: SimpleStyleableStringProperty -> IO String
+
+

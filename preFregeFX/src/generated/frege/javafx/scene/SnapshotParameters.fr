@@ -1,0 +1,25 @@
+data SnapshotParameters = mutable native javafx.scene.SnapshotParameters where
+
+  native new :: () -> IO SnapshotParameters
+
+  native getCamera :: SnapshotParameters -> IO Camera
+
+  native getFill :: SnapshotParameters -> IO Paint
+
+  native getTransform :: SnapshotParameters -> IO Transform
+
+  native getViewport :: SnapshotParameters -> IO Rectangle2D
+
+  native isDepthBuffer :: SnapshotParameters -> IO boolean
+
+  native setCamera :: SnapshotParameters -> Camera -> IO void
+
+  native setDepthBuffer :: SnapshotParameters -> boolean -> IO void
+
+  native setFill :: SnapshotParameters -> Paint -> IO void
+
+  native setTransform :: SnapshotParameters -> Transform -> IO void
+
+  native setViewport :: SnapshotParameters -> Rectangle2D -> IO void
+
+

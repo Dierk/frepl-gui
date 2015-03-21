@@ -1,0 +1,12 @@
+data StrokeLineCap = mutable native javafx.scene.shape.StrokeLineCap where
+
+  native square "javafx.scene.shape.StrokeLineCap.SQUARE" :: IO StrokeLineCap
+  native butt "javafx.scene.shape.StrokeLineCap.BUTT" :: IO StrokeLineCap
+  native round "javafx.scene.shape.StrokeLineCap.ROUND" :: IO StrokeLineCap
+
+  native valueOf "javafx.scene.shape.StrokeLineCap.valueOf" :: String -> IO StrokeLineCap
+
+  native values "javafx.scene.shape.StrokeLineCap.values" :: () -> STMutable s (JArray StrokeLineCap)
+
+derive Serializable StrokeLineCap
+

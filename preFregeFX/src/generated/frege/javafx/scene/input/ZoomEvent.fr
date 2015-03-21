@@ -1,0 +1,23 @@
+data ZoomEvent = mutable native javafx.scene.input.ZoomEvent where
+
+  native any "javafx.scene.input.ZoomEvent.ANY" :: IO (EventType ZoomEvent)
+  native zoom "javafx.scene.input.ZoomEvent.ZOOM" :: IO (EventType ZoomEvent)
+  native zoom_started "javafx.scene.input.ZoomEvent.ZOOM_STARTED" :: IO (EventType ZoomEvent)
+  native zoom_finished "javafx.scene.input.ZoomEvent.ZOOM_FINISHED" :: IO (EventType ZoomEvent)
+
+  native new :: Object -> EventTarget -> EventType ZoomEvent -> double -> double -> double -> double -> boolean -> boolean -> boolean -> boolean -> boolean -> boolean -> double -> double -> PickResult -> IO ZoomEvent
+              | EventType ZoomEvent -> double -> double -> double -> double -> boolean -> boolean -> boolean -> boolean -> boolean -> boolean -> double -> double -> PickResult -> IO ZoomEvent
+
+  native copyFor :: ZoomEvent -> Object -> EventTarget -> EventType ZoomEvent -> IO ZoomEvent
+                  | ZoomEvent -> Object -> EventTarget -> IO ZoomEvent
+
+  native getEventType :: ZoomEvent -> IO (EventType ZoomEvent)
+
+  native getTotalZoomFactor :: ZoomEvent -> IO double
+
+  native getZoomFactor :: ZoomEvent -> IO double
+
+  native toString :: ZoomEvent -> IO String
+
+derive Serializable ZoomEvent
+

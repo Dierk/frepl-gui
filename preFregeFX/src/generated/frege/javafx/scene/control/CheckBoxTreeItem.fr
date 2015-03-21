@@ -1,0 +1,29 @@
+data CheckBoxTreeItem t = mutable native javafx.scene.control.CheckBoxTreeItem where
+
+  native new :: t -> Node -> boolean -> IO (CheckBoxTreeItem t)
+              | t -> Node -> IO (CheckBoxTreeItem t)
+              | t -> IO (CheckBoxTreeItem t)
+              | () -> IO (CheckBoxTreeItem t)
+              | t -> Node -> boolean -> boolean -> IO (CheckBoxTreeItem t)
+
+  native checkBoxSelectionChangedEvent "javafx.scene.control.CheckBoxTreeItem.checkBoxSelectionChangedEvent" :: () -> IO (EventType (CheckBoxTreeItem_TreeModificationEvent t))
+
+  native independentProperty :: CheckBoxTreeItem t -> IO BooleanProperty
+
+  native indeterminateProperty :: CheckBoxTreeItem t -> IO BooleanProperty
+
+  native isIndependent :: CheckBoxTreeItem t -> IO boolean
+
+  native isIndeterminate :: CheckBoxTreeItem t -> IO boolean
+
+  native isSelected :: CheckBoxTreeItem t -> IO boolean
+
+  native selectedProperty :: CheckBoxTreeItem t -> IO BooleanProperty
+
+  native setIndependent :: CheckBoxTreeItem t -> boolean -> IO void
+
+  native setIndeterminate :: CheckBoxTreeItem t -> boolean -> IO void
+
+  native setSelected :: CheckBoxTreeItem t -> boolean -> IO void
+
+

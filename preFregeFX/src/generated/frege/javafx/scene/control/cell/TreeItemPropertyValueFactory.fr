@@ -1,0 +1,9 @@
+data TreeItemPropertyValueFactory s t = mutable native javafx.scene.control.cell.TreeItemPropertyValueFactory where
+
+  native new :: String -> IO (TreeItemPropertyValueFactory s t)
+
+  native call :: TreeItemPropertyValueFactory s t -> TreeTableColumn_CellDataFeatures s t -> IO (ObservableValue t)
+
+  native getProperty :: TreeItemPropertyValueFactory s t -> IO String
+
+

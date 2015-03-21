@@ -1,0 +1,27 @@
+data ConditionalFeature = mutable native javafx.application.ConditionalFeature where
+
+  native graphics "javafx.application.ConditionalFeature.GRAPHICS" :: IO ConditionalFeature
+  native controls "javafx.application.ConditionalFeature.CONTROLS" :: IO ConditionalFeature
+  native media "javafx.application.ConditionalFeature.MEDIA" :: IO ConditionalFeature
+  native web "javafx.application.ConditionalFeature.WEB" :: IO ConditionalFeature
+  native swt "javafx.application.ConditionalFeature.SWT" :: IO ConditionalFeature
+  native swing "javafx.application.ConditionalFeature.SWING" :: IO ConditionalFeature
+  native fxml "javafx.application.ConditionalFeature.FXML" :: IO ConditionalFeature
+  native scene3d "javafx.application.ConditionalFeature.SCENE3D" :: IO ConditionalFeature
+  native effect "javafx.application.ConditionalFeature.EFFECT" :: IO ConditionalFeature
+  native shape_clip "javafx.application.ConditionalFeature.SHAPE_CLIP" :: IO ConditionalFeature
+  native input_method "javafx.application.ConditionalFeature.INPUT_METHOD" :: IO ConditionalFeature
+  native transparent_window "javafx.application.ConditionalFeature.TRANSPARENT_WINDOW" :: IO ConditionalFeature
+  native unified_window "javafx.application.ConditionalFeature.UNIFIED_WINDOW" :: IO ConditionalFeature
+  native two_level_focus "javafx.application.ConditionalFeature.TWO_LEVEL_FOCUS" :: IO ConditionalFeature
+  native virtual_keyboard "javafx.application.ConditionalFeature.VIRTUAL_KEYBOARD" :: IO ConditionalFeature
+  native input_touch "javafx.application.ConditionalFeature.INPUT_TOUCH" :: IO ConditionalFeature
+  native input_multitouch "javafx.application.ConditionalFeature.INPUT_MULTITOUCH" :: IO ConditionalFeature
+  native input_pointer "javafx.application.ConditionalFeature.INPUT_POINTER" :: IO ConditionalFeature
+
+  native valueOf "javafx.application.ConditionalFeature.valueOf" :: String -> IO ConditionalFeature
+
+  native values "javafx.application.ConditionalFeature.values" :: () -> STMutable s (JArray ConditionalFeature)
+
+derive Serializable ConditionalFeature
+

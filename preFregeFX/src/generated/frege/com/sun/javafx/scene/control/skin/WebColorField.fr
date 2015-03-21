@@ -1,0 +1,11 @@
+data WebColorField = pure native com.sun.javafx.scene.control.skin.WebColorField where
+
+  pure native new :: () -> WebColorField
+
+  native getValue :: WebColorField -> IO Color
+
+  native setValue :: WebColorField -> Color -> IO void
+
+  native valueProperty :: WebColorField -> IO (ObjectProperty Color)
+
+

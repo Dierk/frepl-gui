@@ -1,0 +1,26 @@
+data Background = mutable native javafx.scene.layout.Background where
+
+  native empty "javafx.scene.layout.Background.EMPTY" :: IO Background
+
+  native new :: MutableIO (JArray BackgroundImage) -> IO Background
+              | MutableIO (JArray BackgroundFill) -> IO Background
+              | MutableIO (JArray BackgroundFill) -> MutableIO (JArray BackgroundImage) -> IO Background
+              | List BackgroundFill -> List BackgroundImage -> IO Background
+
+  native equals :: Background -> Object -> IO boolean
+
+  pure native getClassCssMetaData "javafx.scene.layout.Background.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getFills :: Background -> IO (List BackgroundFill)
+
+  native getImages :: Background -> IO (List BackgroundImage)
+
+  native getOutsets :: Background -> IO Insets
+
+  native hashCode :: Background -> IO int
+
+  native isEmpty :: Background -> IO boolean
+
+  native isFillPercentageBased :: Background -> IO boolean
+
+

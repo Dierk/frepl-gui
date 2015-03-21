@@ -1,0 +1,9 @@
+data ImageFormatDescription = pure native com.sun.javafx.iio.ImageFormatDescription where
+
+  pure native getExtensions :: ImageFormatDescription -> List String
+
+  pure native getFormatName :: ImageFormatDescription -> String
+
+  pure native getSignatures :: ImageFormatDescription -> List ImageFormatDescription_Signature
+
+

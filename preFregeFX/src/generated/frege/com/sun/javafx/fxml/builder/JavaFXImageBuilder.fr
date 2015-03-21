@@ -1,0 +1,11 @@
+data JavaFXImageBuilder = pure native com.sun.javafx.fxml.builder.JavaFXImageBuilder where
+
+  pure native new :: () -> JavaFXImageBuilder
+
+  native build :: JavaFXImageBuilder -> IO Image
+
+  pure native entrySet :: JavaFXImageBuilder -> Set (Map_Entry String Object)
+
+  pure native put :: JavaFXImageBuilder -> String -> Object -> Object
+
+

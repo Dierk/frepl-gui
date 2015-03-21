@@ -1,0 +1,17 @@
+data EllipseBuilder b = mutable native javafx.scene.shape.EllipseBuilder where
+
+  native applyTo :: EllipseBuilder b -> Ellipse -> IO void
+
+  native build :: EllipseBuilder b -> IO Ellipse
+
+  native centerX :: EllipseBuilder b -> double -> IO b
+
+  native centerY :: EllipseBuilder b -> double -> IO b
+
+  native create "javafx.scene.shape.EllipseBuilder.create" :: () -> IO (EllipseBuilder Object)
+
+  native radiusX :: EllipseBuilder b -> double -> IO b
+
+  native radiusY :: EllipseBuilder b -> double -> IO b
+
+

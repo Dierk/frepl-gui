@@ -1,0 +1,31 @@
+data MultipleSelectionModelBase t = mutable native javafx.scene.control.MultipleSelectionModelBase where
+
+  native clearAndSelect :: MultipleSelectionModelBase t -> int -> IO void
+
+  native clearSelection :: MultipleSelectionModelBase t -> IO void
+                         | MultipleSelectionModelBase t -> int -> IO void
+
+  native getSelectedIndices :: MultipleSelectionModelBase t -> IO (ObservableList Integer)
+
+  native getSelectedItems :: MultipleSelectionModelBase t -> IO (ObservableList t)
+
+  native isEmpty :: MultipleSelectionModelBase t -> IO boolean
+
+  native isSelected :: MultipleSelectionModelBase t -> int -> IO boolean
+
+  native select :: MultipleSelectionModelBase t -> t -> IO void
+                 | MultipleSelectionModelBase t -> int -> IO void
+
+  native selectAll :: MultipleSelectionModelBase t -> IO void
+
+  native selectFirst :: MultipleSelectionModelBase t -> IO void
+
+  native selectIndices :: MultipleSelectionModelBase t -> int -> MutableIO (JArray int) -> IO void
+
+  native selectLast :: MultipleSelectionModelBase t -> IO void
+
+  native selectNext :: MultipleSelectionModelBase t -> IO void
+
+  native selectPrevious :: MultipleSelectionModelBase t -> IO void
+
+

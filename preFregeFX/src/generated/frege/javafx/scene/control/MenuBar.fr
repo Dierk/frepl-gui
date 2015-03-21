@@ -1,0 +1,18 @@
+data MenuBar = mutable native javafx.scene.control.MenuBar where
+
+  native new :: () -> IO MenuBar
+              | MutableIO (JArray Menu) -> IO MenuBar
+
+  pure native getClassCssMetaData "javafx.scene.control.MenuBar.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getControlCssMetaData :: MenuBar -> IO (List (CssMetaData Styleable Object))
+
+  native getMenus :: MenuBar -> IO (ObservableList Menu)
+
+  native isUseSystemMenuBar :: MenuBar -> IO boolean
+
+  native setUseSystemMenuBar :: MenuBar -> boolean -> IO void
+
+  native useSystemMenuBarProperty :: MenuBar -> IO BooleanProperty
+
+

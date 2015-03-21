@@ -1,0 +1,9 @@
+data ReadOnlyBooleanPropertyBase = mutable native javafx.beans.property.ReadOnlyBooleanPropertyBase where
+
+  native addListener :: ReadOnlyBooleanPropertyBase -> ChangeListener Boolean -> IO void
+                      | ReadOnlyBooleanPropertyBase -> InvalidationListener -> IO void
+
+  native removeListener :: ReadOnlyBooleanPropertyBase -> ChangeListener Boolean -> IO void
+                         | ReadOnlyBooleanPropertyBase -> InvalidationListener -> IO void
+
+

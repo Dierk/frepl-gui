@@ -1,0 +1,9 @@
+data PrismInvoker = pure native com.sun.javafx.webkit.prism.PrismInvoker where
+
+  pure native new :: () -> PrismInvoker
+
+  pure native invokeOnEventThread :: PrismInvoker -> Runnable -> void
+
+  pure native postOnEventThread :: PrismInvoker -> Runnable -> void
+
+

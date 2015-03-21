@@ -1,0 +1,29 @@
+data Matrix3f = pure native com.sun.javafx.geom.Matrix3f where
+
+  pure native m00 "".m00"" :: Matrix3f -> float
+  pure native m01 "".m01"" :: Matrix3f -> float
+  pure native m02 "".m02"" :: Matrix3f -> float
+  pure native m10 "".m10"" :: Matrix3f -> float
+  pure native m11 "".m11"" :: Matrix3f -> float
+  pure native m12 "".m12"" :: Matrix3f -> float
+  pure native m20 "".m20"" :: Matrix3f -> float
+  pure native m21 "".m21"" :: Matrix3f -> float
+  pure native m22 "".m22"" :: Matrix3f -> float
+
+  native new :: () -> ST s Matrix3f
+              | Matrix3f -> ST s Matrix3f
+              | Mutable s (JArray Vec3f) -> ST s Matrix3f
+              | Mutable s (JArray float) -> ST s Matrix3f
+              | float -> float -> float -> float -> float -> float -> float -> float -> float -> ST s Matrix3f
+
+  native getRow :: Matrix3f -> int -> Vec3f -> ST s void
+                 | Matrix3f -> int -> Mutable s (JArray float) -> ST s void
+
+  pure native setIdentity :: Matrix3f -> void
+
+  native setRow :: Matrix3f -> int -> Vec3f -> ST s void
+                 | Matrix3f -> int -> Mutable s (JArray float) -> ST s void
+
+  pure native toString :: Matrix3f -> String
+
+

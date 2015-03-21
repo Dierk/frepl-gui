@@ -1,0 +1,1 @@
+data IWICBitmap = pure native com.sun.javafx.font.directwrite.IWICBitmap

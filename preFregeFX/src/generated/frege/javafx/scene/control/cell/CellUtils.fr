@@ -1,0 +1,1 @@
+data CellUtils = mutable native javafx.scene.control.cell.CellUtils

@@ -1,0 +1,15 @@
+data ImageInputBuilder b = mutable native javafx.scene.effect.ImageInputBuilder where
+
+  native applyTo :: ImageInputBuilder b -> ImageInput -> IO void
+
+  native build :: ImageInputBuilder b -> IO ImageInput
+
+  native create "javafx.scene.effect.ImageInputBuilder.create" :: () -> IO (ImageInputBuilder Object)
+
+  native source :: ImageInputBuilder b -> Image -> IO b
+
+  native x :: ImageInputBuilder b -> double -> IO b
+
+  native y :: ImageInputBuilder b -> double -> IO b
+
+

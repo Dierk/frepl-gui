@@ -1,0 +1,28 @@
+data CTGlyph = pure native com.sun.javafx.font.coretext.CTGlyph where
+
+  pure native getAdvance :: CTGlyph -> float
+
+  pure native getBBox :: CTGlyph -> RectBounds
+
+  pure native getGlyphCode :: CTGlyph -> int
+
+  pure native getHeight :: CTGlyph -> int
+
+  pure native getOriginX :: CTGlyph -> int
+
+  pure native getOriginY :: CTGlyph -> int
+
+  native getPixelData :: CTGlyph -> STMutable s (JArray byte)
+                       | CTGlyph -> int -> STMutable s (JArray byte)
+
+  pure native getPixelXAdvance :: CTGlyph -> float
+
+  pure native getPixelYAdvance :: CTGlyph -> float
+
+  pure native getShape :: CTGlyph -> Shape
+
+  pure native getWidth :: CTGlyph -> int
+
+  pure native isLCDGlyph :: CTGlyph -> boolean
+
+

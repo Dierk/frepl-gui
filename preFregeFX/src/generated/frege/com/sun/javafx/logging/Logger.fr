@@ -1,0 +1,21 @@
+data Logger = pure native com.sun.javafx.logging.Logger where
+
+  pure native new :: () -> Logger
+
+  pure native addMessage :: Logger -> String -> void
+
+  pure native incrementCounter :: Logger -> String -> void
+
+  pure native newInput :: Logger -> String -> void
+
+  pure native newPhase :: Logger -> String -> void
+
+  pure native pulseEnd :: Logger -> void
+
+  pure native pulseStart :: Logger -> void
+
+  pure native renderEnd :: Logger -> void
+
+  pure native renderStart :: Logger -> void
+
+

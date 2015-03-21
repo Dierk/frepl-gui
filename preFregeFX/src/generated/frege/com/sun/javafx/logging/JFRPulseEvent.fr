@@ -1,0 +1,13 @@
+data JFRPulseEvent = pure native com.sun.javafx.logging.JFRPulseEvent where
+
+  pure native new :: EventToken -> JFRPulseEvent
+
+  pure native getPhase :: JFRPulseEvent -> String
+
+  pure native getPulseNumber :: JFRPulseEvent -> int
+
+  pure native setPhase :: JFRPulseEvent -> String -> void
+
+  pure native setPulseNumber :: JFRPulseEvent -> int -> void
+
+

@@ -1,0 +1,122 @@
+data DummyToolkit = pure native com.sun.javafx.tk.DummyToolkit where
+
+  pure native new :: () -> DummyToolkit
+
+  native accumulateStrokeBounds :: DummyToolkit -> Shape -> MutableIO (JArray float) -> StrokeType -> double -> StrokeLineCap -> StrokeLineJoin -> float -> BaseTransform -> IO void
+
+  pure native addRenderJob :: DummyToolkit -> RenderJob -> Future
+
+  pure native closeAppletWindow :: DummyToolkit -> void
+
+  pure native convertHitInfoToFX :: DummyToolkit -> Object -> HitInfo
+
+  native convertShapeToFXPath :: DummyToolkit -> Object -> STMutable s (JArray PathElement)
+
+  pure native createAppletWindow :: DummyToolkit -> long -> String -> AppletWindow
+
+  pure native createPerformanceTracker :: DummyToolkit -> PerformanceTracker
+
+  pure native createPlatformImage :: DummyToolkit -> int -> int -> PlatformImage
+
+  native createSVGPath2D :: DummyToolkit -> SVGPath -> IO Path2D
+
+  native createSVGPathObject :: DummyToolkit -> SVGPath -> IO Object
+
+  native createStrokedShape :: DummyToolkit -> Shape -> StrokeType -> double -> StrokeLineCap -> StrokeLineJoin -> float -> MutableIO (JArray float) -> float -> IO Shape
+
+  pure native createTKEmbeddedStage :: DummyToolkit -> HostInterface -> AccessControlContext -> TKStage
+
+  native createTKPopupStage :: DummyToolkit -> Window -> StageStyle -> TKStage -> AccessControlContext -> IO TKStage
+
+  native createTKStage :: DummyToolkit -> Window -> boolean -> StageStyle -> boolean -> Modality -> TKStage -> boolean -> AccessControlContext -> IO TKStage
+
+  pure native defer :: DummyToolkit -> Runnable -> void
+
+  pure native enableDrop :: DummyToolkit -> TKScene -> TKDropTargetListener -> void
+
+  pure native enterNestedEventLoop :: DummyToolkit -> Object -> Object
+
+  pure native exitNestedEventLoop :: DummyToolkit -> Object -> Object -> void
+
+  native getBestCursorSize :: DummyToolkit -> int -> int -> IO Dimension2D
+
+  pure native getContextMap :: DummyToolkit -> Map Object Object
+
+  pure native getFilterContext :: DummyToolkit -> Object -> FilterContext
+
+  pure native getFontLoader :: DummyToolkit -> FontLoader
+
+  pure native getKeyCodeForChar :: DummyToolkit -> String -> int
+
+  pure native getMasterTimer :: DummyToolkit -> AbstractMasterTimer
+
+  pure native getMaximumCursorColors :: DummyToolkit -> int
+
+  pure native getMultiClickMaxX :: DummyToolkit -> int
+
+  pure native getMultiClickMaxY :: DummyToolkit -> int
+
+  pure native getMultiClickTime :: DummyToolkit -> long
+
+  pure native getNamedClipboard :: DummyToolkit -> String -> TKClipboard
+
+  pure native getPerformanceTracker :: DummyToolkit -> PerformanceTracker
+
+  native getPlatformShortcutKey :: DummyToolkit -> IO KeyCode
+
+  pure native getPrimaryScreen :: DummyToolkit -> Object
+
+  pure native getRefreshRate :: DummyToolkit -> int
+
+  pure native getScreens :: DummyToolkit -> List Object
+
+  pure native getSystemClipboard :: DummyToolkit -> TKClipboard
+
+  pure native getSystemMenu :: DummyToolkit -> TKSystemMenu
+
+  pure native getTextLayoutFactory :: DummyToolkit -> TextLayoutFactory
+
+  pure native imageContains :: DummyToolkit -> Object -> float -> float -> boolean
+
+  pure native init :: DummyToolkit -> boolean
+
+  native installInputMethodRequests :: DummyToolkit -> TKScene -> InputMethodRequests -> IO void
+
+  native isBackwardTraversalKey :: DummyToolkit -> KeyEvent -> IO boolean
+
+  native isForwardTraversalKey :: DummyToolkit -> KeyEvent -> IO boolean
+
+  pure native isNestedLoopRunning :: DummyToolkit -> boolean
+
+  pure native loadImage :: DummyToolkit -> String -> int -> int -> boolean -> boolean -> ImageLoader
+                         | DummyToolkit -> InputStream -> int -> int -> boolean -> boolean -> ImageLoader
+
+  pure native loadImageAsync :: DummyToolkit -> AsyncOperationListener ImageLoader -> String -> int -> int -> boolean -> boolean -> AsyncOperation
+
+  pure native loadPlatformImage :: DummyToolkit -> Object -> ImageLoader
+
+  pure native registerDragGestureListener :: DummyToolkit -> TKScene -> Set TransferMode -> TKDragGestureListener -> void
+
+  pure native renderToImage :: DummyToolkit -> Toolkit_ImageRenderingContext -> Object
+
+  pure native requestNextPulse :: DummyToolkit -> void
+
+  pure native setAnimationRunnable :: DummyToolkit -> DelayedRunnable -> void
+
+  pure native setScreenConfigurationListener :: DummyToolkit -> TKScreenConfigurationListener -> ScreenConfigurationAccessor
+
+  pure native showDirectoryChooser :: DummyToolkit -> TKStage -> String -> File -> File
+
+  pure native showFileChooser :: DummyToolkit -> TKStage -> String -> File -> String -> FileChooserType -> List FileChooser_ExtensionFilter -> FileChooser_ExtensionFilter -> CommonDialogs_FileChooserResult
+
+  native startDrag :: DummyToolkit -> TKScene -> Set TransferMode -> TKDragSourceListener -> Dragboard -> IO void
+
+  pure native startup :: DummyToolkit -> Runnable -> void
+
+  native strokeContains :: DummyToolkit -> Shape -> double -> double -> StrokeType -> double -> StrokeLineCap -> StrokeLineJoin -> float -> IO boolean
+
+  native toFilterable :: DummyToolkit -> Image -> IO Filterable
+
+  pure native waitFor :: DummyToolkit -> Toolkit_Task -> void
+
+

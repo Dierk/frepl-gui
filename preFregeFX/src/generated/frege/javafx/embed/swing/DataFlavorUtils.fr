@@ -1,0 +1,1 @@
+data DataFlavorUtils = mutable native javafx.embed.swing.DataFlavorUtils

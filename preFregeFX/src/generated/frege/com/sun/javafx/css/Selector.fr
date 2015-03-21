@@ -1,0 +1,11 @@
+data Selector = pure native com.sun.javafx.css.Selector where
+
+  native applies :: Selector -> Styleable -> IO boolean
+
+  pure native createSelector "com.sun.javafx.css.Selector.createSelector" :: String -> Selector
+
+  pure native getUniversalSelector "com.sun.javafx.css.Selector.getUniversalSelector" :: () -> Selector
+
+  native stateMatches :: Selector -> Styleable -> Set PseudoClass -> IO boolean
+
+

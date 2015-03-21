@@ -1,0 +1,58 @@
+data DragEvent = mutable native javafx.scene.input.DragEvent where
+
+  native any "javafx.scene.input.DragEvent.ANY" :: IO (EventType DragEvent)
+  native drag_entered_target "javafx.scene.input.DragEvent.DRAG_ENTERED_TARGET" :: IO (EventType DragEvent)
+  native drag_entered "javafx.scene.input.DragEvent.DRAG_ENTERED" :: IO (EventType DragEvent)
+  native drag_exited_target "javafx.scene.input.DragEvent.DRAG_EXITED_TARGET" :: IO (EventType DragEvent)
+  native drag_exited "javafx.scene.input.DragEvent.DRAG_EXITED" :: IO (EventType DragEvent)
+  native drag_over "javafx.scene.input.DragEvent.DRAG_OVER" :: IO (EventType DragEvent)
+  native drag_dropped "javafx.scene.input.DragEvent.DRAG_DROPPED" :: IO (EventType DragEvent)
+  native drag_done "javafx.scene.input.DragEvent.DRAG_DONE" :: IO (EventType DragEvent)
+
+  native new :: EventType DragEvent -> Dragboard -> double -> double -> double -> double -> TransferMode -> Object -> Object -> PickResult -> IO DragEvent
+              | Object -> EventTarget -> EventType DragEvent -> Dragboard -> double -> double -> double -> double -> TransferMode -> Object -> Object -> PickResult -> IO DragEvent
+
+  native acceptTransferModes :: DragEvent -> MutableIO (JArray TransferMode) -> IO void
+
+  native copyFor :: DragEvent -> Object -> EventTarget -> Object -> Object -> EventType DragEvent -> IO DragEvent
+                  | DragEvent -> Object -> EventTarget -> EventType DragEvent -> IO DragEvent
+                  | DragEvent -> Object -> EventTarget -> IO DragEvent
+
+  native getAcceptedTransferMode :: DragEvent -> IO TransferMode
+
+  native getAcceptingObject :: DragEvent -> IO Object
+
+  native getDragboard :: DragEvent -> IO Dragboard
+
+  native getEventType :: DragEvent -> IO (EventType DragEvent)
+
+  native getGestureSource :: DragEvent -> IO Object
+
+  native getGestureTarget :: DragEvent -> IO Object
+
+  native getPickResult :: DragEvent -> IO PickResult
+
+  native getSceneX :: DragEvent -> IO double
+
+  native getSceneY :: DragEvent -> IO double
+
+  native getScreenX :: DragEvent -> IO double
+
+  native getScreenY :: DragEvent -> IO double
+
+  native getTransferMode :: DragEvent -> IO TransferMode
+
+  native getX :: DragEvent -> IO double
+
+  native getY :: DragEvent -> IO double
+
+  native getZ :: DragEvent -> IO double
+
+  native isAccepted :: DragEvent -> IO boolean
+
+  native isDropCompleted :: DragEvent -> IO boolean
+
+  native setDropCompleted :: DragEvent -> boolean -> IO void
+
+derive Serializable DragEvent
+

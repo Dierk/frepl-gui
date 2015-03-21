@@ -1,0 +1,21 @@
+data CellBehaviorBase t = pure native com.sun.javafx.scene.control.behavior.CellBehaviorBase where
+
+  native contextMenuRequested :: CellBehaviorBase t -> ContextMenuEvent -> IO void
+
+  native getAnchor "com.sun.javafx.scene.control.behavior.CellBehaviorBase.getAnchor" :: Control -> t -> IO t
+
+  native hasDefaultAnchor "com.sun.javafx.scene.control.behavior.CellBehaviorBase.hasDefaultAnchor" :: Control -> IO boolean
+
+  native hasNonDefaultAnchor "com.sun.javafx.scene.control.behavior.CellBehaviorBase.hasNonDefaultAnchor" :: Control -> IO boolean
+
+  native mouseDragged :: CellBehaviorBase t -> MouseEvent -> IO void
+
+  native mousePressed :: CellBehaviorBase t -> MouseEvent -> IO void
+
+  native mouseReleased :: CellBehaviorBase t -> MouseEvent -> IO void
+
+  native removeAnchor "com.sun.javafx.scene.control.behavior.CellBehaviorBase.removeAnchor" :: Control -> IO void
+
+  native setAnchor "com.sun.javafx.scene.control.behavior.CellBehaviorBase.setAnchor" :: Control -> t -> boolean -> IO void
+
+

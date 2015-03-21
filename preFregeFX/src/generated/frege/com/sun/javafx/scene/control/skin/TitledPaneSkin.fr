@@ -1,0 +1,9 @@
+data TitledPaneSkin = pure native com.sun.javafx.scene.control.skin.TitledPaneSkin where
+
+  native transition_duration "com.sun.javafx.scene.control.skin.TitledPaneSkin.TRANSITION_DURATION" :: IO Duration
+
+  native new :: TitledPane -> IO TitledPaneSkin
+
+  native getContentContainer :: TitledPaneSkin -> IO StackPane
+
+

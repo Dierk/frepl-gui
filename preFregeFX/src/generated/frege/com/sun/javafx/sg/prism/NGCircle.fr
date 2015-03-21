@@ -1,0 +1,9 @@
+data NGCircle = pure native com.sun.javafx.sg.prism.NGCircle where
+
+  pure native new :: () -> NGCircle
+
+  pure native getShape :: NGCircle -> Shape
+
+  pure native updateCircle :: NGCircle -> float -> float -> float -> void
+
+

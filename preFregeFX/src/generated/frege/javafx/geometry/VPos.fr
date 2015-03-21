@@ -1,0 +1,13 @@
+data VPos = mutable native javafx.geometry.VPos where
+
+  native top "javafx.geometry.VPos.TOP" :: IO VPos
+  native center "javafx.geometry.VPos.CENTER" :: IO VPos
+  native baseline "javafx.geometry.VPos.BASELINE" :: IO VPos
+  native bottom "javafx.geometry.VPos.BOTTOM" :: IO VPos
+
+  native valueOf "javafx.geometry.VPos.valueOf" :: String -> IO VPos
+
+  native values "javafx.geometry.VPos.values" :: () -> STMutable s (JArray VPos)
+
+derive Serializable VPos
+

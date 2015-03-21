@@ -1,0 +1,32 @@
+data CurveLink = pure native com.sun.javafx.geom.CurveLink where
+
+  pure native new :: Curve -> double -> double -> int -> CurveLink
+
+  pure native absorb :: CurveLink -> CurveLink -> boolean
+                      | CurveLink -> Curve -> double -> double -> int -> boolean
+
+  pure native getCurve :: CurveLink -> Curve
+
+  pure native getEdgeTag :: CurveLink -> int
+
+  pure native getMoveto :: CurveLink -> Curve
+
+  pure native getNext :: CurveLink -> CurveLink
+
+  pure native getSubCurve :: CurveLink -> Curve
+
+  pure native getX :: CurveLink -> double
+
+  pure native getXBot :: CurveLink -> double
+
+  pure native getXTop :: CurveLink -> double
+
+  pure native getYBot :: CurveLink -> double
+
+  pure native getYTop :: CurveLink -> double
+
+  pure native isEmpty :: CurveLink -> boolean
+
+  pure native setNext :: CurveLink -> CurveLink -> void
+
+

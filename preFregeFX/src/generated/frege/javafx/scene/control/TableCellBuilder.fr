@@ -1,0 +1,7 @@
+data TableCellBuilder s t b = mutable native javafx.scene.control.TableCellBuilder where
+
+  native build :: TableCellBuilder s t b -> IO (TableCell s t)
+
+  native create "javafx.scene.control.TableCellBuilder.create" :: () -> IO (TableCellBuilder s t Object)
+
+

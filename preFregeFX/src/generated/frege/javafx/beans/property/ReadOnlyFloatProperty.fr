@@ -1,0 +1,9 @@
+data ReadOnlyFloatProperty = mutable native javafx.beans.property.ReadOnlyFloatProperty where
+
+  native asObject :: ReadOnlyFloatProperty -> IO (ReadOnlyObjectProperty Float)
+
+  native readOnlyFloatProperty "javafx.beans.property.ReadOnlyFloatProperty.readOnlyFloatProperty" :: ReadOnlyProperty t -> IO ReadOnlyFloatProperty
+
+  native toString :: ReadOnlyFloatProperty -> IO String
+
+

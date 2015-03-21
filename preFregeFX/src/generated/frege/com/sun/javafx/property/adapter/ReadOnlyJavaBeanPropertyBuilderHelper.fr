@@ -1,0 +1,19 @@
+data ReadOnlyJavaBeanPropertyBuilderHelper = pure native com.sun.javafx.property.adapter.ReadOnlyJavaBeanPropertyBuilderHelper where
+
+  pure native new :: () -> ReadOnlyJavaBeanPropertyBuilderHelper
+
+  pure native bean :: ReadOnlyJavaBeanPropertyBuilderHelper -> Object -> void
+
+  pure native beanClass :: ReadOnlyJavaBeanPropertyBuilderHelper -> Class Object -> void
+
+  pure native getBean :: ReadOnlyJavaBeanPropertyBuilderHelper -> Object
+
+  native getDescriptor :: ReadOnlyJavaBeanPropertyBuilderHelper -> ST s ReadOnlyPropertyDescriptor throws NoSuchMethodException
+
+  pure native getter :: ReadOnlyJavaBeanPropertyBuilderHelper -> Method -> void
+
+  pure native getterName :: ReadOnlyJavaBeanPropertyBuilderHelper -> String -> void
+
+  pure native name :: ReadOnlyJavaBeanPropertyBuilderHelper -> String -> void
+
+

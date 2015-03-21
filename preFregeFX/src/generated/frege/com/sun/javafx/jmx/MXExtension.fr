@@ -1,0 +1,7 @@
+data MXExtension = pure native com.sun.javafx.jmx.MXExtension where
+
+  pure native initializeIfAvailable "com.sun.javafx.jmx.MXExtension.initializeIfAvailable" :: () -> void
+
+  native intialize :: MXExtension -> ST s void throws Exception
+
+

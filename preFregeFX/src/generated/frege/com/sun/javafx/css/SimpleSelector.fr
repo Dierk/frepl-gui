@@ -1,0 +1,25 @@
+data SimpleSelector = pure native com.sun.javafx.css.SimpleSelector where
+
+  pure native new :: String -> List String -> List String -> String -> SimpleSelector
+
+  native applies :: SimpleSelector -> Styleable -> IO boolean
+
+  pure native equals :: SimpleSelector -> Object -> boolean
+
+  pure native getId :: SimpleSelector -> String
+
+  pure native getName :: SimpleSelector -> String
+
+  pure native getPseudoclasses :: SimpleSelector -> List String
+
+  pure native getStyleClasses :: SimpleSelector -> List String
+
+  pure native hashCode :: SimpleSelector -> int
+
+  native stateMatches :: SimpleSelector -> Styleable -> Set PseudoClass -> IO boolean
+
+  pure native toString :: SimpleSelector -> String
+
+  native writeBinary :: SimpleSelector -> DataOutputStream -> StringStore -> ST s void throws IOException
+
+

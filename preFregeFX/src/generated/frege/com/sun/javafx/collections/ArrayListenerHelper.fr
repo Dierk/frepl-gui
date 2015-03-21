@@ -1,0 +1,13 @@
+data ArrayListenerHelper t = pure native com.sun.javafx.collections.ArrayListenerHelper where
+
+  native addListener "com.sun.javafx.collections.ArrayListenerHelper.addListener" :: ArrayListenerHelper -> t -> InvalidationListener -> IO ArrayListenerHelper
+                                                                                   | ArrayListenerHelper -> t -> ArrayChangeListener -> IO ArrayListenerHelper
+
+  pure native fireValueChangedEvent "com.sun.javafx.collections.ArrayListenerHelper.fireValueChangedEvent" :: ArrayListenerHelper -> boolean -> int -> int -> void
+
+  pure native hasListeners "com.sun.javafx.collections.ArrayListenerHelper.hasListeners" :: ArrayListenerHelper -> boolean
+
+  native removeListener "com.sun.javafx.collections.ArrayListenerHelper.removeListener" :: ArrayListenerHelper -> ArrayChangeListener -> IO ArrayListenerHelper
+                                                                                         | ArrayListenerHelper -> InvalidationListener -> IO ArrayListenerHelper
+
+

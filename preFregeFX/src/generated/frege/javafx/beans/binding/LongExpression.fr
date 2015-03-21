@@ -1,0 +1,40 @@
+data LongExpression = mutable native javafx.beans.binding.LongExpression where
+
+  native add :: LongExpression -> double -> IO DoubleBinding
+              | LongExpression -> float -> IO FloatBinding
+              | LongExpression -> long -> IO LongBinding
+              | LongExpression -> int -> IO LongBinding
+
+  native asObject :: LongExpression -> IO (ObjectExpression Long)
+
+  native divide :: LongExpression -> int -> IO LongBinding
+                 | LongExpression -> long -> IO LongBinding
+                 | LongExpression -> double -> IO DoubleBinding
+                 | LongExpression -> float -> IO FloatBinding
+
+  native doubleValue :: LongExpression -> IO double
+
+  native floatValue :: LongExpression -> IO float
+
+  native getValue :: LongExpression -> IO Long
+
+  native intValue :: LongExpression -> IO int
+
+  native longExpression "javafx.beans.binding.LongExpression.longExpression" :: ObservableValue t -> IO LongExpression
+                                                                              | ObservableLongValue -> IO LongExpression
+
+  native longValue :: LongExpression -> IO long
+
+  native multiply :: LongExpression -> long -> IO LongBinding
+                   | LongExpression -> float -> IO FloatBinding
+                   | LongExpression -> int -> IO LongBinding
+                   | LongExpression -> double -> IO DoubleBinding
+
+  native negate :: LongExpression -> IO LongBinding
+
+  native subtract :: LongExpression -> float -> IO FloatBinding
+                   | LongExpression -> int -> IO LongBinding
+                   | LongExpression -> double -> IO DoubleBinding
+                   | LongExpression -> long -> IO LongBinding
+
+

@@ -1,0 +1,11 @@
+data BidirectionalContentBinding = pure native com.sun.javafx.binding.BidirectionalContentBinding where
+
+  pure native new :: () -> BidirectionalContentBinding
+
+  native bind "com.sun.javafx.binding.BidirectionalContentBinding.bind" :: ObservableMap k v -> ObservableMap k v -> IO Object
+                                                                         | ObservableSet e -> ObservableSet e -> IO Object
+                                                                         | ObservableList e -> ObservableList e -> IO Object
+
+  pure native unbind "com.sun.javafx.binding.BidirectionalContentBinding.unbind" :: Object -> Object -> void
+
+

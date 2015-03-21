@@ -1,0 +1,21 @@
+data ByteGray = pure native com.sun.javafx.image.impl.ByteGray where
+
+  pure native getter "com.sun.javafx.image.impl.ByteGray.getter" :: BytePixelGetter
+  pure native setter "com.sun.javafx.image.impl.ByteGray.setter" :: BytePixelSetter
+  pure native accessor "com.sun.javafx.image.impl.ByteGray.accessor" :: BytePixelAccessor
+
+  pure native new :: () -> ByteGray
+
+  pure native toByteBgrConverter "com.sun.javafx.image.impl.ByteGray.ToByteBgrConverter" :: () -> ByteToBytePixelConverter
+
+  pure native toByteBgraConverter "com.sun.javafx.image.impl.ByteGray.ToByteBgraConverter" :: () -> ByteToBytePixelConverter
+
+  pure native toByteBgraPreConverter "com.sun.javafx.image.impl.ByteGray.ToByteBgraPreConverter" :: () -> ByteToBytePixelConverter
+
+  pure native toByteGrayConverter "com.sun.javafx.image.impl.ByteGray.ToByteGrayConverter" :: () -> ByteToBytePixelConverter
+
+  pure native toIntArgbConverter "com.sun.javafx.image.impl.ByteGray.ToIntArgbConverter" :: () -> ByteToIntPixelConverter
+
+  pure native toIntArgbPreConverter "com.sun.javafx.image.impl.ByteGray.ToIntArgbPreConverter" :: () -> ByteToIntPixelConverter
+
+

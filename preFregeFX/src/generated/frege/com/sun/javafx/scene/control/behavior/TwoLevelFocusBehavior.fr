@@ -1,0 +1,12 @@
+data TwoLevelFocusBehavior = pure native com.sun.javafx.scene.control.behavior.TwoLevelFocusBehavior where
+
+  native new :: () -> ST s TwoLevelFocusBehavior
+              | Node -> IO TwoLevelFocusBehavior
+
+  pure native dispose :: TwoLevelFocusBehavior -> void
+
+  pure native isExternalFocus :: TwoLevelFocusBehavior -> boolean
+
+  pure native setExternalFocus :: TwoLevelFocusBehavior -> boolean -> void
+
+

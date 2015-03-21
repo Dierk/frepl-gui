@@ -1,0 +1,50 @@
+data MapExpression k v = mutable native javafx.beans.binding.MapExpression where
+
+  native asString :: MapExpression k v -> IO StringBinding
+
+  native clear :: MapExpression k v -> IO void
+
+  native containsKey :: MapExpression k v -> Object -> IO boolean
+
+  native containsValue :: MapExpression k v -> Object -> IO boolean
+
+  native emptyProperty :: MapExpression k v -> IO ReadOnlyBooleanProperty
+
+  native entrySet :: MapExpression k v -> IO (Set (Map_Entry k v))
+
+  native get :: MapExpression k v -> Object -> IO v
+
+  native getSize :: MapExpression k v -> IO int
+
+  native getValue :: MapExpression k v -> IO (ObservableMap k v)
+
+  native isEmpty :: MapExpression k v -> IO boolean
+
+  native isEqualTo :: MapExpression k v -> ObservableMap Object Object -> IO BooleanBinding
+
+  native isNotEqualTo :: MapExpression k v -> ObservableMap Object Object -> IO BooleanBinding
+
+  native isNotNull :: MapExpression k v -> IO BooleanBinding
+
+  native isNull :: MapExpression k v -> IO BooleanBinding
+
+  native keySet :: MapExpression k v -> IO (Set k)
+
+  native mapExpression "javafx.beans.binding.MapExpression.mapExpression" :: ObservableMapValue k v -> IO (MapExpression k v)
+
+  native put :: MapExpression k v -> k -> v -> IO v
+
+  native putAll :: MapExpression k v -> Map k v -> IO void
+
+  native remove :: MapExpression k v -> Object -> IO v
+
+  native size :: MapExpression k v -> IO int
+
+  native sizeProperty :: MapExpression k v -> IO ReadOnlyIntegerProperty
+
+  native valueAt :: MapExpression k v -> ObservableValue k -> IO (ObjectBinding v)
+                  | MapExpression k v -> k -> IO (ObjectBinding v)
+
+  native values :: MapExpression k v -> IO (Collection v)
+
+

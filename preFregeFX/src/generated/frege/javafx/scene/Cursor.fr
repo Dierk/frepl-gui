@@ -1,0 +1,28 @@
+data Cursor = mutable native javafx.scene.Cursor where
+
+  native default "javafx.scene.Cursor.DEFAULT" :: IO Cursor
+  native crosshair "javafx.scene.Cursor.CROSSHAIR" :: IO Cursor
+  native text "javafx.scene.Cursor.TEXT" :: IO Cursor
+  native wait "javafx.scene.Cursor.WAIT" :: IO Cursor
+  native sw_resize "javafx.scene.Cursor.SW_RESIZE" :: IO Cursor
+  native se_resize "javafx.scene.Cursor.SE_RESIZE" :: IO Cursor
+  native nw_resize "javafx.scene.Cursor.NW_RESIZE" :: IO Cursor
+  native ne_resize "javafx.scene.Cursor.NE_RESIZE" :: IO Cursor
+  native n_resize "javafx.scene.Cursor.N_RESIZE" :: IO Cursor
+  native s_resize "javafx.scene.Cursor.S_RESIZE" :: IO Cursor
+  native w_resize "javafx.scene.Cursor.W_RESIZE" :: IO Cursor
+  native e_resize "javafx.scene.Cursor.E_RESIZE" :: IO Cursor
+  native open_hand "javafx.scene.Cursor.OPEN_HAND" :: IO Cursor
+  native closed_hand "javafx.scene.Cursor.CLOSED_HAND" :: IO Cursor
+  native hand "javafx.scene.Cursor.HAND" :: IO Cursor
+  native move "javafx.scene.Cursor.MOVE" :: IO Cursor
+  native disappear "javafx.scene.Cursor.DISAPPEAR" :: IO Cursor
+  native h_resize "javafx.scene.Cursor.H_RESIZE" :: IO Cursor
+  native v_resize "javafx.scene.Cursor.V_RESIZE" :: IO Cursor
+  native none "javafx.scene.Cursor.NONE" :: IO Cursor
+
+  native cursor "javafx.scene.Cursor.cursor" :: String -> IO Cursor
+
+  native toString :: Cursor -> IO String
+
+

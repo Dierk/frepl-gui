@@ -1,0 +1,17 @@
+data TextFieldBuilder b = mutable native javafx.scene.control.TextFieldBuilder where
+
+  native alignment :: TextFieldBuilder b -> Pos -> IO b
+
+  native applyTo :: TextFieldBuilder b -> TextField -> IO void
+
+  native build :: TextFieldBuilder b -> IO TextField
+
+  native create "javafx.scene.control.TextFieldBuilder.create" :: () -> IO (TextFieldBuilder Object)
+
+  native onAction :: TextFieldBuilder b -> EventHandler ActionEvent -> IO b
+
+  native prefColumnCount :: TextFieldBuilder b -> int -> IO b
+
+  native promptText :: TextFieldBuilder b -> String -> IO b
+
+

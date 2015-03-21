@@ -1,0 +1,1 @@
+data SubtitleTrack = mutable native javafx.scene.media.SubtitleTrack

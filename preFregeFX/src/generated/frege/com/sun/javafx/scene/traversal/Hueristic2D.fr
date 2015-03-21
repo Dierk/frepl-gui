@@ -1,0 +1,11 @@
+data Hueristic2D = pure native com.sun.javafx.scene.traversal.Hueristic2D where
+
+  native findMin "com.sun.javafx.scene.traversal.Hueristic2D.findMin" :: Mutable s (JArray double) -> ST s double
+
+  native select :: Hueristic2D -> Node -> Direction -> TraversalContext -> IO Node
+
+  native selectFirst :: Hueristic2D -> TraversalContext -> IO Node
+
+  native selectLast :: Hueristic2D -> TraversalContext -> IO Node
+
+

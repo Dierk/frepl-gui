@@ -1,0 +1,5 @@
+data IntegerArraySyncer = pure native com.sun.javafx.collections.IntegerArraySyncer where
+
+  native syncTo :: IntegerArraySyncer -> Mutable s (JArray int) -> Mutable s (JArray int) -> STMutable s (JArray int)
+
+

@@ -1,0 +1,25 @@
+data TreeViewBehavior t = pure native com.sun.javafx.scene.control.behavior.TreeViewBehavior where
+
+  native new :: TreeView t -> IO (TreeViewBehavior t)
+
+  pure native dispose :: TreeViewBehavior t -> void
+
+  native mousePressed :: TreeViewBehavior t -> MouseEvent -> IO void
+
+  pure native setOnFocusNextRow :: TreeViewBehavior t -> Runnable -> void
+
+  pure native setOnFocusPreviousRow :: TreeViewBehavior t -> Runnable -> void
+
+  pure native setOnMoveToFirstCell :: TreeViewBehavior t -> Runnable -> void
+
+  pure native setOnMoveToLastCell :: TreeViewBehavior t -> Runnable -> void
+
+  native setOnScrollPageDown :: TreeViewBehavior t -> Callback Boolean Integer -> IO void
+
+  native setOnScrollPageUp :: TreeViewBehavior t -> Callback Boolean Integer -> IO void
+
+  pure native setOnSelectNextRow :: TreeViewBehavior t -> Runnable -> void
+
+  pure native setOnSelectPreviousRow :: TreeViewBehavior t -> Runnable -> void
+
+

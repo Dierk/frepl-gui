@@ -1,0 +1,9 @@
+data MacFontFinder = pure native com.sun.javafx.font.MacFontFinder where
+
+  pure native getMonospacedFont "com.sun.javafx.font.MacFontFinder.getMonospacedFont" :: () -> String
+
+  pure native getSystemFont "com.sun.javafx.font.MacFontFinder.getSystemFont" :: () -> String
+
+  pure native populateFontFileNameMap "com.sun.javafx.font.MacFontFinder.populateFontFileNameMap" :: HashMap String String -> HashMap String String -> HashMap String (ArrayList String) -> Locale -> boolean
+
+

@@ -1,0 +1,82 @@
+data Scale = mutable native javafx.scene.transform.Scale where
+
+  native new :: double -> double -> double -> double -> double -> double -> IO Scale
+              | double -> double -> double -> IO Scale
+              | double -> double -> double -> double -> IO Scale
+              | double -> double -> IO Scale
+              | () -> IO Scale
+
+  native clone :: Scale -> IO Scale
+
+  native createConcatenation :: Scale -> Transform -> IO Transform
+
+  native createInverse :: Scale -> IO Scale throws NonInvertibleTransformException
+
+  native deltaTransform :: Scale -> double -> double -> double -> IO Point3D
+                         | Scale -> double -> double -> IO Point2D
+
+  native getMxx :: Scale -> IO double
+
+  native getMyy :: Scale -> IO double
+
+  native getMzz :: Scale -> IO double
+
+  native getPivotX :: Scale -> IO double
+
+  native getPivotY :: Scale -> IO double
+
+  native getPivotZ :: Scale -> IO double
+
+  native getTx :: Scale -> IO double
+
+  native getTy :: Scale -> IO double
+
+  native getTz :: Scale -> IO double
+
+  native getX :: Scale -> IO double
+
+  native getY :: Scale -> IO double
+
+  native getZ :: Scale -> IO double
+
+  native impl_apply :: Scale -> Affine3D -> IO void
+
+  native impl_derive :: Scale -> BaseTransform -> IO BaseTransform
+
+  native inverseDeltaTransform :: Scale -> double -> double -> IO Point2D throws NonInvertibleTransformException
+                                | Scale -> double -> double -> double -> IO Point3D throws NonInvertibleTransformException
+
+  native inverseTransform :: Scale -> double -> double -> IO Point2D throws NonInvertibleTransformException
+                           | Scale -> double -> double -> double -> IO Point3D throws NonInvertibleTransformException
+
+  native pivotXProperty :: Scale -> IO DoubleProperty
+
+  native pivotYProperty :: Scale -> IO DoubleProperty
+
+  native pivotZProperty :: Scale -> IO DoubleProperty
+
+  native setPivotX :: Scale -> double -> IO void
+
+  native setPivotY :: Scale -> double -> IO void
+
+  native setPivotZ :: Scale -> double -> IO void
+
+  native setX :: Scale -> double -> IO void
+
+  native setY :: Scale -> double -> IO void
+
+  native setZ :: Scale -> double -> IO void
+
+  native toString :: Scale -> IO String
+
+  native transform :: Scale -> double -> double -> IO Point2D
+                    | Scale -> double -> double -> double -> IO Point3D
+
+  native xProperty :: Scale -> IO DoubleProperty
+
+  native yProperty :: Scale -> IO DoubleProperty
+
+  native zProperty :: Scale -> IO DoubleProperty
+
+derive Cloneable Scale
+

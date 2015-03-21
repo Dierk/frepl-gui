@@ -1,0 +1,10 @@
+data SubCssMetaData t = pure native com.sun.javafx.css.SubCssMetaData where
+
+  native new :: String -> StyleConverter -> t -> IO (SubCssMetaData t)
+              | String -> StyleConverter -> IO (SubCssMetaData t)
+
+  native getStyleableProperty :: SubCssMetaData t -> Node -> IO (StyleableProperty t)
+
+  native isSettable :: SubCssMetaData t -> Node -> IO boolean
+
+

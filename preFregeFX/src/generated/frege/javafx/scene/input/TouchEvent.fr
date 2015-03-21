@@ -1,0 +1,36 @@
+data TouchEvent = mutable native javafx.scene.input.TouchEvent where
+
+  native any "javafx.scene.input.TouchEvent.ANY" :: IO (EventType TouchEvent)
+  native touch_pressed "javafx.scene.input.TouchEvent.TOUCH_PRESSED" :: IO (EventType TouchEvent)
+  native touch_moved "javafx.scene.input.TouchEvent.TOUCH_MOVED" :: IO (EventType TouchEvent)
+  native touch_released "javafx.scene.input.TouchEvent.TOUCH_RELEASED" :: IO (EventType TouchEvent)
+  native touch_stationary "javafx.scene.input.TouchEvent.TOUCH_STATIONARY" :: IO (EventType TouchEvent)
+
+  native new :: Object -> EventTarget -> EventType TouchEvent -> TouchPoint -> List TouchPoint -> int -> boolean -> boolean -> boolean -> boolean -> IO TouchEvent
+              | EventType TouchEvent -> TouchPoint -> List TouchPoint -> int -> boolean -> boolean -> boolean -> boolean -> IO TouchEvent
+
+  native copyFor :: TouchEvent -> Object -> EventTarget -> EventType TouchEvent -> IO TouchEvent
+                  | TouchEvent -> Object -> EventTarget -> IO TouchEvent
+
+  native getEventSetId :: TouchEvent -> IO int
+
+  native getEventType :: TouchEvent -> IO (EventType TouchEvent)
+
+  native getTouchCount :: TouchEvent -> IO int
+
+  native getTouchPoint :: TouchEvent -> IO TouchPoint
+
+  native getTouchPoints :: TouchEvent -> IO (List TouchPoint)
+
+  native isAltDown :: TouchEvent -> IO boolean
+
+  native isControlDown :: TouchEvent -> IO boolean
+
+  native isMetaDown :: TouchEvent -> IO boolean
+
+  native isShiftDown :: TouchEvent -> IO boolean
+
+  native toString :: TouchEvent -> IO String
+
+derive Serializable TouchEvent
+

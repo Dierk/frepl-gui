@@ -1,0 +1,13 @@
+data PrismMediaFrameHandler = pure native com.sun.javafx.media.PrismMediaFrameHandler where
+
+  pure native factoryReleased :: PrismMediaFrameHandler -> void
+
+  pure native factoryReset :: PrismMediaFrameHandler -> void
+
+  pure native getHandler "com.sun.javafx.media.PrismMediaFrameHandler.getHandler" :: Object -> PrismMediaFrameHandler
+
+  pure native getTexture :: PrismMediaFrameHandler -> Graphics -> VideoDataBuffer -> Texture
+
+  pure native releaseTextures :: PrismMediaFrameHandler -> void
+
+

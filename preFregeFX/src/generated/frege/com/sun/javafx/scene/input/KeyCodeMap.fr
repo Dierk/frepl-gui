@@ -1,0 +1,5 @@
+data KeyCodeMap = pure native com.sun.javafx.scene.input.KeyCodeMap where
+
+  native valueOf "com.sun.javafx.scene.input.KeyCodeMap.valueOf" :: int -> IO KeyCode
+
+

@@ -1,0 +1,5 @@
+data TableRowSkin t = pure native com.sun.javafx.scene.control.skin.TableRowSkin where
+
+  native new :: TableRow t -> IO (TableRowSkin t)
+
+

@@ -1,0 +1,39 @@
+data Ellipse = mutable native javafx.scene.shape.Ellipse where
+
+  native new :: double -> double -> double -> double -> IO Ellipse
+              | double -> double -> IO Ellipse
+              | () -> IO Ellipse
+
+  native centerXProperty :: Ellipse -> IO DoubleProperty
+
+  native centerYProperty :: Ellipse -> IO DoubleProperty
+
+  native getCenterX :: Ellipse -> IO double
+
+  native getCenterY :: Ellipse -> IO double
+
+  native getRadiusX :: Ellipse -> IO double
+
+  native getRadiusY :: Ellipse -> IO double
+
+  native impl_computeGeomBounds :: Ellipse -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_configShape :: Ellipse -> IO Ellipse2D
+
+  native impl_updatePeer :: Ellipse -> IO void
+
+  native radiusXProperty :: Ellipse -> IO DoubleProperty
+
+  native radiusYProperty :: Ellipse -> IO DoubleProperty
+
+  native setCenterX :: Ellipse -> double -> IO void
+
+  native setCenterY :: Ellipse -> double -> IO void
+
+  native setRadiusX :: Ellipse -> double -> IO void
+
+  native setRadiusY :: Ellipse -> double -> IO void
+
+  native toString :: Ellipse -> IO String
+
+

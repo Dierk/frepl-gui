@@ -1,0 +1,5 @@
+data CompletionListener = pure native com.sun.javafx.tk.CompletionListener where
+
+  pure native done :: CompletionListener -> RenderJob -> void
+
+

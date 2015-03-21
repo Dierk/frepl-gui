@@ -1,0 +1,5 @@
+data FXVKSkin = pure native com.sun.javafx.scene.control.skin.FXVKSkin where
+
+  pure native new :: FXVK -> FXVKSkin
+
+

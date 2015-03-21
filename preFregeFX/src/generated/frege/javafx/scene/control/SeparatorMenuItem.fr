@@ -1,0 +1,5 @@
+data SeparatorMenuItem = mutable native javafx.scene.control.SeparatorMenuItem where
+
+  native new :: () -> IO SeparatorMenuItem
+
+

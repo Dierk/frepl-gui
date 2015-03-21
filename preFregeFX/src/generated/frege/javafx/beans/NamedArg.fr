@@ -1,0 +1,7 @@
+data NamedArg = mutable native javafx.beans.NamedArg where
+
+  native defaultValue :: NamedArg -> IO String
+
+  native value :: NamedArg -> IO String
+
+

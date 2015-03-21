@@ -1,0 +1,40 @@
+data Reflection = mutable native javafx.scene.effect.Reflection where
+
+  native new :: () -> IO Reflection
+              | double -> double -> double -> double -> IO Reflection
+
+  native bottomOpacityProperty :: Reflection -> IO DoubleProperty
+
+  native fractionProperty :: Reflection -> IO DoubleProperty
+
+  native getBottomOpacity :: Reflection -> IO double
+
+  native getFraction :: Reflection -> IO double
+
+  native getInput :: Reflection -> IO Effect
+
+  native getTopOffset :: Reflection -> IO double
+
+  native getTopOpacity :: Reflection -> IO double
+
+  native impl_copy :: Reflection -> IO Effect
+
+  native impl_getBounds :: Reflection -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: Reflection -> IO (ObjectProperty Effect)
+
+  native setBottomOpacity :: Reflection -> double -> IO void
+
+  native setFraction :: Reflection -> double -> IO void
+
+  native setInput :: Reflection -> Effect -> IO void
+
+  native setTopOffset :: Reflection -> double -> IO void
+
+  native setTopOpacity :: Reflection -> double -> IO void
+
+  native topOffsetProperty :: Reflection -> IO DoubleProperty
+
+  native topOpacityProperty :: Reflection -> IO DoubleProperty
+
+

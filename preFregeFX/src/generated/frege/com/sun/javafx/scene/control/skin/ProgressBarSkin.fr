@@ -1,0 +1,11 @@
+data ProgressBarSkin = pure native com.sun.javafx.scene.control.skin.ProgressBarSkin where
+
+  native new :: ProgressBar -> IO ProgressBarSkin
+
+  pure native computeBaselineOffset :: ProgressBarSkin -> double -> double -> double -> double -> double
+
+  pure native getClassCssMetaData "com.sun.javafx.scene.control.skin.ProgressBarSkin.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  pure native getCssMetaData :: ProgressBarSkin -> List (CssMetaData Styleable Object)
+
+

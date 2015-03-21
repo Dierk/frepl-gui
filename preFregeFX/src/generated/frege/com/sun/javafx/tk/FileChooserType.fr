@@ -1,0 +1,12 @@
+data FileChooserType = pure native com.sun.javafx.tk.FileChooserType where
+
+  pure native open "com.sun.javafx.tk.FileChooserType.OPEN" :: FileChooserType
+  pure native open_multiple "com.sun.javafx.tk.FileChooserType.OPEN_MULTIPLE" :: FileChooserType
+  pure native save "com.sun.javafx.tk.FileChooserType.SAVE" :: FileChooserType
+
+  pure native valueOf "com.sun.javafx.tk.FileChooserType.valueOf" :: String -> FileChooserType
+
+  native values "com.sun.javafx.tk.FileChooserType.values" :: () -> STMutable s (JArray FileChooserType)
+
+derive Serializable FileChooserType
+

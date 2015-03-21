@@ -1,0 +1,9 @@
+data ParsedValue v t = mutable native javafx.css.ParsedValue where
+
+  native convert :: ParsedValue v t -> Font -> IO t
+
+  native getConverter :: ParsedValue v t -> IO (StyleConverter v t)
+
+  native getValue :: ParsedValue v t -> IO v
+
+

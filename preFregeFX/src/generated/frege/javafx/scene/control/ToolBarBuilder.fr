@@ -1,0 +1,14 @@
+data ToolBarBuilder b = mutable native javafx.scene.control.ToolBarBuilder where
+
+  native applyTo :: ToolBarBuilder b -> ToolBar -> IO void
+
+  native build :: ToolBarBuilder b -> IO ToolBar
+
+  native create "javafx.scene.control.ToolBarBuilder.create" :: () -> IO (ToolBarBuilder Object)
+
+  native items :: ToolBarBuilder b -> Collection Node -> IO b
+                | ToolBarBuilder b -> MutableIO (JArray Node) -> IO b
+
+  native orientation :: ToolBarBuilder b -> Orientation -> IO b
+
+

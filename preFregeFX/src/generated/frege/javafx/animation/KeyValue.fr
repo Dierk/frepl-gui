@@ -1,0 +1,20 @@
+data KeyValue = mutable native javafx.animation.KeyValue where
+
+  native new :: WritableValue t -> t -> IO KeyValue
+              | WritableValue t -> t -> Interpolator -> IO KeyValue
+
+  native equals :: KeyValue -> Object -> IO boolean
+
+  native getEndValue :: KeyValue -> IO Object
+
+  native getInterpolator :: KeyValue -> IO Interpolator
+
+  native getTarget :: KeyValue -> IO (WritableValue Object)
+
+  native getType :: KeyValue -> IO KeyValue_Type
+
+  native hashCode :: KeyValue -> IO int
+
+  native toString :: KeyValue -> IO String
+
+

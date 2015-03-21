@@ -1,0 +1,5 @@
+data FTDisposer = pure native com.sun.javafx.font.freetype.FTDisposer where
+
+  pure native dispose :: FTDisposer -> void
+
+

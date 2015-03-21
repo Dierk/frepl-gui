@@ -1,0 +1,1 @@
+data SwingDnD = mutable native javafx.embed.swing.SwingDnD

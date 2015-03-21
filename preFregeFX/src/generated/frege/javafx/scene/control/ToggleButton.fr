@@ -1,0 +1,23 @@
+data ToggleButton = mutable native javafx.scene.control.ToggleButton where
+
+  native new :: String -> Node -> IO ToggleButton
+              | String -> IO ToggleButton
+              | () -> IO ToggleButton
+
+  native fire :: ToggleButton -> IO void
+
+  native getToggleGroup :: ToggleButton -> IO ToggleGroup
+
+  native isSelected :: ToggleButton -> IO boolean
+
+  native queryAccessibleAttribute :: ToggleButton -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native selectedProperty :: ToggleButton -> IO BooleanProperty
+
+  native setSelected :: ToggleButton -> boolean -> IO void
+
+  native setToggleGroup :: ToggleButton -> ToggleGroup -> IO void
+
+  native toggleGroupProperty :: ToggleButton -> IO (ObjectProperty ToggleGroup)
+
+

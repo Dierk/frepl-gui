@@ -1,0 +1,49 @@
+data TextAreaSkin = pure native com.sun.javafx.scene.control.skin.TextAreaSkin where
+
+  pure native scroll_rate "com.sun.javafx.scene.control.skin.TextAreaSkin.SCROLL_RATE" :: int
+
+  native new :: TextArea -> IO TextAreaSkin
+
+  pure native computeBaselineOffset :: TextAreaSkin -> double -> double -> double -> double -> double
+
+  pure native deleteChar :: TextAreaSkin -> boolean -> void
+
+  pure native dispose :: TextAreaSkin -> void
+
+  native getCaretBounds :: TextAreaSkin -> IO Bounds
+
+  pure native getCharacter :: TextAreaSkin -> int -> char
+
+  native getCharacterBounds :: TextAreaSkin -> int -> IO Rectangle2D
+
+  pure native getIndex :: TextAreaSkin -> double -> double -> HitInfo
+
+  pure native getInsertionPoint :: TextAreaSkin -> double -> double -> int
+
+  native getMenuPosition :: TextAreaSkin -> IO Point2D
+
+  native getNextInsertionPoint :: TextAreaSkin -> double -> int -> VerticalDirection -> IO int
+
+  pure native lineEnd :: TextAreaSkin -> boolean -> boolean -> void
+
+  pure native lineStart :: TextAreaSkin -> boolean -> boolean -> void
+
+  pure native nextCharacterVisually :: TextAreaSkin -> boolean -> void
+
+  pure native nextLine :: TextAreaSkin -> boolean -> void
+
+  pure native nextPage :: TextAreaSkin -> boolean -> void
+
+  pure native paragraphEnd :: TextAreaSkin -> boolean -> boolean -> boolean -> void
+
+  pure native paragraphStart :: TextAreaSkin -> boolean -> boolean -> void
+
+  pure native positionCaret :: TextAreaSkin -> HitInfo -> boolean -> boolean -> void
+
+  pure native previousLine :: TextAreaSkin -> boolean -> void
+
+  pure native previousPage :: TextAreaSkin -> boolean -> void
+
+  pure native scrollCharacterToVisible :: TextAreaSkin -> int -> void
+
+

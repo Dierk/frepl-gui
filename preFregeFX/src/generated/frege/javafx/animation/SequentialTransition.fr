@@ -1,0 +1,16 @@
+data SequentialTransition = mutable native javafx.animation.SequentialTransition where
+
+  native new :: Node -> MutableIO (JArray Animation) -> IO SequentialTransition
+              | MutableIO (JArray Animation) -> IO SequentialTransition
+              | Node -> IO SequentialTransition
+              | () -> IO SequentialTransition
+
+  native getChildren :: SequentialTransition -> IO (ObservableList Animation)
+
+  native getNode :: SequentialTransition -> IO Node
+
+  native nodeProperty :: SequentialTransition -> IO (ObjectProperty Node)
+
+  native setNode :: SequentialTransition -> Node -> IO void
+
+

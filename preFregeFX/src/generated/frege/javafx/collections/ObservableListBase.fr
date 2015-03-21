@@ -1,0 +1,20 @@
+data ObservableListBase e = mutable native javafx.collections.ObservableListBase where
+
+  native addAll :: ObservableListBase e -> MutableIO (JArray e) -> IO boolean
+
+  native addListener :: ObservableListBase e -> InvalidationListener -> IO void
+                      | ObservableListBase e -> ListChangeListener e -> IO void
+
+  native remove :: ObservableListBase e -> int -> int -> IO void
+
+  native removeAll :: ObservableListBase e -> MutableIO (JArray e) -> IO boolean
+
+  native removeListener :: ObservableListBase e -> InvalidationListener -> IO void
+                         | ObservableListBase e -> ListChangeListener e -> IO void
+
+  native retainAll :: ObservableListBase e -> MutableIO (JArray e) -> IO boolean
+
+  native setAll :: ObservableListBase e -> MutableIO (JArray e) -> IO boolean
+                 | ObservableListBase e -> Collection e -> IO boolean
+
+

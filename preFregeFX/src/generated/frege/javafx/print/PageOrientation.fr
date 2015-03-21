@@ -1,0 +1,13 @@
+data PageOrientation = mutable native javafx.print.PageOrientation where
+
+  native portrait "javafx.print.PageOrientation.PORTRAIT" :: IO PageOrientation
+  native landscape "javafx.print.PageOrientation.LANDSCAPE" :: IO PageOrientation
+  native reverse_portrait "javafx.print.PageOrientation.REVERSE_PORTRAIT" :: IO PageOrientation
+  native reverse_landscape "javafx.print.PageOrientation.REVERSE_LANDSCAPE" :: IO PageOrientation
+
+  native valueOf "javafx.print.PageOrientation.valueOf" :: String -> IO PageOrientation
+
+  native values "javafx.print.PageOrientation.values" :: () -> STMutable s (JArray PageOrientation)
+
+derive Serializable PageOrientation
+

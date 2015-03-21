@@ -1,0 +1,9 @@
+data UploadingPainter = pure native com.sun.javafx.tk.quantum.UploadingPainter where
+
+  pure native getPixelScaleFactor :: UploadingPainter -> float
+
+  pure native run :: UploadingPainter -> void
+
+  pure native setPixelScaleFactor :: UploadingPainter -> float -> void
+
+

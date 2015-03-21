@@ -1,0 +1,7 @@
+data TwoLevelFocusComboBehavior = pure native com.sun.javafx.scene.control.behavior.TwoLevelFocusComboBehavior where
+
+  native new :: Node -> IO TwoLevelFocusComboBehavior
+
+  pure native dispose :: TwoLevelFocusComboBehavior -> void
+
+

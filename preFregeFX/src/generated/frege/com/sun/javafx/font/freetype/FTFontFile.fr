@@ -1,0 +1,1 @@
+data FTFontFile = pure native com.sun.javafx.font.freetype.FTFontFile

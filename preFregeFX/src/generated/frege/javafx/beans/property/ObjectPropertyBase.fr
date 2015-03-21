@@ -1,0 +1,21 @@
+data ObjectPropertyBase t = mutable native javafx.beans.property.ObjectPropertyBase where
+
+  native addListener :: ObjectPropertyBase t -> InvalidationListener -> IO void
+                      | ObjectPropertyBase t -> ChangeListener t -> IO void
+
+  native bind :: ObjectPropertyBase t -> ObservableValue t -> IO void
+
+  native get :: ObjectPropertyBase t -> IO t
+
+  native isBound :: ObjectPropertyBase t -> IO boolean
+
+  native removeListener :: ObjectPropertyBase t -> InvalidationListener -> IO void
+                         | ObjectPropertyBase t -> ChangeListener t -> IO void
+
+  native set :: ObjectPropertyBase t -> t -> IO void
+
+  native toString :: ObjectPropertyBase t -> IO String
+
+  native unbind :: ObjectPropertyBase t -> IO void
+
+

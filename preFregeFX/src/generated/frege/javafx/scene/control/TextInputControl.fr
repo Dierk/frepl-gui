@@ -1,0 +1,142 @@
+data TextInputControl = mutable native javafx.scene.control.TextInputControl where
+
+  native anchorProperty :: TextInputControl -> IO ReadOnlyIntegerProperty
+
+  native appendText :: TextInputControl -> String -> IO void
+
+  native backward :: TextInputControl -> IO void
+
+  native cancelEdit :: TextInputControl -> IO void
+
+  native caretPositionProperty :: TextInputControl -> IO ReadOnlyIntegerProperty
+
+  native clear :: TextInputControl -> IO void
+
+  native commitValue :: TextInputControl -> IO void
+
+  native copy :: TextInputControl -> IO void
+
+  native cut :: TextInputControl -> IO void
+
+  native deleteNextChar :: TextInputControl -> IO boolean
+
+  native deletePreviousChar :: TextInputControl -> IO boolean
+
+  native deleteText :: TextInputControl -> IndexRange -> IO void
+                     | TextInputControl -> int -> int -> IO void
+
+  native deselect :: TextInputControl -> IO void
+
+  native editableProperty :: TextInputControl -> IO BooleanProperty
+
+  native end :: TextInputControl -> IO void
+
+  native endOfNextWord :: TextInputControl -> IO void
+
+  native executeAccessibleAction :: TextInputControl -> AccessibleAction -> MutableIO (JArray Object) -> IO void
+
+  native extendSelection :: TextInputControl -> int -> IO void
+
+  native fontProperty :: TextInputControl -> IO (ObjectProperty Font)
+
+  native forward :: TextInputControl -> IO void
+
+  native getAnchor :: TextInputControl -> IO int
+
+  native getCaretPosition :: TextInputControl -> IO int
+
+  pure native getClassCssMetaData "javafx.scene.control.TextInputControl.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getControlCssMetaData :: TextInputControl -> IO (List (CssMetaData Styleable Object))
+
+  native getFont :: TextInputControl -> IO Font
+
+  native getLength :: TextInputControl -> IO int
+
+  native getPromptText :: TextInputControl -> IO String
+
+  native getSelectedText :: TextInputControl -> IO String
+
+  native getSelection :: TextInputControl -> IO IndexRange
+
+  native getText :: TextInputControl -> IO String
+                  | TextInputControl -> int -> int -> IO String
+
+  native getTextFormatter :: TextInputControl -> IO (TextFormatter Object)
+
+  native home :: TextInputControl -> IO void
+
+  native insertText :: TextInputControl -> int -> String -> IO void
+
+  native isEditable :: TextInputControl -> IO boolean
+
+  native isRedoable :: TextInputControl -> IO boolean
+
+  native isUndoable :: TextInputControl -> IO boolean
+
+  native lengthProperty :: TextInputControl -> IO ReadOnlyIntegerProperty
+
+  native nextWord :: TextInputControl -> IO void
+
+  native paste :: TextInputControl -> IO void
+
+  native positionCaret :: TextInputControl -> int -> IO void
+
+  native previousWord :: TextInputControl -> IO void
+
+  native promptTextProperty :: TextInputControl -> IO StringProperty
+
+  native queryAccessibleAttribute :: TextInputControl -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native redo :: TextInputControl -> IO void
+
+  native redoableProperty :: TextInputControl -> IO ReadOnlyBooleanProperty
+
+  native replaceSelection :: TextInputControl -> String -> IO void
+
+  native replaceText :: TextInputControl -> int -> int -> String -> IO void
+                      | TextInputControl -> IndexRange -> String -> IO void
+
+  native selectAll :: TextInputControl -> IO void
+
+  native selectBackward :: TextInputControl -> IO void
+
+  native selectEnd :: TextInputControl -> IO void
+
+  native selectEndOfNextWord :: TextInputControl -> IO void
+
+  native selectForward :: TextInputControl -> IO void
+
+  native selectHome :: TextInputControl -> IO void
+
+  native selectNextWord :: TextInputControl -> IO void
+
+  native selectPositionCaret :: TextInputControl -> int -> IO void
+
+  native selectPreviousWord :: TextInputControl -> IO void
+
+  native selectRange :: TextInputControl -> int -> int -> IO void
+
+  native selectedTextProperty :: TextInputControl -> IO ReadOnlyStringProperty
+
+  native selectionProperty :: TextInputControl -> IO (ReadOnlyObjectProperty IndexRange)
+
+  native setEditable :: TextInputControl -> boolean -> IO void
+
+  native setFont :: TextInputControl -> Font -> IO void
+
+  native setPromptText :: TextInputControl -> String -> IO void
+
+  native setText :: TextInputControl -> String -> IO void
+
+  native setTextFormatter :: TextInputControl -> TextFormatter Object -> IO void
+
+  native textFormatterProperty :: TextInputControl -> IO (ObjectProperty (TextFormatter Object))
+
+  native textProperty :: TextInputControl -> IO StringProperty
+
+  native undo :: TextInputControl -> IO void
+
+  native undoableProperty :: TextInputControl -> IO ReadOnlyBooleanProperty
+
+

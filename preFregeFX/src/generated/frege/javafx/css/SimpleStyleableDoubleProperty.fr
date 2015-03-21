@@ -1,0 +1,14 @@
+data SimpleStyleableDoubleProperty = mutable native javafx.css.SimpleStyleableDoubleProperty where
+
+  native new :: CssMetaData Styleable Number -> Object -> String -> Double -> IO SimpleStyleableDoubleProperty
+              | CssMetaData Styleable Number -> Object -> String -> IO SimpleStyleableDoubleProperty
+              | CssMetaData Styleable Number -> Double -> IO SimpleStyleableDoubleProperty
+              | CssMetaData Styleable Number -> IO SimpleStyleableDoubleProperty
+
+  native getBean :: SimpleStyleableDoubleProperty -> IO Object
+
+  native getCssMetaData :: SimpleStyleableDoubleProperty -> IO (CssMetaData Styleable Number)
+
+  native getName :: SimpleStyleableDoubleProperty -> IO String
+
+

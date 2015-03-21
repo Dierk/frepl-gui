@@ -1,0 +1,1 @@
+data RegionImageCache = pure native com.sun.javafx.sg.prism.RegionImageCache

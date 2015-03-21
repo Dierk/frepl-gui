@@ -1,0 +1,39 @@
+data HeavyweightDialog = mutable native javafx.scene.control.HeavyweightDialog where
+
+  native close :: HeavyweightDialog -> IO void
+
+  native getModality :: HeavyweightDialog -> IO Modality
+
+  native getOwner :: HeavyweightDialog -> IO Window
+
+  native getRoot :: HeavyweightDialog -> IO Node
+
+  native getWindow :: HeavyweightDialog -> IO Window
+
+  native getX :: HeavyweightDialog -> IO double
+
+  native getY :: HeavyweightDialog -> IO double
+
+  native initModality :: HeavyweightDialog -> Modality -> IO void
+
+  native initOwner :: HeavyweightDialog -> Window -> IO void
+
+  native setDialogPane :: HeavyweightDialog -> DialogPane -> IO void
+
+  native setX :: HeavyweightDialog -> double -> IO void
+
+  native setY :: HeavyweightDialog -> double -> IO void
+
+  native show :: HeavyweightDialog -> IO void
+
+  native showAndWait :: HeavyweightDialog -> IO void
+
+  native showingProperty :: HeavyweightDialog -> IO ReadOnlyBooleanProperty
+
+  native sizeToScene :: HeavyweightDialog -> IO void
+
+  native xProperty :: HeavyweightDialog -> IO ReadOnlyDoubleProperty
+
+  native yProperty :: HeavyweightDialog -> IO ReadOnlyDoubleProperty
+
+

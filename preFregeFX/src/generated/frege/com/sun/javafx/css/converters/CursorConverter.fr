@@ -1,0 +1,9 @@
+data CursorConverter = pure native com.sun.javafx.css.converters.CursorConverter where
+
+  native convert :: CursorConverter -> ParsedValue String Cursor -> Font -> IO Cursor
+
+  native getInstance "com.sun.javafx.css.converters.CursorConverter.getInstance" :: () -> IO (StyleConverter String Cursor)
+
+  pure native toString :: CursorConverter -> String
+
+

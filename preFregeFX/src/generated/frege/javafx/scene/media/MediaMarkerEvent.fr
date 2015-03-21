@@ -1,0 +1,6 @@
+data MediaMarkerEvent = mutable native javafx.scene.media.MediaMarkerEvent where
+
+  native getMarker :: MediaMarkerEvent -> IO (Pair String Duration)
+
+derive Serializable MediaMarkerEvent
+

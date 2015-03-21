@@ -1,0 +1,5 @@
+data SpinnerSkin t = pure native com.sun.javafx.scene.control.skin.SpinnerSkin where
+
+  native new :: Spinner t -> IO (SpinnerSkin t)
+
+

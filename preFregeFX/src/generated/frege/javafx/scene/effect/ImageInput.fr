@@ -1,0 +1,29 @@
+data ImageInput = mutable native javafx.scene.effect.ImageInput where
+
+  native new :: Image -> double -> double -> IO ImageInput
+              | Image -> IO ImageInput
+              | () -> IO ImageInput
+
+  native getSource :: ImageInput -> IO Image
+
+  native getX :: ImageInput -> IO double
+
+  native getY :: ImageInput -> IO double
+
+  native impl_copy :: ImageInput -> IO Effect
+
+  native impl_getBounds :: ImageInput -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native setSource :: ImageInput -> Image -> IO void
+
+  native setX :: ImageInput -> double -> IO void
+
+  native setY :: ImageInput -> double -> IO void
+
+  native sourceProperty :: ImageInput -> IO (ObjectProperty Image)
+
+  native xProperty :: ImageInput -> IO DoubleProperty
+
+  native yProperty :: ImageInput -> IO DoubleProperty
+
+

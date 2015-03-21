@@ -1,0 +1,22 @@
+data SwipeEvent = mutable native javafx.scene.input.SwipeEvent where
+
+  native any "javafx.scene.input.SwipeEvent.ANY" :: IO (EventType SwipeEvent)
+  native swipe_left "javafx.scene.input.SwipeEvent.SWIPE_LEFT" :: IO (EventType SwipeEvent)
+  native swipe_right "javafx.scene.input.SwipeEvent.SWIPE_RIGHT" :: IO (EventType SwipeEvent)
+  native swipe_up "javafx.scene.input.SwipeEvent.SWIPE_UP" :: IO (EventType SwipeEvent)
+  native swipe_down "javafx.scene.input.SwipeEvent.SWIPE_DOWN" :: IO (EventType SwipeEvent)
+
+  native new :: Object -> EventTarget -> EventType SwipeEvent -> double -> double -> double -> double -> boolean -> boolean -> boolean -> boolean -> boolean -> int -> PickResult -> IO SwipeEvent
+              | EventType SwipeEvent -> double -> double -> double -> double -> boolean -> boolean -> boolean -> boolean -> boolean -> int -> PickResult -> IO SwipeEvent
+
+  native copyFor :: SwipeEvent -> Object -> EventTarget -> EventType SwipeEvent -> IO SwipeEvent
+                  | SwipeEvent -> Object -> EventTarget -> IO SwipeEvent
+
+  native getEventType :: SwipeEvent -> IO (EventType SwipeEvent)
+
+  native getTouchCount :: SwipeEvent -> IO int
+
+  native toString :: SwipeEvent -> IO String
+
+derive Serializable SwipeEvent
+

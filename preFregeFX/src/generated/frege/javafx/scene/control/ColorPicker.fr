@@ -1,0 +1,11 @@
+data ColorPicker = mutable native javafx.scene.control.ColorPicker where
+
+  pure native style_class_button "javafx.scene.control.ColorPicker.STYLE_CLASS_BUTTON" :: String
+  pure native style_class_split_button "javafx.scene.control.ColorPicker.STYLE_CLASS_SPLIT_BUTTON" :: String
+
+  native new :: Color -> IO ColorPicker
+              | () -> IO ColorPicker
+
+  native getCustomColors :: ColorPicker -> IO (ObservableList Color)
+
+

@@ -1,0 +1,64 @@
+data Line2D = pure native com.sun.javafx.geom.Line2D where
+
+  pure native x1 "".x1"" :: Line2D -> float
+  pure native y1 "".y1"" :: Line2D -> float
+  pure native x2 "".x2"" :: Line2D -> float
+  pure native y2 "".y2"" :: Line2D -> float
+
+  pure native new :: Point2D -> Point2D -> Line2D
+                   | float -> float -> float -> float -> Line2D
+                   | () -> Line2D
+
+  pure native contains :: Line2D -> float -> float -> float -> float -> boolean
+                        | Line2D -> float -> float -> boolean
+                        | Line2D -> Point2D -> boolean
+
+  pure native copy :: Line2D -> Line2D
+
+  pure native equals :: Line2D -> Object -> boolean
+
+  pure native getBounds :: Line2D -> RectBounds
+
+  pure native getPathIterator :: Line2D -> BaseTransform -> PathIterator
+                               | Line2D -> BaseTransform -> float -> PathIterator
+
+  pure native hashCode :: Line2D -> int
+
+  pure native intersects :: Line2D -> float -> float -> float -> float -> boolean
+
+  pure native intersectsLine :: Line2D -> Line2D -> boolean
+                              | Line2D -> float -> float -> float -> float -> boolean
+
+  pure native linesIntersect "com.sun.javafx.geom.Line2D.linesIntersect" :: float -> float -> float -> float -> float -> float -> float -> float -> boolean
+
+  pure native ptLineDist "com.sun.javafx.geom.Line2D.ptLineDist" :: float -> float -> float -> float -> float -> float -> float
+
+  pure native ptLineDist :: Line2D -> Point2D -> float
+                          | Line2D -> float -> float -> float
+
+  pure native ptLineDistSq "com.sun.javafx.geom.Line2D.ptLineDistSq" :: float -> float -> float -> float -> float -> float -> float
+
+  pure native ptLineDistSq :: Line2D -> Point2D -> float
+                            | Line2D -> float -> float -> float
+
+  pure native ptSegDist "com.sun.javafx.geom.Line2D.ptSegDist" :: float -> float -> float -> float -> float -> float -> float
+
+  pure native ptSegDist :: Line2D -> Point2D -> float
+                         | Line2D -> float -> float -> double
+
+  pure native ptSegDistSq :: Line2D -> Point2D -> float
+
+  pure native ptSegDistSq "com.sun.javafx.geom.Line2D.ptSegDistSq" :: float -> float -> float -> float -> float -> float -> float
+
+  pure native ptSegDistSq :: Line2D -> float -> float -> float
+
+  pure native relativeCCW "com.sun.javafx.geom.Line2D.relativeCCW" :: float -> float -> float -> float -> float -> float -> int
+
+  pure native relativeCCW :: Line2D -> float -> float -> int
+                           | Line2D -> Point2D -> int
+
+  pure native setLine :: Line2D -> Line2D -> void
+                       | Line2D -> float -> float -> float -> float -> void
+                       | Line2D -> Point2D -> Point2D -> void
+
+

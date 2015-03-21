@@ -1,0 +1,13 @@
+data SVGPathBuilder b = mutable native javafx.scene.shape.SVGPathBuilder where
+
+  native applyTo :: SVGPathBuilder b -> SVGPath -> IO void
+
+  native build :: SVGPathBuilder b -> IO SVGPath
+
+  native content :: SVGPathBuilder b -> String -> IO b
+
+  native create "javafx.scene.shape.SVGPathBuilder.create" :: () -> IO (SVGPathBuilder Object)
+
+  native fillRule :: SVGPathBuilder b -> FillRule -> IO b
+
+

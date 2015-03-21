@@ -1,0 +1,15 @@
+data SeparatorBuilder b = mutable native javafx.scene.control.SeparatorBuilder where
+
+  native applyTo :: SeparatorBuilder b -> Separator -> IO void
+
+  native build :: SeparatorBuilder b -> IO Separator
+
+  native create "javafx.scene.control.SeparatorBuilder.create" :: () -> IO (SeparatorBuilder Object)
+
+  native halignment :: SeparatorBuilder b -> HPos -> IO b
+
+  native orientation :: SeparatorBuilder b -> Orientation -> IO b
+
+  native valignment :: SeparatorBuilder b -> VPos -> IO b
+
+

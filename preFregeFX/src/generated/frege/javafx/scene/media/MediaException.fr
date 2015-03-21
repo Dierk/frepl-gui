@@ -1,0 +1,9 @@
+data MediaException = mutable native javafx.scene.media.MediaException where
+
+  native getType :: MediaException -> IO MediaException_Type
+
+  native toString :: MediaException -> IO String
+
+derive Exceptional MediaException
+derive Serializable MediaException
+

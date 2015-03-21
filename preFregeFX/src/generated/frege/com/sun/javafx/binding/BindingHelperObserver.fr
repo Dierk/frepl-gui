@@ -1,0 +1,7 @@
+data BindingHelperObserver = pure native com.sun.javafx.binding.BindingHelperObserver where
+
+  native new :: Binding Object -> IO BindingHelperObserver
+
+  native invalidated :: BindingHelperObserver -> Observable -> IO void
+
+

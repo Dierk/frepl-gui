@@ -1,0 +1,110 @@
+data Stage = mutable native javafx.stage.Stage where
+
+  native new :: () -> IO Stage
+              | StageStyle -> IO Stage
+
+  native alwaysOnTopProperty :: Stage -> IO ReadOnlyBooleanProperty
+
+  native close :: Stage -> IO void
+
+  native fullScreenExitHintProperty :: Stage -> IO (ObjectProperty String)
+
+  native fullScreenExitKeyProperty :: Stage -> IO (ObjectProperty KeyCombination)
+
+  native fullScreenProperty :: Stage -> IO ReadOnlyBooleanProperty
+
+  native getFullScreenExitHint :: Stage -> IO String
+
+  native getFullScreenExitKeyCombination :: Stage -> IO KeyCombination
+
+  native getIcons :: Stage -> IO (ObservableList Image)
+
+  native getMaxHeight :: Stage -> IO double
+
+  native getMaxWidth :: Stage -> IO double
+
+  native getMinHeight :: Stage -> IO double
+
+  native getMinWidth :: Stage -> IO double
+
+  native getModality :: Stage -> IO Modality
+
+  native getOwner :: Stage -> IO Window
+
+  native getStyle :: Stage -> IO StageStyle
+
+  native getTitle :: Stage -> IO String
+
+  native iconifiedProperty :: Stage -> IO ReadOnlyBooleanProperty
+
+  native impl_getMXWindowType :: Stage -> IO String
+
+  native impl_setImportant :: Stage -> boolean -> IO void
+
+  native impl_setPrimary :: Stage -> boolean -> IO void
+
+  native initModality :: Stage -> Modality -> IO void
+
+  native initOwner :: Stage -> Window -> IO void
+
+  native initStyle :: Stage -> StageStyle -> IO void
+
+  native isAlwaysOnTop :: Stage -> IO boolean
+
+  native isFullScreen :: Stage -> IO boolean
+
+  native isIconified :: Stage -> IO boolean
+
+  native isMaximized :: Stage -> IO boolean
+
+  native isResizable :: Stage -> IO boolean
+
+  native maxHeightProperty :: Stage -> IO DoubleProperty
+
+  native maxWidthProperty :: Stage -> IO DoubleProperty
+
+  native maximizedProperty :: Stage -> IO ReadOnlyBooleanProperty
+
+  native minHeightProperty :: Stage -> IO DoubleProperty
+
+  native minWidthProperty :: Stage -> IO DoubleProperty
+
+  native resizableProperty :: Stage -> IO BooleanProperty
+
+  native setAlwaysOnTop :: Stage -> boolean -> IO void
+
+  native setFullScreen :: Stage -> boolean -> IO void
+
+  native setFullScreenExitHint :: Stage -> String -> IO void
+
+  native setFullScreenExitKeyCombination :: Stage -> KeyCombination -> IO void
+
+  native setIconified :: Stage -> boolean -> IO void
+
+  native setMaxHeight :: Stage -> double -> IO void
+
+  native setMaxWidth :: Stage -> double -> IO void
+
+  native setMaximized :: Stage -> boolean -> IO void
+
+  native setMinHeight :: Stage -> double -> IO void
+
+  native setMinWidth :: Stage -> double -> IO void
+
+  native setResizable :: Stage -> boolean -> IO void
+
+  native setScene :: Stage -> Scene -> IO void
+
+  native setTitle :: Stage -> String -> IO void
+
+  native show :: Stage -> IO void
+
+  native showAndWait :: Stage -> IO void
+
+  native titleProperty :: Stage -> IO StringProperty
+
+  native toBack :: Stage -> IO void
+
+  native toFront :: Stage -> IO void
+
+

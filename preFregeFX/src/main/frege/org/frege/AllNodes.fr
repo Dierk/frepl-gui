@@ -4,7 +4,9 @@ import frege.Prelude hiding(ListView)
 
 import frege.java.Net (URL)
 
-data Node           = mutable native javafx.scene.Node
+data Node           = mutable native javafx.scene.Node where
+    native isResizable :: Node -> IO Bool
+
 data Parent         = mutable native javafx.scene.Parent
 data Event          = mutable native javafx.event.Event         -- well Events shouldn't be mutable, but in JavaFX, they are
 data EventHandler   = mutable native javafx.event.EventHandler  -- most likely not mutable, at least not in our wrapper impl

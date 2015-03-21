@@ -1,0 +1,5 @@
+data ObservableBooleanValue = mutable native javafx.beans.value.ObservableBooleanValue where
+
+  native get :: ObservableBooleanValue -> IO boolean
+
+

@@ -1,0 +1,41 @@
+data Worker v = mutable native javafx.concurrent.Worker where
+
+  native cancel :: Worker v -> IO boolean
+
+  native exceptionProperty :: Worker v -> IO (ReadOnlyObjectProperty Throwable)
+
+  native getException :: Worker v -> IO Throwable
+
+  native getMessage :: Worker v -> IO String
+
+  native getProgress :: Worker v -> IO double
+
+  native getState :: Worker v -> IO Worker_State
+
+  native getTitle :: Worker v -> IO String
+
+  native getTotalWork :: Worker v -> IO double
+
+  native getValue :: Worker v -> IO v
+
+  native getWorkDone :: Worker v -> IO double
+
+  native isRunning :: Worker v -> IO boolean
+
+  native messageProperty :: Worker v -> IO ReadOnlyStringProperty
+
+  native progressProperty :: Worker v -> IO ReadOnlyDoubleProperty
+
+  native runningProperty :: Worker v -> IO ReadOnlyBooleanProperty
+
+  native stateProperty :: Worker v -> IO (ReadOnlyObjectProperty Worker_State)
+
+  native titleProperty :: Worker v -> IO ReadOnlyStringProperty
+
+  native totalWorkProperty :: Worker v -> IO ReadOnlyDoubleProperty
+
+  native valueProperty :: Worker v -> IO (ReadOnlyObjectProperty v)
+
+  native workDoneProperty :: Worker v -> IO ReadOnlyDoubleProperty
+
+

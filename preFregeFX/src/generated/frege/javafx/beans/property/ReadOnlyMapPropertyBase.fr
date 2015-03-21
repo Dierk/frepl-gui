@@ -1,0 +1,11 @@
+data ReadOnlyMapPropertyBase k v = mutable native javafx.beans.property.ReadOnlyMapPropertyBase where
+
+  native addListener :: ReadOnlyMapPropertyBase k v -> ChangeListener (ObservableMap k v) -> IO void
+                      | ReadOnlyMapPropertyBase k v -> MapChangeListener k v -> IO void
+                      | ReadOnlyMapPropertyBase k v -> InvalidationListener -> IO void
+
+  native removeListener :: ReadOnlyMapPropertyBase k v -> MapChangeListener k v -> IO void
+                         | ReadOnlyMapPropertyBase k v -> ChangeListener (ObservableMap k v) -> IO void
+                         | ReadOnlyMapPropertyBase k v -> InvalidationListener -> IO void
+
+

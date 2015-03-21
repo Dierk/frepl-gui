@@ -1,0 +1,16 @@
+data Polyline = mutable native javafx.scene.shape.Polyline where
+
+  native new :: () -> IO Polyline
+              | MutableIO (JArray double) -> IO Polyline
+
+  native getPoints :: Polyline -> IO (ObservableList Double)
+
+  native impl_computeGeomBounds :: Polyline -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_configShape :: Polyline -> IO Path2D
+
+  native impl_updatePeer :: Polyline -> IO void
+
+  native toString :: Polyline -> IO String
+
+

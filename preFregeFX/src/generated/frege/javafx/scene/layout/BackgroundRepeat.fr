@@ -1,0 +1,13 @@
+data BackgroundRepeat = mutable native javafx.scene.layout.BackgroundRepeat where
+
+  native repeat "javafx.scene.layout.BackgroundRepeat.REPEAT" :: IO BackgroundRepeat
+  native space "javafx.scene.layout.BackgroundRepeat.SPACE" :: IO BackgroundRepeat
+  native round "javafx.scene.layout.BackgroundRepeat.ROUND" :: IO BackgroundRepeat
+  native no_repeat "javafx.scene.layout.BackgroundRepeat.NO_REPEAT" :: IO BackgroundRepeat
+
+  native valueOf "javafx.scene.layout.BackgroundRepeat.valueOf" :: String -> IO BackgroundRepeat
+
+  native values "javafx.scene.layout.BackgroundRepeat.values" :: () -> STMutable s (JArray BackgroundRepeat)
+
+derive Serializable BackgroundRepeat
+

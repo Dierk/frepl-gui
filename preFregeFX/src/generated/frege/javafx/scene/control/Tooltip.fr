@@ -1,0 +1,68 @@
+data Tooltip = mutable native javafx.scene.control.Tooltip where
+
+  native new :: String -> IO Tooltip
+              | () -> IO Tooltip
+
+  native activatedProperty :: Tooltip -> IO ReadOnlyBooleanProperty
+
+  native contentDisplayProperty :: Tooltip -> IO (ObjectProperty ContentDisplay)
+
+  native fontProperty :: Tooltip -> IO (ObjectProperty Font)
+
+  pure native getClassCssMetaData "javafx.scene.control.Tooltip.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  native getContentDisplay :: Tooltip -> IO ContentDisplay
+
+  native getCssMetaData :: Tooltip -> IO (List (CssMetaData Styleable Object))
+
+  native getFont :: Tooltip -> IO Font
+
+  native getGraphic :: Tooltip -> IO Node
+
+  native getGraphicTextGap :: Tooltip -> IO double
+
+  native getStyleableParent :: Tooltip -> IO Styleable
+
+  native getText :: Tooltip -> IO String
+
+  native getTextAlignment :: Tooltip -> IO TextAlignment
+
+  native getTextOverrun :: Tooltip -> IO OverrunStyle
+
+  native graphicProperty :: Tooltip -> IO (ObjectProperty Node)
+
+  native graphicTextGapProperty :: Tooltip -> IO DoubleProperty
+
+  native install "javafx.scene.control.Tooltip.install" :: Node -> Tooltip -> IO void
+
+  native isActivated :: Tooltip -> IO boolean
+
+  native isWrapText :: Tooltip -> IO boolean
+
+  native setContentDisplay :: Tooltip -> ContentDisplay -> IO void
+
+  native setFont :: Tooltip -> Font -> IO void
+
+  native setGraphic :: Tooltip -> Node -> IO void
+
+  native setGraphicTextGap :: Tooltip -> double -> IO void
+
+  native setText :: Tooltip -> String -> IO void
+
+  native setTextAlignment :: Tooltip -> TextAlignment -> IO void
+
+  native setTextOverrun :: Tooltip -> OverrunStyle -> IO void
+
+  native setWrapText :: Tooltip -> boolean -> IO void
+
+  native textAlignmentProperty :: Tooltip -> IO (ObjectProperty TextAlignment)
+
+  native textOverrunProperty :: Tooltip -> IO (ObjectProperty OverrunStyle)
+
+  native textProperty :: Tooltip -> IO StringProperty
+
+  native uninstall "javafx.scene.control.Tooltip.uninstall" :: Node -> Tooltip -> IO void
+
+  native wrapTextProperty :: Tooltip -> IO BooleanProperty
+
+

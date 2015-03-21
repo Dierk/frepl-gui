@@ -1,0 +1,9 @@
+data LabeledText = pure native com.sun.javafx.scene.control.skin.LabeledText where
+
+  native new :: Labeled -> IO LabeledText
+
+  pure native getClassCssMetaData "com.sun.javafx.scene.control.skin.LabeledText.getClassCssMetaData" :: () -> List (CssMetaData Styleable Object)
+
+  pure native getCssMetaData :: LabeledText -> List (CssMetaData Styleable Object)
+
+

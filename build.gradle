@@ -6,7 +6,7 @@ buildscript {        // make the frege plugin available in our build
         }
     }
     dependencies {
-        classpath 'org.frege-lang:frege-gradle-plugin:0.1-SNAPSHOT'
+        classpath 'org.frege-lang:frege-gradle-plugin:0.3-SNAPSHOT'
     }
 }
 
@@ -32,7 +32,8 @@ subprojects {
 
     dependencies {
         compile "org.codehaus.groovy:groovy:$groovyVersion"
-        compile "com.theoryinpractise.frege:frege:3.22.367-g630677b"
+//        compile "com.theoryinpractise.frege:frege:3.22.367-g630677b"
         compile "org.frege-lang:frege-repl-core:1.1.1-SNAPSHOT"
+        compile "org.frege-lang:frege-native-gen:1.0-SNAPSHOT"
     }
 }

@@ -1,0 +1,48 @@
+data PickRay = pure native com.sun.javafx.geom.PickRay where
+
+  pure native new :: double -> double -> double -> double -> double -> PickRay
+                   | Vec3d -> Vec3d -> double -> double -> PickRay
+                   | () -> PickRay
+
+  pure native computeParallelPickRay "com.sun.javafx.geom.PickRay.computeParallelPickRay" :: double -> double -> double -> Affine3D -> double -> double -> PickRay -> PickRay
+
+  pure native computePerspectivePickRay "com.sun.javafx.geom.PickRay.computePerspectivePickRay" :: double -> double -> boolean -> double -> double -> double -> boolean -> Affine3D -> double -> double -> PickRay -> PickRay
+
+  pure native copy :: PickRay -> PickRay
+
+  pure native distance :: PickRay -> Vec3d -> double
+
+  pure native getDirection :: PickRay -> Vec3d -> Vec3d
+
+  pure native getDirectionNoClone :: PickRay -> Vec3d
+
+  pure native getFarClip :: PickRay -> double
+
+  pure native getNearClip :: PickRay -> double
+
+  pure native getOrigin :: PickRay -> Vec3d -> Vec3d
+
+  pure native getOriginNoClone :: PickRay -> Vec3d
+
+  native inverseTransform :: PickRay -> BaseTransform -> ST s void throws NoninvertibleTransformException
+
+  pure native project :: PickRay -> BaseTransform -> boolean -> Vec3d -> Point2D -> PickRay
+
+  pure native projectToZeroPlane :: PickRay -> BaseTransform -> boolean -> Vec3d -> Point2D -> Point2D
+
+  pure native set :: PickRay -> double -> double -> double -> double -> double -> void
+                   | PickRay -> Vec3d -> Vec3d -> double -> double -> void
+
+  pure native setDirection :: PickRay -> double -> double -> double -> void
+                            | PickRay -> Vec3d -> void
+
+  pure native setOrigin :: PickRay -> Vec3d -> void
+                         | PickRay -> double -> double -> double -> void
+
+  pure native setPickRay :: PickRay -> PickRay -> void
+
+  pure native toString :: PickRay -> String
+
+  pure native transform :: PickRay -> BaseTransform -> void
+
+

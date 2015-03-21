@@ -1,0 +1,5 @@
+data DirtyHint = pure native com.sun.javafx.sg.prism.DirtyHint where
+
+  pure native new :: () -> DirtyHint
+
+

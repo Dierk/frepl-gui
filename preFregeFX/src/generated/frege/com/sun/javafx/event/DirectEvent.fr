@@ -1,0 +1,11 @@
+data DirectEvent = pure native com.sun.javafx.event.DirectEvent where
+
+  native direct "com.sun.javafx.event.DirectEvent.DIRECT" :: IO (EventType DirectEvent)
+
+  native new :: Event -> IO DirectEvent
+              | Event -> Object -> EventTarget -> IO DirectEvent
+
+  native getOriginalEvent :: DirectEvent -> IO Event
+
+derive Serializable DirectEvent
+

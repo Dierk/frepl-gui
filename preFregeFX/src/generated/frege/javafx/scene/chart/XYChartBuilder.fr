@@ -1,0 +1,23 @@
+data XYChartBuilder x y b = mutable native javafx.scene.chart.XYChartBuilder where
+
+  native alternativeColumnFillVisible :: XYChartBuilder x y b -> boolean -> IO b
+
+  native alternativeRowFillVisible :: XYChartBuilder x y b -> boolean -> IO b
+
+  native applyTo :: XYChartBuilder x y b -> XYChart x y -> IO void
+
+  native jdata' :: XYChartBuilder x y b -> ObservableList (XYChart_Series x y) -> IO b
+
+  native horizontalGridLinesVisible :: XYChartBuilder x y b -> boolean -> IO b
+
+  native horizontalZeroLineVisible :: XYChartBuilder x y b -> boolean -> IO b
+
+  native verticalGridLinesVisible :: XYChartBuilder x y b -> boolean -> IO b
+
+  native verticalZeroLineVisible :: XYChartBuilder x y b -> boolean -> IO b
+
+  native xAxis "XAxis" :: XYChartBuilder x y b -> Axis x -> IO b
+
+  native yAxis "YAxis" :: XYChartBuilder x y b -> Axis y -> IO b
+
+

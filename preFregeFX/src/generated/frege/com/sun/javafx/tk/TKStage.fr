@@ -1,0 +1,56 @@
+data TKStage = pure native com.sun.javafx.tk.TKStage where
+
+  native defaultfullscreenexitkeycombo "com.sun.javafx.tk.TKStage.defaultFullScreenExitKeycombo" :: IO KeyCodeCombination
+
+  pure native close :: TKStage -> void
+
+  pure native createTKScene :: TKStage -> boolean -> boolean -> AccessControlContext -> TKScene
+
+  pure native grabFocus :: TKStage -> boolean
+
+  pure native releaseInput :: TKStage -> void
+
+  pure native requestFocus :: TKStage -> FocusCause -> void
+                            | TKStage -> void
+
+  pure native requestInput :: TKStage -> String -> int -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> void
+
+  pure native setAlwaysOnTop :: TKStage -> boolean -> void
+
+  pure native setBounds :: TKStage -> float -> float -> boolean -> boolean -> float -> float -> float -> float -> float -> float -> void
+
+  pure native setFullScreen :: TKStage -> boolean -> void
+
+  pure native setIconified :: TKStage -> boolean -> void
+
+  pure native setIcons :: TKStage -> List -> void
+
+  pure native setImportant :: TKStage -> boolean -> void
+
+  pure native setMaximized :: TKStage -> boolean -> void
+
+  pure native setMaximumSize :: TKStage -> int -> int -> void
+
+  pure native setMinimumSize :: TKStage -> int -> int -> void
+
+  pure native setOpacity :: TKStage -> float -> void
+
+  pure native setRTL :: TKStage -> boolean -> void
+
+  pure native setResizable :: TKStage -> boolean -> void
+
+  pure native setScene :: TKStage -> TKScene -> void
+
+  pure native setTKStageListener :: TKStage -> TKStageListener -> void
+
+  pure native setTitle :: TKStage -> String -> void
+
+  pure native setVisible :: TKStage -> boolean -> void
+
+  pure native toBack :: TKStage -> void
+
+  pure native toFront :: TKStage -> void
+
+  pure native ungrabFocus :: TKStage -> void
+
+

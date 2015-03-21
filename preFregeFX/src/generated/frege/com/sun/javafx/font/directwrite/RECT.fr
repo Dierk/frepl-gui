@@ -1,0 +1,10 @@
+data RECT = pure native com.sun.javafx.font.directwrite.RECT where
+
+  pure native left "".left"" :: RECT -> int
+  pure native top "".top"" :: RECT -> int
+  pure native right "".right"" :: RECT -> int
+  pure native bottom "".bottom"" :: RECT -> int
+
+  pure native new :: () -> RECT
+
+

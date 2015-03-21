@@ -1,0 +1,64 @@
+data Shear = mutable native javafx.scene.transform.Shear where
+
+  native new :: double -> double -> double -> double -> IO Shear
+              | double -> double -> IO Shear
+              | () -> IO Shear
+
+  native clone :: Shear -> IO Shear
+
+  native createConcatenation :: Shear -> Transform -> IO Transform
+
+  native createInverse :: Shear -> IO Transform
+
+  native deltaTransform :: Shear -> double -> double -> double -> IO Point3D
+                         | Shear -> double -> double -> IO Point2D
+
+  native getMxy :: Shear -> IO double
+
+  native getMyx :: Shear -> IO double
+
+  native getPivotX :: Shear -> IO double
+
+  native getPivotY :: Shear -> IO double
+
+  native getTx :: Shear -> IO double
+
+  native getTy :: Shear -> IO double
+
+  native getX :: Shear -> IO double
+
+  native getY :: Shear -> IO double
+
+  native impl_apply :: Shear -> Affine3D -> IO void
+
+  native impl_derive :: Shear -> BaseTransform -> IO BaseTransform
+
+  native inverseDeltaTransform :: Shear -> double -> double -> double -> IO Point3D throws NonInvertibleTransformException
+                                | Shear -> double -> double -> IO Point2D throws NonInvertibleTransformException
+
+  native inverseTransform :: Shear -> double -> double -> IO Point2D throws NonInvertibleTransformException
+                           | Shear -> double -> double -> double -> IO Point3D throws NonInvertibleTransformException
+
+  native pivotXProperty :: Shear -> IO DoubleProperty
+
+  native pivotYProperty :: Shear -> IO DoubleProperty
+
+  native setPivotX :: Shear -> double -> IO void
+
+  native setPivotY :: Shear -> double -> IO void
+
+  native setX :: Shear -> double -> IO void
+
+  native setY :: Shear -> double -> IO void
+
+  native toString :: Shear -> IO String
+
+  native transform :: Shear -> double -> double -> double -> IO Point3D
+                    | Shear -> double -> double -> IO Point2D
+
+  native xProperty :: Shear -> IO DoubleProperty
+
+  native yProperty :: Shear -> IO DoubleProperty
+
+derive Cloneable Shear
+

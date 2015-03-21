@@ -1,0 +1,21 @@
+data QuadCurveBuilder b = mutable native javafx.scene.shape.QuadCurveBuilder where
+
+  native applyTo :: QuadCurveBuilder b -> QuadCurve -> IO void
+
+  native build :: QuadCurveBuilder b -> IO QuadCurve
+
+  native controlX :: QuadCurveBuilder b -> double -> IO b
+
+  native controlY :: QuadCurveBuilder b -> double -> IO b
+
+  native create "javafx.scene.shape.QuadCurveBuilder.create" :: () -> IO (QuadCurveBuilder Object)
+
+  native endX :: QuadCurveBuilder b -> double -> IO b
+
+  native endY :: QuadCurveBuilder b -> double -> IO b
+
+  native startX :: QuadCurveBuilder b -> double -> IO b
+
+  native startY :: QuadCurveBuilder b -> double -> IO b
+
+

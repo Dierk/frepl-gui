@@ -1,0 +1,17 @@
+data ObservableArray t = mutable native javafx.collections.ObservableArray where
+
+  native addListener :: ObservableArray t -> ArrayChangeListener t -> IO void
+
+  native clear :: ObservableArray t -> IO void
+
+  native ensureCapacity :: ObservableArray t -> int -> IO void
+
+  native removeListener :: ObservableArray t -> ArrayChangeListener t -> IO void
+
+  native resize :: ObservableArray t -> int -> IO void
+
+  native size :: ObservableArray t -> IO int
+
+  native trimToSize :: ObservableArray t -> IO void
+
+

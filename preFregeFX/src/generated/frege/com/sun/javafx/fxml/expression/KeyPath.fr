@@ -1,0 +1,13 @@
+data KeyPath = pure native com.sun.javafx.fxml.expression.KeyPath where
+
+  pure native new :: ArrayList String -> KeyPath
+
+  pure native get :: KeyPath -> int -> String
+
+  pure native parse "com.sun.javafx.fxml.expression.KeyPath.parse" :: String -> KeyPath
+
+  pure native size :: KeyPath -> int
+
+  pure native toString :: KeyPath -> String
+
+

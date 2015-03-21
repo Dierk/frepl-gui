@@ -1,0 +1,9 @@
+data DirtyRegionPool = pure native com.sun.javafx.geom.DirtyRegionPool where
+
+  pure native new :: int -> DirtyRegionPool
+
+  pure native checkIn :: DirtyRegionPool -> DirtyRegionContainer -> void
+
+  pure native checkOut :: DirtyRegionPool -> DirtyRegionContainer
+
+

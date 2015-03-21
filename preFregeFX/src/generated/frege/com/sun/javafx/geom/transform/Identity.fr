@@ -1,0 +1,78 @@
+data Identity = pure native com.sun.javafx.geom.transform.Identity where
+
+  pure native new :: () -> Identity
+
+  pure native copy :: Identity -> BaseTransform
+
+  pure native createInverse :: Identity -> BaseTransform
+
+  pure native createTransformedShape :: Identity -> Shape -> Shape
+
+  native deltaTransform :: Identity -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> int -> ST s void
+                         | Identity -> Vec3d -> Vec3d -> ST s Vec3d
+                         | Identity -> Mutable s (JArray double) -> int -> Mutable s (JArray double) -> int -> int -> ST s void
+
+  pure native deriveWithConcatenation :: Identity -> BaseTransform -> BaseTransform
+                                       | Identity -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> BaseTransform
+                                       | Identity -> double -> double -> double -> double -> double -> double -> BaseTransform
+
+  pure native deriveWithNewTransform :: Identity -> BaseTransform -> BaseTransform
+
+  pure native deriveWithPreConcatenation :: Identity -> BaseTransform -> BaseTransform
+
+  pure native deriveWithPreTranslation :: Identity -> double -> double -> BaseTransform
+
+  pure native deriveWithRotation :: Identity -> double -> double -> double -> double -> BaseTransform
+
+  pure native deriveWithScale :: Identity -> double -> double -> double -> BaseTransform
+
+  pure native deriveWithTranslation :: Identity -> double -> double -> BaseTransform
+                                     | Identity -> double -> double -> double -> BaseTransform
+
+  pure native equals :: Identity -> Object -> boolean
+
+  pure native getDegree :: Identity -> BaseTransform_Degree
+
+  pure native getDeterminant :: Identity -> double
+
+  pure native getType :: Identity -> int
+
+  pure native hashCode :: Identity -> int
+
+  native inverseDeltaTransform :: Identity -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> int -> ST s void
+                                | Identity -> Vec3d -> Vec3d -> ST s Vec3d
+
+  native inverseTransform :: Identity -> Rectangle -> Rectangle -> ST s void
+                           | Identity -> Mutable s (JArray double) -> int -> Mutable s (JArray double) -> int -> int -> ST s void
+                           | Identity -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> int -> ST s void
+                           | Identity -> Vec3d -> Vec3d -> ST s Vec3d
+                           | Identity -> Point2D -> Point2D -> ST s Point2D
+                           | Identity -> BaseBounds -> BaseBounds -> ST s BaseBounds
+
+  pure native invert :: Identity -> void
+
+  pure native is2D :: Identity -> boolean
+
+  pure native isIdentity :: Identity -> boolean
+
+  pure native isTranslateOrIdentity :: Identity -> boolean
+
+  pure native restoreTransform :: Identity -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> double -> void
+                                | Identity -> double -> double -> double -> double -> double -> double -> void
+
+  pure native setToIdentity :: Identity -> void
+
+  pure native setTransform :: Identity -> BaseTransform -> void
+
+  pure native toString :: Identity -> String
+
+  native transform :: Identity -> Mutable s (JArray double) -> int -> Mutable s (JArray double) -> int -> int -> ST s void
+                    | Identity -> Mutable s (JArray float) -> int -> Mutable s (JArray double) -> int -> int -> ST s void
+                    | Identity -> Mutable s (JArray double) -> int -> Mutable s (JArray float) -> int -> int -> ST s void
+                    | Identity -> Rectangle -> Rectangle -> ST s void
+                    | Identity -> Point2D -> Point2D -> ST s Point2D
+                    | Identity -> Vec3d -> Vec3d -> ST s Vec3d
+                    | Identity -> Mutable s (JArray float) -> int -> Mutable s (JArray float) -> int -> int -> ST s void
+                    | Identity -> BaseBounds -> BaseBounds -> ST s BaseBounds
+
+

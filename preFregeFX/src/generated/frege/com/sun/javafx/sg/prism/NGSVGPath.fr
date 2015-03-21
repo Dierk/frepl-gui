@@ -1,0 +1,13 @@
+data NGSVGPath = pure native com.sun.javafx.sg.prism.NGSVGPath where
+
+  pure native new :: () -> NGSVGPath
+
+  pure native acceptsPath2dOnUpdate :: NGSVGPath -> boolean
+
+  pure native getGeometry :: NGSVGPath -> Object
+
+  pure native getShape :: NGSVGPath -> Shape
+
+  pure native setContent :: NGSVGPath -> Object -> void
+
+

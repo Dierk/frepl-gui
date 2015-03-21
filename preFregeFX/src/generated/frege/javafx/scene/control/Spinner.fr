@@ -1,0 +1,47 @@
+data Spinner t = mutable native javafx.scene.control.Spinner where
+
+  pure native style_class_arrows_on_right_horizontal "javafx.scene.control.Spinner.STYLE_CLASS_ARROWS_ON_RIGHT_HORIZONTAL" :: String
+  pure native style_class_arrows_on_left_vertical "javafx.scene.control.Spinner.STYLE_CLASS_ARROWS_ON_LEFT_VERTICAL" :: String
+  pure native style_class_arrows_on_left_horizontal "javafx.scene.control.Spinner.STYLE_CLASS_ARROWS_ON_LEFT_HORIZONTAL" :: String
+  pure native style_class_split_arrows_vertical "javafx.scene.control.Spinner.STYLE_CLASS_SPLIT_ARROWS_VERTICAL" :: String
+  pure native style_class_split_arrows_horizontal "javafx.scene.control.Spinner.STYLE_CLASS_SPLIT_ARROWS_HORIZONTAL" :: String
+
+  native new :: ObservableList t -> IO (Spinner t)
+              | SpinnerValueFactory t -> IO (Spinner t)
+              | () -> IO (Spinner t)
+              | int -> int -> int -> IO (Spinner t)
+              | int -> int -> int -> int -> IO (Spinner t)
+              | double -> double -> double -> IO (Spinner t)
+              | double -> double -> double -> double -> IO (Spinner t)
+
+  native decrement :: Spinner t -> IO void
+                    | Spinner t -> int -> IO void
+
+  native editableProperty :: Spinner t -> IO BooleanProperty
+
+  native editorProperty :: Spinner t -> IO (ReadOnlyObjectProperty TextField)
+
+  native executeAccessibleAction :: Spinner t -> AccessibleAction -> MutableIO (JArray Object) -> IO void
+
+  native getEditor :: Spinner t -> IO TextField
+
+  native getValue :: Spinner t -> IO t
+
+  native getValueFactory :: Spinner t -> IO (SpinnerValueFactory t)
+
+  native increment :: Spinner t -> int -> IO void
+                    | Spinner t -> IO void
+
+  native isEditable :: Spinner t -> IO boolean
+
+  native queryAccessibleAttribute :: Spinner t -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setEditable :: Spinner t -> boolean -> IO void
+
+  native setValueFactory :: Spinner t -> SpinnerValueFactory t -> IO void
+
+  native valueFactoryProperty :: Spinner t -> IO (ObjectProperty (SpinnerValueFactory t))
+
+  native valueProperty :: Spinner t -> IO (ReadOnlyObjectProperty t)
+
+

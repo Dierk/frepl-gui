@@ -1,0 +1,47 @@
+data PerformanceTracker = pure native com.sun.javafx.perf.PerformanceTracker where
+
+  pure native doLogEvent :: PerformanceTracker -> String -> void
+
+  pure native doOutputLog :: PerformanceTracker -> void
+
+  pure native frameRendered :: PerformanceTracker -> void
+
+  pure native getAverageFPS :: PerformanceTracker -> float
+
+  pure native getAveragePulses :: PerformanceTracker -> float
+
+  pure native getInstantFPS :: PerformanceTracker -> float
+
+  pure native getInstantPulses :: PerformanceTracker -> float
+
+  pure native getOnFirstPulse :: PerformanceTracker -> Runnable
+
+  pure native getOnPulse :: PerformanceTracker -> Runnable
+
+  pure native getOnRenderedFrameTask :: PerformanceTracker -> Runnable
+
+  native getSceneTracker "com.sun.javafx.perf.PerformanceTracker.getSceneTracker" :: Scene -> IO PerformanceTracker
+
+  pure native isLoggingEnabled "com.sun.javafx.perf.PerformanceTracker.isLoggingEnabled" :: () -> boolean
+
+  pure native logEvent "com.sun.javafx.perf.PerformanceTracker.logEvent" :: String -> void
+
+  pure native outputLog "com.sun.javafx.perf.PerformanceTracker.outputLog" :: () -> void
+
+  pure native pulse :: PerformanceTracker -> void
+
+  native releaseSceneTracker "com.sun.javafx.perf.PerformanceTracker.releaseSceneTracker" :: Scene -> IO void
+
+  pure native resetAverageFPS :: PerformanceTracker -> void
+
+  pure native resetAveragePulses :: PerformanceTracker -> void
+
+  pure native setOnFirstPulse :: PerformanceTracker -> Runnable -> void
+
+  pure native setOnPulse :: PerformanceTracker -> Runnable -> void
+
+  pure native setOnRenderedFrameTask :: PerformanceTracker -> Runnable -> void
+
+  pure native setSceneAccessor "com.sun.javafx.perf.PerformanceTracker.setSceneAccessor" :: PerformanceTracker_SceneAccessor -> void
+
+

@@ -1,0 +1,13 @@
+data UnaryExpression u t = pure native com.sun.javafx.fxml.expression.UnaryExpression where
+
+  pure native new :: Expression u -> Function u t -> UnaryExpression u t
+
+  pure native evaluate :: UnaryExpression u t -> Object -> t
+
+  pure native isDefined :: UnaryExpression u t -> Object -> boolean
+
+  pure native isLValue :: UnaryExpression u t -> boolean
+
+  pure native update :: UnaryExpression u t -> Object -> t -> void
+
+

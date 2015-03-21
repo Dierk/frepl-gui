@@ -1,0 +1,15 @@
+data ObjectConstant t = pure native com.sun.javafx.binding.ObjectConstant where
+
+  native addListener :: ObjectConstant t -> ChangeListener t -> IO void
+                      | ObjectConstant t -> InvalidationListener -> IO void
+
+  pure native get :: ObjectConstant t -> t
+
+  pure native getValue :: ObjectConstant t -> t
+
+  native removeListener :: ObjectConstant t -> InvalidationListener -> IO void
+                         | ObjectConstant t -> ChangeListener t -> IO void
+
+  pure native valueOf "com.sun.javafx.binding.ObjectConstant.valueOf" :: t -> ObjectConstant t
+
+

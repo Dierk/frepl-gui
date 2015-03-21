@@ -1,0 +1,1 @@
+data TextUtilities = pure native com.sun.javafx.webkit.prism.TextUtilities

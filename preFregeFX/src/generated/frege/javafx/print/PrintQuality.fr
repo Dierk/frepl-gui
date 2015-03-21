@@ -1,0 +1,13 @@
+data PrintQuality = mutable native javafx.print.PrintQuality where
+
+  native draft "javafx.print.PrintQuality.DRAFT" :: IO PrintQuality
+  native low "javafx.print.PrintQuality.LOW" :: IO PrintQuality
+  native normal "javafx.print.PrintQuality.NORMAL" :: IO PrintQuality
+  native high "javafx.print.PrintQuality.HIGH" :: IO PrintQuality
+
+  native valueOf "javafx.print.PrintQuality.valueOf" :: String -> IO PrintQuality
+
+  native values "javafx.print.PrintQuality.values" :: () -> STMutable s (JArray PrintQuality)
+
+derive Serializable PrintQuality
+

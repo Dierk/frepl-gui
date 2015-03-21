@@ -1,0 +1,25 @@
+data NodePath = pure native com.sun.javafx.sg.prism.NodePath where
+
+  pure native new :: () -> NodePath
+
+  pure native add :: NodePath -> NGNode -> void
+
+  pure native clear :: NodePath -> void
+
+  pure native getCurrentNode :: NodePath -> NGNode
+
+  pure native hasNext :: NodePath -> boolean
+
+  pure native isEmpty :: NodePath -> boolean
+
+  pure native last :: NodePath -> NGNode
+
+  pure native next :: NodePath -> void
+
+  pure native reset :: NodePath -> void
+
+  pure native size :: NodePath -> int
+
+  pure native toString :: NodePath -> String
+
+

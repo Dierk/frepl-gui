@@ -1,0 +1,55 @@
+data MediaPlayerBuilder = mutable native javafx.scene.media.MediaPlayerBuilder where
+
+  native applyTo :: MediaPlayerBuilder -> MediaPlayer -> IO void
+
+  native audioSpectrumInterval :: MediaPlayerBuilder -> double -> IO MediaPlayerBuilder
+
+  native audioSpectrumListener :: MediaPlayerBuilder -> AudioSpectrumListener -> IO MediaPlayerBuilder
+
+  native audioSpectrumNumBands :: MediaPlayerBuilder -> int -> IO MediaPlayerBuilder
+
+  native audioSpectrumThreshold :: MediaPlayerBuilder -> int -> IO MediaPlayerBuilder
+
+  native autoPlay :: MediaPlayerBuilder -> boolean -> IO MediaPlayerBuilder
+
+  native balance :: MediaPlayerBuilder -> double -> IO MediaPlayerBuilder
+
+  native build :: MediaPlayerBuilder -> IO MediaPlayer
+
+  native create "javafx.scene.media.MediaPlayerBuilder.create" :: () -> IO MediaPlayerBuilder
+
+  native cycleCount :: MediaPlayerBuilder -> int -> IO MediaPlayerBuilder
+
+  native media :: MediaPlayerBuilder -> Media -> IO MediaPlayerBuilder
+
+  native mute :: MediaPlayerBuilder -> boolean -> IO MediaPlayerBuilder
+
+  native onEndOfMedia :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native onError :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native onHalted :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native onMarker :: MediaPlayerBuilder -> EventHandler MediaMarkerEvent -> IO MediaPlayerBuilder
+
+  native onPaused :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native onPlaying :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native onReady :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native onRepeat :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native onStalled :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native onStopped :: MediaPlayerBuilder -> Runnable -> IO MediaPlayerBuilder
+
+  native rate :: MediaPlayerBuilder -> double -> IO MediaPlayerBuilder
+
+  native startTime :: MediaPlayerBuilder -> Duration -> IO MediaPlayerBuilder
+
+  native stopTime :: MediaPlayerBuilder -> Duration -> IO MediaPlayerBuilder
+
+  native volume :: MediaPlayerBuilder -> double -> IO MediaPlayerBuilder
+
+

@@ -1,0 +1,12 @@
+data SimpleStringProperty = mutable native javafx.beans.property.SimpleStringProperty where
+
+  native new :: Object -> String -> IO SimpleStringProperty
+              | () -> IO SimpleStringProperty
+              | Object -> String -> String -> IO SimpleStringProperty
+              | String -> IO SimpleStringProperty
+
+  native getBean :: SimpleStringProperty -> IO Object
+
+  native getName :: SimpleStringProperty -> IO String
+
+

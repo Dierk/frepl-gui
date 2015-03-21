@@ -1,0 +1,1 @@
+data OSFreetype = pure native com.sun.javafx.font.freetype.OSFreetype

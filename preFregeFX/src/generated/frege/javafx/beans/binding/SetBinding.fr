@@ -1,0 +1,27 @@
+data SetBinding e = mutable native javafx.beans.binding.SetBinding where
+
+  native addListener :: SetBinding e -> ChangeListener (ObservableSet e) -> IO void
+                      | SetBinding e -> InvalidationListener -> IO void
+                      | SetBinding e -> SetChangeListener e -> IO void
+
+  native dispose :: SetBinding e -> IO void
+
+  native emptyProperty :: SetBinding e -> IO ReadOnlyBooleanProperty
+
+  native get :: SetBinding e -> IO (ObservableSet e)
+
+  native getDependencies :: SetBinding e -> IO (ObservableList Object)
+
+  native invalidate :: SetBinding e -> IO void
+
+  native isValid :: SetBinding e -> IO boolean
+
+  native removeListener :: SetBinding e -> InvalidationListener -> IO void
+                         | SetBinding e -> SetChangeListener e -> IO void
+                         | SetBinding e -> ChangeListener (ObservableSet e) -> IO void
+
+  native sizeProperty :: SetBinding e -> IO ReadOnlyIntegerProperty
+
+  native toString :: SetBinding e -> IO String
+
+

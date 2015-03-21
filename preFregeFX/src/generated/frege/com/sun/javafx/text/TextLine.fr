@@ -1,0 +1,25 @@
+data TextLine = pure native com.sun.javafx.text.TextLine where
+
+  native new :: int -> int -> Mutable s (JArray TextRun) -> float -> float -> float -> float -> ST s TextLine
+
+  pure native getBounds :: TextLine -> RectBounds
+
+  pure native getLeading :: TextLine -> float
+
+  pure native getLeftSideBearing :: TextLine -> float
+
+  pure native getLength :: TextLine -> int
+
+  pure native getRightSideBearing :: TextLine -> float
+
+  native getRuns :: TextLine -> STMutable s (JArray TextRun)
+
+  pure native getStart :: TextLine -> int
+
+  pure native setAlignment :: TextLine -> float -> void
+
+  pure native setSideBearings :: TextLine -> float -> float -> void
+
+  pure native setWidth :: TextLine -> float -> void
+
+

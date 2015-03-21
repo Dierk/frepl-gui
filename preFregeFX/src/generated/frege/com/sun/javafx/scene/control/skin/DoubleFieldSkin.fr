@@ -1,0 +1,11 @@
+data DoubleFieldSkin = pure native com.sun.javafx.scene.control.skin.DoubleFieldSkin where
+
+  pure native new :: DoubleField -> DoubleFieldSkin
+
+  pure native dispose :: DoubleFieldSkin -> void
+
+  native getNode :: DoubleFieldSkin -> IO Node
+
+  pure native getSkinnable :: DoubleFieldSkin -> DoubleField
+
+

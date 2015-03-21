@@ -1,0 +1,40 @@
+data ColorInput = mutable native javafx.scene.effect.ColorInput where
+
+  native new :: () -> IO ColorInput
+              | double -> double -> double -> double -> Paint -> IO ColorInput
+
+  native getHeight :: ColorInput -> IO double
+
+  native getPaint :: ColorInput -> IO Paint
+
+  native getWidth :: ColorInput -> IO double
+
+  native getX :: ColorInput -> IO double
+
+  native getY :: ColorInput -> IO double
+
+  native heightProperty :: ColorInput -> IO DoubleProperty
+
+  native impl_copy :: ColorInput -> IO Effect
+
+  native impl_getBounds :: ColorInput -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native paintProperty :: ColorInput -> IO (ObjectProperty Paint)
+
+  native setHeight :: ColorInput -> double -> IO void
+
+  native setPaint :: ColorInput -> Paint -> IO void
+
+  native setWidth :: ColorInput -> double -> IO void
+
+  native setX :: ColorInput -> double -> IO void
+
+  native setY :: ColorInput -> double -> IO void
+
+  native widthProperty :: ColorInput -> IO DoubleProperty
+
+  native xProperty :: ColorInput -> IO DoubleProperty
+
+  native yProperty :: ColorInput -> IO DoubleProperty
+
+

@@ -1,0 +1,5 @@
+data AbstractNotifyListener = pure native com.sun.javafx.beans.event.AbstractNotifyListener where
+
+  native getWeakListener :: AbstractNotifyListener -> IO InvalidationListener
+
+

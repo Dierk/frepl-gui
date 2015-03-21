@@ -1,0 +1,10 @@
+data TextInputDialog = mutable native javafx.scene.control.TextInputDialog where
+
+  native new :: () -> IO TextInputDialog
+              | String -> IO TextInputDialog
+
+  native getDefaultValue :: TextInputDialog -> IO String
+
+  native getEditor :: TextInputDialog -> IO TextField
+
+

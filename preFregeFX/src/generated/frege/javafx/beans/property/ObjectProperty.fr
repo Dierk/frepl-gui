@@ -1,0 +1,11 @@
+data ObjectProperty t = mutable native javafx.beans.property.ObjectProperty where
+
+  native bindBidirectional :: ObjectProperty t -> Property t -> IO void
+
+  native setValue :: ObjectProperty t -> t -> IO void
+
+  native toString :: ObjectProperty t -> IO String
+
+  native unbindBidirectional :: ObjectProperty t -> Property t -> IO void
+
+

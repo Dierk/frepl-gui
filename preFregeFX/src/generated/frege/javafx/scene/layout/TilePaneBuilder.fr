@@ -1,0 +1,27 @@
+data TilePaneBuilder b = mutable native javafx.scene.layout.TilePaneBuilder where
+
+  native alignment :: TilePaneBuilder b -> Pos -> IO b
+
+  native applyTo :: TilePaneBuilder b -> TilePane -> IO void
+
+  native build :: TilePaneBuilder b -> IO TilePane
+
+  native create "javafx.scene.layout.TilePaneBuilder.create" :: () -> IO (TilePaneBuilder Object)
+
+  native hgap :: TilePaneBuilder b -> double -> IO b
+
+  native orientation :: TilePaneBuilder b -> Orientation -> IO b
+
+  native prefColumns :: TilePaneBuilder b -> int -> IO b
+
+  native prefRows :: TilePaneBuilder b -> int -> IO b
+
+  native prefTileHeight :: TilePaneBuilder b -> double -> IO b
+
+  native prefTileWidth :: TilePaneBuilder b -> double -> IO b
+
+  native tileAlignment :: TilePaneBuilder b -> Pos -> IO b
+
+  native vgap :: TilePaneBuilder b -> double -> IO b
+
+

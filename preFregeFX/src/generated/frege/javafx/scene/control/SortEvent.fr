@@ -1,0 +1,12 @@
+data SortEvent c = mutable native javafx.scene.control.SortEvent where
+
+  native any "javafx.scene.control.SortEvent.ANY" :: IO (EventType SortEvent)
+
+  native new :: c -> EventTarget -> IO (SortEvent c)
+
+  native getSource :: SortEvent c -> IO c
+
+  native sortEvent "javafx.scene.control.SortEvent.sortEvent" :: () -> IO (EventType (SortEvent c))
+
+derive Serializable (SortEvent c)
+
