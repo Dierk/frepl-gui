@@ -1,0 +1,16 @@
+data FileChooserBuilder = mutable native javafx.stage.FileChooserBuilder where
+
+  native applyTo :: FileChooserBuilder -> FileChooser -> IO ()
+
+  native build :: FileChooserBuilder -> IO FileChooser
+
+  native create "javafx.stage.FileChooserBuilder.create" :: () -> IO FileChooserBuilder
+
+  native extensionFilters :: FileChooserBuilder -> MutableIO (JArray FileChooser_ExtensionFilter) -> IO FileChooserBuilder
+                           | FileChooserBuilder -> MutableIO (Collection FileChooser_ExtensionFilter) -> IO FileChooserBuilder
+
+  native initialDirectory :: FileChooserBuilder -> File -> IO FileChooserBuilder
+
+  native title :: FileChooserBuilder -> String -> IO FileChooserBuilder
+
+

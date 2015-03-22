@@ -1,9 +1,0 @@
-data JFRInputEvent = pure native com.sun.javafx.logging.JFRInputEvent where
-
-  pure native new :: EventToken -> JFRInputEvent
-
-  pure native getInput :: JFRInputEvent -> String
-
-  pure native setInput :: JFRInputEvent -> String -> void
-
-

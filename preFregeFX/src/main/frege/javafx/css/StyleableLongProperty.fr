@@ -1,0 +1,11 @@
+data StyleableLongProperty = mutable native javafx.css.StyleableLongProperty where
+
+  native applyStyle :: StyleableLongProperty -> StyleOrigin -> Number -> IO ()
+
+  native bind :: StyleableLongProperty -> ObservableValue Number -> IO ()
+
+  native getStyleOrigin :: StyleableLongProperty -> IO StyleOrigin
+
+  native set :: StyleableLongProperty -> Long -> IO ()
+
+

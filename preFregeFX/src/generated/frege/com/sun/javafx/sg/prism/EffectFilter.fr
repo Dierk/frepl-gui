@@ -1,1 +1,0 @@
-data EffectFilter = pure native com.sun.javafx.sg.prism.EffectFilter

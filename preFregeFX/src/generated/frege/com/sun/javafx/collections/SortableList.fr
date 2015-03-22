@@ -1,6 +1,0 @@
-data SortableList e = pure native com.sun.javafx.collections.SortableList where
-
-  pure native sort :: SortableList e -> void
-                    | SortableList e -> Comparator e -> void
-
-

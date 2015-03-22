@@ -1,0 +1,36 @@
+data Paper = mutable native javafx.print.Paper where
+
+  native a0 "javafx.print.Paper.A0" :: IO Paper
+  native a1 "javafx.print.Paper.A1" :: IO Paper
+  native a2 "javafx.print.Paper.A2" :: IO Paper
+  native a3 "javafx.print.Paper.A3" :: IO Paper
+  native a4 "javafx.print.Paper.A4" :: IO Paper
+  native a5 "javafx.print.Paper.A5" :: IO Paper
+  native a6 "javafx.print.Paper.A6" :: IO Paper
+  native designated_long "javafx.print.Paper.DESIGNATED_LONG" :: IO Paper
+  native na_letter "javafx.print.Paper.NA_LETTER" :: IO Paper
+  native legal "javafx.print.Paper.LEGAL" :: IO Paper
+  native tabloid "javafx.print.Paper.TABLOID" :: IO Paper
+  native executive "javafx.print.Paper.EXECUTIVE" :: IO Paper
+  native na_8x10 "javafx.print.Paper.NA_8X10" :: IO Paper
+  native monarch_envelope "javafx.print.Paper.MONARCH_ENVELOPE" :: IO Paper
+  native na_number_10_envelope "javafx.print.Paper.NA_NUMBER_10_ENVELOPE" :: IO Paper
+  native c "javafx.print.Paper.C" :: IO Paper
+  native jis_b4 "javafx.print.Paper.JIS_B4" :: IO Paper
+  native jis_b5 "javafx.print.Paper.JIS_B5" :: IO Paper
+  native jis_b6 "javafx.print.Paper.JIS_B6" :: IO Paper
+  native japanese_postcard "javafx.print.Paper.JAPANESE_POSTCARD" :: IO Paper
+
+  native equals :: Paper -> Object -> IO Bool
+
+  native getHeight :: Paper -> IO Double
+
+  native getName :: Paper -> IO String
+
+  native getWidth :: Paper -> IO Double
+
+  native hashCode :: Paper -> IO Int
+
+  native toString :: Paper -> IO String
+
+

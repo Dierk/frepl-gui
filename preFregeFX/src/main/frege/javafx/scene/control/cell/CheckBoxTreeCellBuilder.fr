@@ -1,0 +1,13 @@
+data CheckBoxTreeCellBuilder t b = mutable native javafx.scene.control.cell.CheckBoxTreeCellBuilder where
+
+  native applyTo :: CheckBoxTreeCellBuilder t b -> CheckBoxTreeCell t -> IO ()
+
+  native build :: CheckBoxTreeCellBuilder t b -> IO (CheckBoxTreeCell t)
+
+  native converter :: CheckBoxTreeCellBuilder t b -> StringConverter (TreeItem t) -> IO b
+
+  native create "javafx.scene.control.cell.CheckBoxTreeCellBuilder.create" :: () -> IO (CheckBoxTreeCellBuilder t Object)
+
+  native selectedStateCallback :: CheckBoxTreeCellBuilder t b -> Callback (TreeItem t) (ObservableValue Boolean) -> IO b
+
+

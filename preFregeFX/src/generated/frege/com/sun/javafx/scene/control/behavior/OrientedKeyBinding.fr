@@ -1,9 +1,0 @@
-data OrientedKeyBinding = pure native com.sun.javafx.scene.control.behavior.OrientedKeyBinding where
-
-  native getSpecificity :: OrientedKeyBinding -> Control -> KeyEvent -> IO int
-
-  pure native toString :: OrientedKeyBinding -> String
-
-  pure native vertical :: OrientedKeyBinding -> OrientedKeyBinding
-
-

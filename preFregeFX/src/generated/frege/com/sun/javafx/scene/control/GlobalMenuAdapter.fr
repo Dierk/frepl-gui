@@ -1,9 +1,0 @@
-data GlobalMenuAdapter = pure native com.sun.javafx.scene.control.GlobalMenuAdapter where
-
-  native adapt "com.sun.javafx.scene.control.GlobalMenuAdapter.adapt" :: Menu -> IO MenuBase
-
-  pure native fireValidation :: GlobalMenuAdapter -> void
-
-  native getItemsBase :: GlobalMenuAdapter -> IO (ObservableList MenuItemBase)
-
-

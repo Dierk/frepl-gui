@@ -1,0 +1,14 @@
+data PathBuilder b = mutable native javafx.scene.shape.PathBuilder where
+
+  native applyTo :: PathBuilder b -> Path -> IO ()
+
+  native build :: PathBuilder b -> IO Path
+
+  native create "javafx.scene.shape.PathBuilder.create" :: () -> IO (PathBuilder Object)
+
+  native elements :: PathBuilder b -> MutableIO (JArray PathElement) -> IO b
+                   | PathBuilder b -> MutableIO (Collection PathElement) -> IO b
+
+  native fillRule :: PathBuilder b -> FillRule -> IO b
+
+

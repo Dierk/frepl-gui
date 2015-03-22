@@ -1,0 +1,375 @@
+data Scene = mutable native javafx.scene.Scene where
+
+  native new :: Parent -> Double -> Double -> Paint -> IO Scene
+              | Parent -> Double -> Double -> Bool -> IO Scene
+              | Parent -> Double -> Double -> Bool -> SceneAntialiasing -> IO Scene
+              | Parent -> IO Scene
+              | Parent -> Double -> Double -> IO Scene
+              | Parent -> Paint -> IO Scene
+
+  native addEventFilter :: Scene -> EventType t -> EventHandler t -> IO ()
+
+  native addEventHandler :: Scene -> EventType t -> EventHandler t -> IO ()
+
+  native addMnemonic :: Scene -> Mnemonic -> IO ()
+
+  native buildEventDispatchChain :: Scene -> EventDispatchChain -> IO EventDispatchChain
+
+  native cameraProperty :: Scene -> IO (ObjectProperty Camera)
+
+  native cursorProperty :: Scene -> IO (ObjectProperty Cursor)
+
+  native effectiveNodeOrientationProperty :: Scene -> IO (ReadOnlyObjectProperty NodeOrientation)
+
+  native eventDispatcherProperty :: Scene -> IO (ObjectProperty EventDispatcher)
+
+  native fillProperty :: Scene -> IO (ObjectProperty Paint)
+
+  native focusOwnerProperty :: Scene -> IO (ReadOnlyObjectProperty Node)
+
+  native getAccelerators :: Scene -> IO (ObservableMap KeyCombination Runnable)
+
+  native getAntiAliasing :: Scene -> IO SceneAntialiasing
+
+  native getCamera :: Scene -> IO Camera
+
+  native getCursor :: Scene -> IO Cursor
+
+  native getEffectiveNodeOrientation :: Scene -> IO NodeOrientation
+
+  native getEventDispatcher :: Scene -> IO EventDispatcher
+
+  native getFill :: Scene -> IO Paint
+
+  native getFocusOwner :: Scene -> IO Node
+
+  native getHeight :: Scene -> IO Double
+
+  native getMnemonics :: Scene -> IO (ObservableMap KeyCombination (ObservableList Mnemonic))
+
+  native getNodeOrientation :: Scene -> IO NodeOrientation
+
+  native getOnContextMenuRequested :: Scene -> IO (EventHandler ContextMenuEvent)
+
+  native getOnDragDetected :: Scene -> IO (EventHandler MouseEvent)
+
+  native getOnDragDone :: Scene -> IO (EventHandler DragEvent)
+
+  native getOnDragDropped :: Scene -> IO (EventHandler DragEvent)
+
+  native getOnDragEntered :: Scene -> IO (EventHandler DragEvent)
+
+  native getOnDragExited :: Scene -> IO (EventHandler DragEvent)
+
+  native getOnDragOver :: Scene -> IO (EventHandler DragEvent)
+
+  native getOnInputMethodTextChanged :: Scene -> IO (EventHandler InputMethodEvent)
+
+  native getOnKeyPressed :: Scene -> IO (EventHandler KeyEvent)
+
+  native getOnKeyReleased :: Scene -> IO (EventHandler KeyEvent)
+
+  native getOnKeyTyped :: Scene -> IO (EventHandler KeyEvent)
+
+  native getOnMouseClicked :: Scene -> IO (EventHandler MouseEvent)
+
+  native getOnMouseDragEntered :: Scene -> IO (EventHandler MouseDragEvent)
+
+  native getOnMouseDragExited :: Scene -> IO (EventHandler MouseDragEvent)
+
+  native getOnMouseDragOver :: Scene -> IO (EventHandler MouseDragEvent)
+
+  native getOnMouseDragReleased :: Scene -> IO (EventHandler MouseDragEvent)
+
+  native getOnMouseDragged :: Scene -> IO (EventHandler MouseEvent)
+
+  native getOnMouseEntered :: Scene -> IO (EventHandler MouseEvent)
+
+  native getOnMouseExited :: Scene -> IO (EventHandler MouseEvent)
+
+  native getOnMouseMoved :: Scene -> IO (EventHandler MouseEvent)
+
+  native getOnMousePressed :: Scene -> IO (EventHandler MouseEvent)
+
+  native getOnMouseReleased :: Scene -> IO (EventHandler MouseEvent)
+
+  native getOnRotate :: Scene -> IO (EventHandler RotateEvent)
+
+  native getOnRotationFinished :: Scene -> IO (EventHandler RotateEvent)
+
+  native getOnRotationStarted :: Scene -> IO (EventHandler RotateEvent)
+
+  native getOnScroll :: Scene -> IO (EventHandler ScrollEvent)
+
+  native getOnScrollFinished :: Scene -> IO (EventHandler ScrollEvent)
+
+  native getOnScrollStarted :: Scene -> IO (EventHandler ScrollEvent)
+
+  native getOnSwipeDown :: Scene -> IO (EventHandler SwipeEvent)
+
+  native getOnSwipeLeft :: Scene -> IO (EventHandler SwipeEvent)
+
+  native getOnSwipeRight :: Scene -> IO (EventHandler SwipeEvent)
+
+  native getOnSwipeUp :: Scene -> IO (EventHandler SwipeEvent)
+
+  native getOnTouchMoved :: Scene -> IO (EventHandler TouchEvent)
+
+  native getOnTouchPressed :: Scene -> IO (EventHandler TouchEvent)
+
+  native getOnTouchReleased :: Scene -> IO (EventHandler TouchEvent)
+
+  native getOnTouchStationary :: Scene -> IO (EventHandler TouchEvent)
+
+  native getOnZoom :: Scene -> IO (EventHandler ZoomEvent)
+
+  native getOnZoomFinished :: Scene -> IO (EventHandler ZoomEvent)
+
+  native getOnZoomStarted :: Scene -> IO (EventHandler ZoomEvent)
+
+  native getProperties :: Scene -> IO (ObservableMap Object Object)
+
+  native getRoot :: Scene -> IO Parent
+
+  native getStylesheets :: Scene -> IO (ObservableList String)
+
+  native getUserAgentStylesheet :: Scene -> IO String
+
+  native getUserData :: Scene -> IO Object
+
+  native getWidth :: Scene -> IO Double
+
+  native getWindow :: Scene -> IO Window
+
+  native getX :: Scene -> IO Double
+
+  native getY :: Scene -> IO Double
+
+  native hasProperties :: Scene -> IO Bool
+
+  native heightProperty :: Scene -> IO ReadOnlyDoubleProperty
+
+  native impl_disposePeer :: Scene -> IO ()
+
+  native impl_enableInputMethodEvents :: Scene -> Bool -> IO ()
+
+  native impl_getPeer :: Scene -> IO TKScene
+
+  native impl_getScenePulseListener :: Scene -> IO TKPulseListener
+
+  native impl_initPeer :: Scene -> IO ()
+
+  native impl_preferredSize :: Scene -> IO ()
+
+  native impl_processKeyEvent :: Scene -> KeyEvent -> IO ()
+
+  native impl_processMouseEvent :: Scene -> MouseEvent -> IO ()
+
+  pure native impl_setAllowPGAccess "javafx.scene.Scene.impl_setAllowPGAccess" :: Bool -> ()
+
+  native impl_setWindow :: Scene -> Window -> IO ()
+
+  native isDepthBuffer :: Scene -> IO Bool
+
+  native lookup :: Scene -> String -> IO Node
+
+  native nodeOrientationProperty :: Scene -> IO (ObjectProperty NodeOrientation)
+
+  native onContextMenuRequestedProperty :: Scene -> IO (ObjectProperty (EventHandler ContextMenuEvent))
+
+  native onDragDetectedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseEvent))
+
+  native onDragDoneProperty :: Scene -> IO (ObjectProperty (EventHandler DragEvent))
+
+  native onDragDroppedProperty :: Scene -> IO (ObjectProperty (EventHandler DragEvent))
+
+  native onDragEnteredProperty :: Scene -> IO (ObjectProperty (EventHandler DragEvent))
+
+  native onDragExitedProperty :: Scene -> IO (ObjectProperty (EventHandler DragEvent))
+
+  native onDragOverProperty :: Scene -> IO (ObjectProperty (EventHandler DragEvent))
+
+  native onInputMethodTextChangedProperty :: Scene -> IO (ObjectProperty (EventHandler InputMethodEvent))
+
+  native onKeyPressedProperty :: Scene -> IO (ObjectProperty (EventHandler KeyEvent))
+
+  native onKeyReleasedProperty :: Scene -> IO (ObjectProperty (EventHandler KeyEvent))
+
+  native onKeyTypedProperty :: Scene -> IO (ObjectProperty (EventHandler KeyEvent))
+
+  native onMouseClickedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseEvent))
+
+  native onMouseDragEnteredProperty :: Scene -> IO (ObjectProperty (EventHandler MouseDragEvent))
+
+  native onMouseDragExitedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseDragEvent))
+
+  native onMouseDragOverProperty :: Scene -> IO (ObjectProperty (EventHandler MouseDragEvent))
+
+  native onMouseDragReleasedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseDragEvent))
+
+  native onMouseDraggedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseEvent))
+
+  native onMouseEnteredProperty :: Scene -> IO (ObjectProperty (EventHandler MouseEvent))
+
+  native onMouseExitedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseEvent))
+
+  native onMouseMovedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseEvent))
+
+  native onMousePressedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseEvent))
+
+  native onMouseReleasedProperty :: Scene -> IO (ObjectProperty (EventHandler MouseEvent))
+
+  native onRotateProperty :: Scene -> IO (ObjectProperty (EventHandler RotateEvent))
+
+  native onRotationFinishedProperty :: Scene -> IO (ObjectProperty (EventHandler RotateEvent))
+
+  native onRotationStartedProperty :: Scene -> IO (ObjectProperty (EventHandler RotateEvent))
+
+  native onScrollFinishedProperty :: Scene -> IO (ObjectProperty (EventHandler ScrollEvent))
+
+  native onScrollProperty :: Scene -> IO (ObjectProperty (EventHandler ScrollEvent))
+
+  native onScrollStartedProperty :: Scene -> IO (ObjectProperty (EventHandler ScrollEvent))
+
+  native onSwipeDownProperty :: Scene -> IO (ObjectProperty (EventHandler SwipeEvent))
+
+  native onSwipeLeftProperty :: Scene -> IO (ObjectProperty (EventHandler SwipeEvent))
+
+  native onSwipeRightProperty :: Scene -> IO (ObjectProperty (EventHandler SwipeEvent))
+
+  native onSwipeUpProperty :: Scene -> IO (ObjectProperty (EventHandler SwipeEvent))
+
+  native onTouchMovedProperty :: Scene -> IO (ObjectProperty (EventHandler TouchEvent))
+
+  native onTouchPressedProperty :: Scene -> IO (ObjectProperty (EventHandler TouchEvent))
+
+  native onTouchReleasedProperty :: Scene -> IO (ObjectProperty (EventHandler TouchEvent))
+
+  native onTouchStationaryProperty :: Scene -> IO (ObjectProperty (EventHandler TouchEvent))
+
+  native onZoomFinishedProperty :: Scene -> IO (ObjectProperty (EventHandler ZoomEvent))
+
+  native onZoomProperty :: Scene -> IO (ObjectProperty (EventHandler ZoomEvent))
+
+  native onZoomStartedProperty :: Scene -> IO (ObjectProperty (EventHandler ZoomEvent))
+
+  native removeEventFilter :: Scene -> EventType t -> EventHandler t -> IO ()
+
+  native removeEventHandler :: Scene -> EventType t -> EventHandler t -> IO ()
+
+  native removeMnemonic :: Scene -> Mnemonic -> IO ()
+
+  native rootProperty :: Scene -> IO (ObjectProperty Parent)
+
+  native setCamera :: Scene -> Camera -> IO ()
+
+  native setCursor :: Scene -> Cursor -> IO ()
+
+  native setEventDispatcher :: Scene -> EventDispatcher -> IO ()
+
+  native setFill :: Scene -> Paint -> IO ()
+
+  native setNodeOrientation :: Scene -> NodeOrientation -> IO ()
+
+  native setOnContextMenuRequested :: Scene -> EventHandler ContextMenuEvent -> IO ()
+
+  native setOnDragDetected :: Scene -> EventHandler MouseEvent -> IO ()
+
+  native setOnDragDone :: Scene -> EventHandler DragEvent -> IO ()
+
+  native setOnDragDropped :: Scene -> EventHandler DragEvent -> IO ()
+
+  native setOnDragEntered :: Scene -> EventHandler DragEvent -> IO ()
+
+  native setOnDragExited :: Scene -> EventHandler DragEvent -> IO ()
+
+  native setOnDragOver :: Scene -> EventHandler DragEvent -> IO ()
+
+  native setOnInputMethodTextChanged :: Scene -> EventHandler InputMethodEvent -> IO ()
+
+  native setOnKeyPressed :: Scene -> EventHandler KeyEvent -> IO ()
+
+  native setOnKeyReleased :: Scene -> EventHandler KeyEvent -> IO ()
+
+  native setOnKeyTyped :: Scene -> EventHandler KeyEvent -> IO ()
+
+  native setOnMouseClicked :: Scene -> EventHandler MouseEvent -> IO ()
+
+  native setOnMouseDragEntered :: Scene -> EventHandler MouseDragEvent -> IO ()
+
+  native setOnMouseDragExited :: Scene -> EventHandler MouseDragEvent -> IO ()
+
+  native setOnMouseDragOver :: Scene -> EventHandler MouseDragEvent -> IO ()
+
+  native setOnMouseDragReleased :: Scene -> EventHandler MouseDragEvent -> IO ()
+
+  native setOnMouseDragged :: Scene -> EventHandler MouseEvent -> IO ()
+
+  native setOnMouseEntered :: Scene -> EventHandler MouseEvent -> IO ()
+
+  native setOnMouseExited :: Scene -> EventHandler MouseEvent -> IO ()
+
+  native setOnMouseMoved :: Scene -> EventHandler MouseEvent -> IO ()
+
+  native setOnMousePressed :: Scene -> EventHandler MouseEvent -> IO ()
+
+  native setOnMouseReleased :: Scene -> EventHandler MouseEvent -> IO ()
+
+  native setOnRotate :: Scene -> EventHandler RotateEvent -> IO ()
+
+  native setOnRotationFinished :: Scene -> EventHandler RotateEvent -> IO ()
+
+  native setOnRotationStarted :: Scene -> EventHandler RotateEvent -> IO ()
+
+  native setOnScroll :: Scene -> EventHandler ScrollEvent -> IO ()
+
+  native setOnScrollFinished :: Scene -> EventHandler ScrollEvent -> IO ()
+
+  native setOnScrollStarted :: Scene -> EventHandler ScrollEvent -> IO ()
+
+  native setOnSwipeDown :: Scene -> EventHandler SwipeEvent -> IO ()
+
+  native setOnSwipeLeft :: Scene -> EventHandler SwipeEvent -> IO ()
+
+  native setOnSwipeRight :: Scene -> EventHandler SwipeEvent -> IO ()
+
+  native setOnSwipeUp :: Scene -> EventHandler SwipeEvent -> IO ()
+
+  native setOnTouchMoved :: Scene -> EventHandler TouchEvent -> IO ()
+
+  native setOnTouchPressed :: Scene -> EventHandler TouchEvent -> IO ()
+
+  native setOnTouchReleased :: Scene -> EventHandler TouchEvent -> IO ()
+
+  native setOnTouchStationary :: Scene -> EventHandler TouchEvent -> IO ()
+
+  native setOnZoom :: Scene -> EventHandler ZoomEvent -> IO ()
+
+  native setOnZoomFinished :: Scene -> EventHandler ZoomEvent -> IO ()
+
+  native setOnZoomStarted :: Scene -> EventHandler ZoomEvent -> IO ()
+
+  native setRoot :: Scene -> Parent -> IO ()
+
+  native setUserAgentStylesheet :: Scene -> String -> IO ()
+
+  native setUserData :: Scene -> Object -> IO ()
+
+  native snapshot :: Scene -> WritableImage -> IO WritableImage
+                   | Scene -> Callback SnapshotResult Void -> WritableImage -> IO ()
+
+  native startDragAndDrop :: Scene -> MutableIO (JArray TransferMode) -> IO Dragboard
+
+  native startFullDrag :: Scene -> IO ()
+
+  native userAgentStylesheetProperty :: Scene -> IO (ObjectProperty String)
+
+  native widthProperty :: Scene -> IO ReadOnlyDoubleProperty
+
+  native windowProperty :: Scene -> IO (ReadOnlyObjectProperty Window)
+
+  native xProperty :: Scene -> IO ReadOnlyDoubleProperty
+
+  native yProperty :: Scene -> IO ReadOnlyDoubleProperty
+
+

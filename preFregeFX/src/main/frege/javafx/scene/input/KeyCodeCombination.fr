@@ -1,0 +1,18 @@
+data KeyCodeCombination = mutable native javafx.scene.input.KeyCodeCombination where
+
+  native new :: KeyCode -> MutableIO (JArray KeyCombination_Modifier) -> IO KeyCodeCombination
+              | KeyCode -> KeyCombination_ModifierValue -> KeyCombination_ModifierValue -> KeyCombination_ModifierValue -> KeyCombination_ModifierValue -> KeyCombination_ModifierValue -> IO KeyCodeCombination
+
+  native equals :: KeyCodeCombination -> Object -> IO Bool
+
+  native getCode :: KeyCodeCombination -> IO KeyCode
+
+  native getDisplayText :: KeyCodeCombination -> IO String
+
+  native getName :: KeyCodeCombination -> IO String
+
+  native hashCode :: KeyCodeCombination -> IO Int
+
+  native match :: KeyCodeCombination -> KeyEvent -> IO Bool
+
+

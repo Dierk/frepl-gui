@@ -1,0 +1,38 @@
+data Pagination = mutable native javafx.scene.control.Pagination where
+
+  pure native style_class_bullet "javafx.scene.control.Pagination.STYLE_CLASS_BULLET" :: String
+  pure native indeterminate "javafx.scene.control.Pagination.INDETERMINATE" :: Int
+
+  native new :: () -> IO Pagination
+              | Int -> IO Pagination
+              | Int -> Int -> IO Pagination
+
+  native currentPageIndexProperty :: Pagination -> IO IntegerProperty
+
+  native getClassCssMetaData "javafx.scene.control.Pagination.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getControlCssMetaData :: Pagination -> IO (List (CssMetaData Styleable Object))
+
+  native getCurrentPageIndex :: Pagination -> IO Int
+
+  native getMaxPageIndicatorCount :: Pagination -> IO Int
+
+  native getPageCount :: Pagination -> IO Int
+
+  native getPageFactory :: Pagination -> IO (Callback Integer Node)
+
+  native maxPageIndicatorCountProperty :: Pagination -> IO IntegerProperty
+
+  native pageCountProperty :: Pagination -> IO IntegerProperty
+
+  native pageFactoryProperty :: Pagination -> IO (ObjectProperty (Callback Integer Node))
+
+  native setCurrentPageIndex :: Pagination -> Int -> IO ()
+
+  native setMaxPageIndicatorCount :: Pagination -> Int -> IO ()
+
+  native setPageCount :: Pagination -> Int -> IO ()
+
+  native setPageFactory :: Pagination -> Callback Integer Node -> IO ()
+
+

@@ -1,5 +1,0 @@
-data TraverseListener = pure native com.sun.javafx.scene.traversal.TraverseListener where
-
-  native onTraverse :: TraverseListener -> Node -> Bounds -> IO void
-
-

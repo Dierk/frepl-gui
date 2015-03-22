@@ -1,0 +1,14 @@
+data PixelWriter = mutable native javafx.scene.image.PixelWriter where
+
+  native getPixelFormat :: PixelWriter -> IO PixelFormat
+
+  native setArgb :: PixelWriter -> Int -> Int -> Int -> IO ()
+
+  native setColor :: PixelWriter -> Int -> Int -> Color -> IO ()
+
+  native setPixels :: PixelWriter -> Int -> Int -> Int -> Int -> PixelFormat IntBuffer -> MutableIO (JArray Int) -> Int -> Int -> IO ()
+                    | PixelWriter -> Int -> Int -> Int -> Int -> PixelFormat ByteBuffer -> MutableIO (JArray Byte) -> Int -> Int -> IO ()
+                    | PixelWriter -> Int -> Int -> Int -> Int -> PixelReader -> Int -> Int -> IO ()
+                    | PixelWriter -> Int -> Int -> Int -> Int -> PixelFormat t -> t -> Int -> IO ()
+
+

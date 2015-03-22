@@ -1,0 +1,22 @@
+data InputMethodEvent = mutable native javafx.scene.input.InputMethodEvent where
+
+  native input_method_text_changed "javafx.scene.input.InputMethodEvent.INPUT_METHOD_TEXT_CHANGED" :: IO (EventType InputMethodEvent)
+  native any "javafx.scene.input.InputMethodEvent.ANY" :: IO (EventType InputMethodEvent)
+
+  native new :: Object -> EventTarget -> EventType InputMethodEvent -> MutableIO (List InputMethodTextRun) -> String -> Int -> IO InputMethodEvent
+              | EventType InputMethodEvent -> MutableIO (List InputMethodTextRun) -> String -> Int -> IO InputMethodEvent
+
+  native copyFor :: InputMethodEvent -> Object -> EventTarget -> IO InputMethodEvent
+
+  native getCaretPosition :: InputMethodEvent -> IO Int
+
+  native getCommitted :: InputMethodEvent -> IO String
+
+  native getComposed :: InputMethodEvent -> IO (ObservableList InputMethodTextRun)
+
+  native getEventType :: InputMethodEvent -> IO (EventType InputMethodEvent)
+
+  native toString :: InputMethodEvent -> IO String
+
+derive Serializable InputMethodEvent
+

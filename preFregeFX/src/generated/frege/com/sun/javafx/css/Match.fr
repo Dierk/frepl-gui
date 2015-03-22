@@ -1,5 +1,0 @@
-data Match = pure native com.sun.javafx.css.Match where
-
-  pure native compareTo :: Match -> Match -> int
-
-

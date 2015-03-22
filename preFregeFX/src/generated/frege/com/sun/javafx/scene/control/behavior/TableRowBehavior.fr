@@ -1,5 +1,0 @@
-data TableRowBehavior t = pure native com.sun.javafx.scene.control.behavior.TableRowBehavior where
-
-  native new :: TableRow t -> IO (TableRowBehavior t)
-
-

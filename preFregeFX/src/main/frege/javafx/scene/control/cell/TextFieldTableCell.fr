@@ -1,0 +1,21 @@
+data TextFieldTableCell s t = mutable native javafx.scene.control.cell.TextFieldTableCell where
+
+  native new :: StringConverter t -> IO (TextFieldTableCell s t)
+              | () -> IO (TextFieldTableCell s t)
+
+  native cancelEdit :: TextFieldTableCell s t -> IO ()
+
+  native converterProperty :: TextFieldTableCell s t -> IO (ObjectProperty (StringConverter t))
+
+  native forTableColumn "javafx.scene.control.cell.TextFieldTableCell.forTableColumn" :: () -> IO (Callback (TableColumn s String) (TableCell s String))
+                                                                                       | StringConverter t -> IO (Callback (TableColumn s t) (TableCell s t))
+
+  native getConverter :: TextFieldTableCell s t -> IO (StringConverter t)
+
+  native setConverter :: TextFieldTableCell s t -> StringConverter t -> IO ()
+
+  native startEdit :: TextFieldTableCell s t -> IO ()
+
+  native updateItem :: TextFieldTableCell s t -> t -> Bool -> IO ()
+
+

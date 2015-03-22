@@ -1,0 +1,21 @@
+data LongPropertyBase = mutable native javafx.beans.property.LongPropertyBase where
+
+  native addListener :: LongPropertyBase -> InvalidationListener -> IO ()
+                      | LongPropertyBase -> ChangeListener Number -> IO ()
+
+  native bind :: LongPropertyBase -> ObservableValue Number -> IO ()
+
+  native get :: LongPropertyBase -> IO Long
+
+  native isBound :: LongPropertyBase -> IO Bool
+
+  native removeListener :: LongPropertyBase -> InvalidationListener -> IO ()
+                         | LongPropertyBase -> ChangeListener Number -> IO ()
+
+  native set :: LongPropertyBase -> Long -> IO ()
+
+  native toString :: LongPropertyBase -> IO String
+
+  native unbind :: LongPropertyBase -> IO ()
+
+

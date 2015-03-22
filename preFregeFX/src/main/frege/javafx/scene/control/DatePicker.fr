@@ -1,0 +1,40 @@
+data DatePicker = mutable native javafx.scene.control.DatePicker where
+
+  native new :: () -> IO DatePicker
+              | LocalDate -> IO DatePicker
+
+  native chronologyProperty :: DatePicker -> IO (ObjectProperty Chronology)
+
+  native converterProperty :: DatePicker -> IO (ObjectProperty (StringConverter LocalDate))
+
+  native dayCellFactoryProperty :: DatePicker -> IO (ObjectProperty (Callback DatePicker DateCell))
+
+  native editorProperty :: DatePicker -> IO (ReadOnlyObjectProperty TextField)
+
+  native getChronology :: DatePicker -> IO Chronology
+
+  native getClassCssMetaData "javafx.scene.control.DatePicker.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getControlCssMetaData :: DatePicker -> IO (List (CssMetaData Styleable Object))
+
+  native getConverter :: DatePicker -> IO (StringConverter LocalDate)
+
+  native getDayCellFactory :: DatePicker -> IO (Callback DatePicker DateCell)
+
+  native getEditor :: DatePicker -> IO TextField
+
+  native isShowWeekNumbers :: DatePicker -> IO Bool
+
+  native queryAccessibleAttribute :: DatePicker -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setChronology :: DatePicker -> Chronology -> IO ()
+
+  native setConverter :: DatePicker -> StringConverter LocalDate -> IO ()
+
+  native setDayCellFactory :: DatePicker -> Callback DatePicker DateCell -> IO ()
+
+  native setShowWeekNumbers :: DatePicker -> Bool -> IO ()
+
+  native showWeekNumbersProperty :: DatePicker -> IO BooleanProperty
+
+

@@ -1,0 +1,22 @@
+data Screen = mutable native javafx.stage.Screen where
+
+  native equals :: Screen -> Object -> IO Bool
+
+  native getBounds :: Screen -> IO Rectangle2D
+
+  native getDpi :: Screen -> IO Double
+
+  native getPrimary "javafx.stage.Screen.getPrimary" :: () -> IO Screen
+
+  native getScreens "javafx.stage.Screen.getScreens" :: () -> IO (ObservableList Screen)
+
+  native getScreensForRectangle "javafx.stage.Screen.getScreensForRectangle" :: Rectangle2D -> IO (ObservableList Screen)
+                                                                              | Double -> Double -> Double -> Double -> IO (ObservableList Screen)
+
+  native getVisualBounds :: Screen -> IO Rectangle2D
+
+  native hashCode :: Screen -> IO Int
+
+  native toString :: Screen -> IO String
+
+

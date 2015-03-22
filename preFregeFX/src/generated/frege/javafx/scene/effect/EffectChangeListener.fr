@@ -1,5 +1,0 @@
-data EffectChangeListener = mutable native javafx.scene.effect.EffectChangeListener where
-
-  native register :: EffectChangeListener -> ObservableValue -> IO void
-
-

@@ -1,0 +1,50 @@
+data CategoryAxis = mutable native javafx.scene.chart.CategoryAxis where
+
+  native new :: ObservableList String -> IO CategoryAxis
+              | () -> IO CategoryAxis
+
+  native categorySpacingProperty :: CategoryAxis -> IO ReadOnlyDoubleProperty
+
+  native endMarginProperty :: CategoryAxis -> IO DoubleProperty
+
+  native gapStartAndEndProperty :: CategoryAxis -> IO BooleanProperty
+
+  native getCategories :: CategoryAxis -> IO (ObservableList String)
+
+  native getCategorySpacing :: CategoryAxis -> IO Double
+
+  native getClassCssMetaData "javafx.scene.chart.CategoryAxis.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getCssMetaData :: CategoryAxis -> IO (List (CssMetaData Styleable Object))
+
+  native getDisplayPosition :: CategoryAxis -> String -> IO Double
+
+  native getEndMargin :: CategoryAxis -> IO Double
+
+  native getStartMargin :: CategoryAxis -> IO Double
+
+  native getValueForDisplay :: CategoryAxis -> Double -> IO String
+
+  native getZeroPosition :: CategoryAxis -> IO Double
+
+  native invalidateRange :: CategoryAxis -> MutableIO (List String) -> IO ()
+
+  native isGapStartAndEnd :: CategoryAxis -> IO Bool
+
+  native isValueOnAxis :: CategoryAxis -> String -> IO Bool
+
+  native setCategories :: CategoryAxis -> ObservableList String -> IO ()
+
+  native setEndMargin :: CategoryAxis -> Double -> IO ()
+
+  native setGapStartAndEnd :: CategoryAxis -> Bool -> IO ()
+
+  native setStartMargin :: CategoryAxis -> Double -> IO ()
+
+  native startMarginProperty :: CategoryAxis -> IO DoubleProperty
+
+  native toNumericValue :: CategoryAxis -> String -> IO Double
+
+  native toRealValue :: CategoryAxis -> Double -> IO String
+
+

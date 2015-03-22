@@ -1,0 +1,35 @@
+data Circle = mutable native javafx.scene.shape.Circle where
+
+  native new :: Double -> Double -> Double -> Paint -> IO Circle
+              | Double -> Double -> Double -> IO Circle
+              | () -> IO Circle
+              | Double -> Paint -> IO Circle
+              | Double -> IO Circle
+
+  native centerXProperty :: Circle -> IO DoubleProperty
+
+  native centerYProperty :: Circle -> IO DoubleProperty
+
+  native getCenterX :: Circle -> IO Double
+
+  native getCenterY :: Circle -> IO Double
+
+  native getRadius :: Circle -> IO Double
+
+  native impl_computeGeomBounds :: Circle -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_configShape :: Circle -> IO Ellipse2D
+
+  native impl_updatePeer :: Circle -> IO ()
+
+  native radiusProperty :: Circle -> IO DoubleProperty
+
+  native setCenterX :: Circle -> Double -> IO ()
+
+  native setCenterY :: Circle -> Double -> IO ()
+
+  native setRadius :: Circle -> Double -> IO ()
+
+  native toString :: Circle -> IO String
+
+

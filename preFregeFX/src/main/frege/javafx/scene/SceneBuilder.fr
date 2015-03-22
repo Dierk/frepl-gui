@@ -1,0 +1,106 @@
+data SceneBuilder b = mutable native javafx.scene.SceneBuilder where
+
+  native applyTo :: SceneBuilder b -> Scene -> IO ()
+
+  native build :: SceneBuilder b -> IO Scene
+
+  native camera :: SceneBuilder b -> Camera -> IO b
+
+  native create "javafx.scene.SceneBuilder.create" :: () -> IO (SceneBuilder Object)
+
+  native cursor :: SceneBuilder b -> Cursor -> IO b
+
+  native depthBuffer :: SceneBuilder b -> Bool -> IO b
+
+  native eventDispatcher :: SceneBuilder b -> EventDispatcher -> IO b
+
+  native fill :: SceneBuilder b -> Paint -> IO b
+
+  native height :: SceneBuilder b -> Double -> IO b
+
+  native onContextMenuRequested :: SceneBuilder b -> EventHandler ContextMenuEvent -> IO b
+
+  native onDragDetected :: SceneBuilder b -> EventHandler MouseEvent -> IO b
+
+  native onDragDone :: SceneBuilder b -> EventHandler DragEvent -> IO b
+
+  native onDragDropped :: SceneBuilder b -> EventHandler DragEvent -> IO b
+
+  native onDragEntered :: SceneBuilder b -> EventHandler DragEvent -> IO b
+
+  native onDragExited :: SceneBuilder b -> EventHandler DragEvent -> IO b
+
+  native onDragOver :: SceneBuilder b -> EventHandler DragEvent -> IO b
+
+  native onInputMethodTextChanged :: SceneBuilder b -> EventHandler InputMethodEvent -> IO b
+
+  native onKeyPressed :: SceneBuilder b -> EventHandler KeyEvent -> IO b
+
+  native onKeyReleased :: SceneBuilder b -> EventHandler KeyEvent -> IO b
+
+  native onKeyTyped :: SceneBuilder b -> EventHandler KeyEvent -> IO b
+
+  native onMouseClicked :: SceneBuilder b -> EventHandler MouseEvent -> IO b
+
+  native onMouseDragEntered :: SceneBuilder b -> EventHandler MouseDragEvent -> IO b
+
+  native onMouseDragExited :: SceneBuilder b -> EventHandler MouseDragEvent -> IO b
+
+  native onMouseDragOver :: SceneBuilder b -> EventHandler MouseDragEvent -> IO b
+
+  native onMouseDragReleased :: SceneBuilder b -> EventHandler MouseDragEvent -> IO b
+
+  native onMouseDragged :: SceneBuilder b -> EventHandler MouseEvent -> IO b
+
+  native onMouseEntered :: SceneBuilder b -> EventHandler MouseEvent -> IO b
+
+  native onMouseExited :: SceneBuilder b -> EventHandler MouseEvent -> IO b
+
+  native onMouseMoved :: SceneBuilder b -> EventHandler MouseEvent -> IO b
+
+  native onMousePressed :: SceneBuilder b -> EventHandler MouseEvent -> IO b
+
+  native onMouseReleased :: SceneBuilder b -> EventHandler MouseEvent -> IO b
+
+  native onRotate :: SceneBuilder b -> EventHandler RotateEvent -> IO b
+
+  native onRotationFinished :: SceneBuilder b -> EventHandler RotateEvent -> IO b
+
+  native onRotationStarted :: SceneBuilder b -> EventHandler RotateEvent -> IO b
+
+  native onScroll :: SceneBuilder b -> EventHandler ScrollEvent -> IO b
+
+  native onScrollFinished :: SceneBuilder b -> EventHandler ScrollEvent -> IO b
+
+  native onScrollStarted :: SceneBuilder b -> EventHandler ScrollEvent -> IO b
+
+  native onSwipeDown :: SceneBuilder b -> EventHandler SwipeEvent -> IO b
+
+  native onSwipeLeft :: SceneBuilder b -> EventHandler SwipeEvent -> IO b
+
+  native onSwipeRight :: SceneBuilder b -> EventHandler SwipeEvent -> IO b
+
+  native onSwipeUp :: SceneBuilder b -> EventHandler SwipeEvent -> IO b
+
+  native onTouchMoved :: SceneBuilder b -> EventHandler TouchEvent -> IO b
+
+  native onTouchPressed :: SceneBuilder b -> EventHandler TouchEvent -> IO b
+
+  native onTouchReleased :: SceneBuilder b -> EventHandler TouchEvent -> IO b
+
+  native onTouchStationary :: SceneBuilder b -> EventHandler TouchEvent -> IO b
+
+  native onZoom :: SceneBuilder b -> EventHandler ZoomEvent -> IO b
+
+  native onZoomFinished :: SceneBuilder b -> EventHandler ZoomEvent -> IO b
+
+  native onZoomStarted :: SceneBuilder b -> EventHandler ZoomEvent -> IO b
+
+  native root :: SceneBuilder b -> Parent -> IO b
+
+  native stylesheets :: SceneBuilder b -> MutableIO (JArray String) -> IO b
+                      | SceneBuilder b -> MutableIO (Collection String) -> IO b
+
+  native width :: SceneBuilder b -> Double -> IO b
+
+

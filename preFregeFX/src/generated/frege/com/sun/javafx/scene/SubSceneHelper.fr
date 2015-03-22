@@ -1,9 +1,0 @@
-data SubSceneHelper = pure native com.sun.javafx.scene.SubSceneHelper where
-
-  native getEffectiveCamera "com.sun.javafx.scene.SubSceneHelper.getEffectiveCamera" :: SubScene -> IO Camera
-
-  native isDepthBuffer "com.sun.javafx.scene.SubSceneHelper.isDepthBuffer" :: SubScene -> IO boolean
-
-  pure native setSubSceneAccessor "com.sun.javafx.scene.SubSceneHelper.setSubSceneAccessor" :: SubSceneHelper_SubSceneAccessor -> void
-
-

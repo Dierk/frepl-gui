@@ -1,0 +1,141 @@
+data Text = mutable native javafx.scene.text.Text where
+
+  native new :: String -> IO Text
+              | () -> IO Text
+              | Double -> Double -> String -> IO Text
+
+  native baselineOffsetProperty :: Text -> IO ReadOnlyDoubleProperty
+
+  native boundsTypeProperty :: Text -> IO (ObjectProperty TextBoundsType)
+
+  native fontProperty :: Text -> IO (ObjectProperty Font)
+
+  native fontSmoothingTypeProperty :: Text -> IO (ObjectProperty FontSmoothingType)
+
+  native getBaselineOffset :: Text -> IO Double
+
+  native getBoundsType :: Text -> IO TextBoundsType
+
+  native getClassCssMetaData "javafx.scene.text.Text.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getCssMetaData :: Text -> IO (List (CssMetaData Styleable Object))
+
+  native getFont :: Text -> IO Font
+
+  native getFontSmoothingType :: Text -> IO FontSmoothingType
+
+  native getImpl_caretPosition :: Text -> IO Int
+
+  native getImpl_caretShape :: Text -> IO (JArray PathElement)
+
+  native getImpl_selectionEnd :: Text -> IO Int
+
+  native getImpl_selectionShape :: Text -> IO (JArray PathElement)
+
+  native getImpl_selectionStart :: Text -> IO Int
+
+  native getLineSpacing :: Text -> IO Double
+
+  native getText :: Text -> IO String
+
+  native getTextAlignment :: Text -> IO TextAlignment
+
+  native getTextOrigin :: Text -> IO VPos
+
+  native getWrappingWidth :: Text -> IO Double
+
+  native getX :: Text -> IO Double
+
+  native getY :: Text -> IO Double
+
+  native impl_caretBiasProperty :: Text -> IO BooleanProperty
+
+  native impl_caretPositionProperty :: Text -> IO IntegerProperty
+
+  native impl_caretShapeProperty :: Text -> IO (ReadOnlyObjectProperty (JArray PathElement))
+
+  native impl_computeGeomBounds :: Text -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_configShape :: Text -> IO Shape
+
+  native impl_displaySoftwareKeyboard :: Text -> Bool -> IO ()
+
+  native impl_getRangeShape :: Text -> Int -> Int -> IO (JArray PathElement)
+
+  native impl_getUnderlineShape :: Text -> Int -> Int -> IO (JArray PathElement)
+
+  native impl_hitTestChar :: Text -> Point2D -> IO HitInfo
+
+  native impl_selectionEndProperty :: Text -> IO IntegerProperty
+
+  native impl_selectionFillProperty :: Text -> IO (ObjectProperty Paint)
+
+  native impl_selectionShapeProperty :: Text -> IO (ReadOnlyObjectProperty (JArray PathElement))
+
+  native impl_selectionStartProperty :: Text -> IO IntegerProperty
+
+  native impl_updatePeer :: Text -> IO ()
+
+  native isImpl_caretBias :: Text -> IO Bool
+
+  native isStrikethrough :: Text -> IO Bool
+
+  native isUnderline :: Text -> IO Bool
+
+  native lineSpacingProperty :: Text -> IO DoubleProperty
+
+  native queryAccessibleAttribute :: Text -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setBoundsType :: Text -> TextBoundsType -> IO ()
+
+  native setFont :: Text -> Font -> IO ()
+
+  native setFontSmoothingType :: Text -> FontSmoothingType -> IO ()
+
+  native setImpl_caretBias :: Text -> Bool -> IO ()
+
+  native setImpl_caretPosition :: Text -> Int -> IO ()
+
+  native setImpl_selectionEnd :: Text -> Int -> IO ()
+
+  native setImpl_selectionStart :: Text -> Int -> IO ()
+
+  native setLineSpacing :: Text -> Double -> IO ()
+
+  native setStrikethrough :: Text -> Bool -> IO ()
+
+  native setText :: Text -> String -> IO ()
+
+  native setTextAlignment :: Text -> TextAlignment -> IO ()
+
+  native setTextOrigin :: Text -> VPos -> IO ()
+
+  native setUnderline :: Text -> Bool -> IO ()
+
+  native setWrappingWidth :: Text -> Double -> IO ()
+
+  native setX :: Text -> Double -> IO ()
+
+  native setY :: Text -> Double -> IO ()
+
+  native strikethroughProperty :: Text -> IO BooleanProperty
+
+  native textAlignmentProperty :: Text -> IO (ObjectProperty TextAlignment)
+
+  native textOriginProperty :: Text -> IO (ObjectProperty VPos)
+
+  native textProperty :: Text -> IO StringProperty
+
+  native toString :: Text -> IO String
+
+  native underlineProperty :: Text -> IO BooleanProperty
+
+  native usesMirroring :: Text -> IO Bool
+
+  native wrappingWidthProperty :: Text -> IO DoubleProperty
+
+  native xProperty :: Text -> IO DoubleProperty
+
+  native yProperty :: Text -> IO DoubleProperty
+
+

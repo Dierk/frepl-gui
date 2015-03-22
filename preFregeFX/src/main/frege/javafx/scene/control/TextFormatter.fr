@@ -1,0 +1,20 @@
+data TextFormatter v = mutable native javafx.scene.control.TextFormatter where
+
+  native identity_string_converter "javafx.scene.control.TextFormatter.IDENTITY_STRING_CONVERTER" :: IO (StringConverter String)
+
+  native new :: StringConverter v -> IO (TextFormatter v)
+              | StringConverter v -> v -> IO (TextFormatter v)
+              | StringConverter v -> v -> UnaryOperator TextFormatter_Change -> IO (TextFormatter v)
+              | UnaryOperator TextFormatter_Change -> IO (TextFormatter v)
+
+  native getFilter :: TextFormatter v -> IO (UnaryOperator TextFormatter_Change)
+
+  native getValue :: TextFormatter v -> IO v
+
+  native getValueConverter :: TextFormatter v -> IO (StringConverter v)
+
+  native setValue :: TextFormatter v -> v -> IO ()
+
+  native valueProperty :: TextFormatter v -> IO (ObjectProperty v)
+
+

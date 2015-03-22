@@ -1,9 +1,0 @@
-data CacheFilter = pure native com.sun.javafx.sg.prism.CacheFilter where
-
-  pure native dispose :: CacheFilter -> void
-
-  pure native invalidate :: CacheFilter -> void
-
-  native setHint :: CacheFilter -> CacheHint -> IO void
-
-

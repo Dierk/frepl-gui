@@ -1,9 +1,0 @@
-data GlassTouchEventListener = pure native com.sun.javafx.tk.quantum.GlassTouchEventListener where
-
-  pure native notifyBeginTouchEvent :: GlassTouchEventListener -> long -> int -> boolean -> int -> void
-
-  pure native notifyEndTouchEvent :: GlassTouchEventListener -> long -> void
-
-  pure native notifyNextTouchEvent :: GlassTouchEventListener -> long -> int -> long -> int -> int -> int -> int -> void
-
-

@@ -1,0 +1,9 @@
+data WeakInvalidationListener = mutable native javafx.beans.WeakInvalidationListener where
+
+  native new :: InvalidationListener -> IO WeakInvalidationListener
+
+  native invalidated :: WeakInvalidationListener -> Observable -> IO ()
+
+  native wasGarbageCollected :: WeakInvalidationListener -> IO Bool
+
+

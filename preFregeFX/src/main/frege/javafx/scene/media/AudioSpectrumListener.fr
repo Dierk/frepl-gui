@@ -1,0 +1,5 @@
+data AudioSpectrumListener = mutable native javafx.scene.media.AudioSpectrumListener where
+
+  native spectrumDataUpdate :: AudioSpectrumListener -> Double -> Double -> MutableIO (JArray Float) -> MutableIO (JArray Float) -> IO ()
+
+

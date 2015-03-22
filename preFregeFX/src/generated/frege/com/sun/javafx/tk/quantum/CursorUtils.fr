@@ -1,7 +1,0 @@
-data CursorUtils = pure native com.sun.javafx.tk.quantum.CursorUtils where
-
-  native getBestCursorSize "com.sun.javafx.tk.quantum.CursorUtils.getBestCursorSize" :: int -> int -> IO Dimension2D
-
-  pure native getPlatformCursor "com.sun.javafx.tk.quantum.CursorUtils.getPlatformCursor" :: CursorFrame -> Cursor
-
-

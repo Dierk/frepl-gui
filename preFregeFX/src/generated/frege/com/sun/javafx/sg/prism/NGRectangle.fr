@@ -1,9 +1,0 @@
-data NGRectangle = pure native com.sun.javafx.sg.prism.NGRectangle where
-
-  pure native new :: () -> NGRectangle
-
-  pure native getShape :: NGRectangle -> Shape
-
-  pure native updateRectangle :: NGRectangle -> float -> float -> float -> float -> float -> float -> void
-
-

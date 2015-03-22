@@ -1,5 +1,0 @@
-data ListCellSkin t = pure native com.sun.javafx.scene.control.skin.ListCellSkin where
-
-  native new :: ListCell t -> IO (ListCellSkin t)
-
-

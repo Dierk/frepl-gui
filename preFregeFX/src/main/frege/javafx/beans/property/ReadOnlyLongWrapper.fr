@@ -1,0 +1,16 @@
+data ReadOnlyLongWrapper = mutable native javafx.beans.property.ReadOnlyLongWrapper where
+
+  native new :: Object -> String -> Long -> IO ReadOnlyLongWrapper
+              | Object -> String -> IO ReadOnlyLongWrapper
+              | Long -> IO ReadOnlyLongWrapper
+              | () -> IO ReadOnlyLongWrapper
+
+  native addListener :: ReadOnlyLongWrapper -> InvalidationListener -> IO ()
+                      | ReadOnlyLongWrapper -> ChangeListener Number -> IO ()
+
+  native getReadOnlyProperty :: ReadOnlyLongWrapper -> IO ReadOnlyLongProperty
+
+  native removeListener :: ReadOnlyLongWrapper -> ChangeListener Number -> IO ()
+                         | ReadOnlyLongWrapper -> InvalidationListener -> IO ()
+
+

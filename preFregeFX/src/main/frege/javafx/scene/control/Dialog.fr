@@ -1,0 +1,131 @@
+data Dialog r = mutable native javafx.scene.control.Dialog where
+
+  native new :: () -> IO (Dialog r)
+
+  native buildEventDispatchChain :: Dialog r -> EventDispatchChain -> IO EventDispatchChain
+
+  native close :: Dialog r -> IO ()
+
+  native contentTextProperty :: Dialog r -> IO StringProperty
+
+  native dialogPaneProperty :: Dialog r -> IO (ObjectProperty DialogPane)
+
+  native getContentText :: Dialog r -> IO String
+
+  native getDialogPane :: Dialog r -> IO DialogPane
+
+  native getGraphic :: Dialog r -> IO Node
+
+  native getHeaderText :: Dialog r -> IO String
+
+  native getHeight :: Dialog r -> IO Double
+
+  native getModality :: Dialog r -> IO Modality
+
+  native getOnCloseRequest :: Dialog r -> IO (EventHandler DialogEvent)
+
+  native getOnHidden :: Dialog r -> IO (EventHandler DialogEvent)
+
+  native getOnHiding :: Dialog r -> IO (EventHandler DialogEvent)
+
+  native getOnShowing :: Dialog r -> IO (EventHandler DialogEvent)
+
+  native getOnShown :: Dialog r -> IO (EventHandler DialogEvent)
+
+  native getOwner :: Dialog r -> IO Window
+
+  native getResult :: Dialog r -> IO r
+
+  native getResultConverter :: Dialog r -> IO (Callback ButtonType r)
+
+  native getTitle :: Dialog r -> IO String
+
+  native getWidth :: Dialog r -> IO Double
+
+  native getX :: Dialog r -> IO Double
+
+  native getY :: Dialog r -> IO Double
+
+  native graphicProperty :: Dialog r -> IO (ObjectProperty Node)
+
+  native headerTextProperty :: Dialog r -> IO StringProperty
+
+  native heightProperty :: Dialog r -> IO ReadOnlyDoubleProperty
+
+  native hide :: Dialog r -> IO ()
+
+  native initModality :: Dialog r -> Modality -> IO ()
+
+  native initOwner :: Dialog r -> Window -> IO ()
+
+  native initStyle :: Dialog r -> StageStyle -> IO ()
+
+  native isResizable :: Dialog r -> IO Bool
+
+  native isShowing :: Dialog r -> IO Bool
+
+  native onCloseRequestProperty :: Dialog r -> IO (ObjectProperty (EventHandler DialogEvent))
+
+  native onHiddenProperty :: Dialog r -> IO (ObjectProperty (EventHandler DialogEvent))
+
+  native onHidingProperty :: Dialog r -> IO (ObjectProperty (EventHandler DialogEvent))
+
+  native onShowingProperty :: Dialog r -> IO (ObjectProperty (EventHandler DialogEvent))
+
+  native onShownProperty :: Dialog r -> IO (ObjectProperty (EventHandler DialogEvent))
+
+  native resizableProperty :: Dialog r -> IO BooleanProperty
+
+  native resultConverterProperty :: Dialog r -> IO (ObjectProperty (Callback ButtonType r))
+
+  native resultProperty :: Dialog r -> IO (ObjectProperty r)
+
+  native setContentText :: Dialog r -> String -> IO ()
+
+  native setDialogPane :: Dialog r -> DialogPane -> IO ()
+
+  native setGraphic :: Dialog r -> Node -> IO ()
+
+  native setHeaderText :: Dialog r -> String -> IO ()
+
+  native setHeight :: Dialog r -> Double -> IO ()
+
+  native setOnCloseRequest :: Dialog r -> EventHandler DialogEvent -> IO ()
+
+  native setOnHidden :: Dialog r -> EventHandler DialogEvent -> IO ()
+
+  native setOnHiding :: Dialog r -> EventHandler DialogEvent -> IO ()
+
+  native setOnShowing :: Dialog r -> EventHandler DialogEvent -> IO ()
+
+  native setOnShown :: Dialog r -> EventHandler DialogEvent -> IO ()
+
+  native setResizable :: Dialog r -> Bool -> IO ()
+
+  native setResult :: Dialog r -> r -> IO ()
+
+  native setResultConverter :: Dialog r -> Callback ButtonType r -> IO ()
+
+  native setTitle :: Dialog r -> String -> IO ()
+
+  native setWidth :: Dialog r -> Double -> IO ()
+
+  native setX :: Dialog r -> Double -> IO ()
+
+  native setY :: Dialog r -> Double -> IO ()
+
+  native show :: Dialog r -> IO ()
+
+  native showAndWait :: Dialog r -> IO (Optional r)
+
+  native showingProperty :: Dialog r -> IO ReadOnlyBooleanProperty
+
+  native titleProperty :: Dialog r -> IO StringProperty
+
+  native widthProperty :: Dialog r -> IO ReadOnlyDoubleProperty
+
+  native xProperty :: Dialog r -> IO ReadOnlyDoubleProperty
+
+  native yProperty :: Dialog r -> IO ReadOnlyDoubleProperty
+
+

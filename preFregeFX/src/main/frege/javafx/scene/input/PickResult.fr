@@ -1,0 +1,24 @@
+data PickResult = mutable native javafx.scene.input.PickResult where
+
+  pure native face_undefined "javafx.scene.input.PickResult.FACE_UNDEFINED" :: Int
+
+  native new :: EventTarget -> Double -> Double -> IO PickResult
+              | Node -> Point3D -> Double -> IO PickResult
+              | Node -> Point3D -> Double -> Int -> Point3D -> Point2D -> IO PickResult
+              | Node -> Point3D -> Double -> Int -> Point2D -> IO PickResult
+
+  native getIntersectedDistance :: PickResult -> IO Double
+
+  native getIntersectedFace :: PickResult -> IO Int
+
+  native getIntersectedNode :: PickResult -> IO Node
+
+  native getIntersectedNormal :: PickResult -> IO Point3D
+
+  native getIntersectedPoint :: PickResult -> IO Point3D
+
+  native getIntersectedTexCoord :: PickResult -> IO Point2D
+
+  native toString :: PickResult -> IO String
+
+

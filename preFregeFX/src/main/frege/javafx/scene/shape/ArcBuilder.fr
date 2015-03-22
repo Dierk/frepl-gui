@@ -1,0 +1,23 @@
+data ArcBuilder b = mutable native javafx.scene.shape.ArcBuilder where
+
+  native applyTo :: ArcBuilder b -> Arc -> IO ()
+
+  native build :: ArcBuilder b -> IO Arc
+
+  native centerX :: ArcBuilder b -> Double -> IO b
+
+  native centerY :: ArcBuilder b -> Double -> IO b
+
+  native create "javafx.scene.shape.ArcBuilder.create" :: () -> IO (ArcBuilder Object)
+
+  native length :: ArcBuilder b -> Double -> IO b
+
+  native radiusX :: ArcBuilder b -> Double -> IO b
+
+  native radiusY :: ArcBuilder b -> Double -> IO b
+
+  native startAngle :: ArcBuilder b -> Double -> IO b
+
+  native jtype' :: ArcBuilder b -> ArcType -> IO b
+
+

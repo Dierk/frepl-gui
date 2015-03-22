@@ -1,0 +1,11 @@
+data TreeCellBuilder t b = mutable native javafx.scene.control.TreeCellBuilder where
+
+  native applyTo :: TreeCellBuilder t b -> TreeCell t -> IO ()
+
+  native build :: TreeCellBuilder t b -> IO (TreeCell t)
+
+  native create "javafx.scene.control.TreeCellBuilder.create" :: () -> IO (TreeCellBuilder t Object)
+
+  native disclosureNode :: TreeCellBuilder t b -> Node -> IO b
+
+

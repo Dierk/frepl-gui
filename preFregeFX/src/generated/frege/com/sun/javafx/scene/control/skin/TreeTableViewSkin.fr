@@ -1,9 +1,0 @@
-data TreeTableViewSkin s = pure native com.sun.javafx.scene.control.skin.TreeTableViewSkin where
-
-  native new :: TreeTableView s -> IO (TreeTableViewSkin s)
-
-  native createCell :: TreeTableViewSkin s -> IO (TreeTableRow s)
-
-  pure native getItemCount :: TreeTableViewSkin s -> int
-
-

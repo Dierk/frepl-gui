@@ -1,0 +1,11 @@
+data StyleableObjectProperty t = mutable native javafx.css.StyleableObjectProperty where
+
+  native applyStyle :: StyleableObjectProperty t -> StyleOrigin -> t -> IO ()
+
+  native bind :: StyleableObjectProperty t -> ObservableValue t -> IO ()
+
+  native getStyleOrigin :: StyleableObjectProperty t -> IO StyleOrigin
+
+  native set :: StyleableObjectProperty t -> t -> IO ()
+
+

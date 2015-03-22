@@ -1,0 +1,13 @@
+data NumberAxisBuilder = mutable native javafx.scene.chart.NumberAxisBuilder where
+
+  native applyTo :: NumberAxisBuilder -> NumberAxis -> IO ()
+
+  native build :: NumberAxisBuilder -> IO NumberAxis
+
+  native create "javafx.scene.chart.NumberAxisBuilder.create" :: () -> IO NumberAxisBuilder
+
+  native forceZeroInRange :: NumberAxisBuilder -> Bool -> IO NumberAxisBuilder
+
+  native tickUnit :: NumberAxisBuilder -> Double -> IO NumberAxisBuilder
+
+

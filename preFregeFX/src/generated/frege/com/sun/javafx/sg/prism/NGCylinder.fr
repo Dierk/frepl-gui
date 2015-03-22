@@ -1,7 +1,0 @@
-data NGCylinder = pure native com.sun.javafx.sg.prism.NGCylinder where
-
-  pure native new :: () -> NGCylinder
-
-  pure native updateMesh :: NGCylinder -> NGTriangleMesh -> void
-
-

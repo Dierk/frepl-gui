@@ -1,0 +1,25 @@
+data RegionBuilder b = mutable native javafx.scene.layout.RegionBuilder where
+
+  native applyTo :: RegionBuilder b -> Region -> IO ()
+
+  native build :: RegionBuilder b -> IO Region
+
+  native create "javafx.scene.layout.RegionBuilder.create" :: () -> IO (RegionBuilder Object)
+
+  native maxHeight :: RegionBuilder b -> Double -> IO b
+
+  native maxWidth :: RegionBuilder b -> Double -> IO b
+
+  native minHeight :: RegionBuilder b -> Double -> IO b
+
+  native minWidth :: RegionBuilder b -> Double -> IO b
+
+  native padding :: RegionBuilder b -> Insets -> IO b
+
+  native prefHeight :: RegionBuilder b -> Double -> IO b
+
+  native prefWidth :: RegionBuilder b -> Double -> IO b
+
+  native snapToPixel :: RegionBuilder b -> Bool -> IO b
+
+

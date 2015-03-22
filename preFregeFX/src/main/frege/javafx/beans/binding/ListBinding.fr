@@ -1,0 +1,27 @@
+data ListBinding e = mutable native javafx.beans.binding.ListBinding where
+
+  native addListener :: ListBinding e -> InvalidationListener -> IO ()
+                      | ListBinding e -> ListChangeListener e -> IO ()
+                      | ListBinding e -> ChangeListener (ObservableList e) -> IO ()
+
+  native dispose :: ListBinding e -> IO ()
+
+  native emptyProperty :: ListBinding e -> IO ReadOnlyBooleanProperty
+
+  native get :: ListBinding e -> IO (ObservableList e)
+
+  native getDependencies :: ListBinding e -> IO (ObservableList Object)
+
+  native invalidate :: ListBinding e -> IO ()
+
+  native isValid :: ListBinding e -> IO Bool
+
+  native removeListener :: ListBinding e -> ChangeListener (ObservableList e) -> IO ()
+                         | ListBinding e -> ListChangeListener e -> IO ()
+                         | ListBinding e -> InvalidationListener -> IO ()
+
+  native sizeProperty :: ListBinding e -> IO ReadOnlyIntegerProperty
+
+  native toString :: ListBinding e -> IO String
+
+

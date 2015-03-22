@@ -1,0 +1,22 @@
+data Bloom = mutable native javafx.scene.effect.Bloom where
+
+  native new :: () -> IO Bloom
+              | Double -> IO Bloom
+
+  native getInput :: Bloom -> IO Effect
+
+  native getThreshold :: Bloom -> IO Double
+
+  native impl_copy :: Bloom -> IO Effect
+
+  native impl_getBounds :: Bloom -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: Bloom -> IO (ObjectProperty Effect)
+
+  native setInput :: Bloom -> Effect -> IO ()
+
+  native setThreshold :: Bloom -> Double -> IO ()
+
+  native thresholdProperty :: Bloom -> IO DoubleProperty
+
+

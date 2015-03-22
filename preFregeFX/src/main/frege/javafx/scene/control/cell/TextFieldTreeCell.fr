@@ -1,0 +1,21 @@
+data TextFieldTreeCell t = mutable native javafx.scene.control.cell.TextFieldTreeCell where
+
+  native new :: () -> IO (TextFieldTreeCell t)
+              | StringConverter t -> IO (TextFieldTreeCell t)
+
+  native cancelEdit :: TextFieldTreeCell t -> IO ()
+
+  native converterProperty :: TextFieldTreeCell t -> IO (ObjectProperty (StringConverter t))
+
+  native forTreeView "javafx.scene.control.cell.TextFieldTreeCell.forTreeView" :: () -> IO (Callback (TreeView String) (TreeCell String))
+                                                                                | StringConverter t -> IO (Callback (TreeView t) (TreeCell t))
+
+  native getConverter :: TextFieldTreeCell t -> IO (StringConverter t)
+
+  native setConverter :: TextFieldTreeCell t -> StringConverter t -> IO ()
+
+  native startEdit :: TextFieldTreeCell t -> IO ()
+
+  native updateItem :: TextFieldTreeCell t -> t -> Bool -> IO ()
+
+

@@ -1,0 +1,7 @@
+data ReadOnlyJavaBeanProperty t = mutable native javafx.beans.property.adapter.ReadOnlyJavaBeanProperty where
+
+  native dispose :: ReadOnlyJavaBeanProperty t -> IO ()
+
+  native fireValueChangedEvent :: ReadOnlyJavaBeanProperty t -> IO ()
+
+

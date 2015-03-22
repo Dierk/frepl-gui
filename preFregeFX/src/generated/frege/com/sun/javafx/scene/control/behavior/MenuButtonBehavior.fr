@@ -1,5 +1,0 @@
-data MenuButtonBehavior = pure native com.sun.javafx.scene.control.behavior.MenuButtonBehavior where
-
-  native new :: MenuButton -> IO MenuButtonBehavior
-
-

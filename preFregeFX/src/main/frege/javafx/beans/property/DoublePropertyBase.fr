@@ -1,0 +1,21 @@
+data DoublePropertyBase = mutable native javafx.beans.property.DoublePropertyBase where
+
+  native addListener :: DoublePropertyBase -> ChangeListener Number -> IO ()
+                      | DoublePropertyBase -> InvalidationListener -> IO ()
+
+  native bind :: DoublePropertyBase -> ObservableValue Number -> IO ()
+
+  native get :: DoublePropertyBase -> IO Double
+
+  native isBound :: DoublePropertyBase -> IO Bool
+
+  native removeListener :: DoublePropertyBase -> ChangeListener Number -> IO ()
+                         | DoublePropertyBase -> InvalidationListener -> IO ()
+
+  native set :: DoublePropertyBase -> Double -> IO ()
+
+  native toString :: DoublePropertyBase -> IO String
+
+  native unbind :: DoublePropertyBase -> IO ()
+
+

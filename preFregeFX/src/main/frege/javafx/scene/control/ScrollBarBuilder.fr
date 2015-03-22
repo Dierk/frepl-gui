@@ -1,0 +1,23 @@
+data ScrollBarBuilder b = mutable native javafx.scene.control.ScrollBarBuilder where
+
+  native applyTo :: ScrollBarBuilder b -> ScrollBar -> IO ()
+
+  native blockIncrement :: ScrollBarBuilder b -> Double -> IO b
+
+  native build :: ScrollBarBuilder b -> IO ScrollBar
+
+  native create "javafx.scene.control.ScrollBarBuilder.create" :: () -> IO (ScrollBarBuilder Object)
+
+  native max :: ScrollBarBuilder b -> Double -> IO b
+
+  native min :: ScrollBarBuilder b -> Double -> IO b
+
+  native orientation :: ScrollBarBuilder b -> Orientation -> IO b
+
+  native unitIncrement :: ScrollBarBuilder b -> Double -> IO b
+
+  native value :: ScrollBarBuilder b -> Double -> IO b
+
+  native visibleAmount :: ScrollBarBuilder b -> Double -> IO b
+
+

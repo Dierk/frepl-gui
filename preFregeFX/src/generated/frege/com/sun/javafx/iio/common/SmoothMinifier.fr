@@ -1,7 +1,0 @@
-data SmoothMinifier = pure native com.sun.javafx.iio.common.SmoothMinifier where
-
-  pure native getDestination :: SmoothMinifier -> ByteBuffer
-
-  native putSourceScanline :: SmoothMinifier -> Mutable s (JArray byte) -> int -> ST s boolean
-
-

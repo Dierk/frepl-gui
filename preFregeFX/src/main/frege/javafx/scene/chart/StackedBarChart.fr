@@ -1,0 +1,17 @@
+data StackedBarChart x y = mutable native javafx.scene.chart.StackedBarChart where
+
+  native new :: Axis x -> Axis y -> IO (StackedBarChart x y)
+              | Axis x -> Axis y -> ObservableList (XYChart_Series x y) -> Double -> IO (StackedBarChart x y)
+              | Axis x -> Axis y -> ObservableList (XYChart_Series x y) -> IO (StackedBarChart x y)
+
+  native categoryGapProperty :: StackedBarChart x y -> IO DoubleProperty
+
+  native getCategoryGap :: StackedBarChart x y -> IO Double
+
+  native getClassCssMetaData "javafx.scene.chart.StackedBarChart.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getCssMetaData :: StackedBarChart x y -> IO (List (CssMetaData Styleable Object))
+
+  native setCategoryGap :: StackedBarChart x y -> Double -> IO ()
+
+

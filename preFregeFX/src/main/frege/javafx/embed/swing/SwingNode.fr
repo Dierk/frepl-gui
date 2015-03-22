@@ -1,0 +1,31 @@
+data SwingNode = mutable native javafx.embed.swing.SwingNode where
+
+  native new :: () -> IO SwingNode
+
+  native getContent :: SwingNode -> IO JComponent
+
+  native impl_computeGeomBounds :: SwingNode -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_processMXNode :: SwingNode -> MXNodeAlgorithm -> MXNodeAlgorithmContext -> IO Object
+
+  native impl_updatePeer :: SwingNode -> IO ()
+
+  native isResizable :: SwingNode -> IO Bool
+
+  native maxHeight :: SwingNode -> Double -> IO Double
+
+  native maxWidth :: SwingNode -> Double -> IO Double
+
+  native minHeight :: SwingNode -> Double -> IO Double
+
+  native minWidth :: SwingNode -> Double -> IO Double
+
+  native prefHeight :: SwingNode -> Double -> IO Double
+
+  native prefWidth :: SwingNode -> Double -> IO Double
+
+  native resize :: SwingNode -> Double -> Double -> IO ()
+
+  native setContent :: SwingNode -> JComponent -> IO ()
+
+

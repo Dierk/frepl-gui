@@ -1,0 +1,5 @@
+data Interpolatable t = mutable native javafx.animation.Interpolatable where
+
+  native interpolate :: Interpolatable t -> t -> Double -> IO t
+
+

@@ -1,7 +1,0 @@
-data WCRadialGradient = pure native com.sun.javafx.webkit.prism.WCRadialGradient where
-
-  pure native getPlatformGradient :: WCRadialGradient -> RadialGradient
-
-  pure native toString :: WCRadialGradient -> String
-
-

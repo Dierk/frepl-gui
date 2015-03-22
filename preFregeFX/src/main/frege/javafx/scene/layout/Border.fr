@@ -1,0 +1,26 @@
+data Border = mutable native javafx.scene.layout.Border where
+
+  native empty "javafx.scene.layout.Border.EMPTY" :: IO Border
+
+  native new :: MutableIO (JArray BorderImage) -> IO Border
+              | MutableIO (List BorderStroke) -> MutableIO (List BorderImage) -> IO Border
+              | MutableIO (JArray BorderStroke) -> MutableIO (JArray BorderImage) -> IO Border
+              | MutableIO (JArray BorderStroke) -> IO Border
+
+  native equals :: Border -> Object -> IO Bool
+
+  native getClassCssMetaData "javafx.scene.layout.Border.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getImages :: Border -> IO (List BorderImage)
+
+  native getInsets :: Border -> IO Insets
+
+  native getOutsets :: Border -> IO Insets
+
+  native getStrokes :: Border -> IO (List BorderStroke)
+
+  native hashCode :: Border -> IO Int
+
+  native isEmpty :: Border -> IO Bool
+
+

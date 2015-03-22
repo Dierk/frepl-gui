@@ -1,0 +1,11 @@
+data TextFieldTableCellBuilder s t b = mutable native javafx.scene.control.cell.TextFieldTableCellBuilder where
+
+  native applyTo :: TextFieldTableCellBuilder s t b -> TextFieldTableCell s t -> IO ()
+
+  native build :: TextFieldTableCellBuilder s t b -> IO (TextFieldTableCell s t)
+
+  native converter :: TextFieldTableCellBuilder s t b -> StringConverter t -> IO b
+
+  native create "javafx.scene.control.cell.TextFieldTableCellBuilder.create" :: () -> IO (TextFieldTableCellBuilder s t Object)
+
+

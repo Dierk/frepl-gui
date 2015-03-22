@@ -1,0 +1,63 @@
+data TreeItem t = mutable native javafx.scene.control.TreeItem where
+
+  native new :: t -> IO (TreeItem t)
+              | () -> IO (TreeItem t)
+              | t -> Node -> IO (TreeItem t)
+
+  native addEventHandler :: TreeItem t -> EventType e -> EventHandler e -> IO ()
+
+  native branchCollapsedEvent "javafx.scene.control.TreeItem.branchCollapsedEvent" :: () -> IO (EventType (TreeItem_TreeModificationEvent t))
+
+  native branchExpandedEvent "javafx.scene.control.TreeItem.branchExpandedEvent" :: () -> IO (EventType (TreeItem_TreeModificationEvent t))
+
+  native buildEventDispatchChain :: TreeItem t -> EventDispatchChain -> IO EventDispatchChain
+
+  native childrenModificationEvent "javafx.scene.control.TreeItem.childrenModificationEvent" :: () -> IO (EventType (TreeItem_TreeModificationEvent t))
+
+  native expandedItemCountChangeEvent "javafx.scene.control.TreeItem.expandedItemCountChangeEvent" :: () -> IO (EventType (TreeItem_TreeModificationEvent t))
+
+  native expandedProperty :: TreeItem t -> IO BooleanProperty
+
+  native getChildren :: TreeItem t -> IO (ObservableList (TreeItem t))
+
+  native getGraphic :: TreeItem t -> IO Node
+
+  native getParent :: TreeItem t -> IO (TreeItem t)
+
+  native getValue :: TreeItem t -> IO t
+
+  native graphicChangedEvent "javafx.scene.control.TreeItem.graphicChangedEvent" :: () -> IO (EventType (TreeItem_TreeModificationEvent t))
+
+  native graphicProperty :: TreeItem t -> IO (ObjectProperty Node)
+
+  native isExpanded :: TreeItem t -> IO Bool
+
+  native isLeaf :: TreeItem t -> IO Bool
+
+  native leafProperty :: TreeItem t -> IO ReadOnlyBooleanProperty
+
+  native nextSibling :: TreeItem t -> TreeItem t -> IO (TreeItem t)
+                      | TreeItem t -> IO (TreeItem t)
+
+  native parentProperty :: TreeItem t -> IO (ReadOnlyObjectProperty (TreeItem t))
+
+  native previousSibling :: TreeItem t -> TreeItem t -> IO (TreeItem t)
+                          | TreeItem t -> IO (TreeItem t)
+
+  native removeEventHandler :: TreeItem t -> EventType e -> EventHandler e -> IO ()
+
+  native setExpanded :: TreeItem t -> Bool -> IO ()
+
+  native setGraphic :: TreeItem t -> Node -> IO ()
+
+  native setValue :: TreeItem t -> t -> IO ()
+
+  native toString :: TreeItem t -> IO String
+
+  native treeNotificationEvent "javafx.scene.control.TreeItem.treeNotificationEvent" :: () -> IO (EventType (TreeItem_TreeModificationEvent t))
+
+  native valueChangedEvent "javafx.scene.control.TreeItem.valueChangedEvent" :: () -> IO (EventType (TreeItem_TreeModificationEvent t))
+
+  native valueProperty :: TreeItem t -> IO (ObjectProperty t)
+
+

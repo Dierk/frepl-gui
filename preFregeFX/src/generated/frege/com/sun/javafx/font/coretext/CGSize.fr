@@ -1,1 +1,0 @@
-data CGSize = pure native com.sun.javafx.font.coretext.CGSize

@@ -1,7 +1,0 @@
-data ObservableSet e = mutable native javafx.collections.ObservableSet where
-
-  native addListener :: ObservableSet e -> SetChangeListener e -> IO void
-
-  native removeListener :: ObservableSet e -> SetChangeListener e -> IO void
-
-

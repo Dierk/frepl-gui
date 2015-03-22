@@ -1,0 +1,9 @@
+data Light = mutable native javafx.scene.effect.Light where
+
+  native colorProperty :: Light -> IO (ObjectProperty Color)
+
+  native getColor :: Light -> IO Color
+
+  native setColor :: Light -> Color -> IO ()
+
+

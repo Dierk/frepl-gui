@@ -1,0 +1,5 @@
+data Initializable = mutable native javafx.fxml.Initializable where
+
+  native initialize :: Initializable -> URL -> MutableIO ResourceBundle -> IO ()
+
+

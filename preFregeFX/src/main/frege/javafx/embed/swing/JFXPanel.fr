@@ -1,0 +1,22 @@
+data JFXPanel = mutable native javafx.embed.swing.JFXPanel where
+
+  native new :: () -> IO JFXPanel
+
+  native addNotify :: JFXPanel -> IO ()
+
+  native getInputMethodRequests :: JFXPanel -> IO InputMethodRequests
+
+  native getPreferredSize :: JFXPanel -> IO Dimension
+
+  native getScene :: JFXPanel -> IO Scene
+
+  native isOpaque :: JFXPanel -> IO Bool
+
+  native removeNotify :: JFXPanel -> IO ()
+
+  native setOpaque :: JFXPanel -> Bool -> IO ()
+
+  native setScene :: JFXPanel -> Scene -> IO ()
+
+derive Serializable JFXPanel
+

@@ -1,0 +1,9 @@
+data Skinnable = mutable native javafx.scene.control.Skinnable where
+
+  native getSkin :: Skinnable -> IO (Skin Object)
+
+  native setSkin :: Skinnable -> Skin Object -> IO ()
+
+  native skinProperty :: Skinnable -> IO (ObjectProperty (Skin Object))
+
+

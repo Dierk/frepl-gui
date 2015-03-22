@@ -1,9 +1,0 @@
-data CheckMenuItemBase = pure native com.sun.javafx.menu.CheckMenuItemBase where
-
-  pure native isSelected :: CheckMenuItemBase -> boolean
-
-  native selectedProperty :: CheckMenuItemBase -> IO BooleanProperty
-
-  pure native setSelected :: CheckMenuItemBase -> boolean -> void
-
-

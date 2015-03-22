@@ -1,5 +1,0 @@
-data FloatArraySyncer = pure native com.sun.javafx.collections.FloatArraySyncer where
-
-  native syncTo :: FloatArraySyncer -> Mutable s (JArray float) -> Mutable s (JArray int) -> STMutable s (JArray float)
-
-

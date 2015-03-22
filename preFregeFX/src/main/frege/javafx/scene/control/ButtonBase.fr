@@ -1,0 +1,21 @@
+data ButtonBase = mutable native javafx.scene.control.ButtonBase where
+
+  native arm :: ButtonBase -> IO ()
+
+  native armedProperty :: ButtonBase -> IO ReadOnlyBooleanProperty
+
+  native disarm :: ButtonBase -> IO ()
+
+  native executeAccessibleAction :: ButtonBase -> AccessibleAction -> MutableIO (JArray Object) -> IO ()
+
+  native fire :: ButtonBase -> IO ()
+
+  native getOnAction :: ButtonBase -> IO (EventHandler ActionEvent)
+
+  native isArmed :: ButtonBase -> IO Bool
+
+  native onActionProperty :: ButtonBase -> IO (ObjectProperty (EventHandler ActionEvent))
+
+  native setOnAction :: ButtonBase -> EventHandler ActionEvent -> IO ()
+
+

@@ -1,9 +1,0 @@
-data WritableBooleanValue = mutable native javafx.beans.value.WritableBooleanValue where
-
-  native get :: WritableBooleanValue -> IO boolean
-
-  native set :: WritableBooleanValue -> boolean -> IO void
-
-  native setValue :: WritableBooleanValue -> Boolean -> IO void
-
-

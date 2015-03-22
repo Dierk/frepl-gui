@@ -1,5 +1,0 @@
-data UtilitiesImpl = pure native com.sun.javafx.webkit.UtilitiesImpl where
-
-  pure native new :: () -> UtilitiesImpl
-
-

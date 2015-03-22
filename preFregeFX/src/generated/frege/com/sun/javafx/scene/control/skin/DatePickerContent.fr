@@ -1,9 +1,0 @@
-data DatePickerContent = pure native com.sun.javafx.scene.control.skin.DatePickerContent where
-
-  pure native goToDate :: DatePickerContent -> LocalDate -> boolean -> void
-
-  native goToDayCell :: DatePickerContent -> DateCell -> int -> ChronoUnit -> boolean -> IO void
-
-  native selectDayCell :: DatePickerContent -> DateCell -> IO void
-
-

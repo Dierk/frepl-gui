@@ -1,0 +1,42 @@
+data ChoiceBox t = mutable native javafx.scene.control.ChoiceBox where
+
+  native new :: () -> IO (ChoiceBox t)
+              | ObservableList t -> IO (ChoiceBox t)
+
+  native converterProperty :: ChoiceBox t -> IO (ObjectProperty (StringConverter t))
+
+  native executeAccessibleAction :: ChoiceBox t -> AccessibleAction -> MutableIO (JArray Object) -> IO ()
+
+  native getConverter :: ChoiceBox t -> IO (StringConverter t)
+
+  native getItems :: ChoiceBox t -> IO (ObservableList t)
+
+  native getSelectionModel :: ChoiceBox t -> IO (SingleSelectionModel t)
+
+  native getValue :: ChoiceBox t -> IO t
+
+  native hide :: ChoiceBox t -> IO ()
+
+  native isShowing :: ChoiceBox t -> IO Bool
+
+  native itemsProperty :: ChoiceBox t -> IO (ObjectProperty (ObservableList t))
+
+  native queryAccessibleAttribute :: ChoiceBox t -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native selectionModelProperty :: ChoiceBox t -> IO (ObjectProperty (SingleSelectionModel t))
+
+  native setConverter :: ChoiceBox t -> StringConverter t -> IO ()
+
+  native setItems :: ChoiceBox t -> ObservableList t -> IO ()
+
+  native setSelectionModel :: ChoiceBox t -> SingleSelectionModel t -> IO ()
+
+  native setValue :: ChoiceBox t -> t -> IO ()
+
+  native show :: ChoiceBox t -> IO ()
+
+  native showingProperty :: ChoiceBox t -> IO ReadOnlyBooleanProperty
+
+  native valueProperty :: ChoiceBox t -> IO (ObjectProperty t)
+
+

@@ -1,0 +1,31 @@
+data PrinterJob = mutable native javafx.print.PrinterJob where
+
+  native cancelJob :: PrinterJob -> IO ()
+
+  native createPrinterJob "javafx.print.PrinterJob.createPrinterJob" :: () -> IO PrinterJob
+                                                                      | Printer -> IO PrinterJob
+
+  native endJob :: PrinterJob -> IO Bool
+
+  native getJobSettings :: PrinterJob -> IO JobSettings
+
+  native getJobStatus :: PrinterJob -> IO PrinterJob_JobStatus
+
+  native getPrinter :: PrinterJob -> IO Printer
+
+  native jobStatusProperty :: PrinterJob -> IO (ReadOnlyObjectProperty PrinterJob_JobStatus)
+
+  native printPage :: PrinterJob -> Node -> IO Bool
+                    | PrinterJob -> PageLayout -> Node -> IO Bool
+
+  native printerProperty :: PrinterJob -> IO (ObjectProperty Printer)
+
+  native setPrinter :: PrinterJob -> Printer -> IO ()
+
+  native showPageSetupDialog :: PrinterJob -> Window -> IO Bool
+
+  native showPrintDialog :: PrinterJob -> Window -> IO Bool
+
+  native toString :: PrinterJob -> IO String
+
+

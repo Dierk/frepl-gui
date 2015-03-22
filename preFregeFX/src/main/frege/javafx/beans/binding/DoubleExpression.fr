@@ -1,0 +1,44 @@
+data DoubleExpression = mutable native javafx.beans.binding.DoubleExpression where
+
+  native add :: DoubleExpression -> Float -> IO DoubleBinding
+              | DoubleExpression -> Double -> IO DoubleBinding
+              | DoubleExpression -> ObservableNumberValue -> IO DoubleBinding
+              | DoubleExpression -> Long -> IO DoubleBinding
+              | DoubleExpression -> Int -> IO DoubleBinding
+
+  native asObject :: DoubleExpression -> IO (ObjectExpression Double)
+
+  native divide :: DoubleExpression -> Int -> IO DoubleBinding
+                 | DoubleExpression -> Long -> IO DoubleBinding
+                 | DoubleExpression -> Double -> IO DoubleBinding
+                 | DoubleExpression -> Float -> IO DoubleBinding
+                 | DoubleExpression -> ObservableNumberValue -> IO DoubleBinding
+
+  native doubleExpression "javafx.beans.binding.DoubleExpression.doubleExpression" :: ObservableDoubleValue -> IO DoubleExpression
+                                                                                    | ObservableValue t -> IO DoubleExpression
+
+  native doubleValue :: DoubleExpression -> IO Double
+
+  native floatValue :: DoubleExpression -> IO Float
+
+  native getValue :: DoubleExpression -> IO Double
+
+  native intValue :: DoubleExpression -> IO Int
+
+  native longValue :: DoubleExpression -> IO Long
+
+  native multiply :: DoubleExpression -> Float -> IO DoubleBinding
+                   | DoubleExpression -> Long -> IO DoubleBinding
+                   | DoubleExpression -> Int -> IO DoubleBinding
+                   | DoubleExpression -> Double -> IO DoubleBinding
+                   | DoubleExpression -> ObservableNumberValue -> IO DoubleBinding
+
+  native negate :: DoubleExpression -> IO DoubleBinding
+
+  native subtract :: DoubleExpression -> Float -> IO DoubleBinding
+                   | DoubleExpression -> Long -> IO DoubleBinding
+                   | DoubleExpression -> Int -> IO DoubleBinding
+                   | DoubleExpression -> Double -> IO DoubleBinding
+                   | DoubleExpression -> ObservableNumberValue -> IO DoubleBinding
+
+

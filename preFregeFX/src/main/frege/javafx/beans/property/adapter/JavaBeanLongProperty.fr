@@ -1,0 +1,29 @@
+data JavaBeanLongProperty = mutable native javafx.beans.property.adapter.JavaBeanLongProperty where
+
+  native addListener :: JavaBeanLongProperty -> ChangeListener Number -> IO ()
+                      | JavaBeanLongProperty -> InvalidationListener -> IO ()
+
+  native bind :: JavaBeanLongProperty -> ObservableValue Number -> IO ()
+
+  native dispose :: JavaBeanLongProperty -> IO ()
+
+  native fireValueChangedEvent :: JavaBeanLongProperty -> IO ()
+
+  native get :: JavaBeanLongProperty -> IO Long
+
+  native getBean :: JavaBeanLongProperty -> IO Object
+
+  native getName :: JavaBeanLongProperty -> IO String
+
+  native isBound :: JavaBeanLongProperty -> IO Bool
+
+  native removeListener :: JavaBeanLongProperty -> InvalidationListener -> IO ()
+                         | JavaBeanLongProperty -> ChangeListener Number -> IO ()
+
+  native set :: JavaBeanLongProperty -> Long -> IO ()
+
+  native toString :: JavaBeanLongProperty -> IO String
+
+  native unbind :: JavaBeanLongProperty -> IO ()
+
+

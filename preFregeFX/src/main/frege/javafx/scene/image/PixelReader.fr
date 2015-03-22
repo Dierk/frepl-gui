@@ -1,0 +1,13 @@
+data PixelReader = mutable native javafx.scene.image.PixelReader where
+
+  native getArgb :: PixelReader -> Int -> Int -> IO Int
+
+  native getColor :: PixelReader -> Int -> Int -> IO Color
+
+  native getPixelFormat :: PixelReader -> IO PixelFormat
+
+  native getPixels :: PixelReader -> Int -> Int -> Int -> Int -> WritablePixelFormat ByteBuffer -> MutableIO (JArray Byte) -> Int -> Int -> IO ()
+                    | PixelReader -> Int -> Int -> Int -> Int -> WritablePixelFormat IntBuffer -> MutableIO (JArray Int) -> Int -> Int -> IO ()
+                    | PixelReader -> Int -> Int -> Int -> Int -> WritablePixelFormat t -> t -> Int -> IO ()
+
+

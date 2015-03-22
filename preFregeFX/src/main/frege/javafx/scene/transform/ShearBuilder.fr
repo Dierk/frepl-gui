@@ -1,0 +1,17 @@
+data ShearBuilder b = mutable native javafx.scene.transform.ShearBuilder where
+
+  native applyTo :: ShearBuilder b -> Shear -> IO ()
+
+  native build :: ShearBuilder b -> IO Shear
+
+  native create "javafx.scene.transform.ShearBuilder.create" :: () -> IO (ShearBuilder Object)
+
+  native pivotX :: ShearBuilder b -> Double -> IO b
+
+  native pivotY :: ShearBuilder b -> Double -> IO b
+
+  native x :: ShearBuilder b -> Double -> IO b
+
+  native y :: ShearBuilder b -> Double -> IO b
+
+

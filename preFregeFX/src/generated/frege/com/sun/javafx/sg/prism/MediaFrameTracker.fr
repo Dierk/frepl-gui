@@ -1,7 +1,0 @@
-data MediaFrameTracker = pure native com.sun.javafx.sg.prism.MediaFrameTracker where
-
-  pure native incrementDecodedFrameCount :: MediaFrameTracker -> int -> void
-
-  pure native incrementRenderedFrameCount :: MediaFrameTracker -> int -> void
-
-

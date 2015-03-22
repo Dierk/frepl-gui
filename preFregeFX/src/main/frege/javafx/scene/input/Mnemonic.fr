@@ -1,0 +1,15 @@
+data Mnemonic = mutable native javafx.scene.input.Mnemonic where
+
+  native new :: Node -> KeyCombination -> IO Mnemonic
+
+  native fire :: Mnemonic -> IO ()
+
+  native getKeyCombination :: Mnemonic -> IO KeyCombination
+
+  native getNode :: Mnemonic -> IO Node
+
+  native setKeyCombination :: Mnemonic -> KeyCombination -> IO ()
+
+  native setNode :: Mnemonic -> Node -> IO ()
+
+

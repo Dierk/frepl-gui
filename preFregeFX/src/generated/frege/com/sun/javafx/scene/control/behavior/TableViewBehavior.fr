@@ -1,7 +1,0 @@
-data TableViewBehavior t = pure native com.sun.javafx.scene.control.behavior.TableViewBehavior where
-
-  native new :: TableView t -> IO (TableViewBehavior t)
-
-  pure native dispose :: TableViewBehavior t -> void
-
-

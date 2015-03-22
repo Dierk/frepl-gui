@@ -1,9 +1,0 @@
-data PixelConverter t u = pure native com.sun.javafx.image.PixelConverter where
-
-  pure native convert :: PixelConverter t u -> t -> int -> int -> u -> int -> int -> int -> int -> void
-
-  pure native getGetter :: PixelConverter t u -> PixelGetter t
-
-  pure native getSetter :: PixelConverter t u -> PixelSetter u
-
-

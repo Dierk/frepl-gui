@@ -1,0 +1,19 @@
+data PieChartBuilder b = mutable native javafx.scene.chart.PieChartBuilder where
+
+  native applyTo :: PieChartBuilder b -> PieChart -> IO ()
+
+  native build :: PieChartBuilder b -> IO PieChart
+
+  native clockwise :: PieChartBuilder b -> Bool -> IO b
+
+  native create "javafx.scene.chart.PieChartBuilder.create" :: () -> IO (PieChartBuilder Object)
+
+  native jdata' :: PieChartBuilder b -> ObservableList PieChart_Data -> IO b
+
+  native labelLineLength :: PieChartBuilder b -> Double -> IO b
+
+  native labelsVisible :: PieChartBuilder b -> Bool -> IO b
+
+  native startAngle :: PieChartBuilder b -> Double -> IO b
+
+

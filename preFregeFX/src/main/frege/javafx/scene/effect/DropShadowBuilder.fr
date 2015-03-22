@@ -1,0 +1,27 @@
+data DropShadowBuilder b = mutable native javafx.scene.effect.DropShadowBuilder where
+
+  native applyTo :: DropShadowBuilder b -> DropShadow -> IO ()
+
+  native blurType :: DropShadowBuilder b -> BlurType -> IO b
+
+  native build :: DropShadowBuilder b -> IO DropShadow
+
+  native color :: DropShadowBuilder b -> Color -> IO b
+
+  native create "javafx.scene.effect.DropShadowBuilder.create" :: () -> IO (DropShadowBuilder Object)
+
+  native height :: DropShadowBuilder b -> Double -> IO b
+
+  native input :: DropShadowBuilder b -> Effect -> IO b
+
+  native offsetX :: DropShadowBuilder b -> Double -> IO b
+
+  native offsetY :: DropShadowBuilder b -> Double -> IO b
+
+  native radius :: DropShadowBuilder b -> Double -> IO b
+
+  native spread :: DropShadowBuilder b -> Double -> IO b
+
+  native width :: DropShadowBuilder b -> Double -> IO b
+
+

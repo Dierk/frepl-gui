@@ -1,0 +1,70 @@
+data FXCollections = mutable native javafx.collections.FXCollections where
+
+  native checkedObservableList "javafx.collections.FXCollections.checkedObservableList" :: ObservableList e -> Class e -> IO (ObservableList e)
+
+  native checkedObservableMap "javafx.collections.FXCollections.checkedObservableMap" :: ObservableMap k v -> Class k -> Class v -> IO (ObservableMap k v)
+
+  native checkedObservableSet "javafx.collections.FXCollections.checkedObservableSet" :: ObservableSet e -> Class e -> IO (ObservableSet e)
+
+  native concat "javafx.collections.FXCollections.concat" :: MutableIO (JArray (ObservableList e)) -> IO (ObservableList e)
+
+  native copy "javafx.collections.FXCollections.copy" :: ObservableList t -> MutableIO (List t) -> IO ()
+
+  native emptyObservableList "javafx.collections.FXCollections.emptyObservableList" :: () -> IO (ObservableList e)
+
+  native emptyObservableMap "javafx.collections.FXCollections.emptyObservableMap" :: () -> IO (ObservableMap k v)
+
+  native emptyObservableSet "javafx.collections.FXCollections.emptyObservableSet" :: () -> IO (ObservableSet e)
+
+  native fill "javafx.collections.FXCollections.fill" :: ObservableList t -> t -> IO ()
+
+  native observableArrayList "javafx.collections.FXCollections.observableArrayList" :: MutableIO (Collection e) -> IO (ObservableList e)
+                                                                                     | MutableIO (JArray e) -> IO (ObservableList e)
+                                                                                     | Callback e (JArray Observable) -> IO (ObservableList e)
+                                                                                     | () -> IO (ObservableList e)
+
+  native observableFloatArray "javafx.collections.FXCollections.observableFloatArray" :: () -> IO ObservableFloatArray
+                                                                                       | MutableIO (JArray Float) -> IO ObservableFloatArray
+                                                                                       | ObservableFloatArray -> IO ObservableFloatArray
+
+  native observableHashMap "javafx.collections.FXCollections.observableHashMap" :: () -> IO (ObservableMap k v)
+
+  native observableIntegerArray "javafx.collections.FXCollections.observableIntegerArray" :: ObservableIntegerArray -> IO ObservableIntegerArray
+                                                                                           | MutableIO (JArray Int) -> IO ObservableIntegerArray
+                                                                                           | () -> IO ObservableIntegerArray
+
+  native observableList "javafx.collections.FXCollections.observableList" :: MutableIO (List e) -> Callback e (JArray Observable) -> IO (ObservableList e)
+                                                                           | MutableIO (List e) -> IO (ObservableList e)
+
+  native observableMap "javafx.collections.FXCollections.observableMap" :: MutableIO (Map k v) -> IO (ObservableMap k v)
+
+  native observableSet "javafx.collections.FXCollections.observableSet" :: MutableIO (JArray e) -> IO (ObservableSet e)
+                                                                         | MutableIO (Set e) -> IO (ObservableSet e)
+
+  native replaceAll "javafx.collections.FXCollections.replaceAll" :: ObservableList t -> t -> t -> IO Bool
+
+  native reverse "javafx.collections.FXCollections.reverse" :: ObservableList -> IO ()
+
+  native rotate "javafx.collections.FXCollections.rotate" :: ObservableList -> Int -> IO ()
+
+  native shuffle "javafx.collections.FXCollections.shuffle" :: ObservableList -> MutableIO Random -> IO ()
+                                                             | ObservableList Object -> IO ()
+
+  native singletonObservableList "javafx.collections.FXCollections.singletonObservableList" :: e -> IO (ObservableList e)
+
+  native sort "javafx.collections.FXCollections.sort" :: ObservableList t -> Comparator t -> IO ()
+                                                       | ObservableList t -> IO ()
+
+  native synchronizedObservableList "javafx.collections.FXCollections.synchronizedObservableList" :: ObservableList e -> IO (ObservableList e)
+
+  native synchronizedObservableMap "javafx.collections.FXCollections.synchronizedObservableMap" :: ObservableMap k v -> IO (ObservableMap k v)
+
+  native synchronizedObservableSet "javafx.collections.FXCollections.synchronizedObservableSet" :: ObservableSet e -> IO (ObservableSet e)
+
+  native unmodifiableObservableList "javafx.collections.FXCollections.unmodifiableObservableList" :: ObservableList e -> IO (ObservableList e)
+
+  native unmodifiableObservableMap "javafx.collections.FXCollections.unmodifiableObservableMap" :: ObservableMap k v -> IO (ObservableMap k v)
+
+  native unmodifiableObservableSet "javafx.collections.FXCollections.unmodifiableObservableSet" :: ObservableSet e -> IO (ObservableSet e)
+
+

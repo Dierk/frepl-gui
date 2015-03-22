@@ -1,0 +1,15 @@
+data InsetsBuilder b = mutable native javafx.geometry.InsetsBuilder where
+
+  native bottom :: InsetsBuilder b -> Double -> IO b
+
+  native build :: InsetsBuilder b -> IO Insets
+
+  native create "javafx.geometry.InsetsBuilder.create" :: () -> IO (InsetsBuilder Object)
+
+  native left :: InsetsBuilder b -> Double -> IO b
+
+  native right :: InsetsBuilder b -> Double -> IO b
+
+  native top :: InsetsBuilder b -> Double -> IO b
+
+

@@ -1,0 +1,35 @@
+data Bounds = mutable native javafx.geometry.Bounds where
+
+  native contains :: Bounds -> Double -> Double -> IO Bool
+                   | Bounds -> Point3D -> IO Bool
+                   | Bounds -> Point2D -> IO Bool
+                   | Bounds -> Double -> Double -> Double -> IO Bool
+                   | Bounds -> Double -> Double -> Double -> Double -> Double -> Double -> IO Bool
+                   | Bounds -> Bounds -> IO Bool
+                   | Bounds -> Double -> Double -> Double -> Double -> IO Bool
+
+  native getDepth :: Bounds -> IO Double
+
+  native getHeight :: Bounds -> IO Double
+
+  native getMaxX :: Bounds -> IO Double
+
+  native getMaxY :: Bounds -> IO Double
+
+  native getMaxZ :: Bounds -> IO Double
+
+  native getMinX :: Bounds -> IO Double
+
+  native getMinY :: Bounds -> IO Double
+
+  native getMinZ :: Bounds -> IO Double
+
+  native getWidth :: Bounds -> IO Double
+
+  native intersects :: Bounds -> Double -> Double -> Double -> Double -> IO Bool
+                     | Bounds -> Double -> Double -> Double -> Double -> Double -> Double -> IO Bool
+                     | Bounds -> Bounds -> IO Bool
+
+  native isEmpty :: Bounds -> IO Bool
+
+

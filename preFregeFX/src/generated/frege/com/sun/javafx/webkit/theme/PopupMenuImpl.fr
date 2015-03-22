@@ -1,5 +1,0 @@
-data PopupMenuImpl = pure native com.sun.javafx.webkit.theme.PopupMenuImpl where
-
-  pure native new :: () -> PopupMenuImpl
-
-

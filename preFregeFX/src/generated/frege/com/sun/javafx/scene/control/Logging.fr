@@ -1,7 +1,0 @@
-data Logging = pure native com.sun.javafx.scene.control.Logging where
-
-  pure native new :: () -> Logging
-
-  pure native getControlsLogger "com.sun.javafx.scene.control.Logging.getControlsLogger" :: () -> PlatformLogger
-
-

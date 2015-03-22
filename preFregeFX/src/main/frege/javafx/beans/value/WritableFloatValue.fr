@@ -1,0 +1,9 @@
+data WritableFloatValue = mutable native javafx.beans.value.WritableFloatValue where
+
+  native get :: WritableFloatValue -> IO Float
+
+  native set :: WritableFloatValue -> Float -> IO ()
+
+  native setValue :: WritableFloatValue -> Number -> IO ()
+
+

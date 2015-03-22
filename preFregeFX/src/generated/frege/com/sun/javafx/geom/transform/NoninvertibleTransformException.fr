@@ -1,7 +1,0 @@
-data NoninvertibleTransformException = pure native com.sun.javafx.geom.transform.NoninvertibleTransformException where
-
-  pure native new :: String -> NoninvertibleTransformException
-
-derive Exceptional NoninvertibleTransformException
-derive Serializable NoninvertibleTransformException
-

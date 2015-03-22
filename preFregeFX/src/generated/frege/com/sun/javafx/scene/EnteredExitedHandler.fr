@@ -1,9 +1,0 @@
-data EnteredExitedHandler = pure native com.sun.javafx.scene.EnteredExitedHandler where
-
-  pure native new :: Object -> EnteredExitedHandler
-
-  native dispatchBubblingEvent :: EnteredExitedHandler -> Event -> IO Event
-
-  native dispatchCapturingEvent :: EnteredExitedHandler -> Event -> IO Event
-
-

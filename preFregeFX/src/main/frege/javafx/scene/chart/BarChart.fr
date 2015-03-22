@@ -1,0 +1,23 @@
+data BarChart x y = mutable native javafx.scene.chart.BarChart where
+
+  native new :: Axis x -> Axis y -> IO (BarChart x y)
+              | Axis x -> Axis y -> ObservableList (XYChart_Series x y) -> IO (BarChart x y)
+              | Axis x -> Axis y -> ObservableList (XYChart_Series x y) -> Double -> IO (BarChart x y)
+
+  native barGapProperty :: BarChart x y -> IO DoubleProperty
+
+  native categoryGapProperty :: BarChart x y -> IO DoubleProperty
+
+  native getBarGap :: BarChart x y -> IO Double
+
+  native getCategoryGap :: BarChart x y -> IO Double
+
+  native getClassCssMetaData "javafx.scene.chart.BarChart.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getCssMetaData :: BarChart x y -> IO (List (CssMetaData Styleable Object))
+
+  native setBarGap :: BarChart x y -> Double -> IO ()
+
+  native setCategoryGap :: BarChart x y -> Double -> IO ()
+
+

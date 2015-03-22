@@ -1,5 +1,0 @@
-data LabelSkin = pure native com.sun.javafx.scene.control.skin.LabelSkin where
-
-  native new :: Label -> IO LabelSkin
-
-

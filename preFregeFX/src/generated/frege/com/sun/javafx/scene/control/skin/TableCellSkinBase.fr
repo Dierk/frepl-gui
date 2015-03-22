@@ -1,5 +1,0 @@
-data TableCellSkinBase c b = pure native com.sun.javafx.scene.control.skin.TableCellSkinBase where
-
-  pure native dispose :: TableCellSkinBase c b -> void
-
-

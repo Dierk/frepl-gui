@@ -1,1 +1,0 @@
-data OS = pure native com.sun.javafx.font.directwrite.OS

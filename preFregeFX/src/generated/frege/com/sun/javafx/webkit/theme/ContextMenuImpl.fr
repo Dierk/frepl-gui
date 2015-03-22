@@ -1,5 +1,0 @@
-data ContextMenuImpl = pure native com.sun.javafx.webkit.theme.ContextMenuImpl where
-
-  pure native new :: () -> ContextMenuImpl
-
-

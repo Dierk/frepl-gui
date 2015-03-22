@@ -1,7 +1,0 @@
-data PaginationBehavior = pure native com.sun.javafx.scene.control.behavior.PaginationBehavior where
-
-  native new :: Pagination -> IO PaginationBehavior
-
-  native mousePressed :: PaginationBehavior -> MouseEvent -> IO void
-
-

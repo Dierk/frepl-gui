@@ -1,0 +1,40 @@
+data ColorAdjust = mutable native javafx.scene.effect.ColorAdjust where
+
+  native new :: () -> IO ColorAdjust
+              | Double -> Double -> Double -> Double -> IO ColorAdjust
+
+  native brightnessProperty :: ColorAdjust -> IO DoubleProperty
+
+  native contrastProperty :: ColorAdjust -> IO DoubleProperty
+
+  native getBrightness :: ColorAdjust -> IO Double
+
+  native getContrast :: ColorAdjust -> IO Double
+
+  native getHue :: ColorAdjust -> IO Double
+
+  native getInput :: ColorAdjust -> IO Effect
+
+  native getSaturation :: ColorAdjust -> IO Double
+
+  native hueProperty :: ColorAdjust -> IO DoubleProperty
+
+  native impl_copy :: ColorAdjust -> IO Effect
+
+  native impl_getBounds :: ColorAdjust -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: ColorAdjust -> IO (ObjectProperty Effect)
+
+  native saturationProperty :: ColorAdjust -> IO DoubleProperty
+
+  native setBrightness :: ColorAdjust -> Double -> IO ()
+
+  native setContrast :: ColorAdjust -> Double -> IO ()
+
+  native setHue :: ColorAdjust -> Double -> IO ()
+
+  native setInput :: ColorAdjust -> Effect -> IO ()
+
+  native setSaturation :: ColorAdjust -> Double -> IO ()
+
+

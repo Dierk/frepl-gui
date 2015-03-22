@@ -1,0 +1,27 @@
+data EqualizerBand = mutable native javafx.scene.media.EqualizerBand where
+
+  pure native min_gain "javafx.scene.media.EqualizerBand.MIN_GAIN" :: Double
+  pure native max_gain "javafx.scene.media.EqualizerBand.MAX_GAIN" :: Double
+
+  native new :: () -> IO EqualizerBand
+              | Double -> Double -> Double -> IO EqualizerBand
+
+  native bandwidthProperty :: EqualizerBand -> IO DoubleProperty
+
+  native centerFrequencyProperty :: EqualizerBand -> IO DoubleProperty
+
+  native gainProperty :: EqualizerBand -> IO DoubleProperty
+
+  native getBandwidth :: EqualizerBand -> IO Double
+
+  native getCenterFrequency :: EqualizerBand -> IO Double
+
+  native getGain :: EqualizerBand -> IO Double
+
+  native setBandwidth :: EqualizerBand -> Double -> IO ()
+
+  native setCenterFrequency :: EqualizerBand -> Double -> IO ()
+
+  native setGain :: EqualizerBand -> Double -> IO ()
+
+

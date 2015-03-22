@@ -1,0 +1,11 @@
+data ObservableNumberValue = mutable native javafx.beans.value.ObservableNumberValue where
+
+  native doubleValue :: ObservableNumberValue -> IO Double
+
+  native floatValue :: ObservableNumberValue -> IO Float
+
+  native intValue :: ObservableNumberValue -> IO Int
+
+  native longValue :: ObservableNumberValue -> IO Long
+
+

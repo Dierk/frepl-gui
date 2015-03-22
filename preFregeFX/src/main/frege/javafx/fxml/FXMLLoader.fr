@@ -1,0 +1,122 @@
+data FXMLLoader = mutable native javafx.fxml.FXMLLoader where
+
+  pure native default_charset_name "javafx.fxml.FXMLLoader.DEFAULT_CHARSET_NAME" :: String
+  pure native language_processing_instruction "javafx.fxml.FXMLLoader.LANGUAGE_PROCESSING_INSTRUCTION" :: String
+  pure native import_processing_instruction "javafx.fxml.FXMLLoader.IMPORT_PROCESSING_INSTRUCTION" :: String
+  pure native fx_namespace_prefix "javafx.fxml.FXMLLoader.FX_NAMESPACE_PREFIX" :: String
+  pure native fx_controller_attribute "javafx.fxml.FXMLLoader.FX_CONTROLLER_ATTRIBUTE" :: String
+  pure native fx_id_attribute "javafx.fxml.FXMLLoader.FX_ID_ATTRIBUTE" :: String
+  pure native fx_value_attribute "javafx.fxml.FXMLLoader.FX_VALUE_ATTRIBUTE" :: String
+  pure native fx_constant_attribute "javafx.fxml.FXMLLoader.FX_CONSTANT_ATTRIBUTE" :: String
+  pure native fx_factory_attribute "javafx.fxml.FXMLLoader.FX_FACTORY_ATTRIBUTE" :: String
+  pure native include_tag "javafx.fxml.FXMLLoader.INCLUDE_TAG" :: String
+  pure native include_source_attribute "javafx.fxml.FXMLLoader.INCLUDE_SOURCE_ATTRIBUTE" :: String
+  pure native include_resources_attribute "javafx.fxml.FXMLLoader.INCLUDE_RESOURCES_ATTRIBUTE" :: String
+  pure native include_charset_attribute "javafx.fxml.FXMLLoader.INCLUDE_CHARSET_ATTRIBUTE" :: String
+  pure native script_tag "javafx.fxml.FXMLLoader.SCRIPT_TAG" :: String
+  pure native script_source_attribute "javafx.fxml.FXMLLoader.SCRIPT_SOURCE_ATTRIBUTE" :: String
+  pure native script_charset_attribute "javafx.fxml.FXMLLoader.SCRIPT_CHARSET_ATTRIBUTE" :: String
+  pure native define_tag "javafx.fxml.FXMLLoader.DEFINE_TAG" :: String
+  pure native reference_tag "javafx.fxml.FXMLLoader.REFERENCE_TAG" :: String
+  pure native reference_source_attribute "javafx.fxml.FXMLLoader.REFERENCE_SOURCE_ATTRIBUTE" :: String
+  pure native root_tag "javafx.fxml.FXMLLoader.ROOT_TAG" :: String
+  pure native root_type_attribute "javafx.fxml.FXMLLoader.ROOT_TYPE_ATTRIBUTE" :: String
+  pure native copy_tag "javafx.fxml.FXMLLoader.COPY_TAG" :: String
+  pure native copy_source_attribute "javafx.fxml.FXMLLoader.COPY_SOURCE_ATTRIBUTE" :: String
+  pure native event_handler_prefix "javafx.fxml.FXMLLoader.EVENT_HANDLER_PREFIX" :: String
+  pure native event_key "javafx.fxml.FXMLLoader.EVENT_KEY" :: String
+  pure native change_event_handler_suffix "javafx.fxml.FXMLLoader.CHANGE_EVENT_HANDLER_SUFFIX" :: String
+  pure native null_keyword "javafx.fxml.FXMLLoader.NULL_KEYWORD" :: String
+  pure native escape_prefix "javafx.fxml.FXMLLoader.ESCAPE_PREFIX" :: String
+  pure native relative_path_prefix "javafx.fxml.FXMLLoader.RELATIVE_PATH_PREFIX" :: String
+  pure native resource_key_prefix "javafx.fxml.FXMLLoader.RESOURCE_KEY_PREFIX" :: String
+  pure native expression_prefix "javafx.fxml.FXMLLoader.EXPRESSION_PREFIX" :: String
+  pure native binding_expression_prefix "javafx.fxml.FXMLLoader.BINDING_EXPRESSION_PREFIX" :: String
+  pure native binding_expression_suffix "javafx.fxml.FXMLLoader.BINDING_EXPRESSION_SUFFIX" :: String
+  pure native bi_directional_binding_prefix "javafx.fxml.FXMLLoader.BI_DIRECTIONAL_BINDING_PREFIX" :: String
+  pure native bi_directional_binding_suffix "javafx.fxml.FXMLLoader.BI_DIRECTIONAL_BINDING_SUFFIX" :: String
+  pure native array_component_delimiter "javafx.fxml.FXMLLoader.ARRAY_COMPONENT_DELIMITER" :: String
+  pure native location_key "javafx.fxml.FXMLLoader.LOCATION_KEY" :: String
+  pure native resources_key "javafx.fxml.FXMLLoader.RESOURCES_KEY" :: String
+  pure native controller_method_prefix "javafx.fxml.FXMLLoader.CONTROLLER_METHOD_PREFIX" :: String
+  pure native controller_keyword "javafx.fxml.FXMLLoader.CONTROLLER_KEYWORD" :: String
+  pure native controller_suffix "javafx.fxml.FXMLLoader.CONTROLLER_SUFFIX" :: String
+  pure native initialize_method_name "javafx.fxml.FXMLLoader.INITIALIZE_METHOD_NAME" :: String
+  pure native javafx_version "javafx.fxml.FXMLLoader.JAVAFX_VERSION" :: String
+  pure native fx_namespace_version "javafx.fxml.FXMLLoader.FX_NAMESPACE_VERSION" :: String
+
+  native new :: URL -> MutableIO ResourceBundle -> BuilderFactory -> IO FXMLLoader
+              | URL -> MutableIO ResourceBundle -> BuilderFactory -> Callback (Class Object) Object -> IO FXMLLoader
+              | URL -> MutableIO ResourceBundle -> BuilderFactory -> Callback (Class Object) Object -> Charset -> MutableIO (LinkedList FXMLLoader) -> IO FXMLLoader
+              | URL -> MutableIO ResourceBundle -> BuilderFactory -> Callback (Class Object) Object -> Charset -> IO FXMLLoader
+              | Charset -> IO FXMLLoader
+              | () -> IO FXMLLoader
+              | URL -> IO FXMLLoader
+              | URL -> MutableIO ResourceBundle -> IO FXMLLoader
+
+  native equals :: FXMLLoader -> Object -> IO Bool
+
+  native getBuilderFactory :: FXMLLoader -> IO BuilderFactory
+
+  native getCharset :: FXMLLoader -> IO Charset
+
+  native getClassLoader :: FXMLLoader -> IO ClassLoader
+
+  native getController :: FXMLLoader -> IO t
+
+  native getControllerFactory :: FXMLLoader -> IO (Callback (Class Object) Object)
+
+  pure native getDefaultClassLoader "javafx.fxml.FXMLLoader.getDefaultClassLoader" :: () -> ClassLoader
+
+  native getLocation :: FXMLLoader -> IO URL
+
+  native getNamespace :: FXMLLoader -> IO (ObservableMap String Object)
+
+  native getResources :: FXMLLoader -> IO ResourceBundle
+
+  native getRoot :: FXMLLoader -> IO t
+
+  native impl_getLineNumber :: FXMLLoader -> IO Int
+
+  native impl_getLoadListener :: FXMLLoader -> IO LoadListener
+
+  native impl_getParseTrace :: FXMLLoader -> IO (JArray ParseTraceElement)
+
+  native impl_isStaticLoad :: FXMLLoader -> IO Bool
+
+  native impl_setLoadListener :: FXMLLoader -> LoadListener -> IO ()
+
+  native impl_setStaticLoad :: FXMLLoader -> Bool -> IO ()
+
+  native load "javafx.fxml.FXMLLoader.load" :: URL -> Mutable s ResourceBundle -> ST s t throws IOException
+                                             | URL -> ST s t throws IOException
+
+  native load :: FXMLLoader -> IO t throws IOException
+               | FXMLLoader -> InputStream -> IO t throws IOException
+
+  native load "javafx.fxml.FXMLLoader.load" :: URL -> MutableIO ResourceBundle -> BuilderFactory -> Callback (Class Object) Object -> Charset -> IO t throws IOException
+                                             | URL -> MutableIO ResourceBundle -> BuilderFactory -> Callback (Class Object) Object -> IO t throws IOException
+                                             | URL -> MutableIO ResourceBundle -> BuilderFactory -> IO t throws IOException
+
+  native loadType "javafx.fxml.FXMLLoader.loadType" :: String -> String -> ST s (Class Object) throws ClassNotFoundException
+                                                     | String -> ST s (Class Object) throws ClassNotFoundException
+
+  native setBuilderFactory :: FXMLLoader -> BuilderFactory -> IO ()
+
+  native setCharset :: FXMLLoader -> Charset -> IO ()
+
+  native setClassLoader :: FXMLLoader -> ClassLoader -> IO ()
+
+  native setController :: FXMLLoader -> Object -> IO ()
+
+  native setControllerFactory :: FXMLLoader -> Callback (Class Object) Object -> IO ()
+
+  pure native setDefaultClassLoader "javafx.fxml.FXMLLoader.setDefaultClassLoader" :: ClassLoader -> ()
+
+  native setLocation :: FXMLLoader -> URL -> IO ()
+
+  native setResources :: FXMLLoader -> MutableIO ResourceBundle -> IO ()
+
+  native setRoot :: FXMLLoader -> Object -> IO ()
+
+

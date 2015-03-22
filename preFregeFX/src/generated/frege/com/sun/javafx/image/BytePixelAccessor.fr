@@ -1,1 +1,0 @@
-data BytePixelAccessor = pure native com.sun.javafx.image.BytePixelAccessor

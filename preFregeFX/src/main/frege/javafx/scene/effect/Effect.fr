@@ -1,0 +1,15 @@
+data Effect = mutable native javafx.scene.effect.Effect where
+
+  native impl_copy :: Effect -> IO Effect
+
+  native impl_effectDirtyProperty :: Effect -> IO IntegerProperty
+
+  native impl_getBounds :: Effect -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native impl_getImpl :: Effect -> IO Effect
+
+  native impl_isEffectDirty :: Effect -> IO Bool
+
+  native impl_sync :: Effect -> IO ()
+
+

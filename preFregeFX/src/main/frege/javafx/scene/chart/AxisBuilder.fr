@@ -1,0 +1,30 @@
+data AxisBuilder t b = mutable native javafx.scene.chart.AxisBuilder where
+
+  native animated :: AxisBuilder t b -> Bool -> IO b
+
+  native applyTo :: AxisBuilder t b -> Axis t -> IO ()
+
+  native autoRanging :: AxisBuilder t b -> Bool -> IO b
+
+  native label :: AxisBuilder t b -> String -> IO b
+
+  native side :: AxisBuilder t b -> Side -> IO b
+
+  native tickLabelFill :: AxisBuilder t b -> Paint -> IO b
+
+  native tickLabelFont :: AxisBuilder t b -> Font -> IO b
+
+  native tickLabelGap :: AxisBuilder t b -> Double -> IO b
+
+  native tickLabelRotation :: AxisBuilder t b -> Double -> IO b
+
+  native tickLabelsVisible :: AxisBuilder t b -> Bool -> IO b
+
+  native tickLength :: AxisBuilder t b -> Double -> IO b
+
+  native tickMarkVisible :: AxisBuilder t b -> Bool -> IO b
+
+  native tickMarks :: AxisBuilder t b -> MutableIO (Collection (Axis_TickMark t)) -> IO b
+                    | AxisBuilder t b -> MutableIO (JArray (Axis_TickMark t)) -> IO b
+
+

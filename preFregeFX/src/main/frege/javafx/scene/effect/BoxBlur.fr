@@ -1,0 +1,34 @@
+data BoxBlur = mutable native javafx.scene.effect.BoxBlur where
+
+  native new :: () -> IO BoxBlur
+              | Double -> Double -> Int -> IO BoxBlur
+
+  native getHeight :: BoxBlur -> IO Double
+
+  native getInput :: BoxBlur -> IO Effect
+
+  native getIterations :: BoxBlur -> IO Int
+
+  native getWidth :: BoxBlur -> IO Double
+
+  native heightProperty :: BoxBlur -> IO DoubleProperty
+
+  native impl_copy :: BoxBlur -> IO Effect
+
+  native impl_getBounds :: BoxBlur -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: BoxBlur -> IO (ObjectProperty Effect)
+
+  native iterationsProperty :: BoxBlur -> IO IntegerProperty
+
+  native setHeight :: BoxBlur -> Double -> IO ()
+
+  native setInput :: BoxBlur -> Effect -> IO ()
+
+  native setIterations :: BoxBlur -> Int -> IO ()
+
+  native setWidth :: BoxBlur -> Double -> IO ()
+
+  native widthProperty :: BoxBlur -> IO DoubleProperty
+
+

@@ -1,0 +1,31 @@
+data TableViewBuilder s b = mutable native javafx.scene.control.TableViewBuilder where
+
+  native applyTo :: TableViewBuilder s b -> TableView s -> IO ()
+
+  native build :: TableViewBuilder s b -> IO (TableView s)
+
+  native columnResizePolicy :: TableViewBuilder s b -> Callback TableView_ResizeFeatures Boolean -> IO b
+
+  native columns :: TableViewBuilder s b -> MutableIO (Collection (TableColumn s Object)) -> IO b
+                  | TableViewBuilder s b -> MutableIO (JArray (TableColumn s Object)) -> IO b
+
+  native create "javafx.scene.control.TableViewBuilder.create" :: () -> IO (TableViewBuilder s Object)
+
+  native editable :: TableViewBuilder s b -> Bool -> IO b
+
+  native focusModel :: TableViewBuilder s b -> TableView_TableViewFocusModel s -> IO b
+
+  native items :: TableViewBuilder s b -> ObservableList s -> IO b
+
+  native placeholder :: TableViewBuilder s b -> Node -> IO b
+
+  native rowFactory :: TableViewBuilder s b -> Callback (TableView s) (TableRow s) -> IO b
+
+  native selectionModel :: TableViewBuilder s b -> TableView_TableViewSelectionModel s -> IO b
+
+  native sortOrder :: TableViewBuilder s b -> MutableIO (Collection (TableColumn s Object)) -> IO b
+                    | TableViewBuilder s b -> MutableIO (JArray (TableColumn s Object)) -> IO b
+
+  native tableMenuButtonVisible :: TableViewBuilder s b -> Bool -> IO b
+
+

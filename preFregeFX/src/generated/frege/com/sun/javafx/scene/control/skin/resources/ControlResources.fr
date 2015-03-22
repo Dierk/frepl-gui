@@ -1,7 +1,0 @@
-data ControlResources = pure native com.sun.javafx.scene.control.skin.resources.ControlResources where
-
-  pure native getNonTranslatableString "com.sun.javafx.scene.control.skin.resources.ControlResources.getNonTranslatableString" :: String -> String
-
-  pure native getString "com.sun.javafx.scene.control.skin.resources.ControlResources.getString" :: String -> String
-
-

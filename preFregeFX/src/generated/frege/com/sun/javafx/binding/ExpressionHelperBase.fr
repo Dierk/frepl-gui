@@ -1,5 +1,0 @@
-data ExpressionHelperBase = pure native com.sun.javafx.binding.ExpressionHelperBase where
-
-  pure native new :: () -> ExpressionHelperBase
-
-

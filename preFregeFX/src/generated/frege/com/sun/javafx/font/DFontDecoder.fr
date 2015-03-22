@@ -1,7 +1,0 @@
-data DFontDecoder = pure native com.sun.javafx.font.DFontDecoder where
-
-  pure native new :: () -> DFontDecoder
-
-  native decode :: DFontDecoder -> String -> ST s void throws IOException
-
-

@@ -1,0 +1,25 @@
+data PageLayout = mutable native javafx.print.PageLayout where
+
+  native equals :: PageLayout -> Object -> IO Bool
+
+  native getBottomMargin :: PageLayout -> IO Double
+
+  native getLeftMargin :: PageLayout -> IO Double
+
+  native getPageOrientation :: PageLayout -> IO PageOrientation
+
+  native getPaper :: PageLayout -> IO Paper
+
+  native getPrintableHeight :: PageLayout -> IO Double
+
+  native getPrintableWidth :: PageLayout -> IO Double
+
+  native getRightMargin :: PageLayout -> IO Double
+
+  native getTopMargin :: PageLayout -> IO Double
+
+  native hashCode :: PageLayout -> IO Int
+
+  native toString :: PageLayout -> IO String
+
+

@@ -1,0 +1,66 @@
+data TabPane = mutable native javafx.scene.control.TabPane where
+
+  pure native style_class_floating "javafx.scene.control.TabPane.STYLE_CLASS_FLOATING" :: String
+
+  native new :: () -> IO TabPane
+              | MutableIO (JArray Tab) -> IO TabPane
+
+  native getClassCssMetaData "javafx.scene.control.TabPane.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getControlCssMetaData :: TabPane -> IO (List (CssMetaData Styleable Object))
+
+  native getSelectionModel :: TabPane -> IO (SingleSelectionModel Tab)
+
+  native getSide :: TabPane -> IO Side
+
+  native getTabClosingPolicy :: TabPane -> IO TabPane_TabClosingPolicy
+
+  native getTabMaxHeight :: TabPane -> IO Double
+
+  native getTabMaxWidth :: TabPane -> IO Double
+
+  native getTabMinHeight :: TabPane -> IO Double
+
+  native getTabMinWidth :: TabPane -> IO Double
+
+  native getTabs :: TabPane -> IO (ObservableList Tab)
+
+  native isRotateGraphic :: TabPane -> IO Bool
+
+  native lookup :: TabPane -> String -> IO Node
+
+  native lookupAll :: TabPane -> String -> IO (Set Node)
+
+  native rotateGraphicProperty :: TabPane -> IO BooleanProperty
+
+  native selectionModelProperty :: TabPane -> IO (ObjectProperty (SingleSelectionModel Tab))
+
+  native setRotateGraphic :: TabPane -> Bool -> IO ()
+
+  native setSelectionModel :: TabPane -> SingleSelectionModel Tab -> IO ()
+
+  native setSide :: TabPane -> Side -> IO ()
+
+  native setTabClosingPolicy :: TabPane -> TabPane_TabClosingPolicy -> IO ()
+
+  native setTabMaxHeight :: TabPane -> Double -> IO ()
+
+  native setTabMaxWidth :: TabPane -> Double -> IO ()
+
+  native setTabMinHeight :: TabPane -> Double -> IO ()
+
+  native setTabMinWidth :: TabPane -> Double -> IO ()
+
+  native sideProperty :: TabPane -> IO (ObjectProperty Side)
+
+  native tabClosingPolicyProperty :: TabPane -> IO (ObjectProperty TabPane_TabClosingPolicy)
+
+  native tabMaxHeightProperty :: TabPane -> IO DoubleProperty
+
+  native tabMaxWidthProperty :: TabPane -> IO DoubleProperty
+
+  native tabMinHeightProperty :: TabPane -> IO DoubleProperty
+
+  native tabMinWidthProperty :: TabPane -> IO DoubleProperty
+
+

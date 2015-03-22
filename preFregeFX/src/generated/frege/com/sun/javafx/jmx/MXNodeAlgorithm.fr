@@ -1,7 +1,0 @@
-data MXNodeAlgorithm = pure native com.sun.javafx.jmx.MXNodeAlgorithm where
-
-  native processContainerNode :: MXNodeAlgorithm -> Parent -> MXNodeAlgorithmContext -> IO Object
-
-  native processLeafNode :: MXNodeAlgorithm -> Node -> MXNodeAlgorithmContext -> IO Object
-
-

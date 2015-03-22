@@ -1,0 +1,12 @@
+data SimpleLongProperty = mutable native javafx.beans.property.SimpleLongProperty where
+
+  native new :: Object -> String -> IO SimpleLongProperty
+              | () -> IO SimpleLongProperty
+              | Object -> String -> Long -> IO SimpleLongProperty
+              | Long -> IO SimpleLongProperty
+
+  native getBean :: SimpleLongProperty -> IO Object
+
+  native getName :: SimpleLongProperty -> IO String
+
+

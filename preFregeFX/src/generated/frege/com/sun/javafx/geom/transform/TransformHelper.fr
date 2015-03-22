@@ -1,5 +1,0 @@
-data TransformHelper = pure native com.sun.javafx.geom.transform.TransformHelper where
-
-  pure native general3dBoundsTransform "com.sun.javafx.geom.transform.TransformHelper.general3dBoundsTransform" :: CanTransformVec3d -> BaseBounds -> BaseBounds -> Vec3d -> BaseBounds
-
-

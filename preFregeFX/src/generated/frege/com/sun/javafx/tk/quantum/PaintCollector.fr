@@ -1,5 +1,0 @@
-data PaintCollector = pure native com.sun.javafx.tk.quantum.PaintCollector where
-
-  pure native done :: PaintCollector -> RenderJob -> void
-
-

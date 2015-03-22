@@ -1,0 +1,32 @@
+data StageBuilder b = mutable native javafx.stage.StageBuilder where
+
+  native applyTo :: StageBuilder b -> Stage -> IO ()
+
+  native build :: StageBuilder b -> IO Stage
+
+  native create "javafx.stage.StageBuilder.create" :: () -> IO (StageBuilder Object)
+
+  native fullScreen :: StageBuilder b -> Bool -> IO b
+
+  native iconified :: StageBuilder b -> Bool -> IO b
+
+  native icons :: StageBuilder b -> MutableIO (Collection Image) -> IO b
+                | StageBuilder b -> MutableIO (JArray Image) -> IO b
+
+  native maxHeight :: StageBuilder b -> Double -> IO b
+
+  native maxWidth :: StageBuilder b -> Double -> IO b
+
+  native minHeight :: StageBuilder b -> Double -> IO b
+
+  native minWidth :: StageBuilder b -> Double -> IO b
+
+  native resizable :: StageBuilder b -> Bool -> IO b
+
+  native scene :: StageBuilder b -> Scene -> IO b
+
+  native style :: StageBuilder b -> StageStyle -> IO b
+
+  native title :: StageBuilder b -> String -> IO b
+
+

@@ -1,9 +1,0 @@
-data URLConverter = pure native com.sun.javafx.css.converters.URLConverter where
-
-  native convert :: URLConverter -> ParsedValue (JArray ParsedValue) String -> Font -> IO String
-
-  native getInstance "com.sun.javafx.css.converters.URLConverter.getInstance" :: () -> IO (StyleConverter (JArray ParsedValue) String)
-
-  pure native toString :: URLConverter -> String
-
-

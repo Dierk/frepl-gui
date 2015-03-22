@@ -1,9 +1,0 @@
-data Skin c = mutable native javafx.scene.control.Skin where
-
-  native dispose :: Skin c -> IO void
-
-  native getNode :: Skin c -> IO Node
-
-  native getSkinnable :: Skin c -> IO c
-
-

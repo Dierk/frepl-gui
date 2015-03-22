@@ -1,0 +1,19 @@
+data Sphere = mutable native javafx.scene.shape.Sphere where
+
+  native new :: Double -> Int -> IO Sphere
+              | Double -> IO Sphere
+              | () -> IO Sphere
+
+  native getDivisions :: Sphere -> IO Int
+
+  native getRadius :: Sphere -> IO Double
+
+  native impl_computeGeomBounds :: Sphere -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_updatePeer :: Sphere -> IO ()
+
+  native radiusProperty :: Sphere -> IO DoubleProperty
+
+  native setRadius :: Sphere -> Double -> IO ()
+
+

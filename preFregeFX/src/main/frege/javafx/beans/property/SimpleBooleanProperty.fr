@@ -1,0 +1,12 @@
+data SimpleBooleanProperty = mutable native javafx.beans.property.SimpleBooleanProperty where
+
+  native new :: Object -> String -> IO SimpleBooleanProperty
+              | () -> IO SimpleBooleanProperty
+              | Object -> String -> Bool -> IO SimpleBooleanProperty
+              | Bool -> IO SimpleBooleanProperty
+
+  native getBean :: SimpleBooleanProperty -> IO Object
+
+  native getName :: SimpleBooleanProperty -> IO String
+
+

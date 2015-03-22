@@ -1,9 +1,0 @@
-data StyleCacheEntry = pure native com.sun.javafx.css.StyleCacheEntry where
-
-  pure native new :: () -> StyleCacheEntry
-
-  pure native get :: StyleCacheEntry -> String -> CalculatedValue
-
-  pure native put :: StyleCacheEntry -> String -> CalculatedValue -> void
-
-

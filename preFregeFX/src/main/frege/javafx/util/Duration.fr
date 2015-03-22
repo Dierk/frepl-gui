@@ -1,0 +1,61 @@
+data Duration = mutable native javafx.util.Duration where
+
+  native zero "javafx.util.Duration.ZERO" :: IO Duration
+  native one "javafx.util.Duration.ONE" :: IO Duration
+  native indefinite "javafx.util.Duration.INDEFINITE" :: IO Duration
+  native unknown "javafx.util.Duration.UNKNOWN" :: IO Duration
+
+  native new :: Double -> IO Duration
+
+  native add :: Duration -> Duration -> IO Duration
+
+  native compareTo :: Duration -> Duration -> IO Int
+
+  native divide :: Duration -> Duration -> IO Duration
+                 | Duration -> Double -> IO Duration
+
+  native equals :: Duration -> Object -> IO Bool
+
+  native greaterThan :: Duration -> Duration -> IO Bool
+
+  native greaterThanOrEqualTo :: Duration -> Duration -> IO Bool
+
+  native hashCode :: Duration -> IO Int
+
+  native hours "javafx.util.Duration.hours" :: Double -> IO Duration
+
+  native isIndefinite :: Duration -> IO Bool
+
+  native isUnknown :: Duration -> IO Bool
+
+  native lessThan :: Duration -> Duration -> IO Bool
+
+  native lessThanOrEqualTo :: Duration -> Duration -> IO Bool
+
+  native millis "javafx.util.Duration.millis" :: Double -> IO Duration
+
+  native minutes "javafx.util.Duration.minutes" :: Double -> IO Duration
+
+  native multiply :: Duration -> Duration -> IO Duration
+                   | Duration -> Double -> IO Duration
+
+  native negate :: Duration -> IO Duration
+
+  native seconds "javafx.util.Duration.seconds" :: Double -> IO Duration
+
+  native subtract :: Duration -> Duration -> IO Duration
+
+  native toHours :: Duration -> IO Double
+
+  native toMillis :: Duration -> IO Double
+
+  native toMinutes :: Duration -> IO Double
+
+  native toSeconds :: Duration -> IO Double
+
+  native toString :: Duration -> IO String
+
+  native valueOf "javafx.util.Duration.valueOf" :: String -> IO Duration
+
+derive Serializable Duration
+

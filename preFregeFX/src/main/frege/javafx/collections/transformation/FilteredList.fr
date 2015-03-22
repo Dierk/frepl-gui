@@ -1,0 +1,18 @@
+data FilteredList e = mutable native javafx.collections.transformation.FilteredList where
+
+  native new :: ObservableList e -> Predicate e -> IO (FilteredList e)
+              | ObservableList e -> IO (FilteredList e)
+
+  native get :: FilteredList e -> Int -> IO e
+
+  native getPredicate :: FilteredList e -> IO (Predicate e)
+
+  native getSourceIndex :: FilteredList e -> Int -> IO Int
+
+  native predicateProperty :: FilteredList e -> IO (ObjectProperty (Predicate e))
+
+  native setPredicate :: FilteredList e -> Predicate e -> IO ()
+
+  native size :: FilteredList e -> IO Int
+
+

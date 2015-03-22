@@ -1,0 +1,107 @@
+data WebEngine = mutable native javafx.scene.web.WebEngine where
+
+  native new :: () -> IO WebEngine
+              | String -> IO WebEngine
+
+  native confirmHandlerProperty :: WebEngine -> IO (ObjectProperty (Callback String Boolean))
+
+  native createPopupHandlerProperty :: WebEngine -> IO (ObjectProperty (Callback PopupFeatures WebEngine))
+
+  native documentProperty :: WebEngine -> IO (ReadOnlyObjectProperty Document)
+
+  native executeScript :: WebEngine -> String -> IO Object
+
+  native getConfirmHandler :: WebEngine -> IO (Callback String Boolean)
+
+  native getCreatePopupHandler :: WebEngine -> IO (Callback PopupFeatures WebEngine)
+
+  native getDocument :: WebEngine -> IO Document
+
+  native getHistory :: WebEngine -> IO WebHistory
+
+  native getLoadWorker :: WebEngine -> IO (Worker Void)
+
+  native getLocation :: WebEngine -> IO String
+
+  native getOnAlert :: WebEngine -> IO (EventHandler (WebEvent String))
+
+  native getOnError :: WebEngine -> IO (EventHandler WebErrorEvent)
+
+  native getOnResized :: WebEngine -> IO (EventHandler (WebEvent Rectangle2D))
+
+  native getOnStatusChanged :: WebEngine -> IO (EventHandler (WebEvent String))
+
+  native getOnVisibilityChanged :: WebEngine -> IO (EventHandler (WebEvent Boolean))
+
+  native getPromptHandler :: WebEngine -> IO (Callback PromptData String)
+
+  native getTitle :: WebEngine -> IO String
+
+  native getUserAgent :: WebEngine -> IO String
+
+  native getUserDataDirectory :: WebEngine -> IO File
+
+  native getUserStyleSheetLocation :: WebEngine -> IO String
+
+  native impl_getDebugger :: WebEngine -> IO Debugger
+
+  native isJavaScriptEnabled :: WebEngine -> IO Bool
+
+  native javaScriptEnabledProperty :: WebEngine -> IO BooleanProperty
+
+  native load :: WebEngine -> String -> IO ()
+
+  native loadContent :: WebEngine -> String -> String -> IO ()
+                      | WebEngine -> String -> IO ()
+
+  native locationProperty :: WebEngine -> IO ReadOnlyStringProperty
+
+  native onAlertProperty :: WebEngine -> IO (ObjectProperty (EventHandler (WebEvent String)))
+
+  native onErrorProperty :: WebEngine -> IO (ObjectProperty (EventHandler WebErrorEvent))
+
+  native onResizedProperty :: WebEngine -> IO (ObjectProperty (EventHandler (WebEvent Rectangle2D)))
+
+  native onStatusChangedProperty :: WebEngine -> IO (ObjectProperty (EventHandler (WebEvent String)))
+
+  native onVisibilityChangedProperty :: WebEngine -> IO (ObjectProperty (EventHandler (WebEvent Boolean)))
+
+  native print :: WebEngine -> PrinterJob -> IO ()
+
+  native promptHandlerProperty :: WebEngine -> IO (ObjectProperty (Callback PromptData String))
+
+  native reload :: WebEngine -> IO ()
+
+  native setConfirmHandler :: WebEngine -> Callback String Boolean -> IO ()
+
+  native setCreatePopupHandler :: WebEngine -> Callback PopupFeatures WebEngine -> IO ()
+
+  native setJavaScriptEnabled :: WebEngine -> Bool -> IO ()
+
+  native setOnAlert :: WebEngine -> EventHandler (WebEvent String) -> IO ()
+
+  native setOnError :: WebEngine -> EventHandler WebErrorEvent -> IO ()
+
+  native setOnResized :: WebEngine -> EventHandler (WebEvent Rectangle2D) -> IO ()
+
+  native setOnStatusChanged :: WebEngine -> EventHandler (WebEvent String) -> IO ()
+
+  native setOnVisibilityChanged :: WebEngine -> EventHandler (WebEvent Boolean) -> IO ()
+
+  native setPromptHandler :: WebEngine -> Callback PromptData String -> IO ()
+
+  native setUserAgent :: WebEngine -> String -> IO ()
+
+  native setUserDataDirectory :: WebEngine -> File -> IO ()
+
+  native setUserStyleSheetLocation :: WebEngine -> String -> IO ()
+
+  native titleProperty :: WebEngine -> IO ReadOnlyStringProperty
+
+  native userAgentProperty :: WebEngine -> IO StringProperty
+
+  native userDataDirectoryProperty :: WebEngine -> IO (ObjectProperty File)
+
+  native userStyleSheetLocationProperty :: WebEngine -> IO StringProperty
+
+

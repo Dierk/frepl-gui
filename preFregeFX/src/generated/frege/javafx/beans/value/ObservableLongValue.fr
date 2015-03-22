@@ -1,5 +1,0 @@
-data ObservableLongValue = mutable native javafx.beans.value.ObservableLongValue where
-
-  native get :: ObservableLongValue -> IO long
-
-

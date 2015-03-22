@@ -1,0 +1,17 @@
+data ChoiceBoxBuilder t b = mutable native javafx.scene.control.ChoiceBoxBuilder where
+
+  native applyTo :: ChoiceBoxBuilder t b -> ChoiceBox t -> IO ()
+
+  native build :: ChoiceBoxBuilder t b -> IO (ChoiceBox t)
+
+  native converter :: ChoiceBoxBuilder t b -> StringConverter t -> IO b
+
+  native create "javafx.scene.control.ChoiceBoxBuilder.create" :: () -> IO (ChoiceBoxBuilder t Object)
+
+  native items :: ChoiceBoxBuilder t b -> ObservableList t -> IO b
+
+  native selectionModel :: ChoiceBoxBuilder t b -> SingleSelectionModel t -> IO b
+
+  native value :: ChoiceBoxBuilder t b -> t -> IO b
+
+

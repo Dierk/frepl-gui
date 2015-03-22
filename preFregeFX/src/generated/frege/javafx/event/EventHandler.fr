@@ -1,5 +1,0 @@
-data EventHandler t = mutable native javafx.event.EventHandler where
-
-  native handle :: EventHandler t -> t -> IO void
-
-

@@ -1,0 +1,13 @@
+data Property t = mutable native javafx.beans.property.Property where
+
+  native bind :: Property t -> ObservableValue t -> IO ()
+
+  native bindBidirectional :: Property t -> Property t -> IO ()
+
+  native isBound :: Property t -> IO Bool
+
+  native unbind :: Property t -> IO ()
+
+  native unbindBidirectional :: Property t -> Property t -> IO ()
+
+

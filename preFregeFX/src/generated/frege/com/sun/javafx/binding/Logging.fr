@@ -1,7 +1,0 @@
-data Logging = pure native com.sun.javafx.binding.Logging where
-
-  pure native new :: () -> Logging
-
-  pure native getLogger "com.sun.javafx.binding.Logging.getLogger" :: () -> PlatformLogger
-
-

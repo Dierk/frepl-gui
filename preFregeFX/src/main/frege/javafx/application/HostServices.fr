@@ -1,0 +1,13 @@
+data HostServices = mutable native javafx.application.HostServices where
+
+  native getCodeBase :: HostServices -> IO String
+
+  native getDocumentBase :: HostServices -> IO String
+
+  native getWebContext :: HostServices -> IO JSObject
+
+  native resolveURI :: HostServices -> String -> String -> IO String
+
+  native showDocument :: HostServices -> String -> IO ()
+
+

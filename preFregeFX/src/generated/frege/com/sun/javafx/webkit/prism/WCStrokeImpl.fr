@@ -1,5 +1,0 @@
-data WCStrokeImpl = pure native com.sun.javafx.webkit.prism.WCStrokeImpl where
-
-  pure native getPlatformStroke :: WCStrokeImpl -> BasicStroke
-
-

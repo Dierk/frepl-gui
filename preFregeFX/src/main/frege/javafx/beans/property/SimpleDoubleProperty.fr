@@ -1,0 +1,12 @@
+data SimpleDoubleProperty = mutable native javafx.beans.property.SimpleDoubleProperty where
+
+  native new :: Object -> String -> IO SimpleDoubleProperty
+              | () -> IO SimpleDoubleProperty
+              | Object -> String -> Double -> IO SimpleDoubleProperty
+              | Double -> IO SimpleDoubleProperty
+
+  native getBean :: SimpleDoubleProperty -> IO Object
+
+  native getName :: SimpleDoubleProperty -> IO String
+
+

@@ -1,9 +1,0 @@
-data PseudoClassImpl = pure native com.sun.javafx.css.PseudoClassImpl where
-
-  pure native getIndex :: PseudoClassImpl -> int
-
-  pure native getPseudoClassName :: PseudoClassImpl -> String
-
-  pure native toString :: PseudoClassImpl -> String
-
-

@@ -1,0 +1,13 @@
+data ReadOnlyJavaBeanDoubleProperty = mutable native javafx.beans.property.adapter.ReadOnlyJavaBeanDoubleProperty where
+
+  native dispose :: ReadOnlyJavaBeanDoubleProperty -> IO ()
+
+  native fireValueChangedEvent :: ReadOnlyJavaBeanDoubleProperty -> IO ()
+
+  native get :: ReadOnlyJavaBeanDoubleProperty -> IO Double
+
+  native getBean :: ReadOnlyJavaBeanDoubleProperty -> IO Object
+
+  native getName :: ReadOnlyJavaBeanDoubleProperty -> IO String
+
+

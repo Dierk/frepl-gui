@@ -1,0 +1,64 @@
+data Shear = mutable native javafx.scene.transform.Shear where
+
+  native new :: Double -> Double -> Double -> Double -> IO Shear
+              | Double -> Double -> IO Shear
+              | () -> IO Shear
+
+  native clone :: Shear -> IO Shear
+
+  native createConcatenation :: Shear -> Transform -> IO Transform
+
+  native createInverse :: Shear -> IO Transform
+
+  native deltaTransform :: Shear -> Double -> Double -> Double -> IO Point3D
+                         | Shear -> Double -> Double -> IO Point2D
+
+  native getMxy :: Shear -> IO Double
+
+  native getMyx :: Shear -> IO Double
+
+  native getPivotX :: Shear -> IO Double
+
+  native getPivotY :: Shear -> IO Double
+
+  native getTx :: Shear -> IO Double
+
+  native getTy :: Shear -> IO Double
+
+  native getX :: Shear -> IO Double
+
+  native getY :: Shear -> IO Double
+
+  native impl_apply :: Shear -> Affine3D -> IO ()
+
+  native impl_derive :: Shear -> BaseTransform -> IO BaseTransform
+
+  native inverseDeltaTransform :: Shear -> Double -> Double -> IO Point2D throws NonInvertibleTransformException
+                                | Shear -> Double -> Double -> Double -> IO Point3D throws NonInvertibleTransformException
+
+  native inverseTransform :: Shear -> Double -> Double -> IO Point2D throws NonInvertibleTransformException
+                           | Shear -> Double -> Double -> Double -> IO Point3D throws NonInvertibleTransformException
+
+  native pivotXProperty :: Shear -> IO DoubleProperty
+
+  native pivotYProperty :: Shear -> IO DoubleProperty
+
+  native setPivotX :: Shear -> Double -> IO ()
+
+  native setPivotY :: Shear -> Double -> IO ()
+
+  native setX :: Shear -> Double -> IO ()
+
+  native setY :: Shear -> Double -> IO ()
+
+  native toString :: Shear -> IO String
+
+  native transform :: Shear -> Double -> Double -> IO Point2D
+                    | Shear -> Double -> Double -> Double -> IO Point3D
+
+  native xProperty :: Shear -> IO DoubleProperty
+
+  native yProperty :: Shear -> IO DoubleProperty
+
+derive Cloneable Shear
+

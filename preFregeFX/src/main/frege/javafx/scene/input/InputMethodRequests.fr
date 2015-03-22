@@ -1,0 +1,11 @@
+data InputMethodRequests = mutable native javafx.scene.input.InputMethodRequests where
+
+  native cancelLatestCommittedText :: InputMethodRequests -> IO ()
+
+  native getLocationOffset :: InputMethodRequests -> Int -> Int -> IO Int
+
+  native getSelectedText :: InputMethodRequests -> IO String
+
+  native getTextLocation :: InputMethodRequests -> Int -> IO Point2D
+
+

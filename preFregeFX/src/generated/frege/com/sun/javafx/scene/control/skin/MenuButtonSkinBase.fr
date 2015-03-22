@@ -1,5 +1,0 @@
-data MenuButtonSkinBase c b = pure native com.sun.javafx.scene.control.skin.MenuButtonSkinBase where
-
-  pure native dispose :: MenuButtonSkinBase c b -> void
-
-

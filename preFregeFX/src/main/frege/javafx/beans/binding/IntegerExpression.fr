@@ -1,0 +1,40 @@
+data IntegerExpression = mutable native javafx.beans.binding.IntegerExpression where
+
+  native add :: IntegerExpression -> Double -> IO DoubleBinding
+              | IntegerExpression -> Float -> IO FloatBinding
+              | IntegerExpression -> Long -> IO LongBinding
+              | IntegerExpression -> Int -> IO IntegerBinding
+
+  native asObject :: IntegerExpression -> IO (ObjectExpression Integer)
+
+  native divide :: IntegerExpression -> Int -> IO IntegerBinding
+                 | IntegerExpression -> Long -> IO LongBinding
+                 | IntegerExpression -> Double -> IO DoubleBinding
+                 | IntegerExpression -> Float -> IO FloatBinding
+
+  native doubleValue :: IntegerExpression -> IO Double
+
+  native floatValue :: IntegerExpression -> IO Float
+
+  native getValue :: IntegerExpression -> IO Integer
+
+  native intValue :: IntegerExpression -> IO Int
+
+  native integerExpression "javafx.beans.binding.IntegerExpression.integerExpression" :: ObservableValue t -> IO IntegerExpression
+                                                                                       | ObservableIntegerValue -> IO IntegerExpression
+
+  native longValue :: IntegerExpression -> IO Long
+
+  native multiply :: IntegerExpression -> Long -> IO LongBinding
+                   | IntegerExpression -> Float -> IO FloatBinding
+                   | IntegerExpression -> Int -> IO IntegerBinding
+                   | IntegerExpression -> Double -> IO DoubleBinding
+
+  native negate :: IntegerExpression -> IO IntegerBinding
+
+  native subtract :: IntegerExpression -> Float -> IO FloatBinding
+                   | IntegerExpression -> Int -> IO IntegerBinding
+                   | IntegerExpression -> Double -> IO DoubleBinding
+                   | IntegerExpression -> Long -> IO LongBinding
+
+

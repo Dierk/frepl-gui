@@ -1,0 +1,11 @@
+data Preloader = mutable native javafx.application.Preloader where
+
+  native handleApplicationNotification :: Preloader -> Preloader_PreloaderNotification -> IO ()
+
+  native handleErrorNotification :: Preloader -> Preloader_ErrorNotification -> IO Bool
+
+  native handleProgressNotification :: Preloader -> Preloader_ProgressNotification -> IO ()
+
+  native handleStateChangeNotification :: Preloader -> Preloader_StateChangeNotification -> IO ()
+
+

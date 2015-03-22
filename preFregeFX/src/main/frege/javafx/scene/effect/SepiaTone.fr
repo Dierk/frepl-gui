@@ -1,0 +1,22 @@
+data SepiaTone = mutable native javafx.scene.effect.SepiaTone where
+
+  native new :: () -> IO SepiaTone
+              | Double -> IO SepiaTone
+
+  native getInput :: SepiaTone -> IO Effect
+
+  native getLevel :: SepiaTone -> IO Double
+
+  native impl_copy :: SepiaTone -> IO Effect
+
+  native impl_getBounds :: SepiaTone -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: SepiaTone -> IO (ObjectProperty Effect)
+
+  native levelProperty :: SepiaTone -> IO DoubleProperty
+
+  native setInput :: SepiaTone -> Effect -> IO ()
+
+  native setLevel :: SepiaTone -> Double -> IO ()
+
+

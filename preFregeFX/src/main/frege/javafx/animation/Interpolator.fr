@@ -1,0 +1,20 @@
+data Interpolator = mutable native javafx.animation.Interpolator where
+
+  native discrete "javafx.animation.Interpolator.DISCRETE" :: IO Interpolator
+  native linear "javafx.animation.Interpolator.LINEAR" :: IO Interpolator
+  native ease_both "javafx.animation.Interpolator.EASE_BOTH" :: IO Interpolator
+  native ease_in "javafx.animation.Interpolator.EASE_IN" :: IO Interpolator
+  native ease_out "javafx.animation.Interpolator.EASE_OUT" :: IO Interpolator
+
+  native interpolate :: Interpolator -> Bool -> Bool -> Double -> IO Bool
+                      | Interpolator -> Double -> Double -> Double -> IO Double
+                      | Interpolator -> Long -> Long -> Double -> IO Long
+                      | Interpolator -> Int -> Int -> Double -> IO Int
+                      | Interpolator -> Object -> Object -> Double -> IO Object
+
+  native sPLINE "javafx.animation.Interpolator.SPLINE" :: Double -> Double -> Double -> Double -> IO Interpolator
+
+  native tANGENT "javafx.animation.Interpolator.TANGENT" :: Duration -> Double -> Duration -> Double -> IO Interpolator
+                                                          | Duration -> Double -> IO Interpolator
+
+

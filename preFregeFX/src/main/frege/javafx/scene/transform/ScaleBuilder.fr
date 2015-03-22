@@ -1,0 +1,21 @@
+data ScaleBuilder b = mutable native javafx.scene.transform.ScaleBuilder where
+
+  native applyTo :: ScaleBuilder b -> Scale -> IO ()
+
+  native build :: ScaleBuilder b -> IO Scale
+
+  native create "javafx.scene.transform.ScaleBuilder.create" :: () -> IO (ScaleBuilder Object)
+
+  native pivotX :: ScaleBuilder b -> Double -> IO b
+
+  native pivotY :: ScaleBuilder b -> Double -> IO b
+
+  native pivotZ :: ScaleBuilder b -> Double -> IO b
+
+  native x :: ScaleBuilder b -> Double -> IO b
+
+  native y :: ScaleBuilder b -> Double -> IO b
+
+  native z :: ScaleBuilder b -> Double -> IO b
+
+

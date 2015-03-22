@@ -1,0 +1,13 @@
+data FXDnD = mutable native javafx.embed.swing.FXDnD where
+
+  native addDropTarget :: FXDnD -> DropTarget -> IO ()
+
+  native createDragGestureRecognizer :: FXDnD -> Class t -> DragSource -> Component -> Int -> DragGestureListener -> IO t
+
+  native createDragSourceContextPeer :: FXDnD -> DragGestureEvent -> IO DragSourceContextPeer
+
+  native mapComponent :: FXDnD -> MutableIO (Map Component t) -> Int -> Int -> IO (FXDnD_ComponentMapper t)
+
+  native removeDropTarget :: FXDnD -> DropTarget -> IO ()
+
+

@@ -1,7 +1,0 @@
-data VirtualContainerBase c b i = pure native com.sun.javafx.scene.control.skin.VirtualContainerBase where
-
-  pure native createCell :: VirtualContainerBase c b i -> i
-
-  pure native getItemCount :: VirtualContainerBase c b i -> int
-
-

@@ -1,0 +1,15 @@
+data LongProperty = mutable native javafx.beans.property.LongProperty where
+
+  native asObject :: LongProperty -> IO (ObjectProperty Long)
+
+  native bindBidirectional :: LongProperty -> Property Number -> IO ()
+
+  native longProperty "javafx.beans.property.LongProperty.longProperty" :: Property Long -> IO LongProperty
+
+  native setValue :: LongProperty -> Number -> IO ()
+
+  native toString :: LongProperty -> IO String
+
+  native unbindBidirectional :: LongProperty -> Property Number -> IO ()
+
+

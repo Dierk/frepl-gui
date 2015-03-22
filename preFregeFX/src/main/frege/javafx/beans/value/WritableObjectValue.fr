@@ -1,0 +1,7 @@
+data WritableObjectValue t = mutable native javafx.beans.value.WritableObjectValue where
+
+  native get :: WritableObjectValue t -> IO t
+
+  native set :: WritableObjectValue t -> t -> IO ()
+
+

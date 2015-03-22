@@ -1,5 +1,0 @@
-data JavaBeanQuickAccessor = pure native com.sun.javafx.property.adapter.JavaBeanQuickAccessor where
-
-  native createReadOnlyJavaBeanObjectProperty "com.sun.javafx.property.adapter.JavaBeanQuickAccessor.createReadOnlyJavaBeanObjectProperty" :: Object -> String -> IO (ReadOnlyJavaBeanObjectProperty t) throws NoSuchMethodException
-
-

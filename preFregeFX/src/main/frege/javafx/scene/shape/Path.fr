@@ -1,0 +1,21 @@
+data Path = mutable native javafx.scene.shape.Path where
+
+  native new :: MutableIO (Collection PathElement) -> IO Path
+              | MutableIO (JArray PathElement) -> IO Path
+              | () -> IO Path
+
+  native fillRuleProperty :: Path -> IO (ObjectProperty FillRule)
+
+  native getElements :: Path -> IO (ObservableList PathElement)
+
+  native getFillRule :: Path -> IO FillRule
+
+  native impl_configShape :: Path -> IO Path2D
+
+  native impl_updatePeer :: Path -> IO ()
+
+  native setFillRule :: Path -> FillRule -> IO ()
+
+  native toString :: Path -> IO String
+
+

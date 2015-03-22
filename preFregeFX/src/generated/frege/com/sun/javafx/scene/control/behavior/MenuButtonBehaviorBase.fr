@@ -1,8 +1,0 @@
-data MenuButtonBehaviorBase c = pure native com.sun.javafx.scene.control.behavior.MenuButtonBehaviorBase where
-
-  native mousePressed :: MenuButtonBehaviorBase c -> MouseEvent -> boolean -> IO void
-
-  native mouseReleased :: MenuButtonBehaviorBase c -> MouseEvent -> IO void
-                        | MenuButtonBehaviorBase c -> MouseEvent -> boolean -> IO void
-
-

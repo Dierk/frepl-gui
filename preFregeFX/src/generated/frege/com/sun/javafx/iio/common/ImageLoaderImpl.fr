@@ -1,9 +1,0 @@
-data ImageLoaderImpl = pure native com.sun.javafx.iio.common.ImageLoaderImpl where
-
-  pure native addListener :: ImageLoaderImpl -> ImageLoadListener -> void
-
-  pure native getFormatDescription :: ImageLoaderImpl -> ImageFormatDescription
-
-  pure native removeListener :: ImageLoaderImpl -> ImageLoadListener -> void
-
-

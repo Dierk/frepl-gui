@@ -1,0 +1,9 @@
+data WeakEventHandler t = mutable native javafx.event.WeakEventHandler where
+
+  native new :: EventHandler t -> IO (WeakEventHandler t)
+
+  native handle :: WeakEventHandler t -> t -> IO ()
+
+  native wasGarbageCollected :: WeakEventHandler t -> IO Bool
+
+

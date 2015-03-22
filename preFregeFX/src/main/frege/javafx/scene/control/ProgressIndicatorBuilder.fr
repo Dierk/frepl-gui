@@ -1,0 +1,11 @@
+data ProgressIndicatorBuilder b = mutable native javafx.scene.control.ProgressIndicatorBuilder where
+
+  native applyTo :: ProgressIndicatorBuilder b -> ProgressIndicator -> IO ()
+
+  native build :: ProgressIndicatorBuilder b -> IO ProgressIndicator
+
+  native create "javafx.scene.control.ProgressIndicatorBuilder.create" :: () -> IO (ProgressIndicatorBuilder Object)
+
+  native progress :: ProgressIndicatorBuilder b -> Double -> IO b
+
+

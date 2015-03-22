@@ -1,0 +1,47 @@
+data Point3D = mutable native javafx.geometry.Point3D where
+
+  native zero "javafx.geometry.Point3D.ZERO" :: IO Point3D
+
+  native new :: Double -> Double -> Double -> IO Point3D
+
+  native add :: Point3D -> Point3D -> IO Point3D
+              | Point3D -> Double -> Double -> Double -> IO Point3D
+
+  native angle :: Point3D -> Point3D -> IO Double
+                | Point3D -> Double -> Double -> Double -> IO Double
+                | Point3D -> Point3D -> Point3D -> IO Double
+
+  native crossProduct :: Point3D -> Double -> Double -> Double -> IO Point3D
+                       | Point3D -> Point3D -> IO Point3D
+
+  native distance :: Point3D -> Double -> Double -> Double -> IO Double
+                   | Point3D -> Point3D -> IO Double
+
+  native dotProduct :: Point3D -> Double -> Double -> Double -> IO Double
+                     | Point3D -> Point3D -> IO Double
+
+  native equals :: Point3D -> Object -> IO Bool
+
+  native getX :: Point3D -> IO Double
+
+  native getY :: Point3D -> IO Double
+
+  native getZ :: Point3D -> IO Double
+
+  native hashCode :: Point3D -> IO Int
+
+  native magnitude :: Point3D -> IO Double
+
+  native midpoint :: Point3D -> Point3D -> IO Point3D
+                   | Point3D -> Double -> Double -> Double -> IO Point3D
+
+  native multiply :: Point3D -> Double -> IO Point3D
+
+  native normalize :: Point3D -> IO Point3D
+
+  native subtract :: Point3D -> Point3D -> IO Point3D
+                   | Point3D -> Double -> Double -> Double -> IO Point3D
+
+  native toString :: Point3D -> IO String
+
+

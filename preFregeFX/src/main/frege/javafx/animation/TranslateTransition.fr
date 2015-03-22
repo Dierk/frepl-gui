@@ -1,0 +1,75 @@
+data TranslateTransition = mutable native javafx.animation.TranslateTransition where
+
+  native new :: Duration -> IO TranslateTransition
+              | Duration -> Node -> IO TranslateTransition
+              | () -> IO TranslateTransition
+
+  native byXProperty :: TranslateTransition -> IO DoubleProperty
+
+  native byYProperty :: TranslateTransition -> IO DoubleProperty
+
+  native byZProperty :: TranslateTransition -> IO DoubleProperty
+
+  native durationProperty :: TranslateTransition -> IO (ObjectProperty Duration)
+
+  native fromXProperty :: TranslateTransition -> IO DoubleProperty
+
+  native fromYProperty :: TranslateTransition -> IO DoubleProperty
+
+  native fromZProperty :: TranslateTransition -> IO DoubleProperty
+
+  native getByX :: TranslateTransition -> IO Double
+
+  native getByY :: TranslateTransition -> IO Double
+
+  native getByZ :: TranslateTransition -> IO Double
+
+  native getDuration :: TranslateTransition -> IO Duration
+
+  native getFromX :: TranslateTransition -> IO Double
+
+  native getFromY :: TranslateTransition -> IO Double
+
+  native getFromZ :: TranslateTransition -> IO Double
+
+  native getNode :: TranslateTransition -> IO Node
+
+  native getToX :: TranslateTransition -> IO Double
+
+  native getToY :: TranslateTransition -> IO Double
+
+  native getToZ :: TranslateTransition -> IO Double
+
+  native interpolate :: TranslateTransition -> Double -> IO ()
+
+  native nodeProperty :: TranslateTransition -> IO (ObjectProperty Node)
+
+  native setByX :: TranslateTransition -> Double -> IO ()
+
+  native setByY :: TranslateTransition -> Double -> IO ()
+
+  native setByZ :: TranslateTransition -> Double -> IO ()
+
+  native setDuration :: TranslateTransition -> Duration -> IO ()
+
+  native setFromX :: TranslateTransition -> Double -> IO ()
+
+  native setFromY :: TranslateTransition -> Double -> IO ()
+
+  native setFromZ :: TranslateTransition -> Double -> IO ()
+
+  native setNode :: TranslateTransition -> Node -> IO ()
+
+  native setToX :: TranslateTransition -> Double -> IO ()
+
+  native setToY :: TranslateTransition -> Double -> IO ()
+
+  native setToZ :: TranslateTransition -> Double -> IO ()
+
+  native toXProperty :: TranslateTransition -> IO DoubleProperty
+
+  native toYProperty :: TranslateTransition -> IO DoubleProperty
+
+  native toZProperty :: TranslateTransition -> IO DoubleProperty
+
+

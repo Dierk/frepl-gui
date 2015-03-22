@@ -1,9 +1,0 @@
-data WritableLongValue = mutable native javafx.beans.value.WritableLongValue where
-
-  native get :: WritableLongValue -> IO long
-
-  native set :: WritableLongValue -> long -> IO void
-
-  native setValue :: WritableLongValue -> Number -> IO void
-
-

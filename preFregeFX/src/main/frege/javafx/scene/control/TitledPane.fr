@@ -1,0 +1,40 @@
+data TitledPane = mutable native javafx.scene.control.TitledPane where
+
+  native new :: () -> IO TitledPane
+              | String -> Node -> IO TitledPane
+
+  native animatedProperty :: TitledPane -> IO BooleanProperty
+
+  native collapsibleProperty :: TitledPane -> IO BooleanProperty
+
+  native contentProperty :: TitledPane -> IO (ObjectProperty Node)
+
+  native executeAccessibleAction :: TitledPane -> AccessibleAction -> MutableIO (JArray Object) -> IO ()
+
+  native expandedProperty :: TitledPane -> IO BooleanProperty
+
+  native getClassCssMetaData "javafx.scene.control.TitledPane.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getContent :: TitledPane -> IO Node
+
+  native getContentBias :: TitledPane -> IO Orientation
+
+  native getControlCssMetaData :: TitledPane -> IO (List (CssMetaData Styleable Object))
+
+  native isAnimated :: TitledPane -> IO Bool
+
+  native isCollapsible :: TitledPane -> IO Bool
+
+  native isExpanded :: TitledPane -> IO Bool
+
+  native queryAccessibleAttribute :: TitledPane -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setAnimated :: TitledPane -> Bool -> IO ()
+
+  native setCollapsible :: TitledPane -> Bool -> IO ()
+
+  native setContent :: TitledPane -> Node -> IO ()
+
+  native setExpanded :: TitledPane -> Bool -> IO ()
+
+

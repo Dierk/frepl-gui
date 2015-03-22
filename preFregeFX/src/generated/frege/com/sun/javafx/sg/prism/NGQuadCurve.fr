@@ -1,9 +1,0 @@
-data NGQuadCurve = pure native com.sun.javafx.sg.prism.NGQuadCurve where
-
-  pure native new :: () -> NGQuadCurve
-
-  pure native getShape :: NGQuadCurve -> Shape
-
-  pure native updateQuadCurve :: NGQuadCurve -> float -> float -> float -> float -> float -> float -> void
-
-

@@ -1,0 +1,26 @@
+data Separator = mutable native javafx.scene.control.Separator where
+
+  native new :: () -> IO Separator
+              | Orientation -> IO Separator
+
+  native getClassCssMetaData "javafx.scene.control.Separator.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getHalignment :: Separator -> IO HPos
+
+  native getOrientation :: Separator -> IO Orientation
+
+  native getValignment :: Separator -> IO VPos
+
+  native halignmentProperty :: Separator -> IO (ObjectProperty HPos)
+
+  native orientationProperty :: Separator -> IO (ObjectProperty Orientation)
+
+  native setHalignment :: Separator -> HPos -> IO ()
+
+  native setOrientation :: Separator -> Orientation -> IO ()
+
+  native setValignment :: Separator -> VPos -> IO ()
+
+  native valignmentProperty :: Separator -> IO (ObjectProperty VPos)
+
+

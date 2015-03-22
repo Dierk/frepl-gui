@@ -1,5 +1,0 @@
-data ShapeEvaluator = pure native com.sun.javafx.sg.prism.ShapeEvaluator where
-
-  pure native evaluate :: ShapeEvaluator -> Shape -> Shape -> float -> Shape
-
-

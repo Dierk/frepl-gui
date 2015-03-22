@@ -1,0 +1,117 @@
+data Window = mutable native javafx.stage.Window where
+
+  native addEventFilter :: Window -> EventType t -> EventHandler t -> IO ()
+
+  native addEventHandler :: Window -> EventType t -> EventHandler t -> IO ()
+
+  native buildEventDispatchChain :: Window -> EventDispatchChain -> IO EventDispatchChain
+
+  native centerOnScreen :: Window -> IO ()
+
+  native eventDispatcherProperty :: Window -> IO (ObjectProperty EventDispatcher)
+
+  native fireEvent :: Window -> Event -> IO ()
+
+  native focusedProperty :: Window -> IO ReadOnlyBooleanProperty
+
+  native getEventDispatcher :: Window -> IO EventDispatcher
+
+  native getHeight :: Window -> IO Double
+
+  native getOnCloseRequest :: Window -> IO (EventHandler WindowEvent)
+
+  native getOnHidden :: Window -> IO (EventHandler WindowEvent)
+
+  native getOnHiding :: Window -> IO (EventHandler WindowEvent)
+
+  native getOnShowing :: Window -> IO (EventHandler WindowEvent)
+
+  native getOnShown :: Window -> IO (EventHandler WindowEvent)
+
+  native getOpacity :: Window -> IO Double
+
+  native getProperties :: Window -> IO (ObservableMap Object Object)
+
+  native getScene :: Window -> IO Scene
+
+  native getUserData :: Window -> IO Object
+
+  native getWidth :: Window -> IO Double
+
+  native getX :: Window -> IO Double
+
+  native getY :: Window -> IO Double
+
+  native hasProperties :: Window -> IO Bool
+
+  native heightProperty :: Window -> IO ReadOnlyDoubleProperty
+
+  native hide :: Window -> IO ()
+
+  native impl_getMXWindowType :: Window -> IO String
+
+  native impl_getPeer :: Window -> IO TKStage
+
+  native impl_getWindows "javafx.stage.Window.impl_getWindows" :: () -> STMutable s (Iterator Window)
+
+  native isFocused :: Window -> IO Bool
+
+  native isShowing :: Window -> IO Bool
+
+  native onCloseRequestProperty :: Window -> IO (ObjectProperty (EventHandler WindowEvent))
+
+  native onHiddenProperty :: Window -> IO (ObjectProperty (EventHandler WindowEvent))
+
+  native onHidingProperty :: Window -> IO (ObjectProperty (EventHandler WindowEvent))
+
+  native onShowingProperty :: Window -> IO (ObjectProperty (EventHandler WindowEvent))
+
+  native onShownProperty :: Window -> IO (ObjectProperty (EventHandler WindowEvent))
+
+  native opacityProperty :: Window -> IO DoubleProperty
+
+  native removeEventFilter :: Window -> EventType t -> EventHandler t -> IO ()
+
+  native removeEventHandler :: Window -> EventType t -> EventHandler t -> IO ()
+
+  native requestFocus :: Window -> IO ()
+
+  native sceneProperty :: Window -> IO (ReadOnlyObjectProperty Scene)
+
+  native setEventDispatcher :: Window -> EventDispatcher -> IO ()
+
+  native setFocused :: Window -> Bool -> IO ()
+
+  native setHeight :: Window -> Double -> IO ()
+
+  native setOnCloseRequest :: Window -> EventHandler WindowEvent -> IO ()
+
+  native setOnHidden :: Window -> EventHandler WindowEvent -> IO ()
+
+  native setOnHiding :: Window -> EventHandler WindowEvent -> IO ()
+
+  native setOnShowing :: Window -> EventHandler WindowEvent -> IO ()
+
+  native setOnShown :: Window -> EventHandler WindowEvent -> IO ()
+
+  native setOpacity :: Window -> Double -> IO ()
+
+  native setUserData :: Window -> Object -> IO ()
+
+  native setWidth :: Window -> Double -> IO ()
+
+  native setX :: Window -> Double -> IO ()
+
+  native setY :: Window -> Double -> IO ()
+
+  native showingProperty :: Window -> IO ReadOnlyBooleanProperty
+
+  native sizeToScene :: Window -> IO ()
+
+  native widthProperty :: Window -> IO ReadOnlyDoubleProperty
+
+  native xProperty :: Window -> IO ReadOnlyDoubleProperty
+
+  native yProperty :: Window -> IO ReadOnlyDoubleProperty
+
+

@@ -1,0 +1,33 @@
+data TreeTableRow t = mutable native javafx.scene.control.TreeTableRow where
+
+  native new :: () -> IO (TreeTableRow t)
+
+  native cancelEdit :: TreeTableRow t -> IO ()
+
+  native commitEdit :: TreeTableRow t -> t -> IO ()
+
+  native disclosureNodeProperty :: TreeTableRow t -> IO (ObjectProperty Node)
+
+  native executeAccessibleAction :: TreeTableRow t -> AccessibleAction -> MutableIO (JArray Object) -> IO ()
+
+  native getDisclosureNode :: TreeTableRow t -> IO Node
+
+  native getTreeItem :: TreeTableRow t -> IO (TreeItem t)
+
+  native getTreeTableView :: TreeTableRow t -> IO (TreeTableView t)
+
+  native queryAccessibleAttribute :: TreeTableRow t -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native setDisclosureNode :: TreeTableRow t -> Node -> IO ()
+
+  native startEdit :: TreeTableRow t -> IO ()
+
+  native treeItemProperty :: TreeTableRow t -> IO (ReadOnlyObjectProperty (TreeItem t))
+
+  native treeTableViewProperty :: TreeTableRow t -> IO (ReadOnlyObjectProperty (TreeTableView t))
+
+  native updateTreeItem :: TreeTableRow t -> TreeItem t -> IO ()
+
+  native updateTreeTableView :: TreeTableRow t -> TreeTableView t -> IO ()
+
+

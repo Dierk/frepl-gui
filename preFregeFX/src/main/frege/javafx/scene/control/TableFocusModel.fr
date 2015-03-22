@@ -1,0 +1,15 @@
+data TableFocusModel t tc = mutable native javafx.scene.control.TableFocusModel where
+
+  native focus :: TableFocusModel t tc -> Int -> tc -> IO ()
+
+  native focusAboveCell :: TableFocusModel t tc -> IO ()
+
+  native focusBelowCell :: TableFocusModel t tc -> IO ()
+
+  native focusLeftCell :: TableFocusModel t tc -> IO ()
+
+  native focusRightCell :: TableFocusModel t tc -> IO ()
+
+  native isFocused :: TableFocusModel t tc -> Int -> tc -> IO Bool
+
+

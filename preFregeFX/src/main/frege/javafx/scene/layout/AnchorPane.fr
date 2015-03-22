@@ -1,0 +1,24 @@
+data AnchorPane = mutable native javafx.scene.layout.AnchorPane where
+
+  native new :: MutableIO (JArray Node) -> IO AnchorPane
+              | () -> IO AnchorPane
+
+  native clearConstraints "javafx.scene.layout.AnchorPane.clearConstraints" :: Node -> IO ()
+
+  native getBottomAnchor "javafx.scene.layout.AnchorPane.getBottomAnchor" :: Node -> IO Double
+
+  native getLeftAnchor "javafx.scene.layout.AnchorPane.getLeftAnchor" :: Node -> IO Double
+
+  native getRightAnchor "javafx.scene.layout.AnchorPane.getRightAnchor" :: Node -> IO Double
+
+  native getTopAnchor "javafx.scene.layout.AnchorPane.getTopAnchor" :: Node -> IO Double
+
+  native setBottomAnchor "javafx.scene.layout.AnchorPane.setBottomAnchor" :: Node -> Double -> IO ()
+
+  native setLeftAnchor "javafx.scene.layout.AnchorPane.setLeftAnchor" :: Node -> Double -> IO ()
+
+  native setRightAnchor "javafx.scene.layout.AnchorPane.setRightAnchor" :: Node -> Double -> IO ()
+
+  native setTopAnchor "javafx.scene.layout.AnchorPane.setTopAnchor" :: Node -> Double -> IO ()
+
+

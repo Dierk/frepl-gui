@@ -1,5 +1,0 @@
-data IDProperty = pure native com.sun.javafx.beans.IDProperty where
-
-  pure native value :: IDProperty -> String
-
-

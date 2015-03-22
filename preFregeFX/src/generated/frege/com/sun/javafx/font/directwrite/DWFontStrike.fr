@@ -1,5 +1,0 @@
-data DWFontStrike = pure native com.sun.javafx.font.directwrite.DWFontStrike where
-
-  pure native getQuantizedPosition :: DWFontStrike -> Point2D -> int
-
-

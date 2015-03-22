@@ -1,0 +1,24 @@
+data TextAreaBuilder b = mutable native javafx.scene.control.TextAreaBuilder where
+
+  native applyTo :: TextAreaBuilder b -> TextArea -> IO ()
+
+  native build :: TextAreaBuilder b -> IO TextArea
+
+  native create "javafx.scene.control.TextAreaBuilder.create" :: () -> IO (TextAreaBuilder Object)
+
+  native paragraphs :: TextAreaBuilder b -> MutableIO (Collection CharSequence) -> IO b
+                     | TextAreaBuilder b -> MutableIO (JArray CharSequence) -> IO b
+
+  native prefColumnCount :: TextAreaBuilder b -> Int -> IO b
+
+  native prefRowCount :: TextAreaBuilder b -> Int -> IO b
+
+  native promptText :: TextAreaBuilder b -> String -> IO b
+
+  native scrollLeft :: TextAreaBuilder b -> Double -> IO b
+
+  native scrollTop :: TextAreaBuilder b -> Double -> IO b
+
+  native wrapText :: TextAreaBuilder b -> Bool -> IO b
+
+

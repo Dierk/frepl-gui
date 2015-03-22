@@ -1,0 +1,75 @@
+data NumberExpression = mutable native javafx.beans.binding.NumberExpression where
+
+  native add :: NumberExpression -> Long -> IO NumberBinding
+              | NumberExpression -> Float -> IO NumberBinding
+              | NumberExpression -> Double -> IO NumberBinding
+              | NumberExpression -> ObservableNumberValue -> IO NumberBinding
+              | NumberExpression -> Int -> IO NumberBinding
+
+  native asString :: NumberExpression -> String -> IO StringBinding
+                   | NumberExpression -> Locale -> String -> IO StringBinding
+                   | NumberExpression -> IO StringBinding
+
+  native divide :: NumberExpression -> Long -> IO NumberBinding
+                 | NumberExpression -> Float -> IO NumberBinding
+                 | NumberExpression -> Int -> IO NumberBinding
+                 | NumberExpression -> ObservableNumberValue -> IO NumberBinding
+                 | NumberExpression -> Double -> IO NumberBinding
+
+  native greaterThan :: NumberExpression -> Float -> IO BooleanBinding
+                      | NumberExpression -> Int -> IO BooleanBinding
+                      | NumberExpression -> Double -> IO BooleanBinding
+                      | NumberExpression -> ObservableNumberValue -> IO BooleanBinding
+                      | NumberExpression -> Long -> IO BooleanBinding
+
+  native greaterThanOrEqualTo :: NumberExpression -> Int -> IO BooleanBinding
+                               | NumberExpression -> Long -> IO BooleanBinding
+                               | NumberExpression -> Float -> IO BooleanBinding
+                               | NumberExpression -> Double -> IO BooleanBinding
+                               | NumberExpression -> ObservableNumberValue -> IO BooleanBinding
+
+  native isEqualTo :: NumberExpression -> ObservableNumberValue -> IO BooleanBinding
+                    | NumberExpression -> Int -> Double -> IO BooleanBinding
+                    | NumberExpression -> Int -> IO BooleanBinding
+                    | NumberExpression -> Long -> Double -> IO BooleanBinding
+                    | NumberExpression -> Long -> IO BooleanBinding
+                    | NumberExpression -> Float -> Double -> IO BooleanBinding
+                    | NumberExpression -> Double -> Double -> IO BooleanBinding
+                    | NumberExpression -> ObservableNumberValue -> Double -> IO BooleanBinding
+
+  native isNotEqualTo :: NumberExpression -> Long -> IO BooleanBinding
+                       | NumberExpression -> Long -> Double -> IO BooleanBinding
+                       | NumberExpression -> Int -> IO BooleanBinding
+                       | NumberExpression -> Int -> Double -> IO BooleanBinding
+                       | NumberExpression -> ObservableNumberValue -> IO BooleanBinding
+                       | NumberExpression -> ObservableNumberValue -> Double -> IO BooleanBinding
+                       | NumberExpression -> Double -> Double -> IO BooleanBinding
+                       | NumberExpression -> Float -> Double -> IO BooleanBinding
+
+  native lessThan :: NumberExpression -> Float -> IO BooleanBinding
+                   | NumberExpression -> Double -> IO BooleanBinding
+                   | NumberExpression -> Int -> IO BooleanBinding
+                   | NumberExpression -> Long -> IO BooleanBinding
+                   | NumberExpression -> ObservableNumberValue -> IO BooleanBinding
+
+  native lessThanOrEqualTo :: NumberExpression -> Double -> IO BooleanBinding
+                            | NumberExpression -> Float -> IO BooleanBinding
+                            | NumberExpression -> ObservableNumberValue -> IO BooleanBinding
+                            | NumberExpression -> Int -> IO BooleanBinding
+                            | NumberExpression -> Long -> IO BooleanBinding
+
+  native multiply :: NumberExpression -> ObservableNumberValue -> IO NumberBinding
+                   | NumberExpression -> Double -> IO NumberBinding
+                   | NumberExpression -> Int -> IO NumberBinding
+                   | NumberExpression -> Float -> IO NumberBinding
+                   | NumberExpression -> Long -> IO NumberBinding
+
+  native negate :: NumberExpression -> IO NumberBinding
+
+  native subtract :: NumberExpression -> Float -> IO NumberBinding
+                   | NumberExpression -> ObservableNumberValue -> IO NumberBinding
+                   | NumberExpression -> Double -> IO NumberBinding
+                   | NumberExpression -> Long -> IO NumberBinding
+                   | NumberExpression -> Int -> IO NumberBinding
+
+

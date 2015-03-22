@@ -1,5 +1,0 @@
-data HyperlinkSkin = pure native com.sun.javafx.scene.control.skin.HyperlinkSkin where
-
-  native new :: Hyperlink -> IO HyperlinkSkin
-
-

@@ -1,0 +1,10 @@
+data JavaFXBuilderFactory = mutable native javafx.fxml.JavaFXBuilderFactory where
+
+  native new :: ClassLoader -> Bool -> IO JavaFXBuilderFactory
+              | ClassLoader -> IO JavaFXBuilderFactory
+              | Bool -> IO JavaFXBuilderFactory
+              | () -> IO JavaFXBuilderFactory
+
+  native getBuilder :: JavaFXBuilderFactory -> Class Object -> IO (Builder Object)
+
+

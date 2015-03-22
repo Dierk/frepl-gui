@@ -1,7 +1,0 @@
-data TKListener = pure native com.sun.javafx.tk.TKListener where
-
-  pure native changedTopLevelWindows :: TKListener -> List TKStage -> void
-
-  pure native exitedLastNestedLoop :: TKListener -> void
-
-

@@ -1,5 +1,0 @@
-data ChoiceBoxSkin t = pure native com.sun.javafx.scene.control.skin.ChoiceBoxSkin where
-
-  native new :: ChoiceBox t -> IO (ChoiceBoxSkin t)
-
-

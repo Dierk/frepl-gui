@@ -1,8 +1,0 @@
-data EventUtil = pure native com.sun.javafx.event.EventUtil where
-
-  pure native new :: () -> EventUtil
-
-  native fireEvent "com.sun.javafx.event.EventUtil.fireEvent" :: EventTarget -> Event -> IO Event
-                                                               | Event -> MutableIO (JArray EventTarget) -> IO Event
-
-

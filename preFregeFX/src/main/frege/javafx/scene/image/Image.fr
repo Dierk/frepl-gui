@@ -1,0 +1,50 @@
+data Image = mutable native javafx.scene.image.Image where
+
+  native new :: InputStream -> IO Image
+              | String -> Double -> Double -> Bool -> Bool -> Bool -> IO Image
+              | String -> Double -> Double -> Bool -> Bool -> IO Image
+              | String -> Bool -> IO Image
+              | String -> IO Image
+              | InputStream -> Double -> Double -> Bool -> Bool -> IO Image
+
+  native cancel :: Image -> IO ()
+
+  native errorProperty :: Image -> IO ReadOnlyBooleanProperty
+
+  native exceptionProperty :: Image -> IO (ReadOnlyObjectProperty Exception)
+
+  native getException :: Image -> IO Exception
+
+  native getHeight :: Image -> IO Double
+
+  native getPixelReader :: Image -> IO PixelReader
+
+  native getProgress :: Image -> IO Double
+
+  native getRequestedHeight :: Image -> IO Double
+
+  native getRequestedWidth :: Image -> IO Double
+
+  native getWidth :: Image -> IO Double
+
+  native heightProperty :: Image -> IO ReadOnlyDoubleProperty
+
+  native impl_fromPlatformImage "javafx.scene.image.Image.impl_fromPlatformImage" :: Object -> IO Image
+
+  native impl_getPlatformImage :: Image -> IO Object
+
+  native impl_getUrl :: Image -> IO String
+
+  native isBackgroundLoading :: Image -> IO Bool
+
+  native isError :: Image -> IO Bool
+
+  native isPreserveRatio :: Image -> IO Bool
+
+  native isSmooth :: Image -> IO Bool
+
+  native progressProperty :: Image -> IO ReadOnlyDoubleProperty
+
+  native widthProperty :: Image -> IO ReadOnlyDoubleProperty
+
+

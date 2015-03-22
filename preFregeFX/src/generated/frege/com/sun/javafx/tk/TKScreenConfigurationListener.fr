@@ -1,5 +1,0 @@
-data TKScreenConfigurationListener = pure native com.sun.javafx.tk.TKScreenConfigurationListener where
-
-  pure native screenConfigurationChanged :: TKScreenConfigurationListener -> void
-
-

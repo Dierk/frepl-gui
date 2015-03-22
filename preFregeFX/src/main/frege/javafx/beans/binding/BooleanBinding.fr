@@ -1,0 +1,21 @@
+data BooleanBinding = mutable native javafx.beans.binding.BooleanBinding where
+
+  native addListener :: BooleanBinding -> ChangeListener Boolean -> IO ()
+                      | BooleanBinding -> InvalidationListener -> IO ()
+
+  native dispose :: BooleanBinding -> IO ()
+
+  native get :: BooleanBinding -> IO Bool
+
+  native getDependencies :: BooleanBinding -> IO (ObservableList Object)
+
+  native invalidate :: BooleanBinding -> IO ()
+
+  native isValid :: BooleanBinding -> IO Bool
+
+  native removeListener :: BooleanBinding -> InvalidationListener -> IO ()
+                         | BooleanBinding -> ChangeListener Boolean -> IO ()
+
+  native toString :: BooleanBinding -> IO String
+
+

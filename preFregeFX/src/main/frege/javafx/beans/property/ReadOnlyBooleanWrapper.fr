@@ -1,0 +1,16 @@
+data ReadOnlyBooleanWrapper = mutable native javafx.beans.property.ReadOnlyBooleanWrapper where
+
+  native new :: Object -> String -> Bool -> IO ReadOnlyBooleanWrapper
+              | Object -> String -> IO ReadOnlyBooleanWrapper
+              | Bool -> IO ReadOnlyBooleanWrapper
+              | () -> IO ReadOnlyBooleanWrapper
+
+  native addListener :: ReadOnlyBooleanWrapper -> InvalidationListener -> IO ()
+                      | ReadOnlyBooleanWrapper -> ChangeListener Boolean -> IO ()
+
+  native getReadOnlyProperty :: ReadOnlyBooleanWrapper -> IO ReadOnlyBooleanProperty
+
+  native removeListener :: ReadOnlyBooleanWrapper -> ChangeListener Boolean -> IO ()
+                         | ReadOnlyBooleanWrapper -> InvalidationListener -> IO ()
+
+

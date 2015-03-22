@@ -1,0 +1,9 @@
+data Transition = mutable native javafx.animation.Transition where
+
+  native getInterpolator :: Transition -> IO Interpolator
+
+  native interpolatorProperty :: Transition -> IO (ObjectProperty Interpolator)
+
+  native setInterpolator :: Transition -> Interpolator -> IO ()
+
+

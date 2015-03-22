@@ -1,5 +1,0 @@
-data ListCellBehavior t = pure native com.sun.javafx.scene.control.behavior.ListCellBehavior where
-
-  native new :: ListCell t -> IO (ListCellBehavior t)
-
-

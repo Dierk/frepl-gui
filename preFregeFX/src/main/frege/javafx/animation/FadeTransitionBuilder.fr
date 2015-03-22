@@ -1,0 +1,19 @@
+data FadeTransitionBuilder = mutable native javafx.animation.FadeTransitionBuilder where
+
+  native applyTo :: FadeTransitionBuilder -> FadeTransition -> IO ()
+
+  native build :: FadeTransitionBuilder -> IO FadeTransition
+
+  native byValue :: FadeTransitionBuilder -> Double -> IO FadeTransitionBuilder
+
+  native create "javafx.animation.FadeTransitionBuilder.create" :: () -> IO FadeTransitionBuilder
+
+  native duration :: FadeTransitionBuilder -> Duration -> IO FadeTransitionBuilder
+
+  native fromValue :: FadeTransitionBuilder -> Double -> IO FadeTransitionBuilder
+
+  native node :: FadeTransitionBuilder -> Node -> IO FadeTransitionBuilder
+
+  native toValue :: FadeTransitionBuilder -> Double -> IO FadeTransitionBuilder
+
+

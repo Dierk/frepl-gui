@@ -1,7 +1,0 @@
-data PixelUtils = pure native com.sun.javafx.tk.quantum.PixelUtils where
-
-  pure native imageToPixels "com.sun.javafx.tk.quantum.PixelUtils.imageToPixels" :: Image -> Pixels
-
-  pure native pixelsToImage "com.sun.javafx.tk.quantum.PixelUtils.pixelsToImage" :: Pixels -> Image
-
-

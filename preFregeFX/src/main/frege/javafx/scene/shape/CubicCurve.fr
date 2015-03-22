@@ -1,0 +1,60 @@
+data CubicCurve = mutable native javafx.scene.shape.CubicCurve where
+
+  native new :: () -> IO CubicCurve
+              | Double -> Double -> Double -> Double -> Double -> Double -> Double -> Double -> IO CubicCurve
+
+  native controlX1Property :: CubicCurve -> IO DoubleProperty
+
+  native controlX2Property :: CubicCurve -> IO DoubleProperty
+
+  native controlY1Property :: CubicCurve -> IO DoubleProperty
+
+  native controlY2Property :: CubicCurve -> IO DoubleProperty
+
+  native endXProperty :: CubicCurve -> IO DoubleProperty
+
+  native endYProperty :: CubicCurve -> IO DoubleProperty
+
+  native getControlX1 :: CubicCurve -> IO Double
+
+  native getControlX2 :: CubicCurve -> IO Double
+
+  native getControlY1 :: CubicCurve -> IO Double
+
+  native getControlY2 :: CubicCurve -> IO Double
+
+  native getEndX :: CubicCurve -> IO Double
+
+  native getEndY :: CubicCurve -> IO Double
+
+  native getStartX :: CubicCurve -> IO Double
+
+  native getStartY :: CubicCurve -> IO Double
+
+  native impl_configShape :: CubicCurve -> IO CubicCurve2D
+
+  native impl_updatePeer :: CubicCurve -> IO ()
+
+  native setControlX1 :: CubicCurve -> Double -> IO ()
+
+  native setControlX2 :: CubicCurve -> Double -> IO ()
+
+  native setControlY1 :: CubicCurve -> Double -> IO ()
+
+  native setControlY2 :: CubicCurve -> Double -> IO ()
+
+  native setEndX :: CubicCurve -> Double -> IO ()
+
+  native setEndY :: CubicCurve -> Double -> IO ()
+
+  native setStartX :: CubicCurve -> Double -> IO ()
+
+  native setStartY :: CubicCurve -> Double -> IO ()
+
+  native startXProperty :: CubicCurve -> IO DoubleProperty
+
+  native startYProperty :: CubicCurve -> IO DoubleProperty
+
+  native toString :: CubicCurve -> IO String
+
+

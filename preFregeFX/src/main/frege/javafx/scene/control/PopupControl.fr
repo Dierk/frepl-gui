@@ -1,0 +1,96 @@
+data PopupControl = mutable native javafx.scene.control.PopupControl where
+
+  pure native use_pref_size "javafx.scene.control.PopupControl.USE_PREF_SIZE" :: Double
+  pure native use_computed_size "javafx.scene.control.PopupControl.USE_COMPUTED_SIZE" :: Double
+
+  native new :: () -> IO PopupControl
+
+  native getClassCssMetaData "javafx.scene.control.PopupControl.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getCssMetaData :: PopupControl -> IO (List (CssMetaData Styleable Object))
+
+  native getId :: PopupControl -> IO String
+
+  native getMaxHeight :: PopupControl -> IO Double
+
+  native getMaxWidth :: PopupControl -> IO Double
+
+  native getMinHeight :: PopupControl -> IO Double
+
+  native getMinWidth :: PopupControl -> IO Double
+
+  native getPrefHeight :: PopupControl -> IO Double
+
+  native getPrefWidth :: PopupControl -> IO Double
+
+  native getPseudoClassStates :: PopupControl -> IO (ObservableSet PseudoClass)
+
+  native getSkin :: PopupControl -> IO (Skin Object)
+
+  native getStyle :: PopupControl -> IO String
+
+  native getStyleClass :: PopupControl -> IO (ObservableList String)
+
+  native getStyleableParent :: PopupControl -> IO Styleable
+
+  native getTypeSelector :: PopupControl -> IO String
+
+  native idProperty :: PopupControl -> IO StringProperty
+
+  native impl_styleableGetNode :: PopupControl -> IO Node
+
+  native maxHeight :: PopupControl -> Double -> IO Double
+
+  native maxHeightProperty :: PopupControl -> IO DoubleProperty
+
+  native maxWidth :: PopupControl -> Double -> IO Double
+
+  native maxWidthProperty :: PopupControl -> IO DoubleProperty
+
+  native minHeight :: PopupControl -> Double -> IO Double
+
+  native minHeightProperty :: PopupControl -> IO DoubleProperty
+
+  native minWidth :: PopupControl -> Double -> IO Double
+
+  native minWidthProperty :: PopupControl -> IO DoubleProperty
+
+  native prefHeight :: PopupControl -> Double -> IO Double
+
+  native prefHeightProperty :: PopupControl -> IO DoubleProperty
+
+  native prefWidth :: PopupControl -> Double -> IO Double
+
+  native prefWidthProperty :: PopupControl -> IO DoubleProperty
+
+  native pseudoClassStateChanged :: PopupControl -> PseudoClass -> Bool -> IO ()
+
+  native setId :: PopupControl -> String -> IO ()
+
+  native setMaxHeight :: PopupControl -> Double -> IO ()
+
+  native setMaxSize :: PopupControl -> Double -> Double -> IO ()
+
+  native setMaxWidth :: PopupControl -> Double -> IO ()
+
+  native setMinHeight :: PopupControl -> Double -> IO ()
+
+  native setMinSize :: PopupControl -> Double -> Double -> IO ()
+
+  native setMinWidth :: PopupControl -> Double -> IO ()
+
+  native setPrefHeight :: PopupControl -> Double -> IO ()
+
+  native setPrefSize :: PopupControl -> Double -> Double -> IO ()
+
+  native setPrefWidth :: PopupControl -> Double -> IO ()
+
+  native setSkin :: PopupControl -> Skin Object -> IO ()
+
+  native setStyle :: PopupControl -> String -> IO ()
+
+  native skinProperty :: PopupControl -> IO (ObjectProperty (Skin Object))
+
+  native styleProperty :: PopupControl -> IO StringProperty
+
+

@@ -1,0 +1,93 @@
+data Axis t = mutable native javafx.scene.chart.Axis where
+
+  native animatedProperty :: Axis t -> IO BooleanProperty
+
+  native autoRangingProperty :: Axis t -> IO BooleanProperty
+
+  native getAnimated :: Axis t -> IO Bool
+
+  native getClassCssMetaData "javafx.scene.chart.Axis.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getCssMetaData :: Axis t -> IO (List (CssMetaData Styleable Object))
+
+  native getDisplayPosition :: Axis t -> t -> IO Double
+
+  native getLabel :: Axis t -> IO String
+
+  native getSide :: Axis t -> IO Side
+
+  native getTickLabelFill :: Axis t -> IO Paint
+
+  native getTickLabelFont :: Axis t -> IO Font
+
+  native getTickLabelGap :: Axis t -> IO Double
+
+  native getTickLabelRotation :: Axis t -> IO Double
+
+  native getTickLength :: Axis t -> IO Double
+
+  native getTickMarks :: Axis t -> IO (ObservableList (Axis_TickMark t))
+
+  native getValueForDisplay :: Axis t -> Double -> IO t
+
+  native getZeroPosition :: Axis t -> IO Double
+
+  native invalidateRange :: Axis t -> MutableIO (List t) -> IO ()
+
+  native isAutoRanging :: Axis t -> IO Bool
+
+  native isTickLabelsVisible :: Axis t -> IO Bool
+
+  native isTickMarkVisible :: Axis t -> IO Bool
+
+  native isValueOnAxis :: Axis t -> t -> IO Bool
+
+  native labelProperty :: Axis t -> IO (ObjectProperty String)
+
+  native requestAxisLayout :: Axis t -> IO ()
+
+  native requestLayout :: Axis t -> IO ()
+
+  native setAnimated :: Axis t -> Bool -> IO ()
+
+  native setAutoRanging :: Axis t -> Bool -> IO ()
+
+  native setLabel :: Axis t -> String -> IO ()
+
+  native setSide :: Axis t -> Side -> IO ()
+
+  native setTickLabelFill :: Axis t -> Paint -> IO ()
+
+  native setTickLabelFont :: Axis t -> Font -> IO ()
+
+  native setTickLabelGap :: Axis t -> Double -> IO ()
+
+  native setTickLabelRotation :: Axis t -> Double -> IO ()
+
+  native setTickLabelsVisible :: Axis t -> Bool -> IO ()
+
+  native setTickLength :: Axis t -> Double -> IO ()
+
+  native setTickMarkVisible :: Axis t -> Bool -> IO ()
+
+  native sideProperty :: Axis t -> IO (ObjectProperty Side)
+
+  native tickLabelFillProperty :: Axis t -> IO (ObjectProperty Paint)
+
+  native tickLabelFontProperty :: Axis t -> IO (ObjectProperty Font)
+
+  native tickLabelGapProperty :: Axis t -> IO DoubleProperty
+
+  native tickLabelRotationProperty :: Axis t -> IO DoubleProperty
+
+  native tickLabelsVisibleProperty :: Axis t -> IO BooleanProperty
+
+  native tickLengthProperty :: Axis t -> IO DoubleProperty
+
+  native tickMarkVisibleProperty :: Axis t -> IO BooleanProperty
+
+  native toNumericValue :: Axis t -> t -> IO Double
+
+  native toRealValue :: Axis t -> Double -> IO t
+
+

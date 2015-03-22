@@ -1,0 +1,18 @@
+data ReadOnlyMapWrapper k v = mutable native javafx.beans.property.ReadOnlyMapWrapper where
+
+  native new :: Object -> String -> ObservableMap k v -> IO (ReadOnlyMapWrapper k v)
+              | Object -> String -> IO (ReadOnlyMapWrapper k v)
+              | ObservableMap k v -> IO (ReadOnlyMapWrapper k v)
+              | () -> IO (ReadOnlyMapWrapper k v)
+
+  native addListener :: ReadOnlyMapWrapper k v -> InvalidationListener -> IO ()
+                      | ReadOnlyMapWrapper k v -> MapChangeListener k v -> IO ()
+                      | ReadOnlyMapWrapper k v -> ChangeListener (ObservableMap k v) -> IO ()
+
+  native getReadOnlyProperty :: ReadOnlyMapWrapper k v -> IO (ReadOnlyMapProperty k v)
+
+  native removeListener :: ReadOnlyMapWrapper k v -> InvalidationListener -> IO ()
+                         | ReadOnlyMapWrapper k v -> MapChangeListener k v -> IO ()
+                         | ReadOnlyMapWrapper k v -> ChangeListener (ObservableMap k v) -> IO ()
+
+

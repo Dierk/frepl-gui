@@ -1,0 +1,55 @@
+data PhongMaterial = mutable native javafx.scene.paint.PhongMaterial where
+
+  native new :: Color -> Image -> Image -> Image -> Image -> IO PhongMaterial
+              | Color -> IO PhongMaterial
+              | () -> IO PhongMaterial
+
+  native bumpMapProperty :: PhongMaterial -> IO (ObjectProperty Image)
+
+  native diffuseColorProperty :: PhongMaterial -> IO (ObjectProperty Color)
+
+  native diffuseMapProperty :: PhongMaterial -> IO (ObjectProperty Image)
+
+  native getBumpMap :: PhongMaterial -> IO Image
+
+  native getDiffuseColor :: PhongMaterial -> IO Color
+
+  native getDiffuseMap :: PhongMaterial -> IO Image
+
+  native getSelfIlluminationMap :: PhongMaterial -> IO Image
+
+  native getSpecularColor :: PhongMaterial -> IO Color
+
+  native getSpecularMap :: PhongMaterial -> IO Image
+
+  native getSpecularPower :: PhongMaterial -> IO Double
+
+  native impl_getNGMaterial :: PhongMaterial -> IO NGPhongMaterial
+
+  native impl_updatePG :: PhongMaterial -> IO ()
+
+  native selfIlluminationMapProperty :: PhongMaterial -> IO (ObjectProperty Image)
+
+  native setBumpMap :: PhongMaterial -> Image -> IO ()
+
+  native setDiffuseColor :: PhongMaterial -> Color -> IO ()
+
+  native setDiffuseMap :: PhongMaterial -> Image -> IO ()
+
+  native setSelfIlluminationMap :: PhongMaterial -> Image -> IO ()
+
+  native setSpecularColor :: PhongMaterial -> Color -> IO ()
+
+  native setSpecularMap :: PhongMaterial -> Image -> IO ()
+
+  native setSpecularPower :: PhongMaterial -> Double -> IO ()
+
+  native specularColorProperty :: PhongMaterial -> IO (ObjectProperty Color)
+
+  native specularMapProperty :: PhongMaterial -> IO (ObjectProperty Image)
+
+  native specularPowerProperty :: PhongMaterial -> IO DoubleProperty
+
+  native toString :: PhongMaterial -> IO String
+
+

@@ -1,5 +1,0 @@
-data FXVKCharEntities = pure native com.sun.javafx.scene.control.skin.FXVKCharEntities where
-
-  pure native get "com.sun.javafx.scene.control.skin.FXVKCharEntities.get" :: String -> String
-
-

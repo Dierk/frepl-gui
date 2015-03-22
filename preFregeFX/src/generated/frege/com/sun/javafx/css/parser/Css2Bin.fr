@@ -1,9 +1,0 @@
-data Css2Bin = pure native com.sun.javafx.css.parser.Css2Bin where
-
-  pure native new :: () -> Css2Bin
-
-  native convertToBinary "com.sun.javafx.css.parser.Css2Bin.convertToBinary" :: String -> String -> ST s void throws IOException
-
-  native main "com.sun.javafx.css.parser.Css2Bin.main" :: Mutable s (JArray String) -> ST s void throws Exception
-
-

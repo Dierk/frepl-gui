@@ -5,7 +5,7 @@ sources.eachFileRecurse { File file ->
     def name = file.path - base
     if (! name.endsWith(".java")) return
     if (! name.contains("javafx")) return
-//    if (name.contains("com/sun")) return
+    if (name.contains("com/sun")) return
 
     name -= ".java"
 

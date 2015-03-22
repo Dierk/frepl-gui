@@ -1,0 +1,23 @@
+data GridPaneBuilder b = mutable native javafx.scene.layout.GridPaneBuilder where
+
+  native alignment :: GridPaneBuilder b -> Pos -> IO b
+
+  native applyTo :: GridPaneBuilder b -> GridPane -> IO ()
+
+  native build :: GridPaneBuilder b -> IO GridPane
+
+  native columnConstraints :: GridPaneBuilder b -> MutableIO (Collection ColumnConstraints) -> IO b
+                            | GridPaneBuilder b -> MutableIO (JArray ColumnConstraints) -> IO b
+
+  native create "javafx.scene.layout.GridPaneBuilder.create" :: () -> IO (GridPaneBuilder Object)
+
+  native gridLinesVisible :: GridPaneBuilder b -> Bool -> IO b
+
+  native hgap :: GridPaneBuilder b -> Double -> IO b
+
+  native rowConstraints :: GridPaneBuilder b -> MutableIO (Collection RowConstraints) -> IO b
+                         | GridPaneBuilder b -> MutableIO (JArray RowConstraints) -> IO b
+
+  native vgap :: GridPaneBuilder b -> Double -> IO b
+
+

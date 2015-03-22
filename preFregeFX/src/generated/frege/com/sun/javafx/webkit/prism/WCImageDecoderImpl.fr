@@ -1,1 +1,0 @@
-data WCImageDecoderImpl = pure native com.sun.javafx.webkit.prism.WCImageDecoderImpl

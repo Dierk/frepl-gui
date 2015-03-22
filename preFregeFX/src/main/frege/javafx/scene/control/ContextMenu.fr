@@ -1,0 +1,25 @@
+data ContextMenu = mutable native javafx.scene.control.ContextMenu where
+
+  native new :: () -> IO ContextMenu
+              | MutableIO (JArray MenuItem) -> IO ContextMenu
+
+  native getItems :: ContextMenu -> IO (ObservableList MenuItem)
+
+  native getOnAction :: ContextMenu -> IO (EventHandler ActionEvent)
+
+  native hide :: ContextMenu -> IO ()
+
+  native impl_showRelativeToWindowProperty :: ContextMenu -> IO BooleanProperty
+
+  native isImpl_showRelativeToWindow :: ContextMenu -> IO Bool
+
+  native onActionProperty :: ContextMenu -> IO (ObjectProperty (EventHandler ActionEvent))
+
+  native setImpl_showRelativeToWindow :: ContextMenu -> Bool -> IO ()
+
+  native setOnAction :: ContextMenu -> EventHandler ActionEvent -> IO ()
+
+  native show :: ContextMenu -> Node -> Side -> Double -> Double -> IO ()
+               | ContextMenu -> Node -> Double -> Double -> IO ()
+
+

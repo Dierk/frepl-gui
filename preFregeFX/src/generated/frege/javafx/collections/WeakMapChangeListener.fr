@@ -1,9 +1,0 @@
-data WeakMapChangeListener k v = mutable native javafx.collections.WeakMapChangeListener where
-
-  native new :: MapChangeListener k v -> IO (WeakMapChangeListener k v)
-
-  native onChanged :: WeakMapChangeListener k v -> MapChangeListener_Change k v -> IO void
-
-  native wasGarbageCollected :: WeakMapChangeListener k v -> IO boolean
-
-

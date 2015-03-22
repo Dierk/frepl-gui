@@ -1,0 +1,40 @@
+data FloatExpression = mutable native javafx.beans.binding.FloatExpression where
+
+  native add :: FloatExpression -> Double -> IO DoubleBinding
+              | FloatExpression -> Float -> IO FloatBinding
+              | FloatExpression -> Long -> IO FloatBinding
+              | FloatExpression -> Int -> IO FloatBinding
+
+  native asObject :: FloatExpression -> IO (ObjectExpression Float)
+
+  native divide :: FloatExpression -> Int -> IO FloatBinding
+                 | FloatExpression -> Long -> IO FloatBinding
+                 | FloatExpression -> Double -> IO DoubleBinding
+                 | FloatExpression -> Float -> IO FloatBinding
+
+  native doubleValue :: FloatExpression -> IO Double
+
+  native floatExpression "javafx.beans.binding.FloatExpression.floatExpression" :: ObservableValue t -> IO FloatExpression
+                                                                                 | ObservableFloatValue -> IO FloatExpression
+
+  native floatValue :: FloatExpression -> IO Float
+
+  native getValue :: FloatExpression -> IO Float
+
+  native intValue :: FloatExpression -> IO Int
+
+  native longValue :: FloatExpression -> IO Long
+
+  native multiply :: FloatExpression -> Float -> IO FloatBinding
+                   | FloatExpression -> Long -> IO FloatBinding
+                   | FloatExpression -> Int -> IO FloatBinding
+                   | FloatExpression -> Double -> IO DoubleBinding
+
+  native negate :: FloatExpression -> IO FloatBinding
+
+  native subtract :: FloatExpression -> Float -> IO FloatBinding
+                   | FloatExpression -> Int -> IO FloatBinding
+                   | FloatExpression -> Long -> IO FloatBinding
+                   | FloatExpression -> Double -> IO DoubleBinding
+
+

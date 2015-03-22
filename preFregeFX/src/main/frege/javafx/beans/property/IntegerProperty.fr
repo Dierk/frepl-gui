@@ -1,0 +1,15 @@
+data IntegerProperty = mutable native javafx.beans.property.IntegerProperty where
+
+  native asObject :: IntegerProperty -> IO (ObjectProperty Integer)
+
+  native bindBidirectional :: IntegerProperty -> Property Number -> IO ()
+
+  native integerProperty "javafx.beans.property.IntegerProperty.integerProperty" :: Property Integer -> IO IntegerProperty
+
+  native setValue :: IntegerProperty -> Number -> IO ()
+
+  native toString :: IntegerProperty -> IO String
+
+  native unbindBidirectional :: IntegerProperty -> Property Number -> IO ()
+
+

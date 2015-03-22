@@ -1,0 +1,43 @@
+data Parent = mutable native javafx.scene.Parent where
+
+  native getBaselineOffset :: Parent -> IO Double
+
+  native getChildrenUnmodifiable :: Parent -> IO (ObservableList Node)
+
+  native getImpl_traversalEngine :: Parent -> IO ParentTraversalEngine
+
+  native getStylesheets :: Parent -> IO (ObservableList String)
+
+  native impl_computeGeomBounds :: Parent -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_getAllParentStylesheets :: Parent -> IO (List String)
+
+  native impl_processMXNode :: Parent -> MXNodeAlgorithm -> MXNodeAlgorithmContext -> IO Object
+
+  native impl_traversalEngineProperty :: Parent -> IO (ObjectProperty ParentTraversalEngine)
+
+  native impl_updatePeer :: Parent -> IO ()
+
+  native isNeedsLayout :: Parent -> IO Bool
+
+  native layout :: Parent -> IO ()
+
+  native lookup :: Parent -> String -> IO Node
+
+  native minHeight :: Parent -> Double -> IO Double
+
+  native minWidth :: Parent -> Double -> IO Double
+
+  native needsLayoutProperty :: Parent -> IO ReadOnlyBooleanProperty
+
+  native prefHeight :: Parent -> Double -> IO Double
+
+  native prefWidth :: Parent -> Double -> IO Double
+
+  native queryAccessibleAttribute :: Parent -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native requestLayout :: Parent -> IO ()
+
+  native setImpl_traversalEngine :: Parent -> ParentTraversalEngine -> IO ()
+
+

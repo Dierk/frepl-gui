@@ -1,0 +1,65 @@
+data JobSettings = mutable native javafx.print.JobSettings where
+
+  native collationProperty :: JobSettings -> IO (ObjectProperty Collation)
+
+  native copiesProperty :: JobSettings -> IO IntegerProperty
+
+  native getCollation :: JobSettings -> IO Collation
+
+  native getCopies :: JobSettings -> IO Int
+
+  native getJobName :: JobSettings -> IO String
+
+  native getPageLayout :: JobSettings -> IO PageLayout
+
+  native getPageRanges :: JobSettings -> IO (JArray PageRange)
+
+  native getPaperSource :: JobSettings -> IO PaperSource
+
+  native getPrintColor :: JobSettings -> IO PrintColor
+
+  native getPrintQuality :: JobSettings -> IO PrintQuality
+
+  native getPrintResolution :: JobSettings -> IO PrintResolution
+
+  native getPrintSides :: JobSettings -> IO PrintSides
+
+  native jobNameProperty :: JobSettings -> IO StringProperty
+
+  native pageLayoutProperty :: JobSettings -> IO (ObjectProperty PageLayout)
+
+  native pageRangesProperty :: JobSettings -> IO ObjectProperty
+
+  native paperSourceProperty :: JobSettings -> IO (ObjectProperty PaperSource)
+
+  native printColorProperty :: JobSettings -> IO (ObjectProperty PrintColor)
+
+  native printQualityProperty :: JobSettings -> IO (ObjectProperty PrintQuality)
+
+  native printResolutionProperty :: JobSettings -> IO (ObjectProperty PrintResolution)
+
+  native printSidesProperty :: JobSettings -> IO (ObjectProperty PrintSides)
+
+  native setCollation :: JobSettings -> Collation -> IO ()
+
+  native setCopies :: JobSettings -> Int -> IO ()
+
+  native setJobName :: JobSettings -> String -> IO ()
+
+  native setPageLayout :: JobSettings -> PageLayout -> IO ()
+
+  native setPageRanges :: JobSettings -> MutableIO (JArray PageRange) -> IO ()
+
+  native setPaperSource :: JobSettings -> PaperSource -> IO ()
+
+  native setPrintColor :: JobSettings -> PrintColor -> IO ()
+
+  native setPrintQuality :: JobSettings -> PrintQuality -> IO ()
+
+  native setPrintResolution :: JobSettings -> PrintResolution -> IO ()
+
+  native setPrintSides :: JobSettings -> PrintSides -> IO ()
+
+  native toString :: JobSettings -> IO String
+
+

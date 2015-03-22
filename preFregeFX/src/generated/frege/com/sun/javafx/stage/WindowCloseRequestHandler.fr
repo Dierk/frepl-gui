@@ -1,7 +1,0 @@
-data WindowCloseRequestHandler = pure native com.sun.javafx.stage.WindowCloseRequestHandler where
-
-  native new :: Window -> IO WindowCloseRequestHandler
-
-  native dispatchBubblingEvent :: WindowCloseRequestHandler -> Event -> IO Event
-
-

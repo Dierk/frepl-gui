@@ -1,9 +1,0 @@
-data AbstractRemoteResource t = pure native com.sun.javafx.runtime.async.AbstractRemoteResource where
-
-  native call :: AbstractRemoteResource t -> ST s t throws IOException
-
-  pure native getResponseHeader :: AbstractRemoteResource t -> String -> String
-
-  pure native setHeader :: AbstractRemoteResource t -> String -> String -> void
-
-

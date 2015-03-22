@@ -1,5 +1,0 @@
-data BoundsAccessor = pure native com.sun.javafx.scene.BoundsAccessor where
-
-  native getGeomBounds :: BoundsAccessor -> BaseBounds -> BaseTransform -> Node -> IO BaseBounds
-
-

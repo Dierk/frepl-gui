@@ -1,0 +1,13 @@
+data DirectoryChooserBuilder = mutable native javafx.stage.DirectoryChooserBuilder where
+
+  native applyTo :: DirectoryChooserBuilder -> DirectoryChooser -> IO ()
+
+  native build :: DirectoryChooserBuilder -> IO DirectoryChooser
+
+  native create "javafx.stage.DirectoryChooserBuilder.create" :: () -> IO DirectoryChooserBuilder
+
+  native initialDirectory :: DirectoryChooserBuilder -> File -> IO DirectoryChooserBuilder
+
+  native title :: DirectoryChooserBuilder -> String -> IO DirectoryChooserBuilder
+
+

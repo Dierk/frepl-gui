@@ -1,0 +1,25 @@
+data ObservableIntegerArray = mutable native javafx.collections.ObservableIntegerArray where
+
+  native addAll :: ObservableIntegerArray -> ObservableIntegerArray -> Int -> Int -> IO ()
+                 | ObservableIntegerArray -> MutableIO (JArray Int) -> Int -> Int -> IO ()
+                 | ObservableIntegerArray -> ObservableIntegerArray -> IO ()
+                 | ObservableIntegerArray -> MutableIO (JArray Int) -> IO ()
+
+  native copyTo :: ObservableIntegerArray -> Int -> ObservableIntegerArray -> Int -> Int -> IO ()
+                 | ObservableIntegerArray -> Int -> MutableIO (JArray Int) -> Int -> Int -> IO ()
+
+  native get :: ObservableIntegerArray -> Int -> IO Int
+
+  native set :: ObservableIntegerArray -> Int -> ObservableIntegerArray -> Int -> Int -> IO ()
+              | ObservableIntegerArray -> Int -> MutableIO (JArray Int) -> Int -> Int -> IO ()
+              | ObservableIntegerArray -> Int -> Int -> IO ()
+
+  native setAll :: ObservableIntegerArray -> ObservableIntegerArray -> Int -> Int -> IO ()
+                 | ObservableIntegerArray -> MutableIO (JArray Int) -> IO ()
+                 | ObservableIntegerArray -> MutableIO (JArray Int) -> Int -> Int -> IO ()
+                 | ObservableIntegerArray -> ObservableIntegerArray -> IO ()
+
+  native toArray :: ObservableIntegerArray -> Int -> MutableIO (JArray Int) -> Int -> IO (JArray Int)
+                  | ObservableIntegerArray -> MutableIO (JArray Int) -> IO (JArray Int)
+
+

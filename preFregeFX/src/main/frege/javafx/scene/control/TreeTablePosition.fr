@@ -1,0 +1,13 @@
+data TreeTablePosition s t = mutable native javafx.scene.control.TreeTablePosition where
+
+  native new :: TreeTableView s -> Int -> TreeTableColumn s t -> IO (TreeTablePosition s t)
+
+  native getColumn :: TreeTablePosition s t -> IO Int
+
+  native getTableColumn :: TreeTablePosition s t -> IO (TreeTableColumn s t)
+
+  native getTreeItem :: TreeTablePosition s t -> IO (TreeItem s)
+
+  native getTreeTableView :: TreeTablePosition s t -> IO (TreeTableView s)
+
+

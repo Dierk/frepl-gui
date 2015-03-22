@@ -1,0 +1,31 @@
+data LabeledBuilder b = mutable native javafx.scene.control.LabeledBuilder where
+
+  native alignment :: LabeledBuilder b -> Pos -> IO b
+
+  native applyTo :: LabeledBuilder b -> Labeled -> IO ()
+
+  native contentDisplay :: LabeledBuilder b -> ContentDisplay -> IO b
+
+  native ellipsisString :: LabeledBuilder b -> String -> IO b
+
+  native font :: LabeledBuilder b -> Font -> IO b
+
+  native graphic :: LabeledBuilder b -> Node -> IO b
+
+  native graphicTextGap :: LabeledBuilder b -> Double -> IO b
+
+  native mnemonicParsing :: LabeledBuilder b -> Bool -> IO b
+
+  native text :: LabeledBuilder b -> String -> IO b
+
+  native textAlignment :: LabeledBuilder b -> TextAlignment -> IO b
+
+  native textFill :: LabeledBuilder b -> Paint -> IO b
+
+  native textOverrun :: LabeledBuilder b -> OverrunStyle -> IO b
+
+  native underline :: LabeledBuilder b -> Bool -> IO b
+
+  native wrapText :: LabeledBuilder b -> Bool -> IO b
+
+

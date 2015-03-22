@@ -1,0 +1,21 @@
+data RotateTransitionBuilder = mutable native javafx.animation.RotateTransitionBuilder where
+
+  native applyTo :: RotateTransitionBuilder -> RotateTransition -> IO ()
+
+  native axis :: RotateTransitionBuilder -> Point3D -> IO RotateTransitionBuilder
+
+  native build :: RotateTransitionBuilder -> IO RotateTransition
+
+  native byAngle :: RotateTransitionBuilder -> Double -> IO RotateTransitionBuilder
+
+  native create "javafx.animation.RotateTransitionBuilder.create" :: () -> IO RotateTransitionBuilder
+
+  native duration :: RotateTransitionBuilder -> Duration -> IO RotateTransitionBuilder
+
+  native fromAngle :: RotateTransitionBuilder -> Double -> IO RotateTransitionBuilder
+
+  native node :: RotateTransitionBuilder -> Node -> IO RotateTransitionBuilder
+
+  native toAngle :: RotateTransitionBuilder -> Double -> IO RotateTransitionBuilder
+
+

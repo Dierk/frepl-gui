@@ -1,0 +1,11 @@
+data ReadOnlySetPropertyBase e = mutable native javafx.beans.property.ReadOnlySetPropertyBase where
+
+  native addListener :: ReadOnlySetPropertyBase e -> ChangeListener (ObservableSet e) -> IO ()
+                      | ReadOnlySetPropertyBase e -> SetChangeListener e -> IO ()
+                      | ReadOnlySetPropertyBase e -> InvalidationListener -> IO ()
+
+  native removeListener :: ReadOnlySetPropertyBase e -> SetChangeListener e -> IO ()
+                         | ReadOnlySetPropertyBase e -> ChangeListener (ObservableSet e) -> IO ()
+                         | ReadOnlySetPropertyBase e -> InvalidationListener -> IO ()
+
+

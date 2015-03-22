@@ -1,7 +1,0 @@
-data BytePixelGetter = pure native com.sun.javafx.image.BytePixelGetter where
-
-  native getArgb :: BytePixelGetter -> Mutable s (JArray byte) -> int -> ST s int
-
-  native getArgbPre :: BytePixelGetter -> Mutable s (JArray byte) -> int -> ST s int
-
-

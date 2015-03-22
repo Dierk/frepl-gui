@@ -1,0 +1,37 @@
+data Cell t = mutable native javafx.scene.control.Cell where
+
+  native new :: () -> IO (Cell t)
+
+  native cancelEdit :: Cell t -> IO ()
+
+  native commitEdit :: Cell t -> t -> IO ()
+
+  native editableProperty :: Cell t -> IO BooleanProperty
+
+  native editingProperty :: Cell t -> IO ReadOnlyBooleanProperty
+
+  native emptyProperty :: Cell t -> IO ReadOnlyBooleanProperty
+
+  native getItem :: Cell t -> IO t
+
+  native isEditable :: Cell t -> IO Bool
+
+  native isEditing :: Cell t -> IO Bool
+
+  native isEmpty :: Cell t -> IO Bool
+
+  native isSelected :: Cell t -> IO Bool
+
+  native itemProperty :: Cell t -> IO (ObjectProperty t)
+
+  native selectedProperty :: Cell t -> IO ReadOnlyBooleanProperty
+
+  native setEditable :: Cell t -> Bool -> IO ()
+
+  native setItem :: Cell t -> t -> IO ()
+
+  native startEdit :: Cell t -> IO ()
+
+  native updateSelected :: Cell t -> Bool -> IO ()
+
+

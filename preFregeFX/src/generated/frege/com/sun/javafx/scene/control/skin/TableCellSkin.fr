@@ -1,5 +1,0 @@
-data TableCellSkin s t = pure native com.sun.javafx.scene.control.skin.TableCellSkin where
-
-  native new :: TableCell s t -> IO (TableCellSkin s t)
-
-

@@ -1,0 +1,24 @@
+data BackgroundPosition = mutable native javafx.scene.layout.BackgroundPosition where
+
+  native default "javafx.scene.layout.BackgroundPosition.DEFAULT" :: IO BackgroundPosition
+  native center "javafx.scene.layout.BackgroundPosition.CENTER" :: IO BackgroundPosition
+
+  native new :: Side -> Double -> Bool -> Side -> Double -> Bool -> IO BackgroundPosition
+
+  native equals :: BackgroundPosition -> Object -> IO Bool
+
+  native getHorizontalPosition :: BackgroundPosition -> IO Double
+
+  native getHorizontalSide :: BackgroundPosition -> IO Side
+
+  native getVerticalPosition :: BackgroundPosition -> IO Double
+
+  native getVerticalSide :: BackgroundPosition -> IO Side
+
+  native hashCode :: BackgroundPosition -> IO Int
+
+  native isHorizontalAsPercentage :: BackgroundPosition -> IO Bool
+
+  native isVerticalAsPercentage :: BackgroundPosition -> IO Bool
+
+

@@ -1,9 +1,0 @@
-data SceneUtils = pure native com.sun.javafx.scene.SceneUtils where
-
-  pure native new :: () -> SceneUtils
-
-  native sceneToSubScenePlane "com.sun.javafx.scene.SceneUtils.sceneToSubScenePlane" :: SubScene -> Point2D -> IO Point2D
-
-  native subSceneToScene "com.sun.javafx.scene.SceneUtils.subSceneToScene" :: SubScene -> Point3D -> IO Point3D
-
-

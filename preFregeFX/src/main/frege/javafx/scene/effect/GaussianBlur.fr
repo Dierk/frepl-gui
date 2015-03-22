@@ -1,0 +1,22 @@
+data GaussianBlur = mutable native javafx.scene.effect.GaussianBlur where
+
+  native new :: () -> IO GaussianBlur
+              | Double -> IO GaussianBlur
+
+  native getInput :: GaussianBlur -> IO Effect
+
+  native getRadius :: GaussianBlur -> IO Double
+
+  native impl_copy :: GaussianBlur -> IO Effect
+
+  native impl_getBounds :: GaussianBlur -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: GaussianBlur -> IO (ObjectProperty Effect)
+
+  native radiusProperty :: GaussianBlur -> IO DoubleProperty
+
+  native setInput :: GaussianBlur -> Effect -> IO ()
+
+  native setRadius :: GaussianBlur -> Double -> IO ()
+
+

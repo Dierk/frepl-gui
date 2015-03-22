@@ -1,5 +1,0 @@
-data TableRowBehaviorBase t = pure native com.sun.javafx.scene.control.behavior.TableRowBehaviorBase where
-
-  native mousePressed :: TableRowBehaviorBase t -> MouseEvent -> IO void
-
-

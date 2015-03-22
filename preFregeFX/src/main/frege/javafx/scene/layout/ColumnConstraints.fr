@@ -1,0 +1,52 @@
+data ColumnConstraints = mutable native javafx.scene.layout.ColumnConstraints where
+
+  native new :: Double -> Double -> Double -> Priority -> HPos -> Bool -> IO ColumnConstraints
+              | Double -> Double -> Double -> IO ColumnConstraints
+              | Double -> IO ColumnConstraints
+              | () -> IO ColumnConstraints
+
+  native fillWidthProperty :: ColumnConstraints -> IO BooleanProperty
+
+  native getHalignment :: ColumnConstraints -> IO HPos
+
+  native getHgrow :: ColumnConstraints -> IO Priority
+
+  native getMaxWidth :: ColumnConstraints -> IO Double
+
+  native getMinWidth :: ColumnConstraints -> IO Double
+
+  native getPercentWidth :: ColumnConstraints -> IO Double
+
+  native getPrefWidth :: ColumnConstraints -> IO Double
+
+  native halignmentProperty :: ColumnConstraints -> IO (ObjectProperty HPos)
+
+  native hgrowProperty :: ColumnConstraints -> IO (ObjectProperty Priority)
+
+  native isFillWidth :: ColumnConstraints -> IO Bool
+
+  native maxWidthProperty :: ColumnConstraints -> IO DoubleProperty
+
+  native minWidthProperty :: ColumnConstraints -> IO DoubleProperty
+
+  native percentWidthProperty :: ColumnConstraints -> IO DoubleProperty
+
+  native prefWidthProperty :: ColumnConstraints -> IO DoubleProperty
+
+  native setFillWidth :: ColumnConstraints -> Bool -> IO ()
+
+  native setHalignment :: ColumnConstraints -> HPos -> IO ()
+
+  native setHgrow :: ColumnConstraints -> Priority -> IO ()
+
+  native setMaxWidth :: ColumnConstraints -> Double -> IO ()
+
+  native setMinWidth :: ColumnConstraints -> Double -> IO ()
+
+  native setPercentWidth :: ColumnConstraints -> Double -> IO ()
+
+  native setPrefWidth :: ColumnConstraints -> Double -> IO ()
+
+  native toString :: ColumnConstraints -> IO String
+
+

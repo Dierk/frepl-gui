@@ -1,7 +1,0 @@
-data Eula = pure native com.sun.javafx.runtime.eula.Eula where
-
-  pure native accept :: Eula -> void
-
-  pure native show :: Eula -> boolean
-
-

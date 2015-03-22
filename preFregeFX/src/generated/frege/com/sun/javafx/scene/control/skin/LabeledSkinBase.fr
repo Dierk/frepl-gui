@@ -1,7 +1,0 @@
-data LabeledSkinBase c b = pure native com.sun.javafx.scene.control.skin.LabeledSkinBase where
-
-  pure native bindings "".bindings"" :: LabeledSkinBase c b -> TextBinding
-
-  pure native computeBaselineOffset :: LabeledSkinBase c b -> double -> double -> double -> double -> double
-
-

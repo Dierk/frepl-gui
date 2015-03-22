@@ -1,9 +1,0 @@
-data EmbeddedWindow = pure native com.sun.javafx.stage.EmbeddedWindow where
-
-  pure native new :: HostInterface -> EmbeddedWindow
-
-  native setScene :: EmbeddedWindow -> Scene -> IO void
-
-  pure native show :: EmbeddedWindow -> void
-
-

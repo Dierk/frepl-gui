@@ -1,0 +1,23 @@
+data KeyFrame = mutable native javafx.animation.KeyFrame where
+
+  native new :: Duration -> String -> EventHandler ActionEvent -> MutableIO (Collection KeyValue) -> IO KeyFrame
+              | Duration -> String -> EventHandler ActionEvent -> MutableIO (JArray KeyValue) -> IO KeyFrame
+              | Duration -> String -> MutableIO (JArray KeyValue) -> IO KeyFrame
+              | Duration -> MutableIO (JArray KeyValue) -> IO KeyFrame
+              | Duration -> EventHandler ActionEvent -> MutableIO (JArray KeyValue) -> IO KeyFrame
+
+  native equals :: KeyFrame -> Object -> IO Bool
+
+  native getName :: KeyFrame -> IO String
+
+  native getOnFinished :: KeyFrame -> IO (EventHandler ActionEvent)
+
+  native getTime :: KeyFrame -> IO Duration
+
+  native getValues :: KeyFrame -> IO (Set KeyValue)
+
+  native hashCode :: KeyFrame -> IO Int
+
+  native toString :: KeyFrame -> IO String
+
+

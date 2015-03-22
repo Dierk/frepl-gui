@@ -1,0 +1,16 @@
+data VertexFormat = mutable native javafx.scene.shape.VertexFormat where
+
+  native point_texcoord "javafx.scene.shape.VertexFormat.POINT_TEXCOORD" :: IO VertexFormat
+  native point_normal_texcoord "javafx.scene.shape.VertexFormat.POINT_NORMAL_TEXCOORD" :: IO VertexFormat
+
+  native getNormalIndexOffset :: VertexFormat -> IO Int
+
+  native getPointIndexOffset :: VertexFormat -> IO Int
+
+  native getTexCoordIndexOffset :: VertexFormat -> IO Int
+
+  native getVertexIndexSize :: VertexFormat -> IO Int
+
+  native toString :: VertexFormat -> IO String
+
+

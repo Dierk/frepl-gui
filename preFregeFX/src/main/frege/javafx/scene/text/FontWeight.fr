@@ -1,0 +1,24 @@
+data FontWeight = mutable native javafx.scene.text.FontWeight where
+
+  native thin "javafx.scene.text.FontWeight.THIN" :: IO FontWeight
+  native extra_light "javafx.scene.text.FontWeight.EXTRA_LIGHT" :: IO FontWeight
+  native light "javafx.scene.text.FontWeight.LIGHT" :: IO FontWeight
+  native normal "javafx.scene.text.FontWeight.NORMAL" :: IO FontWeight
+  native medium "javafx.scene.text.FontWeight.MEDIUM" :: IO FontWeight
+  native semi_bold "javafx.scene.text.FontWeight.SEMI_BOLD" :: IO FontWeight
+  native bold "javafx.scene.text.FontWeight.BOLD" :: IO FontWeight
+  native extra_bold "javafx.scene.text.FontWeight.EXTRA_BOLD" :: IO FontWeight
+  native black "javafx.scene.text.FontWeight.BLACK" :: IO FontWeight
+
+  native findByName "javafx.scene.text.FontWeight.findByName" :: String -> IO FontWeight
+
+  native findByWeight "javafx.scene.text.FontWeight.findByWeight" :: Int -> IO FontWeight
+
+  native getWeight :: FontWeight -> IO Int
+
+  native valueOf "javafx.scene.text.FontWeight.valueOf" :: String -> IO FontWeight
+
+  native values "javafx.scene.text.FontWeight.values" :: () -> STMutable s (JArray FontWeight)
+
+derive Serializable FontWeight
+

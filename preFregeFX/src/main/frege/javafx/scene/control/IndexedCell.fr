@@ -1,0 +1,11 @@
+data IndexedCell t = mutable native javafx.scene.control.IndexedCell where
+
+  native new :: () -> IO (IndexedCell t)
+
+  native getIndex :: IndexedCell t -> IO Int
+
+  native indexProperty :: IndexedCell t -> IO ReadOnlyIntegerProperty
+
+  native updateIndex :: IndexedCell t -> Int -> IO ()
+
+

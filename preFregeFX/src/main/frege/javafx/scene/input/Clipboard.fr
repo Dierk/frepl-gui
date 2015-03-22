@@ -1,0 +1,41 @@
+data Clipboard = mutable native javafx.scene.input.Clipboard where
+
+  native clear :: Clipboard -> IO ()
+
+  native getContent :: Clipboard -> DataFormat -> IO Object
+
+  native getContentTypes :: Clipboard -> IO (Set DataFormat)
+
+  native getFiles :: Clipboard -> IO (List File)
+
+  native getHtml :: Clipboard -> IO String
+
+  native getImage :: Clipboard -> IO Image
+
+  native getRtf :: Clipboard -> IO String
+
+  native getString :: Clipboard -> IO String
+
+  native getSystemClipboard "javafx.scene.input.Clipboard.getSystemClipboard" :: () -> IO Clipboard
+
+  native getUrl :: Clipboard -> IO String
+
+  native hasContent :: Clipboard -> DataFormat -> IO Bool
+
+  native hasFiles :: Clipboard -> IO Bool
+
+  native hasHtml :: Clipboard -> IO Bool
+
+  native hasImage :: Clipboard -> IO Bool
+
+  native hasRtf :: Clipboard -> IO Bool
+
+  native hasString :: Clipboard -> IO Bool
+
+  native hasUrl :: Clipboard -> IO Bool
+
+  native impl_contentPut :: Clipboard -> IO Bool
+
+  native setContent :: Clipboard -> MutableIO (Map DataFormat Object) -> IO Bool
+
+

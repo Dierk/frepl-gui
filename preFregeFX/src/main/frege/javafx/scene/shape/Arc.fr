@@ -1,0 +1,54 @@
+data Arc = mutable native javafx.scene.shape.Arc where
+
+  native new :: () -> IO Arc
+              | Double -> Double -> Double -> Double -> Double -> Double -> IO Arc
+
+  native centerXProperty :: Arc -> IO DoubleProperty
+
+  native centerYProperty :: Arc -> IO DoubleProperty
+
+  native getCenterX :: Arc -> IO Double
+
+  native getCenterY :: Arc -> IO Double
+
+  native getLength :: Arc -> IO Double
+
+  native getRadiusX :: Arc -> IO Double
+
+  native getRadiusY :: Arc -> IO Double
+
+  native getStartAngle :: Arc -> IO Double
+
+  native getType :: Arc -> IO ArcType
+
+  native impl_configShape :: Arc -> IO Arc2D
+
+  native impl_updatePeer :: Arc -> IO ()
+
+  native lengthProperty :: Arc -> IO DoubleProperty
+
+  native radiusXProperty :: Arc -> IO DoubleProperty
+
+  native radiusYProperty :: Arc -> IO DoubleProperty
+
+  native setCenterX :: Arc -> Double -> IO ()
+
+  native setCenterY :: Arc -> Double -> IO ()
+
+  native setLength :: Arc -> Double -> IO ()
+
+  native setRadiusX :: Arc -> Double -> IO ()
+
+  native setRadiusY :: Arc -> Double -> IO ()
+
+  native setStartAngle :: Arc -> Double -> IO ()
+
+  native setType :: Arc -> ArcType -> IO ()
+
+  native startAngleProperty :: Arc -> IO DoubleProperty
+
+  native toString :: Arc -> IO String
+
+  native typeProperty :: Arc -> IO (ObjectProperty ArcType)
+
+

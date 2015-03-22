@@ -1,5 +1,0 @@
-data SplitMenuButtonSkin = pure native com.sun.javafx.scene.control.skin.SplitMenuButtonSkin where
-
-  native new :: SplitMenuButton -> IO SplitMenuButtonSkin
-
-

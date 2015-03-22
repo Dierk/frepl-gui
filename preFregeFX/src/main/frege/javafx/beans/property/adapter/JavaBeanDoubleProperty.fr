@@ -1,0 +1,29 @@
+data JavaBeanDoubleProperty = mutable native javafx.beans.property.adapter.JavaBeanDoubleProperty where
+
+  native addListener :: JavaBeanDoubleProperty -> ChangeListener Number -> IO ()
+                      | JavaBeanDoubleProperty -> InvalidationListener -> IO ()
+
+  native bind :: JavaBeanDoubleProperty -> ObservableValue Number -> IO ()
+
+  native dispose :: JavaBeanDoubleProperty -> IO ()
+
+  native fireValueChangedEvent :: JavaBeanDoubleProperty -> IO ()
+
+  native get :: JavaBeanDoubleProperty -> IO Double
+
+  native getBean :: JavaBeanDoubleProperty -> IO Object
+
+  native getName :: JavaBeanDoubleProperty -> IO String
+
+  native isBound :: JavaBeanDoubleProperty -> IO Bool
+
+  native removeListener :: JavaBeanDoubleProperty -> ChangeListener Number -> IO ()
+                         | JavaBeanDoubleProperty -> InvalidationListener -> IO ()
+
+  native set :: JavaBeanDoubleProperty -> Double -> IO ()
+
+  native toString :: JavaBeanDoubleProperty -> IO String
+
+  native unbind :: JavaBeanDoubleProperty -> IO ()
+
+

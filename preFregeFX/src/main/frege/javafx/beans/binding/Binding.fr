@@ -1,0 +1,11 @@
+data Binding t = mutable native javafx.beans.binding.Binding where
+
+  native dispose :: Binding t -> IO ()
+
+  native getDependencies :: Binding t -> IO (ObservableList Object)
+
+  native invalidate :: Binding t -> IO ()
+
+  native isValid :: Binding t -> IO Bool
+
+

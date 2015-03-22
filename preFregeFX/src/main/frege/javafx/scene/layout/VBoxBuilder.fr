@@ -1,0 +1,15 @@
+data VBoxBuilder b = mutable native javafx.scene.layout.VBoxBuilder where
+
+  native alignment :: VBoxBuilder b -> Pos -> IO b
+
+  native applyTo :: VBoxBuilder b -> VBox -> IO ()
+
+  native build :: VBoxBuilder b -> IO VBox
+
+  native create "javafx.scene.layout.VBoxBuilder.create" :: () -> IO (VBoxBuilder Object)
+
+  native fillWidth :: VBoxBuilder b -> Bool -> IO b
+
+  native spacing :: VBoxBuilder b -> Double -> IO b
+
+

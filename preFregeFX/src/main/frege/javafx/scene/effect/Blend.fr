@@ -1,0 +1,37 @@
+data Blend = mutable native javafx.scene.effect.Blend where
+
+  native new :: () -> IO Blend
+              | BlendMode -> Effect -> Effect -> IO Blend
+              | BlendMode -> IO Blend
+
+  native bottomInputProperty :: Blend -> IO (ObjectProperty Effect)
+
+  native getBottomInput :: Blend -> IO Effect
+
+  native getMode :: Blend -> IO BlendMode
+
+  native getOpacity :: Blend -> IO Double
+
+  native getTopInput :: Blend -> IO Effect
+
+  native impl_copy :: Blend -> IO Effect
+
+  native impl_getBounds :: Blend -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native impl_getToolkitMode "javafx.scene.effect.Blend.impl_getToolkitMode" :: BlendMode -> IO Blend_Mode
+
+  native modeProperty :: Blend -> IO (ObjectProperty BlendMode)
+
+  native opacityProperty :: Blend -> IO DoubleProperty
+
+  native setBottomInput :: Blend -> Effect -> IO ()
+
+  native setMode :: Blend -> BlendMode -> IO ()
+
+  native setOpacity :: Blend -> Double -> IO ()
+
+  native setTopInput :: Blend -> Effect -> IO ()
+
+  native topInputProperty :: Blend -> IO (ObjectProperty Effect)
+
+

@@ -1,0 +1,13 @@
+data TablePositionBase tc = mutable native javafx.scene.control.TablePositionBase where
+
+  native equals :: TablePositionBase tc -> Object -> IO Bool
+
+  native getColumn :: TablePositionBase tc -> IO Int
+
+  native getRow :: TablePositionBase tc -> IO Int
+
+  native getTableColumn :: TablePositionBase tc -> IO tc
+
+  native hashCode :: TablePositionBase tc -> IO Int
+
+

@@ -1,5 +1,0 @@
-data Recognizer = pure native com.sun.javafx.css.parser.Recognizer where
-
-  pure native recognize :: Recognizer -> int -> boolean
-
-

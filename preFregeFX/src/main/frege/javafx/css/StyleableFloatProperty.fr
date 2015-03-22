@@ -1,0 +1,11 @@
+data StyleableFloatProperty = mutable native javafx.css.StyleableFloatProperty where
+
+  native applyStyle :: StyleableFloatProperty -> StyleOrigin -> Number -> IO ()
+
+  native bind :: StyleableFloatProperty -> ObservableValue Number -> IO ()
+
+  native getStyleOrigin :: StyleableFloatProperty -> IO StyleOrigin
+
+  native set :: StyleableFloatProperty -> Float -> IO ()
+
+

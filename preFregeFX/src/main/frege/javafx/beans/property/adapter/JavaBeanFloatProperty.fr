@@ -1,0 +1,29 @@
+data JavaBeanFloatProperty = mutable native javafx.beans.property.adapter.JavaBeanFloatProperty where
+
+  native addListener :: JavaBeanFloatProperty -> ChangeListener Number -> IO ()
+                      | JavaBeanFloatProperty -> InvalidationListener -> IO ()
+
+  native bind :: JavaBeanFloatProperty -> ObservableValue Number -> IO ()
+
+  native dispose :: JavaBeanFloatProperty -> IO ()
+
+  native fireValueChangedEvent :: JavaBeanFloatProperty -> IO ()
+
+  native get :: JavaBeanFloatProperty -> IO Float
+
+  native getBean :: JavaBeanFloatProperty -> IO Object
+
+  native getName :: JavaBeanFloatProperty -> IO String
+
+  native isBound :: JavaBeanFloatProperty -> IO Bool
+
+  native removeListener :: JavaBeanFloatProperty -> ChangeListener Number -> IO ()
+                         | JavaBeanFloatProperty -> InvalidationListener -> IO ()
+
+  native set :: JavaBeanFloatProperty -> Float -> IO ()
+
+  native toString :: JavaBeanFloatProperty -> IO String
+
+  native unbind :: JavaBeanFloatProperty -> IO ()
+
+

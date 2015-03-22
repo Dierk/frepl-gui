@@ -1,0 +1,13 @@
+data SepiaToneBuilder b = mutable native javafx.scene.effect.SepiaToneBuilder where
+
+  native applyTo :: SepiaToneBuilder b -> SepiaTone -> IO ()
+
+  native build :: SepiaToneBuilder b -> IO SepiaTone
+
+  native create "javafx.scene.effect.SepiaToneBuilder.create" :: () -> IO (SepiaToneBuilder Object)
+
+  native input :: SepiaToneBuilder b -> Effect -> IO b
+
+  native level :: SepiaToneBuilder b -> Double -> IO b
+
+

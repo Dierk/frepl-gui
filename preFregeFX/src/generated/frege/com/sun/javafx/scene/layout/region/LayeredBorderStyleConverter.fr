@@ -1,9 +1,0 @@
-data LayeredBorderStyleConverter = pure native com.sun.javafx.scene.layout.region.LayeredBorderStyleConverter where
-
-  native convert :: LayeredBorderStyleConverter -> ParsedValue (JArray (ParsedValue (JArray (ParsedValue (JArray ParsedValue) BorderStrokeStyle)) (JArray BorderStrokeStyle))) (JArray (JArray BorderStrokeStyle)) -> Font -> IO (JArray (JArray BorderStrokeStyle))
-
-  pure native getInstance "com.sun.javafx.scene.layout.region.LayeredBorderStyleConverter.getInstance" :: () -> LayeredBorderStyleConverter
-
-  pure native toString :: LayeredBorderStyleConverter -> String
-
-

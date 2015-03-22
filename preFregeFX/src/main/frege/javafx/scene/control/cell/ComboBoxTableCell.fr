@@ -1,0 +1,34 @@
+data ComboBoxTableCell s t = mutable native javafx.scene.control.cell.ComboBoxTableCell where
+
+  native new :: () -> IO (ComboBoxTableCell s t)
+              | MutableIO (JArray t) -> IO (ComboBoxTableCell s t)
+              | ObservableList t -> IO (ComboBoxTableCell s t)
+              | StringConverter t -> ObservableList t -> IO (ComboBoxTableCell s t)
+              | StringConverter t -> MutableIO (JArray t) -> IO (ComboBoxTableCell s t)
+
+  native cancelEdit :: ComboBoxTableCell s t -> IO ()
+
+  native comboBoxEditableProperty :: ComboBoxTableCell s t -> IO BooleanProperty
+
+  native converterProperty :: ComboBoxTableCell s t -> IO (ObjectProperty (StringConverter t))
+
+  native forTableColumn "javafx.scene.control.cell.ComboBoxTableCell.forTableColumn" :: MutableIO (JArray t) -> IO (Callback (TableColumn s t) (TableCell s t))
+                                                                                      | ObservableList t -> IO (Callback (TableColumn s t) (TableCell s t))
+                                                                                      | StringConverter t -> MutableIO (JArray t) -> IO (Callback (TableColumn s t) (TableCell s t))
+                                                                                      | StringConverter t -> ObservableList t -> IO (Callback (TableColumn s t) (TableCell s t))
+
+  native getConverter :: ComboBoxTableCell s t -> IO (StringConverter t)
+
+  native getItems :: ComboBoxTableCell s t -> IO (ObservableList t)
+
+  native isComboBoxEditable :: ComboBoxTableCell s t -> IO Bool
+
+  native setComboBoxEditable :: ComboBoxTableCell s t -> Bool -> IO ()
+
+  native setConverter :: ComboBoxTableCell s t -> StringConverter t -> IO ()
+
+  native startEdit :: ComboBoxTableCell s t -> IO ()
+
+  native updateItem :: ComboBoxTableCell s t -> t -> Bool -> IO ()
+
+

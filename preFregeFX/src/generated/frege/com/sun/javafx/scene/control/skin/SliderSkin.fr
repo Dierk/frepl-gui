@@ -1,5 +1,0 @@
-data SliderSkin = pure native com.sun.javafx.scene.control.skin.SliderSkin where
-
-  native new :: Slider -> IO SliderSkin
-
-

@@ -1,0 +1,9 @@
+data Material = mutable native javafx.scene.paint.Material where
+
+  native impl_dirtyProperty :: Material -> IO BooleanProperty
+
+  native impl_getNGMaterial :: Material -> IO NGPhongMaterial
+
+  native impl_updatePG :: Material -> IO ()
+
+

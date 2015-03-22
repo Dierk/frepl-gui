@@ -1,5 +1,0 @@
-data RadioButtonSkin = pure native com.sun.javafx.scene.control.skin.RadioButtonSkin where
-
-  native new :: RadioButton -> IO RadioButtonSkin
-
-

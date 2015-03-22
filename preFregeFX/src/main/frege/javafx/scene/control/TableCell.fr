@@ -1,0 +1,35 @@
+data TableCell s t = mutable native javafx.scene.control.TableCell where
+
+  native new :: () -> IO (TableCell s t)
+
+  native cancelEdit :: TableCell s t -> IO ()
+
+  native commitEdit :: TableCell s t -> t -> IO ()
+
+  native executeAccessibleAction :: TableCell s t -> AccessibleAction -> MutableIO (JArray Object) -> IO ()
+
+  native getTableColumn :: TableCell s t -> IO (TableColumn s t)
+
+  native getTableRow :: TableCell s t -> IO TableRow
+
+  native getTableView :: TableCell s t -> IO (TableView s)
+
+  native queryAccessibleAttribute :: TableCell s t -> AccessibleAttribute -> MutableIO (JArray Object) -> IO Object
+
+  native startEdit :: TableCell s t -> IO ()
+
+  native tableColumnProperty :: TableCell s t -> IO (ReadOnlyObjectProperty (TableColumn s t))
+
+  native tableRowProperty :: TableCell s t -> IO (ReadOnlyObjectProperty TableRow)
+
+  native tableViewProperty :: TableCell s t -> IO (ReadOnlyObjectProperty (TableView s))
+
+  native updateSelected :: TableCell s t -> Bool -> IO ()
+
+  native updateTableColumn :: TableCell s t -> TableColumn -> IO ()
+
+  native updateTableRow :: TableCell s t -> TableRow -> IO ()
+
+  native updateTableView :: TableCell s t -> TableView -> IO ()
+
+

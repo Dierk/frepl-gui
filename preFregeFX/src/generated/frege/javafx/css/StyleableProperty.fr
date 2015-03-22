@@ -1,9 +1,0 @@
-data StyleableProperty t = mutable native javafx.css.StyleableProperty where
-
-  native applyStyle :: StyleableProperty t -> StyleOrigin -> t -> IO void
-
-  native getCssMetaData :: StyleableProperty t -> IO (CssMetaData Styleable t)
-
-  native getStyleOrigin :: StyleableProperty t -> IO StyleOrigin
-
-

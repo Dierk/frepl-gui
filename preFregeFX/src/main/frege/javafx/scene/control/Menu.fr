@@ -1,0 +1,53 @@
+data Menu = mutable native javafx.scene.control.Menu where
+
+  native on_showing "javafx.scene.control.Menu.ON_SHOWING" :: IO (EventType Event)
+  native on_shown "javafx.scene.control.Menu.ON_SHOWN" :: IO (EventType Event)
+  native on_hiding "javafx.scene.control.Menu.ON_HIDING" :: IO (EventType Event)
+  native on_hidden "javafx.scene.control.Menu.ON_HIDDEN" :: IO (EventType Event)
+
+  native new :: String -> Node -> MutableIO (JArray MenuItem) -> IO Menu
+              | String -> Node -> IO Menu
+              | String -> IO Menu
+              | () -> IO Menu
+
+  native addEventHandler :: Menu -> EventType e -> EventHandler e -> IO ()
+
+  native buildEventDispatchChain :: Menu -> EventDispatchChain -> IO EventDispatchChain
+
+  native getItems :: Menu -> IO (ObservableList MenuItem)
+
+  native getOnHidden :: Menu -> IO (EventHandler Event)
+
+  native getOnHiding :: Menu -> IO (EventHandler Event)
+
+  native getOnShowing :: Menu -> IO (EventHandler Event)
+
+  native getOnShown :: Menu -> IO (EventHandler Event)
+
+  native hide :: Menu -> IO ()
+
+  native isShowing :: Menu -> IO Bool
+
+  native onHiddenProperty :: Menu -> IO (ObjectProperty (EventHandler Event))
+
+  native onHidingProperty :: Menu -> IO (ObjectProperty (EventHandler Event))
+
+  native onShowingProperty :: Menu -> IO (ObjectProperty (EventHandler Event))
+
+  native onShownProperty :: Menu -> IO (ObjectProperty (EventHandler Event))
+
+  native removeEventHandler :: Menu -> EventType e -> EventHandler e -> IO ()
+
+  native setOnHidden :: Menu -> EventHandler Event -> IO ()
+
+  native setOnHiding :: Menu -> EventHandler Event -> IO ()
+
+  native setOnShowing :: Menu -> EventHandler Event -> IO ()
+
+  native setOnShown :: Menu -> EventHandler Event -> IO ()
+
+  native show :: Menu -> IO ()
+
+  native showingProperty :: Menu -> IO ReadOnlyBooleanProperty
+
+

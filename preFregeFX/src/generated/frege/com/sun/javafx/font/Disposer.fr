@@ -1,9 +1,0 @@
-data Disposer = pure native com.sun.javafx.font.Disposer where
-
-  pure native new :: () -> Disposer
-
-  pure native addRecord "com.sun.javafx.font.Disposer.addRecord" :: Object -> DisposerRecord -> WeakReference
-
-  pure native run :: Disposer -> void
-
-

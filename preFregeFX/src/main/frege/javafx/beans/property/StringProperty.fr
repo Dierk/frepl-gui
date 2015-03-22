@@ -1,0 +1,14 @@
+data StringProperty = mutable native javafx.beans.property.StringProperty where
+
+  native bindBidirectional :: StringProperty -> Property t -> StringConverter t -> IO ()
+                            | StringProperty -> Property Object -> Format -> IO ()
+                            | StringProperty -> Property String -> IO ()
+
+  native setValue :: StringProperty -> String -> IO ()
+
+  native toString :: StringProperty -> IO String
+
+  native unbindBidirectional :: StringProperty -> Object -> IO ()
+                              | StringProperty -> Property String -> IO ()
+
+

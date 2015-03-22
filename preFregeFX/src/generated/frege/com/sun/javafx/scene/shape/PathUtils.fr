@@ -1,5 +1,0 @@
-data PathUtils = pure native com.sun.javafx.scene.shape.PathUtils where
-
-  pure native configShape "com.sun.javafx.scene.shape.PathUtils.configShape" :: Collection PathElement -> boolean -> Path2D
-
-

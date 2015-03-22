@@ -1,0 +1,14 @@
+data TimelineBuilder = mutable native javafx.animation.TimelineBuilder where
+
+  native applyTo :: TimelineBuilder -> Timeline -> IO ()
+
+  native build :: TimelineBuilder -> IO Timeline
+
+  native create "javafx.animation.TimelineBuilder.create" :: () -> IO TimelineBuilder
+
+  native keyFrames :: TimelineBuilder -> MutableIO (Collection KeyFrame) -> IO TimelineBuilder
+                    | TimelineBuilder -> MutableIO (JArray KeyFrame) -> IO TimelineBuilder
+
+  native targetFramerate :: TimelineBuilder -> Double -> IO TimelineBuilder
+
+

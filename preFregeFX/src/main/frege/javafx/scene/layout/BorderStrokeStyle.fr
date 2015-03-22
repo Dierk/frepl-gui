@@ -1,0 +1,28 @@
+data BorderStrokeStyle = mutable native javafx.scene.layout.BorderStrokeStyle where
+
+  native none "javafx.scene.layout.BorderStrokeStyle.NONE" :: IO BorderStrokeStyle
+  native dotted "javafx.scene.layout.BorderStrokeStyle.DOTTED" :: IO BorderStrokeStyle
+  native dashed "javafx.scene.layout.BorderStrokeStyle.DASHED" :: IO BorderStrokeStyle
+  native solid "javafx.scene.layout.BorderStrokeStyle.SOLID" :: IO BorderStrokeStyle
+
+  native new :: StrokeType -> StrokeLineJoin -> StrokeLineCap -> Double -> Double -> MutableIO (List Double) -> IO BorderStrokeStyle
+
+  native equals :: BorderStrokeStyle -> Object -> IO Bool
+
+  native getDashArray :: BorderStrokeStyle -> IO (List Double)
+
+  native getDashOffset :: BorderStrokeStyle -> IO Double
+
+  native getLineCap :: BorderStrokeStyle -> IO StrokeLineCap
+
+  native getLineJoin :: BorderStrokeStyle -> IO StrokeLineJoin
+
+  native getMiterLimit :: BorderStrokeStyle -> IO Double
+
+  native getType :: BorderStrokeStyle -> IO StrokeType
+
+  native hashCode :: BorderStrokeStyle -> IO Int
+
+  native toString :: BorderStrokeStyle -> IO String
+
+

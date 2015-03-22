@@ -1,7 +1,0 @@
-data HBGlyphLayout = pure native com.sun.javafx.font.freetype.HBGlyphLayout where
-
-  pure native new :: () -> HBGlyphLayout
-
-  native layout :: HBGlyphLayout -> TextRun -> PGFont -> FontStrike -> Mutable s (JArray char) -> ST s void
-
-

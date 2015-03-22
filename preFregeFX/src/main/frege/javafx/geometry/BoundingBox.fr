@@ -1,0 +1,26 @@
+data BoundingBox = mutable native javafx.geometry.BoundingBox where
+
+  native new :: Double -> Double -> Double -> Double -> Double -> Double -> IO BoundingBox
+              | Double -> Double -> Double -> Double -> IO BoundingBox
+
+  native contains :: BoundingBox -> Double -> Double -> Double -> Double -> Double -> Double -> IO Bool
+                   | BoundingBox -> Point2D -> IO Bool
+                   | BoundingBox -> Double -> Double -> Double -> Double -> IO Bool
+                   | BoundingBox -> Point3D -> IO Bool
+                   | BoundingBox -> Double -> Double -> IO Bool
+                   | BoundingBox -> Double -> Double -> Double -> IO Bool
+                   | BoundingBox -> Bounds -> IO Bool
+
+  native equals :: BoundingBox -> Object -> IO Bool
+
+  native hashCode :: BoundingBox -> IO Int
+
+  native intersects :: BoundingBox -> Bounds -> IO Bool
+                     | BoundingBox -> Double -> Double -> Double -> Double -> Double -> Double -> IO Bool
+                     | BoundingBox -> Double -> Double -> Double -> Double -> IO Bool
+
+  native isEmpty :: BoundingBox -> IO Bool
+
+  native toString :: BoundingBox -> IO String
+
+

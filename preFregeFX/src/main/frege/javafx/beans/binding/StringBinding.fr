@@ -1,0 +1,21 @@
+data StringBinding = mutable native javafx.beans.binding.StringBinding where
+
+  native addListener :: StringBinding -> InvalidationListener -> IO ()
+                      | StringBinding -> ChangeListener String -> IO ()
+
+  native dispose :: StringBinding -> IO ()
+
+  native get :: StringBinding -> IO String
+
+  native getDependencies :: StringBinding -> IO (ObservableList Object)
+
+  native invalidate :: StringBinding -> IO ()
+
+  native isValid :: StringBinding -> IO Bool
+
+  native removeListener :: StringBinding -> InvalidationListener -> IO ()
+                         | StringBinding -> ChangeListener String -> IO ()
+
+  native toString :: StringBinding -> IO String
+
+

@@ -1,0 +1,14 @@
+data ChoiceBoxListCellBuilder t b = mutable native javafx.scene.control.cell.ChoiceBoxListCellBuilder where
+
+  native applyTo :: ChoiceBoxListCellBuilder t b -> ChoiceBoxListCell t -> IO ()
+
+  native build :: ChoiceBoxListCellBuilder t b -> IO (ChoiceBoxListCell t)
+
+  native converter :: ChoiceBoxListCellBuilder t b -> StringConverter t -> IO b
+
+  native create "javafx.scene.control.cell.ChoiceBoxListCellBuilder.create" :: () -> IO (ChoiceBoxListCellBuilder t Object)
+
+  native items :: ChoiceBoxListCellBuilder t b -> MutableIO (JArray t) -> IO b
+                | ChoiceBoxListCellBuilder t b -> MutableIO (Collection t) -> IO b
+
+

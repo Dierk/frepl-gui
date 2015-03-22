@@ -1,0 +1,9 @@
+data ProgressBarTreeTableCell s = mutable native javafx.scene.control.cell.ProgressBarTreeTableCell where
+
+  native new :: () -> IO (ProgressBarTreeTableCell s)
+
+  native forTreeTableColumn "javafx.scene.control.cell.ProgressBarTreeTableCell.forTreeTableColumn" :: () -> IO (Callback (TreeTableColumn s Double) (TreeTableCell s Double))
+
+  native updateItem :: ProgressBarTreeTableCell s -> Double -> Bool -> IO ()
+
+

@@ -1,0 +1,66 @@
+data DropShadow = mutable native javafx.scene.effect.DropShadow where
+
+  native new :: BlurType -> Color -> Double -> Double -> Double -> Double -> IO DropShadow
+              | Double -> Double -> Double -> Color -> IO DropShadow
+              | Double -> Color -> IO DropShadow
+              | () -> IO DropShadow
+
+  native blurTypeProperty :: DropShadow -> IO (ObjectProperty BlurType)
+
+  native colorProperty :: DropShadow -> IO (ObjectProperty Color)
+
+  native getBlurType :: DropShadow -> IO BlurType
+
+  native getColor :: DropShadow -> IO Color
+
+  native getHeight :: DropShadow -> IO Double
+
+  native getInput :: DropShadow -> IO Effect
+
+  native getOffsetX :: DropShadow -> IO Double
+
+  native getOffsetY :: DropShadow -> IO Double
+
+  native getRadius :: DropShadow -> IO Double
+
+  native getSpread :: DropShadow -> IO Double
+
+  native getWidth :: DropShadow -> IO Double
+
+  native heightProperty :: DropShadow -> IO DoubleProperty
+
+  native impl_copy :: DropShadow -> IO Effect
+
+  native impl_getBounds :: DropShadow -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: DropShadow -> IO (ObjectProperty Effect)
+
+  native offsetXProperty :: DropShadow -> IO DoubleProperty
+
+  native offsetYProperty :: DropShadow -> IO DoubleProperty
+
+  native radiusProperty :: DropShadow -> IO DoubleProperty
+
+  native setBlurType :: DropShadow -> BlurType -> IO ()
+
+  native setColor :: DropShadow -> Color -> IO ()
+
+  native setHeight :: DropShadow -> Double -> IO ()
+
+  native setInput :: DropShadow -> Effect -> IO ()
+
+  native setOffsetX :: DropShadow -> Double -> IO ()
+
+  native setOffsetY :: DropShadow -> Double -> IO ()
+
+  native setRadius :: DropShadow -> Double -> IO ()
+
+  native setSpread :: DropShadow -> Double -> IO ()
+
+  native setWidth :: DropShadow -> Double -> IO ()
+
+  native spreadProperty :: DropShadow -> IO DoubleProperty
+
+  native widthProperty :: DropShadow -> IO DoubleProperty
+
+

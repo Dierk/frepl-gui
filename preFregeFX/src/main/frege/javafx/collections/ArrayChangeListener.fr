@@ -1,0 +1,5 @@
+data ArrayChangeListener t = mutable native javafx.collections.ArrayChangeListener where
+
+  native onChanged :: ArrayChangeListener t -> t -> Bool -> Int -> Int -> IO ()
+
+

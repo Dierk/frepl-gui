@@ -1,7 +1,0 @@
-data StandardCursorFrame = pure native com.sun.javafx.cursor.StandardCursorFrame where
-
-  pure native new :: CursorType -> StandardCursorFrame
-
-  pure native getCursorType :: StandardCursorFrame -> CursorType
-
-

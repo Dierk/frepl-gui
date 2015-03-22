@@ -1,0 +1,28 @@
+data MotionBlur = mutable native javafx.scene.effect.MotionBlur where
+
+  native new :: () -> IO MotionBlur
+              | Double -> Double -> IO MotionBlur
+
+  native angleProperty :: MotionBlur -> IO DoubleProperty
+
+  native getAngle :: MotionBlur -> IO Double
+
+  native getInput :: MotionBlur -> IO Effect
+
+  native getRadius :: MotionBlur -> IO Double
+
+  native impl_copy :: MotionBlur -> IO Effect
+
+  native impl_getBounds :: MotionBlur -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: MotionBlur -> IO (ObjectProperty Effect)
+
+  native radiusProperty :: MotionBlur -> IO DoubleProperty
+
+  native setAngle :: MotionBlur -> Double -> IO ()
+
+  native setInput :: MotionBlur -> Effect -> IO ()
+
+  native setRadius :: MotionBlur -> Double -> IO ()
+
+

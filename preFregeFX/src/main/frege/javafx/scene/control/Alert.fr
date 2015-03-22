@@ -1,0 +1,14 @@
+data Alert = mutable native javafx.scene.control.Alert where
+
+  native new :: Alert_AlertType -> IO Alert
+              | Alert_AlertType -> String -> MutableIO (JArray ButtonType) -> IO Alert
+
+  native alertTypeProperty :: Alert -> IO (ObjectProperty Alert_AlertType)
+
+  native getAlertType :: Alert -> IO Alert_AlertType
+
+  native getButtonTypes :: Alert -> IO (ObservableList ButtonType)
+
+  native setAlertType :: Alert -> Alert_AlertType -> IO ()
+
+

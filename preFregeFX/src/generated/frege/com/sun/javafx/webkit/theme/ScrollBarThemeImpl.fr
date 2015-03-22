@@ -1,7 +1,0 @@
-data ScrollBarThemeImpl = pure native com.sun.javafx.webkit.theme.ScrollBarThemeImpl where
-
-  pure native new :: Accessor -> ScrollBarThemeImpl
-
-  pure native paint :: ScrollBarThemeImpl -> WCGraphicsContext -> Ref -> int -> int -> int -> int -> void
-
-

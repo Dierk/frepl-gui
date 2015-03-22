@@ -1,9 +1,0 @@
-data NGEllipse = pure native com.sun.javafx.sg.prism.NGEllipse where
-
-  pure native new :: () -> NGEllipse
-
-  pure native getShape :: NGEllipse -> Shape
-
-  pure native updateEllipse :: NGEllipse -> float -> float -> float -> float -> void
-
-

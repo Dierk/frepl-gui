@@ -1,7 +1,0 @@
-data CompositeStrikeDisposer = pure native com.sun.javafx.font.CompositeStrikeDisposer where
-
-  pure native new :: FontResource -> FontStrikeDesc -> CompositeStrikeDisposer
-
-  pure native dispose :: CompositeStrikeDisposer -> void
-
-

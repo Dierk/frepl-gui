@@ -1,9 +1,0 @@
-data RoughScaler = pure native com.sun.javafx.iio.common.RoughScaler where
-
-  pure native new :: int -> int -> int -> int -> int -> RoughScaler
-
-  pure native getDestination :: RoughScaler -> ByteBuffer
-
-  native putSourceScanline :: RoughScaler -> Mutable s (JArray byte) -> int -> ST s boolean
-
-

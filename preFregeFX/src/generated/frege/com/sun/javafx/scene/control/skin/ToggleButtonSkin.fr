@@ -1,5 +1,0 @@
-data ToggleButtonSkin = pure native com.sun.javafx.scene.control.skin.ToggleButtonSkin where
-
-  native new :: ToggleButton -> IO ToggleButtonSkin
-
-

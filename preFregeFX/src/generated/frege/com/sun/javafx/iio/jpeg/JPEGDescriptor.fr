@@ -1,7 +1,0 @@
-data JPEGDescriptor = pure native com.sun.javafx.iio.jpeg.JPEGDescriptor where
-
-  pure native soi "com.sun.javafx.iio.jpeg.JPEGDescriptor.SOI" :: int
-
-  pure native getInstance "com.sun.javafx.iio.jpeg.JPEGDescriptor.getInstance" :: () -> ImageDescriptor
-
-

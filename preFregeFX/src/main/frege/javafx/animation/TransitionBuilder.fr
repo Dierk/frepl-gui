@@ -1,0 +1,9 @@
+data TransitionBuilder b = mutable native javafx.animation.TransitionBuilder where
+
+  native applyTo :: TransitionBuilder b -> Transition -> IO ()
+
+  native interpolator :: TransitionBuilder b -> Interpolator -> IO b
+
+  native targetFramerate :: TransitionBuilder b -> Double -> IO b
+
+

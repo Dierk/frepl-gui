@@ -1,0 +1,74 @@
+data ListExpression e = mutable native javafx.beans.binding.ListExpression where
+
+  native add :: ListExpression e -> Int -> e -> IO ()
+              | ListExpression e -> e -> IO Bool
+
+  native addAll :: ListExpression e -> MutableIO (JArray e) -> IO Bool
+                 | ListExpression e -> MutableIO (Collection e) -> IO Bool
+                 | ListExpression e -> Int -> MutableIO (Collection e) -> IO Bool
+
+  native asString :: ListExpression e -> IO StringBinding
+
+  native clear :: ListExpression e -> IO ()
+
+  native contains :: ListExpression e -> Object -> IO Bool
+
+  native containsAll :: ListExpression e -> MutableIO (Collection Object) -> IO Bool
+
+  native emptyProperty :: ListExpression e -> IO ReadOnlyBooleanProperty
+
+  native get :: ListExpression e -> Int -> IO e
+
+  native getSize :: ListExpression e -> IO Int
+
+  native getValue :: ListExpression e -> IO (ObservableList e)
+
+  native indexOf :: ListExpression e -> Object -> IO Int
+
+  native isEmpty :: ListExpression e -> IO Bool
+
+  native isEqualTo :: ListExpression e -> ObservableList Object -> IO BooleanBinding
+
+  native isNotEqualTo :: ListExpression e -> ObservableList Object -> IO BooleanBinding
+
+  native isNotNull :: ListExpression e -> IO BooleanBinding
+
+  native isNull :: ListExpression e -> IO BooleanBinding
+
+  native iterator :: ListExpression e -> IO (Iterator e)
+
+  native lastIndexOf :: ListExpression e -> Object -> IO Int
+
+  native listExpression "javafx.beans.binding.ListExpression.listExpression" :: ObservableListValue e -> IO (ListExpression e)
+
+  native listIterator :: ListExpression e -> IO (ListIterator e)
+                       | ListExpression e -> Int -> IO (ListIterator e)
+
+  native remove :: ListExpression e -> Int -> IO e
+                 | ListExpression e -> Int -> Int -> IO ()
+                 | ListExpression e -> Object -> IO Bool
+
+  native removeAll :: ListExpression e -> MutableIO (Collection Object) -> IO Bool
+                    | ListExpression e -> MutableIO (JArray e) -> IO Bool
+
+  native retainAll :: ListExpression e -> MutableIO (JArray e) -> IO Bool
+                    | ListExpression e -> MutableIO (Collection Object) -> IO Bool
+
+  native set :: ListExpression e -> Int -> e -> IO e
+
+  native setAll :: ListExpression e -> MutableIO (JArray e) -> IO Bool
+                 | ListExpression e -> MutableIO (Collection e) -> IO Bool
+
+  native size :: ListExpression e -> IO Int
+
+  native sizeProperty :: ListExpression e -> IO ReadOnlyIntegerProperty
+
+  native subList :: ListExpression e -> Int -> Int -> IO (List e)
+
+  native toArray :: ListExpression e -> MutableIO (JArray t) -> IO (JArray t)
+                  | ListExpression e -> IO (JArray Object)
+
+  native valueAt :: ListExpression e -> Int -> IO (ObjectBinding e)
+                  | ListExpression e -> ObservableIntegerValue -> IO (ObjectBinding e)
+
+

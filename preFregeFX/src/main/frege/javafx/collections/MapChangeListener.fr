@@ -1,0 +1,5 @@
+data MapChangeListener k v = mutable native javafx.collections.MapChangeListener where
+
+  native onChanged :: MapChangeListener k v -> MapChangeListener_Change k v -> IO ()
+
+

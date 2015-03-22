@@ -1,0 +1,45 @@
+data Point2D = mutable native javafx.geometry.Point2D where
+
+  native zero "javafx.geometry.Point2D.ZERO" :: IO Point2D
+
+  native new :: Double -> Double -> IO Point2D
+
+  native add :: Point2D -> Point2D -> IO Point2D
+              | Point2D -> Double -> Double -> IO Point2D
+
+  native angle :: Point2D -> Double -> Double -> IO Double
+                | Point2D -> Point2D -> IO Double
+                | Point2D -> Point2D -> Point2D -> IO Double
+
+  native crossProduct :: Point2D -> Point2D -> IO Point3D
+                       | Point2D -> Double -> Double -> IO Point3D
+
+  native distance :: Point2D -> Point2D -> IO Double
+                   | Point2D -> Double -> Double -> IO Double
+
+  native dotProduct :: Point2D -> Double -> Double -> IO Double
+                     | Point2D -> Point2D -> IO Double
+
+  native equals :: Point2D -> Object -> IO Bool
+
+  native getX :: Point2D -> IO Double
+
+  native getY :: Point2D -> IO Double
+
+  native hashCode :: Point2D -> IO Int
+
+  native magnitude :: Point2D -> IO Double
+
+  native midpoint :: Point2D -> Point2D -> IO Point2D
+                   | Point2D -> Double -> Double -> IO Point2D
+
+  native multiply :: Point2D -> Double -> IO Point2D
+
+  native normalize :: Point2D -> IO Point2D
+
+  native subtract :: Point2D -> Point2D -> IO Point2D
+                   | Point2D -> Double -> Double -> IO Point2D
+
+  native toString :: Point2D -> IO String
+
+

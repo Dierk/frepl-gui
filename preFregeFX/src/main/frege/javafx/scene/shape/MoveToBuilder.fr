@@ -1,0 +1,13 @@
+data MoveToBuilder b = mutable native javafx.scene.shape.MoveToBuilder where
+
+  native applyTo :: MoveToBuilder b -> MoveTo -> IO ()
+
+  native build :: MoveToBuilder b -> IO MoveTo
+
+  native create "javafx.scene.shape.MoveToBuilder.create" :: () -> IO (MoveToBuilder Object)
+
+  native x :: MoveToBuilder b -> Double -> IO b
+
+  native y :: MoveToBuilder b -> Double -> IO b
+
+

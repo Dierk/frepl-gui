@@ -1,9 +1,0 @@
-data StopConverter = pure native com.sun.javafx.css.parser.StopConverter where
-
-  native convert :: StopConverter -> ParsedValue (JArray ParsedValue) Stop -> Font -> IO Stop
-
-  pure native getInstance "com.sun.javafx.css.parser.StopConverter.getInstance" :: () -> StopConverter
-
-  pure native toString :: StopConverter -> String
-
-

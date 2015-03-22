@@ -1,0 +1,43 @@
+data Font = mutable native javafx.scene.text.Font where
+
+  native new :: Double -> IO Font
+              | String -> Double -> IO Font
+
+  native equals :: Font -> Object -> IO Bool
+
+  native font "javafx.scene.text.Font.font" :: Double -> IO Font
+                                             | String -> FontWeight -> FontPosture -> Double -> IO Font
+                                             | String -> FontWeight -> Double -> IO Font
+                                             | String -> FontPosture -> Double -> IO Font
+                                             | String -> Double -> IO Font
+                                             | String -> IO Font
+
+  native getDefault "javafx.scene.text.Font.getDefault" :: () -> IO Font
+
+  native getFamilies "javafx.scene.text.Font.getFamilies" :: () -> STMutable s (List String)
+
+  native getFamily :: Font -> IO String
+
+  native getFontNames "javafx.scene.text.Font.getFontNames" :: String -> STMutable s (List String)
+                                                             | () -> STMutable s (List String)
+
+  native getName :: Font -> IO String
+
+  native getSize :: Font -> IO Double
+
+  native getStyle :: Font -> IO String
+
+  native hashCode :: Font -> IO Int
+
+  native impl_NativeFont "javafx.scene.text.Font.impl_NativeFont" :: Object -> String -> String -> String -> Double -> IO Font
+
+  native impl_getNativeFont :: Font -> IO Object
+
+  native impl_setNativeFont :: Font -> Object -> String -> String -> String -> IO ()
+
+  native loadFont "javafx.scene.text.Font.loadFont" :: String -> Double -> IO Font
+                                                     | InputStream -> Double -> IO Font
+
+  native toString :: Font -> IO String
+
+

@@ -1,0 +1,11 @@
+data StyleableBooleanProperty = mutable native javafx.css.StyleableBooleanProperty where
+
+  native applyStyle :: StyleableBooleanProperty -> StyleOrigin -> Boolean -> IO ()
+
+  native bind :: StyleableBooleanProperty -> ObservableValue Boolean -> IO ()
+
+  native getStyleOrigin :: StyleableBooleanProperty -> IO StyleOrigin
+
+  native set :: StyleableBooleanProperty -> Bool -> IO ()
+
+

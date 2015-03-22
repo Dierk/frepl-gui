@@ -1,0 +1,15 @@
+data Stop = mutable native javafx.scene.paint.Stop where
+
+  native new :: Double -> Color -> IO Stop
+
+  native equals :: Stop -> Object -> IO Bool
+
+  native getColor :: Stop -> IO Color
+
+  native getOffset :: Stop -> IO Double
+
+  native hashCode :: Stop -> IO Int
+
+  native toString :: Stop -> IO String
+
+

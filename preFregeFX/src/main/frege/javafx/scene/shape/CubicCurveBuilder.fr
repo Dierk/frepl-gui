@@ -1,0 +1,25 @@
+data CubicCurveBuilder b = mutable native javafx.scene.shape.CubicCurveBuilder where
+
+  native applyTo :: CubicCurveBuilder b -> CubicCurve -> IO ()
+
+  native build :: CubicCurveBuilder b -> IO CubicCurve
+
+  native controlX1 :: CubicCurveBuilder b -> Double -> IO b
+
+  native controlX2 :: CubicCurveBuilder b -> Double -> IO b
+
+  native controlY1 :: CubicCurveBuilder b -> Double -> IO b
+
+  native controlY2 :: CubicCurveBuilder b -> Double -> IO b
+
+  native create "javafx.scene.shape.CubicCurveBuilder.create" :: () -> IO (CubicCurveBuilder Object)
+
+  native endX :: CubicCurveBuilder b -> Double -> IO b
+
+  native endY :: CubicCurveBuilder b -> Double -> IO b
+
+  native startX :: CubicCurveBuilder b -> Double -> IO b
+
+  native startY :: CubicCurveBuilder b -> Double -> IO b
+
+

@@ -1,5 +1,0 @@
-data ScalerFactory = pure native com.sun.javafx.iio.common.ScalerFactory where
-
-  pure native createScaler "com.sun.javafx.iio.common.ScalerFactory.createScaler" :: int -> int -> int -> int -> int -> boolean -> PushbroomScaler
-
-

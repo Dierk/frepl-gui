@@ -1,0 +1,13 @@
+data TablePosition s t = mutable native javafx.scene.control.TablePosition where
+
+  native new :: TableView s -> Int -> TableColumn s t -> IO (TablePosition s t)
+
+  native getColumn :: TablePosition s t -> IO Int
+
+  native getTableColumn :: TablePosition s t -> IO (TableColumn s t)
+
+  native getTableView :: TablePosition s t -> IO (TableView s)
+
+  native toString :: TablePosition s t -> IO String
+
+

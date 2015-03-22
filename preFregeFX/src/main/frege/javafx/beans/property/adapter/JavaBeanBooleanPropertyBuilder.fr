@@ -1,0 +1,21 @@
+data JavaBeanBooleanPropertyBuilder = mutable native javafx.beans.property.adapter.JavaBeanBooleanPropertyBuilder where
+
+  native new :: () -> IO JavaBeanBooleanPropertyBuilder
+
+  native bean :: JavaBeanBooleanPropertyBuilder -> Object -> IO JavaBeanBooleanPropertyBuilder
+
+  native beanClass :: JavaBeanBooleanPropertyBuilder -> Class Object -> IO JavaBeanBooleanPropertyBuilder
+
+  native build :: JavaBeanBooleanPropertyBuilder -> IO JavaBeanBooleanProperty throws NoSuchMethodException
+
+  native create "javafx.beans.property.adapter.JavaBeanBooleanPropertyBuilder.create" :: () -> IO JavaBeanBooleanPropertyBuilder
+
+  native getter :: JavaBeanBooleanPropertyBuilder -> String -> IO JavaBeanBooleanPropertyBuilder
+                 | JavaBeanBooleanPropertyBuilder -> Method -> IO JavaBeanBooleanPropertyBuilder
+
+  native name :: JavaBeanBooleanPropertyBuilder -> String -> IO JavaBeanBooleanPropertyBuilder
+
+  native setter :: JavaBeanBooleanPropertyBuilder -> Method -> IO JavaBeanBooleanPropertyBuilder
+                 | JavaBeanBooleanPropertyBuilder -> String -> IO JavaBeanBooleanPropertyBuilder
+
+

@@ -1,0 +1,106 @@
+data StyleablePropertyFactory s = mutable native javafx.css.StyleablePropertyFactory where
+
+  native new :: MutableIO (List (CssMetaData Styleable Object)) -> IO (StyleablePropertyFactory s)
+
+  native createBooleanCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty Boolean) -> IO (CssMetaData s Boolean)
+                                   | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Boolean) -> Bool -> IO (CssMetaData s Boolean)
+                                   | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Boolean) -> Bool -> Bool -> IO (CssMetaData s Boolean)
+
+  native createColorCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty Color) -> Color -> Bool -> IO (CssMetaData s Color)
+                                 | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Color) -> IO (CssMetaData s Color)
+                                 | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Color) -> Color -> IO (CssMetaData s Color)
+
+  native createDurationCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty Duration) -> IO (CssMetaData s Duration)
+                                    | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Duration) -> Duration -> IO (CssMetaData s Duration)
+                                    | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Duration) -> Duration -> Bool -> IO (CssMetaData s Duration)
+
+  native createEffectCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty e) -> IO (CssMetaData s e)
+                                  | StyleablePropertyFactory s -> String -> Function s (StyleableProperty e) -> e -> IO (CssMetaData s e)
+                                  | StyleablePropertyFactory s -> String -> Function s (StyleableProperty e) -> e -> Bool -> IO (CssMetaData s e)
+
+  native createEnumCssMetaData :: StyleablePropertyFactory s -> Class Enum -> String -> Function s (StyleableProperty e) -> e -> Bool -> IO (CssMetaData s e)
+                                | StyleablePropertyFactory s -> Class Enum -> String -> Function s (StyleableProperty e) -> IO (CssMetaData s e)
+                                | StyleablePropertyFactory s -> Class Enum -> String -> Function s (StyleableProperty e) -> e -> IO (CssMetaData s e)
+
+  native createFontCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty Font) -> IO (CssMetaData s Font)
+                                | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Font) -> Font -> Bool -> IO (CssMetaData s Font)
+                                | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Font) -> Font -> IO (CssMetaData s Font)
+
+  native createInsetsCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty Insets) -> Insets -> Bool -> IO (CssMetaData s Insets)
+                                  | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Insets) -> IO (CssMetaData s Insets)
+                                  | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Insets) -> Insets -> IO (CssMetaData s Insets)
+
+  native createPaintCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty Paint) -> IO (CssMetaData s Paint)
+                                 | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Paint) -> Paint -> IO (CssMetaData s Paint)
+                                 | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Paint) -> Paint -> Bool -> IO (CssMetaData s Paint)
+
+  native createSizeCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty Number) -> IO (CssMetaData s Number)
+                                | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Number) -> Number -> Bool -> IO (CssMetaData s Number)
+                                | StyleablePropertyFactory s -> String -> Function s (StyleableProperty Number) -> Number -> IO (CssMetaData s Number)
+
+  native createStringCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty String) -> String -> Bool -> IO (CssMetaData s String)
+                                  | StyleablePropertyFactory s -> String -> Function s (StyleableProperty String) -> IO (CssMetaData s String)
+                                  | StyleablePropertyFactory s -> String -> Function s (StyleableProperty String) -> String -> IO (CssMetaData s String)
+
+  native createStyleableBooleanProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty Boolean)
+                                         | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Boolean) -> Bool -> Bool -> IO (StyleableProperty Boolean)
+                                         | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Boolean) -> Bool -> IO (StyleableProperty Boolean)
+                                         | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Boolean) -> IO (StyleableProperty Boolean)
+
+  native createStyleableColorProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty Color)
+                                       | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Color) -> Color -> Bool -> IO (StyleableProperty Color)
+                                       | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Color) -> Color -> IO (StyleableProperty Color)
+                                       | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Color) -> IO (StyleableProperty Color)
+
+  native createStyleableDurationProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty Duration)
+                                          | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Duration) -> Duration -> Bool -> IO (StyleableProperty Duration)
+                                          | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Duration) -> Duration -> IO (StyleableProperty Duration)
+                                          | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Duration) -> IO (StyleableProperty Duration)
+
+  native createStyleableEffectProperty :: StyleablePropertyFactory s -> s -> String -> String -> Class e -> IO (StyleableProperty e)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty Effect)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty e) -> IO (StyleableProperty e)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty e) -> e -> IO (StyleableProperty e)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty e) -> e -> Bool -> IO (StyleableProperty e)
+
+  native createStyleableEnumProperty :: StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty e) -> Class e -> e -> Bool -> IO (StyleableProperty e)
+                                      | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty e) -> Class e -> e -> IO (StyleableProperty e)
+                                      | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty e) -> Class e -> IO (StyleableProperty e)
+
+  native createStyleableFontProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty Font)
+                                      | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Font) -> Font -> IO (StyleableProperty Font)
+                                      | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Font) -> Font -> Bool -> IO (StyleableProperty Font)
+                                      | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Font) -> IO (StyleableProperty Font)
+
+  native createStyleableInsetsProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty Insets)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Insets) -> Insets -> Bool -> IO (StyleableProperty Insets)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Insets) -> Insets -> IO (StyleableProperty Insets)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Insets) -> IO (StyleableProperty Insets)
+
+  native createStyleableNumberProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty Number)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Number) -> Number -> Bool -> IO (StyleableProperty Number)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Number) -> Number -> IO (StyleableProperty Number)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Number) -> IO (StyleableProperty Number)
+
+  native createStyleablePaintProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty Paint)
+                                       | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Paint) -> Paint -> Bool -> IO (StyleableProperty Paint)
+                                       | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Paint) -> Paint -> IO (StyleableProperty Paint)
+                                       | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty Paint) -> IO (StyleableProperty Paint)
+
+  native createStyleableStringProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty String)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty String) -> String -> Bool -> IO (StyleableProperty String)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty String) -> String -> IO (StyleableProperty String)
+                                        | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty String) -> IO (StyleableProperty String)
+
+  native createStyleableUrlProperty :: StyleablePropertyFactory s -> s -> String -> String -> IO (StyleableProperty String)
+                                     | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty String) -> String -> Bool -> IO (StyleableProperty String)
+                                     | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty String) -> String -> IO (StyleableProperty String)
+                                     | StyleablePropertyFactory s -> s -> String -> String -> Function s (StyleableProperty String) -> IO (StyleableProperty String)
+
+  native createUrlCssMetaData :: StyleablePropertyFactory s -> String -> Function s (StyleableProperty String) -> IO (CssMetaData s String)
+                               | StyleablePropertyFactory s -> String -> Function s (StyleableProperty String) -> String -> Bool -> IO (CssMetaData s String)
+                               | StyleablePropertyFactory s -> String -> Function s (StyleableProperty String) -> String -> IO (CssMetaData s String)
+
+  native getCssMetaData :: StyleablePropertyFactory s -> IO (List (CssMetaData Styleable Object))
+
+

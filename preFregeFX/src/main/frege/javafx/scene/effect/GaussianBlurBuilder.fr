@@ -1,0 +1,13 @@
+data GaussianBlurBuilder b = mutable native javafx.scene.effect.GaussianBlurBuilder where
+
+  native applyTo :: GaussianBlurBuilder b -> GaussianBlur -> IO ()
+
+  native build :: GaussianBlurBuilder b -> IO GaussianBlur
+
+  native create "javafx.scene.effect.GaussianBlurBuilder.create" :: () -> IO (GaussianBlurBuilder Object)
+
+  native input :: GaussianBlurBuilder b -> Effect -> IO b
+
+  native radius :: GaussianBlurBuilder b -> Double -> IO b
+
+

@@ -1,9 +1,0 @@
-data NGLine = pure native com.sun.javafx.sg.prism.NGLine where
-
-  pure native new :: () -> NGLine
-
-  pure native getShape :: NGLine -> Shape
-
-  pure native updateLine :: NGLine -> float -> float -> float -> float -> void
-
-

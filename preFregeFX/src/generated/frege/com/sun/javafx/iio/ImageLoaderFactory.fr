@@ -1,7 +1,0 @@
-data ImageLoaderFactory = pure native com.sun.javafx.iio.ImageLoaderFactory where
-
-  native createImageLoader :: ImageLoaderFactory -> InputStream -> ST s ImageLoader throws IOException
-
-  pure native getFormatDescription :: ImageLoaderFactory -> ImageFormatDescription
-
-

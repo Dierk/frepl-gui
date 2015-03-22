@@ -1,7 +1,0 @@
-data DWGlyphLayout = pure native com.sun.javafx.font.directwrite.DWGlyphLayout where
-
-  pure native new :: () -> DWGlyphLayout
-
-  native layout :: DWGlyphLayout -> TextRun -> PGFont -> FontStrike -> Mutable s (JArray char) -> ST s void
-
-

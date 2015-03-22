@@ -1,0 +1,16 @@
+data ReadOnlyDoubleWrapper = mutable native javafx.beans.property.ReadOnlyDoubleWrapper where
+
+  native new :: Object -> String -> Double -> IO ReadOnlyDoubleWrapper
+              | Object -> String -> IO ReadOnlyDoubleWrapper
+              | Double -> IO ReadOnlyDoubleWrapper
+              | () -> IO ReadOnlyDoubleWrapper
+
+  native addListener :: ReadOnlyDoubleWrapper -> InvalidationListener -> IO ()
+                      | ReadOnlyDoubleWrapper -> ChangeListener Number -> IO ()
+
+  native getReadOnlyProperty :: ReadOnlyDoubleWrapper -> IO ReadOnlyDoubleProperty
+
+  native removeListener :: ReadOnlyDoubleWrapper -> ChangeListener Number -> IO ()
+                         | ReadOnlyDoubleWrapper -> InvalidationListener -> IO ()
+
+

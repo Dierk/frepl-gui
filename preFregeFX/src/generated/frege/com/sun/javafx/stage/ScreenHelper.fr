@@ -1,9 +1,0 @@
-data ScreenHelper = pure native com.sun.javafx.stage.ScreenHelper where
-
-  pure native new :: () -> ScreenHelper
-
-  pure native getScreenAccessor "com.sun.javafx.stage.ScreenHelper.getScreenAccessor" :: () -> ScreenHelper_ScreenAccessor
-
-  pure native setScreenAccessor "com.sun.javafx.stage.ScreenHelper.setScreenAccessor" :: ScreenHelper_ScreenAccessor -> void
-
-

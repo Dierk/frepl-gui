@@ -1,0 +1,22 @@
+data Glow = mutable native javafx.scene.effect.Glow where
+
+  native new :: () -> IO Glow
+              | Double -> IO Glow
+
+  native getInput :: Glow -> IO Effect
+
+  native getLevel :: Glow -> IO Double
+
+  native impl_copy :: Glow -> IO Effect
+
+  native impl_getBounds :: Glow -> BaseBounds -> BaseTransform -> Node -> BoundsAccessor -> IO BaseBounds
+
+  native inputProperty :: Glow -> IO (ObjectProperty Effect)
+
+  native levelProperty :: Glow -> IO DoubleProperty
+
+  native setInput :: Glow -> Effect -> IO ()
+
+  native setLevel :: Glow -> Double -> IO ()
+
+

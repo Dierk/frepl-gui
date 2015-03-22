@@ -1,5 +1,0 @@
-data CTFontFile = pure native com.sun.javafx.font.coretext.CTFontFile where
-
-  pure native registerFont "com.sun.javafx.font.coretext.CTFontFile.registerFont" :: String -> boolean
-
-

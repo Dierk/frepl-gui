@@ -1,0 +1,79 @@
+data Shape = mutable native javafx.scene.shape.Shape where
+
+  native fillProperty :: Shape -> IO (ObjectProperty Paint)
+
+  native getClassCssMetaData "javafx.scene.shape.Shape.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getCssMetaData :: Shape -> IO (List (CssMetaData Styleable Object))
+
+  native getFill :: Shape -> IO Paint
+
+  native getStroke :: Shape -> IO Paint
+
+  native getStrokeDashArray :: Shape -> IO (ObservableList Double)
+
+  native getStrokeDashOffset :: Shape -> IO Double
+
+  native getStrokeLineCap :: Shape -> IO StrokeLineCap
+
+  native getStrokeLineJoin :: Shape -> IO StrokeLineJoin
+
+  native getStrokeMiterLimit :: Shape -> IO Double
+
+  native getStrokeType :: Shape -> IO StrokeType
+
+  native getStrokeWidth :: Shape -> IO Double
+
+  native impl_computeGeomBounds :: Shape -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_configShape :: Shape -> IO Shape
+
+  native impl_processMXNode :: Shape -> MXNodeAlgorithm -> MXNodeAlgorithmContext -> IO Object
+
+  native impl_setShapeChangeListener :: Shape -> Runnable -> IO ()
+
+  native impl_updatePeer :: Shape -> IO ()
+
+  native intersect "javafx.scene.shape.Shape.intersect" :: Shape -> Shape -> IO Shape
+
+  native isSmooth :: Shape -> IO Bool
+
+  native setFill :: Shape -> Paint -> IO ()
+
+  native setSmooth :: Shape -> Bool -> IO ()
+
+  native setStroke :: Shape -> Paint -> IO ()
+
+  native setStrokeDashOffset :: Shape -> Double -> IO ()
+
+  native setStrokeLineCap :: Shape -> StrokeLineCap -> IO ()
+
+  native setStrokeLineJoin :: Shape -> StrokeLineJoin -> IO ()
+
+  native setStrokeMiterLimit :: Shape -> Double -> IO ()
+
+  native setStrokeType :: Shape -> StrokeType -> IO ()
+
+  native setStrokeWidth :: Shape -> Double -> IO ()
+
+  native smoothProperty :: Shape -> IO BooleanProperty
+
+  native strokeDashOffsetProperty :: Shape -> IO DoubleProperty
+
+  native strokeLineCapProperty :: Shape -> IO (ObjectProperty StrokeLineCap)
+
+  native strokeLineJoinProperty :: Shape -> IO (ObjectProperty StrokeLineJoin)
+
+  native strokeMiterLimitProperty :: Shape -> IO DoubleProperty
+
+  native strokeProperty :: Shape -> IO (ObjectProperty Paint)
+
+  native strokeTypeProperty :: Shape -> IO (ObjectProperty StrokeType)
+
+  native strokeWidthProperty :: Shape -> IO DoubleProperty
+
+  native subtract "javafx.scene.shape.Shape.subtract" :: Shape -> Shape -> IO Shape
+
+  native union "javafx.scene.shape.Shape.union" :: Shape -> Shape -> IO Shape
+
+

@@ -1,0 +1,25 @@
+data Cylinder = mutable native javafx.scene.shape.Cylinder where
+
+  native new :: Double -> Double -> Int -> IO Cylinder
+              | Double -> Double -> IO Cylinder
+              | () -> IO Cylinder
+
+  native getDivisions :: Cylinder -> IO Int
+
+  native getHeight :: Cylinder -> IO Double
+
+  native getRadius :: Cylinder -> IO Double
+
+  native heightProperty :: Cylinder -> IO DoubleProperty
+
+  native impl_computeGeomBounds :: Cylinder -> BaseBounds -> BaseTransform -> IO BaseBounds
+
+  native impl_updatePeer :: Cylinder -> IO ()
+
+  native radiusProperty :: Cylinder -> IO DoubleProperty
+
+  native setHeight :: Cylinder -> Double -> IO ()
+
+  native setRadius :: Cylinder -> Double -> IO ()
+
+

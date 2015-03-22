@@ -1,9 +1,0 @@
-data SizeConverter = pure native com.sun.javafx.css.converters.SizeConverter where
-
-  native convert :: SizeConverter -> ParsedValue (ParsedValue Object Size) Number -> Font -> IO Number
-
-  native getInstance "com.sun.javafx.css.converters.SizeConverter.getInstance" :: () -> IO (StyleConverter (ParsedValue Object Size) Number)
-
-  pure native toString :: SizeConverter -> String
-
-

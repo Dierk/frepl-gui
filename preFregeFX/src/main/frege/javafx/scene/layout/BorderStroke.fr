@@ -1,0 +1,40 @@
+data BorderStroke = mutable native javafx.scene.layout.BorderStroke where
+
+  native thin "javafx.scene.layout.BorderStroke.THIN" :: IO BorderWidths
+  native medium "javafx.scene.layout.BorderStroke.MEDIUM" :: IO BorderWidths
+  native thick "javafx.scene.layout.BorderStroke.THICK" :: IO BorderWidths
+  native default_widths "javafx.scene.layout.BorderStroke.DEFAULT_WIDTHS" :: IO BorderWidths
+
+  native new :: Paint -> Paint -> Paint -> Paint -> BorderStrokeStyle -> BorderStrokeStyle -> BorderStrokeStyle -> BorderStrokeStyle -> CornerRadii -> BorderWidths -> Insets -> IO BorderStroke
+              | Paint -> BorderStrokeStyle -> CornerRadii -> BorderWidths -> IO BorderStroke
+              | Paint -> BorderStrokeStyle -> CornerRadii -> BorderWidths -> Insets -> IO BorderStroke
+
+  native equals :: BorderStroke -> Object -> IO Bool
+
+  native getBottomStroke :: BorderStroke -> IO Paint
+
+  native getBottomStyle :: BorderStroke -> IO BorderStrokeStyle
+
+  native getInsets :: BorderStroke -> IO Insets
+
+  native getLeftStroke :: BorderStroke -> IO Paint
+
+  native getLeftStyle :: BorderStroke -> IO BorderStrokeStyle
+
+  native getRadii :: BorderStroke -> IO CornerRadii
+
+  native getRightStroke :: BorderStroke -> IO Paint
+
+  native getRightStyle :: BorderStroke -> IO BorderStrokeStyle
+
+  native getTopStroke :: BorderStroke -> IO Paint
+
+  native getTopStyle :: BorderStroke -> IO BorderStrokeStyle
+
+  native getWidths :: BorderStroke -> IO BorderWidths
+
+  native hashCode :: BorderStroke -> IO Int
+
+  native isStrokeUniform :: BorderStroke -> IO Bool
+
+

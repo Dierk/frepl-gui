@@ -1,9 +1,0 @@
-data WCImageImpl = pure native com.sun.javafx.webkit.prism.WCImageImpl where
-
-  pure native getHeight :: WCImageImpl -> int
-
-  pure native getPixelBuffer :: WCImageImpl -> ByteBuffer
-
-  pure native getWidth :: WCImageImpl -> int
-
-

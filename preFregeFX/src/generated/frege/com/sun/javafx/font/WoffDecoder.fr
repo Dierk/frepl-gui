@@ -1,7 +1,0 @@
-data WoffDecoder = pure native com.sun.javafx.font.WoffDecoder where
-
-  pure native new :: () -> WoffDecoder
-
-  native decode :: WoffDecoder -> FontFileReader -> ST s void throws Exception
-
-

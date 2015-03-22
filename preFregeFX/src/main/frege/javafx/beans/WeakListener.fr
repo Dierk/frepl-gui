@@ -1,0 +1,5 @@
+data WeakListener = mutable native javafx.beans.WeakListener where
+
+  native wasGarbageCollected :: WeakListener -> IO Bool
+
+

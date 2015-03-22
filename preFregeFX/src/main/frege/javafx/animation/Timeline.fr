@@ -1,0 +1,12 @@
+data Timeline = mutable native javafx.animation.Timeline where
+
+  native new :: () -> IO Timeline
+              | Double -> IO Timeline
+              | MutableIO (JArray KeyFrame) -> IO Timeline
+              | Double -> MutableIO (JArray KeyFrame) -> IO Timeline
+
+  native getKeyFrames :: Timeline -> IO (ObservableList KeyFrame)
+
+  native stop :: Timeline -> IO ()
+
+

@@ -1,9 +1,0 @@
-data NGPolygon = pure native com.sun.javafx.sg.prism.NGPolygon where
-
-  pure native new :: () -> NGPolygon
-
-  pure native getShape :: NGPolygon -> Shape
-
-  native updatePolygon :: NGPolygon -> Mutable s (JArray float) -> ST s void
-
-

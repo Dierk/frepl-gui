@@ -1,0 +1,25 @@
+data ImageViewBuilder b = mutable native javafx.scene.image.ImageViewBuilder where
+
+  native applyTo :: ImageViewBuilder b -> ImageView -> IO ()
+
+  native build :: ImageViewBuilder b -> IO ImageView
+
+  native create "javafx.scene.image.ImageViewBuilder.create" :: () -> IO (ImageViewBuilder Object)
+
+  native fitHeight :: ImageViewBuilder b -> Double -> IO b
+
+  native fitWidth :: ImageViewBuilder b -> Double -> IO b
+
+  native image :: ImageViewBuilder b -> Image -> IO b
+
+  native preserveRatio :: ImageViewBuilder b -> Bool -> IO b
+
+  native smooth :: ImageViewBuilder b -> Bool -> IO b
+
+  native viewport :: ImageViewBuilder b -> Rectangle2D -> IO b
+
+  native x :: ImageViewBuilder b -> Double -> IO b
+
+  native y :: ImageViewBuilder b -> Double -> IO b
+
+

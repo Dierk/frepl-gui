@@ -1,0 +1,11 @@
+data MapProperty k v = mutable native javafx.beans.property.MapProperty where
+
+  native bindBidirectional :: MapProperty k v -> Property (ObservableMap k v) -> IO ()
+
+  native setValue :: MapProperty k v -> ObservableMap k v -> IO ()
+
+  native toString :: MapProperty k v -> IO String
+
+  native unbindBidirectional :: MapProperty k v -> Property (ObservableMap k v) -> IO ()
+
+

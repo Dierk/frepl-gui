@@ -1,0 +1,99 @@
+data Service v = mutable native javafx.concurrent.Service where
+
+  native addEventFilter :: Service v -> EventType t -> EventHandler t -> IO ()
+
+  native addEventHandler :: Service v -> EventType t -> EventHandler t -> IO ()
+
+  native buildEventDispatchChain :: Service v -> EventDispatchChain -> IO EventDispatchChain
+
+  native cancel :: Service v -> IO Bool
+
+  native exceptionProperty :: Service v -> IO (ReadOnlyObjectProperty Throwable)
+
+  native executorProperty :: Service v -> IO (ObjectProperty Executor)
+
+  native getException :: Service v -> IO Throwable
+
+  native getExecutor :: Service v -> IO Executor
+
+  native getMessage :: Service v -> IO String
+
+  native getOnCancelled :: Service v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnFailed :: Service v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnReady :: Service v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnRunning :: Service v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnScheduled :: Service v -> IO (EventHandler WorkerStateEvent)
+
+  native getOnSucceeded :: Service v -> IO (EventHandler WorkerStateEvent)
+
+  native getProgress :: Service v -> IO Double
+
+  native getState :: Service v -> IO Worker_State
+
+  native getTitle :: Service v -> IO String
+
+  native getTotalWork :: Service v -> IO Double
+
+  native getValue :: Service v -> IO v
+
+  native getWorkDone :: Service v -> IO Double
+
+  native isRunning :: Service v -> IO Bool
+
+  native messageProperty :: Service v -> IO ReadOnlyStringProperty
+
+  native onCancelledProperty :: Service v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onFailedProperty :: Service v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onReadyProperty :: Service v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onRunningProperty :: Service v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onScheduledProperty :: Service v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native onSucceededProperty :: Service v -> IO (ObjectProperty (EventHandler WorkerStateEvent))
+
+  native progressProperty :: Service v -> IO ReadOnlyDoubleProperty
+
+  native removeEventFilter :: Service v -> EventType t -> EventHandler t -> IO ()
+
+  native removeEventHandler :: Service v -> EventType t -> EventHandler t -> IO ()
+
+  native reset :: Service v -> IO ()
+
+  native restart :: Service v -> IO ()
+
+  native runningProperty :: Service v -> IO ReadOnlyBooleanProperty
+
+  native setExecutor :: Service v -> Executor -> IO ()
+
+  native setOnCancelled :: Service v -> EventHandler WorkerStateEvent -> IO ()
+
+  native setOnFailed :: Service v -> EventHandler WorkerStateEvent -> IO ()
+
+  native setOnReady :: Service v -> EventHandler WorkerStateEvent -> IO ()
+
+  native setOnRunning :: Service v -> EventHandler WorkerStateEvent -> IO ()
+
+  native setOnScheduled :: Service v -> EventHandler WorkerStateEvent -> IO ()
+
+  native setOnSucceeded :: Service v -> EventHandler WorkerStateEvent -> IO ()
+
+  native start :: Service v -> IO ()
+
+  native stateProperty :: Service v -> IO (ReadOnlyObjectProperty Worker_State)
+
+  native titleProperty :: Service v -> IO ReadOnlyStringProperty
+
+  native totalWorkProperty :: Service v -> IO ReadOnlyDoubleProperty
+
+  native valueProperty :: Service v -> IO (ReadOnlyObjectProperty v)
+
+  native workDoneProperty :: Service v -> IO ReadOnlyDoubleProperty
+
+

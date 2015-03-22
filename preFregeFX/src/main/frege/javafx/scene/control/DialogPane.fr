@@ -1,0 +1,55 @@
+data DialogPane = mutable native javafx.scene.control.DialogPane where
+
+  native new :: () -> IO DialogPane
+
+  native contentProperty :: DialogPane -> IO (ObjectProperty Node)
+
+  native contentTextProperty :: DialogPane -> IO StringProperty
+
+  native expandableContentProperty :: DialogPane -> IO (ObjectProperty Node)
+
+  native expandedProperty :: DialogPane -> IO BooleanProperty
+
+  native getButtonTypes :: DialogPane -> IO (ObservableList ButtonType)
+
+  native getClassCssMetaData "javafx.scene.control.DialogPane.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getContent :: DialogPane -> IO Node
+
+  native getContentText :: DialogPane -> IO String
+
+  native getCssMetaData :: DialogPane -> IO (List (CssMetaData Styleable Object))
+
+  native getExpandableContent :: DialogPane -> IO Node
+
+  native getGraphic :: DialogPane -> IO Node
+
+  native getHeader :: DialogPane -> IO Node
+
+  native getHeaderText :: DialogPane -> IO String
+
+  native graphicProperty :: DialogPane -> IO (ObjectProperty Node)
+
+  native headerProperty :: DialogPane -> IO (ObjectProperty Node)
+
+  native headerTextProperty :: DialogPane -> IO StringProperty
+
+  native isExpanded :: DialogPane -> IO Bool
+
+  native lookupButton :: DialogPane -> ButtonType -> IO Node
+
+  native setContent :: DialogPane -> Node -> IO ()
+
+  native setContentText :: DialogPane -> String -> IO ()
+
+  native setExpandableContent :: DialogPane -> Node -> IO ()
+
+  native setExpanded :: DialogPane -> Bool -> IO ()
+
+  native setGraphic :: DialogPane -> Node -> IO ()
+
+  native setHeader :: DialogPane -> Node -> IO ()
+
+  native setHeaderText :: DialogPane -> String -> IO ()
+
+

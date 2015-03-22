@@ -1,0 +1,17 @@
+data ReadOnlyListProperty e = mutable native javafx.beans.property.ReadOnlyListProperty where
+
+  native bindContent :: ReadOnlyListProperty e -> ObservableList e -> IO ()
+
+  native bindContentBidirectional :: ReadOnlyListProperty e -> ObservableList e -> IO ()
+
+  native equals :: ReadOnlyListProperty e -> Object -> IO Bool
+
+  native hashCode :: ReadOnlyListProperty e -> IO Int
+
+  native toString :: ReadOnlyListProperty e -> IO String
+
+  native unbindContent :: ReadOnlyListProperty e -> Object -> IO ()
+
+  native unbindContentBidirectional :: ReadOnlyListProperty e -> Object -> IO ()
+
+

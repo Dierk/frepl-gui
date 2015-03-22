@@ -1,0 +1,11 @@
+data TextFieldTreeCellBuilder t b = mutable native javafx.scene.control.cell.TextFieldTreeCellBuilder where
+
+  native applyTo :: TextFieldTreeCellBuilder t b -> TextFieldTreeCell t -> IO ()
+
+  native build :: TextFieldTreeCellBuilder t b -> IO (TextFieldTreeCell t)
+
+  native converter :: TextFieldTreeCellBuilder t b -> StringConverter t -> IO b
+
+  native create "javafx.scene.control.cell.TextFieldTreeCellBuilder.create" :: () -> IO (TextFieldTreeCellBuilder t Object)
+
+

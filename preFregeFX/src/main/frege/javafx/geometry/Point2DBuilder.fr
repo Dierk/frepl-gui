@@ -1,0 +1,11 @@
+data Point2DBuilder b = mutable native javafx.geometry.Point2DBuilder where
+
+  native build :: Point2DBuilder b -> IO Point2D
+
+  native create "javafx.geometry.Point2DBuilder.create" :: () -> IO (Point2DBuilder Object)
+
+  native x :: Point2DBuilder b -> Double -> IO b
+
+  native y :: Point2DBuilder b -> Double -> IO b
+
+

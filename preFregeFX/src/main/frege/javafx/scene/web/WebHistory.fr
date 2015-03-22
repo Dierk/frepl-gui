@@ -1,0 +1,17 @@
+data WebHistory = mutable native javafx.scene.web.WebHistory where
+
+  native currentIndexProperty :: WebHistory -> IO ReadOnlyIntegerProperty
+
+  native getCurrentIndex :: WebHistory -> IO Int
+
+  native getEntries :: WebHistory -> IO (ObservableList WebHistory_Entry)
+
+  native getMaxSize :: WebHistory -> IO Int
+
+  native go :: WebHistory -> Int -> IO ()
+
+  native maxSizeProperty :: WebHistory -> IO IntegerProperty
+
+  native setMaxSize :: WebHistory -> Int -> IO ()
+
+

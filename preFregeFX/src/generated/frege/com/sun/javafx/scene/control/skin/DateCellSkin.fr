@@ -1,5 +1,0 @@
-data DateCellSkin = pure native com.sun.javafx.scene.control.skin.DateCellSkin where
-
-  native new :: DateCell -> IO DateCellSkin
-
-

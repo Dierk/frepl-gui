@@ -1,0 +1,33 @@
+data Rectangle2D = mutable native javafx.geometry.Rectangle2D where
+
+  native empty "javafx.geometry.Rectangle2D.EMPTY" :: IO Rectangle2D
+
+  native new :: Double -> Double -> Double -> Double -> IO Rectangle2D
+
+  native contains :: Rectangle2D -> Double -> Double -> IO Bool
+                   | Rectangle2D -> Rectangle2D -> IO Bool
+                   | Rectangle2D -> Double -> Double -> Double -> Double -> IO Bool
+                   | Rectangle2D -> Point2D -> IO Bool
+
+  native equals :: Rectangle2D -> Object -> IO Bool
+
+  native getHeight :: Rectangle2D -> IO Double
+
+  native getMaxX :: Rectangle2D -> IO Double
+
+  native getMaxY :: Rectangle2D -> IO Double
+
+  native getMinX :: Rectangle2D -> IO Double
+
+  native getMinY :: Rectangle2D -> IO Double
+
+  native getWidth :: Rectangle2D -> IO Double
+
+  native hashCode :: Rectangle2D -> IO Int
+
+  native intersects :: Rectangle2D -> Double -> Double -> Double -> Double -> IO Bool
+                     | Rectangle2D -> Rectangle2D -> IO Bool
+
+  native toString :: Rectangle2D -> IO String
+
+

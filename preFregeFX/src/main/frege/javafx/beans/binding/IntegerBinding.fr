@@ -1,0 +1,21 @@
+data IntegerBinding = mutable native javafx.beans.binding.IntegerBinding where
+
+  native addListener :: IntegerBinding -> ChangeListener Number -> IO ()
+                      | IntegerBinding -> InvalidationListener -> IO ()
+
+  native dispose :: IntegerBinding -> IO ()
+
+  native get :: IntegerBinding -> IO Int
+
+  native getDependencies :: IntegerBinding -> IO (ObservableList Object)
+
+  native invalidate :: IntegerBinding -> IO ()
+
+  native isValid :: IntegerBinding -> IO Bool
+
+  native removeListener :: IntegerBinding -> InvalidationListener -> IO ()
+                         | IntegerBinding -> ChangeListener Number -> IO ()
+
+  native toString :: IntegerBinding -> IO String
+
+

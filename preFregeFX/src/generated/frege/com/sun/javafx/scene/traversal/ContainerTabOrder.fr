@@ -1,9 +1,0 @@
-data ContainerTabOrder = pure native com.sun.javafx.scene.traversal.ContainerTabOrder where
-
-  native select :: ContainerTabOrder -> Node -> Direction -> TraversalContext -> IO Node
-
-  native selectFirst :: ContainerTabOrder -> TraversalContext -> IO Node
-
-  native selectLast :: ContainerTabOrder -> TraversalContext -> IO Node
-
-

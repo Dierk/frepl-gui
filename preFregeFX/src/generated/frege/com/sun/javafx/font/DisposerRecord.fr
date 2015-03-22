@@ -1,5 +1,0 @@
-data DisposerRecord = pure native com.sun.javafx.font.DisposerRecord where
-
-  pure native dispose :: DisposerRecord -> void
-
-

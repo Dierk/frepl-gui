@@ -1,0 +1,75 @@
+data ScaleTransition = mutable native javafx.animation.ScaleTransition where
+
+  native new :: () -> IO ScaleTransition
+              | Duration -> Node -> IO ScaleTransition
+              | Duration -> IO ScaleTransition
+
+  native byXProperty :: ScaleTransition -> IO DoubleProperty
+
+  native byYProperty :: ScaleTransition -> IO DoubleProperty
+
+  native byZProperty :: ScaleTransition -> IO DoubleProperty
+
+  native durationProperty :: ScaleTransition -> IO (ObjectProperty Duration)
+
+  native fromXProperty :: ScaleTransition -> IO DoubleProperty
+
+  native fromYProperty :: ScaleTransition -> IO DoubleProperty
+
+  native fromZProperty :: ScaleTransition -> IO DoubleProperty
+
+  native getByX :: ScaleTransition -> IO Double
+
+  native getByY :: ScaleTransition -> IO Double
+
+  native getByZ :: ScaleTransition -> IO Double
+
+  native getDuration :: ScaleTransition -> IO Duration
+
+  native getFromX :: ScaleTransition -> IO Double
+
+  native getFromY :: ScaleTransition -> IO Double
+
+  native getFromZ :: ScaleTransition -> IO Double
+
+  native getNode :: ScaleTransition -> IO Node
+
+  native getToX :: ScaleTransition -> IO Double
+
+  native getToY :: ScaleTransition -> IO Double
+
+  native getToZ :: ScaleTransition -> IO Double
+
+  native interpolate :: ScaleTransition -> Double -> IO ()
+
+  native nodeProperty :: ScaleTransition -> IO (ObjectProperty Node)
+
+  native setByX :: ScaleTransition -> Double -> IO ()
+
+  native setByY :: ScaleTransition -> Double -> IO ()
+
+  native setByZ :: ScaleTransition -> Double -> IO ()
+
+  native setDuration :: ScaleTransition -> Duration -> IO ()
+
+  native setFromX :: ScaleTransition -> Double -> IO ()
+
+  native setFromY :: ScaleTransition -> Double -> IO ()
+
+  native setFromZ :: ScaleTransition -> Double -> IO ()
+
+  native setNode :: ScaleTransition -> Node -> IO ()
+
+  native setToX :: ScaleTransition -> Double -> IO ()
+
+  native setToY :: ScaleTransition -> Double -> IO ()
+
+  native setToZ :: ScaleTransition -> Double -> IO ()
+
+  native toXProperty :: ScaleTransition -> IO DoubleProperty
+
+  native toYProperty :: ScaleTransition -> IO DoubleProperty
+
+  native toZProperty :: ScaleTransition -> IO DoubleProperty
+
+

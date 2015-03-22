@@ -1,0 +1,18 @@
+data ToolBar = mutable native javafx.scene.control.ToolBar where
+
+  native new :: () -> IO ToolBar
+              | MutableIO (JArray Node) -> IO ToolBar
+
+  native getClassCssMetaData "javafx.scene.control.ToolBar.getClassCssMetaData" :: () -> STMutable s (List (CssMetaData Styleable Object))
+
+  native getControlCssMetaData :: ToolBar -> IO (List (CssMetaData Styleable Object))
+
+  native getItems :: ToolBar -> IO (ObservableList Node)
+
+  native getOrientation :: ToolBar -> IO Orientation
+
+  native orientationProperty :: ToolBar -> IO (ObjectProperty Orientation)
+
+  native setOrientation :: ToolBar -> Orientation -> IO ()
+
+
