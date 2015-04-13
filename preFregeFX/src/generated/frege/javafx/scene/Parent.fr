@@ -8,21 +8,11 @@ data Parent = mutable native javafx.scene.Parent where
 
   native getStylesheets :: Parent -> IO (ObservableList String)
 
-  native impl_computeGeomBounds :: Parent -> BaseBounds -> BaseTransform -> IO BaseBounds
-
-  native impl_getAllParentStylesheets :: Parent -> IO (List String)
-
-  native impl_processMXNode :: Parent -> MXNodeAlgorithm -> MXNodeAlgorithmContext -> IO Object
-
-  native impl_traversalEngineProperty :: Parent -> IO (ObjectProperty ParentTraversalEngine)
-
-  native impl_updatePeer :: Parent -> IO ()
-
   native isNeedsLayout :: Parent -> IO Bool
 
   native layout :: Parent -> IO ()
 
-  native lookup :: Parent -> String -> IO Node
+  native lookup :: Parent -> String -> IO (Maybe Node)
 
   native minHeight :: Parent -> Double -> IO Double
 

@@ -2,72 +2,34 @@ module org.frege.AllNodes where
 
 import frege.Prelude hiding(ListView)
 
-import frege.java.Net (URL)
+import fregefx.javafx.application.Platform
+import fregefx.javafx.fxml.FXMLLoader
+import fregefx.javafx.scene.Node
+import fregefx.javafx.scene.Parent
+import fregefx.javafx.scene.input.KeyEvent
+import fregefx.javafx.scene.text.Font
+import fregefx.javafx.scene.control.Button
+import fregefx.javafx.scene.control.TextArea
+import fregefx.javafx.stage.WindowEvent
+import fregefx.javafx.event.EventHandler
+import fregefx.javafx.collections.ObservableList
 
-data Node           = mutable native javafx.scene.Node where
-    native isResizable :: Node -> IO Bool
-
-data Parent         = mutable native javafx.scene.Parent
-data Event          = mutable native javafx.event.Event         -- well Events shouldn't be mutable, but in JavaFX, they are
-data EventHandler   = mutable native javafx.event.EventHandler  -- most likely not mutable, at least not in our wrapper impl
-
-data Platform = mutable native javafx.application.Platform where
-    native runLater  javafx.application.Platform.runLater :: MutableIO Runnable -> IO ()
 
 data FregeFX = mutable native org.frege.FregeFX where
     native launch  org.frege.FregeFX.launch :: ( Stage -> IO () ) -> IO ()
     native fxml    org.frege.FregeFX.fxml   :: String -> String -> IO Parent
 
-data FXMLLoader = mutable native javafx.fxml.FXMLLoader where
-    native load    javafx.fxml.FXMLLoader.load :: URL -> IO Parent throws IOException
-
-native getResource :: ClassLoader -> String -> IO URL
-
-data KeyEvent = mutable native javafx.scene.input.KeyEvent where
-    native isMetaDown       :: KeyEvent -> IO Bool
-    native isShortcutDown   :: KeyEvent -> IO Bool
-    native isAltDown        :: KeyEvent -> IO Bool
-    native isControlDown    :: KeyEvent -> IO Bool
-    native getCharacter     :: KeyEvent -> IO String
-    native toString         :: KeyEvent -> IO String
-
-data WindowEvent = mutable native javafx.stage.WindowEvent
-
-data KeyEventHandler = mutable native org.frege.FregeEventHandler where
-    native new      :: (KeyEvent -> IO () ) -> IO KeyEventHandler
-
-data WindowEventHandler = mutable native org.frege.FregeEventHandler where
-    native new      :: (WindowEvent -> IO () ) -> IO WindowEventHandler
-
-data Font = mutable native javafx.scene.text.Font where
-    native new     :: Double -> IO Font     -- ctor with size for system font
-    native getSize :: Font -> IO Double
-
-data Button = mutable native javafx.scene.control.Button where
-    native new      :: String ->  IO Button
-
-data TextArea = mutable native javafx.scene.control.TextArea where
-    native new              :: String ->  IO TextArea
-    native getText          :: TextArea -> IO String
-    native setText          :: TextArea -> String -> IO ()
-    native appendText       :: TextArea -> String -> IO()
-    native setOnKeyTyped    :: TextArea -> KeyEventHandler -> IO ()
-    native requestFocus     :: TextArea -> IO ()
-    native getFont          :: TextArea -> IO Font
-    native setFont          :: TextArea -> Font -> IO ()
 
 data ListView = mutable native javafx.scene.control.ListView where
     native getItems          :: ListView -> IO ObservableList
     native getSelectionModel :: ListView -> IO SelectionModel
 
-data ObservableList = mutable native javafx.collections.ObservableList where
-    native add  :: ObservableList -> String -> IO Bool
-    native size :: ObservableList -> IO Int
 
 data SelectionModel = mutable native javafx.scene.control.SelectionModel where
     native selectedItemProperty :: SelectionModel -> IO ReadOnlyObjectProperty
     native getSelectedIndex     :: SelectionModel -> IO Int             -- -1 if there is no selection
     native clearAndSelect       :: SelectionModel -> Int -> IO ()
+    native clearSelection       :: SelectionModel -> IO ()
 
 data ReadOnlyObjectProperty = mutable native javafx.beans.property.ReadOnlyObjectProperty where
     native addListener :: ReadOnlyObjectProperty -> ChangeListener -> IO ()
@@ -79,6 +41,7 @@ data Scene = mutable native javafx.scene.Scene where
     native new              :: Parent -> Double -> Double -> IO Scene
     native lookup           :: Scene  -> String -> IO (Maybe Node)
     native setOnKeyTyped    :: Scene -> KeyEventHandler -> IO ()
+    native setOnKeyReleased :: Scene -> KeyEventHandler -> IO ()
 
 data Stage = mutable native javafx.stage.Stage where
     native show         :: Stage -> IO ()
@@ -92,6 +55,7 @@ data FileChooser = mutable native javafx.stage.FileChooser where
     native showOpenDialog :: FileChooser -> Stage -> IO (Maybe (MutableIO File))
 
 
+data TextArea = mutable native javafx.scene.control.TextArea
 
 data AllNodes = TextArea    TextArea
               | Button      Button

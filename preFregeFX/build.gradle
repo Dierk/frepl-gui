@@ -49,9 +49,9 @@ String locateJfxLibDir() {
     logger.error " or set JAVAFX_HOME to a dir that contains the rt/lib/jfxrt.jar"
     throw new GradleScriptException("location of jfxrt.jar could not be determined", null)
 }
-
-fregeNativeGen {
-//    typesFile = "$projectDir/src/main/resources/types.properties"
-    className = System.properties.nativeClassName //"javafx.scene.control.Button"
-    outputFile = file(System.properties.outputFile) // outputFile
-}
+//
+//fregeNativeGen {
+////    typesFile = "$projectDir/src/main/resources/types.properties"
+//    className = System.properties.nativeClassName //"javafx.scene.control.Button"
+//    outputFile = file(System.properties.outputFile) // outputFile
+//}

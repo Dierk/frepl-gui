@@ -3,6 +3,20 @@ module org.frege.Application where
 import org.frege.JavaFX
 import org.frege.AllNodes
 
+import fregefx.javafx.application.Platform
+import fregefx.javafx.fxml.FXMLLoader
+import fregefx.javafx.scene.Node
+import fregefx.javafx.scene.Parent
+import fregefx.javafx.event.Event
+import fregefx.javafx.scene.input.KeyEvent
+import fregefx.javafx.scene.input.KeyCode
+import fregefx.javafx.scene.text.Font
+import fregefx.javafx.scene.control.Button
+import fregefx.javafx.scene.control.TextArea
+import fregefx.javafx.stage.WindowEvent
+import fregefx.javafx.event.EventHandler
+import fregefx.javafx.collections.ObservableList
+
 main args = do
     mConsole <- MVar.newEmpty            -- for thread coordination, set in showUI thread, start repl when ready
     async do                             -- JavaFX would block the main thread otherwise after launching the UI thread
@@ -37,9 +51,11 @@ showUI mConsole stage = do
 
     mQueue <- newEmptyMVar
     onClosing mQueue >>= stage.setOnHidden
-    keyHandler <- onKeyTyped mQueue stage inputArea outputArea items sm
-    scene.setOnKeyTyped keyHandler
-    inputArea.setOnKeyTyped keyHandler
+
+    keyReleasedHandler <- onKeyReleased mQueue stage inputArea outputArea items sm
+    scene.setOnKeyReleased         keyReleasedHandler
+--    inputArea.setOnKeyReleased     keyReleasedHandler
+
     mIn  = newMVar inputArea
     mOut = newMVar outputArea
     console = GraphicRepl mQueue mIn mOut
@@ -63,38 +79,49 @@ onClosing :: MVar String -> IO KeyEventHandler
 onClosing mQueue = WindowEventHandler.new handle where
     handle windowEvent = do
         shutdown -- closing the executor service - just to be clean
-        println "let the console close itself"
         mQueue.put ":q"
 
-onKeyTyped :: MVar String -> Stage -> TextArea -> TextArea -> ObservableList -> SelectionModel -> IO KeyEventHandler
-onKeyTyped mQueue stage inputArea outputArea items historySelection = KeyEventHandler.new handleKeyEvent where
+onKeyReleased :: MVar String -> Stage -> TextArea -> TextArea -> ObservableList -> SelectionModel -> IO KeyEventHandler
+onKeyReleased mQueue stage inputArea outputArea items historySelection = KeyEventHandler.new handleKeyEvent where
     handleKeyEvent keyEvent = do
-        char <- keyEvent.getCharacter
-        meta <- keyEvent.isMetaDown
-        scut <- keyEvent.isShortcutDown
-        alt  <- keyEvent.isAltDown
-        ctrl <- keyEvent.isControlDown
-        if   (scut || ctrl || alt || meta)
+--        println . show =<< keyEvent.toString
+        char <- KeyEvent.getText keyEvent
+        meta <- KeyEvent.isMetaDown keyEvent
+        scut <- KeyEvent.isShortcutDown  keyEvent -- Ctrl on Windows, Cmd on Mac
+        alt  <- KeyEvent.isAltDown keyEvent
+        ctrl <- KeyEvent.isControlDown keyEvent
+        if   (scut || ctrl || alt || meta) -- we have any special key
         then case char of
-            "\r" -> doExecute mQueue inputArea items
+            "\015" -> insert inputArea "\n"
             "l"  -> loadFile stage inputArea
-            "j"  -> selectHistory  items historySelection
-            "p"  -> selectPrevious items historySelection
-            "n"  -> selectNext     items historySelection
             "b"  -> biggerFont  inputArea outputArea
             "s"  -> smallerFont inputArea outputArea
-            _    -> return () -- keyEvent.toString >>= println . show
-        else return ()
+            _    -> return ()
+        else do
+            code <- keyEvent.getCode
+--            println . show $ code.getName
+            Event.consume keyEvent
+            case code.getName of
+                 "Down"  -> selectNext     items historySelection
+                 "Up"    -> selectPrevious items historySelection
+                 "Enter" -> doExecute mQueue inputArea items historySelection
+                 _       -> return ()
 
-doExecute :: MVar String ->TextArea -> ObservableList -> IO ()
-doExecute mQueue inputArea items = do
+insert :: TextArea -> String -> IO ()
+insert inputArea text = do
+    pos <- inputArea.getCaretPosition
+    inputArea.insertText pos text
+
+doExecute :: MVar String ->TextArea -> ObservableList -> SelectionModel -> IO ()
+doExecute mQueue inputArea items historySelection = do
     script <- inputArea.getText
     when (not . null $ trim script) $ do
         scriptLines = if (1 == length (lines script))
            then [trim script]
            else [":{"] ++ lines script ++ [":}"]
         mapM mQueue.put scriptLines                 -- the beef
-        items.add script
+        items.add $ trim script
+        historySelection.clearSelection
         inputArea.setText ""
     when (script == ":q") $ System.exit 0
 
@@ -108,11 +135,6 @@ loadFile stage inputArea = do
         Just mIoFile = do
             path <- mIoFile.getPath
             inputArea.setText (":l " ++ path)
-
-selectHistory :: ObservableList -> SelectionModel -> IO ()
-selectHistory items historySelection = do
-    listSize <- items.size
-    historySelection.clearAndSelect (listSize - 1)
 
 selectPrevious :: ObservableList -> SelectionModel -> IO ()
 selectPrevious items historySelection = do

@@ -76,18 +76,6 @@ data FXMLLoader = mutable native javafx.fxml.FXMLLoader where
 
   native getRoot :: FXMLLoader -> IO t
 
-  native impl_getLineNumber :: FXMLLoader -> IO Int
-
-  native impl_getLoadListener :: FXMLLoader -> IO LoadListener
-
-  native impl_getParseTrace :: FXMLLoader -> IO (JArray ParseTraceElement)
-
-  native impl_isStaticLoad :: FXMLLoader -> IO Bool
-
-  native impl_setLoadListener :: FXMLLoader -> LoadListener -> IO ()
-
-  native impl_setStaticLoad :: FXMLLoader -> Bool -> IO ()
-
   native load "javafx.fxml.FXMLLoader.load" :: URL -> Mutable s ResourceBundle -> ST s t throws IOException
                                              | URL -> ST s t throws IOException
 

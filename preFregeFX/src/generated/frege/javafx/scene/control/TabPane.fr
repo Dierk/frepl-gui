@@ -27,7 +27,7 @@ data TabPane = mutable native javafx.scene.control.TabPane where
 
   native isRotateGraphic :: TabPane -> IO Bool
 
-  native lookup :: TabPane -> String -> IO Node
+  native lookup :: TabPane -> String -> IO (Maybe Node)
 
   native lookupAll :: TabPane -> String -> IO (Set Node)
 

@@ -1,0 +1,35 @@
+module fregefx.javafx.scene.text.Font where
+
+import frege.java.Util (List)
+{--
+    Fonts are immutable but they depend on the Toolkit FontLoader.
+-}
+
+
+data Font = mutable native javafx.scene.text.Font where
+
+  native new :: Double -> IO Font
+              | String -> Double -> IO Font
+  native equals :: Font -> Object -> IO Bool
+  native font "javafx.scene.text.Font.font" :: Double -> IO Font
+--                                             | String -> FontWeight -> FontPosture -> Double -> IO Font
+--                                             | String -> FontWeight -> Double -> IO Font
+--                                             | String -> FontPosture -> Double -> IO Font
+                                             | String -> Double -> IO Font
+                                             | String -> IO Font
+  native getDefault  "javafx.scene.text.Font.getDefault"  :: () -> IO Font
+  native getFamilies "javafx.scene.text.Font.getFamilies" :: () -> STMutable s (List String)
+  native getFamily :: Font -> IO String
+  native getFontNames "javafx.scene.text.Font.getFontNames" :: String -> STMutable s (List String)
+                                                             | ()     -> STMutable s (List String)
+  native getName  :: Font -> IO String
+  native getSize  :: Font -> IO Double
+  native getStyle :: Font -> IO String
+  native hashCode :: Font -> IO Int
+
+  native loadFont "javafx.scene.text.Font.loadFont" :: String      -> Double -> IO (Maybe Font)
+                                                     | InputStream -> Double -> IO (Maybe Font)
+
+  native toString :: Font -> IO String
+
+

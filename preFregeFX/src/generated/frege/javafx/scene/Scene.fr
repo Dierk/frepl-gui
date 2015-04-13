@@ -171,7 +171,7 @@ data Scene = mutable native javafx.scene.Scene where
 
   native isDepthBuffer :: Scene -> IO Bool
 
-  native lookup :: Scene -> String -> IO Node
+  native lookup :: Scene -> String -> IO (Maybe Node)
 
   native nodeOrientationProperty :: Scene -> IO (ObjectProperty NodeOrientation)
 

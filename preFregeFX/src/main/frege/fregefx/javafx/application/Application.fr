@@ -1,0 +1,19 @@
+module fregefx.javafx.application.Application where
+
+data Application = mutable native javafx.application.Application where
+
+  pure native stylesheet_caspian "javafx.application.Application.STYLESHEET_CASPIAN" :: String
+  pure native stylesheet_modena "javafx.application.Application.STYLESHEET_MODENA" :: String
+
+--  native getHostServices :: Application -> IO HostServices
+--  native getParameters :: Application -> IO Application_Parameters
+  native getUserAgentStylesheet "javafx.application.Application.getUserAgentStylesheet" :: () -> IO String
+  native init :: Application -> IO () throws Exception
+  native launch "javafx.application.Application.launch" :: Class Application -> Mutable s (JArray String) -> ST s ()
+                                                         | Mutable s (JArray String) -> ST s ()
+--  native notifyPreloader :: Application -> Preloader_PreloaderNotification -> IO ()
+  native setUserAgentStylesheet "javafx.application.Application.setUserAgentStylesheet" :: String -> IO ()
+--  native start :: Application -> Stage -> IO () throws Exception
+  native stop :: Application -> IO () throws Exception
+
+

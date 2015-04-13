@@ -341,7 +341,7 @@ data Node = mutable native javafx.scene.Node where
                         | Node -> Double -> Double -> Double -> IO Point2D
                         | Node -> Point2D -> IO Point2D
 
-  native lookup :: Node -> String -> IO Node
+  native lookup :: Node -> String -> IO (Maybe Node)
 
   native lookupAll :: Node -> String -> IO (Set Node)
 
