@@ -31,7 +31,7 @@ data TextArea = mutable native javafx.scene.control.TextArea where
   native setWrapText        :: TextArea -> Bool -> IO ()
 --  native wrapTextProperty :: TextArea -> IO BooleanProperty
 
--- ------- from superclasses -------
+-- ------- should go into superclasses -------
   native getText          :: TextArea -> IO String
   native setText          :: TextArea -> String -> IO ()
   native getCaretPosition :: TextArea -> IO Int

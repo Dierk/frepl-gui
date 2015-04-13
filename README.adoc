@@ -8,25 +8,25 @@ With a Java 8, run
 
     <install-dir>/bin/client
 
-Additions to the use of the command-line repl
+Additions to the use of the command-line REPL
 =============================================
-In addition to the commands in the command-line repl like `:help`, the following keyboard shortcuts are supported:
+In addition to the commands in the command-line REPL like `:help`, the following keyboard shortcuts are supported:
 
-    Ctrl-Enter Submit the current editor content for execution
+    Enter      Submit the current editor content for execution
+    Up         Show previous in history.
+    Down       Show next in history.
+    Ctrl-Enter Insert new line in editor.
     Ctrl-L     Load Frege code via file chooser dialog.
-    Ctrl-J     Show last in history. (under your index finger for convenience)
-    Ctrl-P     Show previous in history.
-    Ctrl-N     Show next in history.
     Ctrl-B     Bigger Font.
     Ctrl-S     Smaller Font.
 
-Beside Ctrl, you can use any other meta-key or combinations thereof.
+Beside Ctrl, you can use any other meta-key (Cmd, Alt) or combinations thereof.
 This feature can conflict with local keyboard settings for entering special characters.
 
 Please note that _this GUI is not an IDE_. The content of the editor is fed line-by-line to the
-command-line repl and this limits the amount of work that one can do in "one go".
+command-line REPL and this limits the amount of work that one can do in "one go".
 
-Multi-line content is automatically wrapped in `:{` and `:}` as expected by the repl.
+Multi-line content is automatically wrapped in `:{` and `:}` as expected by the REPL.
 
 However, that still doesn't allow to submit multi-line definitions together with their usage:
 
@@ -59,10 +59,3 @@ With Java 8 start via
 
 NOTE: There is no need to install gradle or anything else beside a Java 8 JDK.
       It is all self-installing.
-
-
-CAUTION: For the latest state of development, there is an issue with the dependency to
-the `frege-repl` project that needs local `maven install` since it is not available
-in any public repository, yet.
-This in turn depends on `frege-interpreter`, that also needs be built locally with `maven install`.
-Once we get to a release candidate, this will all be resolved through final versions in a public repo.

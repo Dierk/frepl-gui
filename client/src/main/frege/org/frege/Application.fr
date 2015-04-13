@@ -35,9 +35,6 @@ showUI mConsole stage = do
     outputArea <- locateTextField scene "#repl"
     historyLV  <- locateListView  scene "#historyList"
 
-    foo <- inputArea.isResizable -- just as an example how to use Java subtyping
-    println $ show foo
-
     items <- historyLV.getItems
     items.add ":help"
     items.add ":type mapM"
@@ -61,7 +58,7 @@ showUI mConsole stage = do
     console = GraphicRepl mQueue mIn mOut
     mConsole.put console     -- allow the main thread to proceed
     console.writeln welcome
-    console.writeln  $ "Press Control (or any other meta key) + Enter to submit.\n" ++ "Enter :help for more details."
+    console.writeln  $ "Press Enter to submit.\n" ++ "Submit ':help' for more details."
     mQueue.put "\"\"" -- evaluate an empty string to hide the initialization time
 
 fxml = FregeFX.fxml "org.frege.Application"
@@ -71,7 +68,6 @@ startRepl console = do
     let env = ReplEnv.default.{config <- InterpreterConfig.{transformDefs=transformDefs}}
     preludeScript <- readResourceAsString "PreludeRepl.fr"
     let newState = snd $ Interpreter.run (interpret preludeScript) env.config env.state
-    println "going into main console loop"
     repl console env.{state=newState} -- first step in endless loop
     return ()
 
@@ -83,29 +79,30 @@ onClosing mQueue = WindowEventHandler.new handle where
 
 onKeyReleased :: MVar String -> Stage -> TextArea -> TextArea -> ObservableList -> SelectionModel -> IO KeyEventHandler
 onKeyReleased mQueue stage inputArea outputArea items historySelection = KeyEventHandler.new handleKeyEvent where
+--    handleKeyEvent :: KeyEvent -> IO ()
     handleKeyEvent keyEvent = do
 --        println . show =<< keyEvent.toString
-        char <- KeyEvent.getText keyEvent
-        meta <- KeyEvent.isMetaDown keyEvent
-        scut <- KeyEvent.isShortcutDown  keyEvent -- Ctrl on Windows, Cmd on Mac
-        alt  <- KeyEvent.isAltDown keyEvent
-        ctrl <- KeyEvent.isControlDown keyEvent
-        if   (scut || ctrl || alt || meta) -- we have any special key
-        then case char of
-            "\015" -> insert inputArea "\n"
-            "l"  -> loadFile stage inputArea
-            "b"  -> biggerFont  inputArea outputArea
-            "s"  -> smallerFont inputArea outputArea
-            _    -> return ()
-        else do
-            code <- keyEvent.getCode
---            println . show $ code.getName
-            Event.consume keyEvent
-            case code.getName of
-                 "Down"  -> selectNext     items historySelection
-                 "Up"    -> selectPrevious items historySelection
-                 "Enter" -> doExecute mQueue inputArea items historySelection
-                 _       -> return ()
+        char <- keyEvent.getText
+        scut <- keyEvent.isShortcutDown   -- Ctrl on Windows, Cmd on Mac
+        ctrl <- keyEvent.isControlDown
+        shft <- keyEvent.isShiftDown
+        if shft then return () else -- when shift is pressed, we do nothing extra
+            if (scut || ctrl) -- we have any shortcut key
+            then case char of
+                "\015" -> insert inputArea "\n"
+                "l"    -> loadFile stage inputArea
+                "b"    -> biggerFont  inputArea outputArea
+                "s"    -> smallerFont inputArea outputArea
+                _      -> return ()
+            else do
+                code <- keyEvent.getCode
+  --            println . show $ code.getName
+                keyEvent.consume
+                case code.getName of
+                     "Down"  -> selectNext     items historySelection
+                     "Up"    -> selectPrevious items historySelection
+                     "Enter" -> doExecute mQueue inputArea items historySelection
+                     _       -> return ()
 
 insert :: TextArea -> String -> IO ()
 insert inputArea text = do
@@ -116,7 +113,7 @@ doExecute :: MVar String ->TextArea -> ObservableList -> SelectionModel -> IO ()
 doExecute mQueue inputArea items historySelection = do
     script <- inputArea.getText
     when (not . null $ trim script) $ do
-        scriptLines = if (1 == length (lines script))
+        scriptLines = if (1 == length (filter (\l -> l.length > 0) (lines script)))
            then [trim script]
            else [":{"] ++ lines script ++ [":}"]
         mapM mQueue.put scriptLines                 -- the beef
@@ -457,12 +454,13 @@ readMultiline console = intercalate newLine . reverse <$> f [] where
 
 
 cmdHelp = [
+            ("Enter", "Execute"),
+            ("Up", "Show previous in history."),
+            ("Down", "Show next in history."),
             ("Ctrl-L", "Load Frege code via file chooser dialog."),
-            ("Ctrl-J", "Show last in history."),
-            ("Ctrl-P", "Show previous in history."),
-            ("Ctrl-N", "Show next in history."),
-            ("Ctrl-B", "Bigger Font."),
-            ("Ctrl-S", "Smaller Font."),
+            ("Ctrl-B", "Bigger font."),
+            ("Ctrl-S", "Smaller font."),
+            ("Ctrl-Enter", "Insert line feed."),
             (":t or :type <expression>", "Display the type of an expression."),
             (":browse <module name>", "Display the names in a module if " ++
                 "a module name is provided otherwise display the names in the default REPL module."),
@@ -472,8 +470,8 @@ cmdHelp = [
             (":history", "Display the source history for definitions in the default REPL module."),
             (":reset", "Reset the session discarding all evaluated scripts."),
             (":version", "Display Frege version."),
-            (":{", "Start multiline definitions."),
-            (":}", "End multiline definitions."),
+--            (":{", "Start multiline definitions."),
+--            (":}", "End multiline definitions."),
             (":help <name>", "Display the documentation for the given name." ++
                             " If the name is not provided, display this help message."),
             (":q or :quit", "Quit REPL")]
