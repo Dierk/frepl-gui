@@ -20,7 +20,7 @@ In addition to the commands in the command-line REPL like `:help`, the following
     Ctrl-B     Bigger Font.
     Ctrl-S     Smaller Font.
 
-Beside Ctrl, you can use any other meta-key (Cmd, Alt) or combinations thereof.
+Beside Ctrl, you can use the Cmd key on Mac.
 This feature can conflict with local keyboard settings for entering special characters.
 
 Please note that _this GUI is not an IDE_. The content of the editor is fed line-by-line to the
