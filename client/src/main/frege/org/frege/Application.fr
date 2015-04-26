@@ -13,6 +13,7 @@ import fregefx.javafx.scene.input.KeyCode
 import fregefx.javafx.scene.text.Font
 import fregefx.javafx.scene.control.Button
 import fregefx.javafx.scene.control.TextArea
+import fregefx.javafx.scene.control.TextInputControl
 import fregefx.javafx.stage.WindowEvent
 import fregefx.javafx.event.EventHandler
 import fregefx.javafx.collections.ObservableList
@@ -50,8 +51,7 @@ showUI mConsole stage = do
     onClosing mQueue >>= stage.setOnHidden
 
     keyReleasedHandler <- onKeyReleased mQueue stage inputArea outputArea items sm
-    scene.setOnKeyReleased         keyReleasedHandler
---    inputArea.setOnKeyReleased     keyReleasedHandler
+    scene.setOnKeyReleased  keyReleasedHandler
 
     mIn  = newMVar inputArea
     mOut = newMVar outputArea
@@ -111,7 +111,9 @@ insert inputArea text = do
 
 doExecute :: MVar String ->TextArea -> ObservableList -> SelectionModel -> IO ()
 doExecute mQueue inputArea items historySelection = do
-    script <- inputArea.getText
+    pos       <- inputArea.getCaretPosition -- when we get here, we have just entered a CR
+    scriptStr <- inputArea.getText
+    script    =  take (pos-1) scriptStr ++ drop pos scriptStr -- remove CR from input
     when (not . null $ trim script) $ do
         scriptLines = if (1 == length (filter (\l -> l.length > 0) (lines script)))
            then [trim script]

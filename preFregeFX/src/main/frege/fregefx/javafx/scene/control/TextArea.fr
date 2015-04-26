@@ -32,13 +32,13 @@ data TextArea = mutable native javafx.scene.control.TextArea where
 --  native wrapTextProperty :: TextArea -> IO BooleanProperty
 
 -- ------- should go into superclasses -------
-  native getText          :: TextArea -> IO String
-  native setText          :: TextArea -> String -> IO ()
-  native getCaretPosition :: TextArea -> IO Int
-  native insertText       :: TextArea -> Int -> String -> IO ()
-  native appendText       :: TextArea -> String -> IO()
+--  native getText          :: TextArea -> IO String
+--  native setText          :: TextArea -> String -> IO ()
+--  native getCaretPosition :: TextArea -> IO Int
+--  native insertText       :: TextArea -> Int -> String -> IO ()
+--  native appendText       :: TextArea -> String -> IO()
   native setOnKeyTyped    :: TextArea -> KeyEventHandler -> IO () -- overriding Node
   native setOnKeyReleased :: TextArea -> KeyEventHandler -> IO () -- overriding Node
   native requestFocus     :: TextArea -> IO ()
-  native getFont          :: TextArea -> IO Font
-  native setFont          :: TextArea -> Font -> IO ()
+--  native getFont          :: TextArea -> IO Font
+--  native setFont          :: TextArea -> Font -> IO ()
