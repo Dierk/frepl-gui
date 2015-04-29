@@ -18,6 +18,11 @@ import fregefx.javafx.stage.WindowEvent
 import fregefx.javafx.event.EventHandler
 import fregefx.javafx.collections.ObservableList
 
+--import fregefx.javafx.stage.Stage
+--import fregefx.javafx.scene.Scene
+import fregefx.javafx.scene.web.WebView
+import fregefx.javafx.scene.web.WebEngine
+
 main args = do
     mConsole <- MVar.newEmpty            -- for thread coordination, set in showUI thread, start repl when ready
     async do                             -- JavaFX would block the main thread otherwise after launching the UI thread
@@ -539,30 +544,40 @@ javaSourceGUI javaSource = do
    frame.pack
    frame.setVisible true
 
--- todo: make javafx version
 helpGUI :: String -> String -> IO ()
-helpGUI title content = do
-    frame <- JFrame.new (title ++ " - Documentation")
-    frame.setDefaultCloseOperation JFrame.dispose_on_close
-    newContentPane:: JPanel <- BorderLayout.new () >>= JPanel.new
-    let html :: String
-        html
-            | index >= 0 = substring content index  -- Skip DOCTYPE
-            | otherwise = content
-          where
-            index = indexOf content "<HTML>"
-    editor::JEditorPane <- JEditorPane.new "text/html" html
-    editor.setEditable false
-    helpLinksListener <- FregeJavaProxy.with showDesktop HyperlinkListener.clazz
-    editor.addHyperlinkListener helpLinksListener
-    scrollPane <- JScrollPane.new editor
-    dimension <- Dimension.new 600 600
-    JComponent.setPreferredSize scrollPane dimension
-    Container.add newContentPane scrollPane (asObject BorderLayout.center)
-    newContentPane.setOpaque true
-    frame.setContentPane newContentPane
-    frame.pack
-    frame.setVisible true
+helpGUI title content = --do
+--    frame <- JFrame.new (title ++ " - Documentation")
+--    frame.setDefaultCloseOperation JFrame.dispose_on_close
+--    newContentPane:: JPanel <- BorderLayout.new () >>= JPanel.new
+--    let html :: String
+--        html
+--            | index >= 0 = substring content index  -- Skip DOCTYPE
+--            | otherwise = content
+--          where
+--            index = indexOf content "<HTML>"
+--    editor::JEditorPane <- JEditorPane.new "text/html" html
+--    editor.setEditable false
+--    helpLinksListener <- FregeJavaProxy.with showDesktop HyperlinkListener.clazz
+--    editor.addHyperlinkListener helpLinksListener
+--    scrollPane <- JScrollPane.new editor
+--    dimension <- Dimension.new 600 600
+--    JComponent.setPreferredSize scrollPane dimension
+--    Container.add newContentPane scrollPane (asObject BorderLayout.center)
+--    newContentPane.setOpaque true
+--    frame.setContentPane newContentPane
+--    frame.pack
+--    frame.setVisible true
+
+    withUI do
+        webView <- WebView.new ()
+        webEngine <- webView.getEngine
+        webEngine.loadContent  content
+        scene <- Scene.new webView 400.0 400.0
+        stage <- Stage.new ()
+        stage.setScene  scene
+        stage.show
+
+withUI f = Platform.runLater =<< Runnable.new f
 
 data FregeJavaProxy = pure native frege.interpreter.javasupport.FregeJavaProxy where
   native with frege.interpreter.javasupport.FregeJavaProxy.with ::

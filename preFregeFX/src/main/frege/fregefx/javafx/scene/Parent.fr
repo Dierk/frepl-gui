@@ -1,12 +1,12 @@
 module fregefx.javafx.scene.Parent where
 
+--import fregefx.javafx.collections.ObservableList
 import fregefx.javafx.scene.Node
 
 data Parent = mutable native javafx.scene.Parent where
 
   native getBaselineOffset :: Parent -> IO Double
 --  native getChildrenUnmodifiable :: Parent -> IO (ObservableList Node)
---  native getImpl_traversalEngine :: Parent -> IO ParentTraversalEngine
 --  native getStylesheets :: Parent -> IO (ObservableList String)
   native isNeedsLayout :: Parent -> IO Bool
   native layout :: Parent -> IO ()

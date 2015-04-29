@@ -1,0 +1,58 @@
+module fregefx.javafx.stage.Stage where
+
+import fregefx.javafx.scene.Scene
+
+data Stage = mutable native javafx.stage.Stage where
+  native new :: () -> IO Stage
+--              | StageStyle -> IO Stage
+--  native alwaysOnTopProperty :: Stage -> IO ReadOnlyBooleanProperty
+  native close :: Stage -> IO ()
+--  native fullScreenExitHintProperty :: Stage -> IO (ObjectProperty String)
+--  native fullScreenExitKeyProperty :: Stage -> IO (ObjectProperty KeyCombination)
+--  native fullScreenProperty :: Stage -> IO ReadOnlyBooleanProperty
+  native getFullScreenExitHint :: Stage -> IO String
+--  native getFullScreenExitKeyCombination :: Stage -> IO KeyCombination
+--  native getIcons :: Stage -> IO (ObservableList Image)
+  native getMaxHeight :: Stage -> IO Double
+  native getMaxWidth :: Stage -> IO Double
+  native getMinHeight :: Stage -> IO Double
+  native getMinWidth :: Stage -> IO Double
+--  native getModality :: Stage -> IO Modality
+--  native getOwner :: Stage -> IO Window
+--  native getStyle :: Stage -> IO StageStyle
+  native getTitle :: Stage -> IO String
+--  native iconifiedProperty :: Stage -> IO ReadOnlyBooleanProperty
+--  native initModality :: Stage -> Modality -> IO ()
+--  native initOwner :: Stage -> Window -> IO ()
+--  native initStyle :: Stage -> StageStyle -> IO ()
+  native isAlwaysOnTop :: Stage -> IO Bool
+  native isFullScreen :: Stage -> IO Bool
+  native isIconified :: Stage -> IO Bool
+  native isMaximized :: Stage -> IO Bool
+  native isResizable :: Stage -> IO Bool
+--  native maxHeightProperty :: Stage -> IO DoubleProperty
+--  native maxWidthProperty :: Stage -> IO DoubleProperty
+--  native maximizedProperty :: Stage -> IO ReadOnlyBooleanProperty
+--  native minHeightProperty :: Stage -> IO DoubleProperty
+--  native minWidthProperty :: Stage -> IO DoubleProperty
+--  native resizableProperty :: Stage -> IO BooleanProperty
+  native setAlwaysOnTop :: Stage -> Bool -> IO ()
+  native setFullScreen :: Stage -> Bool -> IO ()
+  native setFullScreenExitHint :: Stage -> String -> IO ()
+--  native setFullScreenExitKeyCombination :: Stage -> KeyCombination -> IO ()
+  native setIconified :: Stage -> Bool -> IO ()
+  native setMaxHeight :: Stage -> Double -> IO ()
+  native setMaxWidth :: Stage -> Double -> IO ()
+  native setMaximized :: Stage -> Bool -> IO ()
+  native setMinHeight :: Stage -> Double -> IO ()
+  native setMinWidth :: Stage -> Double -> IO ()
+  native setResizable :: Stage -> Bool -> IO ()
+  native setScene :: Stage -> Scene -> IO ()
+  native setTitle :: Stage -> String -> IO ()
+  native show :: Stage -> IO ()
+  native showAndWait :: Stage -> IO ()
+--  native titleProperty :: Stage -> IO StringProperty
+  native toBack :: Stage -> IO ()
+  native toFront :: Stage -> IO ()
+
+
