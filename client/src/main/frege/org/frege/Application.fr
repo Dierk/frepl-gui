@@ -528,78 +528,29 @@ fileContents filePath = do
 
 native scannerFromInputStream new :: InputStream -> IOMutable Scanner
 
--- todo: make javafx version
 javaSourceGUI :: String -> IO ()
-javaSourceGUI javaSource = do
-   frame::JFrame <- JFrame.new "Java Source"
-   newContentPane::JPanel <- BorderLayout.new () >>= JPanel.new
-   frame.setDefaultCloseOperation JFrame.dispose_on_close
-   editor::JEditorPane <- JEditorPane.new "text/plain" javaSource
-   editor.setEditable false
-   scrollPane <- JScrollPane.new editor
-   dimension <- Dimension.new 600 600
-   JComponent.setPreferredSize scrollPane dimension
-   Container.add newContentPane scrollPane (asObject BorderLayout.center)
-   frame.setContentPane newContentPane
-   frame.pack
-   frame.setVisible true
+javaSourceGUI javaSource = monolog "Java Source" ("<html><pre>" ++ javaSource)
 
 helpGUI :: String -> String -> IO ()
-helpGUI title content = --do
---    frame <- JFrame.new (title ++ " - Documentation")
---    frame.setDefaultCloseOperation JFrame.dispose_on_close
---    newContentPane:: JPanel <- BorderLayout.new () >>= JPanel.new
---    let html :: String
---        html
---            | index >= 0 = substring content index  -- Skip DOCTYPE
---            | otherwise = content
---          where
---            index = indexOf content "<HTML>"
---    editor::JEditorPane <- JEditorPane.new "text/html" html
---    editor.setEditable false
---    helpLinksListener <- FregeJavaProxy.with showDesktop HyperlinkListener.clazz
---    editor.addHyperlinkListener helpLinksListener
---    scrollPane <- JScrollPane.new editor
---    dimension <- Dimension.new 600 600
---    JComponent.setPreferredSize scrollPane dimension
---    Container.add newContentPane scrollPane (asObject BorderLayout.center)
---    newContentPane.setOpaque true
---    frame.setContentPane newContentPane
---    frame.pack
---    frame.setVisible true
+helpGUI title content = monolog title rel2absolute where
+    rel2absolute = (´href=".\/´.matcher content).replaceAll "href=\"http://www.frege-lang.org/doc/"
 
+monolog :: String -> String -> IO ()
+monolog title content =
     withUI do
         webView <- WebView.new ()
-        webEngine <- webView.getEngine
-        webEngine.loadContent  content
+        webView.getEngine >>= _.loadContent content
         scene <- Scene.new webView 400.0 400.0
         stage <- Stage.new ()
-        stage.setScene  scene
+        stage.setTitle title
+        stage.setScene scene
         stage.show
 
 withUI f = Platform.runLater =<< Runnable.new f
 
-data FregeJavaProxy = pure native frege.interpreter.javasupport.FregeJavaProxy where
-  native with frege.interpreter.javasupport.FregeJavaProxy.with ::
-    (Object -> Method -> JArray Object -> ST s a) -> Class c -> IO c
-
-showDesktop :: Object -> Method -> JArray Object -> IO ()
-showDesktop _ _ args = do
-  event <- return $ asHyperlinkEvent $ args.elemAt 0
-  d <- Desktop.getDesktop ()
-  desktopSupported <- d.isDesktopSupported
-  let url = HyperlinkEvent.getURL event
-      navigateRelative = either throw d.browse . URI.new $ fixHelpLink event.getDescription
-      navigate = maybe navigateRelative (\u -> toURI u >>= d.browse) url
-  when (event.getEventType == HyperlinkEvent_EventType.activated) navigate
-
-fixHelpLink s | Just (Just relative : _)
-                  <- s `match` '^\.(.*)$' = "http://www.frege-lang.org/doc" ++ relative
-fixHelpLink s = s
 
 native toURI :: URL -> ST s URI throws URISyntaxException
 pure native asObject "(java.lang.Object)" :: a -> Object
-
 
 pure native isEmpty :: String -> Bool
 pure native replaceAll :: String -> String -> String -> String
