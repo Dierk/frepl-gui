@@ -533,7 +533,7 @@ javaSourceGUI javaSource = monolog "Java Source" ("<html><pre>" ++ javaSource)
 
 helpGUI :: String -> String -> IO ()
 helpGUI title content = monolog title rel2absolute where
-    rel2absolute = (´href=".\/´.matcher content).replaceAll "href=\"http://www.frege-lang.org/doc/"
+    rel2absolute = (´href="\.\/´.matcher content).replaceAll "href=\"http://www.frege-lang.org/doc/"
 
 monolog :: String -> String -> IO ()
 monolog title content =
