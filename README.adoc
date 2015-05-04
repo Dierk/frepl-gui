@@ -1,4 +1,4 @@
-![JavaFX Frege REPL GUI](frepl.png?raw=true)
+image:frepl.png?raw=true[]
 
 For users
 =========
