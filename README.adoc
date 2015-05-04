@@ -1,3 +1,5 @@
+![JavaFX Frege REPL GUI](frepl.png?raw=true)
+
 For users
 =========
 
