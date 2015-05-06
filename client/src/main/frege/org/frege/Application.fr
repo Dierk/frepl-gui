@@ -118,9 +118,11 @@ doExecute :: MVar String ->TextArea -> ObservableList -> SelectionModel -> IO ()
 doExecute mQueue inputArea items historySelection = do
     pos       <- inputArea.getCaretPosition -- when we get here, we have just entered a CR
     scriptStr <- inputArea.getText
-    script    =  take (pos-1) scriptStr ++ drop pos scriptStr -- remove CR from input
+    script    =  if pos > 0 && pos < length scriptStr
+        then take (pos-1) scriptStr ++ drop pos scriptStr -- remove CR from input
+        else scriptStr
     when (not . null $ trim script) $ do
-        scriptLines = if (1 == length (filter (\l -> l.length > 0) (lines script)))
+        scriptLines = if 1 == length (filter (not . null) (lines script))
            then [trim script]
            else [":{"] ++ lines script ++ [":}"]
         mapM mQueue.put scriptLines                 -- the beef
