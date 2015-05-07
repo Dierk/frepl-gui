@@ -18,10 +18,6 @@ dependencies {
     compile files("$jfxLibDir/jfxrt.jar") // TODO: find out why this seems to be necessary even on JDK 8
     compile project(':fregeFX')
     compile project(':preFregeFX')
-    compile project(':shared')
-    compile "org.open-dolphin:dolphin-client-javafx:$dolphinVersion"
-    compile "org.codehaus.groovyfx:groovyfx:0.4.0"
-    compile "org.open-dolphin:dolphin-client:${dolphinVersion}"
 }
 
 boolean runningOnJDK8() {

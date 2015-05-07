@@ -18,8 +18,6 @@ import fregefx.javafx.stage.WindowEvent
 import fregefx.javafx.event.EventHandler
 import fregefx.javafx.collections.ObservableList
 
---import fregefx.javafx.stage.Stage
---import fregefx.javafx.scene.Scene
 import fregefx.javafx.scene.web.WebView
 import fregefx.javafx.scene.web.WebEngine
 

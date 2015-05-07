@@ -3,6 +3,7 @@ module org.frege.JavaFX where
 import frege.Prelude hiding(ListView)
 
 import org.frege.AllNodes
+import fregefx.javafx.scene.Node
 
 
 data Classifier = mutable native org.frege.Classifier where

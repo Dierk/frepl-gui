@@ -3,7 +3,7 @@ image:frepl.png?raw=true[]
 For users
 =========
 
-Download the distribution zip (20 MB) from https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.2.0.zip .
+Download the distribution zip (20 MB) from https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.3.0.zip .
 Unpack to an `<install-dir>` of your choice.
 
 With a Java 8, run
@@ -49,7 +49,18 @@ Step 2
 
 That is something to keep in mind when copy-pasting code in the editor.
 
+More to note
+============
 
+Output is *truncated* to 80 characters. That means that you can even safely evaluate infinite sequences like `[1..]`.
+However, this comes at the expense of only seeing the first 80 digits when evaluating numbers that are
+greater than 10e80.
+
+When code yields unexpected results or you get error messages that you do not understand, you many want
+to *reset* the state of the REPL with `:reset` and try again.
+
+When filing *issues*, please run the `:history` command and attach the output to your issue such that we can
+reproduce the behavior.
 
 For developers
 ==============
