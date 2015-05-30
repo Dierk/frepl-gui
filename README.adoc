@@ -65,7 +65,7 @@ reproduce the behavior.
 For developers
 ==============
 
-With Java 8 start via
+With Java 8 (update 40 or higher) start via
 
     gradlew clean :client:run
 

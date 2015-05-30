@@ -1,5 +1,7 @@
 module fregefx.javafx.collections.ObservableList where
 
+import fregefx.javafx.scene.Node
+
 data ObservableList = mutable native javafx.collections.ObservableList where
 
 --  native addAll         :: ObservableList e -> MutableIO (JArray e) -> IO Bool
@@ -16,4 +18,5 @@ data ObservableList = mutable native javafx.collections.ObservableList where
 
 -- ------- from superclass
   native add  :: ObservableList -> String -> IO Bool
+               | ObservableList -> Node -> IO Bool
   native size :: ObservableList -> IO Int

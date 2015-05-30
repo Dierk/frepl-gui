@@ -31,8 +31,10 @@ subprojects {
     }
 
     dependencies {
-//        compile "com.theoryinpractise.frege:frege:3.22.367-g630677b"
-        compile "org.frege-lang:frege-repl-core:1.1.1-SNAPSHOT"
+        //compile "org.frege-lang:frege:3.22.524-gcc99d7e"
+        compile "org.frege-lang:frege-repl-core:1.1.1-SNAPSHOT" //, {
+            //exclude group: 'com.theoryinpractise.frege' // old version
+        //}
         compile "org.frege-lang:frege-native-gen:1.0-SNAPSHOT"
     }
 }
