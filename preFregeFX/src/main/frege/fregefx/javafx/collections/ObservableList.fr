@@ -8,6 +8,7 @@ data ObservableList = mutable native javafx.collections.ObservableList where
 --  native addListener    :: ObservableList e -> ListChangeListener e -> IO ()
 --  native filtered       :: ObservableList e -> Predicate e -> IO (FilteredList e)
   native remove         :: ObservableList -> Int -> Int -> IO ()
+                         | ObservableList -> a -> IO ()
 --  native removeAll      :: ObservableList e -> MutableIO (JArray e) -> IO Bool
 --  native removeListener :: ObservableList e -> ListChangeListener e -> IO ()
 --  native retainAll      :: ObservableList e -> MutableIO (JArray e) -> IO Bool
@@ -20,3 +21,4 @@ data ObservableList = mutable native javafx.collections.ObservableList where
   native add  :: ObservableList -> String -> IO Bool
                | ObservableList -> Node -> IO Bool
   native size :: ObservableList -> IO Int
+

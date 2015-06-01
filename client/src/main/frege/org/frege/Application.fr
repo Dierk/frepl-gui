@@ -124,7 +124,8 @@ doExecute mQueue inputArea items historySelection = do
            then [trim script]
            else [":{"] ++ lines script ++ [":}"]
         mapM mQueue.put scriptLines                 -- the beef
-        items.add $ trim script
+        items.remove $ trim script
+        items.add    $ trim script
         historySelection.clearSelection
         inputArea.setText ""
     when (script == ":q") $ System.exit 0
