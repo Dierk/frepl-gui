@@ -3,10 +3,12 @@ image:frepl.png?raw=true[]
 For users
 =========
 
-Download the distribution zip (20 MB) from https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.3.0.zip .
+Download the distribution zip (20 MB) from
+https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.4.0.zip .
+
 Unpack to an `<install-dir>` of your choice.
 
-With a Java 8, run
+With a Java 8 (u40 or higher), run
 
     <install-dir>/bin/client
 
@@ -19,11 +21,19 @@ In addition to the commands in the command-line REPL like `:help`, the following
     Down       Show next in history.
     Ctrl-Enter Insert new line in editor.
     Ctrl-L     Load Frege code via file chooser dialog.
-    Ctrl-B     Bigger Font.
-    Ctrl-S     Smaller Font.
+    Ctrl-B     Bigger  font.
+    Ctrl-S     Smaller font.
+    Ctrl-W     Wipe output area.
 
 Beside Ctrl, you can use the Cmd key on Mac.
 This feature can conflict with local keyboard settings for entering special characters.
+
+The "history" list is pre-populated with commands that you may want to try out.
+New in version 0.4.0:
+
+* :l http:... to load a script from URL
+* import ... to make the module known
+* paint ... for graphical output
 
 Please note that _this GUI is not an IDE_. The content of the editor is fed line-by-line to the
 command-line REPL and this limits the amount of work that one can do in "one go".
