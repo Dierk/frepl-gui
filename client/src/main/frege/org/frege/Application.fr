@@ -96,6 +96,7 @@ onKeyReleased mQueue stage inputArea outputArea items historySelection = KeyEven
                 "l"    -> loadFile stage inputArea
                 "b"    -> biggerFont  inputArea outputArea
                 "s"    -> smallerFont inputArea outputArea
+                "w"    -> outputArea.setText ""
                 _      -> return ()
             else do
                 code <- keyEvent.getCode
@@ -468,6 +469,7 @@ cmdHelp = [
             ("Ctrl-L", "Load Frege code via file chooser dialog."),
             ("Ctrl-B", "Bigger font."),
             ("Ctrl-S", "Smaller font."),
+            ("Ctrl-W", "Wipe output area."),
             ("Ctrl-Enter", "Insert line feed."),
             (":t or :type <expression>", "Display the type of an expression."),
             (":browse <module name>", "Display the names in a module if " ++
