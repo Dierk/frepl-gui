@@ -1,0 +1,50 @@
+module Stairs where
+ 
+import org.frege.JavaFX
+import org.frege.AllNodes
+
+import fregefx.javafx.application.Platform
+import fregefx.javafx.scene.canvas.GraphicsContext
+import fregefx.javafx.scene.canvas.Canvas
+import fregefx.javafx.scene.Group
+
+withUI f = Platform.runLater =<< Runnable.new f
+
+paint :: (GraphicsContext -> IO()) -> IO ()
+paint drawing = withUI do
+    grp    <- Group.new ()
+    kids   <- grp.getChildren
+    canvas <- Canvas.new 600 600
+    ctx    <- canvas.getGraphicsContext2D
+    kids.add canvas
+    scene <- Scene.new grp 600 600
+    stage <- Stage.new ()
+    stage.setScene scene
+    stage.show
+    ctx.translate 300 300 -- center 0,0
+    ctx.scale 1  (-1)     -- mirror y axis
+    drawing ctx
+    
+data Point = P {x, y :: Double}
+type Trail = (Point, Point, Point, Point)
+
+start = ( P (-10) 10, P (-10) (-10), P 10 (-10), P 9.5 9.5 )
+
+bearing:: Point -> Point -> Point
+bearing start over = P ((over.x - start.x) * 1.05 + start.x ) ((over.y - start.y) * 1.05 + start.y)
+
+step :: Trail -> Trail
+step (first, second, third, last) = (bearing first last, first, second, third)
+
+stairs = iterate step start
+
+connect :: GraphicsContext -> Trail -> IO ()
+connect ctx (head, oldHead,_,_) = ctx.strokeLine oldHead.x oldHead.y head.x head.y
+
+--- a doodle contains all actions that when applied in sequence make up the picture
+doodle ctx = map (connect ctx) stairs
+
+-- copy the below in the REPL input area
+-- import Stairs
+-- paint (\ctx -> sequence_ $ take 500 $ doodle ctx)
+
