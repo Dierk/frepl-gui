@@ -1,5 +1,7 @@
 module org.frege.Application where
 
+import frege.Prelude hiding (print, ListView, PrimitiveArrayElement_Byte)
+
 import org.frege.JavaFX
 import org.frege.AllNodes
 
@@ -12,7 +14,7 @@ import fregefx.javafx.scene.input.KeyEvent
 import fregefx.javafx.scene.input.KeyCode
 import fregefx.javafx.scene.text.Font
 import fregefx.javafx.scene.control.Button
-import fregefx.javafx.scene.control.TextArea
+--import fregefx.javafx.scene.control.TextArea -- is in AllNodes
 import fregefx.javafx.scene.control.TextInputControl
 import fregefx.javafx.stage.WindowEvent
 import fregefx.javafx.event.EventHandler
@@ -83,7 +85,7 @@ onClosing mQueue = WindowEventHandler.new handle where
         shutdown -- closing the executor service - just to be clean
         mQueue.put ":q"
 
-onKeyReleased :: MVar String -> Stage -> TextArea -> TextArea -> ObservableList -> SelectionModel -> IO KeyEventHandler
+onKeyReleased :: MVar String -> Stage -> TextArea -> TextArea -> (ObservableList String) -> SelectionModel -> IO KeyEventHandler
 onKeyReleased mQueue stage inputArea outputArea items historySelection = KeyEventHandler.new handleKeyEvent where
 --    handleKeyEvent :: KeyEvent -> IO ()
     handleKeyEvent keyEvent = do
@@ -95,7 +97,7 @@ onKeyReleased mQueue stage inputArea outputArea items historySelection = KeyEven
         if shft then return () else -- when shift is pressed, we do nothing extra
             if (scut || ctrl) -- we have any shortcut key
             then case char of
-                "\015" -> insert inputArea "\n"
+                "\015" -> textInsert inputArea "\n"
                 "l"    -> loadFile stage inputArea
                 "b"    -> biggerFont  inputArea outputArea
                 "s"    -> smallerFont inputArea outputArea
@@ -111,12 +113,12 @@ onKeyReleased mQueue stage inputArea outputArea items historySelection = KeyEven
                      "Enter" -> doExecute mQueue inputArea items historySelection
                      _       -> return ()
 
-insert :: TextArea -> String -> IO ()
-insert inputArea text = do
+textInsert :: TextArea -> String -> IO ()
+textInsert inputArea text = do
     pos <- inputArea.getCaretPosition
     inputArea.insertText pos text
 
-doExecute :: MVar String ->TextArea -> ObservableList -> SelectionModel -> IO ()
+doExecute :: MVar String ->TextArea -> (ObservableList String) -> SelectionModel -> IO ()
 doExecute mQueue inputArea items historySelection = do
     pos       <- inputArea.getCaretPosition -- when we get here, we have just entered a CR
     scriptStr <- inputArea.getText
@@ -145,7 +147,7 @@ loadFile stage inputArea = do
             path <- mIoFile.getPath
             inputArea.setText (":l " ++ path)
 
-selectPrevious :: ObservableList -> SelectionModel -> IO ()
+selectPrevious :: (ObservableList e) -> SelectionModel -> IO ()
 selectPrevious items historySelection = do
     oldIndex <- historySelection.getSelectedIndex
     listSize <- items.size
@@ -153,7 +155,7 @@ selectPrevious items historySelection = do
     newIndex = if temp < 0 then listSize - 1 else temp
     historySelection.clearAndSelect newIndex
 
-selectNext :: ObservableList -> SelectionModel -> IO ()
+selectNext :: (ObservableList e) -> SelectionModel -> IO ()
 selectNext items historySelection = do
     oldIndex <- historySelection.getSelectedIndex
     listSize <- items.size
@@ -193,12 +195,7 @@ import Compiler.enums.TokenID
 import Compiler.types.SNames
 import Compiler.types.ImportDetails
 import Compiler.types.Tokens
-import Java.Swing
-import Java.Awt (Component, ActionListener)
 import Java.Util (Scanner, ArrayList, Collection)
-import frege.repl.Gui
-import frege.Prelude hiding (print)
-import frege.Prelude (print pPrint)
 import Control.monad.State public(State)
 import Control.Concurrent as C
 
@@ -611,13 +608,12 @@ data Command =
 derive Eq Command
 derive Show Command
 
-vmVendor = maybe "" id $ System.getProperty "java.vm.vendor"
-vmName = maybe "" id $ System.getProperty "java.vm.name"
+vmVendor    = maybe "" id $ System.getProperty "java.vm.vendor"
+vmName      = maybe "" id $ System.getProperty "java.vm.name"
 javaVersion = maybe "" id $ System.getProperty "java.version"
 
 pure native toString :: Object -> String
 pure native trim :: String -> String
-native sysin "java.lang.System.in" :: InputStream
 
 welcome = "Welcome to Frege " ++ version ++ " (" ++ vmVendor ++ " " ++ vmName ++
     ", " ++ javaVersion ++ ")"

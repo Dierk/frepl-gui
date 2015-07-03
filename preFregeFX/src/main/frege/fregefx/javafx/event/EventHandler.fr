@@ -11,6 +11,6 @@ import fregefx.javafx.scene.input.KeyEvent
 data KeyEventHandler = mutable native org.frege.FregeEventHandler where
     native new      :: (KeyEvent -> IO () ) -> IO KeyEventHandler
 
-import fregefx.javafx.stage.WindowEvent
+import fregefx.javafx.stage.WindowEvent 
 data WindowEventHandler = mutable native org.frege.FregeEventHandler where
     native new      :: (WindowEvent -> IO () ) -> IO WindowEventHandler

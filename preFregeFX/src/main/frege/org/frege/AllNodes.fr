@@ -23,7 +23,7 @@ data FregeFX = mutable native org.frege.FregeFX where
 
 
 data ListView = mutable native javafx.scene.control.ListView where
-    native getItems          :: ListView -> IO ObservableList
+    native getItems          :: ListView -> IO (ObservableList String)
     native getSelectionModel :: ListView -> IO SelectionModel
 
 

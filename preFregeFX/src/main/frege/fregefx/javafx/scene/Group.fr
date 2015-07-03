@@ -11,8 +11,8 @@ data Group = mutable native javafx.scene.Group where
 
 --  native autoSizeChildrenProperty :: Group -> IO BooleanProperty
 
---  native getChildren :: Group -> IO (ObservableList Node)
-  native getChildren :: Group -> IO (ObservableList)
+  native getChildren :: Group -> IO (ObservableList Node)
+--  native getChildren :: Group -> IO (ObservableList)
 
   native isAutoSizeChildren :: Group -> IO Bool
 
