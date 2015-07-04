@@ -3,7 +3,6 @@ module org.frege.AllNodes where
 import frege.Prelude hiding(ListView)
 
 import fregefx.javafx.application.Platform
---import fregefx.javafx.fxml.FXMLLoader
 import fregefx.javafx.scene.Node
 import fregefx.javafx.scene.Parent
 import fregefx.javafx.scene.input.KeyEvent
@@ -14,55 +13,64 @@ import fregefx.javafx.stage.WindowEvent
 import fregefx.javafx.event.EventHandler
 import fregefx.javafx.collections.ObservableList
 import fregefx.javafx.stage.Stage
---import fregefx.javafx.scene.Scene
-
+import fregefx.javafx.scene.Scene
 
 data FregeFX = mutable native org.frege.FregeFX where
     native launch  org.frege.FregeFX.launch :: ( Stage -> IO () ) -> IO ()
     native fxml    org.frege.FregeFX.fxml   :: String -> String -> IO Parent
 
+data ListView t = mutable native javafx.scene.control.ListView where
+    native getItems          :: ListView t -> IO (ObservableList t)
+    native getSelectionModel :: ListView t -> IO (SelectionModel t)
 
-data ListView = mutable native javafx.scene.control.ListView where
-    native getItems          :: ListView -> IO (ObservableList String)
-    native getSelectionModel :: ListView -> IO SelectionModel
+data SelectionModel t = mutable native javafx.scene.control.SelectionModel where
+  native clearAndSelect     :: SelectionModel t -> Int -> IO ()
+  native clearSelection     :: SelectionModel t -> Int -> IO ()
+                             | SelectionModel t -> IO ()
+  native getSelectedIndex   :: SelectionModel t -> IO Int
+  native getSelectedItem    :: SelectionModel t -> IO t
+  native isEmpty            :: SelectionModel t -> IO Bool
+  native isSelected         :: SelectionModel t -> Int -> IO Bool
+  native select             :: SelectionModel t -> Int -> IO ()
+                             | SelectionModel t -> t -> IO ()
+  native selectFirst        :: SelectionModel t -> IO ()
+  native selectLast         :: SelectionModel t -> IO ()
+  native selectNext         :: SelectionModel t -> IO ()
+  native selectPrevious         :: SelectionModel t -> IO ()
+  native selectedIndexProperty  :: SelectionModel t -> IO ReadOnlyIntegerProperty
+  native selectedItemProperty   :: SelectionModel t -> IO (ReadOnlyObjectProperty t)
 
+data ReadOnlyObjectProperty t = mutable native javafx.beans.property.ReadOnlyObjectProperty where
+  native toString :: ReadOnlyObjectProperty t -> IO String
 
-data SelectionModel = mutable native javafx.scene.control.SelectionModel where
-    native selectedItemProperty :: SelectionModel -> IO ReadOnlyObjectProperty
-    native getSelectedIndex     :: SelectionModel -> IO Int             -- -1 if there is no selection
-    native clearAndSelect       :: SelectionModel -> Int -> IO ()
-    native clearSelection       :: SelectionModel -> IO ()
+data ReadOnlyIntegerProperty = mutable native javafx.beans.property.ReadOnlyIntegerProperty where
+  native asObject :: ReadOnlyIntegerProperty -> IO (ReadOnlyObjectProperty Integer)
+  native readOnlyIntegerProperty "javafx.beans.property.ReadOnlyIntegerProperty.readOnlyIntegerProperty" :: ReadOnlyProperty t -> IO ReadOnlyIntegerProperty
+  native toString :: ReadOnlyIntegerProperty -> IO String
 
-data ReadOnlyObjectProperty = mutable native javafx.beans.property.ReadOnlyObjectProperty where
-    native addListener :: ReadOnlyObjectProperty -> ChangeListener -> IO ()
+data ReadOnlyProperty t = mutable native javafx.beans.property.ReadOnlyProperty where
+  native getBean :: ReadOnlyProperty t -> IO Object
+  native getName :: ReadOnlyProperty t -> IO String
 
-data ChangeListener = mutable native org.frege.FregeChangeListener where
-    native new :: (String -> String -> IO()) -> IO ChangeListener -- make later polymorphic
-
-data Scene = mutable native javafx.scene.Scene where
-    native new              :: Parent -> Double -> Double -> IO Scene
-    native lookup           :: Scene  -> String -> IO (Maybe Node)
-    native setOnKeyTyped    :: Scene -> KeyEventHandler -> IO ()
-    native setOnKeyReleased :: Scene -> KeyEventHandler -> IO ()
-
-data Stage = mutable native javafx.stage.Stage where
-    native new          :: () -> IO Stage
-    native show         :: Stage -> IO ()
-    native setScene     :: Stage -> Scene  -> IO ()
-    native setTitle     :: Stage -> String -> IO ()
-    native setOnHidden  :: Stage -> WindowEventHandler -> IO ()
+data OnChange t = mutable native org.frege.FregeChangeListener where
+    native new :: (t -> t -> IO()) -> IO (OnChange t)
+  
+data ObservableValue t = mutable native javafx.beans.value.ObservableValue where
+  native addListener    :: ObservableValue t -> ChangeListener t -> IO ()
+  native getValue       :: ObservableValue t -> IO t
+  native removeListener :: ObservableValue t -> ChangeListener t -> IO ()
+        
+data ChangeListener t = mutable native javafx.beans.value.ChangeListener where
+  native changed :: ChangeListener t -> ObservableValue t -> t -> t -> IO ()
 
 data FileChooser = mutable native javafx.stage.FileChooser where
     native new            :: () -> IO FileChooser
     native setTitle       :: FileChooser -> String -> IO ()
     native showOpenDialog :: FileChooser -> Stage -> IO (Maybe (MutableIO File))
 
-
-data TextArea = mutable native javafx.scene.control.TextArea
-
-data AllNodes = TextArea    TextArea
-              | Button      Button
-              | ListView    ListView
+data AllNodes t = TextArea    TextArea
+                | Button      Button
+                | ListView    t
 
 
 

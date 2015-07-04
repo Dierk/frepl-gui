@@ -4,7 +4,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ListView;
-
+ 
 public class Classifier {
 
     static public org.frege.AllNodes.TAllNodes classify(Node n) throws IllegalArgumentException {

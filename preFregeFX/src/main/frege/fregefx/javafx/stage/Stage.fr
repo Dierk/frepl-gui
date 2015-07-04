@@ -1,6 +1,8 @@
 module fregefx.javafx.stage.Stage where
 
 import fregefx.javafx.scene.Scene
+import fregefx.javafx.event.EventHandler
+import fregefx.javafx.stage.WindowEvent
 
 data Stage = mutable native javafx.stage.Stage where
   native new :: () -> IO Stage
@@ -46,6 +48,7 @@ data Stage = mutable native javafx.stage.Stage where
   native setMaximized :: Stage -> Bool -> IO ()
   native setMinHeight :: Stage -> Double -> IO ()
   native setMinWidth :: Stage -> Double -> IO ()
+  native setOnHidden  :: Stage -> (EventHandler WindowEvent) -> IO ()
   native setResizable :: Stage -> Bool -> IO ()
   native setScene :: Stage -> Scene -> IO ()
   native setTitle :: Stage -> String -> IO ()

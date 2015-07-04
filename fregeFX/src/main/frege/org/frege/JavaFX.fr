@@ -4,19 +4,21 @@ import frege.Prelude hiding(ListView)
 
 import org.frege.AllNodes
 import fregefx.javafx.scene.Node
+import fregefx.javafx.scene.Scene
+import fregefx.javafx.scene.control.TextArea
 
 
 data Classifier = mutable native org.frege.Classifier where
-    native classify org.frege.Classifier.classify :: Node -> IO (IllegalArgumentException | AllNodes)
+    native classify org.frege.Classifier.classify :: Node -> IO (IllegalArgumentException | AllNodes t)
 
-locateTextField :: Scene -> String -> IO TextArea
-locateTextField scene selector = do
+locateTextArea :: Scene -> String -> IO TextArea
+locateTextArea scene selector = do
     allNode <- locate scene selector
     case allNode of
         TextArea ta -> return ta
-        _           -> error ("Node " ++ selector ++ " is not a TextField")
+        _           -> error ("Node " ++ selector ++ " is not a TextArea")
 
-locateListView :: Scene -> String -> IO ListView
+locateListView :: Scene -> String -> IO (ListView t)
 locateListView scene selector = do
     allNode <- locate scene selector
     case allNode of
@@ -24,7 +26,7 @@ locateListView scene selector = do
         _           -> error ("Node " ++ selector ++ " is not a ListView")
 
 
-locate :: Scene -> String -> IO AllNodes
+locate :: Scene -> String -> IO (AllNodes t)
 locate scene selector = do
     maybeNode <- Scene.lookup scene selector
     case maybeNode of

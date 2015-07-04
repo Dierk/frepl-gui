@@ -15,10 +15,13 @@ public class FregeChangeListener implements ChangeListener {
         this.lambda = lambda;
     }
 
+    /**
+     * @param observable It is by design that we do not make use of the of this object. It would introduce more coupling.
+     */
     @Override
     public void changed(ObservableValue observable, Object oldValue, Object newValue) {
         try {
-            Applicable inter = lambda.apply((String)oldValue).apply((String) newValue); // we only work with Strings for the moment
+            Applicable inter = lambda.apply(oldValue).apply(newValue);
             Delayed.forced(inter.apply(null).result().forced()); // the second argument is the IO context
         } catch(RuntimeException re) {
             re.printStackTrace();

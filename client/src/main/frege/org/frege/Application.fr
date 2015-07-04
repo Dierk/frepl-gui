@@ -7,6 +7,8 @@ import org.frege.AllNodes
 
 import fregefx.javafx.application.Platform
 import fregefx.javafx.fxml.FXMLLoader
+import fregefx.javafx.stage.Stage
+import fregefx.javafx.scene.Scene
 import fregefx.javafx.scene.Node
 import fregefx.javafx.scene.Parent
 import fregefx.javafx.event.Event
@@ -14,7 +16,7 @@ import fregefx.javafx.scene.input.KeyEvent
 import fregefx.javafx.scene.input.KeyCode
 import fregefx.javafx.scene.text.Font
 import fregefx.javafx.scene.control.Button
---import fregefx.javafx.scene.control.TextArea -- is in AllNodes
+import fregefx.javafx.scene.control.TextArea
 import fregefx.javafx.scene.control.TextInputControl
 import fregefx.javafx.stage.WindowEvent
 import fregefx.javafx.event.EventHandler
@@ -37,9 +39,9 @@ showUI mConsole stage = do
     stage.setTitle "Frege - purely functional programming for the JVM"
     stage.setScene scene
     Stage.show stage
-    inputArea  <- locateTextField scene "#editor"
-    outputArea <- locateTextField scene "#repl"
-    historyLV  <- locateListView  scene "#historyList"
+    inputArea  <- locateTextArea scene "#editor"
+    outputArea <- locateTextArea scene "#repl"
+    historyLV  <- locateListView scene "#historyList"
 
     items <- historyLV.getItems
     items.add ":help"
@@ -52,7 +54,7 @@ showUI mConsole stage = do
 
     sm  <- historyLV.getSelectionModel
     sip <- sm.selectedItemProperty
-    cl  <- ChangeListener.new (\old \new -> inputArea.setText new)
+    cl  <- OnChange.new $ \old \new -> inputArea.setText new
     sip.addListener cl
 
     mQueue <- newEmptyMVar
@@ -79,14 +81,14 @@ startRepl console = do
     repl console env.{state=newState} -- first step in endless loop
     return ()
 
-onClosing :: MVar String -> IO KeyEventHandler
-onClosing mQueue = WindowEventHandler.new handle where
+onClosing :: MVar String -> IO (EventHandler t)
+onClosing mQueue = OnEvent.new handle where
     handle windowEvent = do
         shutdown -- closing the executor service - just to be clean
         mQueue.put ":q"
 
-onKeyReleased :: MVar String -> Stage -> TextArea -> TextArea -> (ObservableList String) -> SelectionModel -> IO KeyEventHandler
-onKeyReleased mQueue stage inputArea outputArea items historySelection = KeyEventHandler.new handleKeyEvent where
+onKeyReleased :: MVar String -> Stage -> TextArea -> TextArea -> (ObservableList String) -> (SelectionModel t) -> IO (EventHandler KeyEvent)
+onKeyReleased mQueue stage inputArea outputArea items historySelection = OnEvent.new handleKeyEvent where
 --    handleKeyEvent :: KeyEvent -> IO ()
     handleKeyEvent keyEvent = do
 --        println . show =<< keyEvent.toString
@@ -118,7 +120,7 @@ textInsert inputArea text = do
     pos <- inputArea.getCaretPosition
     inputArea.insertText pos text
 
-doExecute :: MVar String ->TextArea -> (ObservableList String) -> SelectionModel -> IO ()
+doExecute :: MVar String ->TextArea -> (ObservableList String) -> (SelectionModel t) -> IO ()
 doExecute mQueue inputArea items historySelection = do
     pos       <- inputArea.getCaretPosition -- when we get here, we have just entered a CR
     scriptStr <- inputArea.getText
@@ -147,7 +149,7 @@ loadFile stage inputArea = do
             path <- mIoFile.getPath
             inputArea.setText (":l " ++ path)
 
-selectPrevious :: (ObservableList e) -> SelectionModel -> IO ()
+selectPrevious :: (ObservableList e) -> (SelectionModel t) -> IO ()
 selectPrevious items historySelection = do
     oldIndex <- historySelection.getSelectedIndex
     listSize <- items.size
@@ -155,7 +157,7 @@ selectPrevious items historySelection = do
     newIndex = if temp < 0 then listSize - 1 else temp
     historySelection.clearAndSelect newIndex
 
-selectNext :: (ObservableList e) -> SelectionModel -> IO ()
+selectNext :: (ObservableList e) -> (SelectionModel t) -> IO ()
 selectNext items historySelection = do
     oldIndex <- historySelection.getSelectedIndex
     listSize <- items.size

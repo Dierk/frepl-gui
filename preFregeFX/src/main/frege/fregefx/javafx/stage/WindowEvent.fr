@@ -1,6 +1,7 @@
 module fregefx.javafx.stage.WindowEvent where
 
 import fregefx.javafx.event.Event
+import fregefx.javafx.event.EventHandler
 
 data WindowEvent = mutable native javafx.stage.WindowEvent where
 

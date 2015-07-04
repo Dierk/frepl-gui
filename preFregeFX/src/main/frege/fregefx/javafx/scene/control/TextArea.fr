@@ -2,6 +2,7 @@ module fregefx.javafx.scene.control.TextArea where
 
 import fregefx.javafx.event.EventHandler
 import fregefx.javafx.scene.text.Font
+import fregefx.javafx.scene.input.KeyEvent
 
 data TextArea = mutable native javafx.scene.control.TextArea where
 
@@ -37,8 +38,8 @@ data TextArea = mutable native javafx.scene.control.TextArea where
 --  native getCaretPosition :: TextArea -> IO Int
 --  native insertText       :: TextArea -> Int -> String -> IO ()
 --  native appendText       :: TextArea -> String -> IO()
-  native setOnKeyTyped    :: TextArea -> KeyEventHandler -> IO () -- overriding Node
-  native setOnKeyReleased :: TextArea -> KeyEventHandler -> IO () -- overriding Node
+  native setOnKeyTyped    :: TextArea -> (EventHandler KeyEvent) -> IO () -- overriding Node
+  native setOnKeyReleased :: TextArea -> (EventHandler KeyEvent) -> IO () -- overriding Node
   native requestFocus     :: TextArea -> IO ()
 --  native getFont          :: TextArea -> IO Font
 --  native setFont          :: TextArea -> Font -> IO ()
