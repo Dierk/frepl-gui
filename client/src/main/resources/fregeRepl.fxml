@@ -9,7 +9,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@frepl.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <StackPane>
+      <StackPane id="header" >
          <children>
             <Label text="Welcome to the Frege REPL" BorderPane.alignment="CENTER">
                <BorderPane.margin>

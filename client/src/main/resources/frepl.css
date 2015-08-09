@@ -1,9 +1,19 @@
+.root {
+    -dark-back : rgb(67, 99, 132);
+    -hi-light: #99ccff;
+
+    -fx-base: -dark-back;
+    -fx-background: -dark-back;
+    -fx-control-inner-background:  -dark-back;
+    -fx-background-color: radial-gradient(radius 30%, -hi-light, -fx-background) ;
+}
+
 .text-area {
-    -fx-focus-color: #690005;
-    -fx-background-color: #690005;
-    -fx-background-radius: 3px;
+    -fx-focus-color: -hi-light;
+    -fx-background-color: -hi-light;
+    -fx-background-radius: 5px;
 }
 
 .list-view {
-    -fx-focus-color: #690005;
+    -fx-focus-color: -hi-light;
 }

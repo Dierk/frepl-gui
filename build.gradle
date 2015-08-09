@@ -34,8 +34,8 @@ subprojects {
     }
 
     dependencies {
-        compile "org.frege-lang:frege:3.22.524-gcc99d7e"
-        compile "org.frege-lang:frege-repl-core:1.2-SNAPSHOT", { exclude module:"frege" }
-        compile "org.frege-lang:frege-native-gen:1.1-SNAPSHOT"
+//        compile "org.frege-lang:frege:3.22.524-gcc99d7e"
+        compile "org.frege-lang:frege-repl-core:1.2.1-SNAPSHOT" // , { exclude module:"frege" }
+        compile "org.frege-lang:frege-native-gen:1.3"
     }
 }
