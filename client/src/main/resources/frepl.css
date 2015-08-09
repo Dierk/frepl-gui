@@ -8,10 +8,14 @@
     -fx-background-color: radial-gradient(radius 30%, -hi-light, -fx-background) ;
 }
 
+#header {
+    -fx-text-fill: -hi-light;
+}
+
 .text-area {
-    -fx-focus-color: -hi-light;
-    -fx-background-color: -hi-light;
-    -fx-background-radius: 5px;
+    -fx-background-color: #5c85b7, -hi-light, #5c85b7;
+    -fx-background-radius: 5,4,3;
+    -fx-background-insets: 0, 1, 3;
 }
 
 .list-view {
