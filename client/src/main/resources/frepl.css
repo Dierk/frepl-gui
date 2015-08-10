@@ -1,6 +1,7 @@
 .root {
     -dark-back : rgb(67, 99, 132);
     -hi-light: #99ccff;
+    -hi-light-glow: #5c85b7;
 
     -fx-base: -dark-back;
     -fx-background: -dark-back;
@@ -13,7 +14,7 @@
 }
 
 .text-area {
-    -fx-background-color: #5c85b7, -hi-light, #5c85b7;
+    -fx-background-color: -hi-light-glow, -hi-light, -hi-light-glow;
     -fx-background-radius: 5,4,3;
     -fx-background-insets: 0, 1, 3;
 }
