@@ -17,6 +17,8 @@
     -fx-background-color: -hi-light-glow, -hi-light, -hi-light-glow;
     -fx-background-radius: 5,4,3;
     -fx-background-insets: 0, 1, 3;
+    /*-fx-font-family: monospace;*/
+    /*-fx-font-weight: bold;*/
 }
 
 .list-view {

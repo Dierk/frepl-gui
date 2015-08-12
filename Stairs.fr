@@ -7,6 +7,8 @@ import fregefx.javafx.application.Platform
 import fregefx.javafx.scene.canvas.GraphicsContext
 import fregefx.javafx.scene.canvas.Canvas
 import fregefx.javafx.scene.Group
+import fregefx.javafx.stage.Stage
+import fregefx.javafx.scene.Scene
 
 withUI f = Platform.runLater =<< Runnable.new f
 
@@ -17,14 +19,14 @@ paint drawing = withUI do
     canvas <- Canvas.new 600 600
     ctx    <- canvas.getGraphicsContext2D
     kids.add canvas
-    scene <- Scene.new grp 600 600
+    scene <- Scene.new grp 600d 600d
     stage <- Stage.new ()
     stage.setScene scene
     stage.show
     ctx.translate 300 300 -- center 0,0
     ctx.scale 1  (-1)     -- mirror y axis
     drawing ctx
-    
+
 data Point = P {x, y :: Double}
 type Trail = (Point, Point, Point, Point)
 
@@ -39,12 +41,10 @@ step (first, second, third, last) = (bearing first last, first, second, third)
 stairs = iterate step start
 
 connect :: GraphicsContext -> Trail -> IO ()
-connect ctx (head, oldHead,_,_) = ctx.strokeLine oldHead.x oldHead.y head.x head.y
+connect ctx (nextHead,head,_,_) = ctx.strokeLine head.x head.y nextHead.x nextHead.y
 
 --- a doodle contains all actions that when applied in sequence make up the picture
 doodle ctx = map (connect ctx) stairs
 
--- copy the below in the REPL input area
--- import Stairs
--- paint (\ctx -> sequence_ $ take 500 $ doodle ctx)
+--paint (\ctx -> sequence_ $ take 500 $ doodle ctx)
 

@@ -32,13 +32,13 @@
       </StackPane>
    </top>
    <center>
-      <SplitPane dividerPositions="0.7" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.8254237288135593" BorderPane.alignment="CENTER">
          <items>
             <SplitPane dividerPositions="0.6" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <TextArea fx:id="repl" focusTraversable="false" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TextArea fx:id="repl" focusTraversable="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <font>
                               <Font size="16.0" />
                            </font>

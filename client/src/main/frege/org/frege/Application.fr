@@ -74,7 +74,7 @@ showUI mConsole stage = do
     console = GraphicRepl mQueue mIn mOut
     mConsole.put console     -- allow the main thread to proceed
     console.writeln welcome
-    console.writeln  $ "Press Enter to submit.\n" ++ "Ctrl-I for more information (Mac: Cmd-I)."
+    console.write $ "Press Enter to submit.\n" ++ "Ctrl-I for more information (Mac: Cmd-I)."
     mQueue.put "\"\"" -- evaluate an empty string to hide the initialization time
 
 fxml = FregeFX.fxml "org.frege.Application"
@@ -249,31 +249,30 @@ instance ReplIO GraphicRepl where
      line <- MVar.take console.input
      return $ Just line
 
-  writeln console s = write console (s ++ "\n" )
+  writeln console s = write console (chomp s ++ "\n" )
 
   write   console s = do
     out <- console.outputArea >>= _.poll
     case out of
-        Nothing = error "there is no output area in the console"
-        Just x = do
-            r <- Runnable.new (x.appendText s)
-            Platform.runLater r
+        Nothing   = error "there is no output area in the console"
+        Just area = withUI $ area.appendText s
 
   interpretSym console g sym env =
     do
       stdoutWriter <- StringWriter.new ()
       stderrWriter <- StringWriter.new ()
-      foo <- console.inputArea
-      inArea <- foo.poll
+      inArea <- console.inputArea >>= _.poll
       stdinText <- case inArea of
-          Nothing = error "there is no input area in the console"
-          Just x  = x.getText
+          Nothing    = error "there is no input area in the console"
+          Just area  = area.getText
       valMaybe <- fieldValueWithRuntime (symbolClass sym g) (symbolVar sym g) stdinText stdoutWriter stderrWriter env.state
-      console.writeln $ maybe "undefined" id valMaybe
+      case valMaybe of
+          Nothing  = console.writeln "undefined return value"
+          Just val = when (not $ null val) $ console.writeln ("result: "++ val)
       out <- stdoutWriter.toString
       err <- stderrWriter.toString
-      when (not $ null out) $ console.writeln out
-      when (not $ null err) $ console.writeln err
+      when (not $ null out) $ console.write out
+      when (not $ null err) $ console.write err
     `catch` (console.writeln . showThrowableCause)
 
 
@@ -285,7 +284,7 @@ repl console env = do
   cmd <- read console env
   (res, newEnv) <- Repl.run (eval cmd) env
   myprint console cmd res newEnv
-  loop console cmd res newEnv
+  loop    console cmd res newEnv
 
 loop :: ReplIO a => a -> Command -> ReplResult -> ReplEnv -> IO ()
 loop console Quit  _ _ = return ()
