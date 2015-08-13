@@ -217,11 +217,15 @@ cmdHelp =
     (fold (\str \(k,v) -> str ++ "<tr><td nowrap>"++ k ++"</td><td>"++ v ++ "</td></tr>") "" helpEntries ) ++
     "</tbody></table>"
 
+style = "<style>"
+     ++ "body {background-color:#436384; color:white; font-family: Helvetica, Arial, Sans-Serif; font-weight:bold;}"
+     ++ "</style>"
+
 myInfoGUI :: String -> IO ()
-myInfoGUI source = monolog "Help Information" ("<html>" ++ source ++ "</html>")
+myInfoGUI source = monolog "Help Information" ("<html>" ++ style ++ source ++ "</html>")
 
 myJavaSourceGUI :: String -> IO ()
-myJavaSourceGUI javaSource = monolog "Java Source" ("<html><pre>" ++ javaSource)
+myJavaSourceGUI javaSource = monolog "Java Source" ("<html>"++ style ++"<code><pre>" ++ javaSource)
 
 myHelpGUI :: String -> String -> IO ()
 myHelpGUI title content = monolog title rel2absolute where
