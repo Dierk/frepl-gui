@@ -1,0 +1,59 @@
+{--
+    The SketchBook provides painting surfaces on which code in the REPL can draw.
+
+    Use it like in the _sampleUse_ function:
+
+    > sampleUse = paint crosshair where
+    >     crosshair ctx = withUI do
+    >         ctx.strokeLine (-100d) 0d 100d 0d  -- horizontal line
+    >         ctx.strokeLine 0d (-100d) 0d 100d  -- vertical line
+-}
+
+module org.frege.SketchBook where
+
+import fregefx.javafx.application.Platform
+import fregefx.javafx.scene.canvas.GraphicsContext
+import fregefx.javafx.scene.canvas.Canvas
+import fregefx.javafx.scene.Group
+import fregefx.javafx.stage.Stage
+import fregefx.javafx.scene.Scene
+
+import Control.Concurrent
+
+--- Call the _draw_ function with the graphical context of a newly created canvas.
+--- The logic inside _draw_ is itself responsible for using _withUI_ when appropriate.
+paint :: (GraphicsContext->IO α) -> IO α
+paint draw = do
+    ctxHolder <- MVar.newEmpty
+    canvas 600 600 ctxHolder   -- runs in UI thread
+    ctx <- ctxHolder.take      -- wait until UI thread is ready
+    draw ctx
+
+--- Run any function _f_ in the JavaFX Application Thread to ensure proper painting.
+--- Any code that touches a JavaFX UI component must run in this thread.
+withUI :: IO () -> IO ()
+withUI f = Platform.runLater =<< Runnable.new f
+
+--- Make a frame (stage) with a canvas of the given _width_ and _height_.
+--- Set the graphicsContext into the _ctxHolder_ once it is available such that other threads that wait for it can proceed.
+--- The (0,0) origin is centered and y coordinates point upwards like it is conventional in mathematics.
+canvas :: Double -> Double -> MVar GraphicsContext -> IO ()
+canvas width height ctxHolder = withUI do  -- UI construction must happen inside the UI thread
+    grp    <- Group.new ()
+    kids   <- grp.getChildren
+    canvas <- Canvas.new width height
+    ctx    <- canvas.getGraphicsContext2D
+    kids.add canvas
+    scene <- Scene.new grp width height
+    stage <- Stage.new ()
+    stage.setScene scene
+    stage.show
+    ctx.translate (width / 2) (height / 2)  -- center 0,0
+    ctx.scale 1  (-1)                       -- mirror y axis
+    ctxHolder.put ctx
+
+--- Example on how to use the sketchbook API that draws a crosshair.
+sampleUse = paint crosshair where
+    crosshair ctx = withUI do
+        ctx.strokeLine (-100d) 0d 100d 0d
+        ctx.strokeLine 0d (-100d) 0d 100d

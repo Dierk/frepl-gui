@@ -1,50 +1,43 @@
 module Stairs where
  
-import org.frege.JavaFX
-import org.frege.AllNodes
-
-import fregefx.javafx.application.Platform
+import org.frege.SketchBook
 import fregefx.javafx.scene.canvas.GraphicsContext
-import fregefx.javafx.scene.canvas.Canvas
-import fregefx.javafx.scene.Group
-import fregefx.javafx.stage.Stage
-import fregefx.javafx.scene.Scene
+import Data.List
 
-withUI f = Platform.runLater =<< Runnable.new f
-
-paint :: (GraphicsContext -> IO()) -> IO ()
-paint drawing = withUI do
-    grp    <- Group.new ()
-    kids   <- grp.getChildren
-    canvas <- Canvas.new 600 600
-    ctx    <- canvas.getGraphicsContext2D
-    kids.add canvas
-    scene <- Scene.new grp 600d 600d
-    stage <- Stage.new ()
-    stage.setScene scene
-    stage.show
-    ctx.translate 300 300 -- center 0,0
-    ctx.scale 1  (-1)     -- mirror y axis
-    drawing ctx
-
+--- A point on the canvas.
 data Point = P {x, y :: Double}
+
+--- The last four points that we have drawn a line to, latest first.
 type Trail = (Point, Point, Point, Point)
 
+--- The initial trail.
+--- Note that the starting point is tugged in a little to make the first bearing landing at the right point.
 start = ( P (-10) 10, P (-10) (-10), P 10 (-10), P 9.5 9.5 )
 
+--- Return the point that we reach when drawing a line from _start_ to _over_ and extend by 5%.
 bearing:: Point -> Point -> Point
 bearing start over = P ((over.x - start.x) * 1.05 + start.x ) ((over.y - start.y) * 1.05 + start.y)
 
+--- How to move the trails one step forward.
 step :: Trail -> Trail
 step (first, second, third, last) = (bearing first last, first, second, third)
 
-stairs = iterate step start
+--- The infinite production of trails.
+trails :: [Trail]
+trails = iterate step start
 
+--- Given a trail with a new head, paint the line that connects it to its body (= old head).
 connect :: GraphicsContext -> Trail -> IO ()
-connect ctx (nextHead,head,_,_) = ctx.strokeLine head.x head.y nextHead.x nextHead.y
+connect ctx (nextHead,head,_,_) = withUI $ ctx.strokeLine head.x head.y nextHead.x nextHead.y
 
---- a doodle contains all actions that when applied in sequence make up the picture
-doodle ctx = map (connect ctx) stairs
+--- A doodle contains all actions that when applied in sequence make up the picture.
+doodle :: GraphicsContext -> [IO ()]
+doodle ctx = map (connect ctx) trails
 
---paint (\ctx -> sequence_ $ take 500 $ doodle ctx)
+--- Sample usage: paint the doodle at once.
+fast = paint $ sequence_ . take 300 . doodle
+
+--- Sample usage: make every second action a sleep.
+slow = paint $ sequence_ . intersperse (Thread.sleep 100) . take 300 . doodle
+
 

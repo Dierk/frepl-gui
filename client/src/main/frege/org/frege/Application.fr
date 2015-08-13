@@ -55,8 +55,8 @@ showUI mConsole stage = do
     items.add "mapM println [1..100]"
     items.add "fib = 1n : 1n : zipWith (+) fib (tail fib)"
     items.add ":l https://raw.githubusercontent.com/Dierk/frepl-gui/master/Stairs.fr"
-    items.add "import Stairs"
-    items.add "paint (\\ctx -> sequence_ $ take 500 $ doodle ctx)"
+    items.add "import Stairs;import org.frege.SketchBook;import Data.List"
+    items.add "paint $ sequence_ . take 300 . doodle"
 
     sm  <- historyLV.getSelectionModel
     sip <- sm.selectedItemProperty
