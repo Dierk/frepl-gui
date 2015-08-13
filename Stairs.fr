@@ -34,10 +34,15 @@ connect ctx (nextHead,head,_,_) = withUI $ ctx.strokeLine head.x head.y nextHead
 doodle :: GraphicsContext -> [IO ()]
 doodle ctx = map (connect ctx) trails
 
+--- Play any function _f_ that returns a list of IO actions
+play f = paint $ sequence_ . f
+
 --- Sample usage: paint the doodle at once.
-fast = paint $ sequence_ . take 300 . doodle
+fast = play $ take 300 . doodle
 
 --- Sample usage: make every second action a sleep.
-slow = paint $ sequence_ . intersperse (Thread.sleep 100) . take 300 . doodle
+slow = play $ intersperse (Thread.sleep 100) . take 300 . doodle
+
+
 
 
