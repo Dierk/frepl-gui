@@ -2,40 +2,38 @@ module org.frege.JavaFX where
 
 import frege.Prelude hiding(ListView)
 
+import fregefx.JavaFxAll
 import org.frege.AllNodes
-import fregefx.javafx.scene.Node
-import fregefx.javafx.scene.Scene
-import fregefx.javafx.scene.control.TextArea
 
 
-data Classifier = mutable native org.frege.Classifier where
-    native classify org.frege.Classifier.classify :: Node -> IO (IllegalArgumentException | AllNodes t)
-
-locateTextArea :: Scene -> String -> IO TextArea
-locateTextArea scene selector = do
-    allNode <- locate scene selector
-    case allNode of
-        TextArea ta -> return ta
-        _           -> error ("Node " ++ selector ++ " is not a TextArea")
-
-locateListView :: Scene -> String -> IO (ListView t)
-locateListView scene selector = do
-    allNode <- locate scene selector
-    case allNode of
-        ListView lv -> return lv
-        _           -> error ("Node " ++ selector ++ " is not a ListView")
-
-
-locate :: Scene -> String -> IO (AllNodes t)
-locate scene selector = do
-    maybeNode <- Scene.lookup scene selector
-    case maybeNode of
-        Nothing      -> error $ "Sorry, could not find any node for '" ++ selector ++"'."
-        Just allNode -> do
-            classified <- Classifier.classify allNode
-            case classified of
-                Left ex -> error  $ "Unknown node type located for '" ++ selector ++ "'."
-                Right x -> return x
+--data Classifier = mutable native org.frege.Classifier where
+--    native classify org.frege.Classifier.classify :: Node -> IO (IllegalArgumentException | AllNodes t)
+--
+--locateTextArea :: Scene -> String -> IO TextArea
+--locateTextArea scene selector = do
+--    allNode <- locate scene selector
+--    case allNode of
+--        TextArea ta -> return ta
+--        _           -> error ("Node " ++ selector ++ " is not a TextArea")
+--
+--locateListView :: Scene -> String -> IO (ListView t)
+--locateListView scene selector = do
+--    allNode <- locate scene selector
+--    case allNode of
+--        ListView lv -> return lv
+--        _           -> error ("Node " ++ selector ++ " is not a ListView")
+--
+--
+--locate :: Scene -> String -> IO (AllNodes t)
+--locate scene selector = do
+--    maybeNode <- Scene.lookup scene selector
+--    case maybeNode of
+--        Nothing      -> error $ "Sorry, could not find any node for '" ++ selector ++"'."
+--        Just allNode -> do
+--            classified <- Classifier.classify allNode
+--            case classified of
+--                Left ex -> error  $ "Unknown node type located for '" ++ selector ++ "'."
+--                Right x -> return x
 
 
 

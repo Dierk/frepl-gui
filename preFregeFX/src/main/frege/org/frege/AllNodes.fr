@@ -2,75 +2,67 @@ module org.frege.AllNodes where
 
 import frege.Prelude hiding(ListView)
 
-import fregefx.javafx.application.Platform
-import fregefx.javafx.scene.Node
-import fregefx.javafx.scene.Parent
-import fregefx.javafx.scene.input.KeyEvent
-import fregefx.javafx.scene.text.Font
-import fregefx.javafx.scene.control.Button
-import fregefx.javafx.scene.control.TextArea
-import fregefx.javafx.stage.WindowEvent
-import fregefx.javafx.event.EventHandler
-import fregefx.javafx.collections.ObservableList
-import fregefx.javafx.stage.Stage
-import fregefx.javafx.scene.Scene
+import fregefx.JavaFxAll (EventHandler, Stage, Scene, Parent, TextArea, Button, ListView, Node)
 
 data FregeFX = mutable native org.frege.FregeFX where
     native launch  org.frege.FregeFX.launch :: ( Stage -> IO () ) -> IO ()
     native fxml    org.frege.FregeFX.fxml   :: String -> String -> IO Parent
 
-data ListView t = mutable native javafx.scene.control.ListView where
-    native getItems          :: ListView t -> IO (ObservableList t)
-    native getSelectionModel :: ListView t -> IO (SelectionModel t)
+--- JavaFX users will work with ObservableList a lot, which inherits from List.
+--- The mutable java.util.List type is usually not visible in Frege but when
+--- using JavaFX, having these methods accessible is convenient.
+data List e = mutable native java.util.List where
+  native add  :: List e -> e -> IO Bool
+  native size :: List e -> IO Int
+  native remove :: List e -> e -> IO Bool
 
-data SelectionModel t = mutable native javafx.scene.control.SelectionModel where
-  native clearAndSelect     :: SelectionModel t -> Int -> IO ()
-  native clearSelection     :: SelectionModel t -> Int -> IO ()
-                             | SelectionModel t -> IO ()
-  native getSelectedIndex   :: SelectionModel t -> IO Int
-  native getSelectedItem    :: SelectionModel t -> IO t
-  native isEmpty            :: SelectionModel t -> IO Bool
-  native isSelected         :: SelectionModel t -> Int -> IO Bool
-  native select             :: SelectionModel t -> Int -> IO ()
-                             | SelectionModel t -> t -> IO ()
-  native selectFirst        :: SelectionModel t -> IO ()
-  native selectLast         :: SelectionModel t -> IO ()
-  native selectNext         :: SelectionModel t -> IO ()
-  native selectPrevious         :: SelectionModel t -> IO ()
-  native selectedIndexProperty  :: SelectionModel t -> IO ReadOnlyIntegerProperty
-  native selectedItemProperty   :: SelectionModel t -> IO (ReadOnlyObjectProperty t)
-
-data ReadOnlyObjectProperty t = mutable native javafx.beans.property.ReadOnlyObjectProperty where
-  native toString :: ReadOnlyObjectProperty t -> IO String
-
-data ReadOnlyIntegerProperty = mutable native javafx.beans.property.ReadOnlyIntegerProperty where
-  native asObject :: ReadOnlyIntegerProperty -> IO (ReadOnlyObjectProperty Integer)
-  native readOnlyIntegerProperty "javafx.beans.property.ReadOnlyIntegerProperty.readOnlyIntegerProperty" :: ReadOnlyProperty t -> IO ReadOnlyIntegerProperty
-  native toString :: ReadOnlyIntegerProperty -> IO String
-
-data ReadOnlyProperty t = mutable native javafx.beans.property.ReadOnlyProperty where
-  native getBean :: ReadOnlyProperty t -> IO Object
-  native getName :: ReadOnlyProperty t -> IO String
-
+--- Generic implementation of the ChangeListener Interface in Java to use from Frege
 data OnChange t = mutable native org.frege.FregeChangeListener where
     native new :: (t -> t -> IO()) -> IO (OnChange t)
-  
-data ObservableValue t = mutable native javafx.beans.value.ObservableValue where
-  native addListener    :: ObservableValue t -> ChangeListener t -> IO ()
-  native getValue       :: ObservableValue t -> IO t
-  native removeListener :: ObservableValue t -> ChangeListener t -> IO ()
-        
-data ChangeListener t = mutable native javafx.beans.value.ChangeListener where
-  native changed :: ChangeListener t -> ObservableValue t -> t -> t -> IO ()
 
-data FileChooser = mutable native javafx.stage.FileChooser where
-    native new            :: () -> IO FileChooser
-    native setTitle       :: FileChooser -> String -> IO ()
-    native showOpenDialog :: FileChooser -> Stage -> IO (Maybe (MutableIO File))
-
-data AllNodes t = TextArea    TextArea
-                | Button      Button
-                | ListView    t
+--- Generic implementation of the EventHandler Interface in Java to use from Frege
+data OnEvent t = mutable native org.frege.FregeEventHandler where
+    native new  :: (t -> IO () ) -> IO (OnEvent t)
 
 
 
+--- Looking up a node in a scene returns a Node value on the Java side but in order to do
+--- anything sensible with this on the Frege side, we need a specialized subtype like TextArea.
+--- The function lookupNode returns such a specialized by returning an instance of CastTarget.
+--- Errors are thrown at runtime if the selector String cannot be found or yields the wrong type.
+lookupNode :: CastTarget a => Scene -> String -> IO a
+lookupNode scene selector = do
+    mayNode <- scene.lookup selector
+    case mayNode of
+        Just node -> downcast node >>= either (\cce -> error $ "cannot cast selector '" ++ selector ++ "'") return
+        Nothing -> error $ "cannot find " ++ selector
+
+-- native Java implementation of the downcast since we cannot do that in Frege.
+-- todo: is there a way to do this generally with generics?
+native module where {
+    public static class Caster {
+        public static javafx.scene.control.TextArea toTextArea(javafx.scene.Node node) {
+            return (javafx.scene.control.TextArea) node;
+        }
+        public static javafx.scene.control.ListView toListView(javafx.scene.Node node) {
+            return (javafx.scene.control.ListView) node;
+        }
+    }
+}
+
+data ClassCastException = native java.lang.ClassCastException
+
+-- specific downcasts
+native toTextArea "Caster.toTextArea" :: Node -> IO (ClassCastException | TextArea    )
+native toListView "Caster.toListView" :: Node -> IO (ClassCastException | ListView t  )
+
+
+-- generalized downcast
+class CastTarget a where
+    downcast :: Node -> IO (ClassCastException | a)
+
+instance CastTarget TextArea where
+    downcast = toTextArea
+
+instance CastTarget (ListView t) where
+    downcast = toListView

@@ -11,12 +11,9 @@
 
 module org.frege.SketchBook where
 
-import fregefx.javafx.application.Platform
-import fregefx.javafx.scene.canvas.GraphicsContext
-import fregefx.javafx.scene.canvas.Canvas
-import fregefx.javafx.scene.Group
-import fregefx.javafx.stage.Stage
-import fregefx.javafx.scene.Scene
+import fregefx.JavaFxAll (Platform, GraphicsContext, Canvas, Group, Stage, Scene)
+
+import org.frege.AllNodes
 
 import Control.Concurrent
 
@@ -34,22 +31,23 @@ paint draw = do
 withUI :: IO () -> IO ()
 withUI f = Platform.runLater =<< Runnable.new f
 
+
 --- Make a frame (stage) with a canvas of the given _width_ and _height_.
 --- Set the graphicsContext into the _ctxHolder_ once it is available such that other threads that wait for it can proceed.
 --- The (0,0) origin is centered and y coordinates point upwards like it is conventional in mathematics.
 canvas :: Double -> Double -> MVar GraphicsContext -> IO ()
 canvas width height ctxHolder = withUI do  -- UI construction must happen inside the UI thread
-    grp    <- Group.new ()
+    grp    <- Group.new () :: IO Group
     kids   <- grp.getChildren
-    canvas <- Canvas.new width height
+    canvas <- Canvas.new width height :: IO Canvas
     ctx    <- canvas.getGraphicsContext2D
     kids.add canvas
-    scene <- Scene.new grp width height
-    stage <- Stage.new ()
+    scene <- Scene.new grp width height :: IO Scene
+    stage <- Stage.new () :: IO Stage
     stage.setScene scene
     stage.show
-    ctx.translate (width / 2) (height / 2)  -- center 0,0
-    ctx.scale 1  (-1)                       -- mirror y axis
+    ctx.translate (width / 2d) (height / 2d)  -- center 0,0
+    ctx.scale 1d  (-1d)                       -- mirror y axis
     ctxHolder.put ctx
 
 --- Example on how to use the sketchbook API that draws a crosshair.

@@ -11,25 +11,7 @@ import Data.List
 import org.frege.JavaFX
 import org.frege.AllNodes
 
-import fregefx.javafx.application.Platform
-import fregefx.javafx.fxml.FXMLLoader
-import fregefx.javafx.stage.Stage
-import fregefx.javafx.scene.Scene
-import fregefx.javafx.scene.Node
-import fregefx.javafx.scene.Parent
-import fregefx.javafx.event.Event
-import fregefx.javafx.scene.input.KeyEvent
-import fregefx.javafx.scene.input.KeyCode
-import fregefx.javafx.scene.text.Font
-import fregefx.javafx.scene.control.Button
-import fregefx.javafx.scene.control.TextArea
-import fregefx.javafx.scene.control.TextInputControl
-import fregefx.javafx.stage.WindowEvent
-import fregefx.javafx.event.EventHandler
-import fregefx.javafx.collections.ObservableList
-
-import fregefx.javafx.scene.web.WebView
-import fregefx.javafx.scene.web.WebEngine
+import fregefx.JavaFxAll hiding (Method)
 
 main args = do
     mConsole <- MVar.newEmpty            -- for thread coordination, set in showUI thread, start repl when ready
@@ -45,9 +27,9 @@ showUI mConsole stage = do
     stage.setTitle "Frege - purely functional programming for the JVM"
     stage.setScene scene
     Stage.show stage
-    inputArea  <- locateTextArea scene "#editor"
-    outputArea <- locateTextArea scene "#repl"
-    historyLV  <- locateListView scene "#historyList"
+    inputArea  <- lookupNode scene "#editor"
+    outputArea <- lookupNode scene "#repl"
+    historyLV  <- lookupNode scene "#historyList" :: IO (ListView String)
 
     items <- historyLV.getItems
     items.add ":help mapM"
@@ -115,7 +97,8 @@ onKeyReleased mQueue stage inputArea outputArea items historySelection = OnEvent
                 code <- keyEvent.getCode
   --            println . show $ code.getName
                 keyEvent.consume
-                case code.getName of
+                codeName <- code.getName
+                case codeName of
                      "Down"  -> selectNext     items historySelection
                      "Up"    -> selectPrevious items historySelection
                      "Enter" -> doExecute mQueue inputArea items historySelection
@@ -138,7 +121,7 @@ doExecute mQueue inputArea items historySelection = do
            then [trim script]
            else [":{"] ++ lines script ++ [":}"]
         mapM mQueue.put scriptLines                 -- the beef
-        items.remove $ trim script
+        List.remove items $ trim script
         items.add    $ trim script
         historySelection.clearSelection
         inputArea.setText ""
@@ -146,6 +129,7 @@ doExecute mQueue inputArea items historySelection = do
 
 loadFile :: Stage -> TextArea -> IO ()
 loadFile stage inputArea = do
+    return ()
     chooser <- FileChooser.new ()
     chooser.setTitle "Load Frege File"
     maybeFile <- chooser.showOpenDialog stage
@@ -236,8 +220,8 @@ monolog title content =
     withUI do
         webView <- WebView.new ()
         webView.getEngine >>= _.loadContent content
-        scene <- Scene.new webView 600.0 600.0
-        stage <- Stage.new ()
+        scene <- Scene.new webView 600d 600d :: IO Scene
+        stage <- Stage.new () :: IO Stage
         stage.setTitle title
         stage.setScene scene
         stage.show

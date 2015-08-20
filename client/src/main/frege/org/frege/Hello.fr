@@ -1,0 +1,5 @@
+module org.frege.Hello where
+
+
+main _ = do
+    println "Hello"
