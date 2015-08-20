@@ -1,9 +1,0 @@
-data ReadOnlyLongProperty = mutable native javafx.beans.property.ReadOnlyLongProperty where
-
-  native asObject :: ReadOnlyLongProperty -> IO (ReadOnlyObjectProperty Long)
-
-  native readOnlyLongProperty "javafx.beans.property.ReadOnlyLongProperty.readOnlyLongProperty" :: ReadOnlyProperty t -> IO ReadOnlyLongProperty
-
-  native toString :: ReadOnlyLongProperty -> IO String
-
-

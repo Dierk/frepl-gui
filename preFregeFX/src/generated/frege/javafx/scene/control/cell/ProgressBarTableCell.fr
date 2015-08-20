@@ -1,9 +1,0 @@
-data ProgressBarTableCell s = mutable native javafx.scene.control.cell.ProgressBarTableCell where
-
-  native new :: () -> IO (ProgressBarTableCell s)
-
-  native forTableColumn "javafx.scene.control.cell.ProgressBarTableCell.forTableColumn" :: () -> IO (Callback (TableColumn s Double) (TableCell s Double))
-
-  native updateItem :: ProgressBarTableCell s -> Double -> Bool -> IO ()
-
-

@@ -1,9 +1,0 @@
-data DefaultStringConverter = mutable native javafx.util.converter.DefaultStringConverter where
-
-  native new :: () -> IO DefaultStringConverter
-
-  native fromString :: DefaultStringConverter -> String -> IO String
-
-  native toString :: DefaultStringConverter -> String -> IO String
-
-

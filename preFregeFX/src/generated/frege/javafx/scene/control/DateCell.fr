@@ -1,7 +1,0 @@
-data DateCell = mutable native javafx.scene.control.DateCell where
-
-  native new :: () -> IO DateCell
-
-  native updateItem :: DateCell -> LocalDate -> Bool -> IO ()
-
-

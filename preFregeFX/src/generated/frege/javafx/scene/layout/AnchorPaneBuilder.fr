@@ -1,7 +1,0 @@
-data AnchorPaneBuilder b = mutable native javafx.scene.layout.AnchorPaneBuilder where
-
-  native build :: AnchorPaneBuilder b -> IO AnchorPane
-
-  native create "javafx.scene.layout.AnchorPaneBuilder.create" :: () -> IO (AnchorPaneBuilder Object)
-
-

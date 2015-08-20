@@ -1,9 +1,0 @@
-data BooleanStringConverter = mutable native javafx.util.converter.BooleanStringConverter where
-
-  native new :: () -> IO BooleanStringConverter
-
-  native fromString :: BooleanStringConverter -> String -> IO Boolean
-
-  native toString :: BooleanStringConverter -> Boolean -> IO String
-
-

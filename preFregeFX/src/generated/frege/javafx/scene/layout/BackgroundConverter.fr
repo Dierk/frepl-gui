@@ -1,5 +1,0 @@
-data BackgroundConverter = mutable native javafx.scene.layout.BackgroundConverter where
-
-  native convert :: BackgroundConverter -> MutableIO (Map (CssMetaData Styleable Object) Object) -> IO Background
-
-

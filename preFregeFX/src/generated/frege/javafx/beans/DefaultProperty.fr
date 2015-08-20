@@ -1,5 +1,0 @@
-data DefaultProperty = mutable native javafx.beans.DefaultProperty where
-
-  native value :: DefaultProperty -> IO String
-
-

@@ -1,8 +1,0 @@
-data ParentBuilder b = mutable native javafx.scene.ParentBuilder where
-
-  native applyTo :: ParentBuilder b -> Parent -> IO ()
-
-  native stylesheets :: ParentBuilder b -> MutableIO (JArray String) -> IO b
-                      | ParentBuilder b -> MutableIO (Collection String) -> IO b
-
-

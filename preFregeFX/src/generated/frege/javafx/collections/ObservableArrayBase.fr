@@ -1,9 +1,0 @@
-data ObservableArrayBase t = mutable native javafx.collections.ObservableArrayBase where
-
-  native addListener :: ObservableArrayBase t -> ArrayChangeListener t -> IO ()
-                      | ObservableArrayBase t -> InvalidationListener -> IO ()
-
-  native removeListener :: ObservableArrayBase t -> ArrayChangeListener t -> IO ()
-                         | ObservableArrayBase t -> InvalidationListener -> IO ()
-
-

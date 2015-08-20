@@ -1,7 +1,0 @@
-data ObservableMap k v = mutable native javafx.collections.ObservableMap where
-
-  native addListener :: ObservableMap k v -> MapChangeListener k v -> IO ()
-
-  native removeListener :: ObservableMap k v -> MapChangeListener k v -> IO ()
-
-

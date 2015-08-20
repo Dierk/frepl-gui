@@ -1,9 +1,0 @@
-data DoubleStringConverter = mutable native javafx.util.converter.DoubleStringConverter where
-
-  native new :: () -> IO DoubleStringConverter
-
-  native fromString :: DoubleStringConverter -> String -> IO Double
-
-  native toString :: DoubleStringConverter -> Double -> IO String
-
-

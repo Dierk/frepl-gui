@@ -1,6 +1,0 @@
-data PointLight = mutable native javafx.scene.PointLight where
-
-  native new :: () -> IO PointLight
-              | Color -> IO PointLight
-
-

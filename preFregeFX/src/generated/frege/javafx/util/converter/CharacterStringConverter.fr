@@ -1,9 +1,0 @@
-data CharacterStringConverter = mutable native javafx.util.converter.CharacterStringConverter where
-
-  native new :: () -> IO CharacterStringConverter
-
-  native fromString :: CharacterStringConverter -> String -> IO Character
-
-  native toString :: CharacterStringConverter -> Character -> IO String
-
-

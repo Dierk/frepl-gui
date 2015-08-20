@@ -1,5 +1,4 @@
 rootProject.name = 'frepl'
 
-include 'preFregeFX' // Java Files to be compiled before FregeFX
-include 'fregeFX'    // Frege and Java code where Frege is
+include 'FregeFx'
 include 'client'
