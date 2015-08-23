@@ -1,7 +1,0 @@
-data SplitMenuButtonBuilder b = mutable native javafx.scene.control.SplitMenuButtonBuilder where
-
-  native build :: SplitMenuButtonBuilder b -> IO SplitMenuButton
-
-  native create "javafx.scene.control.SplitMenuButtonBuilder.create" :: () -> IO (SplitMenuButtonBuilder Object)
-
-

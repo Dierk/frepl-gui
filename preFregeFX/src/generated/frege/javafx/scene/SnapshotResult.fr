@@ -1,9 +1,0 @@
-data SnapshotResult = mutable native javafx.scene.SnapshotResult where
-
-  native getImage :: SnapshotResult -> IO WritableImage
-
-  native getSnapshotParameters :: SnapshotResult -> IO SnapshotParameters
-
-  native getSource :: SnapshotResult -> IO Object
-
-

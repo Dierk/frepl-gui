@@ -1,7 +1,0 @@
-data SeparatorMenuItemBuilder b = mutable native javafx.scene.control.SeparatorMenuItemBuilder where
-
-  native build :: SeparatorMenuItemBuilder b -> IO SeparatorMenuItem
-
-  native create "javafx.scene.control.SeparatorMenuItemBuilder.create" :: () -> IO (SeparatorMenuItemBuilder Object)
-
-

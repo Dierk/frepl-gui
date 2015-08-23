@@ -1,7 +1,0 @@
-data ClosePathBuilder b = mutable native javafx.scene.shape.ClosePathBuilder where
-
-  native build :: ClosePathBuilder b -> IO ClosePath
-
-  native create "javafx.scene.shape.ClosePathBuilder.create" :: () -> IO (ClosePathBuilder Object)
-
-

@@ -4,13 +4,13 @@ For users
 =========
 
 Download the distribution zip (20 MB) from
-https://dl.dropboxusercontent.com/u/71750979/Frege/client-0.5.0.zip .
+https://dl.dropboxusercontent.com/u/71750979/Frege/frepl-0.6.0.zip .
 
 Unpack to an `<install-dir>` of your choice.
 
 With a Java 8 (u40 or higher), run
 
-    <install-dir>/bin/client
+    <install-dir>/bin/frepl
 
 Additions to the use of the command-line REPL
 =============================================
@@ -60,8 +60,16 @@ to *reset* the state of the REPL with `:reset` and try again.
 When filing *issues*, please run the `:history` command and attach the output to your issue such that we can
 reproduce the behavior.
 
-For developers
-==============
+For developers only
+===================
+
+*Really, this is only for developers that would like to contribute (much appreciated).*
+Normal users please use the download link at the top of this page.
+
+[NOTE]
+Since version 0.6, FregeFX is an external dependency that you might need to `gradlew install`
+locally if a SNAPSHOT version is referenced.
+
 
 With Java 8 (update 40 or higher) start via
 

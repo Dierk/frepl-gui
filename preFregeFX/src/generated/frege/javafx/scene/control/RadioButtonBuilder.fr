@@ -1,7 +1,0 @@
-data RadioButtonBuilder b = mutable native javafx.scene.control.RadioButtonBuilder where
-
-  native build :: RadioButtonBuilder b -> IO RadioButton
-
-  native create "javafx.scene.control.RadioButtonBuilder.create" :: () -> IO (RadioButtonBuilder Object)
-
-

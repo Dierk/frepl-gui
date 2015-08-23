@@ -1,1 +1,0 @@
-data NumberBinding = mutable native javafx.beans.binding.NumberBinding

@@ -1,7 +1,0 @@
-data ReadOnlyProperty t = mutable native javafx.beans.property.ReadOnlyProperty where
-
-  native getBean :: ReadOnlyProperty t -> IO Object
-
-  native getName :: ReadOnlyProperty t -> IO String
-
-

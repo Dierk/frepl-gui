@@ -1,5 +1,0 @@
-data ConstraintsBase = mutable native javafx.scene.layout.ConstraintsBase where
-
-  pure native constrain_to_pref "javafx.scene.layout.ConstraintsBase.CONSTRAIN_TO_PREF" :: Double
-
-

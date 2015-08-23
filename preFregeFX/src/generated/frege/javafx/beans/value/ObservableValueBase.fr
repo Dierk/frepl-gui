@@ -1,9 +1,0 @@
-data ObservableValueBase t = mutable native javafx.beans.value.ObservableValueBase where
-
-  native addListener :: ObservableValueBase t -> ChangeListener t -> IO ()
-                      | ObservableValueBase t -> InvalidationListener -> IO ()
-
-  native removeListener :: ObservableValueBase t -> ChangeListener t -> IO ()
-                         | ObservableValueBase t -> InvalidationListener -> IO ()
-
-

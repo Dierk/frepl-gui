@@ -1,6 +1,0 @@
-data ScatterChart x y = mutable native javafx.scene.chart.ScatterChart where
-
-  native new :: Axis x -> Axis y -> IO (ScatterChart x y)
-              | Axis x -> Axis y -> ObservableList (XYChart_Series x y) -> IO (ScatterChart x y)
-
-

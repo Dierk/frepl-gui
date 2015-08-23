@@ -1,7 +1,0 @@
-data MapValueFactory t = mutable native javafx.scene.control.cell.MapValueFactory where
-
-  native new :: Object -> IO (MapValueFactory t)
-
-  native call :: MapValueFactory t -> TableColumn_CellDataFeatures Map t -> IO (ObservableValue t)
-
-

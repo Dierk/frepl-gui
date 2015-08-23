@@ -1,9 +1,0 @@
-data PromptData = mutable native javafx.scene.web.PromptData where
-
-  native new :: String -> String -> IO PromptData
-
-  native getDefaultValue :: PromptData -> IO String
-
-  native getMessage :: PromptData -> IO String
-
-

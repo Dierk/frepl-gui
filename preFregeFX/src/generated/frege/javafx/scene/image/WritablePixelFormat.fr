@@ -1,7 +1,0 @@
-data WritablePixelFormat t = mutable native javafx.scene.image.WritablePixelFormat where
-
-  native isWritable :: WritablePixelFormat t -> IO Bool
-
-  native setArgb :: WritablePixelFormat t -> t -> Int -> Int -> Int -> Int -> IO ()
-
-

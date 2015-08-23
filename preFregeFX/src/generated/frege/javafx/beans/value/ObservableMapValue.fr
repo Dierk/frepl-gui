@@ -1,1 +1,0 @@
-data ObservableMapValue k v = mutable native javafx.beans.value.ObservableMapValue

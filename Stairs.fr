@@ -1,7 +1,8 @@
 module Stairs where
  
-import org.frege.SketchBook
+import org.frege.SketchBook (paint)
 import fregefx.JavaFxAll (GraphicsContext)
+import fregefx.JavaFxUtils (withUI)
 import Data.List
 
 --- A point on the canvas.

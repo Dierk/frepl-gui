@@ -1,6 +1,0 @@
-data AmbientLight = mutable native javafx.scene.AmbientLight where
-
-  native new :: () -> IO AmbientLight
-              | Color -> IO AmbientLight
-
-

@@ -1,9 +1,0 @@
-data PercentageStringConverter = mutable native javafx.util.converter.PercentageStringConverter where
-
-  native new :: NumberFormat -> IO PercentageStringConverter
-              | Locale -> IO PercentageStringConverter
-              | () -> IO PercentageStringConverter
-
-  native getNumberFormat :: PercentageStringConverter -> IO NumberFormat
-
-

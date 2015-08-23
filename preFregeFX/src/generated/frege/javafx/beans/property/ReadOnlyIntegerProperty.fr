@@ -1,9 +1,0 @@
-data ReadOnlyIntegerProperty = mutable native javafx.beans.property.ReadOnlyIntegerProperty where
-
-  native asObject :: ReadOnlyIntegerProperty -> IO (ReadOnlyObjectProperty Integer)
-
-  native readOnlyIntegerProperty "javafx.beans.property.ReadOnlyIntegerProperty.readOnlyIntegerProperty" :: ReadOnlyProperty t -> IO ReadOnlyIntegerProperty
-
-  native toString :: ReadOnlyIntegerProperty -> IO String
-
-

@@ -1,9 +1,0 @@
-data FloatStringConverter = mutable native javafx.util.converter.FloatStringConverter where
-
-  native new :: () -> IO FloatStringConverter
-
-  native fromString :: FloatStringConverter -> String -> IO Float
-
-  native toString :: FloatStringConverter -> Float -> IO String
-
-

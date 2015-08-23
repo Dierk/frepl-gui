@@ -1,9 +1,0 @@
-data BigIntegerStringConverter = mutable native javafx.util.converter.BigIntegerStringConverter where
-
-  native new :: () -> IO BigIntegerStringConverter
-
-  native fromString :: BigIntegerStringConverter -> String -> IO Integer
-
-  native toString :: BigIntegerStringConverter -> Integer -> IO String
-
-

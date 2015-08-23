@@ -1,5 +1,0 @@
-data SetChangeListener e = mutable native javafx.collections.SetChangeListener where
-
-  native onChanged :: SetChangeListener e -> SetChangeListener_Change e -> IO ()
-
-
