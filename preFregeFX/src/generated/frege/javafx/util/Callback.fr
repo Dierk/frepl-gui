@@ -1,5 +1,0 @@
-data Callback p r = mutable native javafx.util.Callback where
-
-  native call :: Callback p r -> p -> IO r
-
-

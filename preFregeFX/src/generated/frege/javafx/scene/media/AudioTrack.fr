@@ -1,5 +1,0 @@
-data AudioTrack = mutable native javafx.scene.media.AudioTrack where
-
-  native getLanguage :: AudioTrack -> IO String
-
-

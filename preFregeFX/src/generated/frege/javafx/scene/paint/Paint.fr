@@ -1,7 +1,0 @@
-data Paint = mutable native javafx.scene.paint.Paint where
-
-  native isOpaque :: Paint -> IO Bool
-
-  native valueOf "javafx.scene.paint.Paint.valueOf" :: String -> IO Paint
-
-

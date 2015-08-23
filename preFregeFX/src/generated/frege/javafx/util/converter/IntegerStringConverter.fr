@@ -1,9 +1,0 @@
-data IntegerStringConverter = mutable native javafx.util.converter.IntegerStringConverter where
-
-  native new :: () -> IO IntegerStringConverter
-
-  native fromString :: IntegerStringConverter -> String -> IO Integer
-
-  native toString :: IntegerStringConverter -> Integer -> IO String
-
-

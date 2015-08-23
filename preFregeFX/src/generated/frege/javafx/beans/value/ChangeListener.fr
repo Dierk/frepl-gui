@@ -1,5 +1,0 @@
-data ChangeListener t = mutable native javafx.beans.value.ChangeListener where
-
-  native changed :: ChangeListener t -> ObservableValue t -> t -> t -> IO ()
-
-

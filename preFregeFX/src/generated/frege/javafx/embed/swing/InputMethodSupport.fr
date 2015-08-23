@@ -1,7 +1,0 @@
-data InputMethodSupport = mutable native javafx.embed.swing.InputMethodSupport where
-
-  pure native getTextForEvent "javafx.embed.swing.InputMethodSupport.getTextForEvent" :: InputMethodEvent -> String
-
-  native inputMethodEventComposed "javafx.embed.swing.InputMethodSupport.inputMethodEventComposed" :: String -> Int -> IO (ObservableList InputMethodTextRun)
-
-

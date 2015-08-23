@@ -1,9 +1,0 @@
-data WritableDoubleValue = mutable native javafx.beans.value.WritableDoubleValue where
-
-  native get :: WritableDoubleValue -> IO Double
-
-  native set :: WritableDoubleValue -> Double -> IO ()
-
-  native setValue :: WritableDoubleValue -> Number -> IO ()
-
-

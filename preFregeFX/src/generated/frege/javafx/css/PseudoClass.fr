@@ -1,9 +1,0 @@
-module frege.javafx.css.PseudoClass where
-
-data PseudoClass = mutable native javafx.css.PseudoClass where
-
-  native getPseudoClass "javafx.css.PseudoClass.getPseudoClass" :: String -> IO PseudoClass
-
-  native getPseudoClassName :: PseudoClass -> IO String
-
-

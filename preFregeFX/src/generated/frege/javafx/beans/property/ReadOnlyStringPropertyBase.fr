@@ -1,9 +1,0 @@
-data ReadOnlyStringPropertyBase = mutable native javafx.beans.property.ReadOnlyStringPropertyBase where
-
-  native addListener :: ReadOnlyStringPropertyBase -> ChangeListener String -> IO ()
-                      | ReadOnlyStringPropertyBase -> InvalidationListener -> IO ()
-
-  native removeListener :: ReadOnlyStringPropertyBase -> InvalidationListener -> IO ()
-                         | ReadOnlyStringPropertyBase -> ChangeListener String -> IO ()
-
-

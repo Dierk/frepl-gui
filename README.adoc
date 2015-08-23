@@ -18,11 +18,10 @@ In addition to the commands in the command-line REPL like `:help`, you can press
 with all available shortcuts and commands.
 
 The "history" list is pre-populated with commands that you may want to try out.
-New in version 0.4.0:
 
-* :l http:... to load a script from URL
-* import ... to make the module known
-* play ... for graphical output
+* `:l http:...` to load a script from URL
+* `:browse Stairs` to see what's in the _Stairs_ module
+* `play ...` for graphical output
 
 Please note that _this GUI is not an IDE_. The content of the editor is fed line-by-line to the
 command-line REPL and this limits the amount of work that one can do in "one go".

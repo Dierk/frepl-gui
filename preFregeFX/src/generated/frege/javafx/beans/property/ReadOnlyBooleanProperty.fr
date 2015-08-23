@@ -1,9 +1,0 @@
-data ReadOnlyBooleanProperty = mutable native javafx.beans.property.ReadOnlyBooleanProperty where
-
-  native asObject :: ReadOnlyBooleanProperty -> IO (ReadOnlyObjectProperty Boolean)
-
-  native readOnlyBooleanProperty "javafx.beans.property.ReadOnlyBooleanProperty.readOnlyBooleanProperty" :: ReadOnlyProperty Boolean -> IO ReadOnlyBooleanProperty
-
-  native toString :: ReadOnlyBooleanProperty -> IO String
-
-

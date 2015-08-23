@@ -1,7 +1,0 @@
-data CheckBoxTreeItemBuilder t b = mutable native javafx.scene.control.CheckBoxTreeItemBuilder where
-
-  native build :: CheckBoxTreeItemBuilder t b -> IO (CheckBoxTreeItem t)
-
-  native create "javafx.scene.control.CheckBoxTreeItemBuilder.create" :: () -> IO (CheckBoxTreeItemBuilder t Object)
-
-

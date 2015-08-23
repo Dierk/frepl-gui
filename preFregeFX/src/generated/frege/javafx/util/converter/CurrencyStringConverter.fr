@@ -1,9 +1,0 @@
-data CurrencyStringConverter = mutable native javafx.util.converter.CurrencyStringConverter where
-
-  native new :: NumberFormat -> IO CurrencyStringConverter
-              | Locale -> String -> IO CurrencyStringConverter
-              | String -> IO CurrencyStringConverter
-              | Locale -> IO CurrencyStringConverter
-              | () -> IO CurrencyStringConverter
-
-

@@ -1,9 +1,0 @@
-data ReadOnlyDoubleProperty = mutable native javafx.beans.property.ReadOnlyDoubleProperty where
-
-  native asObject :: ReadOnlyDoubleProperty -> IO (ReadOnlyObjectProperty Double)
-
-  native readOnlyDoubleProperty "javafx.beans.property.ReadOnlyDoubleProperty.readOnlyDoubleProperty" :: ReadOnlyProperty t -> IO ReadOnlyDoubleProperty
-
-  native toString :: ReadOnlyDoubleProperty -> IO String
-
-

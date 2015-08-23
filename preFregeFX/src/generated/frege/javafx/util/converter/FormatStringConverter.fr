@@ -1,9 +1,0 @@
-data FormatStringConverter t = mutable native javafx.util.converter.FormatStringConverter where
-
-  native new :: Format -> IO (FormatStringConverter t)
-
-  native fromString :: FormatStringConverter t -> String -> IO t
-
-  native toString :: FormatStringConverter t -> t -> IO String
-
-

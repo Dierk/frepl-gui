@@ -1,9 +1,0 @@
-data ReadOnlyDoublePropertyBase = mutable native javafx.beans.property.ReadOnlyDoublePropertyBase where
-
-  native addListener :: ReadOnlyDoublePropertyBase -> ChangeListener Number -> IO ()
-                      | ReadOnlyDoublePropertyBase -> InvalidationListener -> IO ()
-
-  native removeListener :: ReadOnlyDoublePropertyBase -> InvalidationListener -> IO ()
-                         | ReadOnlyDoublePropertyBase -> ChangeListener Number -> IO ()
-
-

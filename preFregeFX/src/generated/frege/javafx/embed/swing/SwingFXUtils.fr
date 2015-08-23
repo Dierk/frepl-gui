@@ -1,7 +1,0 @@
-data SwingFXUtils = mutable native javafx.embed.swing.SwingFXUtils where
-
-  native fromFXImage "javafx.embed.swing.SwingFXUtils.fromFXImage" :: Image -> BufferedImage -> IO BufferedImage
-
-  native toFXImage "javafx.embed.swing.SwingFXUtils.toFXImage" :: BufferedImage -> WritableImage -> IO WritableImage
-
-

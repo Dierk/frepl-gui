@@ -1,9 +1,0 @@
-data PropertyValueFactory s t = mutable native javafx.scene.control.cell.PropertyValueFactory where
-
-  native new :: String -> IO (PropertyValueFactory s t)
-
-  native call :: PropertyValueFactory s t -> TableColumn_CellDataFeatures s t -> IO (ObservableValue t)
-
-  native getProperty :: PropertyValueFactory s t -> IO String
-
-

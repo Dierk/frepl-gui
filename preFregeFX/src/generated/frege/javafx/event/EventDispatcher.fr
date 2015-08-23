@@ -1,5 +1,0 @@
-data EventDispatcher = mutable native javafx.event.EventDispatcher where
-
-  native dispatchEvent :: EventDispatcher -> Event -> EventDispatchChain -> IO Event
-
-

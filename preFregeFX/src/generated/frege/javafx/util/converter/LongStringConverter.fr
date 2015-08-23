@@ -1,9 +1,0 @@
-data LongStringConverter = mutable native javafx.util.converter.LongStringConverter where
-
-  native new :: () -> IO LongStringConverter
-
-  native fromString :: LongStringConverter -> String -> IO Long
-
-  native toString :: LongStringConverter -> Long -> IO String
-
-
