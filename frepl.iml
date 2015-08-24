@@ -14,23 +14,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Gradle: org.frege-lang:fregefx:0.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.frege-lang:frege-repl-core:1.2.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.frege-lang:frege:3.22.524-gcc99d7e" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.frege-lang:frege-interpreter-core:1.2.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.frege-lang:frege-repl-nativedeps:1.2.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: jline:jline:2.13" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.frege-lang:frege-interpreter-java-support:1.2.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.fusesource.jansi:jansi:1.11" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.eclipse.jdt.core.compiler:ecj:4.2.2" level="project" />
-    <orderEntry type="module-library" exported="">
-      <library name="Gradle: jfxrt">
-        <CLASSES>
-          <root url="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/jre/lib/ext/jfxrt.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
   </component>
 </module>

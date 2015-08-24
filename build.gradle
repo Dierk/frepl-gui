@@ -1,6 +1,7 @@
 buildscript {        // make the frege plugin available in our build
     repositories {
 		mavenLocal() // if you have the plugin installed locally, this is enough
+        mavenCentral()
         maven {
             url = "https://oss.sonatype.org/content/groups/public"
         }
@@ -9,7 +10,10 @@ buildscript {        // make the frege plugin available in our build
 //        }
     }
     dependencies {
-	    classpath 'org.frege-lang:frege-gradle-plugin:0.4.2-SNAPSHOT'
+        classpath 'org.frege-lang:frege-gradle-plugin:0.4.2-SNAPSHOT', {
+           exclude module:'frege-native-gen'
+           exclude module:'frege-repl-core'
+       }
     }
 }
 
