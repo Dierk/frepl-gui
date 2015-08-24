@@ -224,8 +224,6 @@ monolog title content =
         stage.setScene scene
         stage.show
 
-withUI f = Platform.runLater =<< Runnable.new f
-
 data GraphicRepl = GraphicRepl {input :: (MVar String), inputArea :: IO (MVar TextArea), outputArea :: IO (MVar TextArea)}
 
 instance ReplIO GraphicRepl where

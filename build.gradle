@@ -13,7 +13,6 @@ buildscript {        // make the frege plugin available in our build
     }
 }
 
-
 apply plugin: 'java'
 apply plugin: 'frege'
 apply plugin: "application"
@@ -42,61 +41,4 @@ dependencies {
     compile "org.frege-lang:frege-repl-core:1.2.1-SNAPSHOT" // , { exclude module:"frege" }
 }
 
-
-
-
 project.tasks.compileFrege.dependsOn(project.tasks.compileJava) // make java compile first
-
-ext {
-	jfxLibDir = locateJfxLibDir()
-}
-
-//sourceSets {
-//    main {
-//        java {
-//            compileClasspath += project.files("build/classes/main")
-//        }
-//    }
-//}
-
-dependencies {
-    compile files("$jfxLibDir/jfxrt.jar") // TODO: find out why this seems to be necessary even on JDK 8
-}
-
-// this should probably go into FregeFX or the Gradle plugin
-String locateJfxLibDir() {
-    def javaFxHome = System.env['JAVAFX_HOME'] ?: ''
-    def javaHome = System.env['JAVA_HOME'] ?: ''
-    def jdk8 = System.getProperty('java.version')[0..2].toDouble() == 1.8
-
-    if (! jdk8) {
-        throw new GradleScriptException("Please use Java 8.", null)
-    }
-
-    def jdkHome = System.properties.'java.home' ?: ''
-
-    def result = "$javaFxHome/rt/lib"
-    if (new File("$result/jfxrt.jar").exists()) {
-        logger.info "using javafx from explicit JAVAFX_HOME: $result"
-        return result
-    }
-    result = "$jdkHome/lib/ext/"
-    if (jdk8 && new File("$result/jfxrt.jar").exists()) {
-        logger.info "using javafx from current java 8: $result"
-        return result
-    }
-    result = "$javaHome/jre/lib/"
-    if (new File("$result/jfxrt.jar").exists()) {
-        logger.info "using javafx from explicit JAVA_HOME: $result"
-        return result
-    }
-    result = "$javaHome/lib/"
-    if (new File("$result/jfxrt.jar").exists()) {
-        logger.info "using javafx from explicit JAVA_HOME: $result"
-        return result
-    }
-    logger.error "please use a Java Version 8"
-    logger.error " or set JAVA_HOME   to a dir that contains the jre/lib/jfxrt.jar"
-    logger.error " or set JAVAFX_HOME to a dir that contains the rt/lib/jfxrt.jar"
-    throw new GradleScriptException("location of jfxrt.jar could not be determined", null)
-}
