@@ -211,7 +211,7 @@ myJavaSourceGUI javaSource = monolog "Java Source" ("<html>"++ style ++"<code><p
 
 myHelpGUI :: String -> String -> IO ()
 myHelpGUI title content = monolog title rel2absolute where
-    rel2absolute = (´href="\.\/´.matcher content).replaceAll "href=\"http://www.frege-lang.org/doc/"
+    rel2absolute = content.replaceAll ´href="\.\/´  "href=\"http://www.frege-lang.org/doc/"
 
 monolog :: String -> String -> IO ()
 monolog title content =
