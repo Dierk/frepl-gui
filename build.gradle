@@ -1,24 +1,36 @@
-buildscript {        // make the frege plugin available in our build
-    repositories {
-		mavenLocal() // if you have the plugin installed locally, this is enough
-        mavenCentral()
-        maven {
-            url = "https://oss.sonatype.org/content/groups/public"
-        }
-    }
-    dependencies {
-        classpath 'org.frege-lang:frege-gradle-plugin:0.4.2-SNAPSHOT', {
-           exclude module:'frege-native-gen'
-           exclude module:'frege-repl-core'
-       }
-    }
+//buildscript {        // make the frege plugin available in our build
+//    repositories {
+//		mavenLocal() // if you have the plugin installed locally, this is enough
+//        mavenCentral()
+//        maven {
+//            url = "https://oss.sonatype.org/content/groups/public"
+//        }
+//    }
+//    dependencies {
+//        classpath 'org.frege-lang:frege-gradle-plugin:0.4.2-SNAPSHOT', {
+//           exclude module:'frege-native-gen'
+//           exclude module:'frege-repl-core'
+//       }
+//    }
+//}
+
+//apply plugin: 'frege'
+
+// for fetching the plugin from gradle plugin portal
+plugins {
+  id "org.frege-lang" version "0.7"
 }
 
-apply plugin: 'frege'
+apply plugin: 'application'
 
-frege {
-    mainModule = 'org.frege.Application'
-}
+mainClassName = 'org.frege.Application'
+
+//frege {
+//    mainModule = 'org.frege.Application'
+//}
+
+
+
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -30,15 +42,15 @@ ext {
 
 repositories {
     mavenLocal()
-    mavenCentral()
+    jcenter()
     maven {
         url = sonatypeUrl
     }
 }
 
 dependencies {
-    frege   "org.frege-lang:frege:3.23.288-gaa3af0c"
-    compile "org.frege-lang:fregefx:0.2.0-SNAPSHOT"
-    compile "org.frege-lang:frege-repl-core:1.2.1-SNAPSHOT"
+    //frege   "org.frege-lang:frege:3.23.288-gaa3af0c"
+    compile "org.frege-lang:fregefx:0.2.0"
+    compile "org.frege-lang:frege-repl-core:1.4-SNAPSHOT"
 }
 

@@ -1,6 +1,7 @@
 module Stairs where
- 
+
 import org.frege.SketchBook (paint)
+
 import fregefx.JavaFxAll (GraphicsContext)
 import fregefx.JavaFxUtils (withUI)
 import Data.List
@@ -43,6 +44,7 @@ fast = play $ take 300 . doodle
 
 --- Sample usage: make every second action a sleep.
 slow = play $ intersperse (Thread.sleep 100) . take 300 . doodle
+
 
 
 
