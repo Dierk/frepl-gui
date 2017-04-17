@@ -4,7 +4,7 @@ For users
 =========
 
 Download the distribution zip (20 MB) from
-https://dl.dropboxusercontent.com/u/71750979/Frege/frepl-0.6.0.zip .
+https://www.dropbox.com/s/qg7ymgi219d9pm2/frepl-0.6.0.zip?dl=0 .
 
 Unpack to an `<install-dir>` of your choice.
 
